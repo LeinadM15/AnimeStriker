@@ -1,0 +1,1752 @@
+/* ============================================
+   ANIME STRIKERS — Squad Builder Logic
+   ============================================ */
+
+// ==========================================
+// FORMATIONS DATABASE (20 formations)
+// Each formation defines: name, positions array, and links between adjacent players
+// Positions: { role, x%, y% } — x/y are percentages on the pitch
+// Links: [indexA, indexB] pairs for chemistry lines
+// ==========================================
+
+const FORMATIONS = {
+    "4-3-3": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 25, y: 51 },
+            { role: "CM",  x: 50, y: 48 },
+            { role: "CM",  x: 75, y: 51 },
+            { role: "LW",  x: 18, y: 25 },
+            { role: "ST",  x: 50, y: 18 },
+            { role: "RW",  x: 82, y: 25 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,6],[3,4],[3,6],[4,7],[5,6],[5,8],[6,7],[6,9],[7,10],[8,9],[9,10]]
+    },
+    "4-3-3 (Ataque)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 30, y: 51 },
+            { role: "CM",  x: 70, y: 51 },
+            { role: "CAM", x: 50, y: 38 },
+            { role: "LW",  x: 18, y: 25 },
+            { role: "ST",  x: 50, y: 15 },
+            { role: "RW",  x: 82, y: 25 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,6],[4,6],[5,7],[5,8],[6,7],[6,10],[7,9],[7,8],[7,10],[8,9],[9,10]]
+    },
+    "4-3-3 (Defensa)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "CM",  x: 28, y: 46 },
+            { role: "CM",  x: 72, y: 46 },
+            { role: "LW",  x: 18, y: 25 },
+            { role: "ST",  x: 50, y: 18 },
+            { role: "RW",  x: 82, y: 25 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,7],[6,8],[6,9],[7,9],[7,10],[8,9],[9,10]]
+    },
+    "4-4-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "LM",  x: 15, y: 46 },
+            { role: "CM",  x: 38, y: 48 },
+            { role: "CM",  x: 62, y: 48 },
+            { role: "RM",  x: 85, y: 46 },
+            { role: "ST",  x: 38, y: 21 },
+            { role: "ST",  x: 62, y: 21 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,6],[3,4],[3,7],[4,8],[5,6],[5,9],[6,7],[6,9],[6,10],[7,8],[7,10],[9,10]]
+    },
+    "4-4-2 (Diamante)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "CM",  x: 25, y: 45 },
+            { role: "CM",  x: 75, y: 45 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,7],[6,8],[6,9],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "4-2-3-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "CAM", x: 18, y: 34 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "CAM", x: 82, y: 34 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,6],[4,6],[5,6],[5,7],[5,8],[6,8],[6,9],[7,8],[7,10],[8,10],[9,10]]
+    },
+    "4-2-3-1 (Ancho)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "LM",  x: 15, y: 34 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "RM",  x: 85, y: 34 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,6],[4,6],[5,6],[5,7],[5,8],[6,8],[6,9],[7,8],[7,10],[8,10],[9,10]]
+    },
+    "4-1-2-1-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "CM",  x: 28, y: 45 },
+            { role: "CM",  x: 72, y: 45 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,7],[6,8],[6,9],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "4-1-2-1-2 (Ancho)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "LM",  x: 15, y: 42 },
+            { role: "RM",  x: 85, y: 42 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,7],[6,8],[6,9],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "4-2-4": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 35, y: 51 },
+            { role: "CM",  x: 65, y: 51 },
+            { role: "LW",  x: 15, y: 25 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 },
+            { role: "RW",  x: 85, y: 25 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,6],[4,6],[5,6],[5,7],[5,8],[6,9],[6,10],[7,8],[8,9],[9,10]]
+    },
+    "4-5-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "LM",  x: 15, y: 45 },
+            { role: "CM",  x: 35, y: 48 },
+            { role: "CDM", x: 50, y: 54 },
+            { role: "CM",  x: 65, y: 48 },
+            { role: "RM",  x: 85, y: 45 },
+            { role: "ST",  x: 50, y: 18 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,7],[3,4],[3,7],[4,9],[5,6],[5,10],[6,7],[6,10],[7,8],[8,9],[8,10],[9,10]]
+    },
+    "4-1-4-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "LM",  x: 15, y: 38 },
+            { role: "CM",  x: 38, y: 42 },
+            { role: "CM",  x: 62, y: 42 },
+            { role: "RM",  x: 85, y: 38 },
+            { role: "ST",  x: 50, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,5],[4,5],[5,7],[5,8],[6,7],[6,10],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "3-5-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "LM",  x: 12, y: 45 },
+            { role: "CM",  x: 35, y: 48 },
+            { role: "CDM", x: 50, y: 56 },
+            { role: "CM",  x: 65, y: 48 },
+            { role: "RM",  x: 88, y: 45 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,6],[2,3],[2,6],[3,6],[3,8],[4,5],[4,9],[5,6],[5,9],[6,7],[7,8],[7,10],[8,10],[9,10]]
+    },
+    "3-4-3": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "LM",  x: 15, y: 46 },
+            { role: "CM",  x: 38, y: 51 },
+            { role: "CM",  x: 62, y: 51 },
+            { role: "RM",  x: 85, y: 46 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "ST",  x: 50, y: 17 },
+            { role: "RW",  x: 82, y: 21 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,5],[2,6],[3,6],[3,7],[4,5],[4,8],[5,6],[5,9],[6,7],[6,9],[7,10],[8,9],[9,10]]
+    },
+    "3-4-2-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "LM",  x: 15, y: 46 },
+            { role: "CM",  x: 38, y: 51 },
+            { role: "CM",  x: 62, y: 51 },
+            { role: "RM",  x: 85, y: 46 },
+            { role: "CAM", x: 35, y: 29 },
+            { role: "CAM", x: 65, y: 29 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,5],[2,6],[3,6],[3,7],[4,5],[4,8],[5,6],[5,8],[6,7],[6,9],[7,9],[8,10],[9,10]]
+    },
+    "5-3-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 10, y: 68 },
+            { role: "CB",  x: 30, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 70, y: 73 },
+            { role: "RB",  x: 90, y: 68 },
+            { role: "CM",  x: 25, y: 46 },
+            { role: "CM",  x: 50, y: 45 },
+            { role: "CM",  x: 75, y: 46 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 }
+        ],
+        links: [[0,2],[0,3],[0,4],[1,2],[1,6],[2,3],[2,6],[3,4],[3,7],[4,5],[4,8],[5,8],[6,7],[6,9],[7,8],[7,9],[7,10],[8,10],[9,10]]
+    },
+    "5-4-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 10, y: 68 },
+            { role: "CB",  x: 30, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 70, y: 73 },
+            { role: "RB",  x: 90, y: 68 },
+            { role: "LM",  x: 15, y: 45 },
+            { role: "CM",  x: 38, y: 48 },
+            { role: "CM",  x: 62, y: 48 },
+            { role: "RM",  x: 85, y: 45 },
+            { role: "ST",  x: 50, y: 18 }
+        ],
+        links: [[0,2],[0,3],[0,4],[1,2],[1,6],[2,3],[2,7],[3,4],[3,7],[3,8],[4,5],[4,8],[5,9],[6,7],[6,10],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "5-2-1-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 10, y: 68 },
+            { role: "CB",  x: 30, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 70, y: 73 },
+            { role: "RB",  x: 90, y: 68 },
+            { role: "CM",  x: 35, y: 51 },
+            { role: "CM",  x: 65, y: 51 },
+            { role: "CAM", x: 50, y: 34 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 }
+        ],
+        links: [[0,2],[0,3],[0,4],[1,2],[1,6],[2,3],[2,6],[3,4],[3,6],[3,7],[4,5],[4,7],[5,7],[6,7],[6,8],[7,8],[8,9],[8,10],[9,10]]
+    },
+    "4-3-1-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 25, y: 51 },
+            { role: "CM",  x: 50, y: 54 },
+            { role: "CM",  x: 75, y: 51 },
+            { role: "CAM", x: 50, y: 34 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,6],[3,4],[3,6],[4,7],[5,6],[5,8],[6,7],[6,8],[7,8],[8,9],[8,10],[9,10]]
+    },
+    "4-4-1-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "LM",  x: 15, y: 48 },
+            { role: "CM",  x: 38, y: 51 },
+            { role: "CM",  x: 62, y: 51 },
+            { role: "RM",  x: 85, y: 48 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,6],[3,4],[3,7],[4,8],[5,6],[5,9],[6,7],[6,9],[7,8],[7,9],[8,9],[9,10]]
+    },
+    "3-1-4-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "LM",  x: 15, y: 42 },
+            { role: "CM",  x: 35, y: 45 },
+            { role: "CM",  x: 65, y: 45 },
+            { role: "RM",  x: 85, y: 42 },
+            { role: "ST",  x: 38, y: 18 },
+            { role: "ST",  x: 62, y: 18 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,4],[3,4],[3,8],[4,6],[4,7],[5,6],[5,9],[6,7],[6,9],[7,8],[7,10],[8,10],[9,10]]
+    },
+    "3-4-1-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "LM",  x: 15, y: 46 },
+            { role: "CM",  x: 35, y: 51 },
+            { role: "CM",  x: 65, y: 51 },
+            { role: "RM",  x: 85, y: 46 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,5],[2,6],[3,6],[3,7],[4,5],[5,6],[6,7],[5,8],[6,8],[8,9],[8,10],[9,10]]
+    },
+        "4-2-2-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 35, y: 54 },
+            { role: "CDM", x: 65, y: 54 },
+            { role: "CAM", x: 30, y: 36 },
+            { role: "CAM", x: 70, y: 36 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,5],[3,4],[3,6],[4,6],[5,6],[5,7],[6,8],[7,9],[8,10],[9,10]]
+    },
+    "4-2-2-2 (Ancho)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "LM",  x: 15, y: 38 },
+            { role: "RM",  x: 85, y: 38 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[1,7],[2,3],[2,5],[3,4],[3,6],[4,6],[4,8],[5,6],[5,7],[6,8],[7,9],[8,10],[9,10]]
+    },
+    "4-1-3-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "LM",  x: 18, y: 45 },
+            { role: "CM",  x: 50, y: 45 },
+            { role: "RM",  x: 82, y: 45 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,8],[5,6],[5,7],[5,8],[6,7],[7,8],[7,9],[7,10],[9,10]]
+    },
+    "4-3-2-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 25, y: 51 },
+            { role: "CM",  x: 50, y: 51 },
+            { role: "CM",  x: 75, y: 51 },
+            { role: "CAM", x: 35, y: 32 },
+            { role: "CAM", x: 65, y: 32 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[2,3],[2,6],[3,4],[3,6],[4,7],[5,6],[5,8],[6,7],[6,8],[6,9],[7,9],[8,10],[9,10]]
+    },
+    "4-3-3 (Falso 9)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "CM",  x: 32, y: 45 },
+            { role: "CM",  x: 68, y: 45 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "CF",  x: 50, y: 29 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,7],[6,8],[6,10],[7,9],[7,10],[8,10],[9,10]]
+    },
+    "4-5-1 (Ataque)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CM",  x: 50, y: 51 },
+            { role: "LM",  x: 15, y: 36 },
+            { role: "RM",  x: 85, y: 36 },
+            { role: "CAM", x: 35, y: 32 },
+            { role: "CAM", x: 65, y: 32 },
+            { role: "ST",  x: 50, y: 12 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,6],[5,8],[5,9],[5,7],[6,8],[7,9],[8,10],[9,10]]
+    },
+    "4-1-4-1 (Ofensiva)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 50, y: 57 },
+            { role: "LM",  x: 15, y: 42 },
+            { role: "RM",  x: 85, y: 42 },
+            { role: "CAM", x: 35, y: 36 },
+            { role: "CAM", x: 65, y: 36 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,6],[2,3],[2,5],[3,4],[3,5],[4,7],[5,8],[5,9],[6,8],[7,9],[8,10],[9,10]]
+    },
+    "4-2-3-1 (Ataque)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LB",  x: 15, y: 71 },
+            { role: "CB",  x: 37, y: 73 },
+            { role: "CB",  x: 63, y: 73 },
+            { role: "RB",  x: 85, y: 71 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "CAM", x: 20, y: 36 },
+            { role: "CAM", x: 50, y: 32 },
+            { role: "CAM", x: 80, y: 36 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[1,2],[1,5],[1,7],[2,3],[2,5],[3,4],[3,6],[4,6],[4,9],[5,6],[5,7],[5,8],[6,8],[6,9],[7,8],[8,9],[8,10]]
+    },
+    "3-5-1-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 35, y: 57 },
+            { role: "CDM", x: 65, y: 57 },
+            { role: "LM",  x: 15, y: 45 },
+            { role: "RM",  x: 85, y: 45 },
+            { role: "CM",  x: 50, y: 46 },
+            { role: "CF",  x: 50, y: 29 },
+            { role: "ST",  x: 50, y: 12 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,6],[2,3],[2,4],[2,5],[3,5],[3,7],[4,5],[4,6],[4,8],[5,7],[5,8],[6,9],[7,9],[8,9],[9,10]]
+    },
+    "3-1-3-3": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 50, y: 56 },
+            { role: "CM",  x: 20, y: 42 },
+            { role: "CM",  x: 50, y: 42 },
+            { role: "CM",  x: 80, y: 42 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[2,3],[2,4],[3,4],[4,5],[4,6],[4,7],[5,6],[5,8],[6,7],[6,10],[7,9],[8,10],[9,10]]
+    },
+    "3-2-2-3": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 35, y: 54 },
+            { role: "CDM", x: 65, y: 54 },
+            { role: "CAM", x: 35, y: 36 },
+            { role: "CAM", x: 65, y: 36 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[2,3],[2,4],[2,5],[3,5],[4,5],[4,6],[5,7],[6,7],[6,8],[6,10],[7,9],[7,10],[8,10],[9,10]]
+    },
+    "3-3-1-3": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CM",  x: 20, y: 51 },
+            { role: "CM",  x: 50, y: 51 },
+            { role: "CM",  x: 80, y: 51 },
+            { role: "CAM", x: 50, y: 34 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,5],[3,5],[3,6],[4,5],[4,8],[5,6],[5,7],[6,9],[7,8],[7,9],[7,10],[8,10],[9,10]]
+    },
+    "3-2-4-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "LM",  x: 15, y: 38 },
+            { role: "RM",  x: 85, y: 38 },
+            { role: "CAM", x: 35, y: 34 },
+            { role: "CAM", x: 65, y: 34 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,6],[2,3],[2,4],[2,5],[3,5],[3,7],[4,5],[4,8],[5,9],[6,8],[7,9],[8,9],[8,10],[9,10]]
+    },
+    "3-2-3-2": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CDM", x: 35, y: 56 },
+            { role: "CDM", x: 65, y: 56 },
+            { role: "LM",  x: 15, y: 42 },
+            { role: "RM",  x: 85, y: 42 },
+            { role: "CAM", x: 50, y: 34 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,6],[2,3],[2,4],[2,5],[3,5],[3,7],[4,5],[4,8],[5,8],[6,8],[6,9],[7,8],[7,10],[8,9],[8,10],[9,10]]
+    },
+    "3-4-3 (Plano)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "LM",  x: 15, y: 46 },
+            { role: "CM",  x: 35, y: 48 },
+            { role: "CM",  x: 65, y: 48 },
+            { role: "RM",  x: 85, y: 46 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[1,5],[2,3],[2,5],[2,6],[3,6],[3,7],[4,5],[4,8],[5,6],[5,10],[6,7],[6,10],[7,9],[8,10],[9,10]]
+    },
+    "5-2-2-1": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "LWB", x: 12, y: 60 },
+            { role: "CB",  x: 30, y: 73 },
+            { role: "CB",  x: 50, y: 75 },
+            { role: "CB",  x: 70, y: 73 },
+            { role: "RWB", x: 88, y: 60 },
+            { role: "CM",  x: 35, y: 48 },
+            { role: "CM",  x: 65, y: 48 },
+            { role: "CAM", x: 30, y: 32 },
+            { role: "CAM", x: 70, y: 32 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,2],[0,3],[0,4],[1,2],[1,6],[2,3],[2,6],[3,4],[4,5],[4,7],[5,7],[6,7],[6,8],[7,9],[8,10],[9,10]]
+    },
+    "3-3-4": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 25, y: 73 },
+            { role: "CB",  x: 50, y: 70 },
+            { role: "CB",  x: 75, y: 73 },
+            { role: "CM",  x: 25, y: 46 },
+            { role: "CM",  x: 50, y: 48 },
+            { role: "CM",  x: 75, y: 46 },
+            { role: "LW",  x: 15, y: 21 },
+            { role: "ST",  x: 38, y: 17 },
+            { role: "ST",  x: 62, y: 17 },
+            { role: "RW",  x: 85, y: 21 }
+        ],
+        links: [[0,1],[0,2],[0,3],[1,2],[1,4],[2,3],[2,5],[3,6],[4,5],[5,6],[4,7],[4,8],[5,8],[5,9],[6,9],[6,10],[7,8],[8,9],[9,10]]
+    },
+    "2-5-3 (Locura)": {
+        positions: [
+            { role: "GK",  x: 50, y: 90 },
+            { role: "CB",  x: 35, y: 73 },
+            { role: "CB",  x: 65, y: 73 },
+            { role: "CDM", x: 35, y: 57 },
+            { role: "CDM", x: 65, y: 57 },
+            { role: "CM",  x: 50, y: 46 },
+            { role: "CAM", x: 30, y: 34 },
+            { role: "CAM", x: 70, y: 34 },
+            { role: "LW",  x: 18, y: 21 },
+            { role: "RW",  x: 82, y: 21 },
+            { role: "ST",  x: 50, y: 15 }
+        ],
+        links: [[0,1],[0,2],[1,2],[1,3],[2,4],[3,5],[4,5],[3,6],[4,7],[5,6],[5,7],[6,8],[7,9],[8,10],[9,10],[6,10],[7,10]]
+    }
+};
+
+// ==========================================
+// POSITION COMPATIBILITY MAP
+// Maps primary positions to their natural secondary positions
+// ==========================================
+const POSITION_COMPAT = {
+    "GK":  [],
+    "CB":  ["CDM", "RB", "LB"],
+    "LB":  ["LM", "CB", "LW"],
+    "RB":  ["RM", "CB", "RW"],
+    "CDM": ["CM", "CB"],
+    "CM":  ["CDM", "CAM", "LM", "RM"],
+    "CAM": ["CM", "ST", "LW", "RW", "LM", "RM"],
+    "LM":  ["LW", "LB", "CM"],
+    "RM":  ["RW", "RB", "CM"],
+    "LW":  ["LM", "ST", "CAM"],
+    "RW":  ["RM", "ST", "CAM"],
+    "ST":  ["CAM", "LW", "RW"]
+};
+
+// ==========================================
+// PLAYER-SPECIFIC OVERRIDES for extra positions
+// Maps player name patterns to extra alt positions
+// ==========================================
+const PLAYER_ALT_OVERRIDES = {
+    "TSUBASA":     ["ST", "CM", "CDM", "LM", "RM", "LW", "RW", "CAM"],
+    "KOJIRO":      ["CAM", "LW", "RW", "ST"],
+    "PIERRE":      ["ST", "CM", "LW", "RW", "CAM"],
+    "NAPOLEON":    ["CAM", "LW", "RW", "ST"],
+    "LEVIN":       ["CAM", "LW", "RW", "RM", "ST"],
+    "GENTILE":     ["CDM", "CM", "RB", "LB", "CB"],
+    "MICHAEL":     ["CM", "CAM", "CDM", "ST"],
+    "ZEDANE":      ["CM", "ST", "LW", "RW", "CAM"],
+    "MBAPPA":      ["LW", "RW", "CAM", "ST"],
+    "LUIKAL":      ["LW", "RW", "CAM", "ST"],
+    "STIJN":       ["CM", "CB", "CDM", "CAM"],
+    "B. KLUIVOORT":["ST", "CM", "LW", "RW", "CAM"],
+    "S. KLUIVOORT":["CM", "CB", "CDM"],
+    "DUCHAMP":     ["CM", "CB", "CDM"],
+    "HAAS":        ["CF", "ST", "CAM", "LW", "RW"],
+    "CHRISTIANSEN":["CF", "ST", "CAM", "LW", "RW"],
+    "KRAUS":       ["CF", "ST", "CAM", "LW", "RW", "CM"],
+    "DAVI":        ["CDM", "CM", "CB", "LM", "LWB"],
+    "KAISER":      ["CF", "ST", "CAM", "LW", "RW"],
+    "KLISMANN":    ["CF", "ST", "CAM", "LW", "RW", "CM", "CDM"],
+    "DICK":        ["CB", "CDM", "RB", "LB", "LWB", "RWB"],
+    "DOLEMAN":     ["GK"],
+    "CALLUSIAS":   ["GK"],
+    "GENZO":       ["GK"],
+    "GINO":        ["GK"],
+    "WAKASHIMAZU": ["GK", "ST"], /* Wakashimazu played as ST in manga! */
+    "DELPI":       ["CF", "ST", "CAM", "LW", "RW"],
+    "INZARS":      ["CF", "ST", "LW", "RW"],
+    "YUKIMIYA":    ["LW", "RW", "LM", "RM", "LWB", "RWB", "ST", "CAM"],
+    "KARASU":      ["CM", "CAM", "CDM", "CB", "LM", "RM"],
+    "NAGI":        ["CF", "ST", "CAM", "LW", "RW", "LM", "RM"],
+    "KIYORA":      ["LM", "RM", "LWB", "RWB", "LB", "RB", "CM", "LW", "RW"],
+    "HIIRAGI":     ["CM", "CAM", "CDM", "LM", "RM", "CB"],
+    "HIMIZU":      ["CM", "CAM", "CDM", "LM", "RM"],
+    "HIORI":       ["RB", "LB", "CM", "CAM", "RW", "LW", "RM", "LM"],
+    "NERU":        ["RB", "LB", "CB", "RWB", "LWB", "CDM"],
+    "CHO":         ["CB", "CDM", "RB", "LB", "CM"],
+    "DARAI":       ["CB", "LB", "RB", "LWB", "RWB", "CDM"],
+    "ENDOJI":      ["ST", "LW", "RW", "CAM", "CF"],
+    "HAIJI":       ["CM", "CDM", "CAM", "LM", "RM"],
+    "HAYATE":      ["CDM", "CM", "CB", "LB", "RB"],
+    "KITSUNEZATO": ["CAM", "LW", "RW", "CM", "LM", "RM"],
+    "NIO":         ["CB", "CDM", "RB", "LB"],
+    "TSUNZAKI":    ["CB", "RB", "LB", "RWB", "LWB"],
+    "WAKATSUKI":   ["ST", "LW", "RW", "CF"],
+    "YUZU":        ["CM", "CAM", "LM", "RM", "CDM"],
+    "URABE":       ["CDM", "CM", "CB", "RB", "LB"],
+    "SORIMACHI":   ["CF", "ST", "CAM", "LW", "RW"],
+    "SANO":        ["CAM", "LW", "RW", "ST", "LM", "RM"],
+    "SAWADA":      ["CAM", "CM", "CDM", "LM", "RM"],
+    "TAKASUGI":    ["CB", "RB", "LB", "CDM"],
+    "IZAWA":       ["CAM", "CM", "CDM", "CB", "LM", "RM"],
+    "KISHIDA":     ["CB", "CDM", "CM", "LB", "RB"],
+    "KISUGI":      ["CF", "ST", "RW", "LW"],
+    "TAKI":        ["RW", "LW", "RM", "LM", "ST"],
+    "CANNAVARU":   ["CB", "RB", "LB", "CDM"],
+    "IULIANO":     ["CB", "CDM", "RB", "LB"],
+    "THORAM":      ["CB", "RB", "LB", "CDM"],
+    "GONZALEZ":    ["CB", "CDM", "CM", "RB", "LB"],
+    "GRANDIOS":    ["CM", "CDM", "CAM", "LM", "RM"],
+    "MICHAEL":     ["CM", "CDM", "CAM", "ST", "CF"],
+    "PAYOL":       ["CB", "RB", "LB", "CDM"],
+    "RAMS":        ["CB", "RB", "LB", "CDM", "CM"],
+    "RAPHAEL":     ["CF", "ST", "CAM", "CM", "LW", "RW"],
+    "LENISTA":     ["CAM", "CM", "LW", "RW", "LM", "RM"],
+    "XAVII":       ["CM", "CDM", "CAM"],
+    "LESENBLINK":  ["LW", "RW", "LM", "RM", "ST", "CF"],
+    "LUIKAL":      ["CF", "ST", "CAM", "LW", "RW"]
+};
+
+// ==========================================
+// STATE (MULTI-SQUAD)
+// ==========================================
+let squads = [];
+let currentSquadIndex = 0;
+
+// References to current squad's data
+let currentFormation = "4-3-3";
+let squad = new Array(11).fill(null); // Pitch
+let benchSquad = new Array(8).fill(null); // Bench
+let currentCoach = null;
+
+function initSquads() {
+    squads = [];
+    for (let i = 0; i < 8; i++) {
+        squads.push({
+            name: `Squad ${i + 1}`,
+            formation: "4-3-3",
+            pitch: new Array(11).fill(null),
+            bench: new Array(8).fill(null),
+            coach: null
+        });
+    }
+}
+
+function loadCurrentSquadState() {
+    const s = squads[currentSquadIndex];
+    currentFormation = s.formation;
+    squad = s.pitch;
+    benchSquad = s.bench;
+    currentCoach = s.coach;
+}
+
+function saveCurrentSquadState() {
+    if(!squads[currentSquadIndex]) return;
+    const s = squads[currentSquadIndex];
+    s.formation = currentFormation;
+    s.pitch = squad;
+    s.bench = benchSquad;
+    s.coach = currentCoach;
+}
+
+function loadSquad() {
+    const saved = localStorage.getItem('animeSquadsData');
+    if (saved) {
+        try {
+            squads = JSON.parse(saved);
+        } catch(e) {
+            initSquads();
+        }
+    } else {
+        initSquads();
+    }
+    
+    if (!squads || !squads[currentSquadIndex]) {
+        initSquads();
+    }
+    
+    loadCurrentSquadState();
+}
+
+function saveSquad() {
+    saveCurrentSquadState();
+    localStorage.setItem('animeSquadsData', JSON.stringify(squads));
+}
+
+// ==========================================
+// INITIALIZATION
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    loadSquad();
+    renderAll();
+    setupFormationSelector();
+    setupSquadSelector();
+    
+});
+
+function renderAll() {
+    renderFormation(); // renders pitch
+    renderBench();
+    renderCoach();
+    updateSquadUI();
+}
+
+function updateSquadUI() {
+    const nameInput = document.getElementById('squad-name-input');
+    if (nameInput && squads[currentSquadIndex]) {
+        nameInput.value = squads[currentSquadIndex].name;
+    }
+}
+
+function setupSquadSelector() {
+    const leftBtn = document.getElementById('squad-left');
+    const rightBtn = document.getElementById('squad-right');
+    const nameInput = document.getElementById('squad-name-input');
+
+    if (leftBtn) {
+        leftBtn.addEventListener('click', () => {
+            saveCurrentSquadState();
+            currentSquadIndex = (currentSquadIndex - 1 + 8) % 8;
+            loadCurrentSquadState();
+            renderAll();
+            saveSquad();
+        });
+    }
+
+    if (rightBtn) {
+        rightBtn.addEventListener('click', () => {
+            saveCurrentSquadState();
+            currentSquadIndex = (currentSquadIndex + 1) % 8;
+            loadCurrentSquadState();
+            renderAll();
+            saveSquad();
+        });
+    }
+
+    if (nameInput) {
+        nameInput.addEventListener('change', (e) => {
+            if(squads[currentSquadIndex]) {
+                squads[currentSquadIndex].name = e.target.value;
+                saveSquad();
+            }
+        });
+    }
+}
+
+// ==========================================
+// RENDERING
+// ==========================================
+
+function renderBench() {
+    const benchContainer = document.getElementById('bench');
+    if (!benchContainer) return;
+    
+    let html = '';
+    for(let i=0; i<8; i++) {
+        const card = benchSquad[i];
+        if (card) {
+            html += `<div class="player-slot filled" style="position:relative; transform:none; left:auto; top:auto;">` + renderFilledSlot(card, 'ANY', true, i, 'bench') + `</div>`;
+        } else {
+            html += `
+                <div class="player-slot" style="position:relative; transform:none; left:auto; top:auto;" onclick="openPlayerModal(${i}, 'bench')">
+                    <div class="slot-empty">
+                        <span class="slot-add">+</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    benchContainer.innerHTML = html;
+    
+    // Attach drag and drop events to bench slots
+    const benchSlots = benchContainer.querySelectorAll('.player-slot');
+    benchSlots.forEach((slot, i) => {
+        attachDragEvents(slot, i, 'bench');
+    });
+}
+
+function renderCoach() {
+    const coachContainer = document.getElementById('coach-slot');
+    if (!coachContainer) return;
+    if (currentCoach) {
+        coachContainer.innerHTML = renderFilledSlot(currentCoach, 'COACH', true, 0, 'coach');
+        coachContainer.classList.add('filled');
+    } else {
+        coachContainer.innerHTML = `
+            <div class="slot-empty" style="width: 115px; height: 140px; font-size: 1.8rem; margin: 0 auto;">
+                <span class="slot-add">+</span>
+            </div>
+        `;
+        coachContainer.classList.remove('filled');
+    }
+}
+
+// Modificamos renderFormation para que use la misma estructura
+function renderFormation() {
+    const pitch = document.getElementById('pitch');
+    if (!pitch) return;
+
+    // Preserve the SVG and markings, only update slots
+    const svg = document.getElementById('chemistry-lines');
+    const markings = pitch.querySelector('.pitch-markings');
+    
+    pitch.innerHTML = '';
+    if (markings) pitch.appendChild(markings);
+    if (svg) pitch.appendChild(svg);
+
+    const formation = FORMATIONS[currentFormation];
+    if (!formation) return;
+
+    for (let i = 0; i < 11; i++) {
+        const pos = formation.positions[i];
+        const slot = document.createElement('div');
+        slot.className = 'player-slot';
+        slot.id = `slot-${i}`;
+        slot.style.left = `${pos.x}%`;
+        slot.style.top = `${pos.y}%`;
+
+                if (squad[i]) {
+            slot.classList.add('filled');
+            slot.innerHTML = renderFilledSlot(squad[i], pos.role, false, i, 'pitch');
+        } else {
+            slot.innerHTML = `
+                <div class="slot-empty" onclick="openPlayerModal(${i}, 'pitch')">
+                    <span class="slot-role">${pos.role}</span>
+                    <span class="slot-add">+</span>
+                </div>
+            `;
+        }
+        attachDragEvents(slot, i, 'pitch');
+        pitch.appendChild(slot);
+    }
+
+    if (typeof drawChemistryLines === 'function') drawChemistryLines();
+    if (typeof updateStats === 'function') updateStats();
+    saveSquad();
+}
+
+function renderFilledSlot(card, requiredRole, isMini = false, index = 0, target = 'pitch') {
+    const posStatus = getPositionStatus(card, requiredRole);
+    let posClass = 'pos-wrong';
+    if(requiredRole === 'ANY' || requiredRole === 'COACH') posClass = 'pos-exact'; 
+    else if (posStatus === 'exact') posClass = 'pos-exact';
+    else if (posStatus === 'secondary') posClass = 'pos-secondary';
+
+    const teamSrc = (card.teamIcon && card.teamIcon.startsWith('teams/')) ? `assets/${card.teamIcon}` : (card.teamIcon || '');
+
+    const frame = getCardFrame(card);
+    let bgHTML = '';
+    let overlayHTML = '';
+    if (frame.overlay) {
+        bgHTML = `<div class="fc-custom-bg" style="background-image: url('${frame.bg}');"></div>`;
+        overlayHTML = `<div class="fc-frame-overlay" style="background-image: url('${frame.overlay}');"></div>`;
+    }
+    const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
+
+    return `
+        <div class="slot-card" ${cardBg} onclick="openPlayerModal(${index}, '${target}')">
+            ${bgHTML}
+            ${overlayHTML}
+            <div class="fc-info">
+                <span class="fc-rating">${card.rating}</span>
+                <span class="fc-position ${posClass}">${card.position}</span>
+                <img src="${card.nationFlag}" class="fc-flag" alt="Flag">
+                <img src="${teamSrc}" class="fc-team" alt="Team">
+            </div>
+            <img src="${card.image}" class="fc-char" alt="${card.name}">
+            <div class="fc-name">${card.name}</div>
+        </div>
+        <div class="slot-position-label ${posClass}">${requiredRole}</div>
+        <button class="slot-delete-btn" onclick="event.stopPropagation(); removePlayer(${index}, '${target}')">🗑️</button>
+    `;
+}
+
+function getCardFrame(card) {
+    if (card.background && card.background.includes('Cartas/')) {
+        return { bg: card.background, overlay: null };
+    }
+    if (card.background && !card.background.includes('Cartas/')) {
+        return { bg: card.background, overlay: 'assets/Cartas/Contorno.png' };
+    }
+    if (card.rarity && card.rarity.includes('Especial')) {
+        if (card.teamIcon) {
+            const teamName = card.teamIcon.split('/').pop().replace('.png', '');
+            const specialTemplates = ['Arsenal', 'Bastard', 'Naranja', 'PXG', 'Real', 'Suecia', 'Ubers'];
+            if (specialTemplates.includes(teamName)) {
+                return { bg: `assets/Cartas/${teamName}.png`, overlay: null };
+            }
+        }
+        return { bg: `assets/Cartas/Naranja.png`, overlay: null };
+    }
+    return { bg: 'assets/Cartas/Oro.png', overlay: null };
+}
+
+
+function getPositionStatus(card, requiredRole) {
+    if (!card) return 'wrong';
+    if (card.position === requiredRole) return 'exact';
+    
+    if (typeof POSITION_COMPAT !== 'undefined' && POSITION_COMPAT[card.position]) {
+        if (POSITION_COMPAT[card.position].includes(requiredRole)) return 'secondary';
+    }
+    
+    if (card.secondaryPositions && card.secondaryPositions.includes(requiredRole)) return 'secondary';
+    
+    return 'wrong';
+}
+
+function updateStats() {
+    let rating = calcTeamRating();
+    let chem = calcTotalChemistry();
+    let stars = getRatingStars(rating);
+
+    const rn = document.getElementById('rating-num');
+    const rs = document.getElementById('rating-stars');
+    const cn = document.getElementById('chem-num');
+    const cf = document.getElementById('chem-fill');
+    const display = document.getElementById('form-name-display');
+    if (display) display.textContent = currentFormation;
+    if (rn) rn.textContent = rating;
+    if (rs) rs.textContent = stars;
+    if (cn) cn.textContent = chem;
+    if (cf) cf.style.width = Math.min(chem, 100) + '%';
+    
+    updateChemistryBadges();
+}
+
+function updateChemistryBadges() {
+    for (let i = 0; i < 11; i++) {
+        const slot = document.getElementById(`slot-${i}`);
+        if (!slot) continue;
+        
+        const cardEl = slot.querySelector('.slot-card');
+        if (!squad[i] || !cardEl) {
+            const existing = slot.querySelector('.slot-chem-badge');
+            if (existing) existing.remove();
+            continue;
+        }
+        
+        let badge = cardEl.querySelector('.slot-chem-badge');
+        if (!badge) {
+            badge = document.createElement('div');
+            badge.className = 'slot-chem-badge';
+            cardEl.appendChild(badge);
+        }
+        
+        const chem = calcPlayerChemistry(i);
+        badge.innerHTML = `🧪 ${chem}`;
+        badge.className = 'slot-chem-badge';
+        if (chem >= 7) badge.classList.add('chem-high');
+        else if (chem >= 4) badge.classList.add('chem-mid');
+        else badge.classList.add('chem-low');
+    }
+}
+
+function calcTeamRating() {
+    let total = 0;
+    let count = 0;
+    for (let i = 0; i < 11; i++) {
+        if (squad[i]) {
+            total += squad[i].rating;
+            count++;
+        }
+    }
+    return count === 0 ? 0 : Math.round(total / count);
+}
+
+function getRatingStars(rating) {
+    if (rating >= 90) return "★★★★★";
+    if (rating >= 85) return "★★★★☆";
+    if (rating >= 80) return "★★★☆☆";
+    if (rating >= 70) return "★★☆☆☆";
+    if (rating > 0) return "★☆☆☆☆";
+    return "☆☆☆☆☆";
+}
+
+function calcTotalChemistry() {
+    let total = 0;
+    for (let i = 0; i < 11; i++) {
+        total += calcPlayerChemistry(i);
+    }
+    return Math.min(100, Math.floor(total * 1.5));
+}
+
+function calcPlayerChemistry(index) {
+    const card = squad[index];
+    if (!card) return 0;
+    
+    const formation = FORMATIONS[currentFormation];
+    if(!formation) return 0;
+    
+    const requiredRole = formation.positions[index].role;
+    let posStatus = getPositionStatus(card, requiredRole);
+    if(requiredRole === 'ANY' || requiredRole === 'COACH') posStatus = 'exact';
+    
+    let linkPoints = 0;
+    let totalLinks = 0;
+    
+    formation.links.forEach(link => {
+        if (link[0] === index) {
+            totalLinks++;
+            if (squad[link[1]]) linkPoints += calcLinkChemistry(card, squad[link[1]]);
+        }
+        if (link[1] === index) {
+            totalLinks++;
+            if (squad[link[0]]) linkPoints += calcLinkChemistry(card, squad[link[0]]);
+        }
+    });
+    
+    // Regla del "Equilibrio de Enlaces":
+    // Empieza en 10. Cada punto de enlace que falte para cubrir las líneas resta 1 punto.
+    let missingLinks = Math.max(0, totalLinks - linkPoints);
+    let chem = 10 - missingLinks;
+    
+    // El semáforo (Topes por posición):
+    if (posStatus === 'secondary') {
+        if (chem > 9) chem = 9; // "solo te penalice un punto de quimica"
+    } else if (posStatus === 'wrong') {
+        if (chem > 4) chem = 4; // Penalización mayor para rojo (cae drásticamente)
+    }
+    
+    if (chem < 0) chem = 0;
+    return chem;
+}
+
+function calcLinkChemistry(cardA, cardB) {
+    let points = 0;
+    if (cardA.league === cardB.league) points++;
+    if (cardA.teamIcon === cardB.teamIcon) points++;
+    if (cardA.nationFlag === cardB.nationFlag) points++;
+    return points;
+}
+
+function drawChemistryLines() {
+    const svg = document.getElementById('chemistry-lines');
+    if (!svg) return;
+    svg.innerHTML = '';
+    const formation = FORMATIONS[currentFormation];
+    if (!formation || !formation.links) return;
+
+    formation.links.forEach(link => {
+        const p1 = formation.positions[link[0]];
+        const p2 = formation.positions[link[1]];
+        const cardA = squad[link[0]];
+        const cardB = squad[link[1]];
+
+        if (!cardA || !cardB) return;
+        const points = calcLinkChemistry(cardA, cardB);
+        let strokeColor = 'rgba(255,255,255,0.2)';
+        if (points >= 2) strokeColor = '#00ff00'; // 2 or 3 is Green (Strong/Perfect Link)
+        else if (points === 1) strokeColor = '#ffaa00'; // 1 is Orange/Yellow (Weak Link)
+        else strokeColor = '#ff0000'; // 0 is Red (Dead Link)
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', p1.x);
+        line.setAttribute('y1', p1.y);
+        line.setAttribute('x2', p2.x);
+        line.setAttribute('y2', p2.y);
+        line.setAttribute('stroke', strokeColor);
+        line.setAttribute('stroke-width', '0.6');
+        svg.appendChild(line);
+    });
+}
+
+
+// ==========================================
+// DRAG AND DROP
+// ==========================================
+let draggedSlot = null;
+
+function handleDragStart(e) {
+    if (!this.classList.contains('filled')) {
+        e.preventDefault();
+        return;
+    }
+    draggedSlot = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+    setTimeout(() => this.classList.add('dragging'), 0);
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    return false;
+}
+
+function handleDragEnter(e) {
+    this.classList.add('drag-over');
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('drag-over');
+}
+
+function handleDrop(e) {
+    e.stopPropagation();
+    this.classList.remove('drag-over');
+    
+    if (draggedSlot && draggedSlot !== this) {
+        const sourceIndex = parseInt(draggedSlot.dataset.index);
+        const sourceTarget = draggedSlot.dataset.target;
+        const destIndex = parseInt(this.dataset.index);
+        const destTarget = this.dataset.target;
+        
+        let sourceArr = sourceTarget === 'pitch' ? squad : (sourceTarget === 'bench' ? benchSquad : [currentCoach]);
+        let destArr = destTarget === 'pitch' ? squad : (destTarget === 'bench' ? benchSquad : [currentCoach]);
+        
+        // Swap
+        const temp = sourceArr[sourceIndex];
+        sourceArr[sourceIndex] = destArr[destIndex];
+        destArr[destIndex] = temp;
+        
+        renderAll();
+    }
+    return false;
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('dragging');
+    document.querySelectorAll('.player-slot, .bench-slot').forEach(el => el.classList.remove('drag-over'));
+}
+
+function attachDragEvents(slot, index, target) {
+    slot.draggable = true;
+    slot.dataset.index = index;
+    slot.dataset.target = target;
+    slot.addEventListener('dragstart', handleDragStart);
+    slot.addEventListener('dragenter', handleDragEnter);
+    slot.addEventListener('dragover', handleDragOver);
+    slot.addEventListener('dragleave', handleDragLeave);
+    slot.addEventListener('drop', handleDrop);
+    slot.addEventListener('dragend', handleDragEnd);
+}
+
+
+// ==========================================
+// MODAL LOGIC & FILTERING
+// ==========================================
+let playerModalPage = 0;
+const PLAYERS_PER_PAGE = 10;
+let selectedSlotIndex = null;
+let selectedTarget = null;
+
+function openPlayerModal(index, target) {
+    selectedSlotIndex = index;
+    selectedTarget = target;
+    playerModalPage = 0;
+    const modal = document.getElementById('player-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        renderModalCards();
+    }
+}
+
+function closePlayerModal() {
+    selectedSlotIndex = null;
+    selectedTarget = null;
+    const modal = document.getElementById('player-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
+function removePlayer(index, target) {
+    if (target === 'pitch') {
+        squad[index] = null;
+        renderFormation();
+    } else if (target === 'bench') {
+        benchSquad[index] = null;
+        renderBench();
+    } else if (target === 'coach') {
+        currentCoach = null;
+        renderCoach();
+    }
+    saveSquad();
+    updateStats();
+}
+
+function renderModalCards() {
+    const grid = document.getElementById('modal-grid');
+    if (!grid) return;
+
+    const searchTerm = document.getElementById('modal-search')?.value.toLowerCase() || '';
+    const filterPos = document.getElementById('modal-filter-pos')?.value || '';
+    const filterLeague = document.getElementById('modal-filter-league')?.value || '';
+    const filterNation = document.getElementById('modal-filter-nation')?.value || '';
+    const sortMode = document.getElementById('modal-sort')?.value || 'rating';
+
+    let currentOccupantName = null;
+    if (selectedTarget === 'pitch' && selectedSlotIndex !== null && squad[selectedSlotIndex]) {
+        currentOccupantName = squad[selectedSlotIndex].name;
+    } else if (selectedTarget === 'bench' && selectedSlotIndex !== null && benchSquad[selectedSlotIndex]) {
+        currentOccupantName = benchSquad[selectedSlotIndex].name;
+    }
+
+    const activeNames = new Set();
+    if(squad) squad.forEach(c => { if(c) activeNames.add(c.name); });
+    if(benchSquad) benchSquad.forEach(c => { if(c) activeNames.add(c.name); });
+
+    // 1. FILTERING
+    let filtered = cardsDB.filter(card => {
+        if (activeNames.has(card.name) && card.name !== currentOccupantName) return false;
+        if (searchTerm && !card.name.toLowerCase().includes(searchTerm) && !(card.version && card.version.toLowerCase().includes(searchTerm))) return false;
+        if (filterPos && card.position !== filterPos) return false;
+        if (filterLeague && card.league !== filterLeague) return false;
+        if (filterNation && card.nationFlag !== filterNation) return false;
+        return true;
+    });
+
+    // 2. SORTING
+    if (sortMode === 'rating') {
+        let reqRole = null;
+        if (selectedTarget === 'pitch' && selectedSlotIndex !== null) {
+            const form = FORMATIONS[currentFormation];
+            if (form && form.positions[selectedSlotIndex]) {
+                reqRole = form.positions[selectedSlotIndex].role;
+            }
+        }
+        filtered.sort((a, b) => {
+            if (reqRole) {
+                const statA = getPositionStatus(a, reqRole);
+                const statB = getPositionStatus(b, reqRole);
+                const scoreA = statA === 'exact' ? 3 : statA === 'secondary' ? 2 : 1;
+                const scoreB = statB === 'exact' ? 3 : statB === 'secondary' ? 2 : 1;
+                if (scoreA !== scoreB) return scoreB - scoreA;
+            }
+            return b.rating - a.rating;
+        });
+    } else if (sortMode === 'chem') {
+        if (selectedTarget === 'pitch' && selectedSlotIndex !== null) {
+            filtered.sort((a, b) => {
+                const orig = squad[selectedSlotIndex];
+                
+                squad[selectedSlotIndex] = b;
+                const chemB = calcPlayerChemistry(selectedSlotIndex);
+                
+                squad[selectedSlotIndex] = a;
+                const chemA = calcPlayerChemistry(selectedSlotIndex);
+                
+                squad[selectedSlotIndex] = orig;
+                
+                if (chemA !== chemB) return chemB - chemA;
+                if (b.rating !== a.rating) return b.rating - a.rating;
+                if (a.position < b.position) return -1;
+                if (a.position > b.position) return 1;
+                return 0;
+            });
+        } else {
+            filtered.sort((a, b) => {
+                if (b.rating !== a.rating) return b.rating - a.rating;
+                if (a.position < b.position) return -1;
+                if (a.position > b.position) return 1;
+                return 0;
+            });
+        }
+    }
+
+    const totalPages = Math.ceil(filtered.length / PLAYERS_PER_PAGE);
+    if (playerModalPage >= totalPages) playerModalPage = Math.max(0, totalPages - 1);
+    
+    const pageInfo = document.getElementById('player-page-info');
+    if (pageInfo) pageInfo.textContent = `Pág ${playerModalPage + 1}`;
+
+    const startIdx = playerModalPage * PLAYERS_PER_PAGE;
+    const cardsToRender = filtered.slice(startIdx, startIdx + PLAYERS_PER_PAGE);
+
+    if (cardsToRender.length === 0) {
+        grid.innerHTML = '<p style="color:#aaa; text-align:center; width:100%;">No se encontraron cartas.</p>';
+        return;
+    }
+
+    let html = cardsToRender.map(card => {
+        const teamSrc = (card.teamIcon && card.teamIcon.startsWith('teams/')) ? `assets/${card.teamIcon}` : (card.teamIcon || '');
+        const frame = getCardFrame(card);
+        let bgHTML = ''; let overlayHTML = '';
+        if (frame.overlay) {
+            bgHTML = `<div class="fc-custom-bg" style="background-image: url('${frame.bg}');"></div>`;
+            overlayHTML = `<div class="fc-frame-overlay" style="background-image: url('${frame.overlay}');"></div>`;
+        }
+        const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
+
+        return `
+            <div class="modal-card" onclick="selectPlayer('${card.id}')">
+                <div class="slot-card" ${cardBg}>
+                    ${bgHTML}
+                    ${overlayHTML}
+                    <div class="fc-info">
+                        <span class="fc-rating">${card.rating}</span>
+                        <span class="fc-position">${card.position}</span>
+                        <img src="${card.nationFlag}" class="fc-flag" alt="Flag">
+                        <img src="${teamSrc}" class="fc-team" alt="Team">
+                    </div>
+                    <img src="${card.image}" class="fc-char" alt="${card.name}">
+                    <div class="fc-name">${card.name}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    grid.innerHTML = html;
+}
+
+function selectPlayer(cardId) {
+    if (selectedSlotIndex === null && selectedTarget !== 'coach') return;
+
+    const card = cardsDB.find(c => c.id === cardId);
+    if (!card) return;
+
+    // Duplicate Check
+    const isDuplicate = squad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'pitch' || idx !== selectedSlotIndex)) ||
+                        benchSquad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'bench' || idx !== selectedSlotIndex));
+                        
+    if (isDuplicate) {
+        alert('¡No puedes tener dos cartas del mismo jugador en la plantilla o banquillo!');
+        return;
+    }
+
+    if (selectedTarget === 'pitch') {
+        squad[selectedSlotIndex] = card;
+        renderFormation();
+    } else if (selectedTarget === 'bench') {
+        benchSquad[selectedSlotIndex] = card;
+        renderBench();
+    } else if (selectedTarget === 'coach') {
+        currentCoach = card;
+        renderCoach();
+    }
+    
+    saveSquad();
+    updateStats();
+    closePlayerModal();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('modal-search')?.addEventListener('input', () => { playerModalPage = 0; renderModalCards(); });
+    document.getElementById('modal-filter-pos')?.addEventListener('change', () => { playerModalPage = 0; renderModalCards(); });
+    document.getElementById('modal-filter-league')?.addEventListener('change', () => { playerModalPage = 0; renderModalCards(); });
+    document.getElementById('modal-sort')?.addEventListener('change', () => { playerModalPage = 0; renderModalCards(); });
+    document.getElementById('modal-close')?.addEventListener('click', closePlayerModal);
+    
+    document.getElementById('player-prev')?.addEventListener('click', () => {
+        if(playerModalPage > 0) { playerModalPage--; renderModalCards(); }
+    });
+    document.getElementById('player-next')?.addEventListener('click', () => {
+        playerModalPage++; renderModalCards();
+    });
+
+    // Populate dropdowns
+    const posSet = new Set();
+    const leagueSet = new Set();
+    cardsDB.forEach(c => {
+        if (c.position) posSet.add(c.position);
+        if (c.league) leagueSet.add(c.league);
+    });
+    
+    const posSelect = document.getElementById('modal-filter-pos');
+    if (posSelect) {
+        [...posSet].sort().forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            posSelect.appendChild(opt);
+        });
+    }
+    const leagueSelect = document.getElementById('modal-filter-league');
+    if (leagueSelect) {
+        [...leagueSet].sort().forEach(l => {
+            const opt = document.createElement('option');
+            opt.value = l; opt.textContent = l;
+            leagueSelect.appendChild(opt);
+        });
+    }
+});
+
+let formModalPage = 0;
+const FORMS_PER_PAGE = 9;
+
+function renderFormationModal() {
+    const list = document.getElementById('formation-list');
+    const info = document.getElementById('form-modal-info');
+    if (!list) return;
+
+    const formNames = Object.keys(FORMATIONS);
+    const totalPages = Math.ceil(formNames.length / FORMS_PER_PAGE);
+    
+    if (formModalPage >= totalPages) formModalPage = Math.max(0, totalPages - 1);
+    if (info) info.textContent = `${formModalPage + 1} / ${totalPages}`;
+
+    const startIdx = formModalPage * FORMS_PER_PAGE;
+    const formsToRender = formNames.slice(startIdx, startIdx + FORMS_PER_PAGE);
+
+    list.innerHTML = '';
+    formsToRender.forEach(fName => {
+        const div = document.createElement('div');
+        div.className = 'formation-item';
+        if (fName === currentFormation) div.classList.add('active');
+
+        const previewDiv = document.createElement('div');
+        previewDiv.className = 'formation-preview';
+        
+        const formationData = FORMATIONS[fName];
+        if (formationData && formationData.positions) {
+            formationData.positions.forEach(pos => {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.style.left = `${pos.x}%`;
+                dot.style.top = `${pos.y}%`;
+                previewDiv.appendChild(dot);
+            });
+        }
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'formation-item-name';
+        nameDiv.textContent = fName;
+
+        div.appendChild(previewDiv);
+        div.appendChild(nameDiv);
+
+        div.onclick = () => {
+            currentFormation = fName;
+            renderFormation();
+            updateStats();
+            drawChemistryLines();
+            document.getElementById('formation-modal').classList.add('hidden');
+        };
+        list.appendChild(div);
+    });
+}
+
+function setupFormationSelector() {
+    const formNames = Object.keys(FORMATIONS);
+    let currentIndex = formNames.indexOf(currentFormation);
+    if(currentIndex===-1) currentIndex=0;
+    
+    const leftBtn = document.getElementById('form-left');
+    const rightBtn = document.getElementById('form-right');
+    const display = document.getElementById('form-name-display');
+    const modal = document.getElementById('formation-modal');
+    const modalPrev = document.getElementById('form-modal-prev');
+    const modalNext = document.getElementById('form-modal-next');
+    
+    if (display && modal) {
+        // Prevent default propagation so it doesn't immediately close
+        display.parentElement.addEventListener('click', (e) => {
+            e.stopPropagation();
+            modal.classList.remove('hidden');
+            formModalPage = 0;
+            renderFormationModal();
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!modal.classList.contains('hidden') && !modal.querySelector('.formation-modal-content').contains(e.target)) {
+                modal.classList.add('hidden');
+            }
+        });
+    }
+
+    if (modalPrev) {
+        modalPrev.addEventListener('click', () => {
+            if (formModalPage > 0) {
+                formModalPage--;
+                renderFormationModal();
+            }
+        });
+    }
+
+    if (modalNext) {
+        modalNext.addEventListener('click', () => {
+            const totalPages = Math.ceil(formNames.length / FORMS_PER_PAGE);
+            if (formModalPage < totalPages - 1) {
+                formModalPage++;
+                renderFormationModal();
+            }
+        });
+    }
+    
+    if (leftBtn) leftBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + formNames.length) % formNames.length;
+        currentFormation = formNames[currentIndex];
+        renderFormation();
+        updateStats();
+        drawChemistryLines();
+    });
+    
+    if (rightBtn) rightBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % formNames.length;
+        currentFormation = formNames[currentIndex];
+        renderFormation();
+        updateStats();
+        drawChemistryLines();
+    });
+}
+
+const COUNTRY_NAMES = {
+    'jp': 'Japón',
+    'fr': 'Francia',
+    'nl': 'Países Bajos',
+    'se': 'Suecia',
+    'it': 'Italia',
+    'dk': 'Dinamarca',
+    'es': 'España',
+    'gb-eng': 'Inglaterra',
+    'de': 'Alemania',
+    'ar': 'Argentina',
+    'br': 'Brasil'
+};
+
+function getNationName(url) {
+    const match = url.match(/\/([a-z-]+)\.png$/);
+    if (match && COUNTRY_NAMES[match[1]]) {
+        return COUNTRY_NAMES[match[1]];
+    }
+    return '';
+}
+
+function setupCustomDropdown() {
+    const trigger = document.getElementById('custom-nation-trigger');
+    const options = document.getElementById('custom-nation-options');
+    const hiddenInput = document.getElementById('modal-filter-nation');
+    const label = document.getElementById('custom-nation-label');
+    if (!trigger || !options) return;
+    
+    const nationSet = new Set();
+    cardsDB.forEach(c => { if(c.nationFlag) nationSet.add(c.nationFlag); });
+    
+    [...nationSet].sort().forEach(flag => {
+        const name = getNationName(flag);
+        const opt = document.createElement('div');
+        opt.className = 'custom-option';
+        opt.dataset.value = flag;
+        opt.innerHTML = `<img src="${flag}" alt="flag"> <span>${name}</span>`;
+        options.appendChild(opt);
+    });
+    
+    trigger.addEventListener('click', (e) => {
+        options.classList.toggle('open');
+        e.stopPropagation();
+    });
+    
+    options.addEventListener('click', (e) => {
+        const option = e.target.closest('.custom-option');
+        if (option) {
+            const val = option.dataset.value;
+            hiddenInput.value = val;
+            if (val === '') {
+                label.textContent = 'País';
+            } else {
+                const name = getNationName(val);
+                label.innerHTML = `<img src="${val}" alt="flag" style="width:20px;height:auto;border-radius:2px; vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${name}</span>`;
+            }
+            options.classList.remove('open');
+            playerModalPage = 0;
+            renderModalCards();
+        }
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!trigger.contains(e.target) && !options.contains(e.target)) {
+            options.classList.remove('open');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupCustomDropdown);
+
+// ==========================================
+// BUTTONS AND TOGGLES
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Clear squad button
+    document.getElementById('clear-squad')?.addEventListener('click', () => {
+        for(let i=0; i<11; i++) squad[i] = null;
+        for(let i=0; i<8; i++) benchSquad[i] = null;
+        currentCoach = null;
+        renderAll();
+    });
+
+    // Badge and kit modal logic
+    const teams = [...new Set(cardsDB.map(c => c.teamIcon).filter(Boolean))];
+    const badgeIcon = document.getElementById('badge-icon');
+    const badgeModal = document.getElementById('badge-modal');
+    const badgeList = document.getElementById('badge-list');
+    const badgeCloseBtn = document.getElementById('badge-modal-close');
+    
+    if(badgeIcon && teams.length > 0) {
+        badgeIcon.style.backgroundImage = `url('assets/${teams[0]}')`;
+        badgeIcon.style.backgroundColor = 'transparent';
+        
+        // Populate modal
+        if (badgeList) {
+            badgeList.innerHTML = '';
+            teams.forEach(team => {
+                const img = document.createElement('img');
+                img.src = `assets/${team}`;
+                img.style.width = '60px';
+                img.style.height = '60px';
+                img.style.objectFit = 'contain';
+                img.style.cursor = 'pointer';
+                img.style.transition = 'transform 0.2s';
+                img.onmouseover = () => img.style.transform = 'scale(1.1)';
+                img.onmouseout = () => img.style.transform = 'scale(1)';
+                img.onclick = () => {
+                    badgeIcon.style.backgroundImage = `url('assets/${team}')`;
+                    badgeIcon.style.backgroundColor = 'transparent';
+                    badgeModal.classList.add('hidden');
+                };
+                badgeList.appendChild(img);
+            });
+        }
+
+        badgeIcon.addEventListener('click', () => {
+            if (badgeModal) badgeModal.classList.remove('hidden');
+        });
+        
+        if (badgeCloseBtn) {
+            badgeCloseBtn.addEventListener('click', () => {
+                badgeModal.classList.add('hidden');
+            });
+        }
+    }
+});

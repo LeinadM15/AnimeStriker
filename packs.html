@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIME STRIKERS ⚽ - Packs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .packs-page-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed BG: Inazuma Stadium -->
+    <div class="bg-fixed">
+        <img src="assets/FondoInazuma.png" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="app">
+        <!-- ===== STATS BAR ===== -->
+        <div class="stats" style="margin-top:20px;">
+            <div class="stat"><span class="stat-val" data-target="13069500">0</span><span class="stat-ico">🪙</span></div>
+            <div class="stat"><span class="stat-val" data-target="1016">0</span><span class="stat-ico">💎</span></div>
+        </div>
+
+        <main class="packs-page-container">
+            <div id="pack-container">
+                <img src="assets/Sobre.jpeg" alt="Pack" id="pack-image">
+                <div class="glow-effect"></div>
+                <h3 style="color:#fff; margin-top:20px; font-style:italic; font-family:var(--font-t); font-size:2rem; text-shadow:0 2px 5px rgba(0,0,0,0.8); text-align:center; letter-spacing:2px;">TAP TO OPEN</h3>
+            </div>
+
+            <div id="walkout-container" class="hidden">
+                <div id="walkout-card-slot"></div>
+                <div class="tap-to-continue">TAP TO CONTINUE</div>
+            </div>
+
+            <div id="card-reveal-container" class="hidden">
+                <div class="cards-grid" id="cards-grid">
+                    <!-- Cards will be injected here by app.js -->
+                </div>
+                <div class="rc-actions" style="margin-top:10px; text-align:center;">
+                    <button class="action-btn save-btn" id="save-pack-btn">SAVE</button>
+                </div>
+            </div>
+            
+            <div class="flash-overlay" id="flash-bang"></div>
+
+            <!-- Card Zoom Modal -->
+            <div id="card-zoom-modal" class="hidden">
+                <div id="card-zoom-content"></div>
+                <div class="tap-to-close">TAP ANYWHERE TO CLOSE</div>
+            </div>
+        </main>
+
+        <!-- TEXT NAV -->
+        <nav class="top-text-nav">
+            <a href="index.html">HOME</a>
+            <a href="packs.html" class="active">PACKS</a>
+            <a href="squad.html">SQUAD</a>
+            <a href="#">MY CLUB</a>
+        </nav>
+    </div>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script src="database/tsubasa_cards.js"></script>
+    <script src="database/inazuma_cards.js"></script>
+    <script src="database/bluelock_cards.js"></script>
+    <script src="cards.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

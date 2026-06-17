@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anime Strikers - Colecciona cartas de Captain Tsubasa, Inazuma Eleven y Blue Lock.">
+    <title>ANIME STRIKERS ⚽</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Fixed BG: Inazuma Stadium -->
+    <div class="bg-fixed">
+        <img src="assets/FondoInazuma.png" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="app">
+
+        <!-- ===== NAV ===== -->
+        <nav class="nav">
+            <button class="nav-btn" data-tab="online">ONLINE</button>
+            <button class="nav-btn active" data-tab="single-player">SINGLE PLAYER</button>
+            <button class="nav-btn" data-tab="my-club">MY CLUB</button>
+        </nav>
+
+        <!-- ===== STATS BAR ===== -->
+        <div class="stats">
+            <div class="stat level">
+                <span class="lvl-num">7</span>
+                <div class="xp"><div class="xp-fill" style="width:65%"></div></div>
+            </div>
+            <div class="stat"><span class="stat-val" data-target="13069500">0</span><span class="stat-ico">🪙</span></div>
+            <div class="stat"><span class="stat-val" data-target="1016">0</span><span class="stat-ico">💎</span></div>
+            <div class="stat"><span class="stat-val" data-target="2507">0</span><span class="stat-ico">🃏</span></div>
+        </div>
+
+        <!-- ===== CONTENT ===== -->
+        <main class="content">
+
+            <!-- ==================== SINGLE PLAYER ==================== -->
+            <section class="tab active" id="tab-single-player">
+
+                <!-- ENTER DRAFT — big banner with Tsubasa stadium bg + Mark Evans character -->
+                <div class="card banner" id="enter-draft">
+                    <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
+                    <div class="card-bg-overlay banner-gradient"></div>
+                    <div class="banner-body">
+                        <div class="banner-left">
+                            <h2 class="banner-title">ENTER DRAFT</h2>
+                            <p class="banner-sub">¡Elige tu equipo y compite!</p>
+                            <span class="logo-badge">ANIME STRIKERS</span>
+                        </div>
+                        <img src="assets/MarkEvans.png" alt="Mark Evans" class="banner-char">
+                    </div>
+                </div>
+
+                <!-- OPEN PACKS -->
+                <div class="card row-card" id="open-packs-card" style="cursor:pointer;">
+                    <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
+                    <div class="card-bg-overlay orange-gradient" style="opacity:0.8;"></div>
+                    <div class="row-body">
+                        <h2 class="card-title open-packs-title">OPEN PACKS</h2>
+                        <span class="pill pill-orange" style="font-size:0.9rem; padding:8px 16px; box-shadow:0 0 15px rgba(255,109,0,0.8);">FREE SURPRISE PACK</span>
+                    </div>
+                </div>
+
+                <!-- SBC + TIENDA grid -->
+                <div class="grid-2">
+                    <!-- SBC — SQUAD BUILDING CHALLENGE with Shields + Blue Lock bg -->
+                    <div class="card sbc-card" id="sbc">
+                        <img src="assets/BlueLockFondo.jpg" alt="" class="card-bg">
+                        <div class="card-bg-overlay bluelock-gradient"></div>
+                        <div class="card-inner sbc-inner">
+                            <h2 class="card-title sbc-title">SBC</h2>
+                            <img src="assets/SBC.png" alt="SBC" class="sbc-char-left">
+                            <div class="sbc-shields right-shields">
+                                <div class="shield-item s-left">
+                                    <img src="assets/Raimon.png" alt="Raimon">
+                                    <span class="shield-badge pill-cyan">LIVE</span>
+                                </div>
+                                <div class="shield-item s-center">
+                                    <img src="assets/Nankatsu.png" alt="Nankatsu">
+                                    <span class="shield-badge pill-cyan">LIVE</span>
+                                </div>
+                                <div class="shield-item s-right">
+                                    <img src="assets/Bastard.png" alt="Bastard">
+                                    <span class="shield-badge pill-purple">LIVE</span>
+                                </div>
+                            </div>
+                            <div class="prog-wrap prog-abs">
+                                <span class="prog-txt">COMPLETED: 0 / 125</span>
+                                <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TIENDA — Ramen shop bg, Mr Veteran right, Pack left of him -->
+                    <div class="card tienda-card" id="tienda">
+                        <img src="assets/Tiendafondo.jpeg" alt="" class="card-bg">
+                        <div class="card-bg-overlay ramen-gradient"></div>
+                        <div class="tienda-new">NEW</div>
+                        <div class="tienda-body">
+                            <h2 class="card-title tienda-title">Tienda</h2>
+                        </div>
+                        <div class="tienda-assets">
+                            <img src="assets/Sobre.jpeg" alt="Pack" class="tienda-pack">
+                            <img src="assets/Tienda.png" alt="Mr Veteran" class="tienda-char">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÚLTIMOS JUGADORES — Genzo left, title centered, Tsubasa right -->
+                <div class="card latest-card" id="latest-players">
+                    <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
+                    <div class="card-bg-overlay blue-gradient"></div>
+                    <div class="latest-body">
+                        <h2 class="card-title latest-title">Ultimos Jugadores</h2>
+                        <span class="pill pill-green latest-pill">NEW</span>
+                    </div>
+                    <img src="assets/Genzo.png" alt="Genzo" class="latest-char-left">
+                    <img src="assets/Tsubasa.png" alt="Tsubasa" class="latest-char-right">
+                </div>
+
+            </section>
+
+            <!-- ==================== ONLINE ==================== -->
+            <section class="tab" id="tab-online">
+
+                <div class="card" id="online-draft">
+                    <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
+                    <div class="card-bg-overlay blue-gradient"></div>
+                    <div class="card-inner online-inner">
+                        <div class="card-head">
+                            <h2 class="card-title">ONLINE DRAFT</h2>
+                            <span class="pill pill-purple">SPECIAL</span>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-row"><span class="info-ico">🏆</span><span><strong>DIV 10</strong> SEASONS</span></div>
+                            <div class="info-row"><span class="info-ico">⚔️</span><span><strong>ROUND OF 16</strong> TOURNAMENT</span></div>
+                            <div class="info-row"><span class="info-ico">⏱️</span><span><strong>19 Hours</strong> UNTIL NEXT</span></div>
+                        </div>
+                    </div>
+                    <img src="assets/Isagi.png" alt="Isagi" class="online-char">
+                </div>
+
+                <div class="card" id="versus-online">
+                    <img src="assets/FondoInazuma.png" alt="" class="card-bg">
+                    <div class="card-bg-overlay orange-gradient"></div>
+                    <div class="card-inner online-inner">
+                        <div class="card-head">
+                            <h2 class="card-title">VERSUS</h2>
+                            <span class="pill pill-cyan">NEW CONDITIONS</span>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-row"><span class="info-ico">🏆</span><span><strong>DIV 10</strong> NEW IN 4 DAYS</span></div>
+                            <div class="info-row"><span class="info-ico">🏟️</span><span><strong>5</strong> WEEKLY TOURNAMENTS</span></div>
+                            <div class="info-row"><span class="info-ico">⏱️</span><span><strong>4 DAYS</strong> UNTIL EXPIRE</span></div>
+                        </div>
+                    </div>
+                    <img src="assets/Kojiro.png" alt="Kojiro" class="online-char">
+                </div>
+
+                <div class="card" id="vs-tournaments">
+                    <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
+                    <div class="card-bg-overlay purple-gradient"></div>
+                    <div class="card-inner">
+                        <h2 class="card-title">VERSUS TOURNAMENTS</h2>
+                        <span class="pill pill-pink">LIMITED TIME MODE</span>
+                    </div>
+                    <img src="assets/Tsubasa.png" alt="Tsubasa" class="online-char small-char">
+                </div>
+
+                <div class="grid-2">
+                    <div class="card" id="trading">
+                        <div class="card-inner center-inner">
+                            <h2 class="card-title sm">TRADING</h2>
+                            <span class="big-ico">🔄</span>
+                        </div>
+                    </div>
+                    <div class="card" id="dbc">
+                        <div class="card-inner">
+                            <h2 class="card-title sm">DBC</h2>
+                            <span class="dbc-timer">⏱️ 3 Days</span>
+                            <span class="dbc-score">15,780</span>
+                            <span class="dbc-stars">⭐⭐⭐</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ==================== MY CLUB ==================== -->
+            <section class="tab" id="tab-my-club">
+
+                <div class="card" id="my-cards">
+                    <div class="card-inner">
+                        <h2 class="card-title">MY CARDS</h2>
+                        <div class="prog-wrap big-prog">
+                            <div class="prog-bar big"><div class="prog-fill rainbow" style="width:66%"></div></div>
+                            <span class="prog-txt big-txt">2,507 / 3,794</span>
+                        </div>
+                        <div class="showcase-cards">
+                            <div class="mini-card gold"><span>🔥</span></div>
+                            <div class="mini-card silver"><span>⚡</span></div>
+                            <div class="mini-card special"><span>💎</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="collections">
+                    <div class="card-inner flex-row">
+                        <h2 class="card-title">COLLECTIONS</h2>
+                        <div class="ring-wrap">
+                            <svg viewBox="0 0 120 120" class="ring-svg">
+                                <circle cx="60" cy="60" r="50" class="ring-bg"/>
+                                <circle cx="60" cy="60" r="50" class="ring-fg" stroke-dasharray="314" stroke-dashoffset="104"/>
+                            </svg>
+                            <div class="ring-label"><span class="ring-pct">67%</span><small>COMPLETED</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="profile">
+                    <div class="card-inner">
+                        <h2 class="card-title">MY PROFILE</h2>
+                        <div class="profile-row">
+                            <div class="profile-avatar">⚽</div>
+                            <div class="profile-info">
+                                <strong class="club-name">ANIME STRIKERS FC</strong>
+                                <span class="club-date">EST. JUN 2026</span>
+                            </div>
+                            <div class="club-crest">AS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card" id="saved-drafts">
+                        <div class="card-inner center-inner">
+                            <h2 class="card-title sm">SAVED DRAFTS</h2>
+                            <small class="best-lbl">BEST</small>
+                            <span class="best-num">191</span>
+                        </div>
+                    </div>
+                    <div class="card" id="about">
+                        <div class="card-inner center-inner">
+                            <h2 class="card-title sm">ABOUT</h2>
+                            <span class="big-ico">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Series -->
+                <div class="card series-card" id="series">
+                    <div class="card-inner">
+                        <h2 class="card-title">ANIME SERIES</h2>
+                        <div class="series-row">
+                            <div class="series-item s-tsubasa"><span>⚽</span><small>Captain Tsubasa</small></div>
+                            <div class="series-item s-inazuma"><span>🔥</span><small>Inazuma Eleven</small></div>
+                            <div class="series-item s-bluelock"><span>🔒</span><small>Blue Lock</small></div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span class="f-title">ANIME STRIKERS</span>
+            <span class="f-sub">Captain Tsubasa • Inazuma Eleven • Blue Lock</span>
+        </footer>
+        <!-- TEXT NAV -->
+        <nav class="top-text-nav">
+            <a href="index.html" class="active">HOME</a>
+            <a href="packs.html">PACKS</a>
+            <a href="squad.html">SQUAD</a>
+            <a href="#">MY CLUB</a>
+        </nav>
+    </div>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script src="database/tsubasa_cards.js"></script>
+    <script src="database/inazuma_cards.js"></script>
+    <script src="database/bluelock_cards.js"></script>
+    <script src="cards.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

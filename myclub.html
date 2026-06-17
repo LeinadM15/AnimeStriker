@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CLUB - Anime Strikers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Fixed BG: Tsubasa Stadium -->
+    <div class="bg-fixed">
+        <img src="assets/FondoTsubasa.jpeg" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="app myclub-app">
+        <!-- TEXT NAV -->
+        <nav class="top-text-nav">
+            <a href="index.html">HOME</a>
+            <a href="packs.html">PACKS</a>
+            <a href="myclub.html" class="active">MY CLUB</a>
+        </nav>
+
+        <main class="content myclub-content">
+            <h1 class="club-title">MI COLECCIÓN</h1>
+
+            <!-- FILTERS BAR -->
+            <div class="filters-bar">
+                <input type="text" id="filter-search" class="filter-input" placeholder="Buscar jugador...">
+                
+                <select id="filter-series" class="filter-select">
+                    <option value="all">Todas las Series</option>
+                    <option value="tsubasa">Captain Tsubasa</option>
+                    <option value="inazuma">Inazuma Eleven</option>
+                    <option value="bluelock">Blue Lock</option>
+                </select>
+
+                <select id="filter-league" class="filter-select">
+                    <option value="all">Todas las Ligas</option>
+                </select>
+
+                <select id="filter-team" class="filter-select">
+                    <option value="all">Todos los Equipos</option>
+                </select>
+
+                <select id="sort-cards" class="filter-select">
+                    <option value="rating-desc">Media: Mayor a Menor</option>
+                    <option value="rating-asc">Media: Menor a Mayor</option>
+                    <option value="name-asc">Nombre: A - Z</option>
+                    <option value="name-desc">Nombre: Z - A</option>
+                </select>
+            </div>
+
+            <!-- CARDS STATS -->
+            <div class="collection-stats">
+                <span id="total-cards-count">Mostrando 0 cartas</span>
+            </div>
+
+            <!-- GRID -->
+            <div id="myclub-grid" class="myclub-grid">
+                <!-- Cards injected here via JS -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <span class="f-title">ANIME STRIKERS</span>
+            <span class="f-sub">Captain Tsubasa • Inazuma Eleven • Blue Lock</span>
+        </footer>
+    </div>
+
+    <!-- Zoom Modal -->
+    <div id="card-zoom-modal" class="hidden">
+        <div id="card-zoom-content"></div>
+        <div class="tap-to-close">Tap anywhere to close</div>
+    </div>
+
+    <!-- Databases -->
+    <script src="database/tsubasa_cards.js"></script>
+    <script src="database/inazuma_cards.js"></script>
+    <script src="database/bluelock_cards.js"></script>
+    <script src="cards.js"></script>
+    <!-- My Club Logic -->
+    <script src="myclub.js"></script>
+</body>
+</html>
