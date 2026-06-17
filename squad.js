@@ -760,13 +760,15 @@ let currentCoach = null;
 
 function initSquads() {
     squads = [];
+    const defaultBadge = (typeof cardsDB !== 'undefined' && cardsDB.length > 0) ? [...new Set(cardsDB.map(c => c.teamIcon).filter(Boolean))][0] : '';
     for (let i = 0; i < 8; i++) {
         squads.push({
             name: `Squad ${i + 1}`,
             formation: "4-3-3",
             pitch: new Array(11).fill(null),
             bench: new Array(8).fill(null),
-            coach: null
+            coach: null,
+            badge: defaultBadge
         });
     }
 }
@@ -777,6 +779,23 @@ function loadCurrentSquadState() {
     squad = s.pitch;
     benchSquad = s.bench;
     currentCoach = s.coach;
+    
+    const badgeIcon = document.getElementById('badge-icon');
+    if (badgeIcon) {
+        if (s.badge) {
+            badgeIcon.style.backgroundImage = `url('assets/${s.badge}')`;
+            badgeIcon.style.backgroundColor = 'transparent';
+            badgeIcon.dataset.team = s.badge;
+        } else {
+            const defaultBadge = (typeof cardsDB !== 'undefined' && cardsDB.length > 0) ? [...new Set(cardsDB.map(c => c.teamIcon).filter(Boolean))][0] : '';
+            if (defaultBadge) {
+                badgeIcon.style.backgroundImage = `url('assets/${defaultBadge}')`;
+                badgeIcon.style.backgroundColor = 'transparent';
+                badgeIcon.dataset.team = defaultBadge;
+                s.badge = defaultBadge;
+            }
+        }
+    }
 }
 
 function saveCurrentSquadState() {
@@ -786,6 +805,8 @@ function saveCurrentSquadState() {
     s.pitch = squad;
     s.bench = benchSquad;
     s.coach = currentCoach;
+    const badgeIcon = document.getElementById('badge-icon');
+    if (badgeIcon) s.badge = badgeIcon.dataset.team || s.badge || '';
 }
 
 function loadSquad() {
@@ -1025,6 +1046,11 @@ function getPositionStatus(card, requiredRole) {
     if (!card) return 'wrong';
     if (card.position === requiredRole) return 'exact';
     
+    if (typeof PLAYER_ALT_OVERRIDES !== 'undefined') {
+        const altPosList = PLAYER_ALT_OVERRIDES[card.name.toUpperCase()];
+        if (altPosList && altPosList.includes(requiredRole)) return 'secondary';
+    }
+    
     if (typeof POSITION_COMPAT !== 'undefined' && POSITION_COMPAT[card.position]) {
         if (POSITION_COMPAT[card.position].includes(requiredRole)) return 'secondary';
     }
@@ -1135,19 +1161,19 @@ function calcPlayerChemistry(index) {
         }
     });
     
-    // Regla del "Equilibrio de Enlaces":
-    // Empieza en 10. Cada punto de enlace que falte para cubrir las líneas resta 1 punto.
-    let missingLinks = Math.max(0, totalLinks - linkPoints);
-    let chem = 10 - missingLinks;
-    
-    // El semáforo (Topes por posición):
-    if (posStatus === 'secondary') {
-        if (chem > 9) chem = 9; // "solo te penalice un punto de quimica"
-    } else if (posStatus === 'wrong') {
-        if (chem > 4) chem = 4; // Penalización mayor para rojo (cae drásticamente)
+    let chem = 0;
+    if (totalLinks > 0) {
+        chem = Math.min(10, Math.round((linkPoints / totalLinks) * 10));
+    } else {
+        chem = 0;
     }
     
-    if (chem < 0) chem = 0;
+    if (posStatus === 'secondary') {
+        chem = Math.max(0, chem - 2);
+    } else if (posStatus === 'wrong') {
+        chem = 0;
+    }
+    
     return chem;
 }
 
@@ -1330,7 +1356,10 @@ function renderModalCards() {
     let filtered = cardsDB.filter(card => {
         if (activeNames.has(card.name) && card.name !== currentOccupantName) return false;
         if (searchTerm && !card.name.toLowerCase().includes(searchTerm) && !(card.version && card.version.toLowerCase().includes(searchTerm))) return false;
-        if (filterPos && card.position !== filterPos) return false;
+        if (filterPos) {
+            const stat = getPositionStatus(card, filterPos);
+            if (stat === 'wrong') return false;
+        }
         if (filterLeague && card.league !== filterLeague) return false;
         if (filterNation && card.nationFlag !== filterNation) return false;
         return true;
@@ -1349,9 +1378,9 @@ function renderModalCards() {
             if (reqRole) {
                 const statA = getPositionStatus(a, reqRole);
                 const statB = getPositionStatus(b, reqRole);
-                const scoreA = statA === 'exact' ? 3 : statA === 'secondary' ? 2 : 1;
-                const scoreB = statB === 'exact' ? 3 : statB === 'secondary' ? 2 : 1;
-                if (scoreA !== scoreB) return scoreB - scoreA;
+                const isMatchA = (statA === 'exact' || statA === 'secondary') ? 1 : 0;
+                const isMatchB = (statB === 'exact' || statB === 'secondary') ? 1 : 0;
+                if (isMatchA !== isMatchB) return isMatchB - isMatchA;
             }
             return b.rating - a.rating;
         });
@@ -1714,9 +1743,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const badgeCloseBtn = document.getElementById('badge-modal-close');
     
     if(badgeIcon && teams.length > 0) {
-        badgeIcon.style.backgroundImage = `url('assets/${teams[0]}')`;
-        badgeIcon.style.backgroundColor = 'transparent';
-        
         // Populate modal
         if (badgeList) {
             badgeList.innerHTML = '';
@@ -1733,7 +1759,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.onclick = () => {
                     badgeIcon.style.backgroundImage = `url('assets/${team}')`;
                     badgeIcon.style.backgroundColor = 'transparent';
+                    badgeIcon.dataset.team = team;
                     badgeModal.classList.add('hidden');
+                    saveCurrentSquadState();
+                    saveSquad();
                 };
                 badgeList.appendChild(img);
             });

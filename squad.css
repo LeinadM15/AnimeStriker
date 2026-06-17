@@ -130,7 +130,7 @@
 
 .form-name:hover {
     color: var(--cyan);
-    text-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+    text-shadow: 0 0 12px rgba(17, 181, 201, 0.4);
 }
 
 .form-arrow {
@@ -153,7 +153,7 @@
 .form-arrow:hover {
     border-color: var(--cyan);
     color: var(--cyan);
-    box-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 0 16px rgba(17, 181, 201, 0.4);
     transform: scale(1.1);
 }
 
@@ -391,7 +391,7 @@
 
 .player-slot:hover .slot-empty {
     color: var(--cyan);
-    background: rgba(0, 229, 255, 0.08);
+    background: rgba(17, 181, 201, 0.4);
 }
 
 /* ── Filled slot (mini FIFA card) ── */
@@ -754,7 +754,7 @@
     min-width: 140px;
     padding: 10px 14px 10px 38px;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(0, 229, 255, 0.15);
+    border: 1px solid rgba(17, 181, 201, 0.4);
     border-radius: 10px;
     color: var(--white);
     font-family: var(--font-b);
@@ -770,7 +770,7 @@
 
 .modal-search:focus {
     border-color: var(--cyan);
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+    box-shadow: 0 0 12px rgba(17, 181, 201, 0.4);
     background-color: rgba(255, 255, 255, 0.09);
 }
 
@@ -807,7 +807,7 @@
 .modal-sort:focus,
 .modal-filter-league:focus {
     border-color: var(--cyan);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.15);
+    box-shadow: 0 0 8px rgba(17, 181, 201, 0.4);
 }
 
 .modal-filter-pos option,
@@ -1338,7 +1338,7 @@ body.modal-open {
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgba(0, 229, 255, 0.15), transparent);
+    background: radial-gradient(circle, rgba(17, 181, 201, 0.4), transparent);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.4s ease, height 0.4s ease;
@@ -1489,15 +1489,15 @@ body.modal-open {
 }
 
 .formation-item:hover {
-    background: rgba(0, 229, 255, 0.1);
-    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(17, 181, 201, 0.4);
+    border-color: rgba(17, 181, 201, 0.4);
     transform: translateY(-4px);
 }
 
 .formation-item.active {
-    background: rgba(0, 229, 255, 0.15);
+    background: rgba(17, 181, 201, 0.4);
     border-color: var(--cyan);
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+    box-shadow: 0 0 12px rgba(17, 181, 201, 0.4);
 }
 
 /* Mini pitch preview in formation list */
@@ -1552,7 +1552,7 @@ body.modal-open {
 }
 
 .page-btn {
-    background: rgba(0, 229, 255, 0.15);
+    background: rgba(17, 181, 201, 0.4);
     border: 1px solid var(--cyan);
     color: var(--cyan);
     padding: 8px 16px;
@@ -1609,7 +1609,7 @@ body.modal-open {
 
 .custom-select-trigger:hover {
     border-color: var(--cyan);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.15);
+    box-shadow: 0 0 8px rgba(17, 181, 201, 0.4);
 }
 
 .custom-select-trigger img {
@@ -1659,7 +1659,7 @@ body.modal-open {
 }
 
 .custom-option:hover {
-    background: rgba(0, 229, 255, 0.15);
+    background: rgba(17, 181, 201, 0.4);
 }
 
 .custom-options::-webkit-scrollbar { width: 4px; }
@@ -1695,7 +1695,7 @@ body.modal-open {
     background: rgba(13, 27, 42, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(17, 181, 201, 0.4);
     border-radius: 12px;
     padding: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
@@ -1724,10 +1724,10 @@ body.modal-open {
 .squad-arrow {
     background: transparent;
     border: none;
-    color: #00ffff;
+    color: var(--cyan);
     font-size: 1.5rem;
     cursor: pointer;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+    text-shadow: 0 0 5px rgba(17, 181, 201, 0.4);
     transition: transform 0.2s;
 }
 .squad-arrow:hover { transform: scale(1.2); }
@@ -1741,7 +1741,7 @@ body.modal-open {
     text-align: center;
     width: 140px;
     outline: none;
-    border-bottom: 1px dashed rgba(0, 255, 255, 0.5);
+    border-bottom: 1px dashed rgba(17, 181, 201, 0.4);
 }
 
 /* Coach Slot */
@@ -1750,7 +1750,7 @@ body.modal-open {
     height: 140px;
     background: rgba(0,0,0,0.4);
     border-radius: 8px;
-    border: 1px dashed rgba(0, 255, 255, 0.4);
+    border: 1px dashed rgba(17, 181, 201, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1758,8 +1758,8 @@ body.modal-open {
     transition: all 0.2s;
 }
 .coach-slot:hover {
-    border-color: #00ffff;
-    background: rgba(0, 255, 255, 0.1);
+    border-color: var(--cyan);
+    background: rgba(17, 181, 201, 0.4);
 }
 
 /* Chemistry / Rating Box */
@@ -1826,7 +1826,7 @@ body.modal-open {
     transition: background 0.2s;
 }
 .style-icon:hover, .kit-icon:hover, .badge-icon:hover {
-    background: rgba(0, 229, 255, 0.15);
+    background: rgba(17, 181, 201, 0.4);
 }
 
 /* CENTER PITCH */
