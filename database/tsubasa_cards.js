@@ -7376,7 +7376,7 @@ const rusiaCards = [
         position: "ST",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/Fiorentina.png",
+        teamIcon: "teams/Napoli.png",
         image: "assets/characters/Rusia/Rion.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7389,7 +7389,7 @@ const rusiaCards = [
         position: "CM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/Lazio.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/Rusia/Veles.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7402,7 +7402,7 @@ const rusiaCards = [
         position: "CB",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/Leverkusen.png",
+        teamIcon: "teams/Dortmund.png",
         image: "assets/characters/Rusia/Brock.png",
         background: "assets/Cartas/Oro.png"
     },
