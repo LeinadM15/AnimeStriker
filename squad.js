@@ -5995,6 +5995,12 @@ function calcTeamRating() {
             count++;
         }
     }
+    for (let j = 0; j < 8; j++) {
+        if (bench[j]) {
+            total += bench[j].rating;
+            count++;
+        }
+    }
     return count === 0 ? 0 : Math.round(total / count);
 }
 

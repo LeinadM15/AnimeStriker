@@ -741,6 +741,17 @@ function calcDraftTeamRating() {
             count++;
         }
     }
+    for (var j = 0; j < BENCH_SIZE; j++) {
+        if (draftState.bench[j]) {
+            var r = draftState.bench[j].rating;
+            if (draftState.coach) {
+                var boosts = getDraftCoachBoosts(draftState.bench[j], draftState.coach);
+                r += boosts.rating;
+            }
+            total += r;
+            count++;
+        }
+    }
     return count === 0 ? 0 : Math.round(total / count);
 }
 
