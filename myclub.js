@@ -178,6 +178,7 @@ function setupCustomDropdown() {
         if(url.includes('/dk.')) return 'Dinamarca';
         if(url.includes('/mx.')) return 'México';
         if(url.includes('/us.')) return 'Estados Unidos';
+        if(url.includes('/za.')) return 'Sudáfrica';
         if(url.includes('/hr.')) return 'Croacia';
         if(url.includes('/pt.')) return 'Portugal';
         if(url.includes('/rs.')) return 'Serbia';

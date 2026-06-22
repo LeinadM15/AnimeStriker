@@ -6017,6 +6017,9 @@ function calcTotalChemistry() {
 function calcPlayerChemistry(index) {
     const card = squad[index];
     if (!card) return 0;
+
+    // Icons always have 10 chemistry
+    if (isIconCard(card)) return 10;
     
     const formation = FORMATIONS[currentFormation];
     if(!formation) return 0;
@@ -6060,7 +6063,20 @@ function calcPlayerChemistry(index) {
     return Math.min(10, chem);
 }
 
+function isIconCard(card) {
+    return card && ((card.version && card.version === 'Icono') ||
+           (card.background && card.background.indexOf('Icono') !== -1));
+}
+
 function calcLinkChemistry(cardA, cardB) {
+    // If either card is an Icon, minimum 1 point (orange link)
+    // Green link if they share league or nationality
+    if (isIconCard(cardA) || isIconCard(cardB)) {
+        let iconPoints = 1; // minimum orange
+        if (cardA.league === cardB.league) iconPoints = 2;
+        if (cardA.nationFlag === cardB.nationFlag) iconPoints = 2;
+        return iconPoints;
+    }
     let points = 0;
     if (cardA.league === cardB.league) points++;
     if (cardA.teamIcon === cardB.teamIcon) points++;
@@ -6550,7 +6566,18 @@ const COUNTRY_NAMES = {
     'gb-eng': 'Inglaterra',
     'de': 'Alemania',
     'ar': 'Argentina',
-    'br': 'Brasil'
+    'br': 'Brasil',
+    'kr': 'Corea del Sur',
+    'cn': 'China',
+    'th': 'Tailandia',
+    'mx': 'México',
+    'us': 'Estados Unidos',
+    'za': 'Sudáfrica',
+    'hr': 'Croacia',
+    'pt': 'Portugal',
+    'rs': 'Serbia',
+    'jm': 'Jamaica',
+    'ng': 'Nigeria'
 };
 
 function getNationName(url) {

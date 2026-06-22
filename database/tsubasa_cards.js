@@ -5517,15 +5517,15 @@ const otrosFranciaCards = [
     {
         id: "shakirzahir_normal",
         name: "SHAKIR ZAHIR",
-        version: "Normal",
-        rarity: "Normal",
+        version: "Oro",
+        rarity: "Oro",
         rating: 78,
         position: "CB",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/sa.png",
         teamIcon: "teams/Chelsea.png",
         image: "assets/characters/ArabiaSaudi/ShakirZahir.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "condoralkundur_normal",
