@@ -6577,7 +6577,8 @@ const COUNTRY_NAMES = {
     'pt': 'Portugal',
     'rs': 'Serbia',
     'jm': 'Jamaica',
-    'ng': 'Nigeria'
+    'ng': 'Nigeria',
+    'ru': 'Rusia'
 };
 
 function getNationName(url) {

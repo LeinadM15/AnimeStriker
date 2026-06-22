@@ -188,6 +188,7 @@ function setupCustomDropdown() {
         if(url.includes('/co.')) return 'Colombia';
         if(url.includes('/gb-eng.')) return 'Inglaterra';
         if(url.includes('/sa.')) return 'Arabia Saudita';
+        if(url.includes('/ru.')) return 'Rusia';
         return 'Nación';
     };
 
