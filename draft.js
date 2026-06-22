@@ -215,15 +215,6 @@ function generateStarterOptions(requiredRole) {
         return !isCardUsed(c);
     });
 
-    // Remove duplicate names
-    var seenNames = {};
-    allAvailable = allAvailable.filter(function(c) {
-        var key = c.name.toUpperCase();
-        if (seenNames[key]) return false;
-        seenNames[key] = true;
-        return true;
-    });
-
     // Decide rarity: oro or especial
     var isSpecialPick = determineIfSpecialPick(0.45); // Dynamic calculation ignores baseChance now
 
@@ -242,6 +233,20 @@ function generateStarterOptions(requiredRole) {
         if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
     }
 
+    // Filter unique names per pool to avoid erasing special cards
+    function getUniqueByName(pool) {
+        var seen = {};
+        return shuffleArray(pool).filter(function(c) {
+            var key = c.name.toUpperCase();
+            if (seen[key]) return false;
+            seen[key] = true;
+            return true;
+        });
+    }
+
+    rarityPool = getUniqueByName(rarityPool);
+    allAvailable = getUniqueByName(allAvailable);
+
     // Split into exact position and compatible
     var exactPool = rarityPool.filter(function(c) {
         return c.position === requiredRole;
@@ -252,6 +257,7 @@ function generateStarterOptions(requiredRole) {
             return c.position === requiredRole && exactPool.indexOf(c) === -1;
         });
         exactPool = exactPool.concat(extraExact);
+        exactPool = getUniqueByName(exactPool); // Re-filter unique
     }
 
     var altPool = rarityPool.filter(function(c) {
@@ -330,14 +336,6 @@ function generateStarterOptions(requiredRole) {
 
 function generateBenchOptions() {
     var allPool = getPlayerCards().filter(function(c) { return !isCardUsed(c); });
-    var seenNames = {};
-    allPool = allPool.filter(function(c) {
-        var key = c.name.toUpperCase();
-        if (seenNames[key]) return false;
-        seenNames[key] = true;
-        return true;
-    });
-
     var hasBenchGK = draftState.bench.some(function(c) { return c && c.position === 'GK'; });
     var forceGKPick = !hasBenchGK;
 
@@ -358,11 +356,25 @@ function generateBenchOptions() {
         if (rarityPool.length < 5) rarityPool = allPool;
     }
 
+    function getUniqueByName(pool) {
+        var seen = {};
+        return shuffleArray(pool).filter(function(c) {
+            var key = c.name.toUpperCase();
+            if (seen[key]) return false;
+            seen[key] = true;
+            return true;
+        });
+    }
+
+    rarityPool = getUniqueByName(rarityPool);
+    allPool = getUniqueByName(allPool);
+
     if (forceGKPick) {
         var gkPool = rarityPool.filter(function(c) { return c.position === 'GK'; });
         if (gkPool.length < 5) {
             var extraGk = allPool.filter(function(c) { return c.position === 'GK' && gkPool.indexOf(c) === -1; });
             gkPool = gkPool.concat(extraGk);
+            gkPool = getUniqueByName(gkPool);
         }
         var gkWeighted = gkPool.map(function(c) {
             var w = 10;
@@ -382,14 +394,6 @@ function generateBenchOptions() {
 
 function generateReserveOptions() {
     var allPool = getPlayerCards().filter(function(c) { return !isCardUsed(c); });
-    var seenNames = {};
-    allPool = allPool.filter(function(c) {
-        var key = c.name.toUpperCase();
-        if (seenNames[key]) return false;
-        seenNames[key] = true;
-        return true;
-    });
-
     // Decide rarity
     var isSpecialPick = determineIfSpecialPick(0.35); // 35% base chance
     var rarityPool;
@@ -406,6 +410,18 @@ function generateReserveOptions() {
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     }
+
+    function getUniqueByName(pool) {
+        var seen = {};
+        return shuffleArray(pool).filter(function(c) {
+            var key = c.name.toUpperCase();
+            if (seen[key]) return false;
+            seen[key] = true;
+            return true;
+        });
+    }
+
+    rarityPool = getUniqueByName(rarityPool);
 
     var weighted = rarityPool.map(function(c) {
         var w = 10;
