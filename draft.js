@@ -227,6 +227,14 @@ function generateStarterOptions(requiredRole) {
     var exactPool = rarityPool.filter(function(c) {
         return c.position === requiredRole;
     });
+    // Si no hay suficientes en rarityPool, añadir del pool general
+    if (exactPool.length < 3) {
+        var extraExact = allAvailable.filter(function(c) {
+            return c.position === requiredRole && exactPool.indexOf(c) === -1;
+        });
+        exactPool = exactPool.concat(extraExact);
+    }
+
     var altPool = rarityPool.filter(function(c) {
         return c.position !== requiredRole && isCompatible(c, requiredRole);
     });
@@ -270,13 +278,32 @@ function generateStarterOptions(requiredRole) {
         }
     });
 
-    // If still not 5, fill from any compatible card
+    // If still not 5, fill from any compatible card from allAvailable
     if (result.length < 5) {
-        var fallback = applyWeights(rarityPool.filter(function(c) {
+        var fallback = applyWeights(allAvailable.filter(function(c) {
             return usedResultNames.indexOf(c.name.toUpperCase()) === -1 && isCompatible(c, requiredRole);
         }));
         var fallbackPicks = weightedSample(fallback, 5 - result.length);
-        fallbackPicks.forEach(function(c) { result.push(c); });
+        fallbackPicks.forEach(function(c) {
+            if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
+                result.push(c);
+                usedResultNames.push(c.name.toUpperCase());
+            }
+        });
+    }
+
+    // Ultimate fallback to literally any card if STILL not 5
+    if (result.length < 5) {
+        var ultimateFallback = applyWeights(allAvailable.filter(function(c) {
+            return usedResultNames.indexOf(c.name.toUpperCase()) === -1;
+        }));
+        var ultimatePicks = weightedSample(ultimateFallback, 5 - result.length);
+        ultimatePicks.forEach(function(c) {
+            if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
+                result.push(c);
+                usedResultNames.push(c.name.toUpperCase());
+            }
+        });
     }
 
     return shuffleArray(result);
