@@ -1,0 +1,484 @@
+/* ============================================
+   ANIME STRIKERS — Draft Mode Styles
+   ============================================ */
+
+/* ─────────────────────────────────────────────
+   BACK BUTTON
+   ───────────────────────────────────────────── */
+.draft-back-btn {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 500;
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(17, 181, 201, 0.4);
+    color: var(--cyan);
+    font-family: var(--font-t);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--tr);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.draft-back-btn:hover {
+    background: rgba(17, 181, 201, 0.15);
+    border-color: var(--cyan);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(17, 181, 201, 0.3);
+    transform: translateX(-4px);
+}
+
+/* ─────────────────────────────────────────────
+   DRAFT 3-COLUMN LAYOUT
+   ───────────────────────────────────────────── */
+.app.draft-layout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1400px;
+    gap: 20px;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.draft-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────
+   RIGHT PANELS (Suplentes + Reservas)
+   ───────────────────────────────────────────── */
+.draft-right-panels {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 12px;
+}
+
+.draft-panel {
+    background: rgba(13, 27, 42, 0.5);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.draft-panel .bench-slots {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    justify-items: center;
+}
+
+.draft-panel .player-slot {
+    margin-bottom: 2px;
+}
+.draft-panel .slot-card {
+    width: 110px !important;
+    height: 154px !important;
+}
+.draft-panel .slot-empty {
+    width: 100px !important;
+    height: 120px !important;
+    font-size: 1.4rem !important;
+}
+
+/* ─────────────────────────────────────────────
+   PHASE INDICATOR
+   ───────────────────────────────────────────── */
+.draft-phase-box {
+    text-align: center;
+}
+.draft-phase-text {
+    font-family: var(--font-t);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(255, 214, 0, 0.3);
+    margin-bottom: 8px;
+}
+.draft-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.draft-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+    border-radius: 4px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.draft-save-btn {
+    background: rgba(0, 230, 118, 0.15) !important;
+    border-color: var(--green) !important;
+    color: var(--green) !important;
+}
+.draft-save-btn:hover {
+    background: rgba(0, 230, 118, 0.3) !important;
+    box-shadow: 0 0 16px rgba(0, 230, 118, 0.3) !important;
+}
+
+/* ─────────────────────────────────────────────
+   DRAFT MODAL (shared base)
+   ───────────────────────────────────────────── */
+.draft-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.draft-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.draft-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 8, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.draft-modal-title {
+    text-align: center;
+    padding: 20px 18px 16px;
+    font-family: var(--font-t);
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+/* ─────────────────────────────────────────────
+   FORMATION PICK MODAL
+   ───────────────────────────────────────────── */
+.draft-formation-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    max-width: 520px;
+    max-height: 85vh;
+    background: rgba(18, 28, 48, 0.97);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.draft-formation-modal-content::-webkit-scrollbar { width: 4px; }
+.draft-formation-modal-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+
+.draft-formation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px 24px;
+}
+
+.draft-formation-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: rgba(20, 35, 60, 0.5);
+    border: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: var(--tr);
+}
+.draft-formation-item:hover {
+    background: rgba(17, 181, 201, 0.2);
+    border-color: rgba(17, 181, 201, 0.5);
+    transform: translateX(4px);
+}
+
+/* Mini pitch in formation item */
+.draft-formation-mini-pitch {
+    width: 160px;
+    height: 112px;
+    background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 8px, transparent 8px, transparent 16px),
+                linear-gradient(180deg, #1a5e1f 0%, #1b7a24 20%, #2d8f35 40%, #1b7a24 60%, #1a5e1f 80%, #196a1d 100%);
+    border-radius: 8px;
+    position: relative;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+.draft-formation-mini-pitch::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.draft-formation-mini-pitch .dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #CDDC39;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px rgba(205, 220, 57, 0.8);
+}
+
+.draft-formation-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+.draft-formation-name {
+    font-family: var(--font-t);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+.draft-formation-positions {
+    font-family: var(--font-b);
+    font-size: 0.7rem;
+    color: var(--dim);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ─────────────────────────────────────────────
+   PLAYER PICK MODAL (5 cards in a row)
+   ───────────────────────────────────────────── */
+.draft-pick-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    max-width: 1000px;
+    background: rgba(18, 28, 48, 0.97);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    padding-bottom: 30px;
+}
+
+.draft-pick-cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 20px 0;
+    flex-wrap: wrap;
+}
+
+.draft-pick-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.draft-pick-card-wrapper:hover {
+    transform: translateY(-8px);
+}
+
+.draft-pick-card-wrapper .slot-card {
+    width: 160px;
+    height: 224px;
+    cursor: pointer;
+}
+
+.draft-pick-btn {
+    padding: 6px 20px;
+    border: 1px solid var(--cyan);
+    border-radius: 8px;
+    background: rgba(17, 181, 201, 0.15);
+    color: var(--cyan);
+    font-family: var(--font-t);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--tr);
+}
+.draft-pick-btn:hover {
+    background: var(--cyan);
+    color: var(--bg);
+    box-shadow: 0 0 16px rgba(17, 181, 201, 0.5);
+}
+
+/* ─────────────────────────────────────────────
+   BADGE & KIT PICK MODALS
+   ───────────────────────────────────────────── */
+.draft-badge-modal-content,
+.draft-kit-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    max-width: 600px;
+    max-height: 80vh;
+    background: rgba(18, 28, 48, 0.97);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    overflow-y: auto;
+}
+
+.draft-badge-list,
+.draft-kit-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.draft-badge-list img,
+.draft-kit-list img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+.draft-badge-list img:hover,
+.draft-kit-list img:hover {
+    transform: scale(1.15);
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(17, 181, 201, 0.4);
+}
+
+/* ─────────────────────────────────────────────
+   EMPTY SLOT HIGHLIGHT (clickable in draft)
+   ───────────────────────────────────────────── */
+.draft-slot-clickable .slot-empty {
+    animation: draftPulse 2s ease-in-out infinite;
+}
+
+@keyframes draftPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(17, 181, 201, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px 4px rgba(17, 181, 201, 0.35);
+    }
+}
+
+/* Coach slot locked state */
+.draft-coach-locked {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .app.draft-layout {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 55px;
+    }
+    .draft-sidebar {
+        width: 100%;
+        max-width: 500px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .draft-right-panels {
+        width: 100%;
+        max-width: 600px;
+    }
+    .draft-panel .bench-slots {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .draft-pick-cards {
+        gap: 8px;
+        padding: 10px 10px 0;
+    }
+    .draft-pick-card-wrapper .slot-card {
+        width: 90px;
+        height: 126px;
+    }
+    .draft-formation-modal-content {
+        max-width: 98%;
+    }
+}
+
+/* ─────────────────────────────────────────────
+   COACH PICK CARD RENDERING
+   ───────────────────────────────────────────── */
+.draft-pick-card-wrapper .slot-card.coach-card .fc-char {
+    height: 75%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+/* Ensure draft pitch slot cards inherit proper sizing */
+#draft-pitch .slot-empty {
+    width: 115px !important;
+    height: 140px !important;
+    font-size: 1.8rem !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+#draft-pitch .slot-empty::before {
+    background: repeating-conic-gradient(
+        from 0deg,
+        rgba(255, 255, 255, 0.15) 0deg 15deg,
+        rgba(255, 255, 255, 0.05) 15deg 30deg
+    ) !important;
+}
+
+#draft-pitch .slot-card {
+    width: 125px !important;
+    height: 175px !important;
+}
+
+/* Draft completion banner */
+.draft-complete-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 14px;
+    background: linear-gradient(90deg, rgba(0, 230, 118, 0.2), rgba(17, 181, 201, 0.2));
+    border-bottom: 2px solid var(--green);
+    text-align: center;
+    font-family: var(--font-t);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    color: var(--green);
+    z-index: 400;
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+    animation: slideDown 0.5s ease;
+}
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}

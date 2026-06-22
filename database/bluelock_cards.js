@@ -37,11 +37,25 @@ const duschampsCards = [
 // ==========================================
 const mbappaCards = [
     {
+        id: "mbappa_oro",
+        name: "MBAPPA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "LW",
+        secondaryPositions: ["RW", "ST"],
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/MbappaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "mbappa_pxg",
         name: "MBAPPA",
         version: "PXG",
         rarity: "Especial",
-        rating: 89,
+        rating: 88,
         position: "LW",
         secondaryPositions: ["RW", "ST"],
         league: "Ligue 1",
@@ -66,6 +80,19 @@ const zedaneCards = [
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Real.png",
         image: "assets/characters/Francia/Zedane.png"
+    },
+    {
+        id: "zedane_oro",
+        name: "ZEDANE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "CAM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Francia/ZedaneOro.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
 
@@ -78,7 +105,7 @@ const yukimiyaCards = [
         name: "YUKIMIYA",
         version: "Ajax",
         rarity: "Especial",
-        rating: 87,
+        rating: 86,
         position: "LW",
         league: "Eredivisie",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -87,43 +114,30 @@ const yukimiyaCards = [
         background: "assets/backgrounds/Fondo_Yukimiya.jpeg"
     },
     {
-        id: "yukimiya_bluelock",
-        name: "YUKIMIYA",
-        version: "Blue Lock Eleven",
-        rarity: "Oro",
-        rating: 83,
-        position: "LW",
-        league: "J-League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tokyo.png",
-        image: "assets/characters/Yukimiya/Yukimiya2.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "yukimiya1_bluelock",
-        name: "YUKIMIYA",
-        version: "Blue Lock Eleven",
-        rarity: "Oro",
-        rating: 84,
-        position: "LW",
-        league: "J-League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tokyo.png",
-        image: "assets/characters/Yukimiya/Yukimiya1.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
         id: "yukimiya_bastard",
         name: "YUKIMIYA",
         version: "Bastard Munchen",
         rarity: "Especial Naranja",
-        rating: 86,
+        rating: 87,
         position: "LW",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Bastard.png",
         image: "assets/characters/Yukimiya/YukimiyaBastard.png",
         background: "assets/Cartas/Naranja.png"
+    },
+    {
+        id: "yukimiya_oro",
+        name: "YUKIMIYA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "LW",
+        league: "Eredivisie",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ajax.png",
+        image: "assets/characters/Yukimiya/YukimiyaOro.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
 
@@ -132,16 +146,16 @@ const yukimiyaCards = [
 // ==========================================
 const karasuCards = [
     {
-        id: "karasu_bluelock",
+        id: "karasu_oro",
         name: "KARASU",
-        version: "Blue Lock Eleven",
+        version: "Oro",
         rarity: "Oro",
-        rating: 84,
+        rating: 83,
         position: "CDM",
-        league: "J-League",
+        league: "Ligue 1",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tokyo.png",
-        image: "assets/characters/Karasu/KarasuBlueLock.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Karasu/KarasuOro.png",
         background: "assets/Cartas/Oro.png"
     },
     {
@@ -200,25 +214,13 @@ const nagiCards = [
         image: "assets/characters/Nagi/Nagi.png",
         background: "assets/Cartas/Mordiscos.png"
     },
-    {
-        id: "nagi_5",
-        name: "NAGI",
-        version: "Manshine City",
-        rarity: "Especial",
-        rating: 88,
-        position: "ST",
-        league: "Premier League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
-        image: "assets/characters/Nagi/Nagi5.png",
-        background: "assets/Cartas/Tots.png"
-    },
+    
     {
         id: "nagi_calavera",
         name: "NAGI",
         version: "Blue Lock",
         rarity: "Especial",
-        rating: 89,
+        rating: 90,
         position: "ST",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -231,7 +233,7 @@ const nagiCards = [
         name: "NAGI",
         version: "Manshine City",
         rarity: "Especial",
-        rating: 85,
+        rating: 86,
         position: "ST",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -244,7 +246,7 @@ const nagiCards = [
         name: "NAGI",
         version: "Blue Lock",
         rarity: "Especial",
-        rating: 86,
+        rating: 87,
         position: "ST",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -257,7 +259,7 @@ const nagiCards = [
         name: "NAGI",
         version: "Manshine City",
         rarity: "Especial",
-        rating: 87,
+        rating: 88,
         position: "ST",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -265,7 +267,21 @@ const nagiCards = [
         image: "assets/characters/Nagi/NagiRegate.png",
         background: "assets/Cartas/Hielo.png"
     }
-];
+,
+    {
+        id: "nagi_oro",
+        name: "NAGI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Nagi/NagiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ];
 
 // ==========================================
 // KIYORA
@@ -310,6 +326,20 @@ const kiyoraCards = [
         image: "assets/characters/Kiyora/KiyoraBreak.png",
         background: "assets/Cartas/FutureStar.png"
     }
+,
+        {
+        id: "kiyora_oro",
+        name: "KIYORA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "LB",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Porto.png",
+        image: "assets/characters/Kiyora/KiyoraOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
 ];
 
 // ==========================================
@@ -317,15 +347,15 @@ const kiyoraCards = [
 // ==========================================
 const hiiragiCards = [
     {
-        id: "hiiragi_kawasaki",
+        id: "hiiragi_valencia",
         name: "HIIRAGI",
-        version: "Kawasaki",
+        version: "Valencia",
         rarity: "Especial",
         rating: 85,
         position: "CM",
-        league: "J-League",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Kawasaki.png",
+        teamIcon: "teams/Valencia.png",
         image: "assets/characters/Hiiragi/Hiiragi.png",
         background: "assets/Cartas/Gris.png"
     },
@@ -341,6 +371,19 @@ const hiiragiCards = [
         teamIcon: "teams/BluLock.png",
         image: "assets/characters/Hiiragi/HiiragiBlue.png",
         background: "assets/Cartas/Gris.png"
+    },
+    {
+        id: "hiiragi_oro",
+        name: "HIIRAGI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Valencia.png",
+        image: "assets/characters/Hiiragi/HiiragiOro.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
 
@@ -351,13 +394,13 @@ const himizuCards = [
     {
         id: "himizu_omiya",
         name: "HIMIZU",
-        version: "Omiya Ardija",
+        version: "Milan",
         rarity: "Especial",
         rating: 84,
         position: "CM",
-        league: "J-League",
+        league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Omiya.png",
+        teamIcon: "teams/Napoli.png",
         image: "assets/characters/Himizu/HimizuOmiya.png",
         background: "assets/Cartas/Gris.png"
     },
@@ -368,11 +411,24 @@ const himizuCards = [
         rarity: "Especial",
         rating: 82,
         position: "CM",
-        league: "J-League",
+        league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/BluLock.png",
+        teamIcon: "teams/Napoli.png",
         image: "assets/characters/Himizu/HimizuBlue.png",
         background: "assets/Cartas/Gris.png"
+    },
+    {
+        id: "himizu_oro",
+        name: "HIMIZU",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Napoli.png",
+        image: "assets/characters/Himizu/HimizuOro.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
 
@@ -385,8 +441,9 @@ const hioriCards = [
         name: "HIORI",
         version: "Blue Lock",
         rarity: "Especial",
-        rating: 83,
-        position: "LB",
+        rating: 85,
+        position: "CM",
+        secondaryPositions: ["LB", "RB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/BluLock.png",
@@ -398,8 +455,9 @@ const hioriCards = [
         name: "HIORI",
         version: "Bastard Munchen",
         rarity: "Especial",
-        rating: 84,
-        position: "LB",
+        rating: 86,
+        position: "CM",
+        secondaryPositions: ["LB", "RB"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Bastard.png",
@@ -410,8 +468,9 @@ const hioriCards = [
         name: "HIORI",
         version: "Bastard Munchen",
         rarity: "Especial",
-        rating: 86,
-        position: "LB",
+        rating: 87,
+        position: "CM",
+        secondaryPositions: ["LB", "RB"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Bastard.png",
@@ -423,15 +482,31 @@ const hioriCards = [
         name: "HIORI",
         version: "Manchester United",
         rarity: "Especial",
-        rating: 87,
-        position: "LB",
+        rating: 88,
+        position: "CM",
+        secondaryPositions: ["LB", "RB"],
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/ManchesterUnited.png",
         image: "assets/characters/Hiori/HioriManchester.png",
         background: "assets/Cartas/Hielo.png"
     }
-];
+,
+    {
+        id: "hiori_oro",
+        name: "HIORI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "RB",
+        secondaryPositions: ["CM", "LB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Hiori/HioriOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ];
 
 // ==========================================
 // SUB 20
@@ -440,13 +515,13 @@ const sub20Cards = [
     {
         id: "neru_dortmund",
         name: "NERU",
-        version: "Borussia Dortmund",
+        version: "Chicorid",
         rarity: "Especial",
         rating: 84,
         position: "RB",
-        league: "Bundesliga",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Dortmund.png",
+        teamIcon: "teams/Chicorid.png",
         image: "assets/characters/Sub20/Neru.png",
         background: "assets/Cartas/Gris.png"
     },
@@ -580,7 +655,161 @@ const sub20Cards = [
         image: "assets/characters/Sub20/Yuzu.png",
         background: "assets/Cartas/Gris.png"
     }
-];
+,
+    {
+        id: "cho_oro",
+        name: "CHO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Parma.png",
+        image: "assets/characters/Sub20/ChoOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "darai_oro",
+        name: "DARAI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "LB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Sub20/DaraiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "endoji_oro",
+        name: "ENDOJI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "ST",
+        league: "Eredivisie",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ajax.png",
+        image: "assets/characters/Sub20/EndojiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "haiji_oro",
+        name: "HAIJI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Marsella.png",
+        image: "assets/characters/Sub20/HaijiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "hayate_oro",
+        name: "HAYATE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CDM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Sub20/HayateOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "kitsunezato_oro",
+        name: "KITSUNEZATO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "CAM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Sub20/KitsunezatoOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "neru_oro",
+        name: "NERU",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "RB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chicorid.png",
+        image: "assets/characters/Sub20/NeruOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "nio_oro",
+        name: "NIO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Sub20/NioOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "tsunzaki_oro",
+        name: "TSUNZAKI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "LB",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Porto.png",
+        image: "assets/characters/Sub20/TsunzakiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "wakatsuki_oro",
+        name: "WAKATSUKI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "LM",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Kobe.png",
+        image: "assets/characters/Sub20/WakatsukiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ,
+    {
+        id: "yuzu_oro",
+        name: "YUZU",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "RM",
+        league: "Brasileirão",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/SaoPaulo.png",
+        image: "assets/characters/Sub20/YuzuOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ];
 
 // ==========================================
 // CHIGIRI
@@ -642,7 +871,22 @@ const chigiriCards = [
         image: "assets/characters/Chigiri/Chigiricorre.png",
         background: "assets/Cartas/Rosa.png"
     }
-];
+,
+    {
+        id: "chigiri_oro",
+        name: "CHIGIRI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "LW",
+        secondaryPositions: ["LB", "RW", "RB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Chigiri/ChigiriOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ];
 
 
 // ==========================================
@@ -650,11 +894,39 @@ const chigiriCards = [
 // ==========================================
 const hugoCards = [
     {
+        id: "hugo_oro",
+        name: "HUGO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CM",
+        secondaryPositions: ["CDM", "CAM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Hugo/HugoOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "hugo_base",
+        name: "HUGO",
+        version: "Base",
+        rarity: "Especial",
+        rating: 89,
+        position: "CM",
+        secondaryPositions: ["CDM", "CAM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Hugo/Hugo.png",
+        background: "assets/Cartas/Rosa.png"
+    },
+    {
         id: "hugo_maquina",
         name: "HUGO",
         version: "Maquina",
         rarity: "Especial",
-        rating: 89,
+        rating: 90,
         position: "CM",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/fr.png",
@@ -674,20 +946,6 @@ const hugoCards = [
         teamIcon: "teams/Arsenal.png",
         image: "assets/characters/Hugo/HugoRosa.png",
         background: "assets/Cartas/Trailblaze.png"
-    },
-    {
-        id: "hugo_base",
-        name: "HUGO",
-        version: "Base",
-        rarity: "Especial",
-        rating: 87,
-        position: "CM",
-        secondaryPositions: ["CDM", "CAM"],
-        league: "Premier League",
-        nationFlag: "https://flagcdn.com/w40/fr.png",
-        teamIcon: "teams/Arsenal.png",
-        image: "assets/characters/Hugo/Hugo.png",
-        background: "assets/Cartas/Rosa.png"
     }
 ];
 
@@ -696,11 +954,25 @@ const hugoCards = [
 // ==========================================
 const lokiCards = [
     {
+        id: "loki_oro",
+        name: "LOKI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "LW",
+        secondaryPositions: ["ST", "RW"],
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Loki/LokiOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "loki_nagi",
         name: "LOKI",
         version: "PXG",
         rarity: "Especial",
-        rating: 87,
+        rating: 90,
         position: "LW",
         secondaryPositions: ["ST", "RW"],
         league: "Ligue 1",
@@ -714,7 +986,7 @@ const lokiCards = [
         name: "LOKI",
         version: "Speedster",
         rarity: "Especial",
-        rating: 89,
+        rating: 92,
         position: "LW",
         secondaryPositions: ["ST", "RW"],
         league: "Ligue 1",
@@ -744,11 +1016,25 @@ const lokiCards = [
 // ==========================================
 const chevalierCards = [
     {
+        id: "chevalier_oro",
+        name: "CHEVALIER",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CAM",
+        secondaryPositions: ["CM", "CF"],
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Chevalier/ChevalierOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "chevalier_pxg",
         name: "CHEVALIER",
         version: "PXG",
         rarity: "Especial",
-        rating: 85,
+        rating: 87,
         position: "CAM",
         secondaryPositions: ["CM", "CF"],
         league: "Ligue 1",
@@ -762,7 +1048,7 @@ const chevalierCards = [
         name: "CHEVALIER",
         version: "Boss",
         rarity: "Especial",
-        rating: 87,
+        rating: 88,
         position: "CAM",
         secondaryPositions: ["CM", "CF"],
         league: "Ligue 1",
@@ -792,13 +1078,27 @@ const chevalierCards = [
 // ==========================================
 const noaCards = [
     {
-        id: "noa_base",
-        name: "NOEL NOA",
-        version: "Bastard Munchen",
-        rarity: "Especial",
+        id: "noa_oro",
+        name: "NOA",
+        version: "Oro",
+        rarity: "Oro",
         rating: 90,
         position: "ST",
-        secondaryPositions: ["CAM"],
+        secondaryPositions: ["CF", "RW"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Noa/NoaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "noa_bastard",
+        name: "NOA",
+        version: "Bastard Munchen",
+        rarity: "Especial",
+        rating: 93,
+        position: "ST",
+        secondaryPositions: ["CF", "RW"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Bastard.png",
@@ -806,13 +1106,13 @@ const noaCards = [
         background: "assets/Cartas/Bastard.png"
     },
     {
-        id: "noa_chute",
-        name: "NOEL NOA",
+        id: "noa_balon",
+        name: "NOA",
         version: "Balón de Oro",
         rarity: "Especial",
-        rating: 93,
+        rating: 95,
         position: "ST",
-        secondaryPositions: ["CAM"],
+        secondaryPositions: ["CF", "RW"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Bastard.png",
@@ -820,13 +1120,13 @@ const noaCards = [
         background: "assets/Cartas/BalonOro.png"
     },
     {
-        id: "noa_prime",
-        name: "NOEL NOA",
-        version: "Prime",
+        id: "noa_rulebreaker",
+        name: "NOA",
+        version: "Rulebreaker",
         rarity: "Especial",
         rating: 97,
         position: "ST",
-        secondaryPositions: ["CAM"],
+        secondaryPositions: ["CF", "RW"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Bastard.png",
@@ -840,6 +1140,45 @@ const noaCards = [
 // ==========================================
 const franciaBLCards = [
     {
+        id: "ludovic_oro",
+        name: "LUDOVIC",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/Francia/LudovicOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "rechard_oro",
+        name: "RECHARD",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "GK",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/Francia/RechardOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "chapa_oro",
+        name: "CHAPA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "LB",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/ChapaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "chapa_pxg",
         name: "CHAPA",
         version: "PXG",
@@ -851,6 +1190,19 @@ const franciaBLCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Francia/Chapa.png",
         background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "leyden_oro",
+        name: "LEYDEN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "LW",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Marsella.png",
+        image: "assets/characters/Francia/LeydenOro.png",
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "leyden_marsella",
@@ -879,6 +1231,19 @@ const franciaBLCards = [
         background: "assets/Cartas/Hielo.png"
     },
     {
+        id: "camus_oro",
+        name: "CAMUS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "RW",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Marsella.png",
+        image: "assets/characters/Francia/CamusOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "bats_dortmund",
         name: "BATS",
         version: "Borussia Dortmund",
@@ -890,6 +1255,32 @@ const franciaBLCards = [
         teamIcon: "teams/Dortmund.png",
         image: "assets/characters/Francia/Bats.png",
         background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "bats_oro",
+        name: "BATS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CDM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Francia/BatsOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "renoir_oro",
+        name: "RENOIR",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "GK",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/RenoirOro.png",
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "renoir_pxg",
@@ -911,6 +1302,19 @@ const franciaBLCards = [
 // ==========================================
 const franciaHieloCards = [
     {
+        id: "hermes_oro",
+        name: "HERMÈS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Francia/Hermesoro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "hermes_arsenal",
         name: "HERMÉS",
         version: "Arsenal",
@@ -924,17 +1328,43 @@ const franciaHieloCards = [
         background: "assets/Cartas/Hielo.png"
     },
     {
+        id: "delon_oro",
+        name: "DELON",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "RB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Inter.png",
+        image: "assets/characters/Francia/Delonoro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "delon_milan",
         name: "DELON",
-        version: "AC Milan",
+        version: "Inter",
         rarity: "Especial",
         rating: 81,
         position: "RB",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/fr.png",
-        teamIcon: "teams/Milan.png",
+        teamIcon: "teams/Inter.png",
         image: "assets/characters/Francia/Delon.png",
         background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "gabon_oro",
+        name: "GABON",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CB",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/GabonOro.png",
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "gabon_pxg",
@@ -948,5 +1378,167 @@ const franciaHieloCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Francia/Gabon.png",
         background: "assets/Cartas/Hielo.png"
+    }
+];
+
+// ==========================================
+// KUNIGAMI
+// ==========================================
+const kunigamiCards = [
+    {
+        id: "kunigami_bastard_84",
+        name: "KUNIGAMI",
+        version: "Bastard Munchen",
+        rarity: "Especial",
+        rating: 84,
+        position: "CDM",
+        secondaryPositions: ["ST"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Kunigami/KunigamiCartas.png",
+        background: "assets/Cartas/Bastard.png"
+    },
+    {
+        id: "kunigami_bastard_86",
+        name: "KUNIGAMI",
+        version: "Bastard Munchen",
+        rarity: "Especial",
+        rating: 86,
+        position: "CDM",
+        secondaryPositions: ["ST"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Kunigami/KunigamiEntrada.png",
+        background: "assets/Cartas/Bastard.png"
+    },
+    {
+        id: "kunigami_dortmund_87",
+        name: "KUNIGAMI",
+        version: "Borussia Dortmund",
+        rarity: "Especial",
+        rating: 87,
+        position: "CDM",
+        secondaryPositions: ["ST"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Kunigami/KunigamiControl.png",
+        background: "assets/Cartas/Naranja.png"
+    },
+    {
+        id: "kunigami_dortmund_88",
+        name: "KUNIGAMI",
+        version: "Borussia Dortmund",
+        rarity: "Especial",
+        rating: 88,
+        position: "CDM",
+        secondaryPositions: ["ST"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Kunigami/KunigamiChute.png",
+        background: "assets/Cartas/Naranja.png"
+    }
+,
+    {
+        id: "kunigami_oro",
+        name: "KUNIGAMI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "CDM",
+        secondaryPositions: ["ST"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Kunigami/KunigamiOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+  ];
+
+
+
+// ==========================================
+// TRESAGA
+// ==========================================
+const tresagaCards = [
+    {
+        id: "tresaga_oro",
+        name: "TRESAGA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Francia/TresagaOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
+
+// ==========================================
+// BAPTISTE
+// ==========================================
+const baptisteCards = [
+    {
+        id: "baptiste_pxg",
+        name: "BAPTISTE",
+        version: "PXG",
+        rarity: "Especial",
+        rating: 88,
+        position: "GK",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/Baptiste.png",
+        background: "assets/Cartas/PXG.png"
+    },
+    {
+        id: "baptiste_oro",
+        name: "BAPTISTE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "GK",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/BaptisteOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
+
+// ==========================================
+// HIDALGO
+// ==========================================
+const hidalgoCards = [
+    {
+        id: "hidalgo_pxg",
+        name: "HIDALGO",
+        version: "PXG",
+        rarity: "Especial",
+        rating: 89,
+        position: "CAM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/Hidalgo.png",
+        background: "assets/Cartas/PXG.png"
+    },
+    {
+        id: "hidalgo_oro",
+        name: "HIDALGO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CAM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/HidalgoOro.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

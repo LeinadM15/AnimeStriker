@@ -645,7 +645,7 @@
 
 .chemistry-lines line,
 .chemistry-lines path {
-    stroke-width: 2.5;
+    stroke-width: 0.8;
     stroke-linecap: round;
     fill: none;
     transition: stroke 0.4s ease, filter 0.4s ease;
@@ -2013,3 +2013,7 @@ body.modal-open {
 
 .fc-custom-bg { pointer-events: none; }
 .fc-frame-overlay { pointer-events: none; }
+
+/* Fix drag flicker bug */
+body.is-dragging .player-slot *, body.is-dragging .bench-slot * { pointer-events: none !important; }
+

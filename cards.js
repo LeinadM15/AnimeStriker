@@ -1,7 +1,7 @@
 // cards.js - Catálogo Maestro
-// Este archivo simplemente reúne todos los arrays definidos en los archivos de la carpeta database/
+// Este archivo reúne todos los arrays definidos en los archivos de la carpeta database/ y asigna la serie
 
-const cardsDB = [
+const tsubasaAll = [
     ...tsubasaCards,
     ...genzoCards,
     ...kojiroCards,
@@ -23,33 +23,31 @@ const cardsDB = [
     ...dinamarcaCards,
     ...pierreCards,
     ...napoleonCards,
+    ...amorosCards,
+    ...jeanCards,
+    ...mexicoCards,
+    ...tailandiaCards,
+    ...uruguayCards,
+    ...chinaCards,
+    ...croaciaCards,
+    ...eeuuCards,
+    ...portoCards,
     ...makeloloCards,
     ...thoramCards,
     ...italiaCards,
     ...espanaCards,
     ...holandaCardsNuevos,
-    ...raimonCards,
-    ...occultCards,
-    ...wildCards,
-    ...inazumaKidsCards,
-    ...otakuCards,
-    ...brainCards,
-    ...royalCards,
-    ...shurikenCards,
-    ...farmCards,
-    ...zeusCards,
-    ...servicioSecretoCards,
-    ...geminisCards,
-    ...claustroSagradoCards,
-    ...epsilonCards,
-    ...tripleCCards,
-    ...maryTimesCards,
-    ...fauxshoreCards,
-    ...genesisCards,
-    ...isagiCards,
     ...duschampsCards,
     ...mbappaCards,
     ...zedaneCards,
+    ...sueciaCards,
+    ...argentinaCards,
+    ...otrosFranciaCards
+];
+tsubasaAll.forEach(c => c._series = 'tsubasa');
+
+const bluelockAll = [
+    ...isagiCards,
     ...yukimiyaCards,
     ...karasuCards,
     ...nagiCards,
@@ -61,8 +59,18 @@ const cardsDB = [
     ...chigiriCards,
     ...hugoCards,
     ...lokiCards,
+    ...tresagaCards,
+    ...baptisteCards,
+    ...hidalgoCards,
     ...chevalierCards,
     ...noaCards,
     ...franciaBLCards,
-    ...franciaHieloCards
+    ...franciaHieloCards,
+    ...kunigamiCards
 ];
+bluelockAll.forEach(c => c._series = 'bluelock');
+
+const coachesAll = typeof coachesDB !== 'undefined' ? [...coachesDB] : [];
+coachesAll.forEach(c => c._series = 'coach');
+
+const cardsDB = [...tsubasaAll, ...bluelockAll, ...coachesAll];

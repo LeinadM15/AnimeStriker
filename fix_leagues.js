@@ -1,1 +1,29 @@
-const fs = require('fs'); let c = fs.readFileSync('database/tsubasa_cards.js', 'utf8'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/nl\.png",\s*teamIcon: "teams\/Ajax\.png"/g, 'league: "Eredivisie", nationFlag: "https://flagcdn.com/w40/nl.png", teamIcon: "teams/Ajax.png"'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/jp\.png",\s*teamIcon: "teams\/Japon\.png"/g, 'league: "J-League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Japon.png"'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/jp\.png",\s*teamIcon: "teams\/Kobe\.png"/g, 'league: "J-League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Kobe.png"'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/se\.png",\s*teamIcon: "teams\/Bastard\.png"/g, 'league: "Bundesliga", nationFlag: "https://flagcdn.com/w40/se.png", teamIcon: "teams/Bastard.png"'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/fr\.png",\s*teamIcon: "teams\/PXG\.png"/g, 'league: "Ligue 1", nationFlag: "https://flagcdn.com/w40/fr.png", teamIcon: "teams/PXG.png"'); c = c.replace(/league: "Mundial",\s*nationFlag: "https:\/\/flagcdn\.com\/w40\/fr\.png",\s*teamIcon: "teams\/Marsella\.png"/g, 'league: "Ligue 1", nationFlag: "https://flagcdn.com/w40/fr.png", teamIcon: "teams/Marsella.png"'); fs.writeFileSync('database/tsubasa_cards.js', c);
+const fs = require('fs');
+
+// Fix coaches
+let coachesCode = fs.readFileSync('database/coaches.js', 'utf8');
+coachesCode = coachesCode.replace(/league:\s*"",/g, 'league: "Federaciones",');
+fs.writeFileSync('database/coaches.js', coachesCode);
+
+// Fix LaLiga
+const filesToFix = [
+    'database/tsubasa_cards.js',
+    'database/bluelock_cards.js',
+    'database/inazuma_cards.js'
+];
+
+filesToFix.forEach(file => {
+    try {
+        let code = fs.readFileSync(file, 'utf8');
+        code = code.replace(/league:\s*"LaLiga"/g, 'league: "La Liga"');
+        fs.writeFileSync(file, code);
+    } catch(e) {}
+});
+
+// Cache Buster v61
+const files = ['index.html', 'myclub.html', 'packs.html', 'squad.html'];
+files.forEach(file => {
+    let content = fs.readFileSync(file, 'utf8');
+    content = content.replace(/\?v=\d+/g, '?v=61');
+    fs.writeFileSync(file, content);
+});

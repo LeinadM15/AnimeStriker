@@ -1,0 +1,720 @@
+========================================
+ LISTA DE JUGADORES - WEB FUTBOL
+========================================
+
+[ AJAX ]
+----------------------------------------
+- S. KLUIVOORT (Holanda) | Posición: ST | Media: 91
+- S. KLUIVOORT (Ajax) | Posición: CDM | Media: 89
+- KAISER (Ajax) | Posición: ST | Media: 89
+- DICK (Ajax) | Posición: CB | Media: 88
+- KLISMANN (Ajax) | Posición: ST | Media: 88
+- ERIK EAGLE (EEUU) | Posición: LM | Media: 88
+- DOLEMAN (Ajax) | Posición: GK | Media: 87
+- LESENBLINK (Ajax) | Posición: CM | Media: 86
+- S. KLUIVOORT (Oro) | Posición: CDM | Media: 86
+- KAISER (Oro) | Posición: ST | Media: 86
+- KLISMANN (Oro) | Posición: ST | Media: 85
+- ERIK EAGLE (Oro) | Posición: LM | Media: 85
+- DOLEMAN (Oro) | Posición: GK | Media: 84
+- DICK (Oro) | Posición: CB | Media: 84
+- YUKIMIYA (Oro) | Posición: LW | Media: 83
+- LENSENBLINK (Oro) | Posición: CM | Media: 83
+- ENDOJI (Ajax) | Posición: ST | Media: 81
+- HANSEN (Oro) | Posición: CB | Media: 81
+- R. TORRES (Oro) | Posición: CDM | Media: 81
+
+[ ARGENTINA ]
+----------------------------------------
+- STURBIN (Entrenador (Oro)) | Posición: COACH | Media: 87
+
+[ ARSENAL ]
+----------------------------------------
+- HUGO (Trailblazer) | Posición: CM | Media: 92
+- HUGO (Maquina) | Posición: CM | Media: 90
+- HUGO (Base) | Posición: CM | Media: 89
+- CHRISTIANSEN (Arsenal) | Posición: ST | Media: 88
+- CAMILO LUNA (Rulebraker) | Posición: LB | Media: 87
+- HAAS (Oro) | Posición: ST | Media: 85
+- CHRISTIANSEN (Oro) | Posición: ST | Media: 85
+- HAYATE (Arsenal) | Posición: CDM | Media: 82
+- HERMÉS (Arsenal) | Posición: CB | Media: 81
+
+[ ATHLETIC ]
+----------------------------------------
+- VÍCTOR GARCIA (Oro) | Posición: CB | Media: 86
+- MATEO BONACHEA (Oro) | Posición: ST | Media: 84
+- ANDRES ALONSO (Oro) | Posición: CDM | Media: 83
+- ALFONSOÍÑIGO (Oro) | Posición: GK | Media: 83
+- CLAUDE MOREAU (Oro) | Posición: LM | Media: 81
+
+[ BARCHA ]
+----------------------------------------
+- MESSI (Icono) | Posición: RW | Media: 97
+- TSUBASA (Mundial 2026) | Posición: CAM | Media: 95
+- TSUBASA (Barcha) | Posición: CAM | Media: 93
+- TSUBASA (Rising Sun) | Posición: CAM | Media: 92
+- BUNNY (Trailblaze) | Posición: ST | Media: 92
+- VICTORINO (Mordiscos) | Posición: ST | Media: 92
+- TSUBASA (Rising) | Posición: CAM | Media: 91
+- SERGI HERNANDEZ (España) | Posición: CM | Media: 90
+- LUIKAL (Barcha) | Posición: ST | Media: 90
+- VICTORINO (EEUU) | Posición: ST | Media: 90
+- MESSI (Oro) | Posición: RW | Media: 90
+- TSUBASA (Oro) | Posición: CAM | Media: 89
+- BUNNY (Barcha) | Posición: ST | Media: 89
+- SALVADOR CASTELL (España) | Posición: GK | Media: 88
+- VICTORINO (Barcha) | Posición: ST | Media: 88
+- GRANDIOS (Oro) | Posición: CDM | Media: 87
+- SERGI HERNANDEZ ORO (Oro) | Posición: CM | Media: 87
+- LUIKAL (Oro) | Posición: ST | Media: 87
+- BUNNY (Oro) | Posición: ST | Media: 86
+- XAVII (Oro) | Posición: CDM | Media: 86
+- SALVADOR CASTELL ORO (Oro) | Posición: GK | Media: 86
+- JOAN ASENSI (Oro) | Posición: LW | Media: 86
+- VICTORINO (Oro) | Posición: ST | Media: 86
+- GONZALEZ (Oro) | Posición: CB | Media: 85
+- XAVI CASALS (Oro) | Posición: CM | Media: 85
+- RONALDO RAMALLETS (Oro) | Posición: CM | Media: 85
+- DIEGO (Oro) | Posición: CAM | Media: 85
+- ALESSIO GANONTI (Entrenador (Oro)) | Posición: COACH | Media: 84
+- PAYOL (Oro) | Posición: CB | Media: 84
+- CARLES RIPOLL (Oro) | Posición: LB | Media: 84
+- ANTONI VALLS (Oro) | Posición: CB | Media: 84
+- GERALDO ENRIQUE (Oro) | Posición: ST | Media: 84
+- RECHARD (Oro) | Posición: GK | Media: 83
+- LEO SEGARRA (Oro) | Posición: ST | Media: 83
+- SAVIOLA (Oro) | Posición: ST | Media: 83
+- JORDI BELLOCH (Oro) | Posición: CB | Media: 82
+- AUGUSTO GOMEZ (Oro) | Posición: CM | Media: 82
+- OVERUS (Oro) | Posición: CB | Media: 82
+- GERARD CARBONELL (Oro) | Posición: CB | Media: 81
+- JOSEP ANGLESOLA (Oro) | Posición: CDM | Media: 80
+
+[ BASTARD ]
+----------------------------------------
+- NOA (Rulebreaker) | Posición: ST | Media: 97
+- NOA (Balón de Oro) | Posición: ST | Media: 95
+- GENZO (Rising Sun) | Posición: GK | Media: 94
+- NOA (Bastard Munchen) | Posición: ST | Media: 93
+- GENZO (Especial) | Posición: GK | Media: 92
+- LEVIN (Suecia) | Posición: CAM | Media: 91
+- GENZO (Bastard Munchen) | Posición: GK | Media: 90
+- XIAO (Trailblaze) | Posición: CDM | Media: 90
+- ISAGI (Bastard Munchen) | Posición: ST | Media: 89
+- GENZO (Oro) | Posición: GK | Media: 88
+- XIAO (Bastard) | Posición: CDM | Media: 88
+- YUKIMIYA (Bastard Munchen) | Posición: LW | Media: 87
+- HIORI (Bastard Munchen) | Posición: CM | Media: 87
+- LEVIN (Oro) | Posición: CAM | Media: 87
+- HIORI (Bastard Munchen) | Posición: CM | Media: 86
+- KUNIGAMI (Bastard Munchen) | Posición: CDM | Media: 86
+- XIAO (Oro) | Posición: CDM | Media: 86
+
+[ BLULOCK ]
+----------------------------------------
+- NAGI (Blue Lock) | Posición: ST | Media: 90
+- NAGI (Blue Lock) | Posición: ST | Media: 87
+- KIYORA (Blue Lock) | Posición: LB | Media: 84
+- HIIRAGI (Blue Lock) | Posición: CM | Media: 83
+
+[ BRAIN ]
+----------------------------------------
+- FELDT (Brain) | Posición: GK | Media: 79
+- TELL (Brain) | Posición: CM | Media: 77
+- SELLER (Brain) | Posición: CM | Media: 75
+- MARVEL (Brain) | Posición: CB | Media: 74
+
+[ CHELSEA ]
+----------------------------------------
+- OWAIRAN (Shapesifters) | Posición: CB | Media: 91
+- M. MOON (Flashback) | Posición: ST | Media: 89
+- OWAIRAN (Tots) | Posición: CB | Media: 89
+- MARK KRUEGER (Oro) | Posición: CM | Media: 86
+- JULIEN ROUSSEAU (Oro) | Posición: CM | Media: 86
+- M. MOON (Oro) | Posición: ST | Media: 86
+- OWAIRAN (Oro) | Posición: CB | Media: 86
+- EMILE LAZARE (Oro) | Posición: GK | Media: 81
+- MICHELLE (Oro) | Posición: CM | Media: 80
+
+[ CHICORID ]
+----------------------------------------
+- FERSIO TORRES (Chicorid) | Posición: ST | Media: 90
+- T. TORRES (Cabras) | Posición: CB | Media: 90
+- BUNNAAK (Chicorid) | Posición: CB | Media: 88
+- GARDEL (Chicorid) | Posición: GK | Media: 88
+- BLAKE (EEUU) | Posición: ST | Media: 88
+- ROSSI (Chicorid) | Posición: CDM | Media: 87
+- DIEGO GOFUN (Chicorid) | Posición: CB | Media: 87
+- VULCAN (Shapesifters) | Posición: CB | Media: 87
+- SORIMACHI (Mundial) | Posición: ST | Media: 86
+- T. TORRES (Oro) | Posición: CB | Media: 86
+- SORIMACHI (Especial) | Posición: ST | Media: 85
+- GARCIA (Shapesifter) | Posición: CDM | Media: 85
+- GARDEL (Oro) | Posición: GK | Media: 85
+- BLAKE (Oro) | Posición: ST | Media: 85
+- ROSSI (Oro) | Posición: CDM | Media: 84
+- VULCAN (Oro) | Posición: ST | Media: 84
+- GARCIA (Oro) | Posición: CDM | Media: 83
+- ZHONGMING (Oro) | Posición: LW | Media: 82
+- JOSE COSTA (Oro) | Posición: CB | Media: 80
+- JOAN RODRIGUEZ (Oro) | Posición: CM | Media: 80
+- TONY STRIDER (Oro) | Posición: CB | Media: 80
+
+[ CHINA ]
+----------------------------------------
+- WILSON IP (Entrenador (Oro)) | Posición: COACH | Media: 80
+
+[ CLAUSTROSAGRADO ]
+----------------------------------------
+- MARSHALL (Claustro Sagrado) | Posición: GK | Media: 78
+- KIK (Claustro Sagrado) | Posición: ST | Media: 77
+- DIRK (Claustro Sagrado) | Posición: CM | Media: 76
+
+[ DORTMUND ]
+----------------------------------------
+- KUNIGAMI (Borussia Dortmund) | Posición: CDM | Media: 88
+- ROMANO (Dortmund) | Posición: ST | Media: 88
+- KUNIGAMI (Borussia Dortmund) | Posición: CDM | Media: 87
+- AZWAN (EEUU) | Posición: CM | Media: 87
+- KRAUS (Oro) | Posición: CAM | Media: 86
+- ROMANO (Oro) | Posición: ST | Media: 85
+- ALVEZ (Shapesifter) | Posición: CAM | Media: 84
+- HELLION (Oro) | Posición: ST | Media: 84
+- AZWAN (Oro) | Posición: CM | Media: 84
+- BATS (Borussia Dortmund) | Posición: CDM | Media: 81
+- TED BRYANT (Oro) | Posición: LB | Media: 79
+- BATS (Oro) | Posición: CDM | Media: 78
+- R. MARTINEZ (Oro) | Posición: CB | Media: 78
+
+[ EEUU ]
+----------------------------------------
+- RENEGADE (Entrenador (Oro)) | Posición: COACH | Media: 83
+
+[ EPSILON ]
+----------------------------------------
+- DVALIN (Delantero) | Posición: ST | Media: 85
+- MERCURY (Epsilon) | Posición: ST | Media: 82
+- METRON (Epsilon) | Posición: ST | Media: 81
+- KRYPTO (Epsilon) | Posición: CM | Media: 80
+- KAYSON (Epsilon) | Posición: CB | Media: 79
+- MOLE (Epsilon) | Posición: CB | Media: 79
+- KENVILLE (Epsilon) | Posición: CM | Media: 78
+- TYTAN (Epsilon) | Posición: CB | Media: 78
+
+[ ESPAÑA ]
+----------------------------------------
+- LEONARDO LUNA (España) | Posición: ST | Media: 93
+- PEPE BALLESTER (Entrenador (Oro)) | Posición: COACH | Media: 80
+
+[ FARM ]
+----------------------------------------
+- HILLVALLEY (Farm) | Posición: CB | Media: 79
+- ROAST (Farm) | Posición: ST | Media: 77
+
+[ FAUXSHORE ]
+----------------------------------------
+- LUCKYMAN (Fauxshore) | Posición: ST | Media: 81
+- FAKE (Fauxshore) | Posición: CB | Media: 80
+- RANDOM (Fauxshore) | Posición: CM | Media: 79
+- RICHMEN (Fauxshore) | Posición: CM | Media: 78
+
+[ FRANCIA ]
+----------------------------------------
+- RODIN (Entrenador (Hielo)) | Posición: COACH | Media: 87
+- RODIN (Entrenador (Oro)) | Posición: COACH | Media: 85
+
+[ GEMINIS ]
+----------------------------------------
+- DIAM (Tormenta de Géminis) | Posición: ST | Media: 80
+- GALILEO (Tormenta de Géminis) | Posición: GK | Media: 79
+- GANYMEDE (Tormenta de Géminis) | Posición: CB | Media: 78
+- PANDORA (Tormenta de Géminis) | Posición: CM | Media: 77
+- RIHM (Tormenta de Géminis) | Posición: ST | Media: 77
+
+[ GENESIS ]
+----------------------------------------
+- BELLATRIX (Génesis) | Posición: CM | Media: 84
+- NERO (Génesis) | Posición: GK | Media: 83
+- KIBURN (Génesis) | Posición: ST | Media: 82
+- WITTZ (Génesis) | Posición: ST | Media: 82
+- GELE (Génesis) | Posición: CB | Media: 81
+- KIWILL (Génesis) | Posición: CM | Media: 81
+- ZOHEN (Génesis) | Posición: CM | Media: 81
+- ARK (Génesis) | Posición: CB | Media: 80
+- HAUSER (Génesis) | Posición: CB | Media: 80
+- KORMER (Génesis) | Posición: CB | Media: 80
+
+[ HAMBURGO ]
+----------------------------------------
+- NORBERT POINDEXTER (Oro) | Posición: ST | Media: 78
+- GORDON SIU (Oro) | Posición: CB | Media: 77
+
+[ INAZUMAKIDS ]
+----------------------------------------
+- MADDIE (Inazuma Kids) | Posición: ST | Media: 72
+
+[ INTER ]
+----------------------------------------
+- GINO (Inter) | Posición: GK | Media: 90
+- GINO (World Youth) | Posición: GK | Media: 89
+- ORTIZ (EEUU) | Posición: CM | Media: 89
+- GINO (Oro) | Posición: GK | Media: 87
+- ORTIZ (Oro) | Posición: CM | Media: 86
+- J. ACUTO (Oro) | Posición: CAM | Media: 86
+- JOFFREY (Oro) | Posición: CDM | Media: 86
+- MERILLO (Oro) | Posición: CB | Media: 85
+- ZANETTY (Oro) | Posición: RB | Media: 84
+- B. ORSINI (Oro) | Posición: CB | Media: 83
+- V. AMATISTA (Oro) | Posición: LM | Media: 83
+- G. ZANARDI (Oro) | Posición: CDM | Media: 83
+- MATTEO (Oro) | Posición: CM | Media: 82
+- SHANE PIERCE (Oro) | Posición: RM | Media: 82
+- SCUBA (Oro) | Posición: CB | Media: 82
+- P. BERILLO (Oro) | Posición: RW | Media: 82
+- DELON (Inter) | Posición: RB | Media: 81
+- E. CARLOS (Oro) | Posición: CM | Media: 81
+- E. OCONTI (Oro) | Posición: RM | Media: 81
+- I. LAZULI (Oro) | Posición: GK | Media: 79
+- DELON (Oro) | Posición: RB | Media: 78
+
+[ KOBE ]
+----------------------------------------
+- WAKATSUKI (Vissel Kobe) | Posición: LM | Media: 81
+
+[ MANCHESTERUNITED ]
+----------------------------------------
+- B. KLUIVOORT (United) | Posición: CAM | Media: 94
+- B. KLUIVOORT (Manchester United) | Posición: CAM | Media: 92
+- HIORI (Manchester United) | Posición: CM | Media: 88
+- F. KONSAWATT (Trailblaze) | Posición: CAM | Media: 87
+- BROLIN (Suecia) | Posición: CB | Media: 86
+- C. KONSAWATT (Trailblaze) | Posición: LW | Media: 86
+- S. KONSAWATT (Trailblaze) | Posición: RW | Media: 86
+- BOBBY SHEARER (EEUU) | Posición: RB | Media: 86
+- F. KONSAWATT (Oro) | Posición: CAM | Media: 84
+- BROLIN (Oro) | Posición: CB | Media: 83
+- C. KONSAWATT (Oro) | Posición: LW | Media: 83
+- S. KONSAWATT (Oro) | Posición: RW | Media: 83
+- BOBBY SHEARER (Oro) | Posición: RB | Media: 83
+- DARAI (Manchester United) | Posición: LB | Media: 82
+- ALAIN FAVREAU (Oro) | Posición: ST | Media: 82
+- CORYN (Oro) | Posición: CB | Media: 79
+- J. ACOSTA (Oro) | Posición: CB | Media: 78
+
+[ MANSHINE ]
+----------------------------------------
+- ESPADAS (Especial) | Posición: GK | Media: 91
+- ESPADAS (Shapesifter) | Posición: ST | Media: 90
+- CHIGIRI (Manshine City) | Posición: LW | Media: 89
+- ESPADAS (Rulebreaker) | Posición: GK | Media: 89
+- PASCAL (Mordiscos) | Posición: RW | Media: 89
+- NAGI (Manshine City) | Posición: ST | Media: 88
+- CHIGIRI (Manshine City) | Posición: LW | Media: 88
+- ESPADAS (Gris) | Posición: GK | Media: 88
+- JIMMY WONGFU (Trailblaze) | Posición: CM | Media: 88
+- PASCAL (Manshine) | Posición: RW | Media: 88
+- ESPADAS (Manshine) | Posición: GK | Media: 87
+- GALVAN (Manshine) | Posición: CB | Media: 87
+- NAGI (Manshine City) | Posición: ST | Media: 86
+- CHIGIRI (Manshine City) | Posición: LW | Media: 86
+- IZAWA (Especial) | Posición: CB | Media: 86
+- ESPADAS (Oro) | Posición: GK | Media: 86
+- JIMMY WONGFU (Oro) | Posición: CM | Media: 85
+- PASCAL (Oro) | Posición: RW | Media: 85
+- IZAWA (Prime) | Posición: CB | Media: 84
+- COBRA (Oro) | Posición: CB | Media: 84
+- GALVAN (Oro) | Posición: CB | Media: 84
+- TEVEZ (Oro) | Posición: ST | Media: 84
+- NIO (Manshine City) | Posición: CB | Media: 83
+- IZAWA (Oro) | Posición: CM | Media: 81
+
+[ MARSELLA ]
+----------------------------------------
+- NAPOLEON (Francia) | Posición: ST | Media: 88
+- SANO (Especial) | Posición: ST | Media: 85
+- NAPOLEON (Oro) | Posición: ST | Media: 85
+- PIERRE GODIN (Oro) | Posición: CB | Media: 85
+- ZARAGOZA (Oro) | Posición: ST | Media: 83
+- ROLAND PEREC (Oro) | Posición: CM | Media: 83
+- LEYDEN (Marsella) | Posición: LW | Media: 82
+- CAMUS (Marsella) | Posición: RW | Media: 82
+- HAIJI (Marsella) | Posición: CM | Media: 81
+- P. CASTILLO (Oro) | Posición: CM | Media: 80
+- ANDRE PINSON (Oro) | Posición: CDM | Media: 80
+- LEYDEN (Oro) | Posición: LW | Media: 79
+- CAMUS (Oro) | Posición: RW | Media: 79
+- JET LONG (Oro) | Posición: ST | Media: 78
+
+[ MARYTIMES ]
+----------------------------------------
+- SOUNDTOWN (Mary Times) | Posición: CM | Media: 82
+
+[ MILAN ]
+----------------------------------------
+- P. BIANCHI (Cabras) | Posición: ST | Media: 90
+- O. PACELLI (FutureStar) | Posición: CDM | Media: 89
+- P. BIANCHI (Oro) | Posición: ST | Media: 87
+- QINGHAI (Milan) | Posición: GK | Media: 86
+- O. PACELLI (Oro) | Posición: CDM | Media: 86
+- B. MEDICI (Oro) | Posición: CB | Media: 84
+- D. DIAVOLO (Oro) | Posición: LW | Media: 84
+- KITSUNEZATO (AC Milan) | Posición: CAM | Media: 83
+- QINGHAI (Oro) | Posición: GK | Media: 83
+- R. DIAMANTE (Oro) | Posición: LB | Media: 83
+- V. GALLIANO (Oro) | Posición: LB | Media: 83
+- M. MASERATI (Oro) | Posición: RB | Media: 83
+- HUNTER (Oro) | Posición: CDM | Media: 82
+- M. CORSI (Oro) | Posición: CM | Media: 82
+- Z. SAVELLI (Oro) | Posición: CM | Media: 81
+- HOWLER (Oro) | Posición: GK | Media: 80
+- A. RUBINO (Oro) | Posición: ST | Media: 80
+- MARS HUNG (Oro) | Posición: CM | Media: 76
+
+[ MONACO ]
+----------------------------------------
+- CHARMER (Oro) | Posición: LB | Media: 82
+- ROMUALD HUYSMANS (Oro) | Posición: CM | Media: 81
+- FRANCIS POUJOL (Oro) | Posición: RB | Media: 80
+- MICHAËL ARON (Oro) | Posición: CB | Media: 79
+- JEROME HERVAUD (Oro) | Posición: LW | Media: 79
+
+[ NANKATSU ]
+----------------------------------------
+- TSUBASA (Nankatsu) | Posición: CAM | Media: 89
+
+[ NAPOLI ]
+----------------------------------------
+- HINO (Napoles) | Posición: ST | Media: 93
+- DIAZ (Prime) | Posición: CAM | Media: 93
+- HINO (EEUU) | Posición: ST | Media: 91
+- DIAZ (Cabras) | Posición: CAM | Media: 91
+- DIAZ (Tots) | Posición: CAM | Media: 90
+- HINO (Tots) | Posición: ST | Media: 89
+- DIAZ (Azul) | Posición: CAM | Media: 89
+- HINO (Oro) | Posición: ST | Media: 87
+- DIAZ (Oro) | Posición: CAM | Media: 87
+- RUSCIANO (Oro) | Posición: ST | Media: 86
+- GOZZA (Oro) | Posición: CB | Media: 85
+- SUAREZ (Oro) | Posición: LW | Media: 84
+- A. GABRINI (Oro) | Posición: CDM | Media: 84
+- HIMIZU (Blue Lock) | Posición: CM | Media: 82
+- LOPEZ (Oro) | Posición: CM | Media: 82
+- GABRIEL JAX (Oro) | Posición: ST | Media: 82
+- C. GONZAGA (Oro) | Posición: LB | Media: 82
+- M. GRITTI (Oro) | Posición: CM | Media: 82
+- G. TOPAZIO (Oro) | Posición: CDM | Media: 82
+- A. ROSSA (Oro) | Posición: RB | Media: 82
+- F. PETRUCCI (Oro) | Posición: CM | Media: 81
+- A. ZAFFIRO (Oro) | Posición: CB | Media: 81
+- HIMIZU (Oro) | Posición: CM | Media: 79
+- BRUCE (Oro) | Posición: GK | Media: 78
+
+[ NUMANCIA ]
+----------------------------------------
+- MICHAEL (Especial) | Posición: CDM | Media: 93
+- MICHAEL (Numancia) | Posición: CDM | Media: 91
+- RAPHAEL (Especial) | Posición: CAM | Media: 90
+- RAPHAEL (Numancia) | Posición: CAM | Media: 88
+- MICHAEL (Oro) | Posición: CDM | Media: 88
+- RAPHAEL (Oro) | Posición: CAM | Media: 87
+- DAVID LIANG (Oro) | Posición: CM | Media: 80
+- SWITCH (Oro) | Posición: LW | Media: 79
+- J. ORTEGA (Oro) | Posición: GK | Media: 79
+
+[ OCCULT ]
+----------------------------------------
+- NATA (Occult) | Posición: GK | Media: 78
+- FRANKEN (Occult) | Posición: CB | Media: 76
+- TSUKIMURA (Occult) | Posición: ST | Media: 75
+- SANZU (Occult) | Posición: CM | Media: 74
+- YATSUHAKA (Occult) | Posición: CM | Media: 72
+
+[ OTAKU ]
+----------------------------------------
+- ARTIST (Otaku) | Posición: CM | Media: 78
+- HERO (Otaku) | Posición: CB | Media: 74
+- ARCADE (Otaku) | Posición: CM | Media: 73
+- NOVEL (Otaku) | Posición: CB | Media: 69
+- ONLINE (Otaku) | Posición: ST | Media: 68
+
+[ PXG ]
+----------------------------------------
+- LOKI (TOTS) | Posición: LW | Media: 94
+- LOKI (Speedster) | Posición: LW | Media: 92
+- PIERRE (PXG) | Posición: CAM | Media: 91
+- LOKI (PXG) | Posición: LW | Media: 90
+- KARASU (Future Star) | Posición: CDM | Media: 89
+- CHEVALIER (Shapeshifters) | Posición: CAM | Media: 89
+- MBAPPA (PXG) | Posición: LW | Media: 88
+- CHEVALIER (Boss) | Posición: CAM | Media: 88
+- PIERRE (Oro) | Posición: CAM | Media: 88
+- KARASU (PXG) | Posición: CDM | Media: 87
+- CHEVALIER (PXG) | Posición: CAM | Media: 87
+- KARASU (PXG) | Posición: CDM | Media: 86
+- HIDALGO (Oro) | Posición: CAM | Media: 86
+- BAPTISTE (Oro) | Posición: GK | Media: 85
+- CHAPA (PXG) | Posición: LB | Media: 82
+- RENOIR (PXG) | Posición: GK | Media: 81
+- GABON (PXG) | Posición: CB | Media: 81
+- CHAPA (Oro) | Posición: LB | Media: 79
+- RENOIR (Oro) | Posición: GK | Media: 78
+- GABON (Oro) | Posición: CB | Media: 78
+
+[ PARMA ]
+----------------------------------------
+- B. SMERALDO (Oro) | Posición: CM | Media: 84
+- THORAM (Oro) | Posición: CB | Media: 83
+- CANNAVARU (Oro) | Posición: CB | Media: 83
+- JUDGE (Oro) | Posición: RB | Media: 83
+- R. GENERANI (Oro) | Posición: RW | Media: 83
+- WU JUNREN (Oro) | Posición: CB | Media: 82
+- D. FOSCARI (Oro) | Posición: CM | Media: 82
+- O. ALBIZZI (Oro) | Posición: GK | Media: 82
+- B. PERLA (Oro) | Posición: ST | Media: 82
+- CHO (Parma) | Posición: ST | Media: 81
+- H. SAMUEL (Oro) | Posición: CAM | Media: 81
+- B. RUFFO (Oro) | Posición: ST | Media: 81
+- R. GRANATO (Oro) | Posición: RM | Media: 81
+- G. QUARZO (Oro) | Posición: GK | Media: 79
+
+[ PORTO ]
+----------------------------------------
+- DECO (Tots) | Posición: CM | Media: 90
+- MAURINHO (Entrenador (Oro)) | Posición: COACH | Media: 88
+- WAKASHIMAZU (Porto) | Posición: GK | Media: 88
+- DRAGONFLY (Tots) | Posición: RW | Media: 88
+- WOODS (Tots) | Posición: CB | Media: 88
+- KOFI (Tots) | Posición: CAM | Media: 88
+- KIYORA (Porto) | Posición: LB | Media: 87
+- WAKASHIMAZU (Future Star) | Posición: GK | Media: 87
+- URABE (Porto) | Posición: CB | Media: 86
+- KOFI (Oro) | Posición: CAM | Media: 86
+- WAKASHIMAZU (Oro) | Posición: GK | Media: 85
+- FREDERIKS (Suecia) | Posición: CM | Media: 85
+- DRAGONFLY (Oro) | Posición: RW | Media: 85
+- WOODS (Oro) | Posición: CB | Media: 85
+- OLIVEIRA (Oro) | Posición: ST | Media: 85
+- KRUSLER JR (Oro) | Posición: LW | Media: 84
+- MOP (Oro) | Posición: CM | Media: 83
+- TSUNZAKI (Porto) | Posición: LB | Media: 82
+- FREDERIKS (Oro) | Posición: CM | Media: 82
+- L. CRUZ (Oro) | Posición: GK | Media: 78
+
+[ RAIMON ]
+----------------------------------------
+- MARK EVANS (Mano Mágica) | Posición: GK | Media: 83
+- SHAWN (Aiden) | Posición: ST | Media: 83
+- MARK EVANS (Raimon) | Posición: GK | Media: 82
+- AXEL (Tornado de Fuego) | Posición: ST | Media: 82
+- JUDE (Raimon) | Posición: CAM | Media: 82
+- SHAWN (Raimon) | Posición: CB | Media: 82
+- AXEL (Raimon) | Posición: ST | Media: 80
+- NATHAN (Raimon) | Posición: LB | Media: 80
+- ERIK (Raimon) | Posición: CM | Media: 80
+- KEVIN (Raimon) | Posición: ST | Media: 79
+- JACK (Raimon) | Posición: CB | Media: 79
+- BOBBY (Raimon) | Posición: CB | Media: 79
+- SHADOW (Raimon) | Posición: ST | Media: 78
+- JIM (Raimon) | Posición: CB | Media: 76
+- WILLY (Raimon) | Posición: ST | Media: 76
+- MAX (Raimon) | Posición: CM | Media: 75
+- STEVE (Raimon) | Posición: CM | Media: 73
+- TIM (Raimon) | Posición: CM | Media: 72
+
+[ REAL ]
+----------------------------------------
+- LEONARDO LUNA (Radioactiva) | Posición: ST | Media: 95
+- LEONARDO LUNA (Real) | Posición: ST | Media: 91
+- CALLUSIAS (Real Madrid) | Posición: GK | Media: 91
+- LEONARDO LUNA (Oro) | Posición: ST | Media: 89
+- CALLUSIAS (Oro) | Posición: GK | Media: 87
+- GATI (Oro) | Posición: CAM | Media: 85
+- RAMS (Oro) | Posición: CB | Media: 85
+- RAMIREZ (Oro) | Posición: ST | Media: 85
+- MARIENTES (Oro) | Posición: ST | Media: 83
+- BLUENO (Oro) | Posición: CB | Media: 82
+- OLGADO (Oro) | Posición: CB | Media: 81
+- M. SAVIOLA (Oro) | Posición: ST | Media: 79
+
+[ REALBETIS ]
+----------------------------------------
+- DANI RAMOS (Oro) | Posición: CB | Media: 85
+- ALVARO MELENDEZ (Oro) | Posición: CM | Media: 84
+- MARCOS CANALES (Oro) | Posición: LM | Media: 82
+- BORJA COSTA (Oro) | Posición: CM | Media: 82
+- MOAI (Oro) | Posición: ST | Media: 82
+- JUAN ESPINDOLA (Oro) | Posición: GK | Media: 81
+- DONNIE (Oro) | Posición: CM | Media: 80
+- KEVIN PINOT (Oro) | Posición: LB | Media: 79
+
+[ REALSOCIEDAD ]
+----------------------------------------
+- FEDERICO RUBIERA (Oro) | Posición: ST | Media: 82
+- MICHEL MORLAND (Oro) | Posición: RW | Media: 82
+- IGOR FERREIRA (Oro) | Posición: CM | Media: 81
+- BOLO (Oro) | Posición: CM | Media: 81
+- STEVE WOODMARK (Oro) | Posición: CM | Media: 80
+
+[ ROMA ]
+----------------------------------------
+- CABASSOS (Rulebraker) | Posición: CAM | Media: 93
+- CABASSOS (FutBirthday) | Posición: CAM | Media: 91
+- NAKATA (Cabras) | Posición: CAM | Media: 90
+- DYLAN KEATS (EEUU) | Posición: ST | Media: 88
+- BARBERINI (Cabras) | Posición: ST | Media: 88
+- CABASSOS (Oro) | Posición: CAM | Media: 87
+- NAKATA (Oro) | Posición: CAM | Media: 87
+- KHALIS (Rulebreaker) | Posición: CB | Media: 87
+- C. LUZZAGO (Oro) | Posición: GK | Media: 86
+- G. BLASI (Oro) | Posición: GK | Media: 86
+- DYLAN KEATS (Oro) | Posición: ST | Media: 85
+- BARBERINI (Oro) | Posición: ST | Media: 85
+- YOGA (Oro) | Posición: CM | Media: 84
+- KHALIS (Oro) | Posición: CB | Media: 84
+- MARSILIO MAGNO (Entrenador (Oro)) | Posición: COACH | Media: 83
+- MR D (Entrenador (Oro)) | Posición: COACH | Media: 83
+- G. YANI (Oro) | Posición: CM | Media: 83
+- A. GRAZIUSO (Oro) | Posición: CB | Media: 83
+- O. NOBILI (Oro) | Posición: CB | Media: 82
+- R. TORELLI (Oro) | Posición: RB | Media: 81
+- G. CORSIN (Oro) | Posición: CM | Media: 80
+- R. SPINOLA (Oro) | Posición: CB | Media: 80
+
+[ ROYAL ]
+----------------------------------------
+- CALEB (Royal Redux) | Posición: CM | Media: 84
+- KING (Royal Redux) | Posición: GK | Media: 83
+- SAMFORD (Royal Redux) | Posición: ST | Media: 82
+- SAMFORD (Royal Academy) | Posición: ST | Media: 81
+- KING (Royal Academy) | Posición: GK | Media: 81
+- DRENT (Royal Academy) | Posición: CB | Media: 78
+- HATCH (Royal Academy) | Posición: ST | Media: 78
+- MASTER (Royal Academy) | Posición: CB | Media: 78
+- SWING (Royal Academy) | Posición: CM | Media: 76
+- WALDON (Royal Academy) | Posición: CB | Media: 75
+
+[ SAOPAULO ]
+----------------------------------------
+- TSUBASA (World Youth) | Posición: CAM | Media: 90
+- YUZU (Sao Paulo) | Posición: RM | Media: 81
+
+[ SERVICIOSECRETO ]
+----------------------------------------
+- IRONWALL (Servicio Secreto) | Posición: CB | Media: 80
+- SMITH (Servicio Secreto) | Posición: CM | Media: 79
+- MIRROR (Servicio Secreto) | Posición: ST | Media: 78
+
+[ SEVILLA ]
+----------------------------------------
+- MANUEL GUTIERREZ (Oro) | Posición: CB | Media: 84
+- CHICHO MUÑOZ (Oro) | Posición: CM | Media: 83
+- MIGUEL JIMENEZ (Oro) | Posición: ST | Media: 82
+- JEAN GUTAIN (Oro) | Posición: RB | Media: 80
+- PETIE POOMA (Oro) | Posición: CM | Media: 79
+- WIZARD (Oro) | Posición: RM | Media: 78
+
+[ SHURIKEN ]
+----------------------------------------
+- CODE (Shuriken) | Posición: CM | Media: 76
+- HATTORI (Shuriken) | Posición: CB | Media: 74
+
+[ SUECIA ]
+----------------------------------------
+- HANSEN (Entrenador (Suecia)) | Posición: COACH | Media: 87
+- HANSEN (Entrenador (Oro)) | Posición: COACH | Media: 85
+
+[ TRIPLEC ]
+----------------------------------------
+- MOOR (Triple C) | Posición: CM | Media: 79
+- WILLOW (Triple C) | Posición: CB | Media: 78
+
+[ UBERS ]
+----------------------------------------
+- SNUFFY (Naranja) | Posición: ST | Media: 96
+- HYUGA (Mundial) | Posición: ST | Media: 93
+- SNUFFY (Ubers) | Posición: ST | Media: 93
+- DON LORENZO (Joker) | Posición: CB | Media: 92
+- HYUGA (Ubers) | Posición: ST | Media: 91
+- GENTILE (Especial) | Posición: CB | Media: 91
+- SNUFFY (Entrenador (Oro)) | Posición: COACH | Media: 90
+- HYUGA (Ubers) | Posición: ST | Media: 90
+- GENTILE (Ubers) | Posición: CB | Media: 90
+- DAVI (Ubers Especial) | Posición: CDM | Media: 90
+- DON LORENZO (Shapesifters) | Posición: CB | Media: 90
+- SNUFFY (Oro) | Posición: ST | Media: 90
+- GENTILE (World Youth) | Posición: CB | Media: 89
+- BACCHUS (Ubers) | Posición: GK | Media: 88
+- DON LORENZO (Ubers) | Posición: CB | Media: 88
+- ZEDANE (Oro) | Posición: CAM | Media: 87
+- HYUGA (Oro) | Posición: ST | Media: 87
+- GENTILE (Oro) | Posición: CB | Media: 87
+- DAVI (Ubers) | Posición: CDM | Media: 87
+- DON LORENZO (Oro) | Posición: CB | Media: 86
+- DELPI (Oro) | Posición: ST | Media: 85
+- BACCHUS (Oro) | Posición: GK | Media: 85
+- CHIELLINI (Oro) | Posición: CB | Media: 84
+- DAVI (Oro) | Posición: CDM | Media: 84
+- INZARS (Oro) | Posición: ST | Media: 83
+- N. AGATA (Oro) | Posición: LB | Media: 82
+- SMOKESTACK (Oro) | Posición: CB | Media: 81
+- D. SANTINI (Oro) | Posición: GK | Media: 81
+- M. CORNIOLA (Oro) | Posición: LM | Media: 81
+- G. CARNIVALE (Oro) | Posición: RB | Media: 81
+- S. PEREZ (Oro) | Posición: CM | Media: 80
+- A. TURCHESE (Oro) | Posición: RB | Media: 80
+
+[ VALENCIA ]
+----------------------------------------
+- PIAZZOLA (EEUU) | Posición: CDM | Media: 88
+- JOSE MARI GONZALEZ (Oro) | Posición: CM | Media: 86
+- LARSON (Suecia) | Posición: CAM | Media: 85
+- PIAZZOLA (Oro) | Posición: CDM | Media: 85
+- CARLOS ARROYO (Oro) | Posición: CM | Media: 83
+- ISAAC CESAR (Oro) | Posición: ST | Media: 82
+- LARSON (Oro) | Posición: CAM | Media: 82
+- ALEX HAWKE (Oro) | Posición: CM | Media: 82
+- JOSE LOPEZ (Oro) | Posición: CB | Media: 81
+- SAMMO (Oro) | Posición: CB | Media: 81
+- DRAKE DYNAMO (Oro) | Posición: CB | Media: 81
+- HIIRAGI (Oro) | Posición: CM | Media: 80
+- G. DIAZ (Oro) | Posición: CB | Media: 78
+
+[ VILLAREAL ]
+----------------------------------------
+- RAUL PAREJO (Oro) | Posición: CM | Media: 85
+- MIGUEL HONTIVEROS (Oro) | Posición: CB | Media: 82
+- BILLY DASH (Oro) | Posición: GK | Media: 82
+- LAUDELINO CASTOR (Oro) | Posición: CM | Media: 81
+- ANTONIO GARRIDO (Oro) | Posición: CB | Media: 80
+- MIGUEL PEREIRA (Oro) | Posición: CM | Media: 80
+- STEPHEN CHANG (Oro) | Posición: ST | Media: 79
+
+[ WERDERBREMEN ]
+----------------------------------------
+- JACKIE (Rulebraker) | Posición: CM | Media: 87
+- JACKIE (Oro) | Posición: CM | Media: 84
+- BIGMAN (Oro) | Posición: GK | Media: 83
+- STEPHANE HINAULT (Oro) | Posición: CM | Media: 83
+
+[ WILD ]
+----------------------------------------
+- CHICKEN (Wild) | Posición: ST | Media: 78
+- BOAR (Wild) | Posición: GK | Media: 76
+- EAGLE (Wild) | Posición: CB | Media: 75
+- CHAMELEON (Wild) | Posición: CM | Media: 75
+- LION (Wild) | Posición: CM | Media: 74
+- MONKEY (Wild) | Posición: CM | Media: 73
+- SNAKE (Wild) | Posición: CB | Media: 72
+
+[ ZEUS ]
+----------------------------------------
+- POSEIDON (Zeus) | Posición: GK | Media: 81
+- DEMETER (Zeus) | Posición: ST | Media: 81
+- ARES (Zeus) | Posición: CB | Media: 80
+- HERMES (Zeus) | Posición: CM | Media: 79
+- HERA (Zeus) | Posición: ST | Media: 79
+- DIONYSUS (Zeus) | Posición: CB | Media: 78
+
+========================================
+Total de cartas: 543

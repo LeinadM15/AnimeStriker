@@ -391,3 +391,121 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
 ::selection{background:rgba(17, 181, 201, 0.4);color:#fff}
 
 
+
+
+/* ======== ORO CARD STYLING ======== */
+.oro-card .fc-char {
+    left: auto !important;
+    right: 15% !important;
+    transform: none !important;
+    height: 48% !important;
+    top: auto !important;
+    bottom: 36% !important;
+    object-position: right bottom !important;
+}
+
+.oro-card .fc-name {
+    bottom: 31% !important;
+}
+
+
+/* Custom Nation Select */
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select-trigger {
+    padding: 10px 28px 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(17, 181, 201, 0.4);
+    height: 100%;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: var(--font-b);
+    display: flex;
+    align-items: center;
+    transition: var(--tr);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.custom-select-trigger:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 8px rgba(17, 181, 201, 0.4);
+}
+
+.custom-select-trigger img {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.custom-select-trigger::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    pointer-events: none;
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 200px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+    max-height: 250px;
+    overflow-y: auto;
+    display: none;
+}
+
+.custom-options.open {
+    display: block;
+}
+
+.custom-option {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    transition: background 0.2s;
+}
+
+.custom-option:hover {
+    background: rgba(17, 181, 201, 0.2);
+    color: #fff;
+}
+
+.custom-option img {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+/* Custom Scale for specific PXG characters */
+.fifa-card[data-id="baptiste_pxg"] .fc-char,
+.fifa-card[data-id="hidalgo_pxg"] .fc-char {
+    transform: translateX(-50%) scale(1.15);
+    transform-origin: bottom center;
+}
+
+/* Coach Boost Styling */
+.fc-rating.boosted { color: #00ff00; text-shadow: 0 0 5px #00ff00, 2px 2px 4px rgba(0,0,0,0.9); }
+
+/* Coach specific styling for the Squad */
+.slot-card.coach-card .fc-char { height: 75%; bottom: 0; left: 50%; transform: translateX(-50%); object-fit: contain; }

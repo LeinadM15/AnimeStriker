@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=136">
 </head>
 <body>
 
@@ -45,7 +45,8 @@
             <section class="tab active" id="tab-single-player">
 
                 <!-- ENTER DRAFT — big banner with Tsubasa stadium bg + Mark Evans character -->
-                <div class="card banner" id="enter-draft">
+                <a href="draft.html" style="text-decoration:none; display:block;">
+                <div class="card banner" id="enter-draft" style="cursor:pointer;">
                     <img src="assets/FondoTsubasa.jpeg" alt="" class="card-bg">
                     <div class="card-bg-overlay banner-gradient"></div>
                     <div class="banner-body">
@@ -57,6 +58,7 @@
                         <img src="assets/MarkEvans.png" alt="Mark Evans" class="banner-char">
                     </div>
                 </div>
+                </a>
 
                 <!-- OPEN PACKS -->
                 <div class="card row-card" id="open-packs-card" style="cursor:pointer;">
@@ -254,17 +256,7 @@
                     </div>
                 </div>
 
-                <!-- Series -->
-                <div class="card series-card" id="series">
-                    <div class="card-inner">
-                        <h2 class="card-title">ANIME SERIES</h2>
-                        <div class="series-row">
-                            <div class="series-item s-tsubasa"><span>⚽</span><small>Captain Tsubasa</small></div>
-                            <div class="series-item s-inazuma"><span>🔥</span><small>Inazuma Eleven</small></div>
-                            <div class="series-item s-bluelock"><span>🔒</span><small>Blue Lock</small></div>
-                        </div>
-                    </div>
-                </div>
+
 
             </section>
         </main>
@@ -285,12 +277,13 @@
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
-    <script src="firebase-config.js"></script>
+    <script src="firebase-config.js?v=136"></script>
 
-    <script src="database/tsubasa_cards.js"></script>
-    <script src="database/inazuma_cards.js"></script>
-    <script src="database/bluelock_cards.js"></script>
-    <script src="cards.js"></script>
-    <script src="app.js"></script>
+    <script src="database/tsubasa_cards.js?v=136"></script>
+
+    <script src="database/bluelock_cards.js?v=136"></script>
+    <script src="database/coaches.js?v=136"></script>
+    <script src="cards.js?v=136"></script>
+    <script src="app.js?v=136"></script>
 </body>
 </html>

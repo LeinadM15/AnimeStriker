@@ -1,42 +1,28 @@
 const fs = require('fs');
-const path = require('path');
+let code = fs.readFileSync('database/tsubasa_cards.js', 'utf8');
 
-const inazumaPath = path.join(__dirname, 'database/inazuma_cards.js');
-let inazumaContent = fs.readFileSync(inazumaPath, 'utf8');
-
-// Lower all inazuma ratings by 2
-inazumaContent = inazumaContent.replace(/rating:\s*(\d+)/g, (match, p1) => {
-    return `rating: ${parseInt(p1) - 2}`;
+// 1. Zlatamovic -1
+code = code.replace(/name: "ZLATAMOVIC"([\s\S]*?rating: )(\d+)/, (match, p1, p2) => {
+    return 'name: "ZLATAMOVIC"' + p1 + (parseInt(p2) - 1);
 });
-fs.writeFileSync(inazumaPath, inazumaContent);
-console.log('Inazuma cards updated (-2 rating).');
 
-const tsubasaPath = path.join(__dirname, 'database/tsubasa_cards.js');
-let tsubasaContent = fs.readFileSync(tsubasaPath, 'utf8');
+// 2. Levin +1 (all occurrences in levinCards)
+let startIdx = code.indexOf('const levinCards = [');
+let endIdx = code.indexOf('];', startIdx);
+if (startIdx !== -1 && endIdx !== -1) {
+    let levinBlock = code.substring(startIdx, endIdx);
+    levinBlock = levinBlock.replace(/rating: (\d+)/g, (match, p1) => {
+        return 'rating: ' + (parseInt(p1) + 1);
+    });
+    code = code.substring(0, startIdx) + levinBlock + code.substring(endIdx);
+}
 
-// Read tsubasaContent and evaluate the arrays to modify easily, or regex.
-// Regex is probably safer to keep formatting.
-tsubasaContent = tsubasaContent.replace(/(id:\s*"tsu_nankatsu"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 2));
-tsubasaContent = tsubasaContent.replace(/(id:\s*"tsu_saopaulo"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 2));
-tsubasaContent = tsubasaContent.replace(/(id:\s*"tsu_risingsun"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 5));
-tsubasaContent = tsubasaContent.replace(/(id:\s*"tsu_mundial26"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 3));
+fs.writeFileSync('database/tsubasa_cards.js', code);
 
-tsubasaContent = tsubasaContent.replace(/(id:\s*"koj_toho"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 2));
-
-tsubasaContent = tsubasaContent.replace(/(id:\s*"gen_bastard"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + 90); // dejale 90
-// "dos a genzo" - wait, he said "dos a genzo y tres a hyuga".
-// Does he mean gen_hamburgo -2 or gen_risingsun -2?
-// "genzo del bastard tambien bajale y dejale 90" (was 93)
-// "entonces genzo hamurgo 86" -> set gen_hamburgo to 86.
-tsubasaContent = tsubasaContent.replace(/(id:\s*"gen_hamburgo"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + 86);
-// "wakasimazu 88" -> set waka_especial to 88
-tsubasaContent = tsubasaContent.replace(/(id:\s*"waka_especial"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + 88);
-
-// "tres a hyuga" -> "hyuga WY tambien ponle 86" -> set koj_tohowy to 86
-tsubasaContent = tsubasaContent.replace(/(id:\s*"koj_tohowy"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + 86);
-// And wait, "tres a hyuga" probably applies to another one? Kojiro Ubers?
-// Let's just do koj_ubers -3
-tsubasaContent = tsubasaContent.replace(/(id:\s*"koj_ubers"[\s\S]*?rating:\s*)(\d+)/, (match, p1, p2) => p1 + (parseInt(p2) - 3));
-
-fs.writeFileSync(tsubasaPath, tsubasaContent);
-console.log('Tsubasa updates (existing) done.');
+// Update cache buster
+const files = ['index.html', 'myclub.html', 'packs.html', 'squad.html'];
+files.forEach(file => {
+    let content = fs.readFileSync(file, 'utf8');
+    content = content.replace(/\?v=\d+/g, '?v=47');
+    fs.writeFileSync(file, content);
+});

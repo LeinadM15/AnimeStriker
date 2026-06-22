@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="squad.css">
+    <link rel="stylesheet" href="styles.css?v=136">
+    <link rel="stylesheet" href="squad.css?v=136">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
             <!-- Coach Slot -->
             <div class="coach-container">
                 <div class="box-label">ENTRENADOR</div>
-                <div class="player-slot" id="coach-slot" onclick="openPlayerModal('coach')" style="position:relative; transform:none; left:auto; top:auto; margin: 0 auto;">
+                <div class="player-slot" id="coach-slot" onclick="openPlayerModal(null, 'coach')" style="position:relative; transform:scale(0.85); transform-origin: top center; left:auto; top:auto; margin: 0 auto; width: 150px; height: 210px;">
                     <!-- Placeholder graphic -->
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <div class="box-label">ESCUDO</div>
                     <div class="badge-icon" id="badge-icon" style="background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
                 </div>
-                <div class="sidebar-box kit-box">
+                <div class="sidebar-box kit-box" onclick="openKitModal()" style="cursor: pointer;">
                     <div class="box-label">EQUIPACIÓN</div>
                     <div class="kit-icon" id="kit-icon" style="background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
                 </div>
@@ -172,6 +172,19 @@
         </div>
     </div>
 
+    <!-- ===== KIT SELECTOR MODAL ===== -->
+    <div id="kit-modal" class="formation-modal hidden" style="z-index: 2000;">
+        <div class="formation-modal-content" style="max-width: 600px;">
+            <div class="formation-modal-title">ELEGIR EQUIPACIÓN</div>
+            <div id="kit-list" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 20px; max-height: 60vh; overflow-y: auto;">
+                <!-- Kit items injected by JS -->
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <button class="modal-close-btn" onclick="closeKitModal()" style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white; cursor: pointer; font-family: var(--font-b);">CERRAR</button>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== FORMATION SELECTOR MODAL ===== -->
     <div id="formation-modal" class="formation-modal hidden">
         <div class="formation-modal-content">
@@ -188,10 +201,12 @@
     </div>
 
     <!-- Scripts -->
-    <script src="database/tsubasa_cards.js"></script>
-    <script src="database/inazuma_cards.js"></script>
-    <script src="database/bluelock_cards.js"></script>
-    <script src="cards.js"></script>
-    <script src="squad.js"></script>
+    <script src="database/tsubasa_cards.js?v=136"></script>
+
+    <script src="database/bluelock_cards.js?v=136"></script>
+    <script src="database/coaches.js?v=136"></script>
+    <script src="database/kits.js?v=136"></script>
+    <script src="cards.js?v=136"></script>
+    <script src="squad.js?v=136"></script>
 </body>
 </html>

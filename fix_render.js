@@ -1,84 +1,58 @@
 const fs = require('fs');
+let s = fs.readFileSync('squad.js', 'utf8');
 
-let content = fs.readFileSync('squad.js', 'utf8');
+const regex = /return r;\s*\}\)\(\)\}<\/span>\s*<span class="fc-position/;
+if (!s.match(regex)) {
+    // If renderFilledSlot is completely broken, let's restore it fully
+    const startRender = 'function renderFilledSlot(card, requiredRole, isMini = false, index = 0, target = \\'pitch\\') {';
+    const endRender = 'function getCardFrame(card) {';
+    const renderContent = `function renderFilledSlot(card, requiredRole, isMini = false, index = 0, target = 'pitch') {
+    const posStatus = getPositionStatus(card, requiredRole);
+    let posClass = 'pos-wrong';
+    if(requiredRole === 'ANY' || requiredRole === 'COACH') posClass = 'pos-exact'; 
+    else if (posStatus === 'exact') posClass = 'pos-exact';
+    else if (posStatus === 'secondary') posClass = 'pos-secondary';
 
-const newRenderBench = `function renderBench() {
-    const benchContainer = document.getElementById('bench');
-    if (!benchContainer) return;
+    const teamSrc = (card.teamIcon && card.teamIcon.startsWith('teams/')) ? \`assets/\${card.teamIcon}\` : (card.teamIcon || '');
+
+    const frame = getCardFrame(card);
+    let bgHTML = '';
+    let overlayHTML = '';
+    if (frame.overlay) {
+        bgHTML = \`<div class="fc-custom-bg" style="background-image: url('\${frame.bg}');"></div>\`;
+        overlayHTML = \`<div class="fc-frame-overlay" style="background-image: url('\${frame.overlay}');"></div>\`;
+    }
+    const cardBg = frame.overlay ? '' : \`style="background-image: url('\${frame.bg}');"\`;
+
+    return \`
+        <div class="slot-card" \${cardBg} onclick="openPlayerModal(\${index}, '\${target}')">
+            \${bgHTML}
+            \${overlayHTML}
+            <div class="fc-info">
+                 <span class="fc-rating">\${(function(){
+                        let r = card.rating;
+                        if (target === 'pitch' && typeof currentCoach !== 'undefined' && currentCoach && currentCoach.id === 'coach_maurinho_oro') {
+                            if (card.teamIcon && card.teamIcon.includes('Porto')) r++;
+                        }
+                        return r;
+                    })()}</span>
+                <span class="fc-position \${posClass}">\${card.position}</span>
+                <img src="\${card.nationFlag}" class="fc-flag" alt="Flag">
+                <img src="\${teamSrc}" class="fc-team" alt="Team">
+            </div>
+            <img src="\${card.image}" class="fc-char" alt="\${card.name}">
+            <div class="fc-name">\${card.name}</div>
+            \${target === 'coach' && card.id === 'coach_maurinho_oro' ? '<div style="position:absolute; bottom:-12px; width:100%; text-align:center; font-size:10px; color:#ffeb3b; background:rgba(0,0,0,0.7); border-radius:4px; padding:2px; z-index:10; white-space:nowrap; left:50%; transform:translateX(-50%);">+1 Med Porto<br>+1 Quím PT/Porto</div>' : ''}
+        </div>
+        <div class="slot-position-label \${posClass}">\${requiredRole}</div>
+        <button class="slot-delete-btn" onclick="event.stopPropagation(); removePlayer(\${index}, '\${target}')">🗑️</button>
+    \`;
+}
+
+function getCardFrame(card) {`;
     
-    let html = '';
-    for(let i=0; i<8; i++) {
-        const card = benchSquad[i];
-        if (card) {
-            html += \`<div class="player-slot filled" style="position:relative; transform:none; left:auto; top:auto;">\` + renderFilledSlot(card, 'ANY', true, i, 'bench') + \`</div>\`;
-        } else {
-            html += \`
-                <div class="player-slot" style="position:relative; transform:none; left:auto; top:auto;" onclick="openPlayerModal(\${i}, 'bench')">
-                    <div class="slot-empty">
-                        <span class="slot-add">+</span>
-                    </div>
-                </div>
-            \`;
-        }
-    }
-    benchContainer.innerHTML = html;
-}`;
-
-const newRenderCoach = `function renderCoach() {
-    const coachContainer = document.getElementById('coach-slot');
-    if (!coachContainer) return;
-    if (currentCoach) {
-        coachContainer.innerHTML = \`<div class="player-slot filled" style="position:relative; transform:none; left:auto; top:auto;">\` + renderFilledSlot(currentCoach, 'COACH', true, 0, 'coach') + \`</div>\`;
-    } else {
-        coachContainer.innerHTML = \`<span style="color: rgba(255,255,255,0.3); font-size: 2rem;">+</span>\`;
-    }
-}`;
-
-const newRenderFormation = `function renderFormation() {
-    const pitch = document.getElementById('pitch');
-    if (!pitch) return;
-
-    // Preserve the SVG and markings, only update slots
-    const svg = document.getElementById('chemistry-lines');
-    const markings = pitch.querySelector('.pitch-markings');
-    
-    pitch.innerHTML = '';
-    if (markings) pitch.appendChild(markings);
-    if (svg) pitch.appendChild(svg);
-
-    const formation = FORMATIONS[currentFormation];
-    if (!formation) return;
-
-    for (let i = 0; i < 11; i++) {
-        const pos = formation.positions[i];
-        const slot = document.createElement('div');
-        slot.className = 'player-slot';
-        slot.id = \`slot-\${i}\`;
-        slot.style.left = \`\${pos.x}%\`;
-        slot.style.top = \`\${pos.y}%\`;
-
-        if (squad[i]) {
-            slot.classList.add('filled');
-            slot.innerHTML = renderFilledSlot(squad[i], pos.role, false, i, 'pitch');
-        } else {
-            slot.innerHTML = \`
-                <div class="slot-empty" onclick="openPlayerModal(\${i}, 'pitch')">
-                    <span class="slot-role">\${pos.role}</span>
-                    <span class="slot-add">+</span>
-                </div>
-            \`;
-        }
-        pitch.appendChild(slot);
-    }
-
-    if (typeof drawChemistryLines === 'function') drawChemistryLines();
-    if (typeof updateStats === 'function') updateStats();
-    saveSquad();
-}`;
-
-content = content.replace(/function renderBench\(\) \{[\s\S]*?function renderCoach\(\) \{/m, newRenderBench + '\n\nfunction renderCoach() {');
-content = content.replace(/function renderCoach\(\) \{[\s\S]*?\/\/ Modificamos renderFormation/m, newRenderCoach + '\n\n// Modificamos renderFormation');
-content = content.replace(/function renderFormation\(\) \{[\s\S]*?function renderFilledSlot/m, newRenderFormation + '\n\nfunction renderFilledSlot');
-
-fs.writeFileSync('squad.js', content);
-console.log('Fixed render functions in squad.js');
+    // Replace the broken block
+    s = s.replace(/function renderFilledSlot\([\s\S]*?function getCardFrame\(card\) \{/, renderContent);
+    fs.writeFileSync('squad.js', s);
+    console.log('Restored renderFilledSlot fully');
+}

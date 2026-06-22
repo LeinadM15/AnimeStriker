@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.getElementById('myclub-grid');
     const filterSearch = document.getElementById('filter-search');
-    const filterSeries = document.getElementById('filter-series');
     const filterLeague = document.getElementById('filter-league');
     const filterTeam = document.getElementById('filter-team');
     const sortCards = document.getElementById('sort-cards');
@@ -27,44 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Actually, Tsubasa cards usually have "tsu_", "gen_", "koj_", "hol_", "waka_", "ura_".
     // Inazuma has others. Blue Lock has "isa_".
     // Let's deduce series properly:
-    allCards.forEach(card => {
-        let prefix = card.id.split('_')[0];
-        if (['tsu', 'koj', 'hol', 'waka', 'ura', 'sor', 'san', 'saw', 'tak', 'iza', 'kis', 'kisu', 'pierre', 'napoleon', 'makelolo', 'thoram', 'cannavaru', 'delpi', 'iuliano', 'inzars', 'gonzalez', 'grandios', 'michael', 'payol', 'rams', 'raphael', 'callusias', 'lenista', 'xavii', 'brian', 'stijn', 'davi', 'dick', 'doleman', 'kaiser', 'klismann', 'lesenblink', 'luikal', 'levin', 'gentile', 'gino', 'kraus'].includes(prefix) || card.id === "gen_hamburgo" || card.id === "gen_bastard" || card.id === "gen_risingsun") {
-            card._series = 'tsubasa';
-        } else if (['isa', 'bac', 'chi', 'kun', 'nagi', 'reo', 'rin', 'shi', 'yukimiya', 'yukimiya1', 'duschamps', 'mbappa', 'zedane', 'hugo', 'loki', 'chevalier', 'noa', 'chapa', 'leyden', 'camus', 'bats', 'renoir', 'hermes', 'delon', 'gabon'].includes(prefix)) {
-            card._series = 'bluelock';
-        } else {
-            card._series = 'inazuma';
-        }
-    });
-
-    // Populate Dropdowns dynamically
+    // Series assigned in cards.js\n      // Populate Dropdowns dynamically
     function populateDropdowns() {
-        const leagues = [...new Set(allCards.map(c => c.league))].sort();
-        const teams = [...new Set(allCards.map(c => c.teamIcon))].sort(); // Better to use a clean name, but we'll extract from teamIcon or version
-
+        const leagues = [...new Set(allCards.map(c => c.league))].filter(Boolean).sort();
+        
         leagues.forEach(l => {
             const opt = document.createElement('option');
             opt.value = l;
             opt.textContent = l;
             filterLeague.appendChild(opt);
-        });
-
-        // For teams, extract from teamIcon like "teams/Nankatsu.png" -> "Nankatsu"
-        // Wait, Inazuma cards have teamIcon like "teams/Raimon.png"
-        const cleanTeams = [...new Set(allCards.map(c => {
-            if(c.teamIcon) {
-                let t = c.teamIcon.split('/').pop().replace('.png', '').replace('.jpg', '').replace('.jpeg', '');
-                return t;
-            }
-            return c.version;
-        }))].sort();
-
-        cleanTeams.forEach(t => {
-            const opt = document.createElement('option');
-            opt.value = t;
-            opt.textContent = t;
-            filterTeam.appendChild(opt);
         });
     }
 
@@ -99,9 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
             overlayHTML = `<div class="fc-frame-overlay" style="background-image: url('${frame.overlay}');"></div>`;
         }
         const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
+        let isOro = (char.background && char.background.includes('Oro.png')) ? ' oro-card' : '';
         
         return `
-            <div class="fifa-card show myclub-card" data-id="${char.id}" ${cardBg}>
+            <div class="fifa-card show myclub-card${isOro}" data-id="${char.id}" ${cardBg}>
                 ${bgHTML}
                 ${overlayHTML}
                 <div class="fc-info">
@@ -123,13 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return char.version;
     }
 
-    function updateGrid() {
+    window.updateGrid = function updateGrid() {
         let filtered = allCards.filter(c => {
             const searchMatch = c.name.toLowerCase().includes(filterSearch.value.toLowerCase()) || c.version.toLowerCase().includes(filterSearch.value.toLowerCase());
-            const seriesMatch = filterSeries.value === 'all' || c._series === filterSeries.value;
             const leagueMatch = filterLeague.value === 'all' || c.league === filterLeague.value;
             const teamMatch = filterTeam.value === 'all' || getTeamName(c) === filterTeam.value;
-            return searchMatch && seriesMatch && leagueMatch && teamMatch;
+            const filterNation = document.getElementById('filter-nation').value;
+            const nationMatch = filterNation === 'all' || filterNation === '' || c.nationFlag === filterNation;
+            return searchMatch && leagueMatch && teamMatch && nationMatch;
         });
 
         // Sorting
@@ -160,9 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners for Filters
     filterSearch.addEventListener('input', updateGrid);
-    filterSeries.addEventListener('change', updateGrid);
-    filterLeague.addEventListener('change', updateGrid);
-    filterTeam.addEventListener('change', updateGrid);
+    filterLeague.addEventListener('change', () => { setupCustomTeamDropdown(); updateGrid(); });
+    
     sortCards.addEventListener('change', updateGrid);
 
     // Zoom Modal Close
@@ -176,4 +147,166 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     populateDropdowns();
     updateGrid();
+});
+
+
+function setupCustomDropdown() {
+    const trigger = document.getElementById('custom-nation-trigger');
+    const options = document.getElementById('custom-nation-options');
+    const hiddenInput = document.getElementById('filter-nation');
+    const label = document.getElementById('custom-nation-label');
+    if (!trigger || !options) return;
+    
+    const nationSet = new Set();
+    cardsDB.forEach(c => { if(c.nationFlag) nationSet.add(c.nationFlag); });
+    
+    // Map of common flags to names
+    const getNationName = (url) => {
+        if(url.includes('/jp.')) return 'Japón';
+        if(url.includes('/de.')) return 'Alemania';
+        if(url.includes('/fr.')) return 'Francia';
+        if(url.includes('/br.')) return 'Brasil';
+        if(url.includes('/it.')) return 'Italia';
+        if(url.includes('/ar.')) return 'Argentina';
+        if(url.includes('/nl.')) return 'Holanda';
+        if(url.includes('/es.')) return 'España';
+        if(url.includes('/se.')) return 'Suecia';
+        if(url.includes('/uy.')) return 'Uruguay';
+        if(url.includes('/kr.')) return 'Corea del Sur';
+        if(url.includes('/cn.')) return 'China';
+        if(url.includes('/th.')) return 'Tailandia';
+        if(url.includes('/dk.')) return 'Dinamarca';
+        if(url.includes('/mx.')) return 'México';
+        if(url.includes('/us.')) return 'Estados Unidos';
+        if(url.includes('/hr.')) return 'Croacia';
+        if(url.includes('/pt.')) return 'Portugal';
+        if(url.includes('/rs.')) return 'Serbia';
+        if(url.includes('/jm.')) return 'Jamaica';
+        if(url.includes('/ng.')) return 'Nigeria';
+        if(url.includes('/mt.')) return 'Malta';
+        if(url.includes('/co.')) return 'Colombia';
+        if(url.includes('/gb-eng.')) return 'Inglaterra';
+        if(url.includes('/sa.')) return 'Arabia Saudita';
+        return 'Nación';
+    };
+
+    [...nationSet].sort().forEach(flag => {
+        const name = getNationName(flag);
+        const opt = document.createElement('div');
+        opt.className = 'custom-option';
+        opt.dataset.value = flag;
+        opt.innerHTML = `<img src="${flag}" alt="flag"> <span>${name}</span>`;
+        options.appendChild(opt);
+    });
+    
+    trigger.addEventListener('click', (e) => {
+        options.classList.toggle('open');
+        e.stopPropagation();
+    });
+    
+    options.addEventListener('click', (e) => {
+        const option = e.target.closest('.custom-option');
+        if (option) {
+            const val = option.dataset.value;
+            hiddenInput.value = val;
+            if (val === '' || val === 'all') {
+                label.textContent = 'Cualquier País';
+            } else {
+                const name = getNationName(val);
+                label.innerHTML = `<img src="${val}" alt="flag" style="width:20px;height:auto;border-radius:2px; vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${name}</span>`;
+            }
+            options.classList.remove('open');
+            updateGrid();
+        }
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!trigger.contains(e.target) && !options.contains(e.target)) {
+            options.classList.remove('open');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupCustomDropdown);
+
+function setupCustomTeamDropdown() {
+    const trigger = document.getElementById('custom-team-trigger');
+    const options = document.getElementById('custom-team-options');
+    const hiddenInput = document.getElementById('filter-team');
+    const label = document.getElementById('custom-team-label');
+    const filterLeagueVal = document.getElementById('filter-league').value;
+    if (!trigger || !options) return;
+    
+    // Clear old options except 'all'
+    options.innerHTML = '<div class="custom-option" data-value="all">Todos los Equipos</div>';
+    
+    // Reset hidden input and label if repopulating
+    hiddenInput.value = 'all';
+    label.textContent = 'Todos los Equipos';
+
+    const teamMap = new Map();
+    cardsDB.forEach(c => { 
+        if(filterLeagueVal !== 'all' && c.league !== filterLeagueVal) return;
+        
+        let tName = '';
+        if(c.teamIcon) {
+            tName = c.teamIcon.split('/').pop().replace('.png', '').replace('.jpg', '').replace('.jpeg', '');
+        } else {
+            tName = c.version;
+        }
+        if (!teamMap.has(tName)) {
+            teamMap.set(tName, c.teamIcon ? (c.teamIcon.startsWith('teams/') ? `assets/${c.teamIcon}` : c.teamIcon) : '');
+        }
+    });
+
+    [...teamMap.keys()].sort().forEach(tName => {
+        const iconSrc = teamMap.get(tName);
+        const opt = document.createElement('div');
+        opt.className = 'custom-option';
+        opt.dataset.value = tName;
+        if (iconSrc) {
+            opt.innerHTML = `<img src="${iconSrc}" alt="team" style="width:20px;height:auto;vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${tName}</span>`;
+        } else {
+            opt.innerHTML = `<span>${tName}</span>`;
+        }
+        options.appendChild(opt);
+    });
+}
+
+// Global click to close for Team dropdown (using existing setup structure)
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('custom-team-trigger');
+    const options = document.getElementById('custom-team-options');
+    const hiddenInput = document.getElementById('filter-team');
+    const label = document.getElementById('custom-team-label');
+    
+    if (trigger && options) {
+        trigger.addEventListener('click', (e) => {
+            options.classList.toggle('open');
+            e.stopPropagation();
+        });
+        
+        options.addEventListener('click', (e) => {
+            const option = e.target.closest('.custom-option');
+            if (option) {
+                const val = option.dataset.value;
+                hiddenInput.value = val;
+                if (val === '' || val === 'all') {
+                    label.textContent = 'Todos los Equipos';
+                } else {
+                    label.innerHTML = option.innerHTML; // Copy the img + text
+                }
+                options.classList.remove('open');
+                if (typeof updateGrid === 'function') updateGrid();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target) && !options.contains(e.target)) {
+                options.classList.remove('open');
+            }
+        });
+    }
+
+    setupCustomTeamDropdown();
 });
