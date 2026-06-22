@@ -7171,7 +7171,7 @@ const sudafricaCards = [
         position: "CB",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/za.png",
-        teamIcon: "teams/Bremen.png",
+        teamIcon: "teams/WerderBremen.png",
         image: "assets/characters/Sudafrica/KennedyMcCarthy.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7184,8 +7184,8 @@ const sudafricaCards = [
         position: "GK",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/za.png",
-        teamIcon: "teams/Villarreal.png",
-        image: "assets/characters/Sudafrica/ZolaniBaloyi.png",
+        teamIcon: "teams/Villareal.png",
+        image: "assets/characters/Sudafrica/ZolaniBaloi.png",
         background: "assets/Cartas/Oro.png"
     },
     {
@@ -7197,7 +7197,7 @@ const sudafricaCards = [
         position: "ST",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/za.png",
-        teamIcon: "teams/Betis.png",
+        teamIcon: "teams/RealBetis.png",
         image: "assets/characters/Sudafrica/NathanTswane.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7249,7 +7249,7 @@ const sudafricaCards = [
         position: "CM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/za.png",
-        teamIcon: "teams/Sociedad.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Sudafrica/ThembaSepeng.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7315,7 +7315,7 @@ const sudafricaCards = [
         league: "Eredivisie",
         nationFlag: "https://flagcdn.com/w40/za.png",
         teamIcon: "teams/Ajax.png",
-        image: "assets/characters/Sudafrica/MasagoMolela.png",
+        image: "assets/characters/Sudafrica/MasegoMolelo.png",
         background: "assets/Cartas/Oro.png"
     }
 ];
