@@ -339,6 +339,9 @@ function generateBenchOptions() {
         return true;
     });
 
+    var hasBenchGK = draftState.bench.some(function(c) { return c && c.position === 'GK'; });
+    var forceGKPick = !hasBenchGK;
+
     // Decide rarity
     var isSpecialPick = determineIfSpecialPick(0.40); // 40% base chance
     var rarityPool;
@@ -354,10 +357,26 @@ function generateBenchOptions() {
         if (rarityPool.length < 5) rarityPool = allPool;
     }
 
+    if (forceGKPick) {
+        var gkPool = rarityPool.filter(function(c) { return c.position === 'GK'; });
+        if (gkPool.length < 5) {
+            var extraGk = allPool.filter(function(c) { return c.position === 'GK' && gkPool.indexOf(c) === -1; });
+            gkPool = gkPool.concat(extraGk);
+        }
+        var gkWeighted = gkPool.map(function(c) {
+            var w = 1;
+            if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 3;
+            if (c.rating >= 85) w += 1;
+            return { card: c, weight: w };
+        });
+        return weightedSample(gkWeighted, 5);
+    }
+
     var weighted = rarityPool.map(function(c) {
         var w = 1;
         if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 3;
         if (c.rating >= 85) w += 1;
+        if (c.position === 'GK') w *= 0.05; // Make GK appear least often
         return { card: c, weight: w };
     });
 
@@ -393,6 +412,7 @@ function generateReserveOptions() {
         var w = 1;
         if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 1.5;
         if (c.rating >= 85) w += 0.5;
+        if (c.position === 'GK') w *= 0.05; // Make GK appear least often
         return { card: c, weight: w };
     });
 
