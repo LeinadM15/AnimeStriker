@@ -5948,6 +5948,38 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_vansaal') {
+        if (card.teamIcon && card.teamIcon.includes('Barcha')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_delbasque') {
+        if (card.nationFlag && card.nationFlag.includes('es.png')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
+        if (card.teamIcon && card.teamIcon.includes('Real')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_gallop') {
+        if (card.teamIcon && card.teamIcon.includes('Dortmund')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
+        if (card.teamIcon && card.teamIcon.includes('Liverpool')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_kira') {
+        if (card.nationFlag && card.nationFlag.includes('jp.png')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
+        if (card.name && (card.name.includes('HYUGA') || card.name.includes('KOJIRO') || card.name.includes('SAWADA') || card.name.includes('WAKASHIMAZU'))) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;

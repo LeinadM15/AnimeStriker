@@ -255,5 +255,58 @@ const coachesDB = [
         teamIcon: "teams/Tailandia.png",
         image: "assets/entrenadores/Tailandia/RashiriSaran.png",
         background: "assets/Cartas/Oro.png"
+    },
+
+    {
+        id: "coach_vansaal",
+        name: "VAN SAAL",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 84,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/nl.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/entrenadores/VanSaal/VanSaal.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_delbasque",
+        name: "DEL BASQUE",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/entrenadores/DelBasque/DelBasque.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_gallop",
+        name: "GALLOP",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/entrenadores/Gallop/Gallop.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_kira",
+        name: "KIRA",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 84,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Toho.png",
+        image: "assets/entrenadores/Kira/Kira.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

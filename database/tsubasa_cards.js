@@ -6974,5 +6974,133 @@ const otrosFranciaCards = [
         teamIcon: "teams/Bastard.png",
         image: "assets/characters/Alemania/IgorSchneider.png",
         background: "assets/Cartas/Oro.png"
+    },
+
+// ==========================================
+// INGLATERRA
+// ==========================================
+    {
+        id: "beekham_oro",
+        name: "BEEKHAM",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "RM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/gb-eng.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/Inglaterra/Beekham.png",
+        background: "assets/Cartas/Oro.png"
+    },
+// ==========================================
+// NESS
+// ==========================================
+    {
+        id: "ness_oro",
+        name: "NESS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/NessOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "ness_alemania",
+        name: "NESS",
+        version: "Alemania",
+        rarity: "Especial",
+        rating: 88,
+        position: "CM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/Ness.png",
+        background: "assets/Cartas/Alemania.png"
+    },
+    {
+        id: "ness_bastard",
+        name: "NESS",
+        version: "Future Star",
+        rarity: "Especial",
+        rating: 90,
+        position: "CM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/NessBastard.png",
+        background: "assets/Cartas/FutureStar.png"
+    },
+
+// ==========================================
+// MICHAEL KAISER
+// ==========================================
+    {
+        id: "michaelkaiser_oro",
+        name: "KAISER",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/KaiserOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "michaelkaiser_bastard",
+        name: "KAISER",
+        version: "Bastard",
+        rarity: "Especial",
+        rating: 89,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/KaiserBastard.png",
+        background: "assets/Cartas/Bastard.png"
+    },
+    {
+        id: "michaelkaiser_rulebreaker",
+        name: "KAISER",
+        version: "Rulebreaker",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/KaiserChute.png",
+        background: "assets/Cartas/Rulebraker.png"
+    },
+    {
+        id: "michaelkaiser_tots",
+        name: "KAISER",
+        version: "TOTS",
+        rarity: "Especial",
+        rating: 92,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Alemania/KaiserCelebracion.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "michaelkaiser_alemania",
+        name: "KAISER",
+        version: "Alemania",
+        rarity: "Especial",
+        rating: 92,
+        position: "ST",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/Alemania/KaiserAlemania.png",
+        background: "assets/Cartas/Alemania.png"
     }
 ];
