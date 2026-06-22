@@ -308,8 +308,7 @@ const coachesDB = [
         teamIcon: "teams/Toho.png",
         image: "assets/entrenadores/Kira/Kira.png",
         background: "assets/Cartas/Oro.png"
-    }
-
+    },
     {
         id: "coach_ivanallegrov",
         name: "IVAN ALLEGROV",
