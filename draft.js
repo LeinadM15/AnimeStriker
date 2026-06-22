@@ -283,12 +283,15 @@ function generateStarterOptions(requiredRole) {
         }
     });
 
-    // Fill remaining (up to 5) with alt position cards
-    var altWeighted = applyWeights(altPool.filter(function(c) {
+    // Fill remaining (up to 5) with compatible cards from rarityPool (both exact and alt)
+    var compatiblePool = rarityPool.filter(function(c) {
+        return isCompatible(c, requiredRole);
+    });
+    var compatibleWeighted = applyWeights(compatiblePool.filter(function(c) {
         return usedResultNames.indexOf(c.name.toUpperCase()) === -1;
     }));
-    var altPicks = weightedSample(altWeighted, 5 - result.length);
-    altPicks.forEach(function(c) {
+    var compatiblePicks = weightedSample(compatibleWeighted, 5 - result.length);
+    compatiblePicks.forEach(function(c) {
         if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
             result.push(c);
             usedResultNames.push(c.name.toUpperCase());
