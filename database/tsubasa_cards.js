@@ -6974,18 +6974,5 @@ const otrosFranciaCards = [
         teamIcon: "teams/Bastard.png",
         image: "assets/characters/Alemania/IgorSchneider.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "igorschneider_alemania",
-        name: "IGOR SCHNEIDER",
-        version: "Alemania",
-        rarity: "Especial",
-        rating: 83,
-        position: "ST",
-        league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/de.png",
-        teamIcon: "teams/Bastard.png",
-        image: "assets/characters/Alemania/IgorSchneider.png",
-        background: "assets/Cartas/Alemania.png"
     }
 ];
