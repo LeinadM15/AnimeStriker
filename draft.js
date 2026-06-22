@@ -252,14 +252,6 @@ function generateStarterOptions(requiredRole) {
     var exactPool = rarityPool.filter(function(c) {
         return c.position === requiredRole;
     });
-    // Si no hay suficientes en rarityPool, añadir del pool general
-    if (exactPool.length < 3) {
-        var extraExact = allAvailable.filter(function(c) {
-            return c.position === requiredRole && exactPool.indexOf(c) === -1;
-        });
-        exactPool = exactPool.concat(extraExact);
-        exactPool = getUniqueByName(exactPool); // Re-filter unique
-    }
 
     var altPool = rarityPool.filter(function(c) {
         return c.position !== requiredRole && isCompatible(c, requiredRole);
@@ -372,11 +364,6 @@ function generateBenchOptions() {
 
     if (forceGKPick) {
         var gkPool = rarityPool.filter(function(c) { return c.position === 'GK'; });
-        if (gkPool.length < 5) {
-            var extraGk = allPool.filter(function(c) { return c.position === 'GK' && gkPool.indexOf(c) === -1; });
-            gkPool = gkPool.concat(extraGk);
-            gkPool = getUniqueByName(gkPool);
-        }
         var gkWeighted = gkPool.map(function(c) {
             var w = 10;
             return { card: c, weight: w };
