@@ -2608,7 +2608,7 @@ const tailandiaCards = [
         nationFlag: "https://flagcdn.com/w40/th.png",
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/Tailandia/BunnaakOro.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "bunnaak_chicorid",

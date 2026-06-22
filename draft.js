@@ -115,6 +115,41 @@ function getExistingLeaguesAndNations() {
 // CARD GENERATION (Drop Rates)
 // ==========================================
 
+function getSpecialPicksStatus() {
+    var specialCount = 0;
+    var totalCount = 0;
+    var allCards = draftState.squad.concat(draftState.bench, draftState.reserves);
+    allCards.forEach(function(c) {
+        if (c) {
+            totalCount++;
+            if (c.rarity && c.rarity.indexOf('Especial') !== -1) {
+                specialCount++;
+            }
+        }
+    });
+    return { special: specialCount, total: totalCount };
+}
+
+function determineIfSpecialPick(baseChance) {
+    var status = getSpecialPicksStatus();
+    var maxTotal = 23; // 11 starters + 7 bench + 5 reserves
+    var remainingPicks = maxTotal - status.total;
+    var minSpecialNeeded = 8 - status.special;
+    
+    if (minSpecialNeeded > 0 && minSpecialNeeded >= remainingPicks) {
+        // Must pick special to reach minimum of 8
+        return true;
+    }
+    
+    if (status.special >= 12) {
+        // Max limit of 12 special picks reached
+        return false;
+    }
+    
+    // Otherwise, use random chance
+    return Math.random() < baseChance;
+}
+
 function generateCaptainOptions() {
     var pool = getPlayerCards().filter(function(c) {
         if (isCardUsed(c)) return false;
@@ -159,42 +194,92 @@ function generateCaptainOptions() {
 }
 
 function generateStarterOptions(requiredRole) {
-    var allPool = getPlayerCards().filter(function(c) {
-        return !isCardUsed(c) && isCompatible(c, requiredRole);
+    var allAvailable = getPlayerCards().filter(function(c) {
+        return !isCardUsed(c);
     });
-
-    if (allPool.length === 0) {
-        // Fallback: any card
-        allPool = getPlayerCards().filter(function(c) { return !isCardUsed(c); });
-    }
 
     // Remove duplicate names
     var seenNames = {};
-    allPool = allPool.filter(function(c) {
+    allAvailable = allAvailable.filter(function(c) {
         var key = c.name.toUpperCase();
         if (seenNames[key]) return false;
         seenNames[key] = true;
         return true;
     });
 
-    var cohesion = getExistingLeaguesAndNations();
+    // Decide rarity: oro or especial
+    var isSpecialPick = determineIfSpecialPick(0.45); // 45% base chance for special pick
 
-    var weighted = allPool.map(function(c) {
-        var w = 1;
-        // Especial/high-rated bonus
-        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 2;
-        if (c.rating >= 88) w += 1.5;
-        else if (c.rating >= 85) w += 0.8;
-        // Position bonus
-        if (c.position === requiredRole) w += 1.5;
-        else w += 1.0; // Secondary position
-        // Cohesion bonus
-        if (c.league && cohesion.leagues[c.league]) w += cohesion.leagues[c.league] * 0.5;
-        if (c.nationFlag && cohesion.nations[c.nationFlag]) w += cohesion.nations[c.nationFlag] * 0.3;
-        return { card: c, weight: w };
+    var rarityPool;
+    if (isSpecialPick) {
+        rarityPool = allAvailable.filter(function(c) {
+            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+        });
+        if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
+    } else {
+        rarityPool = allAvailable.filter(function(c) {
+            return !c.rarity || c.rarity === 'Oro';
+        });
+        if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
+    }
+
+    // Split into exact position and compatible
+    var exactPool = rarityPool.filter(function(c) {
+        return c.position === requiredRole;
+    });
+    var altPool = rarityPool.filter(function(c) {
+        return c.position !== requiredRole && isCompatible(c, requiredRole);
     });
 
-    return weightedSample(weighted, 5);
+    var cohesion = getExistingLeaguesAndNations();
+
+    function applyWeights(pool) {
+        return pool.map(function(c) {
+            var w = 1;
+            if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 4;
+            if (c.rating >= 88) w += 1.5;
+            else if (c.rating >= 85) w += 0.8;
+            if (c.league && cohesion.leagues[c.league]) w += cohesion.leagues[c.league] * 0.5;
+            if (c.nationFlag && cohesion.nations[c.nationFlag]) w += cohesion.nations[c.nationFlag] * 0.3;
+            return { card: c, weight: w };
+        });
+    }
+
+    var result = [];
+    var usedResultNames = [];
+
+    // Guarantee 3 exact position cards
+    var exactWeighted = applyWeights(exactPool);
+    var exactPicks = weightedSample(exactWeighted, 3);
+    exactPicks.forEach(function(c) {
+        if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
+            result.push(c);
+            usedResultNames.push(c.name.toUpperCase());
+        }
+    });
+
+    // Fill remaining (up to 5) with alt position cards
+    var altWeighted = applyWeights(altPool.filter(function(c) {
+        return usedResultNames.indexOf(c.name.toUpperCase()) === -1;
+    }));
+    var altPicks = weightedSample(altWeighted, 5 - result.length);
+    altPicks.forEach(function(c) {
+        if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
+            result.push(c);
+            usedResultNames.push(c.name.toUpperCase());
+        }
+    });
+
+    // If still not 5, fill from any compatible card
+    if (result.length < 5) {
+        var fallback = applyWeights(rarityPool.filter(function(c) {
+            return usedResultNames.indexOf(c.name.toUpperCase()) === -1 && isCompatible(c, requiredRole);
+        }));
+        var fallbackPicks = weightedSample(fallback, 5 - result.length);
+        fallbackPicks.forEach(function(c) { result.push(c); });
+    }
+
+    return shuffleArray(result);
 }
 
 function generateBenchOptions() {
@@ -207,9 +292,24 @@ function generateBenchOptions() {
         return true;
     });
 
-    var weighted = allPool.map(function(c) {
+    // Decide rarity
+    var isSpecialPick = determineIfSpecialPick(0.40); // 40% base chance
+    var rarityPool;
+    if (isSpecialPick) {
+        rarityPool = allPool.filter(function(c) {
+            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+        });
+        if (rarityPool.length < 5) rarityPool = allPool;
+    } else {
+        rarityPool = allPool.filter(function(c) {
+            return !c.rarity || c.rarity === 'Oro';
+        });
+        if (rarityPool.length < 5) rarityPool = allPool;
+    }
+
+    var weighted = rarityPool.map(function(c) {
         var w = 1;
-        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 1.5;
+        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 3;
         if (c.rating >= 85) w += 1;
         return { card: c, weight: w };
     });
@@ -227,11 +327,25 @@ function generateReserveOptions() {
         return true;
     });
 
-    var weighted = allPool.map(function(c) {
+    // Decide rarity
+    var isSpecialPick = determineIfSpecialPick(0.35); // 35% base chance
+    var rarityPool;
+    if (isSpecialPick) {
+        rarityPool = allPool.filter(function(c) {
+            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+        });
+        if (rarityPool.length < 5) rarityPool = allPool;
+    } else {
+        rarityPool = allPool.filter(function(c) {
+            return !c.rarity || c.rarity === 'Oro';
+        });
+        if (rarityPool.length < 5) rarityPool = allPool;
+    }
+
+    var weighted = rarityPool.map(function(c) {
         var w = 1;
-        // Fewer specials for reserves
-        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 0.5;
-        if (c.rating >= 85) w += 0.3;
+        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 1.5;
+        if (c.rating >= 85) w += 0.5;
         return { card: c, weight: w };
     });
 
@@ -480,12 +594,20 @@ function renderAll() {
 // ==========================================
 // CHEMISTRY & STATS
 // ==========================================
+function isIconCard(card) {
+    return card && ((card.version && card.version === 'Icono') ||
+           (card.background && card.background.indexOf('Icono') !== -1));
+}
+
 function calcDraftPlayerChemistry(index) {
     var card = draftState.squad[index];
     if (!card) return 0;
     if (!draftState.formation) return 0;
     var formation = FORMATIONS[draftState.formation];
     if (!formation) return 0;
+
+    // Icons always have 10 chemistry
+    if (isIconCard(card)) return 10;
 
     var requiredRole = formation.positions[index].role;
     var posStatus = getDraftPositionStatus(card, requiredRole);
@@ -542,7 +664,12 @@ function calcDraftTeamRating() {
     var count = 0;
     for (var i = 0; i < 11; i++) {
         if (draftState.squad[i]) {
-            total += draftState.squad[i].rating;
+            var r = draftState.squad[i].rating;
+            if (draftState.coach) {
+                var boosts = getDraftCoachBoosts(draftState.squad[i], draftState.coach);
+                r += boosts.rating;
+            }
+            total += r;
             count++;
         }
     }
