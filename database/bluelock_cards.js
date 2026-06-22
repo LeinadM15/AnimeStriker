@@ -808,6 +808,19 @@ const sub20Cards = [
         teamIcon: "teams/SaoPaulo.png",
         image: "assets/characters/Sub20/YuzuOro.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "tetsusokura_oro",
+        name: "SOKURA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Villareal.png",
+        image: "assets/characters/Sub20/TetsuSokura.png",
+        background: "assets/Cartas/Oro.png"
     }
   ];
 
