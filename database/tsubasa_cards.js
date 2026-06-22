@@ -6086,6 +6086,32 @@ const otrosFranciaCards = [
 // HOLANDA EXTRA
 // ==========================================
     {
+        id: "malder_oro",
+        name: "MALDER",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/nl.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Holanda/MalderOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "malder_naranja",
+        name: "MALDER",
+        version: "Naranja",
+        rarity: "Especial",
+        rating: 86,
+        position: "CM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/nl.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Holanda/Malder.png",
+        background: "assets/Cartas/Naranja.png"
+    },
+    {
         id: "gullit_oro",
         name: "GULLIT",
         version: "Oro",
