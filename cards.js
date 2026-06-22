@@ -27,6 +27,7 @@ const tsubasaAll = [
     ...jeanCards,
     ...mexicoCards,
     ...tailandiaCards,
+    ...sudafricaCards,
     ...uruguayCards,
     ...chinaCards,
     ...croaciaCards,
