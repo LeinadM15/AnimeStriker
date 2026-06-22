@@ -318,7 +318,7 @@ const coachesDB = [
         position: "COACH",
         league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "",
+        teamIcon: "teams/Rusia.png",
         image: "assets/entrenadores/Rusia/IvanAllegrov.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -331,7 +331,7 @@ const coachesDB = [
         position: "COACH",
         league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "", // Let's leave empty to avoid broken images
+        teamIcon: "teams/Rusia.png",
         image: "assets/entrenadores/Rusia/YekaterinaStronov.png",
         background: "assets/Cartas/Oro.png"
     }

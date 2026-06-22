@@ -5423,12 +5423,13 @@ const POSITION_COMPAT = {
     "RB":  ["RM", "CB", "RW"],
     "CDM": ["CM", "CB"],
     "CM":  ["CDM", "CAM", "LM", "RM"],
-    "CAM": ["CM", "ST", "LW", "RW", "LM", "RM"],
+    "CAM": ["CM", "ST", "CF", "LW", "RW", "LM", "RM"],
     "LM":  ["LW", "LB", "CM"],
     "RM":  ["RW", "RB", "CM"],
-    "LW":  ["LM", "ST", "CAM"],
-    "RW":  ["RM", "ST", "CAM"],
-    "ST":  ["CAM", "LW", "RW"]
+    "LW":  ["LM", "ST", "CAM", "CF"],
+    "RW":  ["RM", "ST", "CAM", "CF"],
+    "ST":  ["CAM", "CF", "LW", "RW"],
+    "CF":  ["ST", "CAM", "LW", "RW"]
 };
 
 // ==========================================
