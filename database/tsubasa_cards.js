@@ -7415,7 +7415,7 @@ const rusiaCards = [
         position: "CDM",
         league: "Eredivisie",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/PSV.png",
+        teamIcon: "",
         image: "assets/characters/Rusia/Wolfe.png",
         background: "assets/Cartas/Oro.png"
     },
