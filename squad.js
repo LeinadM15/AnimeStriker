@@ -6049,17 +6049,14 @@ function calcPlayerChemistry(index) {
         }
     });
     
-    let chem = 0;
+    let baseChem = 0;
+    if (posStatus === 'exact') baseChem = 4;
+    else if (posStatus === 'secondary') baseChem = 2;
+    else if (posStatus === 'wrong') return 0; // Wrong position gives 0 chemistry
+
+    let chem = baseChem;
     if (totalLinks > 0) {
-        chem = Math.min(10, Math.round((linkPoints / totalLinks) * 10));
-    } else {
-        chem = 0;
-    }
-    
-    if (posStatus === 'secondary') {
-        chem = Math.max(0, chem - 2);
-    } else if (posStatus === 'wrong') {
-        chem = 0;
+        chem += Math.min(6, Math.round((linkPoints / totalLinks) * 6));
     }
     
     if (typeof currentCoach !== 'undefined' && currentCoach) {
