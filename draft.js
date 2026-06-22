@@ -303,20 +303,6 @@ function generateStarterOptions(requiredRole) {
         }
     });
 
-    // If still not 5, fill from ANY card from rarityPool (ignoring position) to keep rarity consistent
-    if (result.length < 5) {
-        var rarityFallback = applyWeights(rarityPool.filter(function(c) {
-            return usedResultNames.indexOf(c.name.toUpperCase()) === -1;
-        }));
-        var rarityFallbackPicks = weightedSample(rarityFallback, 5 - result.length);
-        rarityFallbackPicks.forEach(function(c) {
-            if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
-                result.push(c);
-                usedResultNames.push(c.name.toUpperCase());
-            }
-        });
-    }
-
     // If still not 5, fill from any compatible card from allAvailable
     if (result.length < 5) {
         var fallback = applyWeights(allAvailable.filter(function(c) {
