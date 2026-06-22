@@ -6993,6 +6993,34 @@ const otrosFranciaCards = [
         background: "assets/Cartas/Oro.png"
     },
 // ==========================================
+// CORNELIUS HEINE
+    {
+        id: "corneliusheine_oro",
+        name: "HEINE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CAM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Alemania/HeineOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "corneliusheine_joker",
+        name: "HEINE",
+        version: "Joker",
+        rarity: "Especial",
+        rating: 89,
+        position: "CAM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Alemania/Heine.png",
+        background: "assets/Cartas/Joker.png"
+    },
+
 // NESS
 // ==========================================
     {
