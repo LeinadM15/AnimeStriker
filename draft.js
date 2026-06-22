@@ -169,9 +169,8 @@ function determineIfSpecialPick(baseChance) {
 function generateCaptainOptions() {
     var pool = getPlayerCards().filter(function(c) {
         if (isCardUsed(c)) return false;
-        var isHighRated = c.rating >= 88;
         var isEspecial = c.rarity && (c.rarity.indexOf('Especial') !== -1 || c.rarity.indexOf('TOTS') !== -1);
-        return isHighRated || isEspecial;
+        return isEspecial && c.rating >= 89;
     });
 
     // Guarantee at least 3 different positions among the 5
