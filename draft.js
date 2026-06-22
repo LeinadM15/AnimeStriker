@@ -150,18 +150,20 @@ function determineIfSpecialPick(baseChance) {
         return false;
     }
     
-    // Calculate dynamic chance to spread special picks evenly
-    var targetAverage = (MIN_SPECIAL + MAX_SPECIAL) / 2; // 8.5
-    var expectedRemaining = targetAverage - status.special;
+    // Calculate dynamic chance using an expected curve to prevent clumping
+    var targetTotal = 8.5; // Average between 6 and 11
+    var rate = targetTotal / maxTotal; 
+    var currentPickNumber = status.total + 1;
+    var expectedSoFar = currentPickNumber * rate;
     
-    var dynamicChance = 0;
-    if (remainingPicks > 0) {
-        dynamicChance = expectedRemaining / remainingPicks;
-    }
+    var diff = expectedSoFar - status.special;
     
-    // Clamp the chance to ensure some randomness but keep it guided
-    if (dynamicChance < 0.15) dynamicChance = 0.15;
-    if (dynamicChance > 0.60) dynamicChance = 0.60;
+    // Base chance is the rate. We adjust heavily based on whether we are ahead or behind the curve
+    var dynamicChance = rate + (diff * 0.35);
+    
+    // Hard clamp to keep it within reasonable bounds
+    if (dynamicChance < 0.05) dynamicChance = 0.05;
+    if (dynamicChance > 0.85) dynamicChance = 0.85;
     
     return Math.random() < dynamicChance;
 }
