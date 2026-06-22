@@ -134,20 +134,36 @@ function determineIfSpecialPick(baseChance) {
     var status = getSpecialPicksStatus();
     var maxTotal = 23; // 11 starters + 7 bench + 5 reserves
     var remainingPicks = maxTotal - status.total;
-    var minSpecialNeeded = 8 - status.special;
+    
+    var MIN_SPECIAL = 6;
+    var MAX_SPECIAL = 11;
+    
+    var minSpecialNeeded = MIN_SPECIAL - status.special;
     
     if (minSpecialNeeded > 0 && minSpecialNeeded >= remainingPicks) {
-        // Must pick special to reach minimum of 8
+        // Must pick special to reach minimum
         return true;
     }
     
-    if (status.special >= 12) {
-        // Max limit of 12 special picks reached
+    if (status.special >= MAX_SPECIAL) {
+        // Max limit of special picks reached
         return false;
     }
     
-    // Otherwise, use random chance
-    return Math.random() < baseChance;
+    // Calculate dynamic chance to spread special picks evenly
+    var targetAverage = (MIN_SPECIAL + MAX_SPECIAL) / 2; // 8.5
+    var expectedRemaining = targetAverage - status.special;
+    
+    var dynamicChance = 0;
+    if (remainingPicks > 0) {
+        dynamicChance = expectedRemaining / remainingPicks;
+    }
+    
+    // Clamp the chance to ensure some randomness but keep it guided
+    if (dynamicChance < 0.15) dynamicChance = 0.15;
+    if (dynamicChance > 0.60) dynamicChance = 0.60;
+    
+    return Math.random() < dynamicChance;
 }
 
 function generateCaptainOptions() {
