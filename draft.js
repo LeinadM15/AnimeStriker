@@ -25,7 +25,8 @@ var draftState = {
     badge: '',
     kit: '',
     usedCardIds: [],          // card IDs already drafted
-    usedPlayerNames: []       // player names already drafted (no dupes)
+    usedPlayerNames: [],       // player names already drafted (no dupes)
+    currentPick: null         // active options for persistence
 };
 
 // ==========================================
@@ -1202,6 +1203,8 @@ function showKitModal() {
 
 function showCaptainPick() {
     var options = generateCaptainOptions();
+    draftState.currentPick = { type: 'captain', title: 'CAPIT\u00c1N', options: options };
+    saveDraftState();
     showPlayerPickModal('CAPIT\u00c1N', options, function(card) {
         // Place captain in best matching slot
         var formation = FORMATIONS[draftState.formation];
@@ -1232,6 +1235,7 @@ function showCaptainPick() {
 
         draftState.squad[bestSlot] = card;
         markCardUsed(card);
+        draftState.currentPick = null;
         checkAllPlayersFilled();
         renderAll();
         saveDraftState();
@@ -1259,9 +1263,12 @@ function onStarterSlotClick(slotIndex) {
     var requiredRole = formation.positions[slotIndex].role;
     var options = generateStarterOptions(requiredRole);
 
+    draftState.currentPick = { type: 'starter', title: 'ELIGE JUGADOR', options: options, slotIndex: slotIndex };
+    saveDraftState();
     showPlayerPickModal('ELIGE JUGADOR', options, function(card) {
         draftState.squad[slotIndex] = card;
         markCardUsed(card);
+        draftState.currentPick = null;
         checkAllPlayersFilled();
         renderAll();
         saveDraftState();
@@ -1273,9 +1280,12 @@ function onBenchSlotClick(slotIndex) {
     if (draftState.bench[slotIndex]) return;
 
     var options = generateBenchOptions();
+    draftState.currentPick = { type: 'bench', title: 'SUPLENTE', options: options, slotIndex: slotIndex };
+    saveDraftState();
     showPlayerPickModal('SUPLENTE', options, function(card) {
         draftState.bench[slotIndex] = card;
         markCardUsed(card);
+        draftState.currentPick = null;
         checkAllPlayersFilled();
         renderAll();
         saveDraftState();
@@ -1287,9 +1297,12 @@ function onReserveSlotClick(slotIndex) {
     if (draftState.reserves[slotIndex]) return;
 
     var options = generateReserveOptions();
+    draftState.currentPick = { type: 'reserve', title: 'RESERVA', options: options, slotIndex: slotIndex };
+    saveDraftState();
     showPlayerPickModal('RESERVA', options, function(card) {
         draftState.reserves[slotIndex] = card;
         markCardUsed(card);
+        draftState.currentPick = null;
         checkAllPlayersFilled();
         renderAll();
         saveDraftState();
@@ -1307,12 +1320,60 @@ function onCoachSlotClick() {
         return;
     }
 
+    draftState.currentPick = { type: 'coach', title: 'ENTRENADOR', options: options };
+    saveDraftState();
     showPlayerPickModal('ENTRENADOR', options, function(card) {
         draftState.coach = card;
+        draftState.currentPick = null;
         checkAllPlayersFilled();
         renderAll();
         saveDraftState();
     });
+}
+
+function resumeCurrentPick() {
+    if (!draftState.currentPick) return;
+    var p = draftState.currentPick;
+    
+    var callback = function(card) {
+        if (p.type === 'captain') {
+            var formation = FORMATIONS[draftState.formation];
+            var bestSlot = -1;
+            for (var i = 0; i < 11; i++) {
+                if (!draftState.squad[i] && formation.positions[i].role === card.position) { bestSlot = i; break; }
+            }
+            if (bestSlot === -1) {
+                for (var j = 0; j < 11; j++) {
+                    if (!draftState.squad[j] && isCompatible(card, formation.positions[j].role)) { bestSlot = j; break; }
+                }
+            }
+            if (bestSlot === -1) {
+                for (var k = 0; k < 11; k++) {
+                    if (!draftState.squad[k]) { bestSlot = k; break; }
+                }
+            }
+            draftState.squad[bestSlot] = card;
+            markCardUsed(card);
+        } else if (p.type === 'starter') {
+            draftState.squad[p.slotIndex] = card;
+            markCardUsed(card);
+        } else if (p.type === 'bench') {
+            draftState.bench[p.slotIndex] = card;
+            markCardUsed(card);
+        } else if (p.type === 'reserve') {
+            draftState.reserves[p.slotIndex] = card;
+            markCardUsed(card);
+        } else if (p.type === 'coach') {
+            draftState.coach = card;
+        }
+        
+        draftState.currentPick = null;
+        checkAllPlayersFilled();
+        renderAll();
+        saveDraftState();
+    };
+
+    showPlayerPickModal(p.title, p.options, callback);
 }
 
 // ==========================================
@@ -1343,6 +1404,7 @@ function loadDraftState() {
                 draftState.kit = parsed.kit || '';
                 draftState.usedCardIds = parsed.usedCardIds || [];
                 draftState.usedPlayerNames = parsed.usedPlayerNames || [];
+                draftState.currentPick = parsed.currentPick || null;
 
                 // Ensure arrays are right length
                 while (draftState.squad.length < 11) draftState.squad.push(null);
@@ -1369,6 +1431,7 @@ function resetDraft() {
     draftState.kit = '';
     draftState.usedCardIds = [];
     draftState.usedPlayerNames = [];
+    draftState.currentPick = null;
 
     // Remove banner
     var banner = document.querySelector('.draft-complete-banner');
@@ -1461,7 +1524,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load saved state or start fresh
     var hasState = loadDraftState();
 
-    if (hasState && draftState.phase !== 'formation') {
+    if (hasState && draftState.currentPick) {
+        // Resume from saved state and immediately show modal
+        renderAll();
+        resumeCurrentPick();
+    } else if (hasState && draftState.phase !== 'formation') {
         // Resume from saved state
         renderAll();
 
