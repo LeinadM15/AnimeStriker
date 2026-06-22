@@ -225,17 +225,19 @@ function generateStarterOptions(requiredRole) {
     });
 
     // Decide rarity: oro or especial
-    var isSpecialPick = determineIfSpecialPick(0.45); // 45% base chance for special pick
+    var isSpecialPick = determineIfSpecialPick(0.45); // Dynamic calculation ignores baseChance now
 
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allAvailable.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
     } else {
         rarityPool = allAvailable.filter(function(c) {
-            return !c.rarity || c.rarity === 'Oro';
+            var isOro = !c.rarity || c.rarity === 'Oro';
+            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
     }
@@ -260,12 +262,9 @@ function generateStarterOptions(requiredRole) {
 
     function applyWeights(pool) {
         return pool.map(function(c) {
-            var w = 1;
-            if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 4;
-            if (c.rating >= 88) w += 1.5;
-            else if (c.rating >= 85) w += 0.8;
-            if (c.league && cohesion.leagues[c.league]) w += cohesion.leagues[c.league] * 0.5;
-            if (c.nationFlag && cohesion.nations[c.nationFlag]) w += cohesion.nations[c.nationFlag] * 0.3;
+            var w = 10; // Base weight
+            if (c.league && cohesion.leagues[c.league]) w += cohesion.leagues[c.league] * 2;
+            if (c.nationFlag && cohesion.nations[c.nationFlag]) w += cohesion.nations[c.nationFlag] * 2;
             return { card: c, weight: w };
         });
     }
@@ -347,12 +346,14 @@ function generateBenchOptions() {
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allPool.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     } else {
         rarityPool = allPool.filter(function(c) {
-            return !c.rarity || c.rarity === 'Oro';
+            var isOro = !c.rarity || c.rarity === 'Oro';
+            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     }
@@ -364,18 +365,14 @@ function generateBenchOptions() {
             gkPool = gkPool.concat(extraGk);
         }
         var gkWeighted = gkPool.map(function(c) {
-            var w = 1;
-            if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 3;
-            if (c.rating >= 85) w += 1;
+            var w = 10;
             return { card: c, weight: w };
         });
         return weightedSample(gkWeighted, 5);
     }
 
     var weighted = rarityPool.map(function(c) {
-        var w = 1;
-        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 3;
-        if (c.rating >= 85) w += 1;
+        var w = 10;
         if (c.position === 'GK') w *= 0.05; // Make GK appear least often
         return { card: c, weight: w };
     });
@@ -398,20 +395,20 @@ function generateReserveOptions() {
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allPool.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1;
+            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     } else {
         rarityPool = allPool.filter(function(c) {
-            return !c.rarity || c.rarity === 'Oro';
+            var isOro = !c.rarity || c.rarity === 'Oro';
+            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     }
 
     var weighted = rarityPool.map(function(c) {
-        var w = 1;
-        if (c.rarity && c.rarity.indexOf('Especial') !== -1) w += 1.5;
-        if (c.rating >= 85) w += 0.5;
+        var w = 10;
         if (c.position === 'GK') w *= 0.05; // Make GK appear least often
         return { card: c, weight: w };
     });
