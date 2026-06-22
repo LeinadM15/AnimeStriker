@@ -6018,7 +6018,7 @@ function calcTotalChemistry() {
     for (let i = 0; i < 11; i++) {
         total += calcPlayerChemistry(i);
     }
-    return Math.min(100, Math.floor(total * 1.5));
+    return Math.min(100, Math.floor(total));
 }
 
 function calcPlayerChemistry(index) {
@@ -6050,13 +6050,13 @@ function calcPlayerChemistry(index) {
     });
     
     let baseChem = 0;
-    if (posStatus === 'exact') baseChem = 4;
-    else if (posStatus === 'secondary') baseChem = 2;
+    if (posStatus === 'exact') baseChem = 3;
+    else if (posStatus === 'secondary') baseChem = 1;
     else if (posStatus === 'wrong') return 0; // Wrong position gives 0 chemistry
 
     let chem = baseChem;
     if (totalLinks > 0) {
-        chem += Math.min(6, Math.round((linkPoints / totalLinks) * 6));
+        chem += Math.min(10, Math.round((linkPoints / totalLinks) * 10));
     }
     
     if (typeof currentCoach !== 'undefined' && currentCoach) {
