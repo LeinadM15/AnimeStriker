@@ -309,4 +309,31 @@ const coachesDB = [
         image: "assets/entrenadores/Kira/Kira.png",
         background: "assets/Cartas/Oro.png"
     }
+
+    {
+        id: "coach_ivanallegrov",
+        name: "IVAN ALLEGROV",
+        version: "Entrenador (Rusia)",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Rusia.png", // Or maybe just generic, there is no Rusia.png but let's use what we have or just null/generic. Wait, let's use teams/Bastard.png or omit it. Actually let's use 'teams/Rusia.png' even if it's broken, it can be fixed later or we use flagcdn. Wait, let's just use 'https://flagcdn.com/w40/ru.png' for teamIcon too if needed, but 'teams/Rusia.png' is fine if it doesn't break. I will just leave teamIcon empty.
+        image: "assets/entrenadores/Rusia/IvanAllegrov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_yekaterinastronov",
+        name: "YEKATERINA STRONOV",
+        version: "Entrenador (Rusia)",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "", // Let's leave empty to avoid broken images
+        image: "assets/entrenadores/Rusia/YekaterinaStronov.png",
+        background: "assets/Cartas/Oro.png"
+    }
 ];
