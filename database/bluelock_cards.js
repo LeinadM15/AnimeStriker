@@ -1540,5 +1540,57 @@ const hidalgoCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Francia/HidalgoOro.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "ismail_senghor_oro",
+        name: "SENGHOR",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CDM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Senegal/IsmailSenghorOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "ismail_senghor",
+        name: "SENGHOR",
+        version: "Brasil",
+        rarity: "Especial",
+        rating: 87,
+        position: "CDM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Senegal/IsmailSenghor.png",
+        background: "assets/Cartas/Brasil.png"
+    },
+    {
+        id: "moussa_diallo_oro",
+        name: "DIALLO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "LW",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Senegal/MoussaMalickDialloOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "moussa_diallo",
+        name: "DIALLO",
+        version: "Brasil",
+        rarity: "Especial",
+        rating: 87,
+        position: "LW",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Senegal/MoussaMalickDiallo.png",
+        background: "assets/Cartas/Brasil.png"
     }
 ];
