@@ -65,6 +65,12 @@ function weightedSample(pool, count) {
     return result;
 }
 
+function isSpecialRarity(card) {
+    if (!card.rarity) return false;
+    if (card.rarity === 'Oro') return false;
+    return true;
+}
+
 function getPlayerCards() {
     if (typeof cardsDB === 'undefined') return [];
     return cardsDB.filter(function(c) { return c.position !== 'COACH'; });
@@ -123,7 +129,7 @@ function getSpecialPicksStatus() {
     allCards.forEach(function(c) {
         if (c) {
             totalCount++;
-            if (c.rarity && c.rarity.indexOf('Especial') !== -1) {
+            if (isSpecialRarity(c)) {
                 specialCount++;
             }
         }
@@ -173,8 +179,7 @@ function determineIfSpecialPick(baseChance) {
 function generateCaptainOptions() {
     var pool = getPlayerCards().filter(function(c) {
         if (isCardUsed(c)) return false;
-        var isEspecial = c.rarity && (c.rarity.indexOf('Especial') !== -1 || c.rarity.indexOf('TOTS') !== -1);
-        return isEspecial && c.rating >= 89;
+        return isSpecialRarity(c) && c.rating >= 89;
     });
 
     // Guarantee at least 3 different positions among the 5
@@ -223,13 +228,13 @@ function generateStarterOptions(requiredRole) {
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allAvailable.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
+            return isSpecialRarity(c) && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
     } else {
         rarityPool = allAvailable.filter(function(c) {
             var isOro = !c.rarity || c.rarity === 'Oro';
-            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            var isLowSpecial = isSpecialRarity(c) && c.rating < 86;
             return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allAvailable; // fallback
@@ -338,13 +343,13 @@ function generateBenchOptions() {
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allPool.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
+            return isSpecialRarity(c) && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     } else {
         rarityPool = allPool.filter(function(c) {
             var isOro = !c.rarity || c.rarity === 'Oro';
-            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            var isLowSpecial = isSpecialRarity(c) && c.rating < 86;
             return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
@@ -388,13 +393,13 @@ function generateReserveOptions() {
     var rarityPool;
     if (isSpecialPick) {
         rarityPool = allPool.filter(function(c) {
-            return c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating >= 86;
+            return isSpecialRarity(c) && c.rating >= 86;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
     } else {
         rarityPool = allPool.filter(function(c) {
             var isOro = !c.rarity || c.rarity === 'Oro';
-            var isLowSpecial = c.rarity && c.rarity.indexOf('Especial') !== -1 && c.rating < 86;
+            var isLowSpecial = isSpecialRarity(c) && c.rating < 86;
             return isOro || isLowSpecial;
         });
         if (rarityPool.length < 5) rarityPool = allPool;
