@@ -7905,3 +7905,22 @@ const rusiaCards = [
         background: "assets/Cartas/Oro.png"
     }
 ];
+
+// ==========================================
+// EGIPTO
+// ==========================================
+const egiptoCards = [
+    {
+        id: "salah_trailblaze",
+        name: "SALAH",
+        version: "Trailblaze",
+        rarity: "Especial",
+        rating: 93,
+        position: "RW",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/eg.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Egipto/Salah.png",
+        background: "assets/Cartas/Trailblaze.png"
+    }
+];

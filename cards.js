@@ -28,6 +28,7 @@ const tsubasaAll = [
     ...mexicoCards,
     ...tailandiaCards,
     ...sudafricaCards,
+    ...rusiaCards,
     ...uruguayCards,
     ...chinaCards,
     ...croaciaCards,
@@ -43,7 +44,8 @@ const tsubasaAll = [
     ...zedaneCards,
     ...sueciaCards,
     ...argentinaCards,
-    ...otrosFranciaCards
+    ...otrosFranciaCards,
+    ...egiptoCards
 ];
 tsubasaAll.forEach(c => c._series = 'tsubasa');
 
