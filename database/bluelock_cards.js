@@ -180,7 +180,8 @@ const karasuCards = [
         league: "Ligue 1",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/PXG.png",
-        image: "assets/characters/Karasu/Karasu.png"
+        image: "assets/characters/Karasu/Karasu.png",
+        background: "assets/Cartas/Trueno.png"
     },
     {
         id: "karasu_jp",
@@ -854,7 +855,7 @@ const chigiriCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Chigiri/Chigirichuta.png",
-        background: "assets/Cartas/Shapeshifter.png"
+        background: "assets/Cartas/Shapesifters.png"
     },
     {
         id: "chigiri_pantera",
