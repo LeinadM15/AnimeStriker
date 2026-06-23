@@ -7911,9 +7911,9 @@ const rusiaCards = [
 // ==========================================
 const egiptoCards = [
     {
-        id: "salah_trailblaze",
+        id: "salah_trueno",
         name: "SALAH",
-        version: "Trailblaze",
+        version: "Trueno",
         rarity: "Especial",
         rating: 93,
         position: "RW",
@@ -7921,6 +7921,6 @@ const egiptoCards = [
         nationFlag: "https://flagcdn.com/w40/eg.png",
         teamIcon: "teams/Liverpool.png",
         image: "assets/characters/Egipto/Salah.png",
-        background: "assets/Cartas/Trailblaze.png"
+        background: "assets/Cartas/Trueno.png"
     }
 ];
