@@ -872,20 +872,6 @@ const chigiriCards = [
         background: "assets/Cartas/Rosa.png"
     },
     {
-        id: "chigiri_corre",
-        name: "CHIGIRI",
-        version: "Manshine City",
-        rarity: "Especial",
-        rating: 89,
-        position: "LW",
-        secondaryPositions: ["LB", "RW", "RB"],
-        league: "Premier League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
-        image: "assets/characters/Chigiri/Chigiricorre.png",
-        background: "assets/Cartas/Rosa.png"
-    },
-    {
         id: "chigiri_future",
         name: "CHIGIRI",
         version: "FutureStar",
