@@ -884,7 +884,8 @@ const chigiriCards = [
         image: "assets/characters/Chigiri/Chigiricorre.png",
         background: "assets/Cartas/Rosa.png"
     },
-    id: "chigiri_future",
+    {
+        id: "chigiri_future",
         name: "CHIGIRI",
         version: "FutureStar",
         rarity: "FutureStar",
