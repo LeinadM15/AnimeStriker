@@ -2864,6 +2864,19 @@ const uruguayCards = [
         teamIcon: "teams/Napoli.png",
         image: "assets/characters/Uruguay/Hino.png",
         background: "assets/backgrounds/Fondo_Hino.jpg"
+    },
+    {
+        id: "recoba_icono",
+        name: "RECOBA",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 93,
+        position: "CAM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/Inter.png",
+        image: "assets/characters/Uruguay/Recoba.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
 
