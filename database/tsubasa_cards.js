@@ -469,7 +469,7 @@ const takasugiCards = [
         position: "CB",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Takasugi/TakasugiHiro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -1241,13 +1241,13 @@ const espanaCards = [
     {
         id: "michael_numancia_1",
         name: "MICHAEL",
-        version: "Numancia",
+        version: "Roma",
         rarity: "Especial",
         rating: 91,
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/Michael.png",
         background: "assets/Cartas/Espana.png"
     },
@@ -1260,20 +1260,20 @@ const espanaCards = [
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/Michael2.png",
         background: "assets/Cartas/Espana.png"
     },
     {
         id: "raphael_numancia_1",
         name: "RAPHAEL",
-        version: "Numancia",
+        version: "Roma",
         rarity: "Especial",
         rating: 88,
         position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/Raphael.png",
         background: "assets/Cartas/Espana.png"
     },
@@ -1286,7 +1286,7 @@ const espanaCards = [
         position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/Raphael2.png",
         background: "assets/Cartas/Espana.png"
     },
@@ -1350,7 +1350,7 @@ const espanaCards = [
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/MichaelOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -1389,7 +1389,7 @@ const espanaCards = [
         position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/España/RaphaelOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -3050,7 +3050,7 @@ const chinaCards = [
         position: "CM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/cn.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/China/DavidLiang.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -3623,7 +3623,7 @@ const eeuuCards = [
         position: "LW",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/us.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/USA/Switch.png",
         background: "assets/Cartas/Oro.png"
 },
@@ -4115,7 +4115,7 @@ const argentinaCards = [
         position: "GK",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/ar.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Argentina/JorgeOrtega.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -5757,7 +5757,7 @@ const otrosFranciaCards = [
         position: "CB",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/sa.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/ArabiaSaudi/QamarSadir.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -5917,7 +5917,7 @@ const otrosFranciaCards = [
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/th.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Tailandia/BhakSepakroh.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -7316,7 +7316,7 @@ const sudafricaCards = [
         position: "GK",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/za.png",
-        teamIcon: "teams/Numancia.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Sudafrica/HughMakebe.png",
         background: "assets/Cartas/Oro.png"
     },
