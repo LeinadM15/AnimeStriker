@@ -189,6 +189,9 @@ function setupCustomDropdown() {
         if(url.includes('/gb-eng.')) return 'Inglaterra';
         if(url.includes('/sa.')) return 'Arabia Saudita';
         if(url.includes('/ru.')) return 'Rusia';
+        if(url.includes('/uy.')) return 'Uruguay';
+        if(url.includes('/sn.')) return 'Senegal';
+        if(url.includes('/eg.')) return 'Egipto';
         return 'Nación';
     };
 

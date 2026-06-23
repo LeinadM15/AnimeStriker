@@ -6582,7 +6582,10 @@ const COUNTRY_NAMES = {
     'rs': 'Serbia',
     'jm': 'Jamaica',
     'ng': 'Nigeria',
-    'ru': 'Rusia'
+    'ru': 'Rusia',
+    'uy': 'Uruguay',
+    'sn': 'Senegal',
+    'eg': 'Egipto'
 };
 
 function getNationName(url) {
