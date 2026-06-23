@@ -4326,6 +4326,19 @@ const argentinaCards = [
         teamIcon: "teams/Roma.png",
         image: "assets/characters/Argentina/CabassosPrime.png",
         background: "assets/Cartas/Rulebraker.png"
+    },
+    {
+        id: "aimar_icono",
+        name: "AIMAR",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 94,
+        position: "CAM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ar.png",
+        teamIcon: "teams/Valencia.png",
+        image: "assets/characters/Argentina/Aimar.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
 
