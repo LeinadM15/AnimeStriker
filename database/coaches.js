@@ -342,7 +342,7 @@ const coachesDB = [
         rarity: "Coach",
         rating: 85,
         position: "COACH",
-        league: "J League",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Raimon.png",
         image: "assets/characters/MarkEvans/MarkEntrenador.png",
