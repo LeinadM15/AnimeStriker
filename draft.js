@@ -1414,6 +1414,31 @@ function loadDraftState() {
                 while (draftState.bench.length < BENCH_SIZE) draftState.bench.push(null);
                 while (draftState.reserves.length < RESERVES_SIZE) draftState.reserves.push(null);
 
+                // Validate currentPick cards still exist in the DB
+                if (draftState.currentPick && Array.isArray(draftState.currentPick) && typeof cardsDB !== 'undefined') {
+                    var dbIds = {};
+                    cardsDB.forEach(function(c) { dbIds[c.id] = true; });
+                    var allValid = draftState.currentPick.every(function(c) {
+                        return c && c.id && dbIds[c.id];
+                    });
+                    if (!allValid) {
+                        draftState.currentPick = null; // Force regeneration
+                    }
+                }
+
+                // Refresh already-drafted cards with current DB data
+                if (typeof cardsDB !== 'undefined') {
+                    var dbMap = {};
+                    cardsDB.forEach(function(c) { dbMap[c.id] = c; });
+                    function refreshCard(c) {
+                        if (c && c.id && dbMap[c.id]) return dbMap[c.id];
+                        return c;
+                    }
+                    draftState.squad = draftState.squad.map(refreshCard);
+                    draftState.bench = draftState.bench.map(refreshCard);
+                    draftState.reserves = draftState.reserves.map(refreshCard);
+                }
+
                 return true;
             }
         }
