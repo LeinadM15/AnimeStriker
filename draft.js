@@ -1392,6 +1392,14 @@ function saveDraftState() {
 
 function loadDraftState() {
     try {
+        // Check if DB version changed — if so, wipe saved draft to avoid ghost cards
+        var currentDBVersion = typeof DB_VERSION !== 'undefined' ? DB_VERSION : '0';
+        var savedDBVersion = localStorage.getItem('animeDraftDBVersion') || '0';
+        if (currentDBVersion !== savedDBVersion) {
+            localStorage.removeItem('animeDraftState');
+            localStorage.setItem('animeDraftDBVersion', currentDBVersion);
+            return false;
+        }
         var saved = localStorage.getItem('animeDraftState');
         if (saved) {
             var parsed = JSON.parse(saved);

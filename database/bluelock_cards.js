@@ -834,7 +834,7 @@ const chigiriCards = [
         name: "CHIGIRI",
         version: "Manshine",
         rarity: "Especial",
-        rating: 88,
+        rating: 89,
         position: "LW",
         secondaryPositions: ["LB", "RW", "RB"],
         league: "Premier League",
