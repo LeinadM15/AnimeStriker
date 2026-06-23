@@ -1564,7 +1564,7 @@ const espanaCards = [
     },
     {
         id: "sergihernandezoro",
-        name: "SERGI HERNANDEZ ORO",
+        name: "SERGI HERNANDEZ",
         version: "Oro",
         rarity: "Oro",
         rating: 87,
