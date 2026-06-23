@@ -8171,3 +8171,191 @@ const egiptoCards = [
         background: "assets/Cartas/Trueno.png"
     }
 ];
+
+// ==========================================
+// MARK EVANS
+// ==========================================
+const markEvansCards = [
+    {
+        id: "mark_oro",
+        name: "MARK EVANS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/MarkOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "mark_if",
+        name: "MARK EVANS",
+        version: "If",
+        rarity: "Especial",
+        rating: 85,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/Mark.png",
+        background: "assets/Cartas/If.png"
+    },
+    {
+        id: "mark_puno",
+        name: "MARK EVANS",
+        version: "Trophy",
+        rarity: "Trophy",
+        rating: 87,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/MarkPuno.png",
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "mark_magico",
+        name: "MARK EVANS",
+        version: "Centurion",
+        rarity: "Centurion",
+        rating: 89,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/MarkMagico.png",
+        background: "assets/Cartas/Centurion.png"
+    },
+    {
+        id: "mark_celestial",
+        name: "MARK EVANS",
+        version: "BalonOro",
+        rarity: "BalonOro",
+        rating: 91,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/MarkCelestial.png",
+        background: "assets/Cartas/BalonOro.png"
+    },
+    {
+        id: "markarion",
+        name: "MARK EVANS",
+        version: "Markarion",
+        rarity: "Especial",
+        rating: 87,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/MarkEvans/Markarion.png",
+        background: "assets/Cartas/Morado.png"
+    },
+    {
+        id: "mark_panda_oro",
+        name: "MARK EVANS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/MarkEvans/MarkPandaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "mark_doble",
+        name: "MARK EVANS",
+        version: "Radioactiva",
+        rarity: "Radioactiva",
+        rating: 90,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/MarkEvans/MarkDoble.png",
+        background: "assets/Cartas/Radioactiva.png"
+    },
+    {
+        id: "mark_triple",
+        name: "MARK EVANS",
+        version: "Shapeshifter",
+        rarity: "Shapeshifter",
+        rating: 92,
+        position: "CB",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/MarkEvans/MarkTriple.png",
+        background: "assets/Cartas/Shapesifters.png"
+    },
+    {
+        id: "mark_azura",
+        name: "MARK EVANS",
+        version: "Tots",
+        rarity: "Tots",
+        rating: 94,
+        position: "GK",
+        league: "J League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/MarkEvans/MarkAzura.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "mark_legendario_oro",
+        name: "MARK EVANS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 90,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/MarkEvans/MarkLegendarioOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "mark_v",
+        name: "MARK EVANS",
+        version: "Toty",
+        rarity: "Toty",
+        rating: 94,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/MarkEvans/MarkV.png",
+        background: "assets/Cartas/Toty.png"
+    },
+    {
+        id: "mark_cabeza",
+        name: "MARK EVANS",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 97,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/MarkEvans/MarkCabeza.png",
+        background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "meca_mark_oro",
+        name: "MARK EVANS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/MarkEvans/MecaMarkOro.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];

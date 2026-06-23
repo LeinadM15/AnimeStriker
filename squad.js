@@ -5908,7 +5908,13 @@ function getCoachBoosts(card, coach) {
     let boost = { rating: 0, chem: 0 };
     if (!coach || !card) return boost;
     
-    if (coach.id === 'coach_pepe_ballester') {
+    if (coach.id === 'coach_mark_evans') {
+        if ((card.teamIcon && (card.teamIcon.includes('Raimon') || card.teamIcon.includes('Ribera'))) || 
+            (card.nationFlag && card.nationFlag.includes('jp.png'))) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_pepe_ballester') {
         if (card.nationFlag && card.nationFlag.includes('es.png')) {
             boost.chem += 2;
             boost.rating += 1;

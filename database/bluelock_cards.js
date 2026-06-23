@@ -940,7 +940,7 @@ const hugoCards = [
         name: "HUGO",
         version: "Maquina",
         rarity: "Especial",
-        rating: 93,
+        rating: 92,
         position: "CM",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/fr.png",
