@@ -137,18 +137,12 @@ function determineIfSpecialPick(baseChance) {
     var remainingPicks = maxTotal - status.total;
     
     var MIN_SPECIAL = 6;
-    var MAX_SPECIAL = 11;
     
     var minSpecialNeeded = MIN_SPECIAL - status.special;
     
     if (minSpecialNeeded > 0 && minSpecialNeeded >= remainingPicks) {
         // Must pick special to reach minimum
         return true;
-    }
-    
-    if (status.special >= MAX_SPECIAL) {
-        // Max limit of special picks reached
-        return false;
     }
     
     // Calculate dynamic chance using an expected curve to prevent clumping
@@ -162,8 +156,15 @@ function determineIfSpecialPick(baseChance) {
     // Base chance is the rate. We adjust heavily based on whether we are ahead or behind the curve
     var dynamicChance = rate + (diff * 0.35);
     
+    // Drop the chance significantly if we have 9 or more special cards
+    if (status.special >= 9) {
+        var excess = status.special - 8;
+        dynamicChance -= excess * 0.20; 
+    }
+    
     // Hard clamp to keep it within reasonable bounds
-    if (dynamicChance < 0.05) dynamicChance = 0.05;
+    // We allow a tiny minimum chance even if the cap is exceeded
+    if (dynamicChance < 0.02) dynamicChance = 0.02; 
     if (dynamicChance > 0.85) dynamicChance = 0.85;
     
     return Math.random() < dynamicChance;
