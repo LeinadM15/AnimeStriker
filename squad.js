@@ -6001,13 +6001,23 @@ function calcTeamRating() {
     let count = 0;
     for (let i = 0; i < 11; i++) {
         if (squad[i]) {
-            total += squad[i].rating;
+            let r = squad[i].rating;
+            if (typeof currentCoach !== 'undefined' && currentCoach) {
+                let boosts = getCoachBoosts(squad[i], currentCoach);
+                r += boosts.rating;
+            }
+            total += r;
             count++;
         }
     }
     for (let j = 0; j < 8; j++) {
         if (bench[j]) {
-            total += bench[j].rating;
+            let r = bench[j].rating;
+            if (typeof currentCoach !== 'undefined' && currentCoach) {
+                let boosts = getCoachBoosts(bench[j], currentCoach);
+                r += boosts.rating;
+            }
+            total += r;
             count++;
         }
     }
