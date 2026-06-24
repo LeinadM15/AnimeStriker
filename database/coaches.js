@@ -373,5 +373,18 @@ const coachesDB = [
         teamIcon: "teams/Roma.png",
         image: "assets/characters/Kevin/KevinEn.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_fortnumpile",
+        name: "FORTNUM PILE",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 80,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Rampard.png",
+        image: "assets/characters/Rampard/FortnumPile.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

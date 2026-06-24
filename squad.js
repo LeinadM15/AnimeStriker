@@ -6015,6 +6015,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_fortnumpile') {
+        if (card.teamIcon && card.teamIcon.includes('Rampard')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
     }
     
     return boost;
