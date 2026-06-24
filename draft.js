@@ -287,20 +287,35 @@ function generateStarterOptions(requiredRole) {
         }
     });
 
-    // Fill remaining (up to 5) with compatible cards from rarityPool (both exact and alt)
-    var compatiblePool = rarityPool.filter(function(c) {
-        return isCompatible(c, requiredRole);
-    });
-    var compatibleWeighted = applyWeights(compatiblePool.filter(function(c) {
-        return usedResultNames.indexOf(c.name.toUpperCase()) === -1;
-    }));
-    var compatiblePicks = weightedSample(compatibleWeighted, 5 - result.length);
-    compatiblePicks.forEach(function(c) {
-        if (usedResultNames.indexOf(c.name.toUpperCase()) === -1) {
-            result.push(c);
-            usedResultNames.push(c.name.toUpperCase());
+    // For the remaining slots (usually 2), each has a 25% chance to be an Alternative position.
+    // Otherwise, they are Exact position.
+    var remainingSlots = 5 - result.length;
+    for (var i = 0; i < remainingSlots; i++) {
+        var pickAlt = Math.random() < 0.25;
+        
+        var availableExact = exactPool.filter(function(c) { return usedResultNames.indexOf(c.name.toUpperCase()) === -1; });
+        var availableAlt = altPool.filter(function(c) { return usedResultNames.indexOf(c.name.toUpperCase()) === -1; });
+
+        var poolToUse = null;
+        if (pickAlt && availableAlt.length > 0) {
+            poolToUse = availableAlt;
+        } else if (!pickAlt && availableExact.length > 0) {
+            poolToUse = availableExact;
+        } else if (availableExact.length > 0) {
+            poolToUse = availableExact;
+        } else if (availableAlt.length > 0) {
+            poolToUse = availableAlt;
         }
-    });
+
+        if (poolToUse) {
+            var weighted = applyWeights(poolToUse);
+            var pick = weightedSample(weighted, 1)[0];
+            if (pick) {
+                result.push(pick);
+                usedResultNames.push(pick.name.toUpperCase());
+            }
+        }
+    }
 
     // If still not 5, fill from any compatible card from allAvailable
     if (result.length < 5) {
