@@ -5914,6 +5914,14 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_jude_sharp') {
+        if ((card.teamIcon && (card.teamIcon.includes('Royal') || card.teamIcon.includes('Raimon') || card.teamIcon.includes('Polaris'))) || 
+            (card.nationFlag && card.nationFlag.includes('jp.png'))) {
+            boost.chem += 1;
+            if (card.teamIcon && card.teamIcon.includes('Royal')) {
+                boost.rating += 1;
+            }
+        }
     } else if (coach.id === 'coach_pepe_ballester') {
         if (card.nationFlag && card.nationFlag.includes('es.png')) {
             boost.chem += 2;

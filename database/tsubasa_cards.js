@@ -8373,3 +8373,135 @@ const markEvansCards = [
         background: "assets/Cartas/Oro.png"
     }
 ];
+
+// ==========================================
+// JUDE SHARP
+// ==========================================
+const judeSharpCards = [
+    {
+        id: "jude_oro",
+        name: "JUDE SHARP",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Jude/JudeOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "jude_espejismo",
+        name: "JUDE SHARP",
+        version: "Espejismo",
+        rarity: "Especial",
+        rating: 87,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Jude/JudeEspejismo.png",
+        background: "assets/Cartas/Morado.png"
+    },
+    {
+        id: "jude_ruptura",
+        name: "JUDE SHARP",
+        version: "Ruptura",
+        rarity: "Trueno",
+        rating: 90,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Jude/JudeRuptura.png",
+        background: "assets/Cartas/Trueno.png"
+    },
+    {
+        id: "jude_polaris_oro",
+        name: "JUDE SHARP",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Polaris.png",
+        image: "assets/characters/Jude/JudePolarisOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "jude_polaris_if",
+        name: "JUDE SHARP",
+        version: "Polaris",
+        rarity: "Especial",
+        rating: 90,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Polaris.png",
+        image: "assets/characters/Jude/JudePolaris.png",
+        background: "assets/Cartas/If.png"
+    },
+    {
+        id: "jude_pin",
+        name: "JUDE SHARP",
+        version: "Future Star",
+        rarity: "Especial",
+        rating: 93,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Polaris.png",
+        image: "assets/characters/Jude/JudePin.png",
+        background: "assets/Cartas/FutureStar.png"
+    },
+    {
+        id: "jude_legen_oro",
+        name: "JUDE SHARP",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 90,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Jude/JudeLegenOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "jude_legen",
+        name: "JUDE SHARP",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 95,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Jude/JudeLegen.png",
+        background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "juleb",
+        name: "JULEB",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CM",
+        secondaryPositions: ["CAM"],
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Monaco.png",
+        image: "assets/characters/Jude/Juleb.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];

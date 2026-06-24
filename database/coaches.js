@@ -347,5 +347,18 @@ const coachesDB = [
         teamIcon: "teams/Raimon.png",
         image: "assets/characters/MarkEvans/MarkEntrenador.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_jude_sharp",
+        name: "JUDE SHARP",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Jude/JudeEn.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
