@@ -9339,7 +9339,7 @@ const nathanCards = [
         name: "BILLY MILLER",
         version: "Radioactiva",
         rarity: "Especial",
-        rating: 91,
+        rating: 90,
         position: "CB",
         secondaryPositions: ["ST"],
         league: "Serie A",
