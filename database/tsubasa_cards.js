@@ -9291,5 +9291,61 @@ const nathanCards = [
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/EverestBrightwell.png",
         background: "assets/Cartas/Gris.png"
+    },
+    {
+        id: "ribera_billy_if",
+        name: "BILLY MILLER",
+        version: "If",
+        rarity: "Especial",
+        rating: 89,
+        position: "CB",
+        secondaryPositions: ["ST"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/Ribera/BillyMillerBien.png",
+        background: "assets/Cartas/If.png"
+    },
+    {
+        id: "ribera_billy_shapesifter",
+        name: "BILLY MILLER",
+        version: "Shapesifters",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        secondaryPositions: ["CB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/Ribera/BillyMiller.png",
+        background: "assets/Cartas/Shapesifters.png"
+    },
+    {
+        id: "ribera_billy_inter",
+        name: "BILLY MILLER",
+        version: "Inter",
+        rarity: "Especial",
+        rating: 89,
+        position: "CB",
+        secondaryPositions: ["ST"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Inter.png",
+        image: "assets/characters/Ribera/BillyMillerJp.png",
+        background: "assets/Cartas/Inter.png"
+    },
+    {
+        id: "ribera_billy_radioactiva",
+        name: "BILLY MILLER",
+        version: "Radioactiva",
+        rarity: "Especial",
+        rating: 91,
+        position: "CB",
+        secondaryPositions: ["ST"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Inter.png",
+        image: "assets/characters/Ribera/BillyMillerJpPrime.png",
+        background: "assets/Cartas/Radioactiva.png"
     }
 ];
