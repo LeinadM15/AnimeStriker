@@ -6343,16 +6343,16 @@ function renderModalCards() {
         });
     } else if (sortMode === 'chem') {
         if (selectedTarget === 'pitch' && selectedSlotIndex !== null) {
+            const orig = squad[selectedSlotIndex];
+            filtered.forEach(card => {
+                squad[selectedSlotIndex] = card;
+                card._tempChem = calcPlayerChemistry(selectedSlotIndex);
+            });
+            squad[selectedSlotIndex] = orig;
+            
             filtered.sort((a, b) => {
-                const orig = squad[selectedSlotIndex];
-                
-                squad[selectedSlotIndex] = b;
-                const chemB = calcPlayerChemistry(selectedSlotIndex);
-                
-                squad[selectedSlotIndex] = a;
-                const chemA = calcPlayerChemistry(selectedSlotIndex);
-                
-                squad[selectedSlotIndex] = orig;
+                const chemA = a._tempChem;
+                const chemB = b._tempChem;
                 
                 if (chemA !== chemB) return chemB - chemA;
                 if (b.rating !== a.rating) return b.rating - a.rating;
