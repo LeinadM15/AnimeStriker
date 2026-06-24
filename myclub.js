@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterLeague = document.getElementById('filter-league');
     const filterTeam = document.getElementById('filter-team');
     const sortCards = document.getElementById('sort-cards');
-    const countDisplay = document.getElementById('total-cards-count');
     
     const zoomModal = document.getElementById('card-zoom-modal');
     const zoomContent = document.getElementById('card-zoom-content');
@@ -119,8 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (sortVal === 'name-desc') {
             filtered.sort((a, b) => b.name.localeCompare(a.name));
         }
-
-        countDisplay.textContent = `Mostrando ${filtered.length} cartas`;
 
         const totalPages = Math.ceil(filtered.length / MYCLUB_CARDS_PER_PAGE) || 1;
         if (myclubCurrentPage >= totalPages) myclubCurrentPage = totalPages - 1;
