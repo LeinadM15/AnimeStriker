@@ -6301,7 +6301,7 @@ function renderModalCards() {
     let filtered = cardsDB.filter(card => {
         if (selectedTarget === 'coach' && card.position !== 'COACH') return false;
         if (selectedTarget !== 'coach' && card.position === 'COACH') return false;
-        if (activeNames.has(card.name) && card.name !== currentOccupantName) return false;
+        if (selectedTarget !== 'coach' && activeNames.has(card.name) && card.name !== currentOccupantName) return false;
         if (searchTerm && !card.name.toLowerCase().includes(searchTerm) && !(card.version && card.version.toLowerCase().includes(searchTerm))) return false;
         if (filterPos) {
             const stat = getPositionStatus(card, filterPos);
