@@ -5914,6 +5914,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_snuffy') {
+        if (card.teamIcon && card.teamIcon.includes('Ubers')) {
+            boost.chem += 2;
+            boost.rating += 1;
+        }
     } else if (coach.id === 'coach_jude_sharp') {
         if ((card.teamIcon && (card.teamIcon.includes('Royal') || card.teamIcon.includes('Raimon') || card.teamIcon.includes('Polaris'))) || 
             (card.nationFlag && card.nationFlag.includes('jp.png'))) {
@@ -6090,7 +6095,8 @@ function calcPlayerChemistry(index) {
 
     let chem = baseChem;
     if (totalLinks > 0) {
-        chem += Math.min(10, Math.round((linkPoints / totalLinks) * 10));
+        let linkRatio = linkPoints / totalLinks;
+        chem += Math.min(7, Math.floor(linkRatio * 7));
     }
     
     if (typeof currentCoach !== 'undefined' && currentCoach) {
