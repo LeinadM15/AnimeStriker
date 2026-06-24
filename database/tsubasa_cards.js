@@ -8505,3 +8505,161 @@ const judeSharpCards = [
         background: "assets/Cartas/Oro.png"
     }
 ];
+
+// ==========================================
+// NATHAN
+// ==========================================
+const nathanCards = [
+    {
+        id: "nathan_oro",
+        name: "NATHAN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Nathan/NathanOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nathan_if",
+        name: "NATHAN",
+        version: "If",
+        rarity: "Especial",
+        rating: 86,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Nathan/Nathan.png",
+        background: "assets/Cartas/If.png"
+    },
+    {
+        id: "nathan_oscu_oro",
+        name: "NATHAN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Nathan/NathanOscuOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nathan_oscu",
+        name: "NATHAN",
+        version: "Trueno",
+        rarity: "Trueno",
+        rating: 88,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Nathan/NathanOscu.png",
+        background: "assets/Cartas/Trueno.png"
+    },
+    {
+        id: "nathan_jp",
+        name: "NATHAN",
+        version: "Tots",
+        rarity: "Tots",
+        rating: 90,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Raimon.png",
+        image: "assets/characters/Nathan/NathanJP.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "nathan_royal_oro",
+        name: "NATHAN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Nathan/NathanRoyalOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nathan_royal",
+        name: "NATHAN",
+        version: "Azul",
+        rarity: "Especial",
+        rating: 88,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Nathan/NathanRoyal.png",
+        background: "assets/Cartas/Azul.png"
+    },
+    {
+        id: "nathan_ori2",
+        name: "NATHAN",
+        version: "Cabras",
+        rarity: "Especial",
+        rating: 90,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Nathan/NathanOri2.png",
+        background: "assets/Cartas/Cabras.png"
+    },
+    {
+        id: "nathan_ori",
+        name: "NATHAN",
+        version: "Hielo",
+        rarity: "Especial",
+        rating: 92,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Nathan/NathanOri.png",
+        background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "nathan_leg_oro",
+        name: "NATHAN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 89,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Nathan/NathanLegOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nathan_leg",
+        name: "NATHAN",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 94,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Nathan/NathanLeg.png",
+        background: "assets/Cartas/Icono.png"
+    }
+];
