@@ -3722,7 +3722,7 @@ const eeuuCards = [
     {
         id: "ortiz_eeuu",
         name: "ORTIZ",
-        version: "Radioactiva",
+        version: "Joker",
         rarity: "Especial",
         rating: 89,
         position: "CM",
@@ -3730,7 +3730,7 @@ const eeuuCards = [
         nationFlag: "https://flagcdn.com/w40/us.png",
         teamIcon: "teams/Inter.png",
         image: "assets/characters/USA/Ortiz.png",
-        background: "assets/Cartas/Radioactiva.png"
+        background: "assets/Cartas/Joker.png"
     }
 ];
 
