@@ -287,11 +287,11 @@ function generateStarterOptions(requiredRole) {
         }
     });
 
-    // For the remaining slots (usually 2), each has a 25% chance to be an Alternative position.
+    // For the remaining slots (usually 2), each has a 10% chance to be an Alternative position.
     // Otherwise, they are Exact position.
     var remainingSlots = 5 - result.length;
     for (var i = 0; i < remainingSlots; i++) {
-        var pickAlt = Math.random() < 0.25;
+        var pickAlt = Math.random() < 0.10;
         
         var availableExact = exactPool.filter(function(c) { return usedResultNames.indexOf(c.name.toUpperCase()) === -1; });
         var availableAlt = altPool.filter(function(c) { return usedResultNames.indexOf(c.name.toUpperCase()) === -1; });
