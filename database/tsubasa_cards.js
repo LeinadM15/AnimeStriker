@@ -9347,5 +9347,19 @@ const nathanCards = [
         teamIcon: "teams/Inter.png",
         image: "assets/characters/Ribera/BillyMillerJpPrime.png",
         background: "assets/Cartas/Radioactiva.png"
+    },
+    {
+        id: "ribera_kia_rulebreaker",
+        name: "KIA TANNER",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 87,
+        position: "CAM",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ribera.png",
+        image: "assets/characters/Ribera/KiaTanner.png",
+        background: "assets/Cartas/Rulebraker.png"
     }
 ];
