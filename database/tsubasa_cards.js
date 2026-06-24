@@ -9127,8 +9127,8 @@ const nathanCards = [
     {
         id: "ribera_pacey",
         name: "PACEY HAWKER",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 79,
         position: "ST",
         secondaryPositions: [],
@@ -9136,13 +9136,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/PaceyHawker.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_neville",
         name: "NEVILLE MERCHANT",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 78,
         position: "CF",
         secondaryPositions: [],
@@ -9150,13 +9150,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/NevilleMerchant.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_burleigh",
         name: "BURLEIGH CARPENTER",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 78,
         position: "CB",
         secondaryPositions: [],
@@ -9164,13 +9164,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/BurleighCarpenter.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_gaffer",
         name: "GAFFER MASON",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 77,
         position: "CDM",
         secondaryPositions: [],
@@ -9178,13 +9178,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/GafferMason.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_meriwether",
         name: "MERIWETHER BEAUMONT",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 76,
         position: "RB",
         secondaryPositions: [],
@@ -9192,13 +9192,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/MeriwetherBeaumont.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_dan",
         name: "DAN BOWMAN",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 75,
         position: "LB",
         secondaryPositions: [],
@@ -9206,13 +9206,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/DanBowsun.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_luke",
         name: "LUKE BLANK",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 75,
         position: "RM",
         secondaryPositions: [],
@@ -9220,13 +9220,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/LukeBlank.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_giles",
         name: "GILES FARMER",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 74,
         position: "LM",
         secondaryPositions: [],
@@ -9234,13 +9234,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/GilesFarmer.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_eamond",
         name: "EAMOND EVENWING",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 74,
         position: "RW",
         secondaryPositions: [],
@@ -9248,13 +9248,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/EamondEverwing.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_frey",
         name: "FREY FIELDING",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 73,
         position: "CM",
         secondaryPositions: [],
@@ -9262,13 +9262,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/FreyFielding.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_tobin",
         name: "TOBIN HARVESTON",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 73,
         position: "CDM",
         secondaryPositions: [],
@@ -9276,13 +9276,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/TobinHarveston.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_everest",
         name: "EVEREST BRIGHTWELL",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 72,
         position: "CB",
         secondaryPositions: [],
@@ -9290,7 +9290,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/EverestBrightwell.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "ribera_billy_if",
