@@ -8512,7 +8512,7 @@ const judeSharpCards = [
 const nathanCards = [
     {
         id: "nathan_oro",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Oro",
         rarity: "Oro",
         rating: 83,
@@ -8526,7 +8526,7 @@ const nathanCards = [
     },
     {
         id: "nathan_if",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "If",
         rarity: "Especial",
         rating: 86,
@@ -8540,7 +8540,7 @@ const nathanCards = [
     },
     {
         id: "nathan_oscu_oro",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Oro",
         rarity: "Oro",
         rating: 86,
@@ -8553,7 +8553,7 @@ const nathanCards = [
     },
     {
         id: "nathan_oscu",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Trueno",
         rarity: "Trueno",
         rating: 88,
@@ -8566,7 +8566,7 @@ const nathanCards = [
     },
     {
         id: "nathan_jp",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Tots",
         rarity: "Tots",
         rating: 90,
@@ -8580,7 +8580,7 @@ const nathanCards = [
     },
     {
         id: "nathan_royal_oro",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Oro",
         rarity: "Oro",
         rating: 85,
@@ -8594,7 +8594,7 @@ const nathanCards = [
     },
     {
         id: "nathan_royal",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Azul",
         rarity: "Especial",
         rating: 88,
@@ -8608,7 +8608,7 @@ const nathanCards = [
     },
     {
         id: "nathan_ori2",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Cabras",
         rarity: "Especial",
         rating: 90,
@@ -8622,7 +8622,7 @@ const nathanCards = [
     },
     {
         id: "nathan_ori",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Hielo",
         rarity: "Especial",
         rating: 92,
@@ -8636,7 +8636,7 @@ const nathanCards = [
     },
     {
         id: "nathan_leg_oro",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Oro",
         rarity: "Oro",
         rating: 89,
@@ -8650,7 +8650,7 @@ const nathanCards = [
     },
     {
         id: "nathan_leg",
-        name: "NATHAN",
+        name: "NATHAN SWIFT",
         version: "Icono",
         rarity: "Icono",
         rating: 94,
