@@ -8723,7 +8723,7 @@ const nathanCards = [
         name: "KEVIN DRAGONFLY",
         version: "Oro",
         rarity: "Oro",
-        rating: 87,
+        rating: 86,
         position: "ST",
         secondaryPositions: [],
         league: "J-League",
