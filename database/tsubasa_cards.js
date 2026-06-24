@@ -9627,5 +9627,47 @@ const nathanCards = [
         teamIcon: "teams/Inter.png",
         image: "assets/characters/ShingoAoi/Aoi1.png",
         background: "assets/backgrounds/Fondo_Shingo2.jpg"
+    },
+    {
+        id: "soda_makoto_oro",
+        name: "MAKOTO SODA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "LB",
+        secondaryPositions: ["CB"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/Soda/SodaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "soda_makoto_hielo",
+        name: "MAKOTO SODA",
+        version: "Hielo",
+        rarity: "Especial",
+        rating: 87,
+        position: "LB",
+        secondaryPositions: ["CB"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/Soda/Soda.png",
+        background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "soda_makoto_toty",
+        name: "MAKOTO SODA",
+        version: "Toty",
+        rarity: "Especial",
+        rating: 90,
+        position: "LB",
+        secondaryPositions: ["CB"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/Soda/SodaPrime.png",
+        background: "assets/Cartas/Toty.png"
     }
 ];
