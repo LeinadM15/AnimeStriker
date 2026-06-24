@@ -8824,7 +8824,7 @@ const nathanCards = [
         rating: 89,
         position: "CB",
         secondaryPositions: [],
-        league: "J-League",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/Jack/JackLegenOro.png",
@@ -8838,7 +8838,7 @@ const nathanCards = [
         rating: 92,
         position: "CB",
         secondaryPositions: [],
-        league: "J-League",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/Jack/JackLegen.png",
@@ -8917,8 +8917,8 @@ const nathanCards = [
     {
         id: "rampard_barry",
         name: "BARRY CADE",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 78,
         position: "RB",
         secondaryPositions: [],
@@ -8926,13 +8926,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/BarryCade.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_rick",
         name: "RICK WALL",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 78,
         position: "LB",
         secondaryPositions: [],
@@ -8940,13 +8940,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/RickWall.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_ivor",
         name: "IVOR SHIELD",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 77,
         position: "CDM",
         secondaryPositions: [],
@@ -8954,13 +8954,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/IvorShield.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_rocky",
         name: "ROCKY HARDCASTLE",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 77,
         position: "CDM",
         secondaryPositions: [],
@@ -8968,13 +8968,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/RockyHardcastle.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_waldo",
         name: "WALDO GIBBONS",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 76,
         position: "RB",
         secondaryPositions: ["RWB"],
@@ -8982,13 +8982,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/WaldoGibbons.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_iggy",
         name: "IGGY MOTTE",
-        version: "Base",
-        rarity: "Plata",
+        version: "Oro",
+        rarity: "Oro",
         rating: 76,
         position: "LB",
         secondaryPositions: ["LWB"],
@@ -8996,13 +8996,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/IggyMotte.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_corbin",
         name: "CORBIN BRICKHAM",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 74,
         position: "CB",
         secondaryPositions: [],
@@ -9010,13 +9010,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/CorbinBrickham.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_helena",
         name: "HELENA HARWOOD",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 73,
         position: "GK",
         secondaryPositions: [],
@@ -9024,13 +9024,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/HelenaHarwood.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_dane",
         name: "DANE UPCHURCH",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 74,
         position: "LB",
         secondaryPositions: ["RB"],
@@ -9038,13 +9038,13 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/DaneUpchurch.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "rampard_warden",
         name: "WARDEN WATCHFORD",
-        version: "Base",
-        rarity: "Bronce",
+        version: "Oro",
+        rarity: "Oro",
         rating: 75,
         position: "CDM",
         secondaryPositions: [],
@@ -9052,6 +9052,34 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/WardenWatchford.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "rampard_sebastian_prime",
+        name: "SEBASTIAN FORTWRIGHT",
+        version: "Centurion",
+        rarity: "Especial",
+        rating: 88,
+        position: "CDM",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Rampard.png",
+        image: "assets/characters/Rampard/SebastianFortwrightPrime.png",
+        background: "assets/Cartas/Centurion.png"
+    },
+    {
+        id: "rampard_sebastian_ex",
+        name: "SEBASTIAN FORTWRIGHT",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 88,
+        position: "CDM",
+        secondaryPositions: [],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Rampard/SebastianFortwrightEX.png",
+        background: "assets/Cartas/Trophy.png"
     }
 ];
