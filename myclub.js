@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const totalPages = Math.ceil(filtered.length / MYCLUB_CARDS_PER_PAGE) || 1;
-        if (myclubCurrentPage >= totalPages) myclubCurrentPage = totalPages - 1;
-        if (myclubCurrentPage < 0) myclubCurrentPage = 0;
+        if (myclubCurrentPage >= totalPages) myclubCurrentPage = 0;
+        if (myclubCurrentPage < 0) myclubCurrentPage = totalPages - 1;
 
         const startIndex = myclubCurrentPage * MYCLUB_CARDS_PER_PAGE;
         const pageCards = filtered.slice(startIndex, startIndex + MYCLUB_CARDS_PER_PAGE);
@@ -154,10 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNext = document.getElementById('myclub-next');
     if (btnPrev) {
         btnPrev.addEventListener('click', () => {
-            if (myclubCurrentPage > 0) {
-                myclubCurrentPage--;
-                updateGrid();
-            }
+            myclubCurrentPage--;
+            updateGrid();
         });
     }
     if (btnNext) {
