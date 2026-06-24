@@ -9808,6 +9808,6 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Arsenal.png",
         image: "assets/characters/Matsuyama/MatsuyamaPrime.png",
-        background: "assets/backgrounds/Fondo_Especial.png"
+        background: "assets/backgrounds/Fondo_Matsuyama.png"
     }
 ];
