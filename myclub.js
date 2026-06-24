@@ -94,7 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return char.version;
     }
 
-    window.updateGrid = function updateGrid() {
+    let myclubCurrentPage = 0;
+    const MYCLUB_CARDS_PER_PAGE = 21;
+
+    window.updateGrid = function updateGrid(resetPage = false) {
+        if (resetPage) myclubCurrentPage = 0;
         let filtered = allCards.filter(c => {
             const searchMatch = c.name.toLowerCase().includes(filterSearch.value.toLowerCase()) || c.version.toLowerCase().includes(filterSearch.value.toLowerCase());
             const leagueMatch = filterLeague.value === 'all' || c.league === filterLeague.value;
@@ -117,7 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         countDisplay.textContent = `Mostrando ${filtered.length} cartas`;
-        grid.innerHTML = filtered.map(c => renderCardHTML(c)).join('');
+
+        const totalPages = Math.ceil(filtered.length / MYCLUB_CARDS_PER_PAGE) || 1;
+        if (myclubCurrentPage >= totalPages) myclubCurrentPage = totalPages - 1;
+        if (myclubCurrentPage < 0) myclubCurrentPage = 0;
+
+        const startIndex = myclubCurrentPage * MYCLUB_CARDS_PER_PAGE;
+        const pageCards = filtered.slice(startIndex, startIndex + MYCLUB_CARDS_PER_PAGE);
+
+        grid.innerHTML = pageCards.map(c => renderCardHTML(c)).join('');
+
+        const pageInfo = document.getElementById('myclub-page-info');
+        if (pageInfo) {
+            pageInfo.textContent = `PÁG ${myclubCurrentPage + 1} DE ${totalPages}`;
+        }
 
         // Attach zoom listeners
         document.querySelectorAll('.myclub-card').forEach(cardEl => {
@@ -131,10 +148,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event Listeners for Filters
-    filterSearch.addEventListener('input', updateGrid);
-    filterLeague.addEventListener('change', () => { setupCustomTeamDropdown(); updateGrid(); });
+    filterSearch.addEventListener('input', () => updateGrid(true));
+    filterLeague.addEventListener('change', () => { setupCustomTeamDropdown(); updateGrid(true); });
     
-    sortCards.addEventListener('change', updateGrid);
+    sortCards.addEventListener('change', () => updateGrid(true));
+
+    const btnPrev = document.getElementById('myclub-prev');
+    const btnNext = document.getElementById('myclub-next');
+    if (btnPrev) {
+        btnPrev.addEventListener('click', () => {
+            if (myclubCurrentPage > 0) {
+                myclubCurrentPage--;
+                updateGrid();
+            }
+        });
+    }
+    if (btnNext) {
+        btnNext.addEventListener('click', () => {
+            myclubCurrentPage++;
+            updateGrid();
+        });
+    }
 
     // Zoom Modal Close
     if (zoomModal) {
@@ -221,7 +255,7 @@ function setupCustomDropdown() {
                 label.innerHTML = `<img src="${val}" alt="flag" style="width:20px;height:auto;border-radius:2px; vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${name}</span>`;
             }
             options.classList.remove('open');
-            updateGrid();
+            updateGrid(true);
         }
     });
     
@@ -302,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     label.innerHTML = option.innerHTML; // Copy the img + text
                 }
                 options.classList.remove('open');
-                if (typeof updateGrid === 'function') updateGrid();
+                if (typeof updateGrid === 'function') updateGrid(true);
             }
         });
         
