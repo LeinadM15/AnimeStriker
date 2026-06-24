@@ -151,9 +151,7 @@
 .draft-modal-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(4, 8, 16, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(4, 8, 16, 0.96);
 }
 .draft-modal-title {
     text-align: center;
