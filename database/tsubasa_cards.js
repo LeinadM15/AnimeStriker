@@ -8664,7 +8664,7 @@ const nathanCards = [
     },
     {
         id: "kevin_oro",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Oro",
         rarity: "Oro",
         rating: 83,
@@ -8678,7 +8678,7 @@ const nathanCards = [
     },
     {
         id: "kevin_hielo",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Hielo",
         rarity: "Especial",
         rating: 86,
@@ -8692,7 +8692,7 @@ const nathanCards = [
     },
     {
         id: "kevin_jp",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Tots",
         rarity: "Especial",
         rating: 89,
@@ -8706,7 +8706,7 @@ const nathanCards = [
     },
     {
         id: "kevin_ares",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Oro",
         rarity: "Oro",
         rating: 85,
@@ -8720,7 +8720,7 @@ const nathanCards = [
     },
     {
         id: "kevin_emp_oro",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Oro",
         rarity: "Oro",
         rating: 87,
@@ -8734,7 +8734,7 @@ const nathanCards = [
     },
     {
         id: "kevin_legen_oro",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Oro",
         rarity: "Oro",
         rating: 89,
@@ -8748,7 +8748,7 @@ const nathanCards = [
     },
     {
         id: "kevin_legen",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Icono",
         rarity: "Especial",
         rating: 93,

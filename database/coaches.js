@@ -363,7 +363,7 @@ const coachesDB = [
     },
     {
         id: "coach_kevin",
-        name: "KEVIN",
+        name: "KEVIN DRAGONFLY",
         version: "Entrenador",
         rarity: "Coach",
         rating: 85,
