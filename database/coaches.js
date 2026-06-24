@@ -360,5 +360,18 @@ const coachesDB = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Jude/JudeEn.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_kevin",
+        name: "KEVIN",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Roma.png",
+        image: "assets/characters/Kevin/KevinEn.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

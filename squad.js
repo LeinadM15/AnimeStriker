@@ -6010,6 +6010,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_kevin') {
+        if (card.teamIcon && (card.teamIcon.includes('Roma') || card.teamIcon.includes('Raimon'))) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;
