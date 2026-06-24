@@ -266,8 +266,8 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
 .content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
 
 /* ===== TEXT NAV ===== */
-.top-text-nav {display:flex; justify-content:center; gap:30px; padding:20px 0; width:100%; z-index:100; position:relative; background:rgba(0,0,0,0.5); backdrop-filter:blur(5px); border-top:1px solid rgba(255,255,255,0.1);}
-.top-text-nav a {font-family:'Bangers', cursive; font-size:2.5rem; color:#b0bec5; text-decoration:none; letter-spacing:2px; transition:var(--tr); text-shadow:0 2px 5px rgba(0,0,0,0.8); border-bottom:3px solid transparent; padding-bottom:5px;}
+.top-text-nav {display:flex; justify-content:center; gap:20px; padding:10px 0; width:100%; z-index:100; position:relative; background:rgba(0,0,0,0.5); backdrop-filter:blur(5px); border-top:1px solid rgba(255,255,255,0.1);}
+.top-text-nav a {font-family:'Bangers', cursive; font-size:1.8rem; color:#b0bec5; text-decoration:none; letter-spacing:2px; transition:var(--tr); text-shadow:0 2px 5px rgba(0,0,0,0.8); border-bottom:3px solid transparent; padding-bottom:5px;}
 .top-text-nav a:hover {color:#fff;}
 .top-text-nav a.active {color:var(--gold); border-bottom:3px solid var(--gold);}
 
@@ -356,16 +356,16 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
 .action-btn:hover {transform:translateY(-3px) scale(1.05);}
 /* ===== MY CLUB PAGE ===== */
 .myclub-content {display:flex; flex-direction:column; padding:20px; gap:20px;}
-.club-title {font-family:var(--font-t); font-size:3.5rem; letter-spacing:3px; text-shadow:0 0 15px rgba(17, 181, 201, 0.4); text-align:center; margin-top:10px;}
+.club-title {font-family:var(--font-t); font-size:2.5rem; letter-spacing:3px; text-shadow:0 0 15px rgba(17, 181, 201, 0.4); text-align:center; margin-top:5px; margin-bottom:5px;}
 
-.filters-bar {display:flex; flex-wrap:wrap; gap:12px; justify-content:center; background:rgba(13,27,42,0.8); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:0 8px 30px rgba(0,0,0,0.5);}
-.filter-input, .filter-select {background:rgba(255,255,255,0.05); border:1px solid rgba(17, 181, 201, 0.4); color:#fff; font-family:var(--font-b); font-size:0.9rem; padding:10px 14px; border-radius:8px; outline:none; transition:var(--tr); flex:1; min-width:160px;}
+.filters-bar {display:flex; flex-wrap:wrap; gap:8px; justify-content:center; background:rgba(13,27,42,0.8); border:1px solid var(--border); border-radius:12px; padding:8px 16px; box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+.filter-input, .filter-select {background:rgba(255,255,255,0.05); border:1px solid rgba(17, 181, 201, 0.4); color:#fff; font-family:var(--font-b); font-size:0.9rem; padding:6px 10px; border-radius:8px; outline:none; transition:var(--tr); flex:1; min-width:160px;}
 .filter-input:focus, .filter-select:focus {border-color:var(--cyan); box-shadow:0 0 10px rgba(17, 181, 201, 0.4); background:rgba(255,255,255,0.1);}
 .filter-select option {background:var(--bg); color:#fff;}
 
-.collection-stats {text-align:center; font-family:var(--font-t); font-size:1.5rem; color:var(--gold); letter-spacing:2px; text-shadow:1px 1px 5px rgba(0,0,0,0.8);}
+.collection-stats {text-align:center; font-family:var(--font-t); font-size:1.2rem; color:var(--gold); letter-spacing:2px; text-shadow:1px 1px 5px rgba(0,0,0,0.8);}
 
-.myclub-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:18px; justify-items:center; padding-bottom:40px;}
+.myclub-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; justify-items:center; padding-bottom:10px;}
 .myclub-grid .fifa-card {transform:rotateY(0deg) scale(1); opacity:1; cursor:pointer;}
 .myclub-grid .fifa-card:hover {transform:scale(1.05); filter: drop-shadow(0 12px 20px rgba(0,0,0,0.7)) brightness(1.05);}
 

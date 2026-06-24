@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let myclubCurrentPage = 0;
-    const MYCLUB_CARDS_PER_PAGE = 14;
+    const MYCLUB_CARDS_PER_PAGE = 21;
 
     window.updateGrid = function updateGrid(resetPage = false) {
         if (resetPage) myclubCurrentPage = 0;
