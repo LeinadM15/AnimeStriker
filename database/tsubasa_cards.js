@@ -687,20 +687,20 @@ const ginoCards = [
     {
         id: "gino_inter",
         name: "GINO",
-        version: "Inter",
+        version: "Tots",
         rarity: "Especial",
-        rating: 90,
+        rating: 91,
         position: "GK",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/it.png",
         teamIcon: "teams/Inter.png",
         image: "assets/characters/Gino/GinoInter.png",
-        background: "assets/Cartas/Inter.png"
+        background: "assets/Cartas/Tots.png"
     },
     {
         id: "gino_wy",
         name: "GINO",
-        version: "World Youth",
+        version: "Inter",
         rarity: "Especial",
         rating: 89,
         position: "GK",
@@ -708,7 +708,7 @@ const ginoCards = [
         nationFlag: "https://flagcdn.com/w40/it.png",
         teamIcon: "teams/Inter.png",
         image: "assets/characters/Gino/GinoWY.png",
-        background: "assets/Cartas/Azul.png"
+        background: "assets/Cartas/Inter.png"
     },
     {
         id: "gino_oro",
@@ -9739,5 +9739,75 @@ const nathanCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Misaki/Misaki1.png",
         background: "assets/backgrounds/Fondo_Misaki1.png"
+    },
+    {
+        id: "matsuyama_oro",
+        name: "MATSUYAMA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CDM",
+        secondaryPositions: ["CB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Matsuyama/MatsuyamaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "matsuyama_rojo",
+        name: "MATSUYAMA",
+        version: "Rojo",
+        rarity: "Especial",
+        rating: 88,
+        position: "CDM",
+        secondaryPositions: ["CB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Matsuyama/MatsuyamaRojo.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "matsuyama_arse",
+        name: "MATSUYAMA",
+        version: "Arsenal",
+        rarity: "Especial",
+        rating: 90,
+        position: "CDM",
+        secondaryPositions: ["CB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Matsuyama/MatsuyamaArse.png",
+        background: "assets/Cartas/Arsenal.png"
+    },
+    {
+        id: "matsuyama_tots",
+        name: "MATSUYAMA",
+        version: "Tots",
+        rarity: "Especial",
+        rating: 91,
+        position: "CDM",
+        secondaryPositions: ["CB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Matsuyama/Matsuyama1.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "matsuyama_prime",
+        name: "MATSUYAMA",
+        version: "Custom",
+        rarity: "Especial",
+        rating: 93,
+        position: "CDM",
+        secondaryPositions: ["CB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Matsuyama/MatsuyamaPrime.png",
+        background: "assets/backgrounds/Fondo_Especial.png"
     }
 ];
