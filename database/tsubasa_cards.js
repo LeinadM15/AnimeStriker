@@ -8623,8 +8623,8 @@ const nathanCards = [
     {
         id: "nathan_ori",
         name: "NATHAN SWIFT",
-        version: "Hielo",
-        rarity: "Especial",
+        version: "Toty",
+        rarity: "Toty",
         rating: 92,
         position: "LB",
         secondaryPositions: ["RB"],
@@ -8632,7 +8632,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Nathan/NathanOri.png",
-        background: "assets/Cartas/Hielo.png"
+        background: "assets/Cartas/Toty.png"
     },
     {
         id: "nathan_leg_oro",
