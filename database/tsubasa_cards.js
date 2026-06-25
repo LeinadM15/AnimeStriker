@@ -12217,5 +12217,19 @@ const nathanCards = [
         teamIcon: "teams/Milan.png",
         image: "assets/characters/Brasil/Kaka.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "brazil_zico_icono",
+        name: "ZICO",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 94,
+        position: "CAM",
+        secondaryPositions: ["CF", "LW"],
+        league: "Internacional",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Brasil.png",
+        image: "assets/characters/Brasil/Zico.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
