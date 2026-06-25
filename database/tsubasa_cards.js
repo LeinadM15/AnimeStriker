@@ -12231,5 +12231,19 @@ const nathanCards = [
         teamIcon: "teams/Brasil.png",
         image: "assets/characters/Brasil/Zico.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "arg_maradona_icono",
+        name: "MARADONA",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 97,
+        position: "CAM",
+        secondaryPositions: ["CF", "RW"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ar.png",
+        teamIcon: "teams/Napoli.png",
+        image: "assets/characters/Argentina/Maradona.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
