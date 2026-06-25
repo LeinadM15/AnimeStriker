@@ -10971,5 +10971,19 @@ const nathanCards = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/DavidSamfordAr.png",
         background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "grotley_bogwash_oro",
+        name: "GROTLEY BOGWASH",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 72,
+        position: "GK",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/GrotleyBogwash.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
