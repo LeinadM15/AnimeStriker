@@ -2528,15 +2528,15 @@ const mexicoCards = [
     {
         id: "espadas_def",
         name: "ESPADAS",
-        version: "Gris",
-        rarity: "Especial",
+        version: "Trueno",
+        rarity: "Trueno",
         rating: 88,
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Mexico/EspadasDef.png",
-        background: "assets/Cartas/Gris.png"
+        background: "assets/Cartas/Trueno.png"
     },
     {
         id: "espadas_dl",
