@@ -12245,5 +12245,33 @@ const nathanCards = [
         teamIcon: "teams/Napoli.png",
         image: "assets/characters/Argentina/Maradona.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "por_cristiano_oro",
+        name: "CRISTIANO RONALDO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 90,
+        position: "ST",
+        secondaryPositions: ["LW", "RW"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/Portugal/CristianoRonaldoOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "por_cristiano_icono",
+        name: "CRISTIANO RONALDO",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 97,
+        position: "ST",
+        secondaryPositions: ["LW", "RW"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/Portugal/CristianoRonaldo.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
