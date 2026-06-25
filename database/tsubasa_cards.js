@@ -45,7 +45,7 @@ const tsubasaCards = [
         version: "Oro",
         rarity: "Oro",
         rating: 89,
-        position: "CF",
+        position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Barcha.png",
