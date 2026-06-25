@@ -10957,5 +10957,19 @@ const nathanCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Royal/DavidSamfordLeg.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "david_samford_ar",
+        name: "DAVID SAMFORD",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 88,
+        position: "ST",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/DavidSamfordAr.png",
+        background: "assets/Cartas/Trophy.png"
     }
 ];

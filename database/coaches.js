@@ -373,5 +373,18 @@ const coachesDB = [
         teamIcon: "teams/Kirkwood.png",
         image: "assets/characters/Axel/Alex.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_david_samford_en",
+        name: "DAVID SAMFORD",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/DavidSamfordEn.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

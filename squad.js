@@ -6021,6 +6021,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 2;
             boost.rating += 2;
         }
+    } else if (coach.id === 'coach_david_samford_en') {
+        if (card.teamIcon && card.teamIcon.includes('Royal')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;
