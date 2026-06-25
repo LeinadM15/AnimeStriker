@@ -12133,6 +12133,7 @@ const nathanCards = [
         teamIcon: "teams/Stuttgart.png",
         image: "assets/characters/Australia/Owe Noyster.png",
         background: "assets/Cartas/Oro.png"
+    },
     {
         id: "aus_amanda",
         name: "AMANDA RAY",
