@@ -20,9 +20,9 @@ const tsubasaCards = [
         rarity: "Especial",
         rating: 90,
         position: "CAM",
-        league: "Brasileirão",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/SaoPaulo.png",
+        teamIcon: "teams/Barcha.png",
         image: "assets/characters/Tsubasa/TsubasaWY.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -1214,15 +1214,15 @@ const espanaCards = [
 {
         id: "leonardoluna_2",
         name: "LEONARDO LUNA",
-        version: "España",
-        rarity: "España",
+        version: "Real",
+        rarity: "Real",
         rating: 93,
         position: "ST",
-        league: "Selecciones",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/España.png",
+        teamIcon: "teams/Real.png",
         image: "assets/characters/España/LeonardoLuna2.png",
-        background: "assets/Cartas/Espana.png"
+        background: "assets/Cartas/Real.png"
 },
 {
         id: "leonardoluna_3",

@@ -633,26 +633,26 @@ const sub20Cards = [
     {
         id: "wakatsuki_kobe",
         name: "WAKATSUKI",
-        version: "Vissel Kobe",
+        version: "Hamburgo",
         rarity: "Especial",
         rating: 81,
         position: "LM",
-        league: "J-League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Kobe.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Sub20/Wakatsuki.png",
         background: "assets/Cartas/Gris.png"
     },
     {
         id: "yuzu_saopaulo",
         name: "YUZU",
-        version: "Sao Paulo",
+        version: "Betis",
         rarity: "Especial",
         rating: 81,
         position: "RM",
-        league: "Brasileirão",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/SaoPaulo.png",
+        teamIcon: "teams/Betis.png",
         image: "assets/characters/Sub20/Yuzu.png",
         background: "assets/Cartas/Gris.png"
     }
@@ -790,9 +790,9 @@ const sub20Cards = [
         rarity: "Oro",
         rating: 78,
         position: "LM",
-        league: "J-League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Kobe.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Sub20/WakatsukiOro.png",
         background: "assets/Cartas/Oro.png"
     }
@@ -804,9 +804,9 @@ const sub20Cards = [
         rarity: "Oro",
         rating: 78,
         position: "RM",
-        league: "Brasileirão",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/SaoPaulo.png",
+        teamIcon: "teams/Betis.png",
         image: "assets/characters/Sub20/YuzuOro.png",
         background: "assets/Cartas/Oro.png"
     },
