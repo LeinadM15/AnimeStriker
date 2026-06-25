@@ -2536,7 +2536,7 @@ const mexicoCards = [
         nationFlag: "https://flagcdn.com/w40/mx.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Mexico/EspadasDef.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Gris.png"
     },
     {
         id: "espadas_dl",
