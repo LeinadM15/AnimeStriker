@@ -11729,20 +11729,6 @@ const nathanCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "aus_gargo",
-        name: "GARGO JIKANOU",
-        version: "Oro",
-        rarity: "Oro",
-        rating: 78,
-        position: "ST",
-        secondaryPositions: [],
-        league: "Liga Portugal",
-        nationFlag: "https://flagcdn.com/w40/au.png",
-        teamIcon: "teams/Sporting.png",
-        image: "assets/characters/Australia/Grant Grimoire.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
         id: "aus_astar",
         name: "ASTAR ROTH",
         version: "Oro",
@@ -12147,7 +12133,6 @@ const nathanCards = [
         teamIcon: "teams/Stuttgart.png",
         image: "assets/characters/Australia/Owe Noyster.png",
         background: "assets/Cartas/Oro.png"
-    },
     {
         id: "aus_amanda",
         name: "AMANDA RAY",
@@ -12161,5 +12146,61 @@ const nathanCards = [
         teamIcon: "teams/Napoli.png",
         image: "assets/characters/Australia/Amanda Ray.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "aus_seth_oro",
+        name: "SETH BAEL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "CM",
+        secondaryPositions: ["CAM", "CDM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Australia/SethBaelOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "aus_seth_roja",
+        name: "SETH BAEL",
+        version: "Roja",
+        rarity: "Especial",
+        rating: 87,
+        position: "CM",
+        secondaryPositions: ["CAM", "CDM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Australia/SethBael.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "aus_seth_cabras",
+        name: "SETH BAEL",
+        version: "Cabras",
+        rarity: "Especial",
+        rating: 89,
+        position: "CM",
+        secondaryPositions: ["CAM", "CDM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Australia/SethBaelChute.png",
+        background: "assets/Cartas/Cabras.png"
+    },
+    {
+        id: "aus_seth_trophy",
+        name: "SETH BAEL",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 91,
+        position: "CM",
+        secondaryPositions: ["CAM", "CDM"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Australia/SethBaelPrime.png",
+        background: "assets/Cartas/Trophy.png"
     }
 ];
