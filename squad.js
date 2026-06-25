@@ -6661,7 +6661,8 @@ const COUNTRY_NAMES = {
     'ru': 'Rusia',
     'uy': 'Uruguay',
     'sn': 'Senegal',
-    'eg': 'Egipto'
+    'eg': 'Egipto',
+    'au': 'Australia'
 };
 
 function getNationName(url) {

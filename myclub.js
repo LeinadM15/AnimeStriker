@@ -221,6 +221,7 @@ function setupCustomDropdown() {
         if(url.includes('/uy.')) return 'Uruguay';
         if(url.includes('/sn.')) return 'Senegal';
         if(url.includes('/eg.')) return 'Egipto';
+        if(url.includes('/au.')) return 'Australia';
         return 'Nación';
     };
 
