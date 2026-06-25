@@ -8922,9 +8922,9 @@ const nathanCards = [
         rating: 91,
         position: "CB",
         secondaryPositions: [],
-        league: "La Liga",
+        league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Chicorid.png",
+        teamIcon: "teams/Arsenal.png",
         image: "assets/characters/Jack/JackCross.png",
         background: "assets/Cartas/Toty.png"
     },
