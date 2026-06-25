@@ -8413,7 +8413,7 @@ const judeSharpCards = [
         name: "JUDE SHARP",
         version: "Ruptura",
         rarity: "Trueno",
-        rating: 90,
+        rating: 91,
         position: "CAM",
         secondaryPositions: ["CM"],
         league: "J-League",
@@ -8455,7 +8455,7 @@ const judeSharpCards = [
         name: "JUDE SHARP",
         version: "Future Star",
         rarity: "Especial",
-        rating: 93,
+        rating: 92,
         position: "CAM",
         secondaryPositions: ["CM"],
         league: "J-League",
@@ -8491,6 +8491,20 @@ const judeSharpCards = [
         teamIcon: "teams/Milan.png",
         image: "assets/characters/Jude/JudeLegen.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "jude_toty",
+        name: "JUDE SHARP",
+        version: "Toty",
+        rarity: "Toty",
+        rating: 93,
+        position: "CAM",
+        secondaryPositions: ["CM"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Jude/JudeCross.png",
+        background: "assets/Cartas/Toty.png"
     },
     {
         id: "juleb",
@@ -8571,7 +8585,7 @@ const nathanCards = [
         name: "NATHAN SWIFT",
         version: "Tots",
         rarity: "Tots",
-        rating: 90,
+        rating: 89,
         position: "LB",
         secondaryPositions: ["RB"],
         league: "J-League",
@@ -8625,16 +8639,16 @@ const nathanCards = [
     {
         id: "nathan_ori",
         name: "NATHAN SWIFT",
-        version: "Toty",
-        rarity: "Toty",
-        rating: 92,
+        version: "Mordiscos",
+        rarity: "Especial",
+        rating: 91,
         position: "LB",
         secondaryPositions: ["RB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Nathan/NathanOri.png",
-        background: "assets/Cartas/Toty.png"
+        background: "assets/Cartas/Mordiscos.png"
     },
     {
         id: "nathan_leg_oro",
@@ -8663,6 +8677,20 @@ const nathanCards = [
         teamIcon: "teams/Chelsea.png",
         image: "assets/characters/Nathan/NathanLeg.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "nathan_toty",
+        name: "NATHAN SWIFT",
+        version: "Toty",
+        rarity: "Toty",
+        rating: 92,
+        position: "LB",
+        secondaryPositions: ["RB"],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Nathan/NathanCross.png",
+        background: "assets/Cartas/Toty.png"
     },
     {
         id: "kevin_oro",
@@ -8763,6 +8791,20 @@ const nathanCards = [
         background: "assets/Cartas/Icono.png"
     },
     {
+        id: "kevin_toty",
+        name: "KEVIN DRAGONFLY",
+        version: "Toty",
+        rarity: "Toty",
+        rating: 91,
+        position: "ST",
+        secondaryPositions: [],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Roma.png",
+        image: "assets/characters/Kevin/KevinCross.png",
+        background: "assets/Cartas/Toty.png"
+    },
+    {
         id: "jack_oro",
         name: "JACK WALLSIDE",
         version: "Oro",
@@ -8845,6 +8887,20 @@ const nathanCards = [
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/Jack/JackLegen.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "jack_toty",
+        name: "JACK WALLSIDE",
+        version: "Toty",
+        rarity: "Toty",
+        rating: 90,
+        position: "CB",
+        secondaryPositions: [],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chicorid.png",
+        image: "assets/characters/Jack/JackCross.png",
+        background: "assets/Cartas/Toty.png"
     },
     {
         id: "rampard_sebastian",
