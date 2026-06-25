@@ -12300,6 +12300,20 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/ar.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Argentina/PascalPrime.png",
-        background: "assets/Cartas/Pascal.png"
+        background: "assets/backgrounds/Fondo_Pascal.jpg"
+    },
+    {
+        id: "diaz_prime2",
+        name: "DIAZ",
+        version: "Custom",
+        rarity: "Especial",
+        rating: 94,
+        position: "CAM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ar.png",
+        teamIcon: "teams/Napoli.png",
+        image: "assets/characters/Argentina/DiazPrime2.png",
+        background: "assets/backgrounds/Fondo_Diaz2.jpg",
+        overlay: null
     }
 ];
