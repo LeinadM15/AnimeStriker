@@ -10843,7 +10843,7 @@ const nathanCards = [
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
-        image: "assets/characters/Royal/DraconYale.png",
+        image: "assets/characters/Royal/DrakonYalePrime.png",
         background: "assets/Cartas/Brasil.png"
     },
     {
@@ -10857,7 +10857,7 @@ const nathanCards = [
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Real.png",
-        image: "assets/characters/Royal/Dragon.png",
+        image: "assets/characters/Royal/DraconYale.png",
         background: "assets/Cartas/Tots.png"
     },
     {
