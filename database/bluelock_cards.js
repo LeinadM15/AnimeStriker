@@ -646,13 +646,13 @@ const sub20Cards = [
     {
         id: "yuzu_saopaulo",
         name: "YUZU",
-        version: "Betis",
+        version: "Real Betis",
         rarity: "Especial",
         rating: 81,
         position: "RM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Betis.png",
+        teamIcon: "teams/RealBetis.png",
         image: "assets/characters/Sub20/Yuzu.png",
         background: "assets/Cartas/Gris.png"
     }
@@ -806,7 +806,7 @@ const sub20Cards = [
         position: "RM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Betis.png",
+        teamIcon: "teams/RealBetis.png",
         image: "assets/characters/Sub20/YuzuOro.png",
         background: "assets/Cartas/Oro.png"
     },
