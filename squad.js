@@ -6036,6 +6036,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_percival_travis') {
+        if (card.teamIcon && card.teamIcon.includes('Polaris')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;

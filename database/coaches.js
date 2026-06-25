@@ -412,5 +412,18 @@ const coachesDB = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/StephenBlack.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_percival_travis",
+        name: "PERCIVAL TRAVIS",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Polaris.png",
+        image: "assets/characters/Polaris/PercivalTravis.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
