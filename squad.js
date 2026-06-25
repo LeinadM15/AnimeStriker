@@ -6026,6 +6026,16 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_ray_dark') {
+        if (card.teamIcon && card.teamIcon.includes('Royal')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
+    } else if (coach.id === 'coach_stephen_black') {
+        if (card.teamIcon && card.teamIcon.includes('Royal')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;

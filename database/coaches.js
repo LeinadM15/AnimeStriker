@@ -386,5 +386,31 @@ const coachesDB = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/DavidSamfordEn.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_ray_dark",
+        name: "RAY DARK",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/RayDark.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_stephen_black",
+        name: "STEPHEN BLACK",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/StephenBlack.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
