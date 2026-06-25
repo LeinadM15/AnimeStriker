@@ -5939,10 +5939,6 @@ function getCoachBoosts(card, coach) {
         }
     } else if (coach.id === 'coach_rodin_oro') {
         if (card.nationFlag && card.nationFlag.includes('fr.png')) {
-            boost.chem += 1;
-        }
-    } else if (coach.id === 'coach_rodin_hielo') {
-        if (card.nationFlag && card.nationFlag.includes('fr.png')) {
             boost.chem += 2;
             boost.rating += 1;
         }
@@ -5956,10 +5952,6 @@ function getCoachBoosts(card, coach) {
             boost.rating += 1;
         }
     } else if (coach.id === 'coach_hansen_oro') {
-        if (card.nationFlag && card.nationFlag.includes('se.png')) {
-            boost.chem += 1;
-        }
-    } else if (coach.id === 'coach_hansen_hielo') {
         if (card.nationFlag && card.nationFlag.includes('se.png')) {
             boost.chem += 2;
             boost.rating += 1;

@@ -15,19 +15,6 @@ const coachesDB = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "coach_rodin_hielo",
-        name: "RODIN",
-        version: "Entrenador (Hielo)",
-        rarity: "Coach",
-        rating: 87,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/fr.png",
-        teamIcon: "teams/Francia.png",
-        image: "assets/entrenadores/Rodin/RodinLargo.png",
-        background: "assets/Cartas/Hielo.png"
-    },
-    {
         id: "coach_hansen_oro",
         name: "HANSEN",
         version: "Entrenador (Oro)",
@@ -39,19 +26,6 @@ const coachesDB = [
         teamIcon: "teams/Suecia.png",
         image: "assets/entrenadores/Hansen/HansenOro.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "coach_hansen_hielo",
-        name: "HANSEN",
-        version: "Entrenador (Suecia)",
-        rarity: "Coach",
-        rating: 87,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/se.png",
-        teamIcon: "teams/Suecia.png",
-        image: "assets/entrenadores/Hansen/Hansen.png",
-        background: "assets/Cartas/Suecia.png"
     },
     {
         id: "coach_maurinho_oro",

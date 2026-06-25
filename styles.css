@@ -509,3 +509,4 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
 
 /* Coach specific styling for the Squad */
 .slot-card.coach-card .fc-char { height: 75%; bottom: 0; left: 50%; transform: translateX(-50%); object-fit: contain; }
+.slot-card.coach-card .fc-rating { display: none !important; }
