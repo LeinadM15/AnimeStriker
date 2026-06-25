@@ -3094,9 +3094,9 @@ const chinaCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "jackie_rulebreaker",
+        id: "jackie_trophy",
         name: "JACKIE",
-        version: "Rulebraker",
+        version: "Trophy",
         rarity: "Especial",
         rating: 87,
         position: "CM",
@@ -3104,7 +3104,20 @@ const chinaCards = [
         nationFlag: "https://flagcdn.com/w40/cn.png",
         teamIcon: "teams/WerderBremen.png",
         image: "assets/characters/China/Jackie.png",
-        background: "assets/Cartas/Rulebraker.png"
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "jackie_trueno",
+        name: "JACKIE",
+        version: "Trueno",
+        rarity: "Trueno",
+        rating: 89,
+        position: "CM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/cn.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/China/JackieTrueno.png",
+        background: "assets/Cartas/Trueno.png"
     },
     {
         id: "jimmywongfu_oro",
@@ -3120,9 +3133,9 @@ const chinaCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "jimmywongfu_trailblaze",
+        id: "jimmywongfu_manshine",
         name: "JIMMY WONGFU",
-        version: "Trailblaze",
+        version: "Manshine",
         rarity: "Especial",
         rating: 88,
         position: "CM",
@@ -3130,7 +3143,20 @@ const chinaCards = [
         nationFlag: "https://flagcdn.com/w40/cn.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/China/JimmyWongfu.png",
-        background: "assets/Cartas/Trailblaze.png"
+        background: "assets/Cartas/Manshine.png"
+    },
+    {
+        id: "jimmywongfu_trueno",
+        name: "JIMMY WONGFU",
+        version: "Trueno",
+        rarity: "Trueno",
+        rating: 90,
+        position: "CM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/cn.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/China/JimmyWongfuTrueno.png",
+        background: "assets/Cartas/Trueno.png"
     },
     {
         id: "jetlong_oro",
