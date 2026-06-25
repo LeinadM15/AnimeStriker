@@ -386,5 +386,18 @@ const coachesDB = [
         teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/FortnumPile.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_alex_zabel",
+        name: "ALEX ZABEL",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Kirkwood.png",
+        image: "assets/characters/Axel/Alex.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

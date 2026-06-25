@@ -5946,6 +5946,15 @@ function getCoachBoosts(card, coach) {
             boost.chem += 2;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_alex_zabel') {
+        if (card.teamIcon && card.teamIcon.includes('Kirkwood')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
+        if (card.position === 'ST') {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     } else if (coach.id === 'coach_hansen_oro') {
         if (card.nationFlag && card.nationFlag.includes('se.png')) {
             boost.chem += 1;
