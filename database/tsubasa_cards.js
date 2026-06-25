@@ -12203,5 +12203,19 @@ const nathanCards = [
         teamIcon: "teams/ManchesterUnited.png",
         image: "assets/characters/Australia/SethBaelPrime.png",
         background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "brazil_kaka_icono",
+        name: "KAKA",
+        version: "Icono",
+        rarity: "Icono",
+        rating: 95,
+        position: "CAM",
+        secondaryPositions: [],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Brasil/Kaka.png",
+        background: "assets/Cartas/Icono.png"
     }
 ];
