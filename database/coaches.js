@@ -425,5 +425,44 @@ const coachesDB = [
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/PercivalTravis.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_dolph_hensen",
+        name: "DOLPH HENSEN",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Oceani",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/Australia.png",
+        image: "assets/characters/Australia/Dolph HensenEn.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_grant_grimoire",
+        name: "GRANT GRIMOIRE",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Oceani",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/Australia.png",
+        image: "assets/characters/Australia/Grant Grimoire.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_robert_cliser",
+        name: "ROBERT CLISER",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Oceani",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/Australia.png",
+        image: "assets/characters/Australia/Robert Cliser.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
