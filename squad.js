@@ -6041,6 +6041,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 1;
             boost.rating += 1;
         }
+    } else if (coach.id === 'coach_dolph_hensen' || coach.id === 'coach_grant_grimoire' || coach.id === 'coach_robert_cliser') {
+        if (card.nationFlag && card.nationFlag.includes('au.png')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
     }
     
     return boost;
