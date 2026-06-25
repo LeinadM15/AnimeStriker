@@ -9379,23 +9379,23 @@ const nathanCards = [
     {
         id: "ribera_billy_if",
         name: "BILLY MILLER",
-        version: "If",
+        version: "Tots",
         rarity: "Especial",
-        rating: 88,
+        rating: 90,
         position: "CB",
         secondaryPositions: ["ST"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Ribera.png",
         image: "assets/characters/Ribera/BillyMillerBien.png",
-        background: "assets/Cartas/If.png"
+        background: "assets/Cartas/Tots.png"
     },
     {
         id: "ribera_billy_shapesifter",
         name: "BILLY MILLER",
         version: "Shapesifters",
         rarity: "Especial",
-        rating: 90,
+        rating: 88,
         position: "ST",
         secondaryPositions: ["CB"],
         league: "J-League",
