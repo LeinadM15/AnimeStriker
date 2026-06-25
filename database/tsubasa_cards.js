@@ -735,7 +735,7 @@ const krausCards = [
         version: "Dortmund",
         rarity: "Especial",
         rating: 89,
-        position: "CF",
+        position: "CAM",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/dk.png",
         teamIcon: "teams/Dortmund.png",
