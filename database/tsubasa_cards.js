@@ -1218,7 +1218,7 @@ const espanaCards = [
         rarity: "España",
         rating: 93,
         position: "ST",
-        league: "La Liga",
+        league: "Selecciones",
         nationFlag: "https://flagcdn.com/w40/es.png",
         teamIcon: "teams/España.png",
         image: "assets/characters/España/LeonardoLuna2.png",
