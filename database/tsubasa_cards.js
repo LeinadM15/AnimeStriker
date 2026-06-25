@@ -3980,7 +3980,7 @@ const argentinaCards = [
         name: "PASCAL",
         version: "Mordiscos",
         rarity: "Especial",
-        rating: 89,
+        rating: 90,
         position: "RW",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/ar.png",
@@ -12287,5 +12287,19 @@ const nathanCards = [
         teamIcon: "teams/Dortmund.png",
         image: "assets/characters/Noruega/Harland.png",
         background: "assets/Cartas/Dormund.png"
+    },
+    {
+        id: "arg_pascal_prime",
+        name: "PASCAL",
+        version: "Prime",
+        rarity: "Especial",
+        rating: 92,
+        position: "RW",
+        secondaryPositions: [],
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ar.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Argentina/PascalPrime.png",
+        background: "assets/Cartas/Pascal.png"
     }
 ];
