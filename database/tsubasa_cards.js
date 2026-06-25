@@ -9139,20 +9139,6 @@ const nathanCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "rampard_sebastian_prime",
-        name: "SEBASTIAN FORTWRIGHT",
-        version: "If",
-        rarity: "Especial",
-        rating: 86,
-        position: "CDM",
-        secondaryPositions: [],
-        league: "J-League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Rampard.png",
-        image: "assets/characters/Rampard/SebastianFortwrightPrime.png",
-        background: "assets/Cartas/If.png"
-    },
-    {
         id: "rampard_sebastian_ex",
         name: "SEBASTIAN FORTWRIGHT",
         version: "Morado",
@@ -9160,9 +9146,9 @@ const nathanCards = [
         rating: 86,
         position: "CDM",
         secondaryPositions: [],
-        league: "Premier League",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Arsenal.png",
+        teamIcon: "teams/Rampard.png",
         image: "assets/characters/Rampard/SebastianFortwrightEX.png",
         background: "assets/Cartas/Morado.png"
     },
