@@ -12273,5 +12273,19 @@ const nathanCards = [
         teamIcon: "teams/Real.png",
         image: "assets/characters/Portugal/CristianoRonaldo.png",
         background: "assets/Cartas/Icono.png"
+    },
+    {
+        id: "nor_harland_dormund",
+        name: "HARLAND",
+        version: "Dormund",
+        rarity: "Dormund",
+        rating: 89,
+        position: "ST",
+        secondaryPositions: [],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Noruega/Harland.png",
+        background: "assets/Cartas/Dormund.png"
     }
 ];
