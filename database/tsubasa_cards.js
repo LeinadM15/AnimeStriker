@@ -12191,10 +12191,10 @@ const nathanCards = [
         background: "assets/Cartas/Cabras.png"
     },
     {
-        id: "aus_seth_trophy",
+        id: "aus_seth_tots",
         name: "SETH BAEL",
-        version: "Trophy",
-        rarity: "Especial",
+        version: "Tots",
+        rarity: "Tots",
         rating: 91,
         position: "CM",
         secondaryPositions: ["CAM", "CDM"],
@@ -12202,6 +12202,6 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/au.png",
         teamIcon: "teams/ManchesterUnited.png",
         image: "assets/characters/Australia/SethBaelPrime.png",
-        background: "assets/Cartas/Trophy.png"
+        background: "assets/Cartas/Tots.png"
     }
 ];
