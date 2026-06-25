@@ -8899,7 +8899,7 @@ const judeSharpCards = [
     {
         id: "elliot_ember_rulebreaker",
         name: "ELLIOT EMBER",
-        version: "Rulebreaker",
+        version: "Trailblazer",
         rarity: "Especial",
         rating: 93,
         position: "ST",
@@ -8908,7 +8908,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Milan.png",
         image: "assets/characters/ElliotEmber/ElliotEmberTiburao.png",
-        background: "assets/Cartas/Rulebraker.png"
+        background: "assets/Cartas/Trailblaze.png"
     },
     {
         id: "elliot_ember_futurestar",
