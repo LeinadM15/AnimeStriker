@@ -12548,9 +12548,9 @@ const nathanCards = [
         rating: 95,
         position: "ST",
         secondaryPositions: ["CB"],
-        league: "Serie A",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Inter.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Shawn/ShawnToty.png",
         background: "assets/Cartas/Toty.png"
     },
@@ -12562,9 +12562,9 @@ const nathanCards = [
         rating: 90,
         position: "ST",
         secondaryPositions: ["CB"],
-        league: "Serie A",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Inter.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Shawn/ShawnLegenOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -12576,9 +12576,9 @@ const nathanCards = [
         rating: 96,
         position: "ST",
         secondaryPositions: ["CB"],
-        league: "Serie A",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Inter.png",
+        teamIcon: "teams/RealSociedad.png",
         image: "assets/characters/Shawn/ShawnLegen.png",
         background: "assets/Cartas/Icono.png"
     }
