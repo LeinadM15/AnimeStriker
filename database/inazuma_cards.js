@@ -1323,7 +1323,7 @@ const tripleCCards = [
 const maryTimesCards = [
     {
         id: "mt_hurley",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Mary Times",
         rarity: "Normal",
         rating: 83,

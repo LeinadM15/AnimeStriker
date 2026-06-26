@@ -12318,7 +12318,7 @@ const nathanCards = [
     },
     {
         id: "hurley_oro",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Oro",
         rarity: "Oro",
         rating: 85,
@@ -12332,7 +12332,7 @@ const nathanCards = [
     },
     {
         id: "hurley_if",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "If",
         rarity: "Especial",
         rating: 87,
@@ -12346,7 +12346,7 @@ const nathanCards = [
     },
     {
         id: "hurley_sam",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Samurai",
         rarity: "Especial",
         rating: 89,
@@ -12360,7 +12360,7 @@ const nathanCards = [
     },
     {
         id: "hurley_tots",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Tots",
         rarity: "Especial",
         rating: 91,
@@ -12374,7 +12374,7 @@ const nathanCards = [
     },
     {
         id: "hurley_leg_oro",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Leyenda Oro",
         rarity: "Oro",
         rating: 89,
@@ -12388,7 +12388,7 @@ const nathanCards = [
     },
     {
         id: "hurley_leg",
-        name: "HURLEY",
+        name: "HURLEY KANE",
         version: "Icono",
         rarity: "Icono",
         rating: 93,
