@@ -12657,7 +12657,7 @@ const nathanCards = [
         name: "DADA SILVA",
         version: "Shapesifters",
         rarity: "Especial",
-        rating: 93,
+        rating: 94,
         position: "CB",
         secondaryPositions: [],
         league: "Premier League",
