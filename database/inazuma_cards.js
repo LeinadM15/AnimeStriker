@@ -57,7 +57,7 @@ const raimonCards = [
         version: "Raimon",
         rarity: "Normal",
         rating: 80,
-        position: "LB",
+        position: "RB",
         league: "Fútbol Frontier",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Raimon.png",
