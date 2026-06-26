@@ -4097,7 +4097,7 @@ const argentinaCards = [
         name: "DIAZ",
         version: "Prime",
         rarity: "Especial",
-        rating: 94,
+        rating: 92,
         position: "CAM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/ar.png",
