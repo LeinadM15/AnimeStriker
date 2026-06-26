@@ -207,7 +207,7 @@ const nagiCards = [
         name: "NAGI",
         version: "Manshine City",
         rarity: "Especial",
-        rating: 90,
+        rating: 91,
         position: "CF",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -281,7 +281,22 @@ const nagiCards = [
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Nagi/NagiOro.png",
         background: "assets/Cartas/Oro.png"
+    
+    },
+    {
+        id: "nagi_trueno",
+        name: "NAGI",
+        version: "Trueno",
+        rarity: "Especial",
+        rating: 89,
+        position: "CF",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Nagi/NagiTrueno.png",
+        background: "assets/Cartas/Trueno.png"
     }
+
   ];
 
 // ==========================================
