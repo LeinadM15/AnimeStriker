@@ -986,6 +986,10 @@ function updatePhaseUI() {
 
     if (saveBtn) {
         saveBtn.style.display = (draftState.phase === 'done') ? 'block' : 'none';
+        var playBtn = document.getElementById('draft-play-btn');
+        if (playBtn) playBtn.style.display = (draftState.phase === 'done') ? 'block' : 'none';
+        var playBtn = document.getElementById('draft-play-btn');
+        if (playBtn) playBtn.style.display = (draftState.phase === 'done') ? 'block' : 'none';
     }
 
     // Banner
@@ -1570,6 +1574,15 @@ document.addEventListener('DOMContentLoaded', function() {
         saveBtn.addEventListener('click', function() {
             saveDraftToSquad();
         });
+
+    var playBtn = document.getElementById('draft-play-btn');
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            var diffModal = document.getElementById('difficulty-modal');
+            if (diffModal) diffModal.classList.remove('hidden');
+        });
+    }
+
     }
 
     // Load saved state or start fresh
@@ -1596,5 +1609,42 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() { showFormationModal(); }, 500);
     }
 });
+
+window.closeDifficultyModal = function() {
+    var diffModal = document.getElementById('difficulty-modal');
+    if (diffModal) diffModal.classList.add('hidden');
+};
+
+window.startTournament = function(type) {
+    if (typeof createLigaTournament !== 'function') {
+        alert('Missing tournament logic (matchRivals.js)');
+        return;
+    }
+    
+    // Save draft state so match.js can load it
+    saveDraftState();
+    var playerDraftSquad = {
+        formation: draftState.formation,
+        pitch: draftState.squad ? draftState.squad.slice() : [],
+        bench: draftState.bench ? draftState.bench.slice() : [],
+        reserves: draftState.reserves ? draftState.reserves.slice() : [],
+        coach: draftState.coach || null,
+        badge: draftState.badge || '',
+        kit: draftState.kit || ''
+    };
+    if (typeof saveDraftForMatch === 'function') {
+        saveDraftForMatch(playerDraftSquad);
+    } 
+    
+    var tourney;
+    if (type === 'liga') tourney = createLigaTournament(playerDraftSquad);
+    else if (type === 'champions') tourney = createChampionsBracket(playerDraftSquad);
+    else if (type === 'mundial') tourney = createMundialBracket(playerDraftSquad);
+    
+    if (typeof saveTournament === 'function') {
+        saveTournament(tourney);
+        window.location.href = 'match.html';
+    }
+};
 
 })();

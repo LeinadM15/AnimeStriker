@@ -5,6 +5,7 @@ const isagiCards = [
         name: "ISAGI",
         version: "Bastard Munchen",
         rating: 89,
+        rarity: "Especial",
         position: "ST",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
@@ -266,7 +267,7 @@ const nagiCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Manshine.png",
         image: "assets/characters/Nagi/NagiRegate.png",
-        background: "assets/Cartas/Hielo.png"
+        background: "assets/Cartas/Manshine.png"
     }
 ,
     {
@@ -1108,7 +1109,7 @@ const chevalierCards = [
 const noaCards = [
     {
         id: "noa_oro",
-        name: "NOA",
+        name: "NOEL NOA",
         version: "Oro",
         rarity: "Oro",
         rating: 90,
@@ -1121,22 +1122,8 @@ const noaCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "noa_bastard",
-        name: "NOA",
-        version: "Bastard Munchen",
-        rarity: "Especial",
-        rating: 93,
-        position: "ST",
-        secondaryPositions: ["CF", "RW"],
-        league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/fr.png",
-        teamIcon: "teams/Bastard.png",
-        image: "assets/characters/Noa/Noa.png",
-        background: "assets/Cartas/Bastard.png"
-    },
-    {
         id: "noa_balon",
-        name: "NOA",
+        name: "NOEL NOA",
         version: "Balón de Oro",
         rarity: "Especial",
         rating: 95,
@@ -1149,19 +1136,19 @@ const noaCards = [
         background: "assets/Cartas/BalonOro.png"
     },
     {
-        id: "noa_rulebreaker",
-        name: "NOA",
-        version: "Rulebreaker",
+        id: "noa_bastard",
+        name: "NOEL NOA",
+        version: "Bastard Munchen",
         rarity: "Especial",
-        rating: 97,
+        rating: 93,
         position: "ST",
         secondaryPositions: ["CF", "RW"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Bastard.png",
-        image: "assets/characters/Noa/NoaPrime.png",
-        background: "assets/Cartas/Trailblaze.png"
-    }
+        image: "assets/characters/Noa/Noa.png",
+        background: "assets/Cartas/Bastard.png"
+    },
 ];
 
 // ==========================================
@@ -1887,4 +1874,58 @@ const hidalgoCards = [
         image: "assets/characters/ChrisPrince/ChrisPrincePrime.png",
         background: "assets/Cartas/Centurion.png"
     }
+,
+{
+        id: "yukimiya1_bluelock",
+        name: "YUKIMIYA",
+        version: "Blue Lock Eleven",
+        rarity: "Oro",
+        rating: 84,
+        position: "LW",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Tokyo.png",
+        image: "assets/characters/Yukimiya/Yukimiya1.png",
+        background: "assets/Cartas/Oro.png"
+    },
+{
+        id: "hiiragi_kawasaki",
+        name: "HIIRAGI",
+        version: "Kawasaki",
+        rarity: "Especial",
+        rating: 85,
+        position: "CM",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Kawasaki.png",
+        image: "assets/characters/Hiiragi/Hiiragi.png",
+        background: "assets/Cartas/Gris.png"
+    },
+{
+        id: "chigiri_corre",
+        name: "CHIGIRI",
+        version: "Manshine City",
+        rarity: "Especial",
+        rating: 89,
+        position: "LW",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Chigiri/Chigiricorre.png",
+        background: "assets/Cartas/Rosa.png"
+    },
+{
+        id: "noa_prime",
+        name: "NOEL NOA",
+        version: "Prime",
+        rarity: "Especial",
+        rating: 97,
+        position: "ST",
+        secondaryPositions: ["CAM"],
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Noa/NoaPrime.png",
+        background: "assets/Cartas/Trailblaze.png"
+    },
 ];

@@ -1,45 +1,7 @@
 // database/coaches.js
 
 const coachesDB = [
-    {
-        id: "coach_rodin_oro",
-        name: "RODIN",
-        version: "Entrenador (Oro)",
-        rarity: "Coach",
-        rating: 85,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/fr.png",
-        teamIcon: "teams/Francia.png",
-        image: "assets/entrenadores/Rodin/Rodin.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "coach_hansen_oro",
-        name: "HANSEN",
-        version: "Entrenador (Oro)",
-        rarity: "Coach",
-        rating: 85,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/se.png",
-        teamIcon: "teams/Suecia.png",
-        image: "assets/entrenadores/Hansen/HansenOro.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "coach_maurinho_oro",
-        name: "MAURINHO",
-        version: "Entrenador (Oro)",
-        rarity: "Coach",
-        rating: 88,
-        position: "COACH",
-        league: "Primeira Liga",
-        nationFlag: "https://flagcdn.com/w40/pt.png",
-        teamIcon: "teams/Porto.png",
-        image: "assets/entrenadores/Maurinho/Maurinho.png",
-        background: "assets/Cartas/Oro.png"
-    },
+    
     {
         id: "coach_sturbin",
         name: "STURBIN",
@@ -93,32 +55,6 @@ const coachesDB = [
         background: "assets/Cartas/Oro.png"
     }
 ,
-{
-    id: "coach_macscryde_oro",
-    name: "MACSCRYDE",
-    version: "Entrenador (Oro)",
-    rarity: "Coach",
-    rating: 83,
-    position: "COACH",
-    league: "Federaciones",
-    nationFlag: "https://flagcdn.com/w40/us.png",
-    teamIcon: "teams/EEUU.png",
-    image: "assets/entrenadores/USA/MacScryde.png",
-    background: "assets/Cartas/Oro.png"
-},
-{
-    id: "coach_renegade_oro",
-    name: "RENEGADE",
-    version: "Entrenador (Oro)",
-    rarity: "Coach",
-    rating: 83,
-    position: "COACH",
-    league: "Federaciones",
-    nationFlag: "https://flagcdn.com/w40/us.png",
-    teamIcon: "teams/EEUU.png",
-    image: "assets/entrenadores/USA/ReneGade.png",
-    background: "assets/Cartas/Oro.png"
-},
 
 // ==========================================
 // ENTRENADORES ITALIA
@@ -153,19 +89,6 @@ const coachesDB = [
 // ==========================================
 // ENTRENADOR SNUFFY
 // ==========================================
-    {
-        id: "coach_snuffy",
-        name: "SNUFFY",
-        version: "Entrenador (Oro)",
-        rarity: "Coach",
-        rating: 90,
-        position: "COACH",
-        league: "Serie A",
-        nationFlag: "https://flagcdn.com/w40/mt.png",
-        teamIcon: "teams/Ubers.png",
-        image: "assets/entrenadores/Snuffy/Snuffy.png",
-        background: "assets/Cartas/Oro.png"
-    },
 
 // ==========================================
 // ENTRENADORES ARABIA SAUDI
@@ -200,63 +123,12 @@ const coachesDB = [
 // ==========================================
 // ENTRENADOR TAILANDIA
 // ==========================================
-    {
-        id: "coach_rashirisaran",
-        name: "RASHIRI SARAN",
-        version: "Entrenadora (Oro)",
-        rarity: "Coach",
-        rating: 81,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/th.png",
-        teamIcon: "teams/Tailandia.png",
-        image: "assets/entrenadores/Tailandia/RashiriSaran.png",
-        background: "assets/Cartas/Oro.png"
-    },
 
 // ==========================================
 // ENTRENADOR TAILANDIA
 // ==========================================
-    {
-        id: "coach_rashirisaran",
-        name: "RASHIRI SARAN",
-        version: "Entrenadora (Oro)",
-        rarity: "Coach",
-        rating: 81,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/th.png",
-        teamIcon: "teams/Tailandia.png",
-        image: "assets/entrenadores/Tailandia/RashiriSaran.png",
-        background: "assets/Cartas/Oro.png"
-    },
+    
 
-    {
-        id: "coach_vansaal",
-        name: "VAN SAAL",
-        version: "Entrenador",
-        rarity: "Coach",
-        rating: 84,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/nl.png",
-        teamIcon: "teams/Barcha.png",
-        image: "assets/entrenadores/VanSaal/VanSaal.png",
-        background: "assets/Cartas/Oro.png"
-    },
-    {
-        id: "coach_delbasque",
-        name: "DEL BASQUE",
-        version: "Entrenador",
-        rarity: "Coach",
-        rating: 85,
-        position: "COACH",
-        league: "Federaciones",
-        nationFlag: "https://flagcdn.com/w40/es.png",
-        teamIcon: "teams/Real.png",
-        image: "assets/entrenadores/DelBasque/DelBasque.png",
-        background: "assets/Cartas/Oro.png"
-    },
     {
         id: "coach_gallop",
         name: "GALLOP",
@@ -433,7 +305,7 @@ const coachesDB = [
         rarity: "Coach",
         rating: 85,
         position: "COACH",
-        league: "Oceani",
+        league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/au.png",
         teamIcon: "teams/Australia.png",
         image: "assets/characters/Australia/Dolph HensenEn.png",
@@ -446,7 +318,7 @@ const coachesDB = [
         rarity: "Coach",
         rating: 85,
         position: "COACH",
-        league: "Oceani",
+        league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/au.png",
         teamIcon: "teams/Australia.png",
         image: "assets/characters/Australia/Grant Grimoire.png",
@@ -459,10 +331,67 @@ const coachesDB = [
         rarity: "Coach",
         rating: 85,
         position: "COACH",
-        league: "Oceani",
+        league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/au.png",
         teamIcon: "teams/Australia.png",
         image: "assets/characters/Australia/Robert Cliser.png",
         background: "assets/Cartas/Oro.png"
+    }
+,
+{
+        id: "coach_aaron_adams",
+        name: "AARON ADAMS",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 87,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/gb-eng.png",
+        teamIcon: "teams/Inglaterra.png",
+        image: "assets/entrenadores/Inglaterra/AaronAdams.png",
+        background: "assets/Cartas/Oro.png"
+    },
+{
+        id: "coach_david_arrows",
+        name: "DAVID ARROWS",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 87,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/ci.png",
+        teamIcon: "teams/CostaDeMarfil.png",
+        image: "assets/characters/Costademarfil/DavidArrows.png",
+        background: "assets/Cartas/Oro.png"
+    },
+{
+        id: "coach_mister_yi",
+        name: "MISTER YI",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 87,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/cn.png",
+        teamIcon: "teams/InazumaJaponOrion.png",
+        image: "assets/entrenadores/MisterYi/MisterYi.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_roberto_hongo_br",
+        name: "ROBERTO HONGO",
+        version: "Entrenador",
+        rarity: "Coach",
+        rating: 81,
+        league: "",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Brasil.png",
+        image: "assets/characters/Brasil/RobertoHongoEn.png",
+        background: "assets/Cartas/Coach.png",
+        effect: {
+            type: "boost",
+            target: { name: "TSUBASA", nation: "https://flagcdn.com/w40/br.png" },
+            boost: { rating: 1, chemistry: 1 }
+        }
     }
 ];

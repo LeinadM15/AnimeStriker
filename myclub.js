@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCardHTML(char) {
         const frame = getCardFrame(char);
-        const teamSrc = char.teamIcon.startsWith('teams/') ? `assets/${char.teamIcon}` : char.teamIcon;
+        const teamSrc = (char.teamIcon || 'teams/Japon.png').startsWith('teams/') ? `assets/${char.teamIcon}` : char.teamIcon;
         
         let bgHTML = '';
         let overlayHTML = '';
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.updateGrid = function updateGrid(resetPage = false) {
         if (resetPage) myclubCurrentPage = 0;
         let filtered = allCards.filter(c => {
-            const searchMatch = c.name.toLowerCase().includes(filterSearch.value.toLowerCase()) || c.version.toLowerCase().includes(filterSearch.value.toLowerCase());
+            const searchMatch = c.name.toLowerCase().includes(filterSearch.value.toLowerCase()) || (c.version && c.version.toLowerCase().includes(filterSearch.value.toLowerCase()));
             const leagueMatch = filterLeague.value === 'all' || c.league === filterLeague.value;
             const teamMatch = filterTeam.value === 'all' || getTeamName(c) === filterTeam.value;
             const filterNation = document.getElementById('filter-nation').value;
@@ -198,6 +198,8 @@ function setupCustomDropdown() {
         if(url.includes('/it.')) return 'Italia';
         if(url.includes('/ar.')) return 'Argentina';
         if(url.includes('/nl.')) return 'Holanda';
+        if(url.includes('/cm.')) return 'Camerún';
+        if(url.includes('/ci.')) return 'Costa de Marfil';
         if(url.includes('/es.')) return 'España';
         if(url.includes('/se.')) return 'Suecia';
         if(url.includes('/uy.')) return 'Uruguay';
@@ -221,7 +223,9 @@ function setupCustomDropdown() {
         if(url.includes('/uy.')) return 'Uruguay';
         if(url.includes('/sn.')) return 'Senegal';
         if(url.includes('/eg.')) return 'Egipto';
-        if(url.includes('/au.')) return 'Australia';
+                if(url.includes('/au.')) return 'Australia';
+        if(url.includes('/bf.')) return 'Burkina Faso';
+        if(url.includes('/no.')) return 'Noruega';
         return 'Nación';
     };
 

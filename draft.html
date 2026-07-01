@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=289">
-    <link rel="stylesheet" href="squad.css?v=289">
-    <link rel="stylesheet" href="draft.css?v=289">
+    <link rel="stylesheet" href="styles.css?v=328">
+    <link rel="stylesheet" href="squad.css?v=328">
+    <link rel="stylesheet" href="draft.css?v=328">
 </head>
 <body>
 
@@ -77,8 +77,9 @@
 
 
 
-            <!-- Save / Reset -->
+            <!-- Save / Reset / Play -->
             <button class="squad-btn draft-save-btn" id="draft-save-btn" style="display:none;">💾 GUARDAR</button>
+            <button class="squad-btn draft-play-btn" id="draft-play-btn" style="display:none;">⚽ JUGAR</button>
             <button class="squad-btn clear-btn" id="draft-reset-btn">🔄 NUEVO DRAFT</button>
         </div>
 
@@ -165,14 +166,43 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="database/tsubasa_cards.js?v=289"></script>
+    <!-- ===== DIFFICULTY SELECTION MODAL ===== -->
+    <div id="difficulty-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay" onclick="closeDifficultyModal()"></div>
+        <div class="difficulty-modal-content">
+            <div class="draft-modal-title">ELIGE COMPETICIÓN</div>
+            <div class="difficulty-options">
+                <div class="difficulty-card" onclick="startTournament('liga')">
+                    <div class="diff-trophy">🏆</div>
+                    <div class="diff-title">LIGA</div>
+                    <div class="diff-subtitle">Fácil</div>
+                    <div class="diff-desc">8 equipos · Round Robin<br>Equipos más débiles</div>
+                </div>
+                <div class="difficulty-card champions" onclick="startTournament('champions')">
+                    <div class="diff-trophy">🏆</div>
+                    <div class="diff-title">CHAMPIONS</div>
+                    <div class="diff-subtitle">Difícil</div>
+                    <div class="diff-desc">32 clubes · Eliminatorias<br>Los mejores clubes</div>
+                </div>
+                <div class="difficulty-card mundial" onclick="startTournament('mundial')">
+                    <div class="diff-trophy">🌍</div>
+                    <div class="diff-title">MUNDIAL</div>
+                    <div class="diff-subtitle">Extremo</div>
+                    <div class="diff-desc">32 selecciones · Eliminatorias<br>Las mejores cartas por país</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="database/bluelock_cards.js?v=289"></script>
-    <script src="database/coaches.js?v=289"></script>
-    <script src="database/kits.js?v=289"></script>
-    <script src="cards.js?v=289"></script>
-    <script src="squad.js?v=289"></script>
-    <script src="draft.js?v=289"></script>
+    <!-- Scripts -->
+    <script src="database/tsubasa_cards.js?v=328"></script>
+
+    <script src="database/bluelock_cards.js?v=328"></script>
+    <script src="database/coaches.js?v=328"></script>
+    <script src="database/kits.js?v=328"></script>
+    <script src="cards.js?v=328"></script>
+    <script src="squad.js?v=328"></script>
+    <script src="matchRivals.js?v=328"></script>
+    <script src="draft.js?v=328"></script>
 </body>
 </html>

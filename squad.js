@@ -5908,7 +5908,12 @@ function getCoachBoosts(card, coach) {
     let boost = { rating: 0, chem: 0 };
     if (!coach || !card) return boost;
     
-    if (coach.id === 'coach_mark_evans') {
+        if (coach.id === 'coach_roberto_hongo_br') {
+        if (card.name === 'TSUBASA' || (card.nationFlag && card.nationFlag.includes('br.png'))) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_mark_evans') {
         if ((card.teamIcon && (card.teamIcon.includes('Raimon') || card.teamIcon.includes('Ribera'))) || 
             (card.nationFlag && card.nationFlag.includes('jp.png'))) {
             boost.chem += 1;
@@ -6043,6 +6048,11 @@ function getCoachBoosts(card, coach) {
         }
     } else if (coach.id === 'coach_dolph_hensen' || coach.id === 'coach_grant_grimoire' || coach.id === 'coach_robert_cliser') {
         if (card.nationFlag && card.nationFlag.includes('au.png')) {
+            boost.chem += 1;
+            boost.rating += 1;
+        }
+    } else if (coach.id === 'coach_roberto_hongo_en') {
+        if ((card.nationFlag && card.nationFlag.includes('br.png')) || card.name === 'TSUBASA') {
             boost.chem += 1;
             boost.rating += 1;
         }
@@ -6448,8 +6458,10 @@ function selectPlayer(cardId) {
     if (!card) return;
 
     // Duplicate Check
-    const isDuplicate = squad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'pitch' || idx !== selectedSlotIndex)) ||
-                        benchSquad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'bench' || idx !== selectedSlotIndex));
+    const isDuplicate = selectedTarget !== 'coach' && (
+        squad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'pitch' || idx !== selectedSlotIndex)) ||
+        benchSquad.some((c, idx) => c && c.name === card.name && (selectedTarget !== 'bench' || idx !== selectedSlotIndex))
+    );
                         
     if (isDuplicate) {
         alert('¡No puedes tener dos cartas del mismo jugador en la plantilla o banquillo!');

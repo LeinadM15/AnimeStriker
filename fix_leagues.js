@@ -1,29 +1,14 @@
 const fs = require('fs');
+let file = fs.readFileSync('database/tsubasa_cards.js', 'utf8');
 
-// Fix coaches
-let coachesCode = fs.readFileSync('database/coaches.js', 'utf8');
-coachesCode = coachesCode.replace(/league:\s*"",/g, 'league: "Federaciones",');
-fs.writeFileSync('database/coaches.js', coachesCode);
+const heathIds = ["heath_oro", "heath_if", "heath_rosa", "heath_flash", "heath_future", "heath_prime", "heath_tots", "heath_toty"];
+const aidenIds = ["aiden_oro", "aiden_if", "aiden_rosa", "aiden_roja", "aiden_hielo", "aiden_tots", "aiden_prime"];
+const allIds = heathIds.concat(aidenIds);
 
-// Fix LaLiga
-const filesToFix = [
-    'database/tsubasa_cards.js',
-    'database/bluelock_cards.js',
-    'database/inazuma_cards.js'
-];
+for (const id of allIds) {
+    const regex = new RegExp(`(id:\\s*[\"']${id}[\"'][\\s\\S]*?league:\\s*[\"'])Desconocida([\"'],)`, 'g');
+    file = file.replace(regex, '$1La Liga$2');
+}
 
-filesToFix.forEach(file => {
-    try {
-        let code = fs.readFileSync(file, 'utf8');
-        code = code.replace(/league:\s*"LaLiga"/g, 'league: "La Liga"');
-        fs.writeFileSync(file, code);
-    } catch(e) {}
-});
-
-// Cache Buster v61
-const files = ['index.html', 'myclub.html', 'packs.html', 'squad.html'];
-files.forEach(file => {
-    let content = fs.readFileSync(file, 'utf8');
-    content = content.replace(/\?v=\d+/g, '?v=61');
-    fs.writeFileSync(file, content);
-});
+fs.writeFileSync('database/tsubasa_cards.js', file);
+console.log('Updated league to La Liga for HEATH MOORE and AIDEN');

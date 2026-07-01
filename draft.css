@@ -481,3 +481,163 @@
     from { transform: translateY(-100%); }
     to { transform: translateY(0); }
 }
+
+/* ---- PLAY BUTTON ---- */
+.draft-play-btn {
+    background: linear-gradient(135deg, #00c853, #00e676) !important;
+    color: #fff !important;
+    border: 2px solid rgba(0, 200, 83, 0.5) !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 3px !important;
+    padding: 12px 28px !important;
+    animation: playBtnPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+}
+.draft-play-btn:hover {
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 30px rgba(0, 200, 83, 0.5) !important;
+}
+@keyframes playBtnPulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 200, 83, 0.3); }
+    50%      { box-shadow: 0 0 30px rgba(0, 200, 83, 0.6); }
+}
+
+/* ---- DIFFICULTY MODAL ---- */
+.difficulty-modal-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(15, 25, 55, 0.96);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    max-width: 850px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.4s ease;
+}
+
+.difficulty-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.difficulty-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 260px;
+    padding: 28px 20px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(30, 60, 100, 0.6), rgba(20, 40, 70, 0.8));
+    border: 2px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.difficulty-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 16px;
+}
+
+.difficulty-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.difficulty-card:hover::before { opacity: 0.15; }
+
+/* Liga card */
+.difficulty-card:first-child {
+    border-color: rgba(0, 200, 83, 0.2);
+}
+.difficulty-card:first-child::before {
+    background: linear-gradient(135deg, #00c853, #69f0ae);
+}
+.difficulty-card:first-child:hover {
+    border-color: rgba(0, 200, 83, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 200, 83, 0.2);
+}
+
+/* Champions card */
+.difficulty-card.champions {
+    border-color: rgba(0, 100, 255, 0.2);
+}
+.difficulty-card.champions::before {
+    background: linear-gradient(135deg, #1565c0, #42a5f5);
+}
+.difficulty-card.champions:hover {
+    border-color: rgba(0, 100, 255, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 100, 255, 0.2);
+}
+
+/* Mundial card */
+.difficulty-card.mundial {
+    border-color: rgba(255, 215, 0, 0.2);
+}
+.difficulty-card.mundial::before {
+    background: linear-gradient(135deg, #ffd700, #ffab00);
+}
+.difficulty-card.mundial:hover {
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
+}
+
+.diff-trophy {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+}
+
+.diff-title {
+    font-family: var(--font-t);
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+}
+
+.diff-subtitle {
+    font-family: var(--font-t);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    padding: 2px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.difficulty-card:first-child .diff-subtitle {
+    background: rgba(0, 200, 83, 0.2);
+    color: #69f0ae;
+}
+.difficulty-card.champions .diff-subtitle {
+    background: rgba(33, 150, 243, 0.2);
+    color: #64b5f6;
+}
+.difficulty-card.mundial .diff-subtitle {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd740;
+}
+
+.diff-desc {
+    font-family: var(--font-b);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
