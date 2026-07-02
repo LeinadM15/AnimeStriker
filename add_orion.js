@@ -1,0 +1,513 @@
+const fs = require('fs');
+const path = require('path');
+
+const dbPath = path.join(__dirname, 'database', 'tsubasa_cards.js');
+let dbContent = fs.readFileSync(dbPath, 'utf8');
+
+const orionCards = `
+// ==========================================
+// RUSIA / ORION
+// ==========================================
+const rusiaCards = [
+    // Sombra de Orión
+    {
+        id: "van_maanen",
+        name: "VAN MAANEN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Roma.png",
+        image: "assets/characters/Rusia/VanMaanen.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "rion",
+        name: "RION",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Fiorentina.png",
+        image: "assets/characters/Rusia/Rion.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "veles",
+        name: "VELES",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Lazio.png",
+        image: "assets/characters/Rusia/Veles.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "brock",
+        name: "BROCK",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CB",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Leverkusen.png",
+        image: "assets/characters/Rusia/Brock.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "wolfe",
+        name: "WOLFE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CDM",
+        league: "Eredivisie",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/PSV.png",
+        image: "assets/characters/Rusia/Wolfe.png",
+        background: "assets/Cartas/Oro.png"
+    },
+
+    // Chispas Perfectas (Rusia Base)
+    {
+        id: "alexander_allegrov_oro",
+        name: "ALLEGROV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "CAM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Rusia/AlexanderAllegrovOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "alexander_allegrov",
+        name: "ALLEGROV",
+        version: "Hielo",
+        rarity: "Especial",
+        rating: 90,
+        position: "CAM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Rusia/AlexanderAllegrov.png",
+        background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "oleg_animatov_oro",
+        name: "ANIMATOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "LM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Rusia/OlegAnimatovOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "oleg_animatov",
+        name: "ANIMATOV",
+        version: "Hielo",
+        rarity: "Especial",
+        rating: 88,
+        position: "LM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Rusia/OlegAnimatov.png",
+        background: "assets/Cartas/Hielo.png"
+    },
+    {
+        id: "gregory_fortin",
+        name: "FORTIN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "GK",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Napoli.png",
+        image: "assets/characters/Rusia/GregoryFortin.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "yuri_dolchin",
+        name: "DOLCHIN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Rusia/YuriDolchin.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "anton_kolosalyov",
+        name: "KOLOSALYOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "ST",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Sporting.png",
+        image: "assets/characters/Rusia/AntonKolosalyov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "leonid_largov",
+        name: "LARGOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Rusia/LeonidLargov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nikolai_gliksanderov",
+        name: "GLIKSANDEROV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Rusia/NikolaiGlisanderov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "molev_matalioski",
+        name: "MATALIOSKI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CB",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Porto.png",
+        image: "assets/characters/Rusia/MolevMisterioski.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "boris_kaprichyov",
+        name: "KAPRICHYOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Villareal.png",
+        image: "assets/characters/Rusia/BorisKaprichyov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "igor_ritsikatov",
+        name: "RITSIKATOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/RealSociedad.png",
+        image: "assets/characters/Rusia/IgorPitsikatov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "konstantin_furyozov",
+        name: "FURYOZOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 78,
+        position: "CM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Monaco.png",
+        image: "assets/characters/Rusia/KonstantinFuryozov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "mikhail_vivachev",
+        name: "VIVACHEV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 77,
+        position: "CAM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Valencia.png",
+        image: "assets/characters/Rusia/MikhailVivachev.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "dmitri_pianov",
+        name: "PIANOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 77,
+        position: "RM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Sevilla.png",
+        image: "assets/characters/Rusia/DmitriPianov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "marat_sitakatov",
+        name: "SITAKATOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 77,
+        position: "CM",
+        league: "Eredivisie",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Ajax.png",
+        image: "assets/characters/Rusia/MaratStakatov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "martemeli_prestov",
+        name: "PRESTOV",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 76,
+        position: "CDM",
+        league: "Eredivisie",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Feyenoord.png",
+        image: "assets/characters/Rusia/MartemeliPrestov.png",
+        background: "assets/Cartas/Oro.png"
+    },
+
+    // Eclipse de Orión (Los Discípulos OP)
+    {
+        id: "jade_bear_oro",
+        name: "JADE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "RW",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Rusia/JadeBeorOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "jade_bear",
+        name: "JADE",
+        version: "Trueno",
+        rarity: "Especial",
+        rating: 90,
+        position: "RW",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Rusia/JadeBeor.png",
+        background: "assets/Cartas/Trueno.png"
+    },
+    {
+        id: "alnitak",
+        name: "ALNITAK",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Rusia/Alnitak.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "bellatrix",
+        name: "BELLATRIX",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CDM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Rusia/Bellatrix.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "rigel",
+        name: "RIGEL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CAM",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Benfica.png",
+        image: "assets/characters/Rusia/Rigel.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "betelgeuse",
+        name: "BETELGEUSE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Milan.png",
+        image: "assets/characters/Rusia/Betelgeuse.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "procyon",
+        name: "PROCYON",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "GK",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/Rusia/Procyon.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "tabit",
+        name: "TABIT",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Rusia/Tabit.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "meissa",
+        name: "MEISSA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "LB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Tottenham.png",
+        image: "assets/characters/Rusia/Meissa.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "saiph",
+        name: "SAIPH",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/Rusia/Saiph.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "alnilam",
+        name: "ALNILAM",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Rusia/Alnilam.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "mintaka",
+        name: "MINTAKA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "RM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Chicorid.png",
+        image: "assets/characters/Rusia/Mintaka.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "sirius",
+        name: "SIRIUS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "RB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/Rusia/Sirius.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "kappa",
+        name: "KAPPA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "LM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Rusia/Kappa.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "hatysa",
+        name: "HATYSA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ru.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Rusia/Hatysa.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
+`;
+
+if (!dbContent.includes('const rusiaCards = [')) {
+    fs.writeFileSync(dbPath, dbContent + '\n' + orionCards);
+    console.log("Appended rusiaCards to tsubasa_cards.js");
+}
+
+const cardsPath = path.join(__dirname, 'cards.js');
+let cardsContent = fs.readFileSync(cardsPath, 'utf8');
+
+if (!cardsContent.includes('...rusiaCards,')) {
+    cardsContent = cardsContent.replace('...sudafricaCards,', '...sudafricaCards,\n    ...rusiaCards,');
+    fs.writeFileSync(cardsPath, cardsContent);
+    console.log("Appended rusiaCards to cards.js");
+}

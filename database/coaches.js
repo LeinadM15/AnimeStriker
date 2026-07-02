@@ -394,4 +394,33 @@ const coachesDB = [
             boost: { rating: 1, chemistry: 1 }
         }
     }
+,
+    {
+        id: "coach_hekyll_jyde",
+        name: "HEKYLL JYDE",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Occult.png",
+        image: "assets/characters/Occult/HekyllJyde.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "coach_harry_savage",
+        name: "HARRY SAVAGE",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Wild.png",
+        image: "assets/characters/Wild/HarrySavage.png",
+        background: "assets/Cartas/Oro.png"
+    }
+
+
 ];

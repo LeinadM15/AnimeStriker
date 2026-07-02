@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anime Strikers - Modo Draft Local VS">
+    <title>ANIME STRIKERS ⚽ - Draft VS Local</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=335">
+    <link rel="stylesheet" href="squad.css?v=335">
+    <link rel="stylesheet" href="draft.css?v=335">
+    <link rel="stylesheet" href="draft_vs.css?v=335">
+</head>
+<body>
+
+    <!-- Fixed BG -->
+    <div class="bg-fixed">
+        <img src="assets/FondoInazuma.png" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" class="draft-back-btn" style="z-index:100;">◀ VOLVER</a>
+
+
+
+    <!-- Phase indicator (center screen) -->
+    <div class="phase-banner hidden" id="phase-banner">
+        <div class="phase-text" id="phase-text">TURNO</div>
+        <div class="phase-sub" id="phase-sub">Jugador 1</div>
+    </div>
+
+    <div class="app draft-vs-layout">
+
+        <!-- LEFT SIDE (PLAYER 1) -->
+        <div class="vs-side p1-side" id="p1-side">
+            <h2 class="player-title p1-color">JUGADOR 1</h2>
+            
+            <div class="vs-pitch-wrap">
+                <div class="pitch vs-pitch" id="draft-pitch-p1">
+                    <div class="pitch-markings">
+                        <div class="pitch-center-dot"></div>
+                        <div class="pitch-goal-top"></div>
+                        <div class="pitch-goal-bottom"></div>
+                        <div class="pitch-penalty-top"></div>
+                        <div class="pitch-penalty-bottom"></div>
+                    </div>
+                    <svg id="draft-chemistry-lines-p1" class="chemistry-lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+                </div>
+            </div>
+            
+            <div class="horizontal-bench-container hidden" id="horizontal-bench-p1">
+                <div class="box-label p1-color">SUPLENTES & RESERVAS J1</div>
+                <div class="horizontal-bench" id="draft-bench-p1"></div>
+            </div>
+        </div>
+
+        <!-- CENTER CONTROLS -->
+        <div class="vs-center">
+            
+            <div class="turn-indicator-center" id="turn-indicator">CARGANDO...</div>
+            
+            <button class="bench-toggle-btn p1-btn" id="bench-toggle-p1">📋 BANQUILLO J1</button>
+            
+            <!-- P1 Info -->
+            <div class="vs-controls p1-controls" id="p1-controls">
+                <div class="box-label p1-color" style="text-align:center;">JUGADOR 1</div>
+                <div class="vs-info-row">
+                    <span>FORMACIÓN:</span> <span class="form-name" id="draft-form-name-p1">—</span>
+                </div>
+                <div class="vs-info-row">
+                    <span>VAL:</span> <span id="draft-rating-num-p1" class="num">0</span>
+                    <span style="margin-left:10px;">QUÍM:</span> <span id="draft-chem-num-p1" class="num">0</span>
+                </div>
+                <div class="vs-badge-row" style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:4px;">
+                    <div style="text-align:center;">
+                        <div style="font-family:'Bangers'; color:#ffd700; font-size:0.8rem;">ESCUDO</div>
+                        <div class="badge-icon vs-badge-icon" id="draft-badge-icon-p1" style="width:40px; height:40px;"></div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div style="font-family:'Bangers'; color:#ffd700; font-size:0.8rem;">DT</div>
+                        <div style="height:70px; display:flex; justify-content:center;">
+                            <div class="player-slot" id="draft-coach-slot-p1" style="position:relative; transform:scale(0.35); transform-origin:top center; width:140px; height:196px;">
+                                <div class="slot-empty" style="width:115px!important; height:140px!important;"><span class="slot-pos">COA</span><span class="slot-add">+</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS Divider -->
+            <div class="vs-divider"><span>VS</span></div>
+            
+            <button class="squad-btn" id="draft-new-btn" style="margin-top:10px; margin-bottom:10px; width:100%; box-shadow:0 0 10px red; font-size:1rem;">🔴 NUEVO DRAFT</button>
+
+            <!-- P2 Info -->
+            <div class="vs-controls p2-controls" id="p2-controls">
+                <div class="box-label p2-color" style="text-align:center;">JUGADOR 2</div>
+                <div class="vs-info-row">
+                    <span>FORMACIÓN:</span> <span class="form-name" id="draft-form-name-p2">—</span>
+                </div>
+                <div class="vs-info-row">
+                    <span>VAL:</span> <span id="draft-rating-num-p2" class="num">0</span>
+                    <span style="margin-left:10px;">QUÍM:</span> <span id="draft-chem-num-p2" class="num">0</span>
+                </div>
+                <div class="vs-badge-row" style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:4px;">
+                    <div style="text-align:center;">
+                        <div style="font-family:'Bangers'; color:#ffd700; font-size:0.8rem;">ESCUDO</div>
+                        <div class="badge-icon vs-badge-icon" id="draft-badge-icon-p2" style="width:40px; height:40px;"></div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div style="font-family:'Bangers'; color:#ffd700; font-size:0.8rem;">DT</div>
+                        <div style="height:70px; display:flex; justify-content:center;">
+                            <div class="player-slot" id="draft-coach-slot-p2" style="position:relative; transform:scale(0.35); transform-origin:top center; width:140px; height:196px;">
+                                <div class="slot-empty" style="width:115px!important; height:140px!important;"><span class="slot-pos">COA</span><span class="slot-add">+</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="bench-toggle-btn p2-btn" id="bench-toggle-p2">📋 BANQUILLO J2</button>
+            
+            <button class="squad-btn draft-play-btn" id="draft-play-btn" style="display:none; margin-top:15px; width:100%; box-shadow:0 0 15px cyan;">⚽ JUGAR PARTIDO</button>
+        </div>
+
+        <!-- RIGHT SIDE (PLAYER 2) -->
+        <div class="vs-side p2-side" id="p2-side">
+            <h2 class="player-title p2-color">JUGADOR 2</h2>
+            
+            <div class="vs-pitch-wrap">
+                <div class="pitch vs-pitch" id="draft-pitch-p2">
+                    <div class="pitch-markings">
+                        <div class="pitch-center-dot"></div>
+                        <div class="pitch-goal-top"></div>
+                        <div class="pitch-goal-bottom"></div>
+                        <div class="pitch-penalty-top"></div>
+                        <div class="pitch-penalty-bottom"></div>
+                    </div>
+                    <svg id="draft-chemistry-lines-p2" class="chemistry-lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+                </div>
+            </div>
+            
+            <div class="horizontal-bench-container hidden" id="horizontal-bench-p2">
+                <div class="box-label p2-color">SUPLENTES & RESERVAS J2</div>
+                <div class="horizontal-bench" id="draft-bench-p2"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Player pick modal (shared) -->
+    <div id="draft-pick-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-pick-modal-content" style="max-width:1300px;">
+            <div id="draft-pick-title" class="draft-modal-title" style="font-size:2.8rem; margin-bottom:20px;">ELIGE JUGADOR</div>
+            <div id="draft-pick-cards" class="draft-pick-cards"></div>
+        </div>
+    </div>
+
+    <!-- Coach pick modal -->
+    <div id="draft-coach-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-pick-modal-content" style="max-width:1300px;">
+            <div id="draft-coach-title" class="draft-modal-title" style="font-size:2.8rem; margin-bottom:20px;">ELIGE ENTRENADOR</div>
+            <div id="draft-coach-cards" class="draft-pick-cards"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="database/tsubasa_cards.js?v=335"></script>
+    <script src="database/genzo_cards.js?v=335"></script>
+    <script src="database/kojiro_cards.js?v=335"></script>
+    <script src="database/holanda_cards.js?v=335"></script>
+    <script src="database/wakashimazu_cards.js?v=335"></script>
+    <script src="database/urabe_cards.js?v=335"></script>
+    <script src="database/sorimachi_cards.js?v=335"></script>
+    <script src="database/sano_cards.js?v=335"></script>
+    <script src="database/sawada_cards.js?v=335"></script>
+    <script src="database/takasugi_cards.js?v=335"></script>
+    <script src="database/izawa_cards.js?v=335"></script>
+    <script src="database/kishida_cards.js?v=335"></script>
+    <script src="database/kisugi_cards.js?v=335"></script>
+    <script src="database/taki_cards.js?v=335"></script>
+    <script src="database/levin_cards.js?v=335"></script>
+    <script src="database/gentile_cards.js?v=335"></script>
+    <script src="database/gino_cards.js?v=335"></script>
+    <script src="database/kraus_cards.js?v=335"></script>
+    <script src="database/dinamarca_cards.js?v=335"></script>
+    <script src="database/pierre_cards.js?v=335"></script>
+    <script src="database/napoleon_cards.js?v=335"></script>
+    <script src="database/makelolo_cards.js?v=335"></script>
+    <script src="database/thoram_cards.js?v=335"></script>
+    <script src="database/italia_cards.js?v=335"></script>
+    <script src="database/espana_cards.js?v=335"></script>
+    <script src="database/suecia_cards.js?v=335"></script>
+    <script src="database/amoros_cards.js?v=335"></script>
+    <script src="database/jean_cards.js?v=335"></script>
+    <script src="database/mexico_cards.js?v=335"></script>
+    <script src="database/tailandia_cards.js?v=335"></script>
+    <script src="database/uruguay_cards.js?v=335"></script>
+    <script src="database/china_cards.js?v=335"></script>
+    <script src="database/croacia_cards.js?v=335"></script>
+    <script src="database/eeuu_cards.js?v=335"></script>
+    <script src="database/porto_cards.js?v=335"></script>
+    <script src="database/argentina_cards.js?v=335"></script>
+    <script src="database/otros_francia_cards.js?v=335"></script>
+    <script src="database/sudafrica_cards.js?v=335"></script>
+    <script src="database/rusia_cards.js?v=335"></script>
+    <script src="database/egipto_cards.js?v=335"></script>
+    <script src="database/mark_evans_cards.js?v=335"></script>
+    <script src="database/jude_sharp_cards.js?v=335"></script>
+    <script src="database/nathan_cards.js?v=335"></script>
+    <script src="database/tecmo_cards.js?v=335"></script>
+    <script src="database/raimon_cards.js?v=335"></script>
+    <script src="database/occult_cards.js?v=335"></script>
+    <script src="database/wild_cards.js?v=335"></script>
+    <script src="database/bluelock_cards.js?v=335"></script>
+    <script src="database/coaches.js?v=335"></script>
+    <script src="database/kits.js?v=335"></script>
+    <script src="cards.js?v=335"></script>
+    <script src="squad.js?v=335"></script>
+    <script src="draft_vs.js?v=335"></script>
+</body>
+</html>

@@ -5907,8 +5907,28 @@ function updateChemistryBadges() {
 function getCoachBoosts(card, coach) {
     let boost = { rating: 0, chem: 0 };
     if (!coach || !card) return boost;
-    
-        if (coach.id === 'coach_roberto_hongo_br') {
+
+    if (coach.id === 'coach_hekyll_jyde') {
+        if (card.teamIcon && card.teamIcon.includes('Occult')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
+    } else if (coach.id === 'coach_harry_savage') {
+        if (card.teamIcon && card.teamIcon.includes('Wild')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
+    } else if (coach.id === 'coach_hekyll_jyde') {
+        if (card.teamIcon && card.teamIcon.includes('Occult')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
+    } else if (coach.id === 'coach_harry_savage') {
+        if (card.teamIcon && card.teamIcon.includes('Wild')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
+    } else if (coach.id === 'coach_roberto_hongo_br') {
         if (card.name === 'TSUBASA' || (card.nationFlag && card.nationFlag.includes('br.png'))) {
             boost.chem += 1;
             boost.rating += 1;
@@ -6666,7 +6686,7 @@ const COUNTRY_NAMES = {
     'us': 'Estados Unidos',
     'za': 'Sudáfrica',
     'hr': 'Croacia',
-    'pt': 'Portugal',
+    'sm': 'Selección Mundial',
     'rs': 'Serbia',
     'jm': 'Jamaica',
     'ng': 'Nigeria',

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIME STRIKERS ⚽ - Partido VS Local</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=335">
+    <link rel="stylesheet" href="match.css?v=335">
+    <style>
+        .vs-subs-container {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+            z-index: 50;
+        }
+        .vs-sub-btn {
+            padding: 10px 20px;
+            font-family: 'Bangers', sans-serif;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #fff;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            transition: all 0.2s;
+        }
+        .vs-sub-btn.p1 { border-color: #00e5ff; }
+        .vs-sub-btn.p1:hover { background: #00e5ff; color: black; }
+        .vs-sub-btn.p2 { border-color: #ff0055; }
+        .vs-sub-btn.p2:hover { background: #ff0055; color: white; }
+        
+        .p1-color { color: #00e5ff; }
+        .p2-color { color: #ff0055; }
+        
+        /* Two-player penalty modal */
+        .penalty-vs-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .penalty-p-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .pen-btn {
+            padding: 10px 20px;
+            font-family: 'Bangers';
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            width: 120px;
+        }
+        .pen-btn:hover { background: white; color: black; }
+        .pen-btn.p1 { border-color: #00e5ff; }
+        .pen-btn.p1:hover { background: #00e5ff; }
+        .pen-btn.p1.selected { background: #00e5ff; color: black; box-shadow: 0 0 10px #00e5ff; }
+        .pen-btn.p2 { border-color: #ff0055; }
+        .pen-btn.p2:hover { background: #ff0055; }
+        .pen-btn.p2.selected { background: #ff0055; color: white; box-shadow: 0 0 10px #ff0055; }
+        
+        #penalty-status {
+            font-family: 'Bangers';
+            font-size: 1.5rem;
+            color: yellow;
+            text-shadow: 1px 1px 0 #000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-fixed">
+        <img src="assets/FondoInazuma.png" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="match-app">
+        <!-- SCOREBOARD -->
+        <div class="match-scoreboard">
+            <div class="scoreboard-team home">
+                <span class="scoreboard-team-name p1-color" id="home-team-name">JUGADOR 1</span>
+                <img id="home-team-badge" src="" alt="">
+            </div>
+            <div class="scoreboard-score">
+                <span id="home-score" class="p1-color">0</span>
+                <span class="score-separator">-</span>
+                <span id="away-score" class="p2-color">0</span>
+            </div>
+            <div class="scoreboard-team away">
+                <img id="away-team-badge" src="" alt="">
+                <span class="scoreboard-team-name p2-color" id="away-team-name">JUGADOR 2</span>
+            </div>
+            <div class="scoreboard-time">
+                <span class="minute" id="match-minute">0'</span>
+                <span class="half-label" id="half-label">1ª Parte</span>
+            </div>
+            <div class="scoreboard-controls">
+                <button class="speed-btn" id="speed-btn">x1</button>
+                <button class="pause-btn" id="pause-btn">⏸</button>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT -->
+        <div class="match-layout">
+            <div class="match-side-panel" id="left-panel">
+                <div class="panel-title p1-color">EVENTOS J1</div>
+                <div class="match-event-log" id="event-log-p1" style="height:350px;"></div>
+            </div>
+
+            <!-- PITCH -->
+            <div class="match-pitch-wrap">
+                <div class="match-pitch" id="match-pitch">
+                    <div class="pitch-center-line"></div>
+                    <div class="pitch-center-circle"></div>
+                    <div class="pitch-center-dot"></div>
+                    <div class="pitch-penalty-top"></div>
+                    <div class="pitch-penalty-bottom"></div>
+                    <div class="pitch-goal-top"></div>
+                    <div class="pitch-goal-bottom"></div>
+                    <svg class="pitch-arrows" id="pitch-arrows" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+                    <div class="match-ball" id="match-ball">⚽</div>
+                </div>
+            </div>
+
+            <div class="match-side-panel right-panel" id="right-panel">
+                <div class="panel-title p2-color">EVENTOS J2</div>
+                <div class="match-event-log" id="event-log-p2" style="height:350px;"></div>
+            </div>
+        </div>
+
+        <!-- ACTION BAR -->
+        <div class="match-action-bar" id="action-bar">
+            <span class="action-bar-label" id="action-label">ESPERANDO...</span>
+        </div>
+        
+        <!-- SUBS BUTTONS -->
+        <div class="vs-subs-container">
+            <button class="vs-sub-btn p1" onclick="openSubs(1)">📋 CAMBIOS J1</button>
+            <button class="vs-sub-btn p2" onclick="openSubs(2)">📋 CAMBIOS J2</button>
+        </div>
+    </div>
+
+    <!-- DUEL MODAL (Automated mostly, but shown for hype) -->
+    <div class="duel-modal hidden" id="duel-modal">
+        <div class="duel-content">
+            <div class="duel-player-side attacker">
+                <img class="duel-player-image" id="duel-atk-img" src="" alt="">
+                <div class="duel-player-name" id="duel-atk-name">—</div>
+                <div class="duel-player-stat-value" id="duel-atk-stat">0</div>
+                <div class="duel-player-stat-label" id="duel-atk-stat-label">ATK</div>
+                <div class="duel-stamina-bar"><div class="duel-stamina-fill" id="duel-atk-stamina" style="width:100%"></div></div>
+            </div>
+            <div class="duel-vs">VS</div>
+            <div class="duel-player-side defender">
+                <img class="duel-player-image" id="duel-def-img" src="" alt="">
+                <div class="duel-player-name" id="duel-def-name">—</div>
+                <div class="duel-player-stat-value" id="duel-def-stat">0</div>
+                <div class="duel-player-stat-label" id="duel-def-stat-label">DEF</div>
+                <div class="duel-stamina-bar"><div class="duel-stamina-fill" id="duel-def-stamina" style="width:100%"></div></div>
+            </div>
+            <div class="duel-result hidden" id="duel-result"></div>
+        </div>
+        <div class="duel-actions" id="duel-actions" style="display:none;"></div>
+    </div>
+
+    <!-- GOAL -->
+    <div class="goal-overlay hidden" id="goal-overlay">
+        <div class="goal-text">¡¡¡GOOOL!!!</div>
+        <div class="goal-scorer" id="goal-scorer">—</div>
+        <div class="goal-minute" id="goal-minute">—</div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-overlay hidden" id="result-overlay">
+        <div class="result-card">
+            <div class="result-verdict" id="result-verdict">—</div>
+            <div class="result-teams">
+                <div><img id="result-home-badge" src="" alt=""><div class="team-name p1-color" id="result-home-name">JUGADOR 1</div></div>
+                <div class="result-score" id="result-score">0 - 0</div>
+                <div><img id="result-away-badge" src="" alt=""><div class="team-name p2-color" id="result-away-name">JUGADOR 2</div></div>
+            </div>
+            <button class="result-btn" onclick="window.location.href='index.html'">SALIR</button>
+        </div>
+    </div>
+
+    <!-- SUBS MODAL -->
+    <div class="subs-modal hidden" id="subs-modal">
+        <div class="subs-content">
+            <div class="subs-title" id="subs-modal-title">SUSTITUCIONES (<span id="subs-count">0</span>/5)</div>
+            <div class="subs-list" id="subs-list"></div>
+            <button class="subs-close" onclick="closeSubsModal()">CERRAR</button>
+        </div>
+    </div>
+    
+    <!-- PENALTIES MODAL (2 PLAYER) -->
+    <div class="penalty-modal hidden" id="penalty-modal">
+        <div class="penalty-title" id="penalty-title">TANDA DE PENALTIS</div>
+        <div class="penalty-score-board">
+            <div class="p-team">
+                <img id="p-home-badge" src="" alt="">
+                <div class="p-history" id="p-home-history"></div>
+            </div>
+            <div class="p-score"><span id="p-home-score" class="p1-color">0</span> - <span id="p-away-score" class="p2-color">0</span></div>
+            <div class="p-team">
+                <div class="p-history" id="p-away-history"></div>
+                <img id="p-away-badge" src="" alt="">
+            </div>
+        </div>
+        
+        <div class="penalty-pitch" style="height:200px;">
+            <img src="assets/FondoInazuma.png" class="p-bg" alt="">
+            <div class="p-players" style="position:absolute; top:20px; width:100%; display:flex; justify-content:space-around;">
+                <div class="p-gk" style="position:static; transform:none;">
+                    <img id="p-gk-img" src="" alt="" style="width:60px;">
+                    <div id="p-gk-name">Portero</div>
+                </div>
+                <div class="p-shooter" style="position:static; transform:none;">
+                    <img id="p-shooter-img" src="" alt="" style="width:60px;">
+                    <div id="p-shooter-name">Tirador</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="penalty-vs-container" id="penalty-actions-vs">
+            <div class="penalty-p-side" id="pen-p1-side">
+                <div class="p1-color" style="font-family:'Bangers';font-size:1.5rem;">JUGADOR 1</div>
+                <button class="pen-btn p1" onclick="selectPenaltyAction(1, 'L')">IZQUIERDA</button>
+                <button class="pen-btn p1" onclick="selectPenaltyAction(1, 'C')">CENTRO</button>
+                <button class="pen-btn p1" onclick="selectPenaltyAction(1, 'R')">DERECHA</button>
+            </div>
+            <div class="penalty-p-side" id="pen-p2-side">
+                <div class="p2-color" style="font-family:'Bangers';font-size:1.5rem;">JUGADOR 2</div>
+                <button class="pen-btn p2" onclick="selectPenaltyAction(2, 'L')">IZQUIERDA</button>
+                <button class="pen-btn p2" onclick="selectPenaltyAction(2, 'C')">CENTRO</button>
+                <button class="pen-btn p2" onclick="selectPenaltyAction(2, 'R')">DERECHA</button>
+            </div>
+        </div>
+        <div id="penalty-status">ESPERANDO ELECCIONES...</div>
+        
+        <div class="penalty-result-overlay hidden" id="penalty-result-overlay">
+            <div id="penalty-result-text">¡GOL!</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="database/tsubasa_cards.js?v=335"></script>
+    <script src="database/genzo_cards.js?v=335"></script>
+    <script src="database/kojiro_cards.js?v=335"></script>
+    <script src="database/holanda_cards.js?v=335"></script>
+    <script src="database/wakashimazu_cards.js?v=335"></script>
+    <script src="database/urabe_cards.js?v=335"></script>
+    <script src="database/sorimachi_cards.js?v=335"></script>
+    <script src="database/sano_cards.js?v=335"></script>
+    <script src="database/sawada_cards.js?v=335"></script>
+    <script src="database/takasugi_cards.js?v=335"></script>
+    <script src="database/izawa_cards.js?v=335"></script>
+    <script src="database/kishida_cards.js?v=335"></script>
+    <script src="database/kisugi_cards.js?v=335"></script>
+    <script src="database/taki_cards.js?v=335"></script>
+    <script src="database/levin_cards.js?v=335"></script>
+    <script src="database/gentile_cards.js?v=335"></script>
+    <script src="database/gino_cards.js?v=335"></script>
+    <script src="database/kraus_cards.js?v=335"></script>
+    <script src="database/dinamarca_cards.js?v=335"></script>
+    <script src="database/pierre_cards.js?v=335"></script>
+    <script src="database/napoleon_cards.js?v=335"></script>
+    <script src="database/makelolo_cards.js?v=335"></script>
+    <script src="database/thoram_cards.js?v=335"></script>
+    <script src="database/italia_cards.js?v=335"></script>
+    <script src="database/espana_cards.js?v=335"></script>
+    <script src="database/suecia_cards.js?v=335"></script>
+    <script src="database/amoros_cards.js?v=335"></script>
+    <script src="database/jean_cards.js?v=335"></script>
+    <script src="database/mexico_cards.js?v=335"></script>
+    <script src="database/tailandia_cards.js?v=335"></script>
+    <script src="database/uruguay_cards.js?v=335"></script>
+    <script src="database/china_cards.js?v=335"></script>
+    <script src="database/croacia_cards.js?v=335"></script>
+    <script src="database/eeuu_cards.js?v=335"></script>
+    <script src="database/porto_cards.js?v=335"></script>
+    <script src="database/argentina_cards.js?v=335"></script>
+    <script src="database/otros_francia_cards.js?v=335"></script>
+    <script src="database/sudafrica_cards.js?v=335"></script>
+    <script src="database/rusia_cards.js?v=335"></script>
+    <script src="database/egipto_cards.js?v=335"></script>
+    <script src="database/mark_evans_cards.js?v=335"></script>
+    <script src="database/jude_sharp_cards.js?v=335"></script>
+    <script src="database/nathan_cards.js?v=335"></script>
+    <script src="database/tecmo_cards.js?v=335"></script>
+    <script src="database/raimon_cards.js?v=335"></script>
+    <script src="database/occult_cards.js?v=335"></script>
+    <script src="database/wild_cards.js?v=335"></script>
+    <script src="database/bluelock_cards.js?v=335"></script>
+    <script src="database/coaches.js?v=335"></script>
+    <script src="database/kits.js?v=335"></script>
+    <script src="cards.js?v=335"></script>
+    <script src="squad.js?v=335"></script>
+    <script src="matchStats.js?v=335"></script>
+    <script src="matchRivals.js?v=335"></script>
+    <script src="matchEngine.js?v=335"></script>
+    <script src="match_vs.js?v=335"></script>
+</body>
+</html>

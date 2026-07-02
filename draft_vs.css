@@ -1,0 +1,327 @@
+/* =========================================
+   DRAFT VS LOCAL STYLES v5
+   ========================================= */
+
+.draft-vs-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    gap: 10px;
+    overflow: hidden !important;
+    max-width: 100% !important;
+    width: 100%;
+}
+
+/* TURN INDICATOR CENTER */
+.turn-indicator-center {
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border: 3px solid #fff;
+    transition: all 0.4s ease;
+    text-shadow: 0 0 12px rgba(255,255,255,0.6);
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    line-height: 1.2;
+}
+.turn-indicator-center.p1-turn { border-color: #00e5ff; color: #00e5ff; box-shadow: 0 0 35px rgba(0,229,255,0.7); }
+.turn-indicator-center.p2-turn { border-color: #ff0055; color: #ff0055; box-shadow: 0 0 35px rgba(255,0,85,0.7); }
+.turn-indicator-center.done { border-color: #ffd700; color: #ffd700; box-shadow: 0 0 35px rgba(255,215,0,0.7); }
+
+/* PHASE BANNER — Full screen announcement */
+.phase-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 200;
+    animation: fadeInBanner 0.3s ease;
+}
+.phase-banner.hidden { display: none; }
+.phase-text {
+    font-family: 'Bangers', sans-serif;
+    font-size: 4rem;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(255,215,0,0.6);
+    letter-spacing: 4px;
+}
+.phase-sub {
+    font-family: 'Bangers', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 10px;
+}
+.phase-sub.p1-color { color: #00e5ff; }
+.phase-sub.p2-color { color: #ff0055; }
+
+@keyframes fadeInBanner {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* SIDES */
+.vs-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 5px;
+    min-width: 0;
+    overflow: hidden !important; /* NO SCROLL */
+}
+
+.player-title {
+    font-size: 2.2rem;
+    font-family: 'Bangers', sans-serif;
+    margin-bottom: 4px;
+    text-shadow: 2px 2px 0 #000;
+}
+.p1-color { color: #00e5ff; }
+.p2-color { color: #ff0055; }
+
+.vs-pitch-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.vs-pitch {
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-bottom: -100px;
+}
+
+/* Highlight active side */
+.vs-side.active-side .vs-pitch {
+    box-shadow: 0 0 30px rgba(255,215,0,0.5);
+    border-radius: 8px;
+}
+.p1-side.active-side .vs-pitch { box-shadow: 0 0 30px rgba(0,229,255,0.5); }
+.p2-side.active-side .vs-pitch { box-shadow: 0 0 30px rgba(255,0,85,0.5); }
+
+/* BENCH TOGGLE BUTTON — in center column */
+.bench-toggle-btn {
+    width: 100%;
+    padding: 7px 14px;
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    margin: 2px 0;
+}
+.bench-toggle-btn.p1-btn { border-color: #00e5ff; }
+.bench-toggle-btn.p1-btn:hover { background: #00e5ff; color: black; }
+.bench-toggle-btn.p2-btn { border-color: #ff0055; }
+.bench-toggle-btn.p2-btn:hover { background: #ff0055; color: white; }
+
+/* HORIZONTAL BENCH (SLIDING IN FROM BOTTOM) */
+.horizontal-bench-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    background: rgba(0,0,0,0.95);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    padding: 12px;
+    z-index: 50;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.horizontal-bench-container.hidden {
+    bottom: -300px;
+    opacity: 0;
+    pointer-events: none;
+}
+.horizontal-bench {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+}
+.horizontal-bench::-webkit-scrollbar { height: 6px; }
+.horizontal-bench::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+.horizontal-bench::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+.horizontal-bench .player-slot {
+    position: relative;
+    transform: scale(0.6);
+    transform-origin: top left;
+    margin-right: -55px;
+    margin-bottom: -80px;
+    width: 150px;
+    height: 210px;
+    flex-shrink: 0;
+}
+
+/* CENTER CONTROLS */
+.vs-center {
+    width: 240px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    padding-top: 25px;
+    overflow-y: auto;
+    max-height: 100vh;
+    scrollbar-width: none;
+}
+.vs-center::-webkit-scrollbar { display: none; }
+
+.vs-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 10px;
+    padding: 8px 10px;
+    border: 2px solid rgba(255,255,255,0.15);
+    transition: all 0.3s;
+}
+.p1-controls { border-color: rgba(0,229,255,0.3); }
+.p2-controls { border-color: rgba(255,0,85,0.3); }
+
+.vs-info-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.vs-info-row .num { font-family: 'Bangers'; font-size: 1.3rem; color: #ffd700; }
+.vs-info-row .form-name { font-family: 'Bangers'; font-size: 1.2rem; color: white; }
+
+.vs-badge-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+.vs-badge-icon {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.vs-divider {
+    text-align: center;
+    font-family: 'Bangers', sans-serif;
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 2px 2px 0 #000;
+    margin: 2px 0;
+}
+
+/* Pick modal tweaks */
+.draft-pick-cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.draft-pick-card {
+    position: relative;
+    width: 140px;
+    height: 196px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+}
+.draft-pick-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+/* Slot clickable highlight when position-picking */
+.player-slot.slot-clickable .slot-empty {
+    animation: slotPulse 1.2s infinite;
+    cursor: pointer;
+}
+@keyframes slotPulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(255,215,0,0.3); }
+    50% { box-shadow: 0 0 20px rgba(255,215,0,0.8) !important; border-color: #ffd700 !important; }
+}
+
+/* --- SLOTS --- */
+.vs-pitch .player-slot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 196px;
+    z-index: 10;
+}
+.vs-pitch .slot-empty {
+    width: 115px !important;
+    height: 140px !important;
+    font-size: 1.8rem !important;
+    background-color: transparent !important;
+    border: none !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important; justify-content: center !important;
+    color: rgba(255,255,255,0.6) !important;
+}
+.vs-pitch .slot-empty::before {
+    background: repeating-conic-gradient(
+        from 0deg,
+        rgba(255, 255, 255, 0.15) 0deg 15deg,
+        rgba(255, 255, 255, 0.05) 15deg 30deg
+    ) !important;
+    display: block !important;
+}
+.vs-pitch .slot-empty .slot-pos {
+    font-family: 'Bangers' !important; font-size: 1.8rem !important; letter-spacing: 1px !important;
+    color: #fff !important; text-shadow: 0 0 5px #000 !important;
+}
+.vs-pitch .slot-empty .slot-add {
+    font-size: 3rem !important; font-weight: bold !important; margin-top: 5px !important;
+}
+.vs-pitch .slot-card, .draft-pick-card .slot-card {
+    position: absolute;
+    top: 0; left: 0;
+    width: 125px !important;
+    height: 175px !important;
+    transform: none !important;
+}
+
+/* Position label under card in VS pitch */
+.vs-pitch .slot-position-label {
+    position: relative;
+    margin-top: -18px;
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    z-index: 15;
+}
+
+/* Chem badge on vs pitch cards */
+.vs-pitch .slot-chem-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 0.7rem;
+    min-width: 26px;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 10px;
+}
