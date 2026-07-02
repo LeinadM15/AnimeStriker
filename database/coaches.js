@@ -476,5 +476,19 @@ const coachesDB = [
         image: "assets/characters/Farm/TurtleNewfield.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "team", team: "teams/Farm.png", amount: 2, chem: 2, condition: "A todos los jugadores del Farm" }
+    },
+    {
+        id: "coach_seth_nichols",
+        name: "SETH NICHOLS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "Entrenador",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Kirkwood.png",
+        image: "assets/characters/Kirkwood/SethNichols.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Kirkwood.png", amount: 2, chem: 2, condition: "A todos los jugadores del Kirkwood" }
     }
 ];
