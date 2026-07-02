@@ -5504,7 +5504,8 @@ const PLAYER_ALT_OVERRIDES = {
     "LENISTA":     ["CAM", "CM", "LW", "RW", "LM", "RM"],
     "XAVII":       ["CM", "CDM", "CAM"],
     "LESENBLINK":  ["LW", "RW", "LM", "RM", "ST", "CF"],
-    "LUIKAL":      ["CF", "ST", "CAM", "LW", "RW"]
+    "LUIKAL":      ["CF", "ST", "CAM", "LW", "RW"],
+    "REO MIKAGE":  ["ST", "CAM", "LW", "RW", "LM", "RM", "CDM", "CB", "LB", "RB", "LWB", "RWB"]
 };
 
 // ==========================================

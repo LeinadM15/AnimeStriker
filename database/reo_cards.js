@@ -1,0 +1,10 @@
+// database/reo_cards.js
+const reoCards = [
+    { id: "reo_oro", name: "REO MIKAGE", version: "Oro", rarity: "Oro", rating: 86, position: "CM", league: "Premier League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Arsenal.png", image: "assets/characters/Reo/ReoOro.png", background: "assets/Cartas/Oro.png" },
+    { id: "reo_nagi", name: "REO MIKAGE", version: "Morado", rarity: "Especial", rating: 88, position: "CM", league: "BluLock", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/BluLock.png", image: "assets/characters/Reo/ReoNagi.png", background: "assets/Cartas/Morado.png" },
+    { id: "reo_cham", name: "REO MIKAGE", version: "FutureStar", rarity: "Especial", rating: 91, position: "CB", league: "BluLock", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/BluLock.png", image: "assets/characters/Reo/ReoCham.png", background: "assets/Cartas/FutureStar.png" },
+    { id: "reo_dragon", name: "REO MIKAGE", version: "Flashback", rarity: "Especial", rating: 90, position: "CM", league: "Premier League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Arsenal.png", image: "assets/characters/Reo/ReoDragon.png", background: "assets/Cartas/Flashback.png" },
+    { id: "reo_manshine", name: "REO MIKAGE", version: "Manshine", rarity: "Especial", rating: 90, position: "CM", league: "Premier League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Manshine.png", image: "assets/characters/Reo/ReoManshine.png", background: "assets/Cartas/Manshine.png" },
+    { id: "reo_copia", name: "REO MIKAGE", version: "SBC", rarity: "Especial", rating: 92, position: "CM", league: "Premier League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Manshine.png", image: "assets/characters/Reo/ReoCopia.png", background: "assets/Cartas/SBC.png" },
+    { id: "reo_prime", name: "REO MIKAGE", version: "Joker", rarity: "Especial", rating: 92, position: "CM", league: "Premier League", nationFlag: "https://flagcdn.com/w40/jp.png", teamIcon: "teams/Arsenal.png", image: "assets/characters/Reo/ReoPrime.png", background: "assets/Cartas/Joker.png" }
+];
