@@ -1609,6 +1609,20 @@ const nathanCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
+        id: "peter_drent_imperial",
+        name: "PETER DRENT",
+        version: "Imperial",
+        rarity: "Especial",
+        rating: 80,
+        position: "CB",
+        secondaryPositions: ["RB"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/Drent.png",
+        background: "assets/Cartas/Imperial.png"
+    },
+    {
         id: "ben_simmons_oro",
         name: "BEN SIMMONS",
         version: "Oro",
@@ -1637,6 +1651,20 @@ const nathanCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
+        id: "alan_master_imperial",
+        name: "ALAN MASTER",
+        version: "Imperial",
+        rarity: "Especial",
+        rating: 80,
+        position: "CDM",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/Master.png",
+        background: "assets/Cartas/Imperial.png"
+    },
+    {
         id: "gus_martin_oro",
         name: "GUS MARTIN",
         version: "Oro",
@@ -1663,6 +1691,20 @@ const nathanCards = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/HermanWaldon.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "herman_waldon_imperial",
+        name: "HERMAN WALDON",
+        version: "Imperial",
+        rarity: "Especial",
+        rating: 80,
+        position: "CM",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/Waldon.png",
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "john_bloom_oro",
@@ -1705,6 +1747,20 @@ const nathanCards = [
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/DanielHatch.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "daniel_hatch_imperial",
+        name: "DANIEL HATCH",
+        version: "Imperial",
+        rarity: "Especial",
+        rating: 84,
+        position: "ST",
+        secondaryPositions: [],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Royal.png",
+        image: "assets/characters/Royal/Hatch.png",
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "bob_carlton_oro",
