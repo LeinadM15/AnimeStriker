@@ -462,5 +462,19 @@ const coachesDB = [
         image: "assets/characters/Shuriken/SammyIgajima.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "team", team: "teams/Shuriken.png", amount: 2, chem: 2, condition: "A todos los jugadores del Shuriken" }
+    },
+    {
+        id: "coach_turtle_newfield",
+        name: "TURTLE NEWFIELD",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "Entrenador",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Farm.png",
+        image: "assets/characters/Farm/TurtleNewfield.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Farm.png", amount: 2, chem: 2, condition: "A todos los jugadores del Farm" }
     }
 ];
