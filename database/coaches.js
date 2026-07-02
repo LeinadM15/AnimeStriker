@@ -435,4 +435,32 @@ const coachesDB = [
         background: "assets/Cartas/Oro.png",
         boost: { type: "team", team: "teams/Brain.png", amount: 2, chem: 2, condition: "A todos los jugadores del Brain" }
     },
+    {
+        id: "coach_manny_artic",
+        name: "MANNY ARTIC",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "Entrenador",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Otaku.png",
+        image: "assets/characters/Otaku/MannyArtic.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Otaku.png", amount: 2, chem: 2, condition: "A todos los jugadores del Otaku" }
+    },
+    {
+        id: "coach_sammy_igajima",
+        name: "SAMMY IGAJIMA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "Entrenador",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Shuriken.png",
+        image: "assets/characters/Shuriken/SammyIgajima.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Shuriken.png", amount: 2, chem: 2, condition: "A todos los jugadores del Shuriken" }
+    }
 ];
