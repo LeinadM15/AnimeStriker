@@ -1,6 +1,20 @@
 // database/coaches.js
 
 const coachesDB = [
+    {
+        id: "coach_byron_love",
+        name: "BYRON LOVE",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 87,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Zeus.png",
+        image: "assets/characters/Zeus/ByronLoveEnt.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "boost", condition: "A todos los jugadores de Corea y Kirkwood" }
+    },
     
     {
         id: "coach_sturbin",
