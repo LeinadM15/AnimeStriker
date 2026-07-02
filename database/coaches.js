@@ -420,9 +420,7 @@ const coachesDB = [
         teamIcon: "teams/Wild.png",
         image: "assets/characters/Wild/HarrySavage.png",
         background: "assets/Cartas/Oro.png"
-    }
-
-
+    },
     {
         id: "coach_newton_thomas",
         name: "NEWTON THOMAS",
