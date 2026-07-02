@@ -423,4 +423,18 @@ const coachesDB = [
     }
 
 
+    {
+        id: "coach_newton_thomas",
+        name: "NEWTON THOMAS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "Entrenador",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Brain.png",
+        image: "assets/characters/Brain/NewtonThomas.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Brain.png", amount: 2, chem: 2, condition: "A todos los jugadores del Brain" }
+    },
 ];
