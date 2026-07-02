@@ -967,7 +967,7 @@ const nathanCards = [
     {
         id: "king_if",
         name: "JOSEPH KING",
-        version: "If",
+        version: "Imperial",
         rarity: "Especial",
         rating: 86,
         position: "GK",
@@ -976,7 +976,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/King/King.png",
-        background: "assets/Cartas/If.png"
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "king_redux_oro",
@@ -2325,7 +2325,7 @@ const nathanCards = [
     {
         id: "dracon_yale_prime",
         name: "DRACON YALE",
-        version: "Brasil",
+        version: "Imperial",
         rarity: "Especial",
         rating: 89,
         position: "CB",
@@ -2334,7 +2334,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/DrakonYalePrime.png",
-        background: "assets/Cartas/Brasil.png"
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "dracon_yale_tots",
@@ -2451,7 +2451,7 @@ const nathanCards = [
     {
         id: "david_samford_ar",
         name: "DAVID SAMFORD",
-        version: "Trophy",
+        version: "Imperial",
         rarity: "Especial",
         rating: 88,
         position: "ST",
@@ -2460,7 +2460,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/DavidSamfordAr.png",
-        background: "assets/Cartas/Trophy.png"
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "grotley_bogwash_oro",
@@ -2535,7 +2535,7 @@ const nathanCards = [
     {
         id: "preston_princeton",
         name: "PRESTON PRINCETON",
-        version: "If",
+        version: "Imperial",
         rarity: "Especial",
         rating: 86,
         position: "GK",
@@ -2544,7 +2544,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/PrestonPrinceton.png",
-        background: "assets/Cartas/If.png"
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "caleb_stonewall_oro",
@@ -2577,7 +2577,7 @@ const nathanCards = [
     {
         id: "caleb_stonewall_pen",
         name: "CALEB STONEWALL",
-        version: "Trophy",
+        version: "Imperial",
         rarity: "Especial",
         rating: 88,
         position: "CDM",
@@ -2586,7 +2586,7 @@ const nathanCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Royal.png",
         image: "assets/characters/Royal/CalebStonewallPen.png",
-        background: "assets/Cartas/Trophy.png"
+        background: "assets/Cartas/Imperial.png"
     },
     {
         id: "caleb_stonewall_pat",
