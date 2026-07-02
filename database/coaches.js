@@ -132,7 +132,7 @@ const coachesDB = [
     {
         id: "coach_gallop",
         name: "GALLOP",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -145,7 +145,7 @@ const coachesDB = [
     {
         id: "coach_kira",
         name: "KIRA",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 84,
         position: "COACH",
@@ -184,7 +184,7 @@ const coachesDB = [
     {
         id: "coach_mark_evans",
         name: "MARK EVANS",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -197,7 +197,7 @@ const coachesDB = [
     {
         id: "coach_jude_sharp",
         name: "JUDE SHARP",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -210,7 +210,7 @@ const coachesDB = [
     {
         id: "coach_kevin",
         name: "KEVIN DRAGONFLY",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -223,7 +223,7 @@ const coachesDB = [
     {
         id: "coach_fortnumpile",
         name: "FORTNUM PILE",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 80,
         position: "COACH",
@@ -236,7 +236,7 @@ const coachesDB = [
     {
         id: "coach_alex_zabel",
         name: "ALEX ZABEL",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -249,7 +249,7 @@ const coachesDB = [
     {
         id: "coach_david_samford_en",
         name: "DAVID SAMFORD",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -262,7 +262,7 @@ const coachesDB = [
     {
         id: "coach_ray_dark",
         name: "RAY DARK",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -275,7 +275,7 @@ const coachesDB = [
     {
         id: "coach_stephen_black",
         name: "STEPHEN BLACK",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -288,7 +288,7 @@ const coachesDB = [
     {
         id: "coach_percival_travis",
         name: "PERCIVAL TRAVIS",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -301,7 +301,7 @@ const coachesDB = [
     {
         id: "coach_dolph_hensen",
         name: "DOLPH HENSEN",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -314,7 +314,7 @@ const coachesDB = [
     {
         id: "coach_grant_grimoire",
         name: "GRANT GRIMOIRE",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -327,7 +327,7 @@ const coachesDB = [
     {
         id: "coach_robert_cliser",
         name: "ROBERT CLISER",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 85,
         position: "COACH",
@@ -341,7 +341,7 @@ const coachesDB = [
 {
         id: "coach_aaron_adams",
         name: "AARON ADAMS",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 87,
         position: "COACH",
@@ -354,7 +354,7 @@ const coachesDB = [
 {
         id: "coach_david_arrows",
         name: "DAVID ARROWS",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 87,
         position: "COACH",
@@ -367,7 +367,7 @@ const coachesDB = [
 {
         id: "coach_mister_yi",
         name: "MISTER YI",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 87,
         position: "COACH",
@@ -380,7 +380,7 @@ const coachesDB = [
     {
         id: "coach_roberto_hongo_br",
         name: "ROBERTO HONGO",
-        version: "Entrenador",
+        version: "Entrenador (Oro)",
         rarity: "Coach",
         rating: 81,
         league: "",
@@ -427,7 +427,7 @@ const coachesDB = [
         version: "Oro",
         rarity: "Oro",
         rating: 83,
-        position: "Entrenador",
+        position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Brain.png",
@@ -441,7 +441,7 @@ const coachesDB = [
         version: "Oro",
         rarity: "Oro",
         rating: 81,
-        position: "Entrenador",
+        position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Otaku.png",
@@ -455,7 +455,7 @@ const coachesDB = [
         version: "Oro",
         rarity: "Oro",
         rating: 81,
-        position: "Entrenador",
+        position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Shuriken.png",
@@ -469,7 +469,7 @@ const coachesDB = [
         version: "Oro",
         rarity: "Oro",
         rating: 81,
-        position: "Entrenador",
+        position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Farm.png",
@@ -483,7 +483,7 @@ const coachesDB = [
         version: "Oro",
         rarity: "Oro",
         rating: 81,
-        position: "Entrenador",
+        position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Kirkwood.png",
