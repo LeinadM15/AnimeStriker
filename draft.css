@@ -641,3 +641,19 @@
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* Abuelo card */
+.difficulty-card.abuelo {
+    border-color: rgba(255, 0, 0, 0.2);
+}
+.difficulty-card.abuelo::before {
+    background: linear-gradient(135deg, #d50000, #ff1744);
+}
+.difficulty-card.abuelo:hover {
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 12px 40px rgba(255, 0, 0, 0.2);
+}
+.difficulty-card.abuelo .diff-subtitle {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff5252;
+}

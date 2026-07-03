@@ -1640,6 +1640,7 @@ window.startTournament = function(type) {
     if (type === 'liga') tourney = createLigaTournament(playerDraftSquad);
     else if (type === 'champions') tourney = createChampionsBracket(playerDraftSquad);
     else if (type === 'mundial') tourney = createMundialBracket(playerDraftSquad);
+    else if (type === 'abuelo') tourney = createAbueloBracket(playerDraftSquad);
     
     if (typeof saveTournament === 'function') {
         saveTournament(tourney);

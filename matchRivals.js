@@ -87,6 +87,16 @@ const NATIONAL_TEAMS = [
 ];
 
 // ==========================================
+
+// ==========================================
+// ABUELO TEAMS (for Infernal mode)
+// ==========================================
+
+const ABUELO_TEAMS = [
+    // To be populated later
+    { name: 'EQUIPO INFERNAL 1', badge: 'teams/Raimon.png', league: 'Desconocido', teamIcon: 'teams/Raimon.png' }
+];
+
 // LIGA TEAMS (weaker/mixed for Easy mode)
 // ==========================================
 
@@ -1225,4 +1235,32 @@ function shuffleTourneyArray(arr) {
         var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
     }
     return a;
+}
+
+function createAbueloBracket(playerDraftSquad) {
+    let allTeams = [...ABUELO_TEAMS];
+    // Fill until 32 teams using duplicates if necessary for now
+    while(allTeams.length < 32) {
+        allTeams.push(allTeams[allTeams.length % ABUELO_TEAMS.length]);
+    }
+    // Shuffle
+    for (let i = allTeams.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allTeams[i], allTeams[j]] = [allTeams[j], allTeams[i]];
+    }
+    
+    // Pick 31 opponents
+    allTeams = allTeams.slice(0, 31);
+    
+    // The player's team is "Mi Equipo"
+    const myTeam = { name: 'MI EQUIPO', badge: 'assets/Cartas/Oro.png', isPlayer: true };
+    allTeams.push(myTeam);
+    
+    // Shuffle again so player is in random position
+    for (let i = allTeams.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allTeams[i], allTeams[j]] = [allTeams[j], allTeams[i]];
+    }
+    
+    return _createBracket(allTeams, 'abuelo');
 }
