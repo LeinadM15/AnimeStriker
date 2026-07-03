@@ -1,7 +1,7 @@
 const saeCards = [
     {
         id: 'sae_oro',
-        name: 'SAE',
+        name: 'ITOSHISAE',
         version: 'Oro',
         rarity: 'Oro',
         rating: 88,
@@ -14,7 +14,7 @@ const saeCards = [
     },
     {
         id: 'sae_real',
-        name: 'SAE',
+        name: 'ITOSHI SAE',
         version: 'Real',
         rarity: 'Real',
         rating: 90,
@@ -27,7 +27,7 @@ const saeCards = [
     },
     {
         id: 'sae_chicle',
-        name: 'SAE',
+        name: 'ITOSHI SAE',
         version: 'Chicle',
         rarity: 'Chicle',
         rating: 91,
@@ -40,7 +40,7 @@ const saeCards = [
     },
     {
         id: 'sae_flashback',
-        name: 'SAE',
+        name: 'ITOSHI SAE',
         version: 'Flashback',
         rarity: 'Flashback',
         rating: 93,
@@ -53,7 +53,7 @@ const saeCards = [
     },
     {
         id: 'sae_futurestar',
-        name: 'SAE',
+        name: 'ITOSHI SAE',
         version: 'FutureStar',
         rarity: 'FutureStar',
         rating: 94,
