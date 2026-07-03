@@ -69,13 +69,26 @@ const riccardoCards = [
         name: 'RICCARDO DI RIGO',
         version: 'Magister 2',
         rarity: 'Inter',
-        rating: 90,
+        rating: 89,
         position: 'CM',
         league: 'Serie A',
         nationFlag: 'https://flagcdn.com/w40/jp.png',
         teamIcon: 'teams/Inter.png',
         image: 'assets/characters/Riccardo/RiccardoMagister2.png',
         background: 'assets/Cartas/Inter.png'
+    },
+    {
+        id: 'riccardo_earth',
+        name: 'RICCARDO DI RIGO',
+        version: 'Earth',
+        rarity: 'Especial',
+        rating: 91,
+        position: 'CM',
+        league: 'Serie A',
+        nationFlag: 'https://flagcdn.com/w40/jp.png',
+        teamIcon: 'teams/Inter.png',
+        image: 'assets/characters/Riccardo/RiccardoEarth.png',
+        background: 'assets/backgrounds/Fondo_Riccardo.jpeg'
     },
     {
         id: 'riccardo_nobumix',
