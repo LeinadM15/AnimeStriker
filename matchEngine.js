@@ -1821,9 +1821,10 @@ class MatchEngine {
                 if (barPct <= 0) {
                     // Bar empty: always goal
                     result.saved = false;
-                } else if (barPct > 0.8) {
+                } else if (barPct > 0.6) {
                     // High bar: very hard to score
-                    const saveBoost = 1.0 + barPct * 0.4;
+                    // Boost ranges from x1.2 (at 60%) to x2.0 (at 100%)
+                    const saveBoost = 1.0 + (barPct * 1.0);
                     if (result.savePower * saveBoost >= result.shotPower) {
                         result.saved = true;
                         if (gkAction === 'DESPEJE') result.despeje = true;
