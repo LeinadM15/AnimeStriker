@@ -1796,21 +1796,34 @@ class MatchEngine {
 
         // --- GK STAMINA BAR SYSTEM ---
         if (typeof gk.gkStaminaBar === 'number') {
-            // Ultra save chance: 5% normally, 20% for AI GK in Abuelo mode
             const isAIGK = gk.side !== this.playerSide;
+
+            // Direct break chance (goal bypass)
+            let breakChance = 0;
+            if (this.matchType === 'abuelo') {
+                breakChance = isAIGK ? 0.20 : 0.05; // 20% chance to break AI GK, 5% to break player GK
+            }
+            const isBreak = Math.random() < breakChance;
+
+            // Ultra save chance
             let ultraChance = 0.05;
             if (this.matchType === 'abuelo' && isAIGK) ultraChance = 0.20;
             const ultraSave = Math.random() < ultraChance;
-            if (ultraSave) {
+
+            if (isBreak) {
+                result.saved = false;
+                result.isBreak = true;
+                this._logEvent('goal_break', `¡¡¡TIRO IMPARABLE!!! El chute de ${shooter.card.name} rompe la defensa de ${gk.card.name}`);
+            } else if (ultraSave) {
                 result.saved = true;
                 result.ultraSave = true;
                 if (gkAction === 'DESPEJE') result.despeje = true;
                 result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
                 this._logEvent('ultra_save', `¡¡¡ULTRA PARADA de ${gk.card.name}!!! ¡Parada milagrosa!`);
             } else {
-                // Calculate shot damage to bar (more aggressive)
+                // Calculate shot damage to bar (faster base drain, scales down with distance)
                 const shotStr = result.shotPower || 50;
-                let damage = Math.max(15, Math.round(shotStr * 0.40));
+                let damage = Math.max(15, Math.round(shotStr * 0.50 * distancePenalty));
                 // Abuelo AI GK: bar drains slower
                 if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(8, Math.round(damage * 0.6));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
@@ -1844,6 +1857,9 @@ class MatchEngine {
 
         if (!result.saved) {
             // GOAL!
+            if (typeof gk.gkStaminaBar === 'number') {
+                gk.gkStaminaBar = gk.gkStaminaBarMax; // Refill stamina on goal
+            }
             this.score[this.possession]++;
             shooter.goals++;
             this._logEvent('goal', `¡¡¡GOOOL!!! ${shooter.card.name} marca!`);
