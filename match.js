@@ -70,7 +70,7 @@
             playerIsHome ? homeInfo : awayInfo,
             playerIsHome ? awayInfo : homeInfo,
             tournament.type,
-            playerIsHome ? 'home' : 'away'
+            'home'
         );
         engine.autoMode = autoMode;
         engine.isKnockout = (tournament && tournament.type !== 'liga');
