@@ -95,7 +95,8 @@ const NATIONAL_TEAMS = [
 const ABUELO_TEAMS = [
     { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
     { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' },
-    { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' }
+    { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' },
+    { name: 'GETAFE', badge: 'teams/Getafe.png', league: 'Infernal', teamIcon: 'teams/Getafe.png', exactSquad: 'GETAFE' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -193,6 +194,16 @@ const PREDEFINED_ABUELO_SQUADS = {
             'mark_azura', 'nathan_toty', 'gabi_prime', 'akai_toty', 'ishizaki_mun',
             'matsuyama_tots', 'reo_copia', 'kaltz_fondo1', 'aoi_shingo_custom2',
             'kevin_legen', 'kunigami_dortmund_88'
+        ],
+        bench: []
+    },
+    'GETAFE': {
+        formation: '5-3-1-1 (Defensiva)',
+        coach: null,
+        pitch: [
+            'muller_custom', 'soda_makoto_toty', 'jito_mun', 'dada_2', 'garcia_shapesifters',
+            'bunnaak_chicorid', 'raichi_prime', 'xiao_bastard', 'caleb_stonewall_leg',
+            'levin_bastard', 'napoleon_fran'
         ],
         bench: []
     }
