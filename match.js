@@ -134,7 +134,7 @@
         };
 
         engine.onDuelEnd = function() { renderPitch(); updateBall(); };
-        engine.onShotResult = function() { renderPitch(); updateBall(); };
+        engine.onShotResult = function() { renderPitch(); updateBall(); updateGKBars(); };
 
         renderScoreboard(playerIsHome ? homeInfo : awayInfo, playerIsHome ? awayInfo : homeInfo);
         renderPitch();
@@ -589,7 +589,36 @@
         document.getElementById('home-score').textContent = engine.score.home;
         document.getElementById('away-score').textContent = engine.score.away;
 
+        updateGKBars();
         updateLiveMatchesMinute();
+    }
+
+    function updateGKBars() {
+        if (!engine) return;
+        var st = engine.getState();
+        var homeGK = st.home.players.find(function(p) { return p && p.isGK; });
+        var awayGK = st.away.players.find(function(p) { return p && p.isGK; });
+
+        if (homeGK && typeof homeGK.gkStaminaBar === 'number') {
+            var pct = Math.round((homeGK.gkStaminaBar / homeGK.gkStaminaBarMax) * 100);
+            var bar = document.getElementById('home-gk-bar');
+            var label = document.getElementById('home-gk-name');
+            if (bar) {
+                bar.style.width = pct + '%';
+                bar.className = 'gk-bar-fill' + (pct < 20 ? ' low' : pct < 50 ? ' medium' : '');
+            }
+            if (label) label.textContent = homeGK.card.name;
+        }
+        if (awayGK && typeof awayGK.gkStaminaBar === 'number') {
+            var pct2 = Math.round((awayGK.gkStaminaBar / awayGK.gkStaminaBarMax) * 100);
+            var bar2 = document.getElementById('away-gk-bar');
+            var label2 = document.getElementById('away-gk-name');
+            if (bar2) {
+                bar2.style.width = pct2 + '%';
+                bar2.className = 'gk-bar-fill' + (pct2 < 20 ? ' low' : pct2 < 50 ? ' medium' : '');
+            }
+            if (label2) label2.textContent = awayGK.card.name;
+        }
     }
 
     function toggleSpeed() {
@@ -1076,6 +1105,7 @@
             ov.classList.add('hidden'); 
             renderPitch(); 
             updateBall(); 
+            updateGKBars();
             if (engine) engine.isPaused = false;
         }, 2500);
     }

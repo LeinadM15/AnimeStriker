@@ -169,7 +169,7 @@ class MatchEngine {
                 }
             }
 
-            players.push({
+            const playerObj = {
                 index: i,
                 card: card,
                 stats: stats,
@@ -187,7 +187,15 @@ class MatchEngine {
                 injured: false,
                 goals: 0,
                 assists: 0
-            });
+            };
+            // GK stamina bar: based on DIV stat. Higher DIV = bigger bar
+            if (isGK) {
+                const div = stats.DIV || 50;
+                const gkBarMax = Math.round(50 + div * 1.5);
+                playerObj.gkStaminaBar = gkBarMax;
+                playerObj.gkStaminaBarMax = gkBarMax;
+            }
+            players.push(playerObj);
         }
 
         // Build bench with stats
@@ -199,7 +207,7 @@ class MatchEngine {
             const isGK = card.position === 'GK';
             const stats = isGK ? generateGKStats(card) : generatePlayerStats(card);
             const maxStamina = getStaminaMax(stats);
-            benchPlayers.push({
+            const benchObj = {
                 index: 11 + i,
                 card: card,
                 stats: stats,
@@ -214,7 +222,14 @@ class MatchEngine {
                 injured: false,
                 goals: 0,
                 assists: 0
-            });
+            };
+            if (isGK) {
+                const div = stats.DIV || 50;
+                const gkBarMax = Math.round(50 + div * 1.5);
+                benchObj.gkStaminaBar = gkBarMax;
+                benchObj.gkStaminaBarMax = gkBarMax;
+            }
+            benchPlayers.push(benchObj);
         }
 
         return {
@@ -1780,14 +1795,36 @@ class MatchEngine {
             useSpecialShooter, useSpecialGK, distancePenalty, blockPenalty, aiBonus
         );
 
-        // --- ABUELO INFERNAL MODE GK BUFF ---
-        if (this.matchType === 'abuelo' && !isAIShooter) {
-            // Player is shooting, AI is GK
-            // GK saves way more often
-            if (Math.random() < 0.70) {
+        // --- GK STAMINA BAR SYSTEM ---
+        if (typeof gk.gkStaminaBar === 'number') {
+            // 5% ultra save chance — always available, doesn't drain bar
+            const ultraSave = Math.random() < 0.05;
+            if (ultraSave) {
                 result.saved = true;
+                result.ultraSave = true;
                 if (gkAction === 'DESPEJE') result.despeje = true;
                 result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
+                this._logEvent('ultra_save', `¡¡¡ULTRA PARADA de ${gk.card.name}!!! ¡Parada milagrosa!`);
+            } else if (gk.gkStaminaBar <= 0) {
+                // Bar depleted: always goal
+                result.saved = false;
+            } else {
+                // Calculate shot damage to bar
+                const shotStr = result.shotPower || 50;
+                const gkStr = result.savePower || 50;
+                const damage = Math.max(5, Math.round((shotStr - gkStr * 0.6) * 0.5));
+                gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
+                // With high bar, boost save power proportionally
+                const barPct = gk.gkStaminaBar / gk.gkStaminaBarMax;
+                if (barPct > 0.8) {
+                    // High bar: much harder to score, re-roll with GK advantage
+                    const saveBoost = 1.0 + barPct * 0.5; // up to 1.5x save power
+                    if (result.savePower * saveBoost >= result.shotPower) {
+                        result.saved = true;
+                        if (gkAction === 'DESPEJE') result.despeje = true;
+                        result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
+                    }
+                }
             }
         }
 

@@ -31,6 +31,31 @@
 .auto-btn.active { background:rgba(0,200,83,0.4); border-color:#69f0ae; box-shadow:0 0 10px rgba(0,200,83,0.3); animation:autoPulse 1.5s ease-in-out infinite; }
 @keyframes autoPulse { 0%,100% { box-shadow:0 0 8px rgba(0,200,83,0.3); } 50% { box-shadow:0 0 18px rgba(0,200,83,0.6); } }
 
+/* ---- GK STAMINA BARS ---- */
+.gk-stamina-bars {
+    display: flex; gap: 12px; align-items: center; justify-content: center;
+    padding: 4px 12px; margin-top: 2px;
+}
+.gk-bar-wrap {
+    display: flex; align-items: center; gap: 6px; flex: 1; max-width: 220px;
+}
+.gk-bar-wrap.away-gk { flex-direction: row-reverse; }
+.gk-bar-label {
+    font-family: var(--font-t); font-size: 0.6rem; color: rgba(255,255,255,0.8);
+    white-space: nowrap; min-width: 30px; text-align: center;
+}
+.gk-bar-track {
+    flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;
+    overflow: hidden; border: 1px solid rgba(255,255,255,0.15);
+}
+.gk-bar-fill {
+    height: 100%; border-radius: 3px; transition: width 0.4s ease;
+    background: linear-gradient(90deg, #00e676, #76ff03);
+}
+.gk-bar-fill.medium { background: linear-gradient(90deg, #ffab00, #ffd600); }
+.gk-bar-fill.low { background: linear-gradient(90deg, #ff1744, #ff5252); animation: gkBarPulse 0.8s ease-in-out infinite; }
+@keyframes gkBarPulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+
 /* ---- LAYOUT: panels + pitch ---- */
 .match-layout {
     flex:1; display:flex; align-items:stretch; gap:0;
