@@ -57,7 +57,7 @@ const sueciaCards = [
         name: "LEVIN",
         version: "Oro",
         rarity: "Oro",
-        rating: 87,
+        rating: 88,
         position: "CAM",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/se.png",

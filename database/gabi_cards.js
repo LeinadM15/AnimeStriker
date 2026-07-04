@@ -81,7 +81,7 @@ const gabiCards = [
         nationFlag: 'https://flagcdn.com/w40/jp.png',
         teamIcon: 'teams/Raimon.png',
         image: 'assets/characters/Gabi/GabiArm.png',
-        background: 'assets/Cartas/Azul.png'
+        background: 'assets/Cartas/Chicle.png'
     },
     {
         id: 'gabi_mix',

@@ -982,7 +982,7 @@ const hugoCards = [
         name: "HUGO",
         version: "Trailblazer",
         rarity: "Especial",
-        rating: 93,
+        rating: 94,
         position: "CM",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/fr.png",
