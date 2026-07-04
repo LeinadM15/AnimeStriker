@@ -190,7 +190,7 @@ const PREDEFINED_ABUELO_SQUADS = {
         formation: '4-1-3-2',
         coach: null,
         pitch: [
-            'mark_v', 'nathan_toty', 'gabi_prime', 'akai_toty', 'ishizaki_mun',
+            'mark_azura', 'nathan_toty', 'gabi_prime', 'akai_toty', 'ishizaki_mun',
             'matsuyama_tots', 'reo_copia', 'kaltz_fondo1', 'aoi_shingo_custom2',
             'kevin_legen', 'kunigami_dortmund_88'
         ],
