@@ -1716,9 +1716,8 @@ class MatchEngine {
         }
 
         const shootCost = useSpecialShooter ? STAMINA_COSTS.TECNICA_ESPECIAL : STAMINA_COSTS.CHUTE;
-        const gkCost = useSpecialGK ? STAMINA_COSTS.TECNICA_ESPECIAL : STAMINA_COSTS[gkAction];
         shooter.stamina = Math.max(0, shooter.stamina - shootCost);
-        gk.stamina = Math.max(0, gk.stamina - gkCost);
+        // GK does not use regular stamina anymore; they use the GK Stamina Bar which is drained by the shot itself
 
         const dist = Math.sqrt((shooter.x - (this.possession === 'home' ? 100 : 0))**2 + (shooter.y - 50)**2);
         let distancePenalty = 1.0;
@@ -1790,8 +1789,8 @@ class MatchEngine {
 
         const result = resolveShot(
             shooter.stats, gk.stats, gkAction,
-            shooter.stamina, gk.stamina,
-            shooter.maxStamina, gk.maxStamina,
+            shooter.stamina, typeof gk.gkStaminaBar === 'number' ? gk.gkStaminaBar : gk.stamina,
+            shooter.maxStamina, typeof gk.gkStaminaBarMax === 'number' ? gk.gkStaminaBarMax : gk.maxStamina,
             useSpecialShooter, useSpecialGK, distancePenalty, blockPenalty, aiBonus
         );
 
