@@ -1382,10 +1382,10 @@ class MatchEngine {
             const aiSide = this.playerSide === 'home' ? 'away' : 'home';
             if (carrier.side === aiSide) {
                 atkStats = { ...carrier.stats };
-                for (let k in atkStats) atkStats[k] *= 1.5;
+                for (let k in atkStats) atkStats[k] *= 1.25;
             } else if (defender.side === aiSide) {
                 defStats = { ...defender.stats };
-                for (let k in defStats) defStats[k] *= 1.5;
+                for (let k in defStats) defStats[k] *= 1.25;
             }
         }
 
@@ -1481,8 +1481,8 @@ class MatchEngine {
             let defVal = defender.stats.DEF * (defender.stamina / defender.maxStamina);
             if (this.matchType === 'abuelo') {
                 const aiSide = this.playerSide === 'home' ? 'away' : 'home';
-                if (carrier.side === aiSide) atkVal *= 1.5;
-                if (defender.side === aiSide) defVal *= 1.5;
+                if (carrier.side === aiSide) atkVal *= 1.25;
+                if (defender.side === aiSide) defVal *= 1.25;
             }
             const total = atkVal + defVal;
             
@@ -1537,8 +1537,8 @@ class MatchEngine {
             let defVal = interceptor.stats.DEF * (interceptor.stamina / interceptor.maxStamina);
             if (this.matchType === 'abuelo') {
                 const aiSide = this.playerSide === 'home' ? 'away' : 'home';
-                if (carrier.side === aiSide) atkVal *= 1.5;
-                if (interceptor.side === aiSide) defVal *= 1.5;
+                if (carrier.side === aiSide) atkVal *= 1.25;
+                if (interceptor.side === aiSide) defVal *= 1.25;
             }
             const total = atkVal + defVal;
             const rand = Math.random() * total;
