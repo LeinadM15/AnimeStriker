@@ -172,6 +172,180 @@
         <div class="difficulty-modal-content">
             <div class="draft-modal-title">ELIGE COMPETICIÓN</div>
             <div class="difficulty-options">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anime Strikers - Modo Draft">
+    <title>ANIME STRIKERS ⚽ - Draft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1783114252822">
+    <link rel="stylesheet" href="squad.css?v=1783114252822">
+    <link rel="stylesheet" href="draft.css?v=1783114252822">
+</head>
+<body>
+
+    <!-- Fixed BG -->
+    <div class="bg-fixed">
+        <img src="assets/FondoInazuma.png" alt="" class="bg-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" class="draft-back-btn">◀ VOLVER</a>
+
+    <div class="app draft-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <div class="left-sidebar draft-sidebar">
+
+            <!-- Coach Slot -->
+            <div class="coach-container">
+                <div class="box-label">ENTRENADOR</div>
+                <div class="player-slot" id="draft-coach-slot" style="position:relative; transform:scale(0.85); transform-origin: top center; left:auto; top:auto; margin: 0 auto; width: 150px; height: 210px;">
+                    <div class="slot-empty" style="width: 115px; height: 140px; font-size: 1.8rem; margin: 0 auto;">
+                        <span class="slot-add">+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chemistry / Rating -->
+            <div class="sidebar-box tactiques-box">
+                <div class="box-label">TÁCTICAS</div>
+                <div class="rating-info">
+                    <span class="info-label">VALORACIÓN</span>
+                    <span id="draft-rating-stars" class="stars">★★★★★</span>
+                    <span id="draft-rating-num" class="num">0</span>
+                </div>
+                <div class="chem-info">
+                    <span class="info-label">QUÍMICA</span>
+                    <div class="chem-bar">
+                        <div class="chem-fill" id="draft-chem-fill" style="width:0%"></div>
+                    </div>
+                    <span id="draft-chem-num" class="num">0</span>
+                </div>
+            </div>
+
+            <!-- Formation -->
+            <div class="sidebar-box formation-box">
+                <div class="box-label">FORMACIÓN</div>
+                <div class="formation-selector-new">
+                    <span class="form-name" id="draft-form-name">—</span>
+                </div>
+            </div>
+
+            <!-- Kit & Crest -->
+            <div class="bottom-boxes">
+                <div class="sidebar-box badge-box">
+                    <div class="box-label">ESCUDO</div>
+                    <div class="badge-icon" id="draft-badge-icon" style="background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
+                </div>
+                <div class="sidebar-box kit-box">
+                    <div class="box-label">EQUIPACIÓN</div>
+                    <div class="kit-icon" id="draft-kit-icon" style="background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
+                </div>
+            </div>
+
+
+
+            <!-- Save / Reset / Play -->
+            <button class="squad-btn draft-save-btn" id="draft-save-btn" style="display:none;">💾 GUARDAR</button>
+            <button class="squad-btn draft-play-btn" id="draft-play-btn" style="display:none;">⚽ JUGAR</button>
+            <button class="squad-btn clear-btn" id="draft-reset-btn">🔄 NUEVO DRAFT</button>
+        </div>
+
+        <!-- CENTER PITCH -->
+        <div class="center-pitch">
+            <div class="pitch-container">
+                <div class="pitch" id="draft-pitch">
+                    <!-- Pitch markings -->
+                    <div class="pitch-markings">
+                        <div class="pitch-center-dot"></div>
+                        <div class="pitch-goal-top"></div>
+                        <div class="pitch-goal-bottom"></div>
+                        <div class="pitch-penalty-top"></div>
+                        <div class="pitch-penalty-bottom"></div>
+                    </div>
+                    <!-- Chemistry lines SVG overlay -->
+                    <svg id="draft-chemistry-lines" class="chemistry-lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+                    <!-- Player slots injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANELS -->
+        <div class="draft-right-panels">
+            <!-- Suplentes -->
+            <div class="draft-panel suplentes-panel">
+                <div class="box-label">SUPLENTES</div>
+                <div class="bench-slots" id="draft-bench">
+                    <!-- 7 bench slots injected by JS -->
+                </div>
+            </div>
+            <!-- Reservas -->
+            <div class="draft-panel reservas-panel">
+                <div class="box-label">RESERVAS</div>
+                <div class="bench-slots" id="draft-reserves">
+                    <!-- 5 reserve slots injected by JS -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== FORMATION PICK MODAL ===== -->
+    <div id="draft-formation-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-formation-modal-content">
+            <div class="draft-modal-title">ELIGE FORMACIÓN</div>
+            <div id="draft-formation-list" class="draft-formation-list">
+                <!-- 5 formation items injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PLAYER PICK MODAL ===== -->
+    <div id="draft-pick-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-pick-modal-content">
+            <div id="draft-pick-title" class="draft-modal-title">ELIGE JUGADOR</div>
+            <div id="draft-pick-cards" class="draft-pick-cards">
+                <!-- 5 card options injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BADGE PICK MODAL ===== -->
+    <div id="draft-badge-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-badge-modal-content">
+            <div class="draft-modal-title">ELIGE ESCUDO</div>
+            <div id="draft-badge-list" class="draft-badge-list">
+                <!-- Badge items injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== KIT PICK MODAL ===== -->
+    <div id="draft-kit-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay"></div>
+        <div class="draft-kit-modal-content">
+            <div class="draft-modal-title">ELIGE EQUIPACIÓN</div>
+            <div id="draft-kit-list" class="draft-kit-list">
+                <!-- Kit items injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== DIFFICULTY SELECTION MODAL ===== -->
+    <div id="difficulty-modal" class="draft-modal hidden">
+        <div class="draft-modal-overlay" onclick="closeDifficultyModal()"></div>
+        <div class="difficulty-modal-content">
+            <div class="draft-modal-title">ELIGE COMPETICIÓN</div>
+            <div class="difficulty-options">
                 <div class="difficulty-card champions" onclick="startTournament('champions')">
                     <div class="diff-trophy">🏆</div>
                     <div class="diff-title">CHAMPIONS</div>
@@ -180,22 +354,22 @@
                 </div>
                 <div class="difficulty-card mundial" onclick="startTournament('mundial')">
                     <div class="diff-trophy">🌍</div>
+                    <div class="diff-title">MUNDIAL</div>
+                    <div class="diff-subtitle">Extremo</div>
+                    <div class="diff-desc">32 selecciones · Eliminatorias<br>Las mejores cartas por país</div>
+                </div>
                 <div class="difficulty-card abuelo" onclick="startTournament('abuelo')">
                     <div class="diff-trophy">🔥</div>
                     <div class="diff-title">CADENA DEL ABUELO</div>
                     <div class="diff-subtitle">Infernal</div>
                     <div class="diff-desc">Equipos Infernales<br>Las pruebas definitivas</div>
                 </div>
-                    <div class="diff-title">MUNDIAL</div>
-                    <div class="diff-subtitle">Extremo</div>
-                    <div class="diff-desc">32 selecciones · Eliminatorias<br>Las mejores cartas por país</div>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
-                        <script src="database/amoros_cards.js?v=1783154600000"></script>
+    <script src="database/amoros_cards.js?v=1783154600000"></script>
     <script src="database/argentina_cards.js?v=1783154600000"></script>
     <script src="database/bluelock_cards.js?v=1783154600000"></script>
     <script src="database/brain_cards.js?v=1783154600000"></script>
