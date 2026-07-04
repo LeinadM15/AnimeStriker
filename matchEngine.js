@@ -1808,28 +1808,35 @@ class MatchEngine {
                 if (gkAction === 'DESPEJE') result.despeje = true;
                 result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
                 this._logEvent('ultra_save', `¡¡¡ULTRA PARADA de ${gk.card.name}!!! ¡Parada milagrosa!`);
-            } else if (gk.gkStaminaBar <= 0) {
-                // Bar depleted: always goal
-                result.saved = false;
             } else {
-                // Calculate shot damage to bar
+                // Calculate shot damage to bar (more aggressive)
                 const shotStr = result.shotPower || 50;
                 const gkStr = result.savePower || 50;
-                let damage = Math.max(5, Math.round((shotStr - gkStr * 0.6) * 0.5));
-                // Abuelo AI GK: bar drains half as fast
-                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(3, Math.round(damage * 0.5));
+                let damage = Math.max(10, Math.round(shotStr * 0.25));
+                // Abuelo AI GK: bar drains slower
+                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(5, Math.round(damage * 0.6));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
-                // With high bar, boost save power proportionally
+
+                // Bar percentage directly affects save outcome
                 const barPct = gk.gkStaminaBar / gk.gkStaminaBarMax;
-                if (barPct > 0.8) {
-                    // High bar: much harder to score, re-roll with GK advantage
-                    const saveBoost = 1.0 + barPct * 0.5; // up to 1.5x save power
+                if (barPct <= 0) {
+                    // Bar empty: always goal
+                    result.saved = false;
+                } else if (barPct > 0.8) {
+                    // High bar: very hard to score
+                    const saveBoost = 1.0 + barPct * 0.4;
                     if (result.savePower * saveBoost >= result.shotPower) {
                         result.saved = true;
                         if (gkAction === 'DESPEJE') result.despeje = true;
                         result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
                     }
+                } else if (barPct < 0.3) {
+                    // Low bar: much easier to score, GK weakened
+                    if (result.saved && Math.random() > barPct + 0.1) {
+                        result.saved = false; // Override save → goal
+                    }
                 }
+                // Between 30%-80%: normal resolveShot result stands
             }
         }
 
