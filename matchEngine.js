@@ -1753,7 +1753,7 @@ class MatchEngine {
         let aiBonus = isAIShooter ? 1.4 : 1.0; // 40% boost to AI shot power
 
         if (this.matchType === 'abuelo' && isAIShooter) {
-            aiBonus = 3.0; // Infernal AI shooter buff
+            aiBonus = 2.0; // Infernal AI shooter buff
         }
 
         const result = resolveShot(

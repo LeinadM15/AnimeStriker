@@ -93,8 +93,8 @@ const NATIONAL_TEAMS = [
 // ==========================================
 
 const ABUELO_TEAMS = [
-    // To be populated later
-    { name: 'EQUIPO INFERNAL 1', badge: 'teams/Raimon.png', league: 'Desconocido', teamIcon: 'teams/Raimon.png' }
+    { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
+    { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -161,6 +161,57 @@ function buildClubSquad(teamInfo, difficulty) {
     available = available.filter(function(c) { return c.rating <= ratingCap; });
 
     return _fillSquad(available, difficulty);
+}
+
+
+const PREDEFINED_ABUELO_SQUADS = {
+    'REYES_DEL_TABLERO': {
+        formation: '3-4-2-1',
+        coach: null,
+        pitch: [
+            'gino_custom', 'owairan_shapesifter', 'niko_prime', 'misugi_custom1',
+            'hugo_rosa', 'riccardo_prime', 'karasu_pxg_87', 'sae_futurestar',
+            'jude_legen', 'heath_toty', 'snuffy_fenix'
+        ],
+        bench: []
+    },
+    'CABALLEROS_DE_LA_TABLA_REDONDA': {
+        formation: '4-5-1 (Ataque)',
+        coach: null,
+        pitch: [
+            'mark_cabeza', 'hurley_leg', 'michael_numancia_2', 'gen_normal', 'nathan_leg',
+            'rivaul_super', 'arg_maradona_icono', 'brazil_kaka_icono', 'por_cristiano_icono',
+            'messi_esp', 'noa_prime'
+        ],
+        bench: []
+    }
+};
+
+function buildExactAbueloSquad(exactId) {
+    if (typeof cardsDB === 'undefined') return null;
+    if (PREDEFINED_ABUELO_SQUADS[exactId]) {
+        const def = PREDEFINED_ABUELO_SQUADS[exactId];
+        let squad = new Array(11).fill(null);
+        let bench = [];
+        
+        def.pitch.forEach((id, idx) => {
+            let c = cardsDB.find(x => x.id === id);
+            if (!c) {
+                let matching = cardsDB.filter(x => x.name.toUpperCase() === id.toUpperCase());
+                if (matching.length > 0) c = matching.reduce((a,b) => a.rating > b.rating ? a : b);
+            }
+            if (c) squad[idx] = c;
+            else console.error('Missing card for predefined abuelo squad: ' + id);
+        });
+        
+        let coach = null;
+        if (def.coach && typeof coachesDB !== 'undefined') {
+            coach = coachesDB.find(x => x.id === def.coach);
+        }
+        
+        return { formation: def.formation, pitch: squad, bench: bench, coach: coach };
+    }
+    return null;
 }
 
 const PREDEFINED_NATIONAL_SQUADS = {
@@ -1166,6 +1217,11 @@ function simulateAIMatches(tournament) {
  */
 function buildOpponentSquad(opponentTeam, tournamentType) {
     if (!opponentTeam) return null;
+
+
+    if (tournamentType === 'abuelo' && opponentTeam.exactSquad) {
+        return buildExactAbueloSquad(opponentTeam.exactSquad);
+    }
 
     if (tournamentType === 'mundial' && opponentTeam.nationInfo) {
         return buildNationalSquad(opponentTeam.nationInfo);
