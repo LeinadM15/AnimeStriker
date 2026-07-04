@@ -10,7 +10,8 @@ const raichiCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/WerderBremen.png",
-        image: "assets/characters/Raichi/RaichiOro.png"
+        image: "assets/characters/Raichi/RaichiOro.png",
+        background: "assets/Cartas/Oro.png"
     },
     {
         id: "raichi_rojiazul",
@@ -23,7 +24,8 @@ const raichiCards = [
         league: "Blue Lock",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/BluLock.png",
-        image: "assets/characters/Raichi/RaichiBlu.png"
+        image: "assets/characters/Raichi/RaichiBlu.png",
+        background: "assets/Cartas/RojiAzul.png"
     },
     {
         id: "raichi_centurion",
@@ -36,7 +38,8 @@ const raichiCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/WerderBremen.png",
-        image: "assets/characters/Raichi/Raichi.png"
+        image: "assets/characters/Raichi/Raichi.png",
+        background: "assets/Cartas/Centurion.png"
     },
     {
         id: "raichi_bastard",
@@ -49,7 +52,8 @@ const raichiCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Bastard.png",
-        image: "assets/characters/Raichi/Raichiseg.png"
+        image: "assets/characters/Raichi/Raichiseg.png",
+        background: "assets/Cartas/Bastard.png"
     },
     {
         id: "raichi_prime",
@@ -62,6 +66,8 @@ const raichiCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/WerderBremen.png",
-        image: "assets/characters/Raichi/RaichiPrime.png"
+        image: "assets/characters/Raichi/RaichiPrime.png",
+        background: "assets/Cartas/Scream.png"
+
     }
 ];

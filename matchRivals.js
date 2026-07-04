@@ -201,9 +201,9 @@ const PREDEFINED_ABUELO_SQUADS = {
         formation: '5-3-1-1 (Defensiva)',
         coach: null,
         pitch: [
-            'muller_custom', 'soda_makoto_toty', 'jito_mun', 'dada_2', 'garcia_shapesifters',
-            'bunnaak_chicorid', 'raichi_prime', 'xiao_bastard', 'caleb_stonewall_leg',
-            'levin_bastard', 'napoleon_fran'
+            'muller_custom', 'soda_makoto_toty', 'jito_mun', 'dada_shape', 'garcia_shapesifters',
+            'bunnaak_chicorid', 'raichi_prime', 'xiao_prime', 'caleb_stonewall_leg',
+            'levin_suecia', 'napoleon_fran'
         ],
         bench: []
     }
