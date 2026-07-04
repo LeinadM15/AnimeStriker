@@ -1823,7 +1823,7 @@ class MatchEngine {
             } else {
                 // Calculate shot damage to bar (faster base drain, scales down with distance)
                 const shotStr = result.shotPower || 50;
-                let damage = Math.max(15, Math.round(shotStr * 0.50 * distancePenalty));
+                let damage = Math.max(15, Math.round(shotStr * 0.70 * distancePenalty));
                 // Abuelo AI GK: bar drains slower
                 if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(8, Math.round(damage * 0.6));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
