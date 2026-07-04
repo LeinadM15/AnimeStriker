@@ -1380,6 +1380,16 @@ class MatchEngine {
             useSpecialAttack, useSpecialDefense
         );
 
+        // --- ABUELO INFERNAL MODE BUFF ---
+        if (this.matchType === 'abuelo') {
+            const aiSide = this.playerSide === 'home' ? 'away' : 'home';
+            if (carrier.side === aiSide && Math.random() < 0.70) {
+                result.winner = 'attacker';
+            } else if (defender.side === aiSide && Math.random() < 0.70) {
+                result.winner = 'defender';
+            }
+        }
+
         if (cardGiven || (defenseAction === 'ENTRADA' && Math.random() < 0.15)) {
             this._logEvent('foul', `¡Falta de ${defender.card.name} sobre ${carrier.card.name}! Tiro libre.`);
             this.waitingForInput = false;
@@ -1739,8 +1749,12 @@ class MatchEngine {
         }
         // --- END BLOCK LOGIC ---
 
-        const isAIShooter = this.possession === 'away' || this.autoMode;
-        const aiBonus = isAIShooter ? 1.4 : 1.0; // 40% boost to AI shot power
+        const isAIShooter = this.possession !== this.playerSide || this.autoMode;
+        let aiBonus = isAIShooter ? 1.4 : 1.0; // 40% boost to AI shot power
+
+        if (this.matchType === 'abuelo' && isAIShooter) {
+            aiBonus = 3.0; // Infernal AI shooter buff
+        }
 
         const result = resolveShot(
             shooter.stats, gk.stats, gkAction,
@@ -1748,6 +1762,17 @@ class MatchEngine {
             shooter.maxStamina, gk.maxStamina,
             useSpecialShooter, useSpecialGK, distancePenalty, blockPenalty, aiBonus
         );
+
+        // --- ABUELO INFERNAL MODE GK BUFF ---
+        if (this.matchType === 'abuelo' && !isAIShooter) {
+            // Player is shooting, AI is GK
+            // GK saves way more often
+            if (Math.random() < 0.70) {
+                result.saved = true;
+                if (gkAction === 'DESPEJE') result.despeje = true;
+                result.ballDirection = Math.random() > 0.5 ? 'team' : 'rival';
+            }
+        }
 
         result.shooter = shooter;
         result.gk = gk;
