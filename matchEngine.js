@@ -900,6 +900,8 @@ class MatchEngine {
                         // Actually, just check distance
                         const distToBall = Math.sqrt((p.x - this.ballX)**2 + (p.y - this.ballY)**2);
                         if (distToBall < 2.5) {
+                            if (this.passer === p) continue; // passer cannot intercept their own pass
+
                             this.ballState = 'carried';
                             this.ballCarrier = p;
                             this.ballTarget = null;

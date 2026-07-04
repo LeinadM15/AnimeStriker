@@ -69,6 +69,7 @@ tsubasaAll.forEach(c => c._series = 'tsubasa');
 
 const bluelockAll = [
     ...isagiCards,
+    ...raichiCards,
     ...yukimiyaCards,
     ...karasuCards,
     ...nagiCards,
