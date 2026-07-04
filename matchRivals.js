@@ -77,7 +77,6 @@ const NATIONAL_TEAMS = [
     { name: 'EEUU',         badge: 'teams/EEUU.png',      flag: 'https://flagcdn.com/w40/us.png',  flagCode: 'us' },
     { name: 'ARABIA SAUDÍ', badge: 'teams/ArabiaSaudi.png', flag: 'https://flagcdn.com/w40/sa.png', flagCode: 'sa' },
     { name: 'CROACIA',      badge: 'teams/Raimon.png',      flag: 'https://flagcdn.com/w40/hr.png', flagCode: 'hr' },
-    { name: 'ÁFRICA',       badge: 'teams/Costademarfil.png', flag: 'https://flagcdn.com/w40/ci.png', flagCode: 'ci' },
     
     { name: 'SENEGAL',      badge: 'teams/Raimon.png',      flag: 'https://flagcdn.com/w40/sn.png', flagCode: 'sn' },
     { name: 'COLOMBIA',     badge: 'teams/Raimon.png',      flag: 'https://flagcdn.com/w40/co.png', flagCode: 'co' },
@@ -96,7 +95,8 @@ const ABUELO_TEAMS = [
     { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
     { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' },
     { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' },
-    { name: 'GETAFE', badge: 'teams/Getafe.png', league: 'Infernal', teamIcon: 'teams/Getafe.png', exactSquad: 'GETAFE' }
+    { name: 'GETAFE', badge: 'teams/Getafe.png', league: 'Infernal', teamIcon: 'teams/Getafe.png', exactSquad: 'GETAFE' },
+    { name: 'ÁFRICA', badge: 'teams/Costademarfil.png', league: 'Infernal', teamIcon: 'teams/Costademarfil.png', exactSquad: 'ÁFRICA' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -206,6 +206,33 @@ const PREDEFINED_ABUELO_SQUADS = {
             'levin_suecia', 'napoleon_fran'
         ],
         bench: []
+    },
+    'ÁFRICA': {
+        formation: '3-1-4-2',
+        coach: 'coach_david_evans',
+        pitch: [
+            'hector_helio_trailblaze',
+            'ismail_senghor',
+            'obabona_brasil',
+            'boban_brasil',
+            'moussa_diallo',
+            'ochado_brasil',
+            'bouba_mila_shapesifter',
+            'kuso_prime',
+            'salah_trueno',
+            'onazi_prime',
+            'raymond_chandler_trueno'
+        ],
+        bench: [
+            'agbim_brasil',
+            'berrand_traora_oro',
+            'kofi_tots',
+            'bello_brasil',
+            'nathan_tswane',
+            'jake_fana',
+            'walter_mountain',
+            'siyabonga_mahlangu'
+        ]
     }
 };
 
@@ -736,33 +763,6 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ],
         bench: [
             'ezekiel'
-        ]
-    },
-        'ÁFRICA': {
-        formation: '3-1-4-2',
-        coach: 'coach_david_evans',
-        pitch: [
-            'hector_helio_trailblaze',
-            'ismail_senghor',
-            'obabona_brasil',
-            'boban_brasil',
-            'moussa_diallo',
-            'ochado_brasil',
-            'bouba_mila_shapesifter',
-            'kuso_prime',
-            'salah_trueno',
-            'onazi_prime',
-            'raymond_chandler_trueno'
-        ],
-        bench: [
-            'agbim_brasil',
-            'berrand_traora_oro',
-            'kofi_tots',
-            'bello_brasil',
-            'nathan_tswane',
-            'jake_fana',
-            'walter_mountain',
-            'siyabonga_mahlangu'
         ]
     },
     'COSTA DE MARFIL': {
