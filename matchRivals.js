@@ -94,7 +94,8 @@ const NATIONAL_TEAMS = [
 
 const ABUELO_TEAMS = [
     { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
-    { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' }
+    { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' },
+    { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -182,6 +183,16 @@ const PREDEFINED_ABUELO_SQUADS = {
             'mark_cabeza', 'hurley_leg', 'michael_numancia_2', 'gen_normal', 'nathan_leg',
             'rivaul_super', 'arg_maradona_icono', 'brazil_kaka_icono', 'por_cristiano_icono',
             'messi_esp', 'noa_prime'
+        ],
+        bench: []
+    },
+    'LEGION_ESPARTANA': {
+        formation: '4-1-3-2',
+        coach: null,
+        pitch: [
+            'mark_v', 'nathan_toty', 'gabi_prime', 'akai_toty', 'ishizaki_mun',
+            'matsuyama_tots', 'reo_copia', 'kaltz_fondo1', 'aoi_shingo_custom2',
+            'kevin_legen', 'kunigami_dortmund_88'
         ],
         bench: []
     }
