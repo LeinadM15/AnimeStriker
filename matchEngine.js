@@ -1801,7 +1801,7 @@ class MatchEngine {
             // Direct break chance (goal bypass)
             let breakChance = 0;
             if (this.matchType === 'abuelo') {
-                breakChance = isAIGK ? 0.20 : 0.05; // 20% chance to break AI GK, 5% to break player GK
+                breakChance = isAIGK ? 0.05 : 0.20; // 5% chance to break AI GK, 20% chance to break player GK
             }
             const isBreak = Math.random() < breakChance;
 
