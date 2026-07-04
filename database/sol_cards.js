@@ -70,7 +70,7 @@ const solCards = [
         "nationFlag": "https://flagcdn.com/w40/jp.png",
         "teamIcon": "teams/ManchesterUnited.png",
         "image": "assets/characters/Sol/Solzhuge.png",
-        "background": "assets/Cartas/RojiAzul.png"
+        "background": "assets/Cartas/Morado.png"
     },
     {
         "id": "sol_espbase",
@@ -124,7 +124,7 @@ const solCards = [
         "nationFlag": "https://flagcdn.com/w40/jp.png",
         "teamIcon": "teams/Universal.png",
         "image": "assets/characters/Sol/SolLlama.png",
-        "background": "assets/Cartas/Flashback.png"
+        "background": "assets/Cartas/RojiAzul.png"
     },
     {
         "id": "sol_armor",
@@ -160,6 +160,6 @@ const solCards = [
         "nationFlag": "https://flagcdn.com/w40/jp.png",
         "teamIcon": "teams/ManchesterUnited.png",
         "image": "assets/characters/Sol/SolMixPrime.png",
-        "background": "assets/Cartas/Toty.png"
+        "background": "assets/Cartas/Trueno.png"
     }
 ];

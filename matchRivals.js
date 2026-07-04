@@ -64,7 +64,6 @@ const NATIONAL_TEAMS = [
     { name: 'ESPAÑA',       badge: 'teams/España.png',    flag: 'https://flagcdn.com/w40/es.png',  flagCode: 'es' },
     { name: 'INGLATERRA',   badge: 'teams/Inglaterra.png', flag: 'https://flagcdn.com/w40/gb-eng.png', flagCode: 'gb-eng' },
     { name: 'HOLANDA',      badge: 'teams/Ajax.png',      flag: 'https://flagcdn.com/w40/nl.png',  flagCode: 'nl' },
-    { name: 'SELECCIÓN MUNDIAL', badge: 'teams/SeleccionMundial.png', flag: 'https://flagcdn.com/w40/un.png',  flagCode: 'un' },
     { name: 'SUECIA',       badge: 'teams/Suecia.png',    flag: 'https://flagcdn.com/w40/se.png',  flagCode: 'se' },
     { name: 'DINAMARCA',    badge: 'teams/Kirkwood.png',  flag: 'https://flagcdn.com/w40/dk.png',  flagCode: 'dk' },
     { name: 'MÉXICO',       badge: 'teams/Wild.png',      flag: 'https://flagcdn.com/w40/mx.png',  flagCode: 'mx' },
@@ -92,6 +91,8 @@ const NATIONAL_TEAMS = [
 // ==========================================
 
 const ABUELO_TEAMS = [
+    { name: 'TOCADOS POR LA VARITA', badge: 'teams/Tocadosporlavarita.png', league: 'Infernal', teamIcon: 'teams/Tocadosporlavarita.png', exactSquad: 'TOCADOS_POR_LA_VARITA' },
+    { name: 'SELECCIÓN MUNDIAL', badge: 'teams/SeleccionMundial.png', league: 'Infernal', teamIcon: 'teams/SeleccionMundial.png', exactSquad: 'SELECCION_MUNDIAL' },
     { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
     { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' },
     { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' },
@@ -168,6 +169,43 @@ function buildClubSquad(teamInfo, difficulty) {
 
 
 const PREDEFINED_ABUELO_SQUADS = {
+    'TOCADOS_POR_LA_VARITA': {
+        formation: '3-1-4-2 (Ofensiva)',
+        coach: null,
+        pitch: [
+            'salinas', 'radungaesp', 'michael_numancia_2', 'misugi_custom1', 'byron_love_prime',
+            'diaz_prime2', 'tsu_mundial26', 'rivaul_super', 'naturezaprime', 'sol_mix_prime',
+            'nagi_manshine'
+        ],
+        bench: []
+    },
+    'SELECCION_MUNDIAL': {
+        formation: '3-2-2-3',
+        coach: 'coach_gallop',
+        pitch: [
+            'hector_helio_trailblaze',
+            'gen_normal',
+            'mark_cabeza',
+            'onazi_shapesifter',
+            'michael_numancia_2',
+            'owairan_shapesifter',
+            'snuffy_fenix',
+            'rivaul_super',
+            'noa_prime',
+            'por_cristiano_icono',
+            'messi_esp'
+        ],
+        bench: [
+            'chris_prince_prime',
+            'hino_custom',
+            'schneider_fondo1',
+            'aus_seth_tots',
+            'xiao_prime',
+            'raymond_chandler_trueno',
+            'hol_brian_mundial',
+            'bunnaak_chicorid'
+        ]
+    },
     'REYES_DEL_TABLERO': {
         formation: '3-4-2-1',
         coach: null,
@@ -409,33 +447,7 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'gary_mane_oro'
         ]
     },
-        'SELECCIÓN MUNDIAL': {
-        formation: '3-2-2-3',
-        coach: 'coach_gallop',
-        pitch: [
-            'hector_helio_trailblaze',
-            'gen_normal',
-            'mark_cabeza',
-            'onazi_shapesifter',
-            'michael_numancia_2',
-            'owairan_shapesifter',
-            'snuffy_fenix',
-            'rivaul_super',
-            'noa_prime',
-            'por_cristiano_icono',
-            'messi_esp'
-        ],
-        bench: [
-            'chris_prince_prime',
-            'hino_custom',
-            'schneider_fondo1',
-            'aus_seth_tots',
-            'xiao_prime',
-            'raymond_chandler_trueno',
-            'hol_brian_mundial',
-            'bunnaak_chicorid'
-        ]
-    },
+        
     'ARGENTINA': {
         formation: '4-5-1 (Ataque)',
         coach: 'coach_sturbin',
