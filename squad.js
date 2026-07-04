@@ -6665,16 +6665,18 @@ function renderFormationModal() {
         nameDiv.className = 'formation-item-name';
         nameDiv.textContent = fName;
 
-        div.appendChild(previewDiv);
-        div.appendChild(nameDiv);
-
         div.onclick = () => {
             currentFormation = fName;
             renderFormation();
             updateStats();
             drawChemistryLines();
             document.getElementById('formation-modal').classList.add('hidden');
+            saveCurrentSquadState();
+            saveSquad();
         };
+        div.appendChild(previewDiv);
+        div.appendChild(nameDiv);
+
         list.appendChild(div);
     });
 }
@@ -6734,6 +6736,8 @@ function setupFormationSelector() {
         renderFormation();
         updateStats();
         drawChemistryLines();
+        saveCurrentSquadState();
+        saveSquad();
     });
     
     if (rightBtn) rightBtn.addEventListener('click', (e) => {
@@ -6743,6 +6747,8 @@ function setupFormationSelector() {
         renderFormation();
         updateStats();
         drawChemistryLines();
+        saveCurrentSquadState();
+        saveSquad();
     });
 }
 
