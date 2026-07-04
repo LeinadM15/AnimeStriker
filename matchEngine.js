@@ -1374,23 +1374,28 @@ class MatchEngine {
             this._checkForInjury(carrier); // Attacker can get injured from tackle
         }
 
-        const result = resolveDuel(
-            attackAction, defenseAction,
-            carrier.stats, defender.stats,
-            carrier.stamina, defender.stamina,
-            carrier.maxStamina, defender.maxStamina,
-            useSpecialAttack, useSpecialDefense
-        );
+        let atkStats = carrier.stats;
+        let defStats = defender.stats;
 
         // --- ABUELO INFERNAL MODE BUFF ---
         if (this.matchType === 'abuelo') {
             const aiSide = this.playerSide === 'home' ? 'away' : 'home';
-            if (carrier.side === aiSide && Math.random() < 0.70) {
-                result.winner = 'attacker';
-            } else if (defender.side === aiSide && Math.random() < 0.70) {
-                result.winner = 'defender';
+            if (carrier.side === aiSide) {
+                atkStats = { ...carrier.stats };
+                for (let k in atkStats) atkStats[k] *= 1.5;
+            } else if (defender.side === aiSide) {
+                defStats = { ...defender.stats };
+                for (let k in defStats) defStats[k] *= 1.5;
             }
         }
+
+        const result = resolveDuel(
+            attackAction, defenseAction,
+            atkStats, defStats,
+            carrier.stamina, defender.stamina,
+            carrier.maxStamina, defender.maxStamina,
+            useSpecialAttack, useSpecialDefense
+        );
 
         if (cardGiven || (defenseAction === 'ENTRADA' && Math.random() < 0.15)) {
             this._logEvent('foul', `¡Falta de ${defender.card.name} sobre ${carrier.card.name}! Tiro libre.`);
@@ -1472,8 +1477,13 @@ class MatchEngine {
             carrier.stamina = Math.max(0, carrier.stamina - 2);
             defender.stamina = Math.max(0, defender.stamina - 2);
             
-            const atkVal = carrier.stats.PAS * (carrier.stamina / carrier.maxStamina);
-            const defVal = defender.stats.DEF * (defender.stamina / defender.maxStamina);
+            let atkVal = carrier.stats.PAS * (carrier.stamina / carrier.maxStamina);
+            let defVal = defender.stats.DEF * (defender.stamina / defender.maxStamina);
+            if (this.matchType === 'abuelo') {
+                const aiSide = this.playerSide === 'home' ? 'away' : 'home';
+                if (carrier.side === aiSide) atkVal *= 1.5;
+                if (defender.side === aiSide) defVal *= 1.5;
+            }
             const total = atkVal + defVal;
             
             if (Math.random() * total > atkVal) {
@@ -1523,8 +1533,13 @@ class MatchEngine {
             carrier.stamina = Math.max(0, carrier.stamina - 2);
             interceptor.stamina = Math.max(0, interceptor.stamina - 2);
             
-            const atkVal = carrier.stats.PAS * (carrier.stamina / carrier.maxStamina);
-            const defVal = interceptor.stats.DEF * (interceptor.stamina / interceptor.maxStamina);
+            let atkVal = carrier.stats.PAS * (carrier.stamina / carrier.maxStamina);
+            let defVal = interceptor.stats.DEF * (interceptor.stamina / interceptor.maxStamina);
+            if (this.matchType === 'abuelo') {
+                const aiSide = this.playerSide === 'home' ? 'away' : 'home';
+                if (carrier.side === aiSide) atkVal *= 1.5;
+                if (interceptor.side === aiSide) defVal *= 1.5;
+            }
             const total = atkVal + defVal;
             const rand = Math.random() * total;
             
