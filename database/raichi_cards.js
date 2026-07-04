@@ -21,7 +21,7 @@ const raichiCards = [
         rating: 88,
         position: "CDM",
         secondaryPositions: ["CB"],
-        league: "Blue Lock",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/BluLock.png",
         image: "assets/characters/Raichi/RaichiBlu.png",
