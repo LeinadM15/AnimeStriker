@@ -192,7 +192,7 @@ const PREDEFINED_ABUELO_SQUADS = {
         coach: null,
         pitch: [
             'mark_azura', 'nathan_toty', 'gabi_prime', 'akai_toty', 'ishizaki_mun',
-            'matsuyama_tots', 'reo_copia', 'kaltz_fondo1', 'aoi_shingo_custom2',
+            'matsuyama_prime', 'reo_copia', 'kaltz_fondo1', 'aoi_shingo_custom2',
             'kevin_legen', 'kunigami_dortmund_88'
         ],
         bench: []
