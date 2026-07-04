@@ -1810,10 +1810,9 @@ class MatchEngine {
             } else {
                 // Calculate shot damage to bar (more aggressive)
                 const shotStr = result.shotPower || 50;
-                const gkStr = result.savePower || 50;
-                let damage = Math.max(10, Math.round(shotStr * 0.25));
+                let damage = Math.max(15, Math.round(shotStr * 0.40));
                 // Abuelo AI GK: bar drains slower
-                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(5, Math.round(damage * 0.6));
+                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(8, Math.round(damage * 0.6));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
 
                 // Bar percentage directly affects save outcome
