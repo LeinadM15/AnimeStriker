@@ -2174,7 +2174,75 @@ const FORMATIONS = {
             ]
         ]
     },
-    "5-4-1": {
+        "5-3-1-1 (Defensiva)": {
+        "positions": [
+            {
+                role: "GK",
+                x: 50,
+                y: 90
+            },
+            {
+                role: "LB",
+                x: 10,
+                y: 68
+            },
+            {
+                role: "CB",
+                x: 30,
+                y: 73
+            },
+            {
+                role: "CB",
+                x: 50,
+                y: 70
+            },
+            {
+                role: "CB",
+                x: 70,
+                y: 73
+            },
+            {
+                role: "RB",
+                x: 90,
+                y: 68
+            },
+            {
+                role: "CDM",
+                x: 25,
+                y: 55
+            },
+            {
+                role: "CDM",
+                x: 50,
+                y: 57
+            },
+            {
+                role: "CDM",
+                x: 75,
+                y: 55
+            },
+            {
+                role: "CM",
+                x: 50,
+                y: 35
+            },
+            {
+                role: "ST",
+                x: 50,
+                y: 15
+            }
+        ],
+        "bench": [
+            { role: "SUB", x: 10, y: 98 },
+            { role: "SUB", x: 23, y: 98 },
+            { role: "SUB", x: 36, y: 98 },
+            { role: "SUB", x: 49, y: 98 },
+            { role: "SUB", x: 62, y: 98 },
+            { role: "SUB", x: 75, y: 98 },
+            { role: "SUB", x: 88, y: 98 }
+        ]
+    },
+"5-4-1": {
         "positions": [
             {
                 role: "GK",
