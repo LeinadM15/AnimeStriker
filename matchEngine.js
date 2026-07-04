@@ -1785,7 +1785,7 @@ class MatchEngine {
         let aiBonus = isAIShooter ? 1.4 : 1.0; // 40% boost to AI shot power
 
         if (this.matchType === 'abuelo' && isAIShooter) {
-            aiBonus = 2.0; // Infernal AI shooter buff
+            aiBonus = 1.6; // Infernal AI shooter buff (60% boost)
         }
 
         const result = resolveShot(
@@ -1797,8 +1797,11 @@ class MatchEngine {
 
         // --- GK STAMINA BAR SYSTEM ---
         if (typeof gk.gkStaminaBar === 'number') {
-            // 5% ultra save chance — always available, doesn't drain bar
-            const ultraSave = Math.random() < 0.05;
+            // Ultra save chance: 5% normally, 20% for AI GK in Abuelo mode
+            const isAIGK = gk.side !== this.playerSide;
+            let ultraChance = 0.05;
+            if (this.matchType === 'abuelo' && isAIGK) ultraChance = 0.20;
+            const ultraSave = Math.random() < ultraChance;
             if (ultraSave) {
                 result.saved = true;
                 result.ultraSave = true;
@@ -1812,7 +1815,9 @@ class MatchEngine {
                 // Calculate shot damage to bar
                 const shotStr = result.shotPower || 50;
                 const gkStr = result.savePower || 50;
-                const damage = Math.max(5, Math.round((shotStr - gkStr * 0.6) * 0.5));
+                let damage = Math.max(5, Math.round((shotStr - gkStr * 0.6) * 0.5));
+                // Abuelo AI GK: bar drains half as fast
+                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(3, Math.round(damage * 0.5));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
                 // With high bar, boost save power proportionally
                 const barPct = gk.gkStaminaBar / gk.gkStaminaBarMax;
