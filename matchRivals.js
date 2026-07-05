@@ -511,7 +511,7 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'Aiku_Serpiente',
             'don_lorenzo_joker',
             'gen_normal',
-            'michael_numancia_1',
+            'michael_numancia_2',
             'diaz_prime2',
             'cabassos_prime',
             'snuffy_fenix',
