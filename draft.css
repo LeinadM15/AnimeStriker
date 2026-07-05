@@ -623,13 +623,27 @@
     transform: scale(1.05);
 }
 
-.card-character.left {
-    left: -40px;
+.champions .card-character.left {
+    left: -70px;
     transform-origin: bottom left;
 }
 
-.card-character.right {
-    right: -40px;
+.champions .card-character.right {
+    right: -70px;
+    transform-origin: bottom right;
+}
+
+.mundial .card-character {
+    height: 75%;
+}
+
+.mundial .card-character.left {
+    left: 10px;
+    transform-origin: bottom left;
+}
+
+.mundial .card-character.right {
+    right: 10px;
     transform-origin: bottom right;
 }
 
