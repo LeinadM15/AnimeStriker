@@ -599,6 +599,31 @@
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
 
+.diff-champions-img {
+    height: 70px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+    object-fit: contain;
+}
+
+.difficulty-side-img {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    pointer-events: none;
+    height: 90vh;
+    max-height: 800px;
+    object-fit: contain;
+}
+
+.difficulty-side-img.left {
+    left: 5%;
+}
+
+.difficulty-side-img.right {
+    right: 5%;
+}
+
 .diff-title {
     font-family: var(--font-t);
     font-size: 1.8rem;
