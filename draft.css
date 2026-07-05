@@ -537,7 +537,7 @@
     transition: all 0.3s ease;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .difficulty-card::before {
@@ -606,22 +606,34 @@
     object-fit: contain;
 }
 
-.difficulty-side-img {
+.card-character {
     position: absolute;
-    bottom: 0;
-    z-index: 3;
+    bottom: -10px;
+    z-index: 0;
     pointer-events: none;
-    height: 90vh;
-    max-height: 800px;
+    height: 120%;
     object-fit: contain;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
 }
 
-.difficulty-side-img.left {
-    left: 5%;
+.difficulty-card:hover .card-character {
+    opacity: 0.9;
+    transform: scale(1.05);
 }
 
-.difficulty-side-img.right {
-    right: 5%;
+.card-character.left {
+    left: -30%;
+}
+
+.card-character.right {
+    right: -30%;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
 }
 
 .diff-title {
