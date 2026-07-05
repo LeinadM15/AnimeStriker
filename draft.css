@@ -510,7 +510,7 @@
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
     padding: 30px;
-    max-width: 850px;
+    max-width: 1000px;
     width: 90%;
     margin: auto;
     box-shadow: 0 20px 60px rgba(0,0,0,0.6);
@@ -527,8 +527,8 @@
 
 .difficulty-card {
     flex: 1;
-    min-width: 200px;
-    max-width: 260px;
+    min-width: 250px;
+    max-width: 320px;
     padding: 28px 20px;
     border-radius: 16px;
     background: linear-gradient(145deg, rgba(30, 60, 100, 0.6), rgba(20, 40, 70, 0.8));
@@ -608,27 +608,29 @@
 
 .card-character {
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     z-index: 0;
     pointer-events: none;
-    height: 120%;
+    height: 105%;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: all 0.3s ease;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
 }
 
 .difficulty-card:hover .card-character {
-    opacity: 0.9;
+    opacity: 1;
     transform: scale(1.05);
 }
 
 .card-character.left {
-    left: -30%;
+    left: -15px;
+    transform-origin: bottom left;
 }
 
 .card-character.right {
-    right: -30%;
+    right: -15px;
+    transform-origin: bottom right;
 }
 
 .card-content {
