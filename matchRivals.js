@@ -97,7 +97,8 @@ const ABUELO_TEAMS = [
     { name: 'CABALLEROS DE LA TABLA REDONDA', badge: 'teams/Caballerosdelatablaredonda.png', league: 'Infernal', teamIcon: 'teams/Caballerosdelatablaredonda.png', exactSquad: 'CABALLEROS_DE_LA_TABLA_REDONDA' },
     { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' },
     { name: 'GETAFE', badge: 'teams/Getafe.png', league: 'Infernal', teamIcon: 'teams/Getafe.png', exactSquad: 'GETAFE' },
-    { name: 'ÁFRICA', badge: 'teams/Costademarfil.png', league: 'Infernal', teamIcon: 'teams/Costademarfil.png', exactSquad: 'ÁFRICA' }
+    { name: 'ÁFRICA', badge: 'teams/Costademarfil.png', league: 'Infernal', teamIcon: 'teams/Costademarfil.png', exactSquad: 'ÁFRICA' },
+    { name: 'CALCIO ALL STARS', badge: 'teams/CalcioAllStars.png', league: 'Infernal', teamIcon: 'teams/CalcioAllStars.png', exactSquad: 'CALCIO_ALL_STARS' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -499,8 +500,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'aus_astar',
             'aus_octavius',
             'aus_ken',
-            'aus_matt'
+            'hino_custom'
         ]
+    },
+    'CALCIO_ALL_STARS': {
+        formation: '3-1-4-2',
+        coach: null,
+        pitch: [
+            'gino_custom',
+            'Aiku_Serpiente',
+            'don_lorenzo_joker',
+            'gen_normal',
+            'michael_numancia_1',
+            'diaz_prime2',
+            'cabassos_prime',
+            'snuffy_fenix',
+            'aoi_shingo_custom2',
+            'koj_mundial',
+            'hino_custom'
+        ],
+        bench: []
     },
     'CHINA': {
         formation: '4-1-3-2',
