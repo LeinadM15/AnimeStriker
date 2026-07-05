@@ -624,28 +624,16 @@
 }
 
 .champions .card-character.left,
-.abuelo .card-character.left {
+.abuelo .card-character.left,
+.mundial .card-character.left {
     left: -70px;
     transform-origin: bottom left;
 }
 
 .champions .card-character.right,
-.abuelo .card-character.right {
-    right: -70px;
-    transform-origin: bottom right;
-}
-
-.mundial .card-character {
-    height: 75%;
-}
-
-.mundial .card-character.left {
-    left: 10px;
-    transform-origin: bottom left;
-}
-
+.abuelo .card-character.right,
 .mundial .card-character.right {
-    right: 10px;
+    right: -70px;
     transform-origin: bottom right;
 }
 
