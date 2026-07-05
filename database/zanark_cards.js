@@ -1,0 +1,107 @@
+// database/zanark_cards.js
+const zanarkCards = [
+    {
+        id: "zanark_oro",
+        name: "ZANARK",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ZanarkDomain.png",
+        image: "assets/characters/Zanark/ZanarkOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zanark_caocao_oro",
+        name: "ZANARK",
+        version: "Stuttgart Oro",
+        rarity: "Oro",
+        rating: 88,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Stuttgart.png",
+        image: "assets/characters/Zanark/ZanarkCaoCaoOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zanark_zeta_oro",
+        name: "ZANARK",
+        version: "Arsenal Oro",
+        rarity: "Oro",
+        rating: 89,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Zanark/ZanarkZetaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zanark_roja",
+        name: "ZANARK",
+        version: "Especial",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ZanarkDomain.png",
+        image: "assets/characters/Zanark/Zanark.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "zanark_armor",
+        name: "ZANARK",
+        version: "Armor",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Stuttgart.png",
+        image: "assets/characters/Zanark/ZanarkArmor.png",
+        background: "assets/Cartas/RojiAzul.png"
+    },
+    {
+        id: "zanark_base",
+        name: "ZANARK",
+        version: "Base",
+        rarity: "Especial",
+        rating: 92,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Zanark/ZanarkBase.png",
+        background: "assets/Cartas/Trailblaze.png"
+    },
+    {
+        id: "zanark_caocao",
+        name: "ZANARK",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 94,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Stuttgart.png",
+        image: "assets/characters/Zanark/ZanarkCaoCao.png",
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "zanark_zeta",
+        name: "ZANARK",
+        version: "Zeta",
+        rarity: "Especial",
+        rating: 96,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Zanark/ZanarkZeta.png",
+        background: "assets/Cartas/Naranja.png"
+    }
+];
