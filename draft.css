@@ -623,12 +623,14 @@
     transform: scale(1.05);
 }
 
-.champions .card-character.left {
+.champions .card-character.left,
+.abuelo .card-character.left {
     left: -70px;
     transform-origin: bottom left;
 }
 
-.champions .card-character.right {
+.champions .card-character.right,
+.abuelo .card-character.right {
     right: -70px;
     transform-origin: bottom right;
 }
