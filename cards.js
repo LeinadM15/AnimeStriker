@@ -64,7 +64,8 @@ const tsubasaAll = [
     ...zeusCards,
     ...reoCards,
     ...riccardoCards,
-    ...solCards
+    ...solCards,
+    ...zanarkCards
 ];
 tsubasaAll.forEach(c => c._series = 'tsubasa');
 

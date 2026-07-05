@@ -106,6 +106,7 @@ const ABUELO_TEAMS = [
 
 const LIGA_TEAMS = [
     { name: 'UNIVERSAL', badge: 'teams/Universal.png', league: 'J-League', teamIcon: 'teams/Universal.png' },
+    { name: 'ZANARK DOMAIN', badge: 'teams/ZanarkDomain.png', league: 'J-League', teamIcon: 'teams/ZanarkDomain.png' },
     { name: 'OTOMO',         badge: 'teams/Otomo.png',       league: 'J-League', teamIcon: 'teams/Otomo.png' },
     { name: 'KUNIMI',        badge: 'teams/Kunimi.png',       league: 'J-League', teamIcon: 'teams/Kunimi.png' },
     { name: 'OCCULT',        badge: 'teams/Occult.png',       league: 'J-League', teamIcon: 'teams/Occult.png' },
