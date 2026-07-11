@@ -10,7 +10,7 @@ const coachesDB = [
         position: "COACH",
         league: "Federaciones",
         nationFlag: "https://flagcdn.com/w40/kr.png",
-        teamIcon: "teams/Zeus.png",
+        teamIcon: "teams/Solaria-Zeus.png",
         image: "assets/characters/Zeus/ByronLoveEnt.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "boost", condition: "A todos los jugadores de Corea y Kirkwood" }
@@ -163,9 +163,9 @@ const coachesDB = [
         rarity: "Coach",
         rating: 84,
         position: "COACH",
-        league: "Federaciones",
+        league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Toho.png",
+        teamIcon: "teams/Ubers.png",
         image: "assets/entrenadores/Kira/Kira.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -420,7 +420,7 @@ const coachesDB = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Occult.png",
         image: "assets/characters/Occult/HekyllJyde.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "coach_harry_savage",
@@ -444,10 +444,10 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Brain.png",
+        teamIcon: "teams/BrAIn.png",
         image: "assets/characters/Brain/NewtonThomas.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/Brain.png", amount: 2, chem: 2, condition: "A todos los jugadores del Brain" }
+        boost: { type: "team", team: "teams/BrAIn.png", amount: 2, chem: 2, condition: "A todos los jugadores del BrAIn" }
     },
     {
         id: "coach_manny_artic",
@@ -458,10 +458,10 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Otaku.png",
+        teamIcon: "teams/Frikis.png",
         image: "assets/characters/Otaku/MannyArtic.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/Otaku.png", amount: 2, chem: 2, condition: "A todos los jugadores del Otaku" }
+        boost: { type: "team", team: "teams/Frikis.png", amount: 2, chem: 2, condition: "A todos los jugadores del Frikis" }
     },
     {
         id: "coach_sammy_igajima",
@@ -504,5 +504,19 @@ const coachesDB = [
         image: "assets/characters/Kirkwood/SethNichols.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "team", team: "teams/Kirkwood.png", amount: 2, chem: 2, condition: "A todos los jugadores del Kirkwood" }
+    },
+    {
+        id: "coach_longjohn_silver",
+        name: "LONGJOHN SILVER",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/MaryPirata.png",
+        image: "assets/characters/CalaPirata/LongjohnSilver.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/MaryPirata.png", amount: 2, chem: 2, condition: "A todos los jugadores del Mary Pirata" }
     }
 ];

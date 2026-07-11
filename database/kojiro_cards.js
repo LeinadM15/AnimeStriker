@@ -7,9 +7,9 @@ const kojiroCards = [
         rarity: "Especial",
         rating: 89,
         position: "ST",
-        league: "J-League",
+        league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Toho.png", 
+        teamIcon: "teams/Ubers.png", 
         image: "assets/characters/Kojiro/KojiroToho.png",
         background: "assets/Cartas/Flashback.png"
     },

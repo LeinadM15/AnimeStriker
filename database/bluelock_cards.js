@@ -225,7 +225,7 @@ const nagiCards = [
         position: "CF",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/Nagi/Nagi.png",
         background: "assets/Cartas/Mordiscos.png"
     },
@@ -278,7 +278,7 @@ const nagiCards = [
         position: "ST",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/Nagi/NagiRegate.png",
         background: "assets/Cartas/Manshine.png"
     }
@@ -292,7 +292,7 @@ const nagiCards = [
         position: "CF",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/Nagi/NagiOro.png",
         background: "assets/Cartas/Oro.png"
     
@@ -306,7 +306,7 @@ const nagiCards = [
         position: "CF",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/Nagi/NagiTrueno.png",
         background: "assets/Cartas/Trueno.png"
     }
@@ -2076,7 +2076,7 @@ const hidalgoCards = [
         secondaryPositions: ["LM"],
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tottenham.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/ColabPWC/MitomaOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -2090,7 +2090,7 @@ const hidalgoCards = [
         secondaryPositions: ["LM"],
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tottenham.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/ColabPWC/MitomaEsp.png",
         background: "assets/Cartas/SBC.png"
     },
@@ -2104,7 +2104,7 @@ const hidalgoCards = [
         secondaryPositions: ["LM"],
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tottenham.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/ColabPWC/MitomaPrime.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -2118,7 +2118,7 @@ const hidalgoCards = [
         secondaryPositions: ["LM"],
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Tottenham.png",
+        teamIcon: "teams/Brighton.png",
         image: "assets/characters/ColabPWC/MitomaCart.png",
         background: "assets/Cartas/Tots.png"
     },

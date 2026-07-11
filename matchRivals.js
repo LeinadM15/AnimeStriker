@@ -14,12 +14,12 @@
 // ==========================================
 
 const CLUB_TEAMS = [
+    { name: 'FRIKIS', badge: 'teams/Frikis.png', league: 'J-League', teamIcon: 'teams/Frikis.png' },
+    { name: 'MARY PIRATA', badge: 'teams/MaryPirata.png', league: 'J-League', teamIcon: 'teams/MaryPirata.png' },
     { name: 'BARCHA',           badge: 'teams/Barcha.png',     league: 'La Liga',        teamIcon: 'teams/Barcha.png' },
     { name: 'REAL',             badge: 'teams/Real.png',       league: 'La Liga',        teamIcon: 'teams/Real.png' },
     { name: 'MANSHINE CITY',    badge: 'teams/Manshine.png',   league: 'Premier League', teamIcon: 'teams/Manshine.png' },
     { name: 'PXG',              badge: 'teams/PXG.png',        league: 'Ligue 1',        teamIcon: 'teams/PXG.png' },
-    { name: 'NANKATSU',         badge: 'teams/Nankatsu.png',   league: 'J-League',       teamIcon: 'teams/Nankatsu.png' },
-    { name: 'TOHO',             badge: 'teams/Toho.png',       league: 'J-League',       teamIcon: 'teams/Toho.png' },
     { name: 'INTER',            badge: 'teams/Inter.png',      league: 'Serie A',        teamIcon: 'teams/Inter.png' },
     { name: 'MILAN',            badge: 'teams/Milan.png',      league: 'Serie A',        teamIcon: 'teams/Milan.png' },
     { name: 'LIVERPOOL',        badge: 'teams/Liverpool.png',  league: 'Premier League', teamIcon: 'teams/Liverpool.png' },
@@ -35,7 +35,6 @@ const CLUB_TEAMS = [
     { name: 'ROMA',             badge: 'teams/Roma.png',       league: 'Serie A',        teamIcon: 'teams/Roma.png' },
     { name: 'BASTARD MÜNICH',   badge: 'teams/Bastard.png',    league: 'Bundesliga',     teamIcon: 'teams/Bastard.png' },
     { name: 'RAIMON',           badge: 'teams/Raimon.png',     league: 'J-League',       teamIcon: 'teams/Raimon.png' },
-    { name: 'ZEUS',             badge: 'teams/Zeus.png',       league: 'J-League',       teamIcon: 'teams/Zeus.png' },
     { name: 'ROYAL',            badge: 'teams/Royal.png',      league: 'J-League',       teamIcon: 'teams/Royal.png' },
     { name: 'GÉNESIS',          badge: 'teams/Genesis.png',    league: 'J-League',       teamIcon: 'teams/Genesis.png' },
     { name: 'ÉPSILON',          badge: 'teams/Epsilon.png',    league: 'J-League',       teamIcon: 'teams/Epsilon.png' },
@@ -45,7 +44,16 @@ const CLUB_TEAMS = [
     { name: 'REAL SOCIEDAD',    badge: 'teams/RealSociedad.png', league: 'La Liga',      teamIcon: 'teams/RealSociedad.png' },
     { name: 'ATHLETIC',         badge: 'teams/Athletic.png',   league: 'La Liga',        teamIcon: 'teams/Athletic.png' },
     { name: 'REAL BETIS',       badge: 'teams/RealBetis.png',  league: 'La Liga',        teamIcon: 'teams/RealBetis.png' },
-    { name: 'MAN. UNITED',      badge: 'teams/ManchesterUnited.png', league: 'Premier League', teamIcon: 'teams/ManchesterUnited.png' }
+    { name: 'MAN. UNITED',      badge: 'teams/ManchesterUnited.png', league: 'Premier League', teamIcon: 'teams/ManchesterUnited.png' },
+    { name: 'FIORENTINA',       badge: 'teams/Fiorentina.png',       league: 'Serie A',        teamIcon: 'teams/Fiorentina.png' },
+    { name: 'LYON',             badge: 'teams/Lyonn.png',            league: 'Ligue 1',        teamIcon: 'teams/Lyonn.png' },
+    { name: 'BRIGHTON',         badge: 'teams/Brighton.png',         league: 'Premier League', teamIcon: 'teams/Brighton.png' },
+    { name: 'ALPINO',           badge: 'teams/Alpino.png',           league: 'J-League',       teamIcon: 'teams/Alpino.png' },
+    { name: 'CHICORID',         badge: 'teams/Chicorid.png',         league: 'J-League',       teamIcon: 'teams/Chicorid.png' },
+    { name: 'SOUTH CIRRUS',     badge: 'teams/SouthCirrus.png',      league: 'J-League',       teamIcon: 'teams/SouthCirrus.png' },
+    { name: 'LEVERKUSEN',       badge: 'teams/Leverkusen.png',       league: 'Bundesliga',     teamIcon: 'teams/Leverkusen.png' },
+    { name: 'REAL',             badge: 'teams/Real.png',             league: 'La Liga',        teamIcon: 'teams/Real.png' },
+    { name: 'ACADEMIA ALIA',    badge: 'teams/AcademiaAlia.png',     league: 'J-League',       teamIcon: 'teams/AcademiaAlia.png' }
     ,{ name: 'BRASIL', badge: 'teams/Brasil.png', flag: 'https://flagcdn.com/w40/br.png', flagCode: 'br' }
 ];
 
@@ -91,6 +99,8 @@ const NATIONAL_TEAMS = [
 // ==========================================
 
 const ABUELO_TEAMS = [
+    { name: 'CHRONO STORM', badge: 'teams/ChronoStorm.png', league: 'Infernal', teamIcon: 'teams/ChronoStorm.png', exactSquad: 'CHRONO_STORM' },
+
     { name: 'TOCADOS POR LA VARITA', badge: 'teams/Tocadosporlavarita.png', league: 'Infernal', teamIcon: 'teams/Tocadosporlavarita.png', exactSquad: 'TOCADOS_POR_LA_VARITA' },
     { name: 'SELECCIÓN MUNDIAL', badge: 'teams/SeleccionMundial.png', league: 'Infernal', teamIcon: 'teams/SeleccionMundial.png', exactSquad: 'SELECCION_MUNDIAL' },
     { name: 'REYES DEL TABLERO', badge: 'teams/ReyesdelTablero.png', league: 'Infernal', teamIcon: 'teams/ReyesdelTablero.png', exactSquad: 'REYES_DEL_TABLERO' },
@@ -98,24 +108,24 @@ const ABUELO_TEAMS = [
     { name: 'LEGION ESPARTANA', badge: 'teams/LegionEspartana.png', league: 'Infernal', teamIcon: 'teams/LegionEspartana.png', exactSquad: 'LEGION_ESPARTANA' },
     { name: 'GETAFE', badge: 'teams/Getafe.png', league: 'Infernal', teamIcon: 'teams/Getafe.png', exactSquad: 'GETAFE' },
     { name: 'ÁFRICA', badge: 'teams/Costademarfil.png', league: 'Infernal', teamIcon: 'teams/Costademarfil.png', exactSquad: 'ÁFRICA' },
-    { name: 'CALCIO ALL STARS', badge: 'teams/CalcioAllStars.png', league: 'Infernal', teamIcon: 'teams/CalcioAllStars.png', exactSquad: 'CALCIO_ALL_STARS' }
+    { name: 'CALCIO ALL STARS', badge: 'teams/CalcioAllStars.png', league: 'Infernal', teamIcon: 'teams/CalcioAllStars.png', exactSquad: 'CALCIO_ALL_STARS' },
+    { name: 'EARTH ELEVEN', badge: 'teams/EarthEleven.png', league: 'Infernal', teamIcon: 'teams/EarthEleven.png', exactSquad: 'EARTH_ELEVEN' },
+    { name: 'CHRONO CRISIS', badge: 'teams/ChronoCrisis.png', league: 'Infernal', teamIcon: 'teams/ChronoCrisis.png', exactSquad: 'CHRONOCRISIS' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
 // ==========================================
 
 const LIGA_TEAMS = [
-    { name: 'UNIVERSAL', badge: 'teams/Universal.png', league: 'J-League', teamIcon: 'teams/Universal.png' },
-    { name: 'ZANARK DOMAIN', badge: 'teams/ZanarkDomain.png', league: 'J-League', teamIcon: 'teams/ZanarkDomain.png' },
+    { name: 'SOLARIA-ZEUS', badge: 'teams/Solaria-Zeus.png', league: 'J-League', teamIcon: 'teams/Solaria-Zeus.png' },
+    { name: 'MARY PIRATA', badge: 'teams/MaryPirata.png', league: 'J-League', teamIcon: 'teams/MaryPirata.png' },
     { name: 'OTOMO',         badge: 'teams/Otomo.png',       league: 'J-League', teamIcon: 'teams/Otomo.png' },
     { name: 'KUNIMI',        badge: 'teams/Kunimi.png',       league: 'J-League', teamIcon: 'teams/Kunimi.png' },
     { name: 'OCCULT',        badge: 'teams/Occult.png',       league: 'J-League', teamIcon: 'teams/Occult.png' },
     { name: 'KIRKWOOD',      badge: 'teams/Kirkwood.png',     league: 'J-League', teamIcon: 'teams/Kirkwood.png' },
     { name: 'SHURIKEN',      badge: 'teams/Shuriken.png',     league: 'J-League', teamIcon: 'teams/Shuriken.png' },
     { name: 'POLARIS',       badge: 'teams/Polaris.png',      league: 'J-League', teamIcon: 'teams/Polaris.png' },
-    { name: 'BRAIN', badge: 'teams/Brain.png', league: 'J-League', teamIcon: 'teams/Brain.png' },
-    { name: 'OTAKU', badge: 'teams/Otaku.png', league: 'J-League', teamIcon: 'teams/Otaku.png' },
-    { name: 'MARY TIMES',    badge: 'teams/MaryTimes.png',    league: 'J-League', teamIcon: 'teams/MaryTimes.png' },
+    { name: 'BrAIn', badge: 'teams/BrAIn.png', league: 'J-League', teamIcon: 'teams/BrAIn.png' },
     { name: 'WILD',          badge: 'teams/Wild.png',         league: 'J-League', teamIcon: 'teams/Wild.png' },
     { name: 'GEMINIS',       badge: 'teams/Geminis.png',      league: 'J-League', teamIcon: 'teams/Geminis.png' },
     { name: 'FARM',          badge: 'teams/Farm.png',         league: 'J-League', teamIcon: 'teams/Farm.png' },
@@ -123,7 +133,17 @@ const LIGA_TEAMS = [
     { name: 'FAUXSHORE',     badge: 'teams/Fauxshore.png',    league: 'J-League', teamIcon: 'teams/Fauxshore.png' },
     { name: 'RAMPARD',       badge: 'teams/Rampard.png',      league: 'J-League', teamIcon: 'teams/Rampard.png' },
     { name: 'INAZUMA KIDS',  badge: 'teams/InazumaKids.png',  league: 'J-League', teamIcon: 'teams/InazumaKids.png' },
-    { name: 'SERVICIO SEC.', badge: 'teams/ServicioSecreto.png', league: 'J-League', teamIcon: 'teams/ServicioSecreto.png' }
+    { name: 'SERVICIO SEC.', badge: 'teams/ServicioSecreto.png', league: 'J-League', teamIcon: 'teams/ServicioSecreto.png' },
+    { name: 'CELTA DE VIGO', badge: 'teams/Celta.png', league: 'La Liga', teamIcon: 'teams/Celta.png' },
+    { name: 'DEPORTIVO DE LA CORUÑA', badge: 'teams/Depor.png', league: 'La Liga', teamIcon: 'teams/Depor.png' },
+    { name: 'MÁLAGA', badge: 'teams/malaga.png', league: 'La Liga', teamIcon: 'teams/malaga.png' },
+    { name: 'OSASUNA', badge: 'teams/Osasuna.png', league: 'La Liga', teamIcon: 'teams/Osasuna.png' },
+    { name: 'ALPINO', badge: 'teams/Alpino.png', league: 'J-League', teamIcon: 'teams/Alpino.png' },
+    { name: 'CHICORID', badge: 'teams/Chicorid.png', league: 'J-League', teamIcon: 'teams/Chicorid.png' },
+    { name: 'SOUTH CIRRUS', badge: 'teams/SouthCirrus.png', league: 'J-League', teamIcon: 'teams/SouthCirrus.png' },
+    { name: 'LEVERKUSEN', badge: 'teams/Leverkusen.png', league: 'Bundesliga', teamIcon: 'teams/Leverkusen.png' },
+    { name: 'REAL', badge: 'teams/Real.png', league: 'La Liga', teamIcon: 'teams/Real.png' },
+    { name: 'ACADEMIA ALIA', badge: 'teams/AcademiaAlia.png', league: 'J-League', teamIcon: 'teams/AcademiaAlia.png' }
 ];
 
 // ==========================================
@@ -171,6 +191,17 @@ function buildClubSquad(teamInfo, difficulty) {
 
 
 const PREDEFINED_ABUELO_SQUADS = {
+    'CHRONO_STORM': {
+        formation: '3-4-3',
+        coach: 'coach_evans',
+        pitch: [
+            'JPPrime', 'SorPrime', 'gabi_prime', 'GoldieArmor', 'RyomaPrime', 
+            'riccardo_prime', 'sol_mix_prime', 'ArionImpulso', 'FeiArmPrime', 
+            'zanark_zeta', 'VictorChrono'
+        ],
+        bench: []
+    },
+
     'TOCADOS_POR_LA_VARITA': {
         formation: '3-1-4-2 (Ofensiva)',
         coach: null,
@@ -213,7 +244,7 @@ const PREDEFINED_ABUELO_SQUADS = {
         coach: null,
         pitch: [
             'gino_custom', 'owairan_shapesifter', 'niko_prime', 'misugi_custom1',
-            'hugo_rosa', 'riccardo_prime', 'karasu_pxg_87', 'sae_futurestar',
+            'hugo_rosa', 'riccardo_prime', 'Destin1', 'sae_futurestar',
             'jude_legen', 'heath_toty', 'snuffy_fenix'
         ],
         bench: []
@@ -274,6 +305,60 @@ const PREDEFINED_ABUELO_SQUADS = {
             'walter_mountain',
             'siyabonga_mahlangu'
         ]
+    },
+    'CALCIO_ALL_STARS': {
+        formation: '3-1-4-2',
+        coach: null,
+        pitch: [
+            'gino_custom',
+            'Aiku_Serpiente',
+            'don_lorenzo_joker',
+            'gen_normal',
+            'michael_numancia_2',
+            'diaz_prime2',
+            'cabassos_prime',
+            'snuffy_fenix',
+            'aoi_shingo_custom2',
+            'koj_mundial',
+            'hino_custom'
+        ],
+        bench: []
+    },
+    'EARTH_ELEVEN': {
+        formation: '4-3-3',
+        coach: null,
+        pitch: [
+            'TerryPrime',
+            'TrinaVerdurePrime',
+            'ZippyLerner',
+            'KeenanSharpe',
+            'FrankForemanPrime',
+            'CeriseBlossomPrime',
+            'ArionPeg',
+            'BuddyFuryDesPrime',
+            'FalcoAlc',
+            'VictorGuapo',
+            'ZackAvalonPrime'
+        ],
+        bench: []
+    },
+    'CHRONOCRISIS': {
+        formation: '3-4-3 (Plano)',
+        coach: null,
+        pitch: [
+            'QuentinPrime',
+            'GazelTorch',
+            'byron_love_prime',
+            'TorchGazel',
+            'TezEspArturo',
+            'BailongPrime',
+            'DrakulArm',
+            'SimeonPrime',
+            'VulpeenArm',
+            'LancerLan',
+            'DestraPrime'
+        ],
+        bench: []
     }
 };
 
@@ -503,24 +588,6 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'aus_ken',
             'hino_custom'
         ]
-    },
-    'CALCIO_ALL_STARS': {
-        formation: '3-1-4-2',
-        coach: null,
-        pitch: [
-            'gino_custom',
-            'Aiku_Serpiente',
-            'don_lorenzo_joker',
-            'gen_normal',
-            'michael_numancia_2',
-            'diaz_prime2',
-            'cabassos_prime',
-            'snuffy_fenix',
-            'aoi_shingo_custom2',
-            'koj_mundial',
-            'hino_custom'
-        ],
-        bench: []
     },
     'CHINA': {
         formation: '4-1-3-2',

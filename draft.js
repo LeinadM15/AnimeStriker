@@ -498,7 +498,7 @@ function renderDraftSlot(card, requiredRole, isMini, index, target) {
     }
 
     var html = '';
-    html += '<div class="slot-card' + isCoachCard + '" ' + cardBg + '>';
+    html += '<div class="slot-card' + isCoachCard + (card.background && card.background.includes('Oro') ? ' oro-card' : '') + '" ' + cardBg + '>';
     html += bgHTML;
     html += overlayHTML;
     html += '<div class="fc-info">';
@@ -1109,7 +1109,7 @@ function showPlayerPickModal(title, cards, onSelect) {
         var teamSrc = (card.teamIcon && card.teamIcon.indexOf('teams/') === 0) ? 'assets/' + card.teamIcon : (card.teamIcon || '');
         var isCoach = (card.position === 'COACH') ? ' coach-card' : '';
 
-        var cardHTML = '<div class="slot-card' + isCoach + '" ' + cardBg + '>' +
+        var cardHTML = '<div class="slot-card' + isCoach + (card.background && card.background.includes('Oro') ? ' oro-card' : '') + '" ' + cardBg + '>' +
             bgHTML + overlayHTML +
             '<div class="fc-info">' +
             '<span class="fc-rating">' + card.rating + '</span>' +

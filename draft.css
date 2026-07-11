@@ -286,6 +286,7 @@
     flex-wrap: wrap;
 }
 
+
 .draft-pick-card-wrapper {
     display: flex;
     flex-direction: column;
@@ -623,23 +624,46 @@
     transform: scale(1.05);
 }
 
+.difficulty-card.mundial {
+    z-index: 3;
+}
+.difficulty-card.abuelo {
+    z-index: 2;
+}
+
 .champions .card-character.left,
-.abuelo .card-character.left,
-.mundial .card-character.left {
+.abuelo .card-character.left {
     left: -70px;
     transform-origin: bottom left;
 }
 
 .champions .card-character.right,
-.abuelo .card-character.right,
-.mundial .card-character.right {
+.abuelo .card-character.right {
     right: -70px;
+    transform-origin: bottom right;
+}
+
+.mundial .card-character {
+    height: 95%; /* Slightly larger for Tsubasa/Isagi */
+    bottom: -5px;
+}
+
+.mundial .card-character.left {
+    left: -10px; /* Closer to the middle */
+    transform-origin: bottom left;
+}
+
+.mundial .card-character.right {
+    right: -10px; /* Closer to the middle */
     transform-origin: bottom right;
 }
 
 .card-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .diff-title {

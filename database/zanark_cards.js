@@ -7,9 +7,9 @@ const zanarkCards = [
         rarity: "Oro",
         rating: 87,
         position: "ST",
-        league: "J-League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/ZanarkDomain.png",
+        teamIcon: "teams/Stuttgart.png",
         image: "assets/characters/Zanark/ZanarkOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -46,9 +46,9 @@ const zanarkCards = [
         rarity: "Especial",
         rating: 90,
         position: "ST",
-        league: "J-League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/ZanarkDomain.png",
+        teamIcon: "teams/Stuttgart.png",
         image: "assets/characters/Zanark/Zanark.png",
         background: "assets/Cartas/Roja.png"
     },

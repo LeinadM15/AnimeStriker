@@ -1,0 +1,72 @@
+const briarCards = [
+    {
+        id: "BriarOro",
+        name: "BRIAR BLOOMHURST",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/SouthCirrus.png",
+        image: "assets/characters/Briar/BriarOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "BriarChut",
+        name: "BRIAR BLOOMHURST",
+        version: "Roja",
+        rarity: "Especial",
+        rating: 88,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/SouthCirrus.png",
+        image: "assets/characters/Briar/BriarChut.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "BriarMan",
+        name: "BRIAR BLOOMHURST",
+        version: "FlashBack",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Fiorentina.png",
+        image: "assets/characters/Briar/BriarMan.png",
+        background: "assets/Cartas/FlashBack.png"
+    },
+    {
+        id: "Briar",
+        name: "BRIAR BLOOMHURST",
+        version: "Rulebreaker",
+        rarity: "Especial",
+        rating: 92,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW"],
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/SouthCirrus.png",
+        image: "assets/characters/Briar/Briar.png",
+        background: "assets/Cartas/Rulebraker.png"
+    },
+    {
+        id: "BriarPrime",
+        name: "BRIAR BLOOMHURST",
+        version: "FutureStar",
+        rarity: "Especial",
+        rating: 94,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW"],
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Fiorentina.png",
+        image: "assets/characters/Briar/BriarPrime.png",
+        background: "assets/Cartas/FutureStar.png"
+    }
+];

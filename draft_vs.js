@@ -218,7 +218,7 @@ function renderSquadCard(card) {
     var cardBg = frame.overlay ? '' : 'style="background-image: url(\'' + frame.bg + '\');"';
     
     var html = '';
-    html += '<div class="slot-card" ' + cardBg + '>';
+    html += '<div class="slot-card' + (card.background && card.background.includes('Oro') ? ' oro-card' : '') + '" ' + cardBg + '>';
     html += bgHTML + overlayHTML;
     html += '<div class="fc-info">';
     html += '<span class="fc-rating">' + card.rating + '</span>';

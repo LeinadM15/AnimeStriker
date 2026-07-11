@@ -123,7 +123,7 @@ function renderPlayer(p, side) {
     
     var headEl = document.createElement('div');
     headEl.className = 'player-head';
-    headEl.style.backgroundImage = 'url(assets/' + p.card.badge + ')';
+    headEl.style.backgroundImage = 'url(assets/' + p.card.image + ')';
     el.appendChild(headEl);
     
     var nameEl = document.createElement('div');

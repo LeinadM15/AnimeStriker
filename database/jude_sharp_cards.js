@@ -96,7 +96,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/LarryLyre.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_cygnus",
@@ -110,7 +110,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/CygnusStarkey.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_ari",
@@ -124,7 +124,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/AriZimmerman.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_jimmy",
@@ -152,7 +152,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/CaesarPike.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_oliver",
@@ -180,7 +180,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/HoltNortham.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_braveon",
@@ -194,7 +194,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/BraveonHalvors.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_konrad",
@@ -208,7 +208,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/KonradHardin.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_aren",
@@ -222,7 +222,7 @@ const judeSharpCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Polaris.png",
         image: "assets/characters/Polaris/ArenYarrow.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "polaris_oscar_oro",

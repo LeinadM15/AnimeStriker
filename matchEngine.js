@@ -186,7 +186,8 @@ class MatchEngine {
                 redCard: false,
                 injured: false,
                 goals: 0,
-                assists: 0
+                assists: 0,
+                frozen: (card.name && card.name.toUpperCase().includes('DESTIN'))
             };
             // GK stamina bar: based on DIV stat. Higher DIV = bigger bar
             if (isGK) {
@@ -1212,6 +1213,12 @@ class MatchEngine {
             tx = Math.max(5, Math.min(95, tx));
             ty = Math.max(5, Math.min(95, ty));
             
+            // FROZEN mechanic (Destin): player stays locked in formation position
+            if (p.frozen) {
+                tx = p.baseX;
+                ty = p.baseY;
+            }
+            
             // Apply Offside Trap (Attackers hold their runs at the last defender's shoulder)
             if (p.side === this.possession && p !== carrier && !isClosestToBall) {
                 if (p.side === 'home') {
@@ -1244,19 +1251,25 @@ class MatchEngine {
                 }
             }
             
-            p.x += repelX;
-            p.y += repelY;
-            
-            if (dist > 1) {
-                const speed = (p.stats.PAC / 100) * 0.15; // Slower, calmer pacing
-                p.stamina = Math.max(0, p.stamina - 0.015);
-                p.x += (dx / dist) * speed;
-                p.y += (dy / dist) * speed;
-                p.stamina = Math.max(0, p.stamina - 0.04);
+            // FROZEN players skip all movement (repulsion, lerp, wandering)
+            if (p.frozen) {
+                p.x = p.baseX;
+                p.y = p.baseY;
             } else {
-                // Add slight wandering when at target so they don't look frozen
-                p.x += (Math.random() - 0.5) * 0.3;
-                p.y += (Math.random() - 0.5) * 0.3;
+                p.x += repelX;
+                p.y += repelY;
+                
+                if (dist > 1) {
+                    const speed = (p.stats.PAC / 100) * 0.15; // Slower, calmer pacing
+                    p.stamina = Math.max(0, p.stamina - 0.015);
+                    p.x += (dx / dist) * speed;
+                    p.y += (dy / dist) * speed;
+                    p.stamina = Math.max(0, p.stamina - 0.04);
+                } else {
+                    // Add slight wandering when at target so they don't look frozen
+                    p.x += (Math.random() - 0.5) * 0.3;
+                    p.y += (Math.random() - 0.5) * 0.3;
+                }
             }
             
             p.x = Math.max(2, Math.min(98, p.x));
@@ -1824,8 +1837,8 @@ class MatchEngine {
                 // Calculate shot damage to bar (faster base drain, scales down with distance)
                 const shotStr = result.shotPower || 50;
                 let damage = Math.max(15, Math.round(shotStr * 0.50 * distancePenalty));
-                // Abuelo AI GK: bar drains slightly slower (25% reduction instead of 40%)
-                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(8, Math.round(damage * 0.75));
+                // Abuelo AI GK: bar drains slightly slower (15% reduction)
+                if (this.matchType === 'abuelo' && isAIGK) damage = Math.max(8, Math.round(damage * 0.85));
                 gk.gkStaminaBar = Math.max(0, gk.gkStaminaBar - damage);
 
                 // Bar percentage directly affects save outcome

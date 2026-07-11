@@ -7,9 +7,9 @@ const tecmoCards = [
         rarity: "Oro",
         rating: 84,
         position: "GK",
-        league: "Ligue 1",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/rs.png",
-        teamIcon: "teams/Marsella.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/Tecmo/SavicevicOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -20,9 +20,9 @@ const tecmoCards = [
         rarity: "Especial",
         rating: 87,
         position: "GK",
-        league: "Ligue 1",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/rs.png",
-        teamIcon: "teams/Marsella.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/Tecmo/Savicevic.png",
         background: "assets/Cartas/Flashback.png"
     },

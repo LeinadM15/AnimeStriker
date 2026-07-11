@@ -1,0 +1,72 @@
+const lancerCards = [
+    {
+        id: "LancerOro",
+        name: "BASH LANCER",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW", "CAM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Osasuna.png",
+        image: "assets/characters/Lancer/LancerOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "LancerBase",
+        name: "BASH LANCER",
+        version: "Morado",
+        rarity: "Especial",
+        rating: 89,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW", "CAM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Osasuna.png",
+        image: "assets/characters/Lancer/LancerBase.png",
+        background: "assets/Cartas/Morado.png"
+    },
+    {
+        id: "LancerMan",
+        name: "BASH LANCER",
+        version: "Flashback",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW", "CAM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Osasuna.png",
+        image: "assets/characters/Lancer/LancerMan.png",
+        background: "assets/Cartas/Flashback.png"
+    },
+    {
+        id: "LancerMor",
+        name: "BASH LANCER",
+        version: "FutureStar",
+        rarity: "Especial",
+        rating: 93,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW", "CAM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Osasuna.png",
+        image: "assets/characters/Lancer/LancerMor.png",
+        background: "assets/Cartas/FutureStar.png"
+    },
+    {
+        id: "LancerLan",
+        name: "BASH LANCER",
+        version: "Trailblaze",
+        rarity: "Especial",
+        rating: 95,
+        position: "ST",
+        secondaryPositions: ["CF", "RW", "LW", "CAM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Osasuna.png",
+        image: "assets/characters/Lancer/LancerLan.png",
+        background: "assets/Cartas/Trailblaze.png"
+    }
+];

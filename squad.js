@@ -5890,7 +5890,7 @@ function renderFilledSlot(card, requiredRole, isMini = false, index = 0, target 
     const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
 
     return `
-        <div class="slot-card" ${cardBg} onclick="openPlayerModal(${index}, '${target}')">
+        <div class="slot-card ${card.background && card.background.includes('Oro') ? 'oro-card' : ''}" ${cardBg} onclick="openPlayerModal(${index}, '${target}')">
             ${bgHTML}
             ${overlayHTML}
             <div class="fc-info">
@@ -6555,7 +6555,7 @@ function renderModalCards() {
 
         return `
             <div class="modal-card" onclick="selectPlayer('${card.id}')">
-                <div class="slot-card" ${cardBg}>
+                <div class="slot-card ${card.background && card.background.includes('Oro') ? 'oro-card' : ''}" ${cardBg}>
                     ${bgHTML}
                     ${overlayHTML}
                     <div class="fc-info">

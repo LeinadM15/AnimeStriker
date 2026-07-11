@@ -10,7 +10,7 @@ const tsubasaCards = [
         position: "ST",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Genesis.png",
+        teamIcon: "teams/AcademiaAlia.png",
         image: "assets/characters/Xavier/Xene.png",
         background: "assets/Cartas/Morado.png"
     },
@@ -60,9 +60,9 @@ const tsubasaCards = [
         rarity: "Especial",
         rating: 89,
         position: "CAM",
-        league: "J-League",
+        league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Nankatsu.png",
+        teamIcon: "teams/Barcha.png",
         image: "assets/characters/Tsubasa/TsubasaNankatsu.png",
         background: "assets/Cartas/Flashback.png"
     },

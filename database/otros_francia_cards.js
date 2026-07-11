@@ -1350,7 +1350,7 @@ const otrosFranciaCards = [
         nationFlag: "https://flagcdn.com/w40/sa.png",
         teamIcon: "teams/Villareal.png",
         image: "assets/characters/ArabiaSaudi/RobinAl-Ahmar.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
     {
         id: "hawkealjazzar_normal",
@@ -2469,7 +2469,7 @@ const otrosFranciaCards = [
         nationFlag: "https://flagcdn.com/w40/de.png",
         teamIcon: "teams/Stuttgart.png",
         image: "assets/characters/Alemania/JensHoffman.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Orobase.png"
     },
 
 // ==========================================

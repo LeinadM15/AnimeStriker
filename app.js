@@ -265,7 +265,7 @@ function renderCardHTML(char) {
         overlayHTML = `<div class="fc-frame-overlay" style="background-image: url('${frame.overlay}');"></div>`;
     }
     const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
-    let isOro = (char.background && char.background.includes('Oro.png')) ? ' oro-card' : '';
+    let isOro = (char.background && char.background.includes('Oro')) ? ' oro-card' : '';
     
     return `
         <div class="fifa-card${isOro}" ${cardBg}>
