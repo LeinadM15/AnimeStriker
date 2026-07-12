@@ -1,20 +1,4 @@
 // database/bluelock_cards.js
-const isagiCards = [
-    {
-        id: "isa_bastard",
-        name: "ISAGI",
-        version: "Bastard Munchen",
-        rating: 89,
-        rarity: "Especial",
-        position: "ST",
-        league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Bastard.png",
-        image: "assets/Isagi.png",
-        background: "assets/BlueLockFondo.jpg"
-    }
-];
-
 // ==========================================
 // DUSCHAMPS
 // ==========================================
