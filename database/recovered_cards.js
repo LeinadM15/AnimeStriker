@@ -544,7 +544,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Muralla.png",
             image: "assets/characters/Rampard/CorbinBrickham.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rampard_helena",
@@ -558,7 +558,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Muralla.png",
             image: "assets/characters/Rampard/HelenaHarwood.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rampard_dane",
@@ -572,7 +572,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Muralla.png",
             image: "assets/characters/Rampard/DaneUpchurch.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rampard_warden",
@@ -586,7 +586,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Muralla.png",
             image: "assets/characters/Rampard/WardenWatchford.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rampard_sebastian_ex",
@@ -726,7 +726,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/DanBowsun.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_luke",
@@ -740,7 +740,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/LukeBlank.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_giles",
@@ -754,7 +754,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/GilesFarmer.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_eamond",
@@ -768,7 +768,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/EamondEverwing.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_frey",
@@ -782,7 +782,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/FreyFielding.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_tobin",
@@ -796,7 +796,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/TobinHarveston.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_everest",
@@ -810,7 +810,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/RiberaKasamino.png",
             image: "assets/characters/Ribera/EverestBrightwell.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ribera_billy_if",
@@ -1538,7 +1538,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/JimboCellar.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "zenn_wildhorse_oro",
@@ -1552,7 +1552,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/ZennWildhorse.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "dawson_little_oro",
@@ -1566,7 +1566,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/DawsonLittle.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "cosimo_beck_oro",
@@ -1580,7 +1580,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/CosimoBeck.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "maston_color_oro",
@@ -1594,7 +1594,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/MastonColor.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "peter_drent_oro",
@@ -1776,7 +1776,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/BobCarlton.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "cliff_tomlinson_oro",
@@ -1790,7 +1790,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/CliffTomlinson.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "jim_lawrenson_oro",
@@ -1804,7 +1804,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/JimLawrenson.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "barry_potts_oro",
@@ -1818,7 +1818,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/BarryPotts.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "steve_ingham_oro",
@@ -1832,7 +1832,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/SteveIngham.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rowan_beltzer_oro",
@@ -1846,7 +1846,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/RowanBeltzer.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "blade_healen_oro",
@@ -1860,7 +1860,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/BladeHealen.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "argie_bargie_oro",
@@ -1888,7 +1888,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/LeeBamboo.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "eton_messer_oro",
@@ -1902,7 +1902,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/EtonMesser.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "jonah_spark_oro",
@@ -1930,7 +1930,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/SueSparrow.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "riley_jamm_oro",
@@ -1986,7 +1986,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/EarlEton.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "sterling_stanford_oro",
@@ -2028,7 +2028,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/FredFeatherstonhaugh.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "arthur_ascot_oro",
@@ -2042,7 +2042,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/ArthurAscot.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "stuart_st_john_oro",
@@ -2056,7 +2056,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/StuartSt.John.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "wenceslas_wales_oro",
@@ -2070,7 +2070,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/WenceslasWales.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "yorick_york_oro",
@@ -2084,7 +2084,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/YorickYork.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ashian_panoptes_oro",
@@ -2126,7 +2126,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/VexFrieden.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "asten_royds_oro",
@@ -2252,7 +2252,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/LenoxGrinder.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ophelia_ennercourt_oro",
@@ -2280,7 +2280,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/RiggsFornstrut.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "leticia_legatus_oro",
@@ -2294,7 +2294,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/LeticiaLegatus.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "arran_realis_oro",
@@ -2308,7 +2308,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/ArranRealis.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "dracon_yale_oro",
@@ -2476,7 +2476,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/jp.png",
             teamIcon: "teams/Royal.png",
             image: "assets/characters/Royal/GrotleyBogwash.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "rex_remington_oro",
@@ -2728,7 +2728,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Villareal.png",
             image: "assets/characters/Australia/Damon Gorgon.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_hariam",
@@ -2742,7 +2742,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Sporting.png",
             image: "assets/characters/Australia/Mortam Malius.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_dante",
@@ -2756,7 +2756,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Monaco.png",
             image: "assets/characters/Australia/Dante Dusias.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_baal",
@@ -2798,7 +2798,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Parma.png",
             image: "assets/characters/Australia/Ian Qubus.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_astar",
@@ -2826,7 +2826,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Tottenham.png",
             image: "assets/characters/Australia/Lu Jiver.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_zagan",
@@ -2840,7 +2840,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Sevilla.png",
             image: "assets/characters/Australia/Zagan Barbatos.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_gene",
@@ -2882,7 +2882,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Villareal.png",
             image: "assets/characters/Australia/Sonny Shore.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_kjell",
@@ -2924,7 +2924,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/RealSociedad.png",
             image: "assets/characters/Australia/Shawn Princeton.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_matt",
@@ -3008,7 +3008,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Tottenham.png",
             image: "assets/characters/Australia/Quincy Horace.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_holly",
@@ -3022,7 +3022,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Benfica.png",
             image: "assets/characters/Australia/Holly Summers.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_derek",
@@ -3036,7 +3036,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Parma.png",
             image: "assets/characters/Australia/Derek Rabson.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_renard",
@@ -3050,7 +3050,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Parma.png",
             image: "assets/characters/Australia/Barack Daniels.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_bruce",
@@ -3064,7 +3064,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Benfica.png",
             image: "assets/characters/Australia/Bruce Marlin.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_cole",
@@ -3092,7 +3092,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Ajax.png",
             image: "assets/characters/Australia/Clem Chowdry.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_whaly",
@@ -3120,7 +3120,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Athletic.png",
             image: "assets/characters/Australia/Sunny Fishton.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_lob",
@@ -3204,7 +3204,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/au.png",
             teamIcon: "teams/Stuttgart.png",
             image: "assets/characters/Australia/Owe Noyster.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "aus_amanda",
@@ -4467,7 +4467,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Liverpool.png",
             image: "assets/characters/Costademarfil/LiLeung.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "gareth_flare",
@@ -4493,7 +4493,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Chelsea.png",
             image: "assets/characters/Costademarfil/JarellMangrove.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "jimi_gaines",
@@ -4532,7 +4532,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Ajax.png",
             image: "assets/characters/Costademarfil/JazzyHedgeer.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "ian_ferrum",
@@ -4584,7 +4584,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Real.png",
             image: "assets/characters/Costademarfil/MaximinoCruz.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "drago_hill",
@@ -4610,7 +4610,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Milan.png",
             image: "assets/characters/Costademarfil/VicVitrum.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "keenan_difortune",
@@ -4623,7 +4623,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ci.png",
             teamIcon: "teams/Athletic.png",
             image: "assets/characters/Costademarfil/KeenanDiFortune.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "duske_oro",
@@ -4877,7 +4877,7 @@ const recoveredCards = [
             nationFlag: "https://flagcdn.com/w40/ng.png",
             teamIcon: "teams/Ajax.png",
             image: "assets/characters/Nigeria/Ekpo.png",
-            background: "assets/Cartas/Oro.png"
+            background: "assets/Cartas/Orobase.png"
         },
     {
             id: "sadiq",
@@ -5288,18 +5288,6 @@ const recoveredCards = [
             teamIcon: "teams/AcademiaAlia.png",
             image: "assets/characters/Xavier/XavierOro.png",
             background: "assets/Cartas/Oro.png"
-        },
-    {
-            id: "izawa_yokohama",
-            name: "IZAWA",
-            version: "Yokohama",
-            rarity: "Normal",
-            rating: 82,
-            position: "CB",
-            league: "J-League",
-            nationFlag: "https://flagcdn.com/w40/jp.png",
-            teamIcon: "teams/Yokohama.png",
-            image: "assets/characters/Izawa/IzawaYokohama.png",
-            background: "assets/FondoTsubasa.jpeg"
         }
+  
 ];
