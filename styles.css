@@ -394,7 +394,9 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
 
 
 /* ======== ORO CARD STYLING ======== */
-.oro-card .fc-char {
+.oro-card .fc-char,
+.slot-card.oro-card .fc-char,
+.fifa-card.oro-card .fc-char {
     left: auto !important;
     right: 15% !important;
     transform: none !important;
@@ -404,7 +406,9 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
     object-position: right bottom !important;
 }
 
-.oro-card .fc-name {
+.oro-card .fc-name,
+.slot-card.oro-card .fc-name,
+.fifa-card.oro-card .fc-name {
     bottom: 31% !important;
 }
 
