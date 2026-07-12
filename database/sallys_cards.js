@@ -97,7 +97,7 @@ const sallysCards = [
         rarity: "Oro",
         rating: 76,
         position: "RM",
-        league: "La Liga",
+        league: "Primeira Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Sporting.png",
         image: "assets/characters/Sallys/FayetteRiversong.png",
