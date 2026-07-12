@@ -7,7 +7,7 @@ const holandaCards = [
         rarity: "Especial",
         rating: 90,
         position: "CAM",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/BrianKluivoortAyax.png"
@@ -32,7 +32,7 @@ const holandaCards = [
         rarity: "Especial",
         rating: 91,
         position: "ST",
-        league: "Eredivisie", nationFlag: "https://flagcdn.com/w40/nl.png", teamIcon: "teams/Ajax.png",
+        league: "Superliga Europea", nationFlag: "https://flagcdn.com/w40/nl.png", teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/StijnKluivoort.png",
         background: "assets/backgrounds/Fondo_StijnKluivoort.jpeg"
     }

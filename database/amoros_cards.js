@@ -7,7 +7,7 @@ const amorosCards = [
         rarity: "Oro",
         rating: 81,
         position: "GK",
-        league: "Ligue 1",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Marsella.png",
         image: "assets/characters/Francia/AmorosOro.png",

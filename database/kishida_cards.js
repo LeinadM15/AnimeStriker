@@ -7,7 +7,7 @@ const kishidaCards = [
         rarity: "Oro",
         rating: 82,
         position: "CB",
-        league: "Primeira Liga",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Porto.png",
         image: "assets/characters/Kishida/KishidaShimizu.png",

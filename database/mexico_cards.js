@@ -72,7 +72,7 @@ const mexicoCards = [
         rarity: "Oro",
         rating: 83,
         position: "ST",
-        league: "Ligue 1",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/mx.png",
         teamIcon: "teams/Marsella.png",
         image: "assets/characters/Mexico/ZaragozaOro.png",

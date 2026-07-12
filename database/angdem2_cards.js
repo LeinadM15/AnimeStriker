@@ -117,7 +117,7 @@ const angdem2Cards = [
         rating: 82,
         position: "CDM",
         secondaryPositions: ["CM", "CB"],
-        league: "Ligue 1",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Monaco.png",
         image: "assets/characters/AngDem/Gorja.png",

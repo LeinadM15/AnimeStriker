@@ -870,7 +870,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 89,
         position: "CDM",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/StijnKluivoort2.png"
@@ -907,7 +907,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 88,
         position: "CB",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/Dick.png"
@@ -919,7 +919,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 87,
         position: "GK",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/Doleman.png"
@@ -931,7 +931,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 89,
         position: "ST",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/Kaiser.png"
@@ -943,7 +943,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 88,
         position: "ST",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/Klismann.png"
@@ -955,7 +955,7 @@ const holandaCardsNuevos = [
         rarity: "Especial",
         rating: 86,
         position: "CM",
-        league: "Eredivisie",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/nl.png",
         teamIcon: "teams/Ajax.png",
         image: "assets/characters/Holanda/Lensenblink.png"
