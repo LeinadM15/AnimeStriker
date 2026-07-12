@@ -460,7 +460,7 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
-    width: 200px;
+    width: 260px;
     background: #111;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;

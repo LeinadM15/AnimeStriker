@@ -243,7 +243,7 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Rampard.png",
+        teamIcon: "teams/Muralla.png",
         image: "assets/characters/Rampard/FortnumPile.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -418,7 +418,7 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Occult.png",
+        teamIcon: "teams/FantasmasdeSengoku.png",
         image: "assets/characters/Occult/HekyllJyde.png",
         background: "assets/Cartas/Orobase.png"
     },
@@ -431,7 +431,7 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Wild.png",
+        teamIcon: "teams/Muralla.png",
         image: "assets/characters/Wild/HarrySavage.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -444,10 +444,10 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/BrAIn.png",
+        teamIcon: "teams/Cyber-Brain.png",
         image: "assets/characters/Brain/NewtonThomas.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/BrAIn.png", amount: 2, chem: 2, condition: "A todos los jugadores del BrAIn" }
+        boost: { type: "team", team: "teams/Cyber-Brain.png", amount: 2, chem: 2, condition: "A todos los jugadores del Cyber-Brain" }
     },
     {
         id: "coach_manny_artic",
@@ -472,10 +472,10 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Shuriken.png",
+        teamIcon: "teams/FantasmasdeSengoku.png",
         image: "assets/characters/Shuriken/SammyIgajima.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/Shuriken.png", amount: 2, chem: 2, condition: "A todos los jugadores del Shuriken" }
+        boost: { type: "team", team: "teams/FantasmasdeSengoku.png", amount: 2, chem: 2, condition: "A todos los jugadores del Fantasmas de Sengoku" }
     },
     {
         id: "coach_turtle_newfield",
@@ -486,10 +486,10 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Farm.png",
+        teamIcon: "teams/Muralla.png",
         image: "assets/characters/Farm/TurtleNewfield.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/Farm.png", amount: 2, chem: 2, condition: "A todos los jugadores del Farm" }
+        boost: { type: "team", team: "teams/Muralla.png", amount: 2, chem: 2, condition: "A todos los jugadores del Muralla" }
     },
     {
         id: "coach_seth_nichols",
@@ -514,9 +514,9 @@ const coachesDB = [
         position: "COACH",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/LongjohnSilver.png",
         background: "assets/Cartas/Oro.png",
-        boost: { type: "team", team: "teams/MaryPirata.png", amount: 2, chem: 2, condition: "A todos los jugadores del Mary Pirata" }
+        boost: { type: "team", team: "teams/Marea-Pirata.png", amount: 2, chem: 2, condition: "A todos los jugadores del Marea-Pirata" }
     }
 ];

@@ -9,7 +9,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/BarnabasRossa.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -23,7 +23,7 @@ const calapirataCards = [
         secondaryPositions: ["LB", "RB", "CDM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/BartBlack.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -37,7 +37,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/CalicoCorsairOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -51,7 +51,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/CalicoCorsair.png",
         background: "assets/Cartas/Pirata.png"
     },
@@ -65,7 +65,7 @@ const calapirataCards = [
         secondaryPositions: ["CM", "CB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/CheungPo.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -79,7 +79,7 @@ const calapirataCards = [
         secondaryPositions: ["CAM", "CDM", "RM", "LM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/DakkarNemoOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -93,7 +93,7 @@ const calapirataCards = [
         secondaryPositions: ["CAM", "CDM", "RM", "LM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/DakkarNemoEsp.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -121,7 +121,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/DavyJonesOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -135,7 +135,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/DavyJonesEsp.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -149,7 +149,7 @@ const calapirataCards = [
         secondaryPositions: ["CF", "RW", "LW"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/DavyJonesPrime.png",
         background: "assets/Cartas/Tots.png"
     },
@@ -177,7 +177,7 @@ const calapirataCards = [
         secondaryPositions: ["LWB", "CB", "RB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/FrankDrake.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -190,7 +190,7 @@ const calapirataCards = [
         position: "GK",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/IshmaelAhabOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -203,7 +203,7 @@ const calapirataCards = [
         position: "GK",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/IshmaelAhab.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -229,7 +229,7 @@ const calapirataCards = [
         position: "GK",
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/NickTofobia.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -243,7 +243,7 @@ const calapirataCards = [
         secondaryPositions: ["LB", "RB", "CDM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/OctavusKrakenOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -257,7 +257,7 @@ const calapirataCards = [
         secondaryPositions: ["LB", "RB", "CDM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/OctavusKraken.png",
         background: "assets/Cartas/Pirata.png"
     },
@@ -271,7 +271,7 @@ const calapirataCards = [
         secondaryPositions: ["CM", "CB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/RobCrusoe.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -285,7 +285,7 @@ const calapirataCards = [
         secondaryPositions: ["LB", "RB", "CDM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/RogerJolly.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -299,7 +299,7 @@ const calapirataCards = [
         secondaryPositions: ["LM", "RW", "CM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/SantelmoPhyre.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -313,7 +313,7 @@ const calapirataCards = [
         secondaryPositions: ["LB", "RB", "CDM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/SinbadSaylor.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -327,7 +327,7 @@ const calapirataCards = [
         secondaryPositions: ["RM", "LW", "CM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/WilliamKidd.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -341,7 +341,7 @@ const calapirataCards = [
         secondaryPositions: ["CDM", "CAM", "RM", "LM"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/MaryPirata.png",
+        teamIcon: "teams/Marea-Pirata.png",
         image: "assets/characters/CalaPirata/MarleyHookson.png",
         background: "assets/Cartas/Oro.png"
     }

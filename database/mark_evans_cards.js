@@ -94,7 +94,7 @@ const markEvansCards = [
         secondaryPositions: ["CB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Ribera.png",
+        teamIcon: "teams/RiberaKasamino.png",
         image: "assets/characters/MarkEvans/MarkPandaOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -108,7 +108,7 @@ const markEvansCards = [
         secondaryPositions: ["CB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Ribera.png",
+        teamIcon: "teams/RiberaKasamino.png",
         image: "assets/characters/MarkEvans/MarkDoble.png",
         background: "assets/Cartas/Radioactiva.png"
     },
@@ -122,7 +122,7 @@ const markEvansCards = [
         secondaryPositions: ["GK"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Ribera.png",
+        teamIcon: "teams/RiberaKasamino.png",
         image: "assets/characters/MarkEvans/MarkTriple.png",
         background: "assets/Cartas/Shapesifters.png"
     },
@@ -136,7 +136,7 @@ const markEvansCards = [
         secondaryPositions: ["CB"],
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Ribera.png",
+        teamIcon: "teams/RiberaKasamino.png",
         image: "assets/characters/MarkEvans/MarkAzura.png",
         background: "assets/Cartas/Tots.png"
     },
