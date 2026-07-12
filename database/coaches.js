@@ -2,6 +2,20 @@
 
 const coachesDB = [
     {
+        id: "coach_clint_loggan",
+        name: "CLINT LOGGAN",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 87,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/RiberaKasamino.png",
+        image: "assets/characters/Umbrella/ClintLoggan.png",
+        background: "assets/Cartas/Coach.png",
+        boost: { type: "boost", condition: "+2 a todos los jugadores de RiberaKasamino" }
+    },
+    {
         id: "coach_byron_love",
         name: "BYRON LOVE",
         version: "Entrenador (Oro)",
