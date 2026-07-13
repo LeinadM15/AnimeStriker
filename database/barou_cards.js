@@ -1,0 +1,80 @@
+const barouCards = [
+    {
+        id: "barou_oro",
+        name: "SHOEI BAROU",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/BarouOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "barou_ubers",
+        name: "SHOEI BAROU",
+        version: "Ubers",
+        rarity: "Especial",
+        rating: 88,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/Barou.png",
+        background: "assets/Cartas/Ubers.png"
+    },
+    {
+        id: "barou_rulebraker",
+        name: "SHOEI BAROU",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/BarouReg.png",
+        background: "assets/Cartas/Rulebraker.png"
+    },
+    {
+        id: "barou_rojiazul",
+        name: "SHOEI BAROU",
+        version: "RojiAzul",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/BarouUbers.png",
+        background: "assets/Cartas/RojiAzul.png"
+    },
+    {
+        id: "barou_roja",
+        name: "SHOEI BAROU",
+        version: "Roja",
+        rarity: "Especial",
+        rating: 93,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/BarouChut.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "barou_trailblaze",
+        name: "SHOEI BAROU",
+        version: "Trailblaze",
+        rarity: "Especial",
+        rating: 94,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Ubers.png",
+        image: "assets/characters/Barou/BarouPrime.png",
+        background: "assets/Cartas/Trailblaze.png"
+    }
+];
