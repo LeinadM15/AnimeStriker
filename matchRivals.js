@@ -110,7 +110,8 @@ const ABUELO_TEAMS = [
     { name: 'ÁFRICA', badge: 'teams/Costademarfil.png', league: 'Infernal', teamIcon: 'teams/Costademarfil.png', exactSquad: 'ÁFRICA' },
     { name: 'CALCIO ALL STARS', badge: 'teams/CalcioAllStars.png', league: 'Infernal', teamIcon: 'teams/CalcioAllStars.png', exactSquad: 'CALCIO_ALL_STARS' },
     { name: 'EARTH ELEVEN', badge: 'teams/EarthEleven.png', league: 'Infernal', teamIcon: 'teams/EarthEleven.png', exactSquad: 'EARTH_ELEVEN' },
-    { name: 'CHRONO CRISIS', badge: 'teams/ChronoCrisis.png', league: 'Infernal', teamIcon: 'teams/ChronoCrisis.png', exactSquad: 'CHRONOCRISIS' }
+    { name: 'CHRONO CRISIS', badge: 'teams/ChronoCrisis.png', league: 'Infernal', teamIcon: 'teams/ChronoCrisis.png', exactSquad: 'CHRONOCRISIS' },
+    { name: 'BUNDESLIGA ALL STARS', badge: 'teams/BundesligaAllStars.png', league: 'Infernal', teamIcon: 'teams/BundesligaAllStars.png', exactSquad: 'BUNDESLIGA_ALL_STARS' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -354,6 +355,14 @@ const PREDEFINED_ABUELO_SQUADS = {
             'VulpeenArm',
             'LancerLan',
             'DestraPrime'
+        ],
+        bench: []
+    },
+    'BUNDESLIGA_ALL_STARS': {
+        formation: '3-3-4',
+        coach: null,
+        pitch: [
+            'GENZO', 'MAKOTO SODA', 'XIAO', 'KALTZ', 'NESS', 'LEVIN', 'SCHESTER', 'YOICHI ISAGI', 'KAISER', 'SCHNEIDER', 'NOEL NOA'
         ],
         bench: []
     }
