@@ -154,7 +154,7 @@
 .pass-target-cancel { pointer-events:auto; margin-top:8px; padding:4px 16px; background:var(--red); color:white; font-family:var(--font-t); border:none; border-radius:6px; cursor:pointer; }
 .pass-target-cancel:hover { filter:brightness(1.2); }
 .pass-line { position:absolute; height:4px; background:var(--cyan); transform-origin:left center; z-index:2; pointer-events:none; box-shadow:0 0 10px var(--cyan); border-radius:2px; opacity:0; transition:opacity 0.2s; }
-.live-shoot-btn { position:absolute; bottom:40px; right:20px; z-index:50; background:linear-gradient(135deg,#e65100,#f4511e); border:2px solid #ff7043; border-radius:50%; width:64px; height:64px; color:white; font-family:var(--font-t); font-size:0.9rem; cursor:pointer; box-shadow:0 0 20px rgba(255,112,67,0.6); transition:transform 0.2s; pointer-events:auto; }
+.live-shoot-btn { position:absolute; bottom:40px; right:20px; z-index:50; background:linear-gradient(135deg,#e65100,#f4511e); border:2px solid #ff7043; border-radius:50%; width:84px; height:84px; color:white; font-family:var(--font-t); font-size:1.1rem; cursor:pointer; box-shadow:0 0 20px rgba(255,112,67,0.6); transition:transform 0.2s; pointer-events:auto; }
 .live-shoot-btn.hidden { display:none; }
 .live-shoot-btn:hover { transform:scale(1.1); box-shadow:0 0 30px rgba(255,112,67,0.8); }
 .live-shoot-btn:active { transform:scale(0.95); }
