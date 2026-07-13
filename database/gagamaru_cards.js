@@ -1,0 +1,80 @@
+const gagamaruCards = [
+    {
+        id: "gagamaru_oro",
+        name: "GAGAMARU",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Gagamaru/GagamaruOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "gagamaru_suecia",
+        name: "GAGAMARU",
+        version: "Suecia",
+        rarity: "Especial",
+        rating: 87,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Gagamaru/GagamaruSel.png",
+        background: "assets/Cartas/Suecia.png"
+    },
+    {
+        id: "gagamaru_bastard",
+        name: "GAGAMARU",
+        version: "Bastard",
+        rarity: "Especial",
+        rating: 89,
+        position: "GK",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Gagamaru/GagamaruBas.png",
+        background: "assets/Cartas/Bastard.png"
+    },
+    {
+        id: "gagamaru_rulebraker",
+        name: "GAGAMARU",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 90,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Gagamaru/GagamaruPrime.png",
+        background: "assets/Cartas/Rulebraker.png"
+    },
+    {
+        id: "gagamaru_trophy",
+        name: "GAGAMARU",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 91,
+        position: "GK",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Gagamaru/GagamaruPor.png",
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "gagamaru_futbirthday",
+        name: "GAGAMARU",
+        version: "FutBirthday",
+        rarity: "Especial",
+        rating: 92,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Chelsea.png",
+        image: "assets/characters/Gagamaru/GagamaruSub.png",
+        background: "assets/Cartas/FutBirthday.png"
+    }
+];

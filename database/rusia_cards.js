@@ -378,7 +378,7 @@ const rusiaCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/Chelsea.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Rusia/ProcyonOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -391,7 +391,7 @@ const rusiaCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/ru.png",
-        teamIcon: "teams/Chelsea.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Rusia/Procyon.png",
         background: "assets/Cartas/FutureStar.png"
     },

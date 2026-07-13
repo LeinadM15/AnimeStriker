@@ -3013,7 +3013,7 @@ const otrosFranciaCards = [
         name: "KAISER",
         version: "Oro",
         rarity: "Oro",
-        rating: 89,
+        rating: 88,
         position: "ST",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/de.png",
