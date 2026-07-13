@@ -111,7 +111,8 @@ const ABUELO_TEAMS = [
     { name: 'CALCIO ALL STARS', badge: 'teams/CalcioAllStars.png', league: 'Infernal', teamIcon: 'teams/CalcioAllStars.png', exactSquad: 'CALCIO_ALL_STARS' },
     { name: 'EARTH ELEVEN', badge: 'teams/EarthEleven.png', league: 'Infernal', teamIcon: 'teams/EarthEleven.png', exactSquad: 'EARTH_ELEVEN' },
     { name: 'CHRONO CRISIS', badge: 'teams/ChronoCrisis.png', league: 'Infernal', teamIcon: 'teams/ChronoCrisis.png', exactSquad: 'CHRONOCRISIS' },
-    { name: 'BUNDESLIGA ALL STARS', badge: 'teams/BundesligaAllStars.png', league: 'Infernal', teamIcon: 'teams/BundesligaAllStars.png', exactSquad: 'BUNDESLIGA_ALL_STARS' }
+    { name: 'BUNDESLIGA ALL STARS', badge: 'teams/BundesligaAllStars.png', league: 'Infernal', teamIcon: 'teams/BundesligaAllStars.png', exactSquad: 'BUNDESLIGA_ALL_STARS' },
+    { name: 'LIGUE 1 ALL STARS', badge: 'teams/Ligue1AllStars.png', league: 'Infernal', teamIcon: 'teams/Ligue1AllStars.png', exactSquad: 'LIGUE1_ALL_STARS' }
 ];
 
 // LIGA TEAMS (weaker/mixed for Easy mode)
@@ -363,6 +364,14 @@ const PREDEFINED_ABUELO_SQUADS = {
         coach: null,
         pitch: [
             'GENZO', 'MAKOTO SODA', 'XIAO', 'KALTZ', 'NESS', 'LEVIN', 'SCHESTER', 'YOICHI ISAGI', 'KAISER', 'SCHNEIDER', 'NOEL NOA'
+        ],
+        bench: []
+    },
+    'LIGUE1_ALL_STARS': {
+        formation: '2-5-3 (Locura)',
+        coach: null,
+        pitch: [
+            'BAPTISTE', 'KURONA RANZE', 'JITO', 'TARO MISAKI', 'KARASU', 'PIERRE', 'OCHADO', 'CHEVALIER', 'LOKI', 'NAPOLEON', 'RYUSEI SHIDOU'
         ],
         bench: []
     }
