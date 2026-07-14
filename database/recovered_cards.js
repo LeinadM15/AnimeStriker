@@ -3777,7 +3777,7 @@ const recoveredCards = [
     {
             id: "natureza_oro",
             name: "NATUREZA",
-            rating: 88,
+            rating: 89,
             rarity: "Oro",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3789,7 +3789,7 @@ const recoveredCards = [
     {
             id: "natureza_wy",
             name: "NATUREZA",
-            rating: 89,
+            rating: 91,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3801,7 +3801,7 @@ const recoveredCards = [
     {
             id: "natubra",
             name: "NATUREZA",
-            rating: 90,
+            rating: 92,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3813,7 +3813,7 @@ const recoveredCards = [
     {
             id: "natureal",
             name: "NATUREZA",
-            rating: 91,
+            rating: 93,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3825,7 +3825,7 @@ const recoveredCards = [
     {
             id: "natuesp",
             name: "NATUREZA",
-            rating: 92,
+            rating: 94,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3837,7 +3837,7 @@ const recoveredCards = [
     {
             id: "naturezabra",
             name: "NATUREZA",
-            rating: 93,
+            rating: 95,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -3849,7 +3849,7 @@ const recoveredCards = [
     {
             id: "naturezaprime",
             name: "NATUREZA",
-            rating: 95,
+            rating: 97,
             rarity: "Especial",
             position: "CAM",
             teamIcon: "teams/Real.png",
@@ -4194,7 +4194,7 @@ const recoveredCards = [
     {
             id: "santana_oro",
             name: "CARLOS SANTANA",
-            rating: 87,
+            rating: 88,
             rarity: "Oro",
             position: "ST",
             teamIcon: "teams/Valencia.png",
@@ -4206,7 +4206,7 @@ const recoveredCards = [
     {
             id: "santana_full",
             name: "CARLOS SANTANA",
-            rating: 89,
+            rating: 90,
             rarity: "Especial",
             position: "ST",
             teamIcon: "teams/Valencia.png",
@@ -4218,7 +4218,7 @@ const recoveredCards = [
     {
             id: "santana_azul",
             name: "CARLOS SANTANA",
-            rating: 91,
+            rating: 92,
             rarity: "Especial",
             position: "ST",
             teamIcon: "teams/Valencia.png",
@@ -4230,7 +4230,7 @@ const recoveredCards = [
     {
             id: "santana_esp",
             name: "CARLOS SANTANA",
-            rating: 93,
+            rating: 94,
             rarity: "Especial",
             position: "ST",
             teamIcon: "teams/Valencia.png",
@@ -4242,7 +4242,7 @@ const recoveredCards = [
     {
             id: "santana_custom",
             name: "CARLOS SANTANA",
-            rating: 95,
+            rating: 96,
             rarity: "Especial",
             position: "ST",
             teamIcon: "teams/Valencia.png",
@@ -4791,7 +4791,7 @@ const recoveredCards = [
             name: "OCHADO",
             version: "Oro",
             rarity: "Oro",
-            rating: 87,
+            rating: 88,
             position: "CAM",
             league: "Superliga Europea",
             nationFlag: "https://flagcdn.com/w40/ng.png",
@@ -4804,7 +4804,7 @@ const recoveredCards = [
             name: "OCHADO",
             version: "PXG",
             rarity: "Especial",
-            rating: 89,
+            rating: 91,
             position: "CAM",
             league: "Superliga Europea",
             nationFlag: "https://flagcdn.com/w40/ng.png",
@@ -4817,7 +4817,7 @@ const recoveredCards = [
             name: "OCHADO",
             version: "Brasil",
             rarity: "Especial",
-            rating: 91,
+            rating: 94,
             position: "CAM",
             league: "Superliga Europea",
             nationFlag: "https://flagcdn.com/w40/ng.png",
