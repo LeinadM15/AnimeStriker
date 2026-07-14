@@ -4,7 +4,7 @@ const kingPrimeCards = [
         name: "JOSEPH KING",
         version: "FutureStar",
         rarity: "Especial",
-        rating: 92,
+        rating: 93,
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
