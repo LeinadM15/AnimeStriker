@@ -1,0 +1,15 @@
+const kingPrimeCards = [
+    {
+        id: "king_futurestar",
+        name: "JOSEPH KING",
+        version: "FutureStar",
+        rarity: "Especial",
+        rating: 92,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ManchesterUnited.png",
+        image: "assets/characters/Royal/KingPrime.png",
+        background: "assets/Cartas/FutureStar.png"
+    }
+];

@@ -1,7 +1,7 @@
 // cards.js - Catálogo Maestro
 // Este archivo reúne todos los arrays definidos en los archivos de la carpeta database/ y asigna la serie
 // Bump DB_VERSION whenever card data changes to invalidate draft localStorage cache
-const DB_VERSION = '1784032698850';
+const DB_VERSION = '1784048194118';
 
 const tsubasaAll = [
     ...tsubasaCards,
@@ -104,7 +104,8 @@ const tsubasaAll = [
     ...scoutsOneCards,
     ...scoutsPartTwoCards,
     ...scoutsPartThreeCards,
-    ...scoutsPartFourCards
+    ...scoutsPartFourCards,
+    ...kingPrimeCards
 ];
 tsubasaAll.forEach(c => c._series = 'tsubasa');
 

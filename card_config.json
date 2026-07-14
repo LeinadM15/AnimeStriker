@@ -1,46 +1,20 @@
 {
-    "fileName": "lavinho",
-    "arrayName": "lavinhoCards",
-    "series": "bluelock",
+    "fileName": "king_prime",
+    "arrayName": "kingPrimeCards",
+    "series": "tsubasa",
     "cards": [
         {
-            "id": "lavinho_oro",
-            "name": "LAVINHO",
-            "version": "Oro",
-            "rarity": "Oro",
-            "rating": 89,
-            "position": "LW",
-            "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/br.png",
-            "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Barcha/LavinhoOro.png",
-            "background": "assets/Cartas/Oro.png"
-        },
-        {
-            "id": "lavinho_barcha",
-            "name": "LAVINHO",
-            "version": "Barcha",
+            "id": "king_futurestar",
+            "name": "JOSEPH KING",
+            "version": "FutureStar",
             "rarity": "Especial",
-            "rating": 93,
-            "position": "LW",
-            "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/br.png",
-            "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Barcha/Lavinho.png",
-            "background": "assets/Cartas/Barcha.png"
-        },
-        {
-            "id": "lavinho_mar",
-            "name": "LAVINHO",
-            "version": "RojiAzul",
-            "rarity": "Especial",
-            "rating": 96,
-            "position": "LW",
-            "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/br.png",
-            "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Barcha/LavinhoMar.png",
-            "background": "assets/Cartas/RojiAzul.png"
+            "rating": 92,
+            "position": "GK",
+            "league": "Premier League",
+            "nationFlag": "https://flagcdn.com/w40/jp.png",
+            "teamIcon": "teams/ManchesterUnited.png",
+            "image": "assets/characters/Royal/KingPrime.png",
+            "background": "assets/Cartas/FutureStar.png"
         }
     ]
 }
