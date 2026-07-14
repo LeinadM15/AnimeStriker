@@ -204,7 +204,7 @@ const chinaCards = [
         position: "CM",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/cn.png",
-        teamIcon: "teams/WerderBremen.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/China/JackieOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -217,7 +217,7 @@ const chinaCards = [
         position: "CM",
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/cn.png",
-        teamIcon: "teams/WerderBremen.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/China/JackieTrueno.png",
         background: "assets/Cartas/Trueno.png"
     },
