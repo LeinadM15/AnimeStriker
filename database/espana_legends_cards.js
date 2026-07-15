@@ -1,0 +1,58 @@
+const espanaLegendsCards = [
+    {
+        id: "pique_oro",
+        name: "PIQUE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "CB",
+        secondaryPositions: ["CDM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/PiqueOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "pique_espana",
+        name: "PIQUE",
+        version: "Espana",
+        rarity: "Especial",
+        rating: 90,
+        position: "CB",
+        secondaryPositions: ["CDM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/Pique.png",
+        background: "assets/Cartas/Espana.png"
+    },
+    {
+        id: "iniesta_oro",
+        name: "INIESTA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "CM",
+        secondaryPositions: ["CAM", "LM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/IniestaOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "iniesta_espana",
+        name: "INIESTA",
+        version: "Espana",
+        rarity: "Especial",
+        rating: 92,
+        position: "CM",
+        secondaryPositions: ["CAM", "LM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/Iniesta.png",
+        background: "assets/Cartas/Espana.png"
+    }
+];
