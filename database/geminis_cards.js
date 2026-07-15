@@ -231,7 +231,7 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/AcademiaAlia.png",
         image: "assets/characters/Geminis/JordanAres.png",
-        background: "assets/Cartas/SBC.png"
+        background: "assets/Cartas/Hielo.png"
     },
     {
         id: "janus_astro",
@@ -244,7 +244,7 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/WerderBremen.png",
         image: "assets/characters/Geminis/JanusAstro.png",
-        background: "assets/Cartas/Radioactiva.png"
+        background: "assets/Cartas/Morado.png"
     },
     {
         id: "jordan_pas",
@@ -257,7 +257,7 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Wolfsburg.png",
         image: "assets/characters/Geminis/JordanPas.png",
-        background: "assets/Cartas/Flashback.png"
+        background: "assets/Cartas/FutBirthday.png"
     },
     {
         id: "jordan_ares_prime",
@@ -270,7 +270,7 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/AcademiaAlia.png",
         image: "assets/characters/Geminis/JordanAresPrime.png",
-        background: "assets/Cartas/Icono.png"
+        background: "assets/Cartas/FutureStar.png"
     },
     {
         id: "janus_prime",
@@ -283,7 +283,7 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/WerderBremen.png",
         image: "assets/characters/Geminis/JanusPrime.png",
-        background: "assets/Cartas/Toty.png"
+        background: "assets/Cartas/Rulebraker.png"
     },
     {
         id: "jordan_greenway_astro",
@@ -296,6 +296,6 @@ const geminisCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Wolfsburg.png",
         image: "assets/characters/Geminis/JordanGreenwayAstro.png",
-        background: "assets/Cartas/Trophy.png"
+        background: "assets/Cartas/Radioactiva.png"
     }
 ];
