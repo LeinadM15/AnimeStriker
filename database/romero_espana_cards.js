@@ -1,0 +1,30 @@
+const romeroEspanaCards = [
+    {
+        id: "emilio_prime_espana",
+        name: "EMILIO ROMERO",
+        version: "Espana Prime",
+        rarity: "Especial",
+        rating: 92,
+        position: "CM",
+        secondaryPositions: ["CAM", "CDM", "RM", "LM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/RealBetis.png",
+        image: "assets/characters/España/EmilioPrime.png",
+        background: "assets/Cartas/Espana.png"
+    },
+    {
+        id: "abel_reg_espana",
+        name: "ABEL ROMERO",
+        version: "Espana Reg",
+        rarity: "Especial",
+        rating: 91,
+        position: "CB",
+        secondaryPositions: ["LB", "RB", "CDM"],
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/RealBetis.png",
+        image: "assets/characters/España/AbelReg.png",
+        background: "assets/Cartas/Espana.png"
+    }
+];

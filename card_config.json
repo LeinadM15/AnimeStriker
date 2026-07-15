@@ -1,32 +1,34 @@
 {
-    "fileName": "cucurella",
-    "arrayName": "cucurellaCards",
-    "series": "bluelock",
+    "fileName": "romero_espana",
+    "arrayName": "romeroEspanaCards",
+    "series": "tsubasa",
     "cards": [
         {
-            "id": "cucurella_oro",
-            "name": "CUCURELLA",
-            "version": "Oro",
-            "rarity": "Oro",
-            "rating": 88,
-            "position": "LB",
+            "id": "emilio_prime_espana",
+            "name": "EMILIO ROMERO",
+            "version": "Espana Prime",
+            "rarity": "Especial",
+            "rating": 92,
+            "position": "CM",
+            "secondaryPositions": ["CAM", "CDM", "RM", "LM"],
             "league": "La Liga",
             "nationFlag": "https://flagcdn.com/w40/es.png",
-            "teamIcon": "teams/Real.png",
-            "image": "assets/characters/España/CucurellaOro.png",
-            "background": "assets/Cartas/Oro.png"
+            "teamIcon": "teams/RealBetis.png",
+            "image": "assets/characters/España/EmilioPrime.png",
+            "background": "assets/Cartas/Espana.png"
         },
         {
-            "id": "cucurella_espana",
-            "name": "CUCURELLA",
-            "version": "Espana",
+            "id": "abel_reg_espana",
+            "name": "ABEL ROMERO",
+            "version": "Espana Reg",
             "rarity": "Especial",
-            "rating": 93,
-            "position": "LB",
+            "rating": 91,
+            "position": "CB",
+            "secondaryPositions": ["LB", "RB", "CDM"],
             "league": "La Liga",
             "nationFlag": "https://flagcdn.com/w40/es.png",
-            "teamIcon": "teams/Real.png",
-            "image": "assets/characters/España/Cucurella.png",
+            "teamIcon": "teams/RealBetis.png",
+            "image": "assets/characters/España/AbelReg.png",
             "background": "assets/Cartas/Espana.png"
         }
     ]
