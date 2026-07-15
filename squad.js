@@ -6802,6 +6802,8 @@ const COUNTRY_NAMES = {
     'ru': 'Rusia',
     'uy': 'Uruguay',
     'sn': 'Senegal',
+    'gr': 'Grecia',
+    'id': 'Indonesia',
     'eg': 'Egipto',
     'au': 'Australia'
 };
