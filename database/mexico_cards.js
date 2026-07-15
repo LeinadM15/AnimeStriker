@@ -87,7 +87,7 @@ const mexicoCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -100,7 +100,7 @@ const mexicoCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasNeutro.png",
         background: "assets/Cartas/Rulebraker.png"
     },
@@ -113,7 +113,7 @@ const mexicoCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasAta.png",
         background: "assets/Cartas/Manshine.png"
     },
@@ -126,7 +126,7 @@ const mexicoCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasDef.png",
         background: "assets/Cartas/Trueno.png"
     },
@@ -139,7 +139,7 @@ const mexicoCards = [
         position: "ST",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasDL.png",
         background: "assets/Cartas/Shapesifters.png"
     },
@@ -152,7 +152,7 @@ const mexicoCards = [
         position: "GK",
         league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/mx.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Everton.png",
         image: "assets/characters/Mexico/EspadasEspecial.png",
         background: "assets/backgrounds/Fondo_Espadas.png"
     },
