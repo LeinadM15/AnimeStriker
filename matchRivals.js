@@ -882,26 +882,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'COSTA DE MARFIL': {
-        formation: '4-4-2',
+        formation: '4-4-2 (Diamante)',
         coach: 'coach_david_evans',
         pitch: [
             'hector_helio_trailblaze',
-            'jarell_mangrove',
+            'maximino_cruz',
             'walter_mountain',
             'ian_ferrum',
             'jimi_gaines',
-            'maximino_cruz',
             'quint_hampton',
-            'li_leung',
+            'yasir_haddad',
             'keith_ryan',
+            'li_leung',
             'gareth_flare',
             'drago_hill'
         ],
         bench: [
             'keenan_difortune',
+            'jarell_mangrove',
             'jazzy_hedgeer',
-            'vic_vitrum',
-            'yasir_haddad'
+            'vic_vitrum'
         ]
     },
     'BRASIL': {
