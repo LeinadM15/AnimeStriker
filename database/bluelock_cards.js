@@ -1568,6 +1568,19 @@ const hidalgoCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
+        id: "hidalgo_tots",
+        name: "HIDALGO",
+        version: "Tots",
+        rarity: "Especial",
+        rating: 93,
+        position: "CAM",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/HidalgoPrime.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
         id: "ismail_senghor_oro",
         name: "SENGHOR",
         version: "Oro",
