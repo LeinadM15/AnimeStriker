@@ -527,30 +527,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'INGLATERRA': {
-        formation: '4-5-1 (Ataque)',
+        formation: '4-2-4',
         coach: 'coach_aaron_adams',
         pitch: [
             'freddy_mcqueen_oro',
             'edge_ripper_oro',
-            'jonny_gascoigne_oro',
             'robson_oro',
             'lance_ralton_oro',
-            'beekham_oro',
             'teddy_tots',
+            'beekham_oro',
+            'Finn',
             'edgar_partinus_tots',
-            'mike_moon_flash',
+            'chris_prince_prime',
             'adam_blake_prime',
-            'chris_prince_prime'
+            'mike_moon_flash'
         ],
         bench: [
-            'servilius_jeeves_oro',
-            'barnes_oro',
+            'carwyn_manshine',
             'philip_owen_oro',
-            'eric_purpleton_oro',
-            'peter_cole_oro',
-            'mikey_richards_oro',
-            'david_buckingham_oro',
-            'gary_mane_oro'
+            'barnes_oro',
+            'steve_inglaterra_oro',
+            'richard_oro',
+            'nicol_oro',
+            'gary_mane_oro',
+            'jonny_gascoigne_oro'
         ]
     },
         
