@@ -905,30 +905,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'BRASIL': {
-        formation: '3-1-4-2',
+        formation: '4-1-2-1-2 (Ancho)',
         coach: 'coach_roberto_hongo_en',
         pitch: [
             'salinas',
-            'radungaesp',
+            'robertocarolus',
             'dada_shape',
+            'radungaesp',
             'alberto_prime',
-            'leo_brasil',
-            'brazil_kaka_icono',
-            'rivaul_super',
             'naturezaprime',
-            'brazil_zico_icono',
+            'lavinho_mar',
+            'rivaul_super',
+            'brazil_kaka_icono',
             'robertoprime',
             'santana_custom'
         ],
         bench: [
+            'brazil_zico_icono',
+            'leo_brasil',
+            'coimbra_brasil',
             'raymar',
-            'robertocarolus',
+            'dirceu_milan',
             'casagrande_brasil',
-            'pepe_brasil',
             'senaldo_brasil',
-            'ronaldinho',
-            'marceilo_oro',
-            'robinho'
+            'pepe_brasil'
         ]
     }
 };
