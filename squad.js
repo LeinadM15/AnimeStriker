@@ -6804,6 +6804,7 @@ const COUNTRY_NAMES = {
     'sn': 'Senegal',
     'gr': 'Grecia',
     'id': 'Indonesia',
+    'uz': 'Uzbekistán',
     'eg': 'Egipto',
     'au': 'Australia'
 };
