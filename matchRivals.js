@@ -736,24 +736,24 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'RUSIA': {
-        formation: '4-2-3-1 (Ancho)',
+        formation: '4-1-2-1-2 (Ancho)',
         coach: 'coach_yekaterinastronov',
         pitch: [
             'procyon_futurestar',
             'meissa',
             'tabit',
             'saiph',
-            'sirius',
             'alnilam',
             'bellatrix',
             'oleg_animatov',
-            'alexander_allegrov',
             'mintaka',
+            'alexander_allegrov',
+            'betelgeuse',
             'jade_bear'
         ],
         bench: [
             'gregory_fortin',
-            'betelgeuse',
+            'sirius',
             'rigel',
             'kappa',
             'hatysa',
