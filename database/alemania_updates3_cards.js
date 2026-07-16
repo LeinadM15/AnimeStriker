@@ -10,6 +10,6 @@ const alemaniaUpdates3Cards = [
         nationFlag: "https://flagcdn.com/w40/de.png",
         teamIcon: "teams/WerderBremen.png",
         image: "assets/characters/Alemania/MargusPrime.png",
-        background: "assets/Cartas/Fondo_Margus.jpg"
+        background: "assets/backgrounds/Fondo_Margus.jpg"
     }
 ];
