@@ -33,7 +33,7 @@ const celticCards = [
         rating: 85,
         position: "CM",
         league: "Superliga Europea",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
         teamIcon: "teams/Celtic.png",
         image: "assets/characters/Celtic/NakamuraOro.png",
         background: "assets/Cartas/Oro.png"
@@ -46,7 +46,7 @@ const celticCards = [
         rating: 88,
         position: "CM",
         league: "Superliga Europea",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
         teamIcon: "teams/Celtic.png",
         image: "assets/characters/Celtic/Nakamura.png",
         background: "assets/Cartas/Verde.png"
