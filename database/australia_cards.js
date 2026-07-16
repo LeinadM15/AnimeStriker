@@ -45,7 +45,7 @@ const australiaCards = [
         rarity: "Oro",
         rating: 82,
         position: "CM",
-        league: "Primeira Liga",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/au.png",
         teamIcon: "teams/Sporting.png",
         image: "assets/characters/Australia/Zevic.png",
