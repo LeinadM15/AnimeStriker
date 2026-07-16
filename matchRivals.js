@@ -606,19 +606,19 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'CHINA': {
-        formation: '4-1-3-2',
+        formation: '4-1-2-1-2 (Ancho)',
         coach: 'coach_wilsonip',
         pitch: [
             'qinghai_milan',
-            'wujunren_oro',
-            'sammo_oro',
             'coryn_oro',
+            'sammo_oro',
+            'wujunren_oro',
             'gordonsiu_oro',
             'xiao_prime',
-            'bolo_oro',
-            'jimmywongfu_trueno',
-            'jackie_trueno',
             'zhongming_oro',
+            'bolo_oro',
+            'jackie_trueno',
+            'jimmywongfu_trueno',
             'fei_xiang_oro'
         ],
         bench: [
