@@ -6788,6 +6788,7 @@ const COUNTRY_NAMES = {
     'de': 'Alemania',
     'ar': 'Argentina',
     'br': 'Brasil',
+    'co': 'Colombia',
     'kr': 'Corea del Sur',
     'cn': 'China',
     'th': 'Tailandia',
