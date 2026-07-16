@@ -24,5 +24,18 @@ const australiaCards = [
         teamIcon: "teams/Liverpool.png",
         image: "assets/characters/Australia/Konwell.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "markduviga_oro",
+        name: "MARK DUVIGA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/Newcastle.png",
+        image: "assets/characters/Australia/MarkDuviga.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
