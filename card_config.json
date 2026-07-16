@@ -1,19 +1,32 @@
 {
-    "fileName": "barcha",
-    "arrayName": "barchaCards",
+    "fileName": "racing",
+    "arrayName": "racingCards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "fonseca_oro",
-            "name": "FONSECA",
+            "id": "saale_oro",
+            "name": "PANA SAARE",
             "version": "Oro",
             "rarity": "Oro",
             "rating": 84,
-            "position": "CB",
+            "position": "CM",
             "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/pt.png",
-            "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Barcha/Fonseca.png",
+            "nationFlag": "https://flagcdn.com/w40/sn.png",
+            "teamIcon": "teams/Racing.png",
+            "image": "assets/characters/Senegal/Saale.png",
+            "background": "assets/Cartas/Oro.png"
+        },
+        {
+            "id": "salas_oro",
+            "name": "RUBEN SALAS",
+            "version": "Oro",
+            "rarity": "Oro",
+            "rating": 83,
+            "position": "CM",
+            "league": "La Liga",
+            "nationFlag": "https://flagcdn.com/w40/es.png",
+            "teamIcon": "teams/Racing.png",
+            "image": "assets/characters/España/Salas.png",
             "background": "assets/Cartas/Oro.png"
         }
     ]

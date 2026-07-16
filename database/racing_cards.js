@@ -1,0 +1,28 @@
+const racingCards = [
+    {
+        id: "saale_oro",
+        name: "PANA SAARE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Racing.png",
+        image: "assets/characters/Senegal/Saale.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "salas_oro",
+        name: "RUBEN SALAS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Racing.png",
+        image: "assets/characters/España/Salas.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
