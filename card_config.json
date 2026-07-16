@@ -1,20 +1,33 @@
 {
-    "fileName": "alemania_updates2",
-    "arrayName": "alemaniaUpdates2Cards",
+    "fileName": "brasil_updates2",
+    "arrayName": "brasilUpdates2Cards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "magath_oro",
-            "name": "MAGATH",
+            "id": "victor_oro",
+            "name": "VICTOR",
             "version": "Oro",
             "rarity": "Oro",
-            "rating": 81,
-            "position": "CB",
-            "league": "Bundesliga",
-            "nationFlag": "https://flagcdn.com/w40/de.png",
-            "teamIcon": "teams/Leipzig.png",
-            "image": "assets/characters/Alemania/Magath.png",
+            "rating": 84,
+            "position": "CM",
+            "league": "Premier League",
+            "nationFlag": "https://flagcdn.com/w40/br.png",
+            "teamIcon": "teams/Blackburn.png",
+            "image": "assets/characters/Brasil/VictorOro.png",
             "background": "assets/Cartas/Oro.png"
+        },
+        {
+            "id": "victor_brasil",
+            "name": "VICTOR",
+            "version": "Brasil",
+            "rarity": "Especial",
+            "rating": 87,
+            "position": "CM",
+            "league": "Premier League",
+            "nationFlag": "https://flagcdn.com/w40/br.png",
+            "teamIcon": "teams/Blackburn.png",
+            "image": "assets/characters/Brasil/Victor.png",
+            "background": "assets/Cartas/Brasil.png"
         }
     ]
 }
