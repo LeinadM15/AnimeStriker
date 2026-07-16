@@ -714,24 +714,25 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'HOLANDA': {
-        formation: '3-4-2-1',
+        formation: '3-4-1-2',
         coach: 'coach_van_saal',
         pitch: [
             'doleman_ajax',
-            'overus_oro',
             'dick_ajax',
             'davi_ubers_especial',
-            'lensenblink_ajax',
-            'gullit_milan',
             'hol_stijn',
-            'hol_brian_mundial',
+            'malder_naranja',
             'klismann_ajax',
+            'gullit_milan',
+            'lensenblink_ajax',
+            'hol_brian_mundial',
             'kaiser_ajax',
             'luikal_barcha'
         ],
         bench: [
             'vaalenvoort_oro',
-            'malder_naranja'
+            'gulia_oro',
+            'overus_oro'
         ]
     },
     'RUSIA': {
