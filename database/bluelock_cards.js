@@ -1521,6 +1521,19 @@ const baptisteCards = [
         teamIcon: "teams/PXG.png",
         image: "assets/characters/Francia/BaptisteOro.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "baptiste_tots",
+        name: "BAPTISTE",
+        version: "Tots",
+        rarity: "Especial",
+        rating: 93,
+        position: "GK",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fr.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/Francia/BaptistePrime.png",
+        background: "assets/Cartas/Tots.png"
     }
 ];
 
