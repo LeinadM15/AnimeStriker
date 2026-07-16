@@ -1,33 +1,46 @@
 {
-    "fileName": "argentina_updates",
-    "arrayName": "argentinaUpdatesCards",
+    "fileName": "corea",
+    "arrayName": "coreaCards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "galtoni_oro",
-            "name": "GALTONI",
+            "id": "leeyong_un_oro",
+            "name": "LEE YONG-UN",
             "version": "Oro",
             "rarity": "Oro",
             "rating": 85,
-            "position": "GK",
-            "league": "Ligue 1",
-            "nationFlag": "https://flagcdn.com/w40/ar.png",
-            "teamIcon": "teams/Marsella.png",
-            "image": "assets/characters/Argentina/GaltoniOro.png",
+            "position": "ST",
+            "league": "Bundesliga",
+            "nationFlag": "https://flagcdn.com/w40/kr.png",
+            "teamIcon": "teams/Stuttgart.png",
+            "image": "assets/characters/Corea/LeeYong-un.png",
             "background": "assets/Cartas/Oro.png"
         },
         {
-            "id": "galtoni_trophy",
-            "name": "GALTONI",
-            "version": "Trophy",
+            "id": "chaincheon_oro",
+            "name": "CHA INCHEON",
+            "version": "Oro",
+            "rarity": "Oro",
+            "rating": 86,
+            "position": "ST",
+            "league": "Bundesliga",
+            "nationFlag": "https://flagcdn.com/w40/kr.png",
+            "teamIcon": "teams/Monchengladbach.png",
+            "image": "assets/characters/Corea/ChaIncheonOro.png",
+            "background": "assets/Cartas/Oro.png"
+        },
+        {
+            "id": "chaincheon_bundes",
+            "name": "CHA INCHEON",
+            "version": "Bundesliga",
             "rarity": "Especial",
-            "rating": 89,
-            "position": "GK",
-            "league": "Ligue 1",
-            "nationFlag": "https://flagcdn.com/w40/ar.png",
-            "teamIcon": "teams/Marsella.png",
-            "image": "assets/characters/Argentina/Galtoni.png",
-            "background": "assets/Cartas/Trophy.png"
+            "rating": 90,
+            "position": "ST",
+            "league": "Bundesliga",
+            "nationFlag": "https://flagcdn.com/w40/kr.png",
+            "teamIcon": "teams/Monchengladbach.png",
+            "image": "assets/characters/Corea/ChaIncheon.png",
+            "background": "assets/Cartas/Bundes.png"
         }
     ]
 }

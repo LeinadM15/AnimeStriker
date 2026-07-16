@@ -1,0 +1,41 @@
+const coreaCards = [
+    {
+        id: "leeyong_un_oro",
+        name: "LEE YONG-UN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Stuttgart.png",
+        image: "assets/characters/Corea/LeeYong-un.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "chaincheon_oro",
+        name: "CHA INCHEON",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Monchengladbach.png",
+        image: "assets/characters/Corea/ChaIncheonOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "chaincheon_bundes",
+        name: "CHA INCHEON",
+        version: "Bundesliga",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Monchengladbach.png",
+        image: "assets/characters/Corea/ChaIncheon.png",
+        background: "assets/Cartas/Bundes.png"
+    }
+];
