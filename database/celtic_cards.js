@@ -1,0 +1,93 @@
+const celticCards = [
+    {
+        id: "bison_oro",
+        name: "BISON",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/BisonOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "bison_verde",
+        name: "BISON",
+        version: "Verde",
+        rarity: "Especial",
+        rating: 86,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/Bison.png",
+        background: "assets/Cartas/Verde.png"
+    },
+    {
+        id: "nakamura_oro",
+        name: "NAKAMURA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 85,
+        position: "CM",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/NakamuraOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nakamura_verde",
+        name: "NAKAMURA",
+        version: "Verde",
+        rarity: "Especial",
+        rating: 88,
+        position: "CM",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/Nakamura.png",
+        background: "assets/Cartas/Verde.png"
+    },
+    {
+        id: "willsky_oro",
+        name: "WILL SKY",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/WillskyOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "willsky_verde",
+        name: "WILL SKY",
+        version: "Verde",
+        rarity: "Especial",
+        rating: 89,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/WillSky.png",
+        background: "assets/Cartas/Verde.png"
+    },
+    {
+        id: "willsky_tots",
+        name: "WILL SKY",
+        version: "Tots",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-sct.png",
+        teamIcon: "teams/Celtic.png",
+        image: "assets/characters/Celtic/WillSkyPrime.png",
+        background: "assets/Cartas/Tots.png"
+    }
+];
