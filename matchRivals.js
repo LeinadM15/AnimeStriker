@@ -790,27 +790,27 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'TAILANDIA': {
-        formation: '4-3-1-2',
+        formation: '3-4-3 (Plano)',
         coach: 'coach_rashirisaran',
         pitch: [
             'udomkaochuea_normal',
-            'naidsirisukha_normal',
+            'naparattana_normal',
             'bunnaak_chicorid',
             'patara_sunalai_milan',
-            'yuthpoonlarp_normal',
-            'suchartchaowarat_normal',
-            'bhaksepakroh_normal',
             'naowaratrahman_normal',
-            'farankonsawatt_trailblaze',
+            'klaharnsangsorn_normal',
+            'soladakulkit_normal',
+            'meichaptri_normal',
             'chanakonsawatt_trailblaze',
-            'sakhonkonsawatt_trailblaze'
+            'sakhonkonsawatt_trailblaze',
+            'farankonsawatt_trailblaze'
         ],
         bench: [
-            'naparattana_normal',
-            'klaharnsangsorn_normal',
             'thanakornjaa_normal',
-            'soladakulkit_normal',
-            'meichaptri_normal'
+            'suchartchaowarat_normal',
+            'bhaksepakroh_normal',
+            'yuthpoonlarp_normal',
+            'naidsirisukha_normal'
         ]
     },
     'EEUU': {
