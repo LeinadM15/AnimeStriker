@@ -222,6 +222,7 @@ function setupCustomDropdown() {
         if(url.includes('/uz.')) return 'Uzbekistán';
         if(url.includes('/no.')) return 'Noruega';
         if(url.includes('/ba.')) return 'Bosnia y Herzegovina';
+        if(url.includes('/ga.')) return 'Gabón';
         if(url.includes('/gb-eng.')) return 'Inglaterra';
         if(url.includes('/sa.')) return 'Arabia Saudita';
         if(url.includes('/ru.')) return 'Rusia';

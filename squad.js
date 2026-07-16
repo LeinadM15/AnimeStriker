@@ -6807,6 +6807,7 @@ const COUNTRY_NAMES = {
     'uz': 'Uzbekistán',
     'no': 'Noruega',
     'ba': 'Bosnia y Herzegovina',
+    'ga': 'Gabón',
     'eg': 'Egipto',
     'au': 'Australia'
 };
