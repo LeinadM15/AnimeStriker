@@ -1,0 +1,15 @@
+const alemaniaUpdates2Cards = [
+    {
+        id: "magath_oro",
+        name: "MAGATH",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "CB",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Leipzig.png",
+        image: "assets/characters/Alemania/Magath.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
