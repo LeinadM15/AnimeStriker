@@ -1,0 +1,41 @@
+const inglaterraUpdates2Cards = [
+    {
+        id: "steve_oro",
+        name: "STEVE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "RW",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/gb-eng.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Inglaterra/Steve.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "nicol_oro",
+        name: "NICOL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/gb-eng.png",
+        teamIcon: "teams/Sunderland.png",
+        image: "assets/characters/Inglaterra/Nicol.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "richard_oro",
+        name: "RICHARD",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CAM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/gb-eng.png",
+        teamIcon: "teams/AstonVilla.png",
+        image: "assets/characters/Inglaterra/Richard.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
