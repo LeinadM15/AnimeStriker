@@ -497,30 +497,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'ESPAÑA': {
-        formation: '4-5-1 (Ataque)',
+        formation: '4-1-2-1-2',
         coach: 'coach_delbasque',
         pitch: [
             'callusias_real',
-            'víctorgarcia',
-            'xavii_oro',
-            'gonzalez_oro',
-            'rams',
+            'cucurella_espana',
+            'abel_reg_espana',
             'michael_numancia_2',
-            'raphael_numancia_2',
-            'fersiotorres_chikorid',
-            'leonardoluna_3',
+            'pique_espana',
+            'emilio_prime_espana',
             'sergihernandez_españa',
-            'bunny_prime'
+            'iniesta_espana',
+            'raphael_numancia_2',
+            'bunny_prime',
+            'leonardoluna_3'
         ],
         bench: [
-            'grandios_oro',
             'salvadorcastell_españa',
-            'josemarigonzalez',
-            'joanasensi',
-            'ignaciolara_barcha',
-            'daniramos',
-            'gati',
-            'raulparejo'
+            'fersiotorres_chikorid',
+            'rams',
+            'gonzalez_espana',
+            'víctorgarcia',
+            'grandios_oro',
+            'xavii_oro',
+            'ignaciolara_barcha'
         ]
     },
     'INGLATERRA': {
