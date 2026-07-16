@@ -469,6 +469,32 @@ const espanaCards = [
         background: "assets/Cartas/Espana.png"
     },
     {
+        id: "sergihernandez_radioactiva",
+        name: "SERGI HERNANDEZ",
+        version: "Radioactiva",
+        rarity: "Especial",
+        rating: 93,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/SergiHernandezFle.png",
+        background: "assets/Cartas/Radioactiva.png"
+    },
+    {
+        id: "sergihernandez_rojiazul",
+        name: "SERGI HERNANDEZ",
+        version: "RojiAzul",
+        rarity: "Especial",
+        rating: 96,
+        position: "CM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/SergiHernandezPrime.png",
+        background: "assets/Cartas/RojiAzul.png"
+    },
+    {
         id: "raulparejo",
         name: "RAUL PAREJO",
         version: "Oro",
