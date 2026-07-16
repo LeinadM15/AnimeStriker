@@ -552,30 +552,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
     },
         
     'ARGENTINA': {
-        formation: '4-5-1 (Ataque)',
+        formation: '4-3-3',
         coach: 'coach_sturbin',
         pitch: [
-            'jorge_ortega_oro',
+            'galtoni_trophy',
             'camiloluna_rulebreaker',
-            'piazzola_eeuu',
-            'thiago_torres_cabras',
             'galvan_manshine',
+            'thiago_torres_cabras',
+            'zanetty_inter',
+            'aimar_icono',
             'diaz_prime2',
             'arg_maradona_icono',
-            'arg_pascal_prime',
             'cabassos_prime',
-            'aimar_icono',
-            'messi_esp'
+            'messi_esp',
+            'arg_pascal_prime'
         ],
         bench: [
-            'zanetty_oro',
-            'tevez_oro',
+            'piazzola_eeuu',
+            'batistuta_oro',
+            'crespo_oro',
+            'veron_oro',
             'diego_oro',
+            'tevez_oro',
             'saviola_oro',
-            'lionel_cruz_oro',
-            'herman_samuel_oro',
-            'roberto_torres_oro',
-            'esteban_carlos_oro'
+            'herman_samuel_oro'
         ]
     },
     'AUSTRALIA': {
