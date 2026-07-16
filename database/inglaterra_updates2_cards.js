@@ -1,6 +1,6 @@
 const inglaterraUpdates2Cards = [
     {
-        id: "steve_oro",
+        id: "steve_inglaterra_oro",
         name: "STEVE",
         version: "Oro",
         rarity: "Oro",
