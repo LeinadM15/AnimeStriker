@@ -865,23 +865,23 @@ const PREDEFINED_NATIONAL_SQUADS = {
     },
 
     'NIGERIA': {
-        formation: '4-4-2',
+        formation: '4-3-3 (Ataque)',
         coach: null,
         pitch: [
             'agbim_brasil',
             'kaita',
-            'obabona_brasil',
             'boban_brasil',
-            'ekpo',
-            'kuso_prime',
-            'kofi_tots',
             'sadiq_brasil',
-            'bello_brasil',
+            'obabona_brasil',
+            'ezekiel',
+            'kofi_tots',
             'ochado_brasil',
-            'onazi_prime'
+            'kuso_prime',
+            'onazi_prime',
+            'bello_brasil'
         ],
         bench: [
-            'ezekiel'
+            'ekpo'
         ]
     },
     'COSTA DE MARFIL': {
