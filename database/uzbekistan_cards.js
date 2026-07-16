@@ -1,0 +1,28 @@
+const uzbekistanCards = [
+    {
+        id: "zangief_oro",
+        name: "ZANGIEF",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/uz.png",
+        teamIcon: "teams/Leicester.png",
+        image: "assets/characters/Uzbekistan/ZangiefOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zangief_hielo",
+        name: "ZANGIEF",
+        version: "Hielo",
+        rarity: "Especial",
+        rating: 86,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/uz.png",
+        teamIcon: "teams/Leicester.png",
+        image: "assets/characters/Uzbekistan/Zangief.png",
+        background: "assets/Cartas/Hielo.png"
+    }
+];
