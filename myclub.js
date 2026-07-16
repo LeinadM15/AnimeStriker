@@ -220,6 +220,7 @@ function setupCustomDropdown() {
         if(url.includes('/gr.')) return 'Grecia';
         if(url.includes('/id.')) return 'Indonesia';
         if(url.includes('/uz.')) return 'Uzbekistán';
+        if(url.includes('/no.')) return 'Noruega';
         if(url.includes('/gb-eng.')) return 'Inglaterra';
         if(url.includes('/sa.')) return 'Arabia Saudita';
         if(url.includes('/ru.')) return 'Rusia';
