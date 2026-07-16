@@ -477,23 +477,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
         coach: 'coach_rodin_oro',
         pitch: [
             'baptiste_pxg',
-            'joffrey_oro',
             'thoram_parma',
-            'duschamps_pxg',
+            'joffrey_oro',
             'hugo_rosa',
-            'zedane_real',
+            'duschamps_pxg',
             'pierre_pxg',
             'chevalier_grem',
+            'hidalgo_pxg',
             'loki_pxg',
-            'noa_prime',
-            'napoleon_fran'
+            'napoleon_fran',
+            'noa_prime'
         ],
         bench: [
-            'rechard_oro',
-            'pierregodin_oro',
-            'hidalgo_pxg',
+            'zedane_real',
             'mbappa_pxg',
-            'julienrousseau_oro'
+            'julienrousseau_oro',
+            'pierregodin_oro',
+            'makelolo_oro',
+            'rolandperec_oro',
+            'stephanehinault_oro',
+            'bossi_oro'
         ]
     },
     'ESPAÑA': {
