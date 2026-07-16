@@ -579,30 +579,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'AUSTRALIA': {
-        formation: '4-3-2-1',
+        formation: '3-5-2',
         coach: 'coach_grant_grimoire',
         pitch: [
             'aus_gene',
-            'aus_whaly',
             'aus_kjell',
+            'aus_whaly',
             'aus_carlum',
-            'aus_david',
-            'aus_baal',
+            'zevic_oro',
+            'konwell_oro',
+            'shooker_oro',
             'aus_seth_tots',
-            'aus_elion',
             'aus_cole',
-            'aus_dolph',
-            'aus_hamilton'
+            'markduviga_oro',
+            'aus_dolph'
         ],
         bench: [
             'aus_pazuzu',
+            'aus_hamilton',
             'aus_joe',
-            'aus_iian',
-            'aus_lob',
+            'aus_david',
             'aus_astar',
-            'aus_octavius',
-            'aus_ken',
-            'hino_custom'
+            'aus_elion',
+            'aus_baal',
+            'aus_octavius'
         ]
     },
     'CHINA': {
