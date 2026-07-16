@@ -89,7 +89,8 @@ const NATIONAL_TEAMS = [
     { name: 'COLOMBIA',     badge: 'teams/Raimon.png',      flag: 'https://flagcdn.com/w40/co.png', flagCode: 'co' },
     { name: 'INAZUMA JAPÓN ORION', badge: 'teams/InazumaJaponOrion.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' },
     { name: 'NIGERIA',      badge: 'teams/Nigeria.png',      flag: 'https://flagcdn.com/w40/ng.png', flagCode: 'ng' },
-    { name: 'COSTA DE MARFIL', badge: 'teams/Costademarfil.png', flag: 'https://flagcdn.com/w40/ci.png', flagCode: 'ci' }
+    { name: 'COSTA DE MARFIL', badge: 'teams/Costademarfil.png', flag: 'https://flagcdn.com/w40/ci.png', flagCode: 'ci' },
+    { name: 'JAPÓN GO', badge: 'teams/JaponGo.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' }
 ];
 
 // ==========================================

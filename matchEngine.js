@@ -1996,6 +1996,84 @@ class MatchEngine {
             }
             this._logEvent('injury', `🏥 ¡${player.card.name} se ha lesionado!`);
             if (this.onInjury) this.onInjury(player);
+
+            // AI auto-sub: if the injured player is on the AI side, try to substitute
+            const aiSide = this.playerSide === 'home' ? 'away' : 'home';
+            if (player.side === aiSide) {
+                this._aiAutoSubForInjury(player);
+            }
+        }
+    }
+
+    // ==========================================
+    // AI AUTO-SUBSTITUTION FOR INJURIES
+    // ==========================================
+
+    _aiAutoSubForInjury(injuredPlayer) {
+        const teamSide = injuredPlayer.side;
+        const team = teamSide === 'home' ? this.home : this.away;
+
+        // Check if subs are available
+        if (this.subsUsed[teamSide] >= this.maxSubs) return;
+        if (!team.bench || team.bench.length === 0) return;
+
+        const injuredPos = injuredPlayer.role || injuredPlayer.card.position;
+
+        // Define compatible position groups
+        const POSITION_COMPAT = {
+            'GK':  ['GK'],
+            'CB':  ['CB', 'CDM'],
+            'LB':  ['LB', 'LM', 'LW', 'RB'],
+            'RB':  ['RB', 'RM', 'RW', 'LB'],
+            'CDM': ['CDM', 'CM', 'CB'],
+            'CM':  ['CM', 'CDM', 'CAM'],
+            'CAM': ['CAM', 'CM', 'CF'],
+            'LM':  ['LM', 'LW', 'LB', 'RM'],
+            'RM':  ['RM', 'RW', 'RB', 'LM'],
+            'LW':  ['LW', 'LM', 'ST', 'RW'],
+            'RW':  ['RW', 'RM', 'ST', 'LW'],
+            'CF':  ['CF', 'ST', 'CAM'],
+            'ST':  ['ST', 'CF', 'LW', 'RW']
+        };
+
+        const compatPositions = POSITION_COMPAT[injuredPos] || [injuredPos];
+
+        // Find the best bench player: first try exact position, then compatible
+        let bestSub = null;
+        let bestRating = -1;
+
+        // Pass 1: exact position match
+        for (const bp of team.bench) {
+            if (bp.card.position === injuredPos && bp.card.rating > bestRating) {
+                bestSub = bp;
+                bestRating = bp.card.rating;
+            }
+        }
+
+        // Pass 2: compatible position match (if no exact found)
+        if (!bestSub) {
+            for (const bp of team.bench) {
+                if (compatPositions.includes(bp.card.position) && bp.card.rating > bestRating) {
+                    bestSub = bp;
+                    bestRating = bp.card.rating;
+                }
+            }
+        }
+
+        // Pass 3: any player if still no match (except GK for outfield and vice versa)
+        if (!bestSub) {
+            const isGKNeeded = injuredPos === 'GK';
+            for (const bp of team.bench) {
+                if (isGKNeeded === bp.isGK && bp.card.rating > bestRating) {
+                    bestSub = bp;
+                    bestRating = bp.card.rating;
+                }
+            }
+        }
+
+        if (bestSub) {
+            // Use the existing makeSubstitution method
+            this.makeSubstitution(teamSide, injuredPlayer.index, bestSub.index);
         }
     }
 
