@@ -763,30 +763,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'ARABIA SAUDÍ': {
-        formation: '5-2-1-2',
+        formation: '3-5-2',
         coach: 'coach_anqaqushchi',
         pitch: [
             'falconalsaqir_normal',
-            'shakirzahir_normal',
+            'ospreyalbahar_normal',
             'vulcan_shapesifter',
-            'owairan_shapesifter',
             'khalis_rulebreaker',
-            'merlinalyaman_normal',
+            'rashidhakim_normal',
             'khalilhaddaoui_normal',
-            'buzzardalsahma_normal',
-            'parryalsurah_normal',
-            'condoralkundur_normal',
-            'saidashraf_normal'
+            'owairan_shapesifter',
+            'griffonalqahir_normal',
+            'tamirnasr_normal',
+            'saidashraf_normal',
+            'condoralkundur_normal'
         ],
         bench: [
             'salmankarim_normal',
-            'ospreyalbahar_normal',
-            'rashidhakim_normal',
-            'tamirnasr_normal',
+            'qamarsadir_normal',
+            'parryalsurah_normal',
+            'buzzardalsahma_normal',
+            'shakirzahir_normal',
             'asadgheisari_normal',
             'nazimnizar_normal',
-            'qamarsadir_normal',
-            'griffonalqahir_normal'
+            'merlinalyaman_normal'
         ]
     },
     'TAILANDIA': {
