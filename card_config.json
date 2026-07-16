@@ -1,33 +1,33 @@
 {
-    "fileName": "inglaterra",
-    "arrayName": "inglaterraCards",
+    "fileName": "argentina_updates",
+    "arrayName": "argentinaUpdatesCards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "carwyn_oro",
-            "name": "CARWYN",
+            "id": "galtoni_oro",
+            "name": "GALTONI",
             "version": "Oro",
             "rarity": "Oro",
             "rating": 85,
-            "position": "ST",
-            "league": "Premier League",
-            "nationFlag": "https://flagcdn.com/w40/gb-eng.png",
-            "teamIcon": "teams/Manshine.png",
-            "image": "assets/characters/Inglaterra/CarwynOro.png",
+            "position": "GK",
+            "league": "Ligue 1",
+            "nationFlag": "https://flagcdn.com/w40/ar.png",
+            "teamIcon": "teams/Marsella.png",
+            "image": "assets/characters/Argentina/GaltoniOro.png",
             "background": "assets/Cartas/Oro.png"
         },
         {
-            "id": "carwyn_manshine",
-            "name": "CARWYN",
-            "version": "Manshine",
+            "id": "galtoni_trophy",
+            "name": "GALTONI",
+            "version": "Trophy",
             "rarity": "Especial",
-            "rating": 88,
-            "position": "ST",
-            "league": "Premier League",
-            "nationFlag": "https://flagcdn.com/w40/gb-eng.png",
-            "teamIcon": "teams/Manshine.png",
-            "image": "assets/characters/Inglaterra/Carwyn.png",
-            "background": "assets/Cartas/Manshine.png"
+            "rating": 89,
+            "position": "GK",
+            "league": "Ligue 1",
+            "nationFlag": "https://flagcdn.com/w40/ar.png",
+            "teamIcon": "teams/Marsella.png",
+            "image": "assets/characters/Argentina/Galtoni.png",
+            "background": "assets/Cartas/Trophy.png"
         }
     ]
 }
