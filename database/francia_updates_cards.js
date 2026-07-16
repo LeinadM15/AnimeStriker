@@ -6,7 +6,7 @@ const franciaUpdatesCards = [
         rarity: "Oro",
         rating: 83,
         position: "ST",
-        league: "Ligue 1",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/fr.png",
         teamIcon: "teams/Lyonn.png",
         image: "assets/characters/Francia/Bossi.png",

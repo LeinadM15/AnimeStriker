@@ -1,0 +1,15 @@
+const uruguayUpdatesCards = [
+    {
+        id: "daniel_oro",
+        name: "DANIEL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/Bologna.png",
+        image: "assets/characters/Uruguay/Daniel.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
