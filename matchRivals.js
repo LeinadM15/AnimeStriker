@@ -632,28 +632,28 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'ALEMANIA': {
-        formation: '4-4-2 (Diamante)',
+        formation: '3-4-1-2',
         coach: 'coach_gallop',
         pitch: [
             'muller_custom',
-            'benedictgrim_alemania',
-            'teigerbran_alemania',
             'margus_shapesifters',
-            'erikgesner_alemania',
             'kaltz_fondo1',
+            'teigerbran_alemania',
+            'benedictgrim_alemania',
             'ness_bastard',
             'schester_custom',
+            'erikgesner_alemania',
             'corneliusheine_joker',
             'schneider_fondo1',
             'michaelkaiser_tots'
         ],
         bench: [
             'dremer_oro',
-            'goethe_oro',
             'maximilian_muller_oro',
-            'alexander_hausen_oro',
-            'ericschmidt_oro',
             'kevinschmidt_oro',
+            'ericschmidt_oro',
+            'alexander_hausen_oro',
+            'goethe_oro',
             'theosachs_alemania',
             'birkenstock_alemania'
         ]
