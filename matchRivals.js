@@ -437,28 +437,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
         bench: []
     },
                 'INAZUMA JAPÓN ORION': {
-        formation: '3-4-1-2',
+        formation: '3-3-1-3',
         coach: 'coach_mister_yi',
         pitch: [
             'duske_tots',
-            'shawn_ori',
-            'polaris_acker_toty',
             'ribera_billy_radioactiva',
-            'aiden_hielo',
-            'sonny_trueno',
+            'polaris_acker_toty',
+            'mark_doble',
             'lucas_cabras',
             'valentin_hielo',
+            'sonny_trueno',
             'heath_rosa',
+            'aiden_hielo',
             'xavier_schiller_prime2',
             'elliot_ember_rulebreaker'
         ],
         bench: [
-            'mark_doble',
+            'shawn_ori',
             'caleb_stonewall_prime',
-            'axel_jp',
-            'jude_pin',
             'nathan_ori',
-            'ina_hunter_if',
+            'axel_jp',
             'adriano_brasil'
         ]
     },
