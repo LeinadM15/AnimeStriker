@@ -37,5 +37,18 @@ const australiaCards = [
         teamIcon: "teams/Newcastle.png",
         image: "assets/characters/Australia/MarkDuviga.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zevic_oro",
+        name: "ZEVIC",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CM",
+        league: "Primeira Liga",
+        nationFlag: "https://flagcdn.com/w40/au.png",
+        teamIcon: "teams/Sporting.png",
+        image: "assets/characters/Australia/Zevic.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];
