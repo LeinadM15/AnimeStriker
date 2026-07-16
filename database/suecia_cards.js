@@ -27,6 +27,19 @@ const sueciaCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
+        id: "hansen_suecia",
+        name: "HANSEN",
+        version: "Suecia",
+        rarity: "Especial",
+        rating: 84,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/se.png",
+        teamIcon: "teams/Ajax.png",
+        image: "assets/characters/Suecia/Hansen.png",
+        background: "assets/Cartas/Suecia.png"
+    },
+    {
         id: "brolin_oro",
         name: "BROLIN",
         version: "Oro",
@@ -98,9 +111,9 @@ const sueciaCards = [
         rarity: "Oro",
         rating: 82,
         position: "CAM",
-        league: "La Liga",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/se.png",
-        teamIcon: "teams/Valencia.png",
+        teamIcon: "teams/Celtic.png",
         image: "assets/characters/Suecia/LarsonOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -111,9 +124,9 @@ const sueciaCards = [
         rarity: "Especial",
         rating: 85,
         position: "CAM",
-        league: "La Liga",
+        league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/se.png",
-        teamIcon: "teams/Valencia.png",
+        teamIcon: "teams/Celtic.png",
         image: "assets/characters/Suecia/Larson.webp",
         background: "assets/Cartas/Suecia.png"
     }

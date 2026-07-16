@@ -129,5 +129,18 @@ const portoCards = [
         teamIcon: "teams/Porto.png",
         image: "assets/characters/Porto/Oliveira.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "oliveira_cabras",
+        name: "OLIVEIRA",
+        version: "Cabras",
+        rarity: "Especial",
+        rating: 88,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/Porto.png",
+        image: "assets/characters/Porto/Oliveira.png",
+        background: "assets/Cartas/Cabras.png"
     }
 ];
