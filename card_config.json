@@ -1,33 +1,33 @@
 {
-    "fileName": "luis_suarez",
-    "arrayName": "luisSuarezCards",
+    "fileName": "updates_v2",
+    "arrayName": "updatesV2Cards",
     "series": "bluelock",
     "cards": [
         {
-            "id": "luis_suarez_oro",
-            "name": "LUIS SUAREZ",
-            "version": "Oro",
-            "rarity": "Oro",
-            "rating": 89,
-            "position": "ST",
-            "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/uy.png",
-            "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Uruguay/LuisSuarezOro.png",
-            "background": "assets/Cartas/Oro.png"
+            "id": "zanetty_inter",
+            "name": "ZANETTY",
+            "version": "Inter",
+            "rarity": "Especial",
+            "rating": 87,
+            "position": "RB",
+            "league": "Serie A",
+            "nationFlag": "https://flagcdn.com/w40/ar.png",
+            "teamIcon": "teams/Inter.png",
+            "image": "assets/characters/Argentina/ZanettyPrime.png",
+            "background": "assets/Cartas/Inter.png"
         },
         {
-            "id": "luis_suarez_icono",
-            "name": "LUIS SUAREZ",
-            "version": "Icono",
+            "id": "gonzalez_espana",
+            "name": "GONZALEZ",
+            "version": "Espana",
             "rarity": "Especial",
-            "rating": 94,
-            "position": "ST",
+            "rating": 88,
+            "position": "CB",
             "league": "La Liga",
-            "nationFlag": "https://flagcdn.com/w40/uy.png",
+            "nationFlag": "https://flagcdn.com/w40/es.png",
             "teamIcon": "teams/Barcha.png",
-            "image": "assets/characters/Uruguay/LuisSuarez.png",
-            "background": "assets/Cartas/Icono.png"
+            "image": "assets/characters/España/Gonzalez.png",
+            "background": "assets/Cartas/Espana.png"
         }
     ]
 }

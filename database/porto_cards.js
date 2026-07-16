@@ -140,7 +140,7 @@ const portoCards = [
         league: "Superliga Europea",
         nationFlag: "https://flagcdn.com/w40/pt.png",
         teamIcon: "teams/Porto.png",
-        image: "assets/characters/Porto/Oliveira.png",
+        image: "assets/characters/Porto/Oliviera.png",
         background: "assets/Cartas/Cabras.png"
     }
 ];
