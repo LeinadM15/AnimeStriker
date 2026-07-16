@@ -662,30 +662,30 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ]
     },
     'ITALIA': {
-        formation: '3-2-4-1',
+        formation: '5-2-1-2',
         coach: 'coach_mrd',
         pitch: [
             'gino_custom',
             'gozza_oro',
-            'don_lorenzo_joker',
-            'gen_normal',
             'rossi_chicorid',
-            'orlando_pacelli_futurestar',
+            'gen_normal',
+            'don_lorenzo_joker',
+            'chiellini_oro',
             'nakata_cabras',
-            'romano_dortmund',
+            'orlando_pacelli_futurestar',
             'paolo_bianchi_cabras',
-            'julio_acuto_oro',
-            'rusciano_rulebraker'
+            'rusciano_rulebraker',
+            'romano_dortmund'
         ],
         bench: [
             'gigi_blasi_oro',
-            'chiellini_oro',
+            'julio_acuto_oro',
+            'stratto_oro',
             'domenico_barberini_cabras',
-            'delpi_oro',
-            'dante_diavolo_oro',
-            'berdeo_smeraldo_oro',
             'bellamante_medici_oro',
-            'angelo_gabrini_oro'
+            'dante_diavolo_oro',
+            'angelo_gabrini_oro',
+            'tardelli_oro'
         ]
     },
     'MÉXICO': {
