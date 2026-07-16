@@ -407,14 +407,14 @@ function buildExactAbueloSquad(exactId) {
 
 const PREDEFINED_NATIONAL_SQUADS = {
     'JAPÓN TSUBASA': {
-        formation: '4-1-2-1-2 (Ancho)',
+        formation: '4-1-2-1-2',
         coach: 'coach_kira',
         pitch: [
-            'GENZO', 'MAKOTO SODA', 'JUN MISUGI', 'JITO', 'ISHIZAKI',
+            'GENZO', 'MAKOTO SODA', 'JITO', 'JUN MISUGI', 'ISHIZAKI',
             'MATSUYAMA', 'TARO MISAKI', 'SHINGO AOI', 'TSUBASA',
-            'NITTA', 'HYUGA'
+            'HYUGA', 'NITTA'
         ],
-        bench: ['WAKASHIMAZU', 'URABE', 'KAZUO', 'MASAO', 'AKAI', 'SAWADA', 'SANO', 'MORISAKI']
+        bench: ['WAKASHIMAZU', 'KAZUO', 'MASAO', 'AKAI', 'SORIMACHI', 'SANO', 'TAKASUGI', 'SAWADA']
     },
     'JAPÓN BLUE LOCK': {
         formation: '4-3-3',
@@ -847,7 +847,7 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'zolani_baloyi',
             'moeneeb_booysen',
             'jake_fana',
-            'dakarai_furman',
+            'cassius_tobler',
             'masago_molela',
             'anton_nortje',
             'siyabonga_mahlangu',
@@ -857,11 +857,11 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'melisizwe_zamani'
         ],
         bench: [
+            'hugh_makebe',
+            'dakarai_furman',
             'themba_sepeng',
-            'cassius_tobler',
-            'herschel_de_villiers',
             'kennedy_mccarthy',
-            'hugh_makebe'
+            'herschel_de_villiers'
         ]
     },
 
