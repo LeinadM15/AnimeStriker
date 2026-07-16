@@ -76,5 +76,18 @@ const arsenalCards = [
         teamIcon: "teams/Arsenal.png",
         image: "assets/characters/Arsenal/Hawkes.png",
         background: "assets/Cartas/Arsenal.png"
+    },
+    {
+        id: "aubaun_oro",
+        name: "AUBAUN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/ga.png",
+        teamIcon: "teams/Arsenal.png",
+        image: "assets/characters/Arsenal/Aubaun.png",
+        background: "assets/Cartas/Oro.png"
     }
 ];

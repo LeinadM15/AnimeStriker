@@ -1,19 +1,19 @@
 {
-    "fileName": "bosnia",
-    "arrayName": "bosniaCards",
+    "fileName": "barcha",
+    "arrayName": "barchaCards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "dzeko_oro",
-            "name": "DZEKO",
+            "id": "fonseca_oro",
+            "name": "FONSECA",
             "version": "Oro",
             "rarity": "Oro",
-            "rating": 85,
-            "position": "ST",
-            "league": "Serie A",
-            "nationFlag": "https://flagcdn.com/w40/ba.png",
-            "teamIcon": "teams/Roma.png",
-            "image": "assets/characters/Bosnia/Dzeko.png",
+            "rating": 84,
+            "position": "CB",
+            "league": "La Liga",
+            "nationFlag": "https://flagcdn.com/w40/pt.png",
+            "teamIcon": "teams/Barcha.png",
+            "image": "assets/characters/Barcha/Fonseca.png",
             "background": "assets/Cartas/Oro.png"
         }
     ]

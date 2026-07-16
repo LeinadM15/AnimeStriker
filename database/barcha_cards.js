@@ -1,0 +1,15 @@
+const barchaCards = [
+    {
+        id: "fonseca_oro",
+        name: "FONSECA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/Barcha/Fonseca.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
