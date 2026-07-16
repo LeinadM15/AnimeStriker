@@ -100,13 +100,13 @@ const legendsUpdateCards = [
         position: "CM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/ar.png",
-        teamIcon: "teams/Lazzio.png",
+        teamIcon: "teams/Lazio.png",
         image: "assets/characters/Argentina/Veron.png",
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "gekas_oro",
-        name: "THEOFANIS GEKAS",
+        id: "kages_oro",
+        name: "KAGES",
         version: "Oro",
         rarity: "Oro",
         rating: 86,
@@ -114,12 +114,12 @@ const legendsUpdateCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/gr.png",
         teamIcon: "teams/Leverkusen.png",
-        image: "assets/characters/Alemania/TheofanisGekasOro.png",
+        image: "assets/characters/Grecia/KagesOro.png",
         background: "assets/Cartas/Oro.png"
     },
     {
-        id: "gekas_bundes",
-        name: "THEOFANIS GEKAS",
+        id: "kages_bundes",
+        name: "KAGES",
         version: "Bundes",
         rarity: "Especial",
         rating: 90,
@@ -127,7 +127,7 @@ const legendsUpdateCards = [
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/gr.png",
         teamIcon: "teams/Leverkusen.png",
-        image: "assets/characters/Alemania/TheofanisGekas.png",
+        image: "assets/characters/Grecia/Kages.png",
         background: "assets/Cartas/Bundes.png"
     }
 ];
