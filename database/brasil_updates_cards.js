@@ -1,0 +1,41 @@
+const brasilUpdatesCards = [
+    {
+        id: "jorgi_oro",
+        name: "JORGI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Lazio.png",
+        image: "assets/characters/Brasil/Jorgi.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "branca_oro",
+        name: "BRANCA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CDM",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Porto.png",
+        image: "assets/characters/Brasil/Branca.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "dugo_oro",
+        name: "DUGO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CM",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/br.png",
+        teamIcon: "teams/Kaiserslautern.png",
+        image: "assets/characters/Brasil/Dugo.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
