@@ -1,0 +1,41 @@
+const italiaUpdates2Cards = [
+    {
+        id: "conti_oro",
+        name: "CONTI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CAM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/it.png",
+        teamIcon: "teams/Fiorentina.png",
+        image: "assets/characters/Italia/Conti.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "tardelli_oro",
+        name: "TARDELLI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "ST",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/it.png",
+        teamIcon: "teams/Torino.png",
+        image: "assets/characters/Italia/Tardelli.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "marinho_oro",
+        name: "MARINHO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "RB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/it.png",
+        teamIcon: "teams/Lazio.png",
+        image: "assets/characters/Italia/Marinho.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];
