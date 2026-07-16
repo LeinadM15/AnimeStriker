@@ -1,0 +1,15 @@
+const alemaniaUpdates3Cards = [
+    {
+        id: "margus_prime",
+        name: "MARGUS",
+        version: "Prime",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/WerderBremen.png",
+        image: "assets/characters/Alemania/MargusPrime.png",
+        background: "assets/Cartas/Fondo_Margus.jpg"
+    }
+];

@@ -1,33 +1,20 @@
 {
-    "fileName": "brasil_updates2",
-    "arrayName": "brasilUpdates2Cards",
+    "fileName": "alemania_updates3",
+    "arrayName": "alemaniaUpdates3Cards",
     "series": "tsubasa",
     "cards": [
         {
-            "id": "victor_oro",
-            "name": "VICTOR",
-            "version": "Oro",
-            "rarity": "Oro",
-            "rating": 84,
-            "position": "CM",
-            "league": "Premier League",
-            "nationFlag": "https://flagcdn.com/w40/br.png",
-            "teamIcon": "teams/Blackburn.png",
-            "image": "assets/characters/Brasil/VictorOro.png",
-            "background": "assets/Cartas/Oro.png"
-        },
-        {
-            "id": "victor_brasil",
-            "name": "VICTOR",
-            "version": "Brasil",
+            "id": "margus_prime",
+            "name": "MARGUS",
+            "version": "Prime",
             "rarity": "Especial",
-            "rating": 87,
-            "position": "CM",
-            "league": "Premier League",
-            "nationFlag": "https://flagcdn.com/w40/br.png",
-            "teamIcon": "teams/Blackburn.png",
-            "image": "assets/characters/Brasil/Victor.png",
-            "background": "assets/Cartas/Brasil.png"
+            "rating": 90,
+            "position": "ST",
+            "league": "Bundesliga",
+            "nationFlag": "https://flagcdn.com/w40/de.png",
+            "teamIcon": "teams/WerderBremen.png",
+            "image": "assets/characters/Alemania/MargusPrime.png",
+            "background": "assets/Cartas/Fondo_Margus.jpg"
         }
     ]
 }
