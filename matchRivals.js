@@ -818,26 +818,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
         coach: 'coach_renegade_oro',
         pitch: [
             'bacchus_custom',
-            'cobra_oro',
             'charmer_oro',
-            'judge_oro',
+            'cobra_oro',
+            'adamstrong_eeuu',
             'bobbyshearer_eeuu',
             'erikeagle_eeuu',
             'markkrueger_eeuu',
             'ortiz_eeuu',
-            'yoga_oro',
+            'sylvesterluke_oro',
             'dylankeats_eeuu',
             'blake_eeuu'
         ],
         bench: [
             'azwan_eeuu',
             'hellion_oro',
-            'gabrieljax_oro',
-            'shanepierce_oro',
+            'bigman_oro',
+            'judge_oro',
             'mop_oro',
-            'alexhawke_oro',
-            'scuba_oro',
-            'alexidallas_oro'
+            'billydash_oro',
+            'shanepierce_oro',
+            'alexhawke_oro'
         ]
     },
     'SUDÁFRICA': {
