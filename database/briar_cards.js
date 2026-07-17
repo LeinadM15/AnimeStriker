@@ -35,9 +35,9 @@ const briarCards = [
         rating: 90,
         position: "ST",
         secondaryPositions: ["CF", "RW", "LW"],
-        league: "Serie A",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Fiorentina.png",
+        teamIcon: "teams/SouthCirrus.png",
         image: "assets/characters/Briar/BriarMan.png",
         background: "assets/Cartas/FlashBack.png"
     },
@@ -63,9 +63,9 @@ const briarCards = [
         rating: 94,
         position: "ST",
         secondaryPositions: ["CF", "RW", "LW"],
-        league: "Serie A",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Fiorentina.png",
+        teamIcon: "teams/SouthCirrus.png",
         image: "assets/characters/Briar/BriarPrime.png",
         background: "assets/Cartas/FutureStar.png"
     }
