@@ -123,9 +123,9 @@ const coreaExtraCards = [
         rarity: "Especial",
         rating: 87,
         position: "GK",
-        league: "Ligue 1",
+        league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/kr.png",
-        teamIcon: "teams/Monaco.png",
+        teamIcon: "teams/NottinghamFores.png",
         image: "assets/characters/Corea/Park Gom-bull2.png",
         background: "assets/Cartas/Roja.png"
     },
@@ -136,9 +136,9 @@ const coreaExtraCards = [
         rarity: "Especial",
         rating: 90,
         position: "GK",
-        league: "Ligue 1",
+        league: "Premier League",
         nationFlag: "https://flagcdn.com/w40/kr.png",
-        teamIcon: "teams/Monaco.png",
+        teamIcon: "teams/NottinghamFores.png",
         image: "assets/characters/Corea/Park Gom-bullPrime.png",
         background: "assets/Cartas/Naranja.png"
     },
