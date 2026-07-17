@@ -6031,6 +6031,11 @@ function getCoachBoosts(card, coach) {
             boost.chem += 2;
             boost.rating += 2;
         }
+    } else if (coach.id === 'coach_an_min_su' || coach.id === 'coach_changsu_choi' || coach.id === 'coach_ji_seong_lee') {
+        if (card.nationFlag && card.nationFlag.includes('kr.png')) {
+            boost.chem += 2;
+            boost.rating += 2;
+        }
     } else if (coach.id === 'coach_roberto_hongo_br') {
         if (card.name === 'TSUBASA' || (card.nationFlag && card.nationFlag.includes('br.png'))) {
             boost.chem += 1;

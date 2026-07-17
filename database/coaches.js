@@ -532,5 +532,47 @@ const coachesDB = [
         image: "assets/characters/CalaPirata/LongjohnSilver.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "team", team: "teams/Marea-Pirata.png", amount: 2, chem: 2, condition: "A todos los jugadores del Marea-Pirata" }
+    },
+    {
+        id: "coach_an_min_su",
+        name: "AN MIN-SU",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Corea.png",
+        image: "assets/characters/Corea/An Min-su.png",
+        background: "assets/Cartas/Coach.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/kr.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Corea" }
+    },
+    {
+        id: "coach_changsu_choi",
+        name: "CHANGSU CHOI",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Corea.png",
+        image: "assets/characters/Corea/Changsu ChoiCoach.png",
+        background: "assets/Cartas/Coach.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/kr.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Corea" }
+    },
+    {
+        id: "coach_ji_seong_lee",
+        name: "JI SEONG LEE",
+        version: "Entrenador (Oro)",
+        rarity: "Coach",
+        rating: 85,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/Corea.png",
+        image: "assets/characters/Corea/Ji Seong Lee.png",
+        background: "assets/Cartas/Coach.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/kr.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Corea" }
     }
 ];
