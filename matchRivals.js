@@ -90,7 +90,8 @@ const NATIONAL_TEAMS = [
     { name: 'INAZUMA JAPÓN ORION', badge: 'teams/InazumaJaponOrion.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' },
     { name: 'NIGERIA',      badge: 'teams/Nigeria.png',      flag: 'https://flagcdn.com/w40/ng.png', flagCode: 'ng' },
     { name: 'COSTA DE MARFIL', badge: 'teams/Costademarfil.png', flag: 'https://flagcdn.com/w40/ci.png', flagCode: 'ci' },
-    { name: 'JAPÓN GO', badge: 'teams/JaponGo.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' }
+    { name: 'JAPÓN GO', badge: 'teams/JaponGo.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' },
+    { name: 'COREA', badge: 'teams/Corea.png', flag: 'https://flagcdn.com/w40/kr.png', flagCode: 'kr' }
 ];
 
 // ==========================================
@@ -406,6 +407,24 @@ function buildExactAbueloSquad(exactId) {
 }
 
 const PREDEFINED_NATIONAL_SQUADS = {
+    'COREA': {
+        formation: '3-4-2-1',
+        coach: 'coach_changsu_choi',
+        pitch: [
+            'parkgombull_prime',
+            'shinjaechoi_prime',
+            'seoktelbull_prime',
+            'pekyongpark_prime',
+            'TorchGazel',
+            'changsuchoi_prime',
+            'byron_love_prime',
+            'GazelTorch',
+            'chaincheon_bundes',
+            'junyeonglee_prime',
+            'baekbullwo_prime'
+        ],
+        bench: ['jangcho_prime', 'leesanbull_prime', 'shinbullkot_roja', 'junhobae_prime', 'leeyong_un_oro', 'soyeonsim_corea', 'hwangbullgim_corea', 'minseobyun_corea']
+    },
     'JAPÓN TSUBASA': {
         formation: '4-1-2-1-2',
         coach: 'coach_kira',
