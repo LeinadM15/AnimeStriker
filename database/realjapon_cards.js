@@ -368,7 +368,7 @@ const realjaponCards = [
         name: "KOJI YOSHIKAWA",
         version: "Hielo",
         rarity: "Especial",
-        rating: 82,
+        rating: 85,
         position: "CM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
