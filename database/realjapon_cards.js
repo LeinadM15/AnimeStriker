@@ -73,7 +73,7 @@ const realjaponCards = [
         position: "CB",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Villarreal.png",
+        teamIcon: "teams/Villareal.png",
         image: "assets/characters/RealJapon/IgawaOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -86,7 +86,7 @@ const realjaponCards = [
         position: "CB",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Villarreal.png",
+        teamIcon: "teams/Villareal.png",
         image: "assets/characters/RealJapon/Igawa.png",
         background: "assets/Cartas/Hielo.png"
     },
@@ -99,9 +99,9 @@ const realjaponCards = [
         position: "CB",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Villarreal.png",
+        teamIcon: "teams/Villareal.png",
         image: "assets/characters/RealJapon/IgawaPrime.png",
-        background: "assets/Cartas/Oro.png"
+        background: "assets/Cartas/Trophy.png"
     },
     {
         id: "katagirioro_realjapon",
@@ -136,9 +136,10 @@ const realjaponCards = [
         rarity: "Oro",
         rating: 84,
         position: "RM",
+        secondaryPositions: ["CAM", "LW", "LM"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/BayerLeverkusen.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/RealJapon/KazamiOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -149,9 +150,10 @@ const realjaponCards = [
         rarity: "Especial",
         rating: 87,
         position: "RM",
+        secondaryPositions: ["CAM", "LW", "LM"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/BayerLeverkusen.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/RealJapon/Kazami.png",
         background: "assets/Cartas/Hielo.png"
     },
@@ -162,9 +164,10 @@ const realjaponCards = [
         rarity: "Especial",
         rating: 90,
         position: "RM",
+        secondaryPositions: ["CAM", "LW", "LM"],
         league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/BayerLeverkusen.png",
+        teamIcon: "teams/Leverkusen.png",
         image: "assets/characters/RealJapon/KazamiPrime.png",
         background: "assets/Cartas/Rulebraker.png"
     },
@@ -385,7 +388,7 @@ const realjaponCards = [
         position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/CeltaVigo.png",
+        teamIcon: "teams/Celta.png",
         image: "assets/characters/RealJapon/YumikuraOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -398,7 +401,7 @@ const realjaponCards = [
         position: "CAM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/CeltaVigo.png",
+        teamIcon: "teams/Celta.png",
         image: "assets/characters/RealJapon/Yumikura.png",
         background: "assets/Cartas/Hielo.png"
     }
