@@ -426,6 +426,24 @@ const PREDEFINED_NATIONAL_SQUADS = {
         ],
         bench: ['jangcho_prime', 'leesanbull_prime', 'shinbullkot_roja', 'junhobae_prime', 'leeyong_un_oro', 'soyeonsim_corea', 'hwangbullgim_corea', 'minseobyun_corea', 'joonhohwang_corea', 'kimbullbit_corea', 'yeonbullsay_corea', 'sonbullgong_corea', 'hobulltong_corea', 'sunabeybull_corea']
     },
+    'REAL JAPÓN': {
+        formation: '3-4-3',
+        coach: null,
+        pitch: [
+            'yamada_realjapon',
+            'ura_porto',
+            'sogaprime_realjapon',
+            'igawaprime_realjapon',
+            'sakaki_realjapon',
+            'yoshikawa_realjapon',
+            'yumikura_realjapon',
+            'okanooro_realjapon',
+            'furukawaprime_realjapon',
+            'kazamiprime_realjapon',
+            'hino_custom'
+        ],
+        bench: ['mikami_realjapon', 'gamo_realjapon', 'katagiri_realjapon', 'nakanishi_realjapon']
+    },
     'JAPÓN TSUBASA': {
         formation: '4-1-2-1-2',
         coach: 'coach_kira',
