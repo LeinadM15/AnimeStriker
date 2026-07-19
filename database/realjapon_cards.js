@@ -47,7 +47,7 @@ const realjaponCards = [
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/CAOsasuna.png",
+        teamIcon: "teams/Osasuna.png",
         image: "assets/characters/RealJapon/GamoOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -60,7 +60,7 @@ const realjaponCards = [
         position: "CDM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/CAOsasuna.png",
+        teamIcon: "teams/Osasuna.png",
         image: "assets/characters/RealJapon/Gamo.png",
         background: "assets/Cartas/Icono.png"
     },

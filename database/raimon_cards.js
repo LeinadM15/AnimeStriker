@@ -269,7 +269,7 @@ const raimonCards = [
         league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Raimon.png",
-        image: "assets/characters/Raimon/Milan Mc Grath.png",
+        image: "assets/characters/Raimon/Milan McGrath.png",
         background: "assets/Cartas/Oro.png"
     },
     {

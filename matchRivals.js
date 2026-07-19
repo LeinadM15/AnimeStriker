@@ -424,7 +424,7 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'junyeonglee_prime',
             'baekbullwo_prime'
         ],
-        bench: ['jangcho_prime', 'leesanbull_prime', 'shinbullkot_roja', 'junhobae_prime', 'leeyong_un_oro', 'soyeonsim_corea', 'hwangbullgim_corea', 'minseobyun_corea']
+        bench: ['jangcho_prime', 'leesanbull_prime', 'shinbullkot_roja', 'junhobae_prime', 'leeyong_un_oro', 'soyeonsim_corea', 'hwangbullgim_corea', 'minseobyun_corea', 'joonhohwang_corea', 'kimbullbit_corea', 'yeonbullsay_corea', 'sonbullgong_corea', 'hobulltong_corea', 'sunabeybull_corea']
     },
     'JAPÓN TSUBASA': {
         formation: '4-1-2-1-2',
