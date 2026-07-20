@@ -914,7 +914,7 @@ const southCirrusCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/SouthCirrus.png",
         image: "assets/characters/SouthCirrus/Milo Rankin2.png",
-        background: "assets/Cartas/Morada.png"
+        background: "assets/Cartas/Morado.png"
     },
     {
         id: "milorankin_prime",
