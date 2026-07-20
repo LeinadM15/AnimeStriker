@@ -232,6 +232,10 @@ function setupCustomDropdown() {
                 if(url.includes('/au.')) return 'Australia';
         if(url.includes('/bf.')) return 'Burkina Faso';
         if(url.includes('/no.')) return 'Noruega';
+                if(url.includes('/in.')) return 'India';
+        if(url.includes('/gb-sct.')) return 'Escocia';
+        if(url.includes('/be.')) return 'Bélgica';
+        if(url.includes('/vn.')) return 'Vietnam';
         return 'Nación';
     };
 

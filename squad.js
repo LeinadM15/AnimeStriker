@@ -6815,7 +6815,11 @@ const COUNTRY_NAMES = {
     'ba': 'Bosnia y Herzegovina',
     'ga': 'Gabón',
     'eg': 'Egipto',
-    'au': 'Australia'
+    'au': 'Australia',
+    'in': 'India',
+    'gb-sct': 'Escocia',
+    'be': 'Bélgica',
+    'vn': 'Vietnam'
 };
 
 function getNationName(url) {
