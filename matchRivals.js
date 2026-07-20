@@ -46,6 +46,7 @@ const CLUB_TEAMS = [
     { name: 'REAL BETIS',       badge: 'teams/RealBetis.png',  league: 'La Liga',        teamIcon: 'teams/RealBetis.png' },
     { name: 'MAN. UNITED',      badge: 'teams/ManchesterUnited.png', league: 'Premier League', teamIcon: 'teams/ManchesterUnited.png' },
     { name: 'FIORENTINA',       badge: 'teams/Fiorentina.png',       league: 'Serie A',        teamIcon: 'teams/Fiorentina.png' },
+    { name: 'ATALANTA',         badge: 'teams/Atalanta.png',         league: 'Serie A',        teamIcon: 'teams/Atalanta.png' },
     { name: 'LYON',             badge: 'teams/Lyonn.png',            league: 'Superliga Europea',        teamIcon: 'teams/Lyonn.png' },
     { name: 'BRIGHTON',         badge: 'teams/Brighton.png',         league: 'Premier League', teamIcon: 'teams/Brighton.png' },
     { name: 'ALPINO',           badge: 'teams/Alpino.png',           league: 'J-League',       teamIcon: 'teams/Alpino.png' },
