@@ -531,5 +531,31 @@ const coreaCards = [
         teamIcon: "teams/Monchengladbach.png",
         image: "assets/characters/Corea/ChaIncheon.png",
         background: "assets/Cartas/Bundes.png"
+    },
+    {
+        id: "gil_oro",
+        name: "GIL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "CB",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/HerthaBSC.png",
+        image: "assets/characters/Corea/GilOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "gil_prime",
+        name: "GIL",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 87,
+        position: "CB",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/kr.png",
+        teamIcon: "teams/HerthaBSC.png",
+        image: "assets/characters/Corea/GilPrime.png",
+        background: "assets/Cartas/Rulebraker.png"
     }
 ];
