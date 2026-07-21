@@ -230,7 +230,7 @@ const nathanCards = [
         position: "CDM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Napoli.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/Akai/AkaiOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -243,7 +243,7 @@ const nathanCards = [
         position: "CDM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Napoli.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/Akai/Akai.png",
         background: "assets/Cartas/Cabras.png"
     },
@@ -256,7 +256,7 @@ const nathanCards = [
         position: "CDM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Napoli.png",
+        teamIcon: "teams/Roma.png",
         image: "assets/characters/Akai/AkaiPrime.png",
         background: "assets/Cartas/Toty.png"
     },

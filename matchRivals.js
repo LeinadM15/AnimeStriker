@@ -93,7 +93,8 @@ const NATIONAL_TEAMS = [
     { name: 'COSTA DE MARFIL', badge: 'teams/Costademarfil.png', flag: 'https://flagcdn.com/w40/ci.png', flagCode: 'ci' },
     { name: 'JAPÓN GO', badge: 'teams/JaponGo.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' },
     { name: 'COREA', badge: 'teams/Corea.png', flag: 'https://flagcdn.com/w40/kr.png', flagCode: 'kr' },
-    { name: 'REAL JAPÓN', badge: 'teams/RealJapan.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' }
+    { name: 'REAL JAPÓN', badge: 'teams/RealJapan.png', flag: 'https://flagcdn.com/w40/jp.png', flagCode: 'jp' },
+    { name: 'EGIPTO', badge: 'teams/Egipto.png', flag: 'https://flagcdn.com/w40/eg.png', flagCode: 'eg' }
 ];
 
 // ==========================================
@@ -970,6 +971,26 @@ const PREDEFINED_NATIONAL_SQUADS = {
             'casagrande_brasil',
             'senaldo_brasil',
             'pepe_brasil'
+        ]
+    },
+    'EGIPTO': {
+        formation: '4-3-3 (Falso 9)',
+        pitch: [
+            'b_adaen_oro',
+            'r_adji_oro',
+            'ogar_circes_eeuu',
+            'g_ob_oro',
+            'a_ddah_oro',
+            'a_kra_oro',
+            'k_aran_uogu_trailblaze',
+            's_harqiyah_oro',
+            's_haha_oro',
+            'salah_trueno',
+            'a_tac_oro'
+        ],
+        bench: [
+            'k_al_oro',
+            'n_ameeb_oro'
         ]
     }
 };

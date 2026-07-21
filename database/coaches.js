@@ -492,6 +492,20 @@ const coachesDB = [
         boost: { type: "team", team: "teams/FantasmasdeSengoku.png", amount: 2, chem: 2, condition: "A todos los jugadores del Fantasmas de Sengoku" }
     },
     {
+        id: "coach_wythers_moonridge",
+        name: "WYTHERS MOONRIDGE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/FantasmasdeSengoku.png",
+        image: "assets/characters/Stormridge/Wythers Moonridge.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/FantasmasdeSengoku.png", amount: 2, chem: 2, condition: "A todos los jugadores del Fantasmas de Sengoku" }
+    },
+    {
         id: "coach_turtle_newfield",
         name: "TURTLE NEWFIELD",
         version: "Oro",
@@ -574,5 +588,75 @@ const coachesDB = [
         image: "assets/characters/Corea/Ji Seong Lee.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/kr.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Corea" }
+    },
+    {
+        id: "coach_malik_keos",
+        name: "MALIK KEOS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Solaria-Zeus.png",
+        image: "assets/characters/Zeus/Malik Keos.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Solaria-Zeus.png", amount: 2, chem: 2, condition: "A todos los jugadores del Solaria-Zeus" }
+    },
+    {
+        id: "coach_theobald_longwood",
+        name: "THEOBALD LONGWOOD",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Muralla.png",
+        image: "assets/characters/Twinford/Theobald Longwood.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Muralla.png", amount: 2, chem: 2, condition: "A todos los jugadores del Muralla" }
+    },
+    {
+        id: "coach_apia_crownwell",
+        name: "APIA CROWNWELL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Inagirls.png",
+        image: "assets/characters/Inagirls/Apia Crownwell.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "team", team: "teams/Inagirls.png", amount: 2, chem: 2, condition: "A todos los jugadores del Inagirls" }
+    },
+    {
+        id: "coach_nikolai_gagarin",
+        name: "NIKOLAI GAGARIN",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/uz.png",
+        teamIcon: "teams/Uzbekistan.png",
+        image: "assets/characters/Uzbekistan/Nikolai Gagarin.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/uz.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Uzbekistan" }
+    },
+    {
+        id: "coach_zundar_zand",
+        name: "ZUNDAR ZAND",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/eg.png",
+        teamIcon: "teams/Egipto.png",
+        image: "assets/characters/Egipto/Zundar Zand.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/eg.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Egipto" }
     }
 ];

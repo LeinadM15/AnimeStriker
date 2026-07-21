@@ -1,0 +1,28 @@
+const lamineYamalCards = [
+    {
+        id: "lamine_yamal_oro",
+        name: "LAMINE YAMAL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 88,
+        position: "RW",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/LamineOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "lamine_yamal_prime",
+        name: "LAMINE YAMAL",
+        version: "Prime",
+        rarity: "Especial",
+        rating: 95,
+        position: "RW",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/es.png",
+        teamIcon: "teams/Barcha.png",
+        image: "assets/characters/España/LaminePrime.png",
+        background: "assets/Cartas/Espana.png"
+    }
+];
