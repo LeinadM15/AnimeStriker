@@ -1,0 +1,159 @@
+Created At: 2026-07-29T23:22:13+02:00
+Completed At: 2026-07-29T23:22:14+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4193
+Total Bytes: 218310
+Showing lines 3450 to 3600
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3450:         
+3451:         function endMatch() {
+3452:             engine.remove();
+3453:             
+3454:             const teamGoals = goalsConceded;
+3455:             const win = saves >= 3; // Parar la mayoría de 5 tiros
+3456:             
+3457:             const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3458:             if (myTeam) {
+3459:                 if (win) { myTeam.w++; myTeam.pts += 3; }
+3460:                 else if (teamGoals === saves) { myTeam.d++; myTeam.pts += 1; }
+3461:                 else { myTeam.l++; }
+3462:             }
+3463:             
+3464:             p2League.forEach(t => {
+3465:                 if (!t.name.includes("Tu Equipo")) {
+3466:                     t.w += Math.floor(Math.random() * 2);
+3467:                     t.pts = (t.w * 3) + t.d;
+3468:                 }
+3469:             });
+3470:             
+3471:             const matchXp = 250 + (win ? 200 : (teamGoals === saves ? 100 : 50)) + (saves * 75);
+3472:             const resultTxt = win ? '¡VICTORIA!' : (teamGoals === saves ? 'EMPATE' : 'DERROTA...');
+3473:             
+3474:             showNotification(`${resultTxt} Resultado: Paradas ${saves} - ${teamGoals} Goles`, win ? 'success' : (teamGoals === saves ? 'warning' : 'error'), 6000);
+3475:             
+3476:             setTimeout(() => {
+3477:                 openMatchXpDistributor(matchXp, `${resultTxt} Paraste ${saves} tiros y encajaste ${teamGoals}. XP Total: ${matchXp}`);
+3478:             }, 1000);
+3479:             
+3480:             // Show room content again after engine closes
+3481:             document.getElementById('p2-room-content').style.display = 'block';
+3482:         }
+3483:         
+3484:         function nextShot() {
+3485:             if (currentShot >= totalShots) {
+3486:                 setTimeout(endMatch, 1000);
+3487:                 return;
+3488:             }
+3489:             currentShot++;
+3490:             updateHUD();
+3491:             
+3492:             // Move shooter for next shot
+3493:             let startX = 35 + Math.random() * 30; // 35% to 65%
+3494:             let startY = 45 + Math.random() * 5;  // 45% to 50%
+3495:             shooter.style.left = `${startX}%`;
+3496:             shooter.style.top = `${startY}%`;
+3497:             
+3498:             setTimeout(() => playScenario(startX, startY), 1000);
+3499:         }
+3500:         
+3501:         function playScenario(startX, startY) {
+3502:             const ball = document.createElement('img');
+3503:             ball.src = 'assets/Match/Balon.png';
+3504:             ball.onerror = () => { ball.style.display="none"; };
+3505:             ball.style.cssText = `position:absolute; top:${startY}%; left:${startX}%; width:20px; height:20px; z-index:10002; transform:translate(-50%,-50%); pointer-events:none; border-radius:50%;`;
+3506:             engine.appendChild(ball);
+3507:             
+3508:             let type = Math.floor(Math.random() * 3); // 0=Normal, 1=Power, 2=Curve
+3509:             
+3510:             let targetX = 10 + Math.random() * 80;
+3511:             let targetY = 10 + Math.random() * 80;
+3512:             
+3513:             let flightTime = 1300;
+3514:             let requiredPose = 'AGARRE';
+3515:             
+3516:             if (type === 0) {
+3517:                 // Tiro Normal
+3518:                 ball.style.boxShadow = '0 0 20px 8px rgba(255,255,255,0.8)';
+3519:                 requiredPose = 'AGARRE';
+3520:                 flightTime = 1300;
+3521:             } else if (type === 1) {
+3522:                 // Tiro Potente (Puños)
+3523:                 ball.style.boxShadow = '0 0 25px 12px rgba(255,0,0,0.9)';
+3524:                 requiredPose = 'PUNO';
+3525:                 flightTime = 700;
+3526:             } else if (type === 2) {
+3527:                 // Tiro con Efecto (Estirada)
+3528:                 ball.style.boxShadow = '0 0 25px 12px rgba(180,0,255,0.9)';
+3529:                 requiredPose = 'ESTIRADA';
+3530:                 flightTime = 1500;
+3531:                 targetX = Math.random() > 0.5 ? 10 + Math.random()*15 : 75 + Math.random()*15; // Más esquinado
+3532:             }
+3533:             
+3534:             setTimeout(() => {
+3535:                 if (type === 2) { // Efecto
+3536:                     const midX = (targetX > 50) ? 20 : 80;
+3537:                     ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1)`;
+3538:                     ball.style.top = '10%';
+3539:                     ball.style.left = `${midX}%`;
+3540:                     ball.style.width = '70px'; ball.style.height = '70px';
+3541:                     
+3542:                     setTimeout(() => {
+3543:                         ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
+3544:                         ball.style.top = `${targetY}%`;
+3545:                         ball.style.left = `${targetX}%`;
+3546:                         ball.style.width = '160px'; ball.style.height = '160px';
+3547:                     }, flightTime*0.5);
+3548:                 } else { // Normal/Potente
+3549:                     ball.style.transition = `all ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+3550:                     ball.style.top = `${targetY}%`;
+3551:                     ball.style.left = `${targetX}%`;
+3552:                     ball.style.width = '160px'; ball.style.height = '160px';
+3553:                 }
+3554:             }, 50);
+3555:             
+3556:             // Resolución
+3557:             setTimeout(() => {
+3558:                 const dist = Math.sqrt(Math.pow(mouseX - targetX, 2) + Math.pow(mouseY - targetY, 2));
+3559:                 
+3560:                 let tolerance = 16; 
+3561:                 if (currentPose === 'ESTIRADA') tolerance = 28;
+3562:                 if (currentPose === 'PUNO') tolerance = 14;
+3563:                 
+3564:                 if (dist <= tolerance && currentPose === requiredPose) {
+3565:                     saves++;
+3566:                     ball.style.transition = 'all 0.2s';
+3567:                     ball.style.top = '-20%'; 
+3568:                     showNotification('¡PARADÓN!', 'success', 1000);
+3569:                 } else {
+3570:                     goalsConceded++;
+3571:                     ball.style.transition = 'all 0.2s';
+3572:                     ball.style.width = '300px'; ball.style.height = '300px';
+3573:                     showNotification('¡GOL...', 'error', 1000);
+3574:                     
+3575:                     // Efecto temblor pantalla
+3576:                     let shakeOffset = 0;
+3577:                     const shaker = setInterval(() => {
+3578:                         shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
+3579:                         engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
+3580:                     }, 50);
+3581:                     setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+3582:                 }
+3583:                 
+3584:                 updateHUD();
+3585:                 setTimeout(() => {
+3586:                     ball.remove();
+3587:                     nextShot();
+3588:                 }, 800);
+3589:             }, flightTime + 50);
+3590:         }
+3591:         
+3592:         const introPanel = document.createElement('div');
+3593:         introPanel.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.85); padding:30px; border-radius:15px; border:2px solid #00e5ff; color:white; font-family:"Nunito",sans-serif; z-index:10050; text-align:center; min-width:400px; box-shadow:0 0 30px rgba(0,229,255,0.3);';
+3594:         introPanel.innerHTML = `
+3595:             <h2 style="font-family:'Bangers'; color:#00e5ff; font-size:3rem; margin:0 0 20px 0; letter-spacing:2px;">¡ATENTO PORTERO!</h2>
+3596:             <div style="text-align:left; font-size:1.1rem; line-height:1.6; margin-bottom:25px;">
+3597:                 <p style="text-align:center; font-weight:bold; color:#ffd700;">El delantero va a realizar 5 tiros seguidos.</p>
+3598:                 <p>🖱️ <b>Mueve el ratón</b> para posicionar tus guantes.</p>
+3599:                 <p>⚪ <b>Tiro Normal (Blanco)</b>: Trayectoria recta. No pulses nada, usa el <b>Agarre</b>.</p>
+3600:                 <p>🔴 <b>Tiro Potente (Rojo)</b>: Muy veloz. Mantén pulsado <b>Clic Izquierdo</b> (Puños).</p>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,39 @@
+Created At: 2026-07-29T23:44:58+02:00
+Completed At: 2026-07-29T23:44:58+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 1620 to 1650
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1620:         if (!dialogues) {
+1621:             dialogues = [{
+1622:                 stage: 0, text: "¿Qué tal el entrenamiento?", options: [
+1623:                     {text: "Genial", friendship: 2}, {text: "Cansado", friendship: 1}
+1624:                 ]
+1625:             }];
+1626:         }
+1627:         
+1628:         let currentDialogue = dialogues.find(d => d.stage === rel.dialogueStage);
+1629:         if (!currentDialogue) {
+1630:             currentDialogue = dialogues[dialogues.length - 1]; // Repeat last
+1631:         }
+1632: 
+1633:         const modal = document.getElementById('p2-dialogue-modal');
+1634:         const leftPortrait = document.getElementById('dialogue-portrait-left');
+1635:         const rightPortrait = document.getElementById('dialogue-portrait-right');
+1636:         const textContainer = document.getElementById('dialogue-text');
+1637:         const speakerName = document.getElementById('dialogue-speaker-name');
+1638:         const optionsContainer = document.getElementById('dialogue-options-container');
+1639:         const continueIcon = document.getElementById('dialogue-continue-icon');
+1640:         
+1641:         modal.classList.remove('hidden');
+1642:         optionsContainer.classList.add('hidden');
+1643:         continueIcon.classList.add('hidden');
+1644:         textContainer.innerHTML = '';
+1645:         
+1646:         leftPortrait.src = myPlayer.image;
+1647:         rightPortrait.src = npc.image;
+1648:         speakerName.textContent = `${npc.name.toUpperCase()} (GRL ${Math.floor(npc.p2Rating || calcRating(npc.rating))})`;
+1649:         
+1650:         setTimeout(() => {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

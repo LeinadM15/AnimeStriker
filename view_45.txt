@@ -1,0 +1,79 @@
+Created At: 2026-07-29T15:05:11+02:00
+Completed At: 2026-07-29T15:05:11+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3534
+Total Bytes: 179017
+Showing lines 1910 to 1980
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1910:                 } else {
+1911:                     bgImage = `${basePath}Tacticas4.jpeg`;
+1912:                     positions = [
+1913:                         {x: 19.5, y: 27, w: 200, h: 250},
+1914:                         {x: 44, y: 10, w: 200, h: 250},
+1915:                         {x: 62, y: 10, w: 200, h: 250},
+1916:                         {x: 80, y: 28, w: 200, h: 250}
+1917:                     ];
+1918:                 }
+1919:                 
+1920:                 setRoomBg(bgImage);
+1921:                 
+1922:                 document.getElementById('p2-room-content').style.display = 'none';
+1923:                 p2RoomBody.innerHTML = '';
+1924:                 
+1925:                 spawnSceneNPCs(roomName, positions);
+1926:                 
+1927:                 const btnClasif = document.createElement('div');
+1928:                 btnClasif.className = 'p2-scene-overlay';
+1929:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+1930:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1931:                 btnClasif.onclick = () => { openTVStats(); };
+1932:                 p2LobbyScreen.appendChild(btnClasif);
+1933:                 
+1934:             } else {
+1935:                 setRoomBg(`${basePath}Tacticas4.jpeg`);
+1936:                 document.getElementById('p2-room-content').style.display = 'block';
+1937:                 
+1938:                 spawnSceneNPCs(roomName, [
+1939:                     {x: 19.5, y: 27, w: 200, h: 250},
+1940:                     {x: 44, y: 10, w: 200, h: 250},
+1941:                     {x: 62, y: 10, w: 200, h: 250},
+1942:                     {x: 80, y: 28, w: 200, h: 250}
+1943:                 ]);
+1944:                 
+1945:                 p2RoomBody.innerHTML = `
+1946:                     <div style="font-size:1.2rem; text-align:center; margin-bottom:20px; color:#ff4444;">¡DÍA DE PARTIDO! Reunión de equipo.</div>
+1947:                     <div style="display:flex; justify-content:center; margin-bottom:20px;">
+1948:                         <button class="p2-action-btn" onclick="openTVStats()" style="transform:scale(0.9);">
+1949:                             <span>🏆 Clasificación y Goleadores</span>
+1950:                         </button>
+1951:                     </div>
+1952:                     <div class="tactics-chat" id="tactics-chat">
+1953:                         <div class="tactics-msg"><b>Compañeros:</b> ¡Todos queremos jugar de delantero hoy! ¿Por qué deberías ser tú?</div>
+1954:                     </div>
+1955:                     <div id="tactics-options" style="display:flex; flex-direction:column; gap:10px;">
+1956:                         <button class="p2-action-btn" onclick="tryPersuade('pace')"><span>"Soy el más rápido. Dejadme rotar cada 5 minutos." (Requiere Velocidad)</span></button>
+1957:                         <button class="p2-action-btn" onclick="tryPersuade('passing')"><span>"Os daré las mejores asistencias, compartiremos los goles." (Requiere Pase)</span></button>
+1958:                         <button class="p2-action-btn" onclick="tryPersuade('physical')"><span>"Soy el más fuerte. Yo abriré la defensa." (Requiere Físico)</span></button>
+1959:                     </div>
+1960:                 `;
+1961:             }
+1962:         } else if (roomName === 'Meditación') {
+1963:             setRoomBg(`${basePath}Yoga.jpeg`);
+1964:             
+1965:             // Hide the central panel for this room
+1966:             document.getElementById('p2-room-content').style.display = 'none';
+1967:             
+1968:             // Get the NPC that will be spawned
+1969:             const roomNpcs = p2DailyNPCs[roomName];
+1970:             const npc = roomNpcs && roomNpcs.length > 0 ? roomNpcs[0] : null;
+1971:             
+1972:             // CuerpoYoga overlay on mat
+1973:             const cuerpoYoga = document.createElement('div');
+1974:             cuerpoYoga.className = 'p2-scene-overlay';
+1975:             cuerpoYoga.style.cssText = 'right:17%; bottom:5%; width:500px; height:500px; cursor:pointer; z-index:30; transition:none;';
+1976:             cuerpoYoga.innerHTML = `<img src="${basePath}CuerpoYoga.png" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1977:             p2LobbyScreen.appendChild(cuerpoYoga);
+1978:             
+1979:             // NPC Head
+1980:             if (npc) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

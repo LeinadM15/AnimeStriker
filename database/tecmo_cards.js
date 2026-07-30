@@ -33,7 +33,7 @@ const tecmoCards = [
         rarity: "Oro",
         rating: 83,
         position: "ST",
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/br.png",
         teamIcon: "teams/Monaco.png",
         image: "assets/characters/Tecmo/Zagallo.png",

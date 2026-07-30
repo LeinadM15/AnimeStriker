@@ -1,0 +1,79 @@
+Created At: 2026-07-29T15:13:54+02:00
+Completed At: 2026-07-29T15:13:54+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3623
+Total Bytes: 185067
+Showing lines 2880 to 2950
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2880:         `;
+2881:         p2League.forEach(t => {
+2882:             tableHTML += `<tr><td>${t.name}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td><b>${t.pts}</b></td></tr>`;
+2883:         });
+2884:         tableHTML += `</table>`;
+2885:         standEl.innerHTML = tableHTML;
+2886:         
+2887:         // Populate mock scorers if empty
+2888:         if (p2TopScorers.length === 0 && p2StratumPlayers.length > 0) {
+2889:             for(let i=0; i<5; i++) {
+2890:                 p2TopScorers.push({
+2891:                     npc: p2StratumPlayers[i],
+2892:                     g: 0
+2893:                 });
+2894:             }
+2895:         }
+2896:         
+2897:         p2TopScorers.sort((a,b) => b.g - a.g);
+2898:         scorEl.innerHTML = '';
+2899:         p2TopScorers.slice(0, 5).forEach(s => {
+2900:             const div = document.createElement('div');
+2901:             div.className = 'p2-scorer-card';
+2902:             div.innerHTML = `
+2903:                 <img src="${s.npc.image}">
+2904:                 <div style="font-size:0.9rem; margin:5px 0;">${s.npc.name}</div>
+2905:                 <div class="p2-scorer-goals">${s.g} Goles</div>
+2906:             `;
+2907:             scorEl.appendChild(div);
+2908:         });
+2909:     };
+2910:     
+2911:     window.tacticsMakeChoice = function(shift) {
+2912:         window.tacticsDetroitState.affinity += shift;
+2913:         window.tacticsDetroitState.affinity = Math.max(0, Math.min(100, window.tacticsDetroitState.affinity));
+2914:         window.tacticsDetroitState.turn++;
+2915:         updateTacticsDetroitUI();
+2916:     };
+2917: 
+2918:     window.updateTacticsDetroitUI = function() {
+2919:         const state = window.tacticsDetroitState;
+2920:         const cursor = document.getElementById('detroit-cursor');
+2921:         const text = document.getElementById('detroit-text');
+2922:         const options = document.getElementById('detroit-options');
+2923:         
+2924:         if (!cursor) return;
+2925:         
+2926:         // Visual update
+2927:         cursor.style.left = `${state.affinity}%`;
+2928:         
+2929:         if (state.turn === 0) {
+2930:             text.innerHTML = `<b>Compañeros:</b> Es día de partido. ¿En qué posición vas a jugar hoy?`;
+2931:             options.innerHTML = `
+2932:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-37.5)"><span>"Seré el muro atrás." (DEF)</span></button>
+2933:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-12.5)"><span>"Repartiré el juego." (MED)</span></button>
+2934:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(12.5)"><span>"¡Yo marcaré los goles!" (DEL)</span></button>
+2935:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(37.5)"><span>"Yo me pongo los guantes." (POR)</span></button>
+2936:             `;
+2937:         } else if (state.turn === 1) {
+2938:             text.innerHTML = `<b>Compañeros:</b> ¡Pero si siempre jugamos así y nos meten goles! Necesitamos cambiar la estrategia.`;
+2939:             options.innerHTML = `
+2940:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-15)"><span>"Pues me quedo más atrás para asegurar." (Retrasar línea)</span></button>
+2941:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15)"><span>"La mejor defensa es un buen ataque." (Adelantar línea)</span></button>
+2942:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(0)"><span>"Confiad en mí, todo saldrá bien." (Mantener táctica)</span></button>
+2943:             `;
+2944:         } else if (state.turn === 2) {
+2945:             let posName = "Defensa";
+2946:             if(state.affinity >= 25) posName = "Centrocampista";
+2947:             if(state.affinity >= 50) posName = "Delantero";
+2948:             if(state.affinity >= 75) posName = "Portero";
+2949:             
+2950:             text.innerHTML = `<b>Compañeros:</b> De acuerdo... parece que tu puesto natural hoy es de ${posName}. ¿Seguro?`;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

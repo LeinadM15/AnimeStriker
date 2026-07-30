@@ -63,5 +63,18 @@ const genzoCards = [
         teamIcon: "teams/Bastard.png",
         image: "assets/characters/Genzo/GenzoOro.png",
         background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "genzo_prime",
+        name: "GENZO",
+        version: "Prime",
+        rarity: "Especial",
+        rating: 97,
+        position: "GK",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Bastard.png",
+        image: "assets/characters/Genzo/GenzoPrime.png",
+        background: "assets/backgrounds/Fondo_GenzoPrime.jpeg"
     }
 ];

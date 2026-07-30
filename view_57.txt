@@ -1,0 +1,49 @@
+Created At: 2026-07-29T16:23:38+02:00
+Completed At: 2026-07-29T16:23:39+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3727
+Total Bytes: 191498
+Showing lines 3060 to 3100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3060:         } else if (state.turn === 5) {
+3061:             let finalPos = 'DEF';
+3062:             if(state.affinity >= 25) finalPos = 'MED';
+3063:             if(state.affinity >= 50) finalPos = 'DEL';
+3064:             if(state.affinity >= 75) finalPos = 'POR';
+3065:             
+3066:             let posName = "Defensa";
+3067:             if(finalPos === 'MED') posName = "Centrocampista";
+3068:             if(finalPos === 'DEL') posName = "Delantero";
+3069:             if(finalPos === 'POR') posName = "Portero";
+3070:             
+3071:             text.innerHTML = `<b>Compañeros:</b> De acuerdo... Jugarás de ${posName}. Pero como la cagues, te vas a enterar.`;
+3072:             options.innerHTML = `
+3073:                 <button class="p2-action-btn" onclick="startMatch('${finalPos}')" style="border-color:#00e5ff; color:#00e5ff;"><span>⚽ SALTAR AL CAMPO</span></button>
+3074:             `;
+3075:         }
+3076:     };
+3077:     
+3078:     window.startMatch = function(position) {
+3079:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+3080:         
+3081:         // Remove Detroit UI if it exists
+3082:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3083:         if (detroitUI) detroitUI.remove();
+3084:         
+3085:         // El equipo está formado por ti y los 10 primeros NPCs supervivientes del estrato
+3086:         const teammates = p2StratumPlayers.slice(0, 10);
+3087:         
+3088:         // Calculate Win Probability dynamically based on Friendship
+3089:         let teamStrength = 0;
+3090:         teammates.forEach(npc => {
+3091:             let friendVal = 0;
+3092:             if (p2Relationships[npc.id]) {
+3093:                 const data = p2Relationships[npc.id];
+3094:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+3095:             }
+3096:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+3097:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000))); // Base GRL + Up to 10% bonus
+3098:         });
+3099:         
+3100:         const myGRL = calcOVR();
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

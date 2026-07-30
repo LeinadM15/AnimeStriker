@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:07:58+02:00
+Completed At: 2026-07-29T23:07:58+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4286
+Total Bytes: 220546
+Showing lines 3370 to 3410
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3370:         const scoreDisplay = document.createElement('div');
+3371:         scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+3372:         
+3373:         hud.appendChild(timeDisplay);
+3374:         hud.appendChild(scoreDisplay);
+3375:         engine.appendChild(hud);
+3376:         
+3377:         const flash = document.createElement('div');
+3378:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3379:         engine.appendChild(flash);
+3380:         
+3381:         // Instrucciones
+3382:         const helpOverlay = document.createElement('div');
+3383:         helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.5); padding:10px; border-radius:10px; text-align:center; pointer-events:none; z-index:110; text-shadow:0 0 5px #000;';
+3384:         helpOverlay.innerHTML = '<b>WASD</b>: Caminar | <b>Espacio + WASD</b>: Lanzarse<br><b>Ratón</b>: Mover Manos | <b>Clic Izq</b>: Mano Abierta | <b>Clic Der</b>: Puños';
+3385:         engine.appendChild(helpOverlay);
+3386:         
+3387:         // --- MOTOR FÍSICO ---
+3388:         
+3389:         const gloves = document.createElement('img');
+3390:         gloves.src = 'assets/Match/PosicionAgarre.png';
+3391:         gloves.onerror = () => { gloves.style.display="none"; };
+3392:         gloves.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:125; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+3393:         engine.appendChild(gloves);
+3394:         
+3395:         p2RoomBody.appendChild(engine);
+3396:         
+3397:         let minute = 0;
+3398:         let saves = 0;
+3399:         let goalsConceded = 0;
+3400:         let matchInterval = null;
+3401:         let physicsLoop = null;
+3402:         const highlightMinutes = [14, 31, 55, 78, 89];
+3403:         
+3404:         // --- CONTROLES ---
+3405:         let bodyX = 0; // % displacement
+3406:         let bodyY = 0;
+3407:         let mouseX = 50; // %
+3408:         let mouseY = 50; // %
+3409:         
+3410:         let currentPose = 'AGARRE'; // AGARRE, ESTIRADA, PUNO
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

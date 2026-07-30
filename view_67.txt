@@ -1,0 +1,269 @@
+Created At: 2026-07-29T17:39:33+02:00
+Completed At: 2026-07-29T17:39:33+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4027
+Total Bytes: 207966
+Showing lines 3190 to 3450
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3190:         
+3191:         // Simulate scorers
+3192:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+3193:         
+3194:         // Award Match EXP and open interactive distributor
+3195:         const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+3196:         const summaryText = win 
+3197:             ? `¡VICTORIA! Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+3198:             : `DERROTA... Aún así ganaste +${matchXp} EXP total por tu esfuerzo y ${goalsScored} goles.`;
+3199:         openMatchXpDistributor(matchXp, summaryText);
+3200:     };
+3201: 
+3202:     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+3203:         p2RoomBody.innerHTML = '';
+3204:         
+3205:         // Remove Detroit UI if somehow still there
+3206:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3207:         if (detroitUI) detroitUI.remove();
+3208:         
+3209:         const engine = document.createElement('div');
+3210:         engine.id = 'gk-match-engine';
+3211:         // Placeholder background if EstadioPortero.jpeg doesn't exist yet, it will fallback to a color
+3212:         engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none;';
+3213:         
+3214:         const hud = document.createElement('div');
+3215:         hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110;';
+3216:         
+3217:         const timeDisplay = document.createElement('div');
+3218:         timeDisplay.innerText = "00:00";
+3219:         
+3220:         const scoreDisplay = document.createElement('div');
+3221:         scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+3222:         
+3223:         hud.appendChild(timeDisplay);
+3224:         hud.appendChild(scoreDisplay);
+3225:         engine.appendChild(hud);
+3226:         
+3227:         const flash = document.createElement('div');
+3228:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3229:         engine.appendChild(flash);
+3230:         
+3231:         p2RoomBody.appendChild(engine);
+3232:         
+3233:         let minute = 0;
+3234:         let saves = 0;
+3235:         let goalsConceded = 0;
+3236:         let matchInterval = null;
+3237:         
+3238:         const highlightMinutes = [14, 38, 62, 85];
+3239:         
+3240:         function updateHUD() {
+3241:             timeDisplay.innerText = `${minute < 10 ? '0':''}${minute}:00`;
+3242:             scoreDisplay.innerText = `Goles Encajados: ${goalsConceded} | Paradas: ${saves}`;
+3243:         }
+3244:         
+3245:         function endMatch() {
+3246:             engine.remove();
+3247:             
+3248:             // Simular los goles que mete NUESTRO equipo solos
+3249:             const teamGoals = Math.floor(Math.random() * 3); // 0 a 2 goles
+3250:             const win = teamGoals > goalsConceded;
+3251:             
+3252:             const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3253:             if (myTeam) {
+3254:                 if (win) { myTeam.w++; myTeam.pts += 3; }
+3255:                 else if (teamGoals === goalsConceded) { myTeam.d++; myTeam.pts += 1; }
+3256:                 else { myTeam.l++; }
+3257:             }
+3258:             
+3259:             // Simulate other matches
+3260:             p2League.forEach(t => {
+3261:                 if (!t.name.includes("Tu Equipo")) {
+3262:                     t.w += Math.floor(Math.random() * 2);
+3263:                     t.pts = (t.w * 3) + t.d;
+3264:                 }
+3265:             });
+3266:             
+3267:             const matchXp = 250 + (win ? 200 : (teamGoals === goalsConceded ? 100 : 50)) + (saves * 75);
+3268:             const resultTxt = win ? '¡VICTORIA!' : (teamGoals === goalsConceded ? 'EMPATE' : 'DERROTA...');
+3269:             
+3270:             showNotification(`${resultTxt} Resultado: ${teamGoals}-${goalsConceded}. Paradas: ${saves}`, win ? 'success' : (teamGoals===goalsConceded ? 'warning':'error'), 6000);
+3271:             
+3272:             setTimeout(() => {
+3273:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${teamGoals} goles, encajaste ${goalsConceded} y paraste ${saves} tiros. XP Total: ${matchXp}`);
+3274:             }, 1000);
+3275:         }
+3276:         
+3277:         function startHighlight() {
+3278:             flash.style.opacity = '1';
+3279:             setTimeout(() => { flash.style.opacity = '0'; }, 200);
+3280:             
+3281:             const alertTxt = document.createElement('div');
+3282:             alertTxt.style.cssText = 'position:absolute; top:40%; left:50%; transform:translate(-50%,-50%); font-size:3rem; color:#ff4444; text-shadow:0 0 10px #000, 0 0 20px #ff0000; font-weight:bold; z-index:115; white-space:nowrap; animation: bounce 1s infinite;';
+3283:             alertTxt.innerText = "¡PELIGRO! ¡EL RIVAL ATACA!";
+3284:             engine.appendChild(alertTxt);
+3285:             
+3286:             // Elegir tipo de jugada: 0=Tiro Lejano, 1=Pase de la muerte, 2=Córner
+3287:             const scenario = Math.floor(Math.random() * 3);
+3288:             
+3289:             setTimeout(() => {
+3290:                 alertTxt.remove();
+3291:                 playScenario(scenario);
+3292:             }, 1500);
+3293:         }
+3294:         
+3295:         function playScenario(type) {
+3296:             let reactTime = 1300; // ms base para reaccionar
+3297:             // Reducir tiempo según estadística de Reflejos si estuviera implementada
+3298:             // reactTime -= (p2Stats.stats.reflejos * 5); 
+3299:             
+3300:             const target = document.createElement('div');
+3301:             target.className = 'gk-target';
+3302:             target.style.cssText = 'position:absolute; width:100px; height:100px; background:rgba(0,229,255,0.4); border:4px solid #00e5ff; border-radius:50%; cursor:pointer; z-index:130; animation: pulse 0.3s infinite alternate; transition: transform 0.1s;';
+3303:             target.onmousedown = () => { target.style.transform = 'scale(0.8)'; };
+3304:             
+3305:             const positions = [
+3306:                 {t: '20%', l: '20%'}, {t: '20%', l: '70%'},
+3307:                 {t: '60%', l: '20%'}, {t: '60%', l: '70%'},
+3308:                 {t: '40%', l: '45%'}
+3309:             ];
+3310:             const pos = positions[Math.floor(Math.random() * positions.length)];
+3311:             target.style.top = pos.t;
+3312:             target.style.left = pos.l;
+3313:             
+3314:             let saved = false;
+3315:             
+3316:             if (type === 0) {
+3317:                 // TIRO LEJANO
+3318:                 const ball = document.createElement('img');
+3319:                 // Fallback a un círculo blanco si no hay imagen de pelota
+3320:                 ball.src = 'assets/Match/Pelota.png';
+3321:                 ball.onerror = () => { ball.style.display="none"; };
+3322:                 ball.style.cssText = `position:absolute; top:50%; left:50%; width:20px; height:20px; z-index:125; transition: all ${reactTime}ms cubic-bezier(0.2, 0.8, 0.4, 1); filter:drop-shadow(0 0 10px #000); background:#fff; border-radius:50%;`;
+3323:                 engine.appendChild(ball);
+3324:                 
+3325:                 setTimeout(() => {
+3326:                     ball.style.top = pos.t;
+3327:                     ball.style.left = pos.l;
+3328:                     ball.style.width = '120px';
+3329:                     ball.style.height = '120px';
+3330:                 }, 50);
+3331:                 
+3332:                 engine.appendChild(target);
+3333:                 
+3334:                 target.onclick = () => {
+3335:                     saved = true;
+3336:                     target.remove();
+3337:                     ball.style.top = '120%'; // Despeje
+3338:                 };
+3339:                 
+3340:                 setTimeout(() => {
+3341:                     if (target.parentNode) target.remove();
+3342:                     setTimeout(() => {
+3343:                         ball.remove();
+3344:                         if (saved) {
+3345:                             saves++; showNotification('¡PARADÓN!', 'success');
+3346:                         } else {
+3347:                             goalsConceded++; showNotification('¡GOL DEL RIVAL!', 'error');
+3348:                         }
+3349:                         resumeMatch();
+3350:                     }, 400);
+3351:                 }, reactTime);
+3352:                 
+3353:             } else if (type === 1) {
+3354:                 // PASE DE LA MUERTE
+3355:                 const pasador = document.createElement('div');
+3356:                 pasador.style.cssText = 'position:absolute; top:60%; left:10%; width:80px; height:150px; background:rgba(255,0,0,0.7); border:3px solid #ff0000; cursor:pointer; z-index:125; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; border-radius:10px; box-shadow:0 0 15px #ff0000;';
+3357:                 pasador.innerText = "¡RIVAL!";
+3358:                 engine.appendChild(pasador);
+3359:                 
+3360:                 let clickedPasador = false;
+3361:                 pasador.onclick = () => {
+3362:                     clickedPasador = true;
+3363:                     pasador.remove();
+3364:                     engine.appendChild(target);
+3365:                     target.onclick = () => { saved = true; target.remove(); };
+3366:                 };
+3367:                 
+3368:                 setTimeout(() => {
+3369:                     if (pasador.parentNode) pasador.remove();
+3370:                     if (!clickedPasador) {
+3371:                         engine.appendChild(target);
+3372:                         target.onclick = () => { saved = true; target.remove(); };
+3373:                     }
+3374:                     
+3375:                     const finalReact = clickedPasador ? reactTime : reactTime * 0.4;
+3376:                     setTimeout(() => {
+3377:                         if (target.parentNode) target.remove();
+3378:                         if (saved) { saves++; showNotification('¡REFLEJOS FELINOS!', 'success'); }
+3379:                         else { goalsConceded++; showNotification('¡GOL A BOCAJARRO!', 'error'); }
+3380:                         resumeMatch();
+3381:                     }, finalReact);
+3382:                 }, 1200); // 1.2s para reaccionar al pasador
+3383:                 
+3384:             } else if (type === 2) {
+3385:                 // CÓRNER
+3386:                 target.style.background = 'rgba(255,150,0,0.5)';
+3387:                 target.style.borderColor = '#ff9900';
+3388:                 target.style.top = '15%';
+3389:                 target.style.left = '45%';
+3390:                 
+3391:                 const helpTxt = document.createElement('div');
+3392:                 helpTxt.innerText = "¡SAL DE PUÑOS!";
+3393:                 helpTxt.style.cssText = 'position:absolute; top:5%; left:50%; transform:translateX(-50%); color:#ff9900; font-size:2rem; font-weight:bold; z-index:125; text-shadow:0 0 5px #000;';
+3394:                 engine.appendChild(helpTxt);
+3395:                 
+3396:                 engine.appendChild(target);
+3397:                 target.onclick = () => { saved = true; target.remove(); helpTxt.remove(); };
+3398:                 
+3399:                 setTimeout(() => {
+3400:                     if (target.parentNode) target.remove();
+3401:                     if (helpTxt.parentNode) helpTxt.remove();
+3402:                     
+3403:                     if (saved) {
+3404:                         saves++; showNotification('¡DESPEJE DE PUÑOS!', 'success');
+3405:                         resumeMatch();
+3406:                     } else {
+3407:                         showNotification('¡FALLASTE EN LA SALIDA!', 'warning', 1000);
+3408:                         // QTE de cabezazo
+3409:                         const headTarget = document.createElement('div');
+3410:                         headTarget.className = 'gk-target';
+3411:                         headTarget.style.cssText = 'position:absolute; width:100px; height:100px; background:rgba(255,0,0,0.5); border:4px solid #ff0000; border-radius:50%; cursor:pointer; z-index:130; top:60%; left:50%; transform:translate(-50%,0); animation: pulse 0.2s infinite alternate;';
+3412:                         engine.appendChild(headTarget);
+3413:                         
+3414:                         let savedHeader = false;
+3415:                         headTarget.onclick = () => { savedHeader = true; headTarget.remove(); };
+3416:                         
+3417:                         setTimeout(() => {
+3418:                             if (headTarget.parentNode) headTarget.remove();
+3419:                             if (savedHeader) {
+3420:                                 saves++; showNotification('¡PARADA MILAGROSA!', 'success');
+3421:                             } else {
+3422:                                 goalsConceded++; showNotification('¡GOL DE CABEZA!', 'error');
+3423:                             }
+3424:                             resumeMatch();
+3425:                         }, reactTime * 0.6); // Muy poco tiempo para el cabezazo
+3426:                     }
+3427:                 }, reactTime);
+3428:             }
+3429:         }
+3430:         
+3431:         function resumeMatch() {
+3432:             updateHUD();
+3433:             matchInterval = setInterval(() => {
+3434:                 minute++;
+3435:                 updateHUD();
+3436:                 
+3437:                 if (highlightMinutes.includes(minute)) {
+3438:                     clearInterval(matchInterval);
+3439:                     startHighlight();
+3440:                 } else if (minute >= 90) {
+3441:                     clearInterval(matchInterval);
+3442:                     endMatch();
+3443:                 }
+3444:             }, 80); // 1 minuto cada 80ms
+3445:         }
+3446:         
+3447:         // Iniciar partido
+3448:         resumeMatch();
+3449:     };
+3450: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,59 @@
+Created At: 2026-07-30T15:41:51+02:00
+Completed At: 2026-07-30T15:41:51+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4977
+Total Bytes: 258908
+Showing lines 2240 to 2290
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2240:             div.style.cssText = `left:${pos.x}%; top:${pos.y}%; width:${pos.w || 80}px; height:${pos.h || 100}px; cursor:pointer;`;
+2241:             div.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+2242:             div.onclick = () => { openDialogue(npc); };
+2243:             p2LobbyScreen.appendChild(div);
+2244:         });
+2245:     }
+2246:     
+2247:     function renderP2Room() {
+2248:         const roomName = p2Rooms[p2CurrentRoom];
+2249:         p2RoomTitle.textContent = roomName.toUpperCase();
+2250:         p2RoomBody.innerHTML = '';
+2251:         
+2252:         // Clear NPCs and scene overlays
+2253:         p2NpcContainer.innerHTML = '';
+2254:         document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img, #tactics-detroit-overlay, #tactics-pulse, #tactics-start-btn').forEach(el => el.remove());
+2255:         
+2256:         // Ensure central panel is visible by default
+2257:         document.getElementById('p2-room-content').style.display = 'block';
+2258:         
+2259:         const basePath = 'assets/Historia/Habitaciones/';
+2260:         
+2261:         function setRoomBg(src) {
+2262:             let loc = window.StoryLocations ? window.StoryLocations[p2LocationId] : null;
+2263:             if (loc && loc.backgrounds && loc.backgrounds[roomName]) {
+2264:                 src = loc.backgrounds[roomName];
+2265:             } else if (window.gamePhase === 1) {
+2266:                 if (roomName === 'Habitación') src = 'assets/Historia/Hokkaido/HokkaidoSnow.jpeg';
+2267:                 else if (roomName === 'Comedor' || roomName === 'Sala TV' || roomName === 'Meditación') src = 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg';
+2268:                 else if (roomName === 'Gimnasio' || roomName === 'Campo') src = 'assets/Historia/Hokkaido/HokkaidoCampo.png';
+2269:                 else if (roomName === 'Tácticas') src = 'assets/Historia/Hokkaido/BoardPers.png';
+2270:             }
+2271:             p2LobbyScreen.style.backgroundImage = 'none';
+2272:             const img = document.createElement('img');
+2273:             img.className = 'p2-bg-img';
+2274:             img.src = src;
+2275:             img.draggable = false;
+2276:             p2LobbyScreen.insertBefore(img, p2LobbyScreen.firstChild);
+2277:         }
+2278:         
+2279:         if (roomName === 'Habitación') {
+2280:             setRoomBg(`${basePath}Habitacion.jpeg`);
+2281:             document.getElementById('p2-room-content').style.display = 'none';
+2282:             
+2283:             // Botón Dormir
+2284:             const btnDormir = document.createElement('div');
+2285:             btnDormir.className = 'p2-scene-overlay';
+2286:             btnDormir.id = 'btn-dormir';
+2287:             // AQUÍ MUEVES LA CAMA (top y left)
+2288:             btnDormir.style.cssText = 'top: 60%; left: 25%; transform: translate(-50%,-50%); z-index:10;';
+2289:             btnDormir.innerHTML = `<img src="assets/Historia/Habitaciones/Cama.png" alt="Dormir" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #fff);">`;
+2290: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

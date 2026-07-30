@@ -1,0 +1,59 @@
+Created At: 2026-07-29T02:27:24+02:00
+Completed At: 2026-07-29T02:27:24+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3432
+Total Bytes: 174675
+Showing lines 1100 to 1150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1100:         {name: "Equipo Z", w: 0, d: 0, l: 0, pts: 0}
+1101:     ];
+1102:     let p2TopScorers = [];
+1103:     
+1104:     const p2LobbyScreen = document.getElementById('phase2-lobby');
+1105:     const p2RoomTitle = document.getElementById('p2-room-title');
+1106:     const p2RoomBody = document.getElementById('p2-room-body');
+1107:     const p2NpcContainer = document.getElementById('p2-npc-container');
+1108:     
+1109:     window.initPhase2 = function() {
+1110:         document.getElementById('tag-screen').classList.add('hidden');
+1111:         p2LobbyScreen.classList.remove('hidden');
+1112:         
+1113:         // Setup initial stats based on selected player if they have base stats
+1114:         if (myPlayer.rating) {
+1115:             const base = parseInt(myPlayer.rating);
+1116:             p2Stats.pace = p2Stats.shooting = p2Stats.passing = p2Stats.dribbling = p2Stats.defending = p2Stats.physical = Math.min(base, 70);
+1117:         }
+1118:         
+1119:         generateStratumPlayers();
+1120:         
+1121:         // Navigation events
+1122:         document.getElementById('p2-nav-left').onclick = () => {
+1123:             p2CurrentRoom--;
+1124:             if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
+1125:             renderP2Room();
+1126:         };
+1127:         document.getElementById('p2-nav-right').onclick = () => {
+1128:             p2CurrentRoom++;
+1129:             if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+1130:             renderP2Room();
+1131:         };
+1132:         
+1133:         updateP2UI();
+1134:         renderP2Room();
+1135:     };
+1136:     
+1137:     function generateStratumPlayers() {
+1138:         const myBaseR = myPlayer.rating ? calcRating(myPlayer.rating) : 70;
+1139:         const allRoster = getRosterPlayers().filter(p => p.id !== myPlayer.id && !tagPlayers.find(tp => tp.id === p.id));
+1140:         
+1141:         // Filter players within range [-3, +3] of my Gold Card rating
+1142:         let inRange = allRoster.filter(p => {
+1143:             const r = calcRating(p.rating);
+1144:             return (r >= myBaseR - 3) && (r <= myBaseR + 3);
+1145:         });
+1146:         
+1147:         if (inRange.length < 44) {
+1148:             inRange = [...allRoster].sort((a, b) => {
+1149:                 const distA = Math.abs(calcRating(a.rating) - myBaseR);
+1150:                 const distB = Math.abs(calcRating(b.rating) - myBaseR);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,80 @@
+const rinItoshiCards = [
+    {
+        id: "rinitoshi_oro",
+        name: "RIN ITOSHI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "ST",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/RinItoshi/RinOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "rinitoshi_pxg",
+        name: "RIN ITOSHI",
+        version: "PXG",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "Ligue One",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/RinItoshi/RinPXG.png",
+        background: "assets/Cartas/PXG.png"
+    },
+    {
+        id: "rinitoshi_man",
+        name: "RIN ITOSHI",
+        version: "Verde",
+        rarity: "Especial",
+        rating: 92,
+        position: "ST",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/RinItoshi/RinMan.png",
+        background: "assets/Cartas/Verde.png"
+    },
+    {
+        id: "rinitoshi_zombie",
+        name: "RIN ITOSHI",
+        version: "Scream",
+        rarity: "Especial",
+        rating: 93,
+        position: "ST",
+        league: "Ligue One",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/RinItoshi/RinZombie.png",
+        background: "assets/Cartas/Scream.png"
+    },
+    {
+        id: "rinitoshi_awa",
+        name: "RIN ITOSHI",
+        version: "Joker",
+        rarity: "Especial",
+        rating: 95,
+        position: "ST",
+        league: "Ligue One",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/PXG.png",
+        image: "assets/characters/RinItoshi/RinAwa.png",
+        background: "assets/Cartas/Joker.png"
+    },
+    {
+        id: "rinitoshi_prime",
+        name: "RIN ITOSHI",
+        version: "Toty",
+        rarity: "Especial",
+        rating: 96,
+        position: "ST",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Real.png",
+        image: "assets/characters/RinItoshi/RinPrime.png",
+        background: "assets/Cartas/Toty.png"
+    }
+];

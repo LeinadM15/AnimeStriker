@@ -1,0 +1,69 @@
+Created At: 2026-07-30T00:40:15+02:00
+Completed At: 2026-07-30T00:40:15+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4372
+Total Bytes: 228117
+Showing lines 980 to 1040
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+980:         clearInterval(gameInterval);
+981:         clearInterval(aiInterval);
+982:         clearInterval(moveInterval);
+983:         dodgeActive = false;
+984:         qteActive = false;
+985:         dodgePanel.classList.add('hidden');
+986:         qtePanel.classList.add('hidden');
+987: 
+988:         const loser = tagPlayers.find(p => p.id === ballHolderId);
+989:         const resEl = document.getElementById('tag-result');
+990:         const cont = document.getElementById('tag-result-content');
+991: 
+992:         if (loser.id === myPlayer.id) {
+993:             cont.innerHTML = `
+994:                 <div class="tag-result-title lose">¡ELIMINADO!</div>
+995:                 <div class="tag-result-desc">El tiempo ha llegado a 0 y tú tenías el balón.</div>
+996:                 <div class="tag-result-desc">Tu sueño de convertirte en el mejor delantero termina aquí.</div>
+997:                 <div class="tag-result-eliminated">
+998:                     <img src="${myPlayer.image}">
+999:                     <span>${myPlayer.name} - Lock Off</span>
+1000:                 </div>
+1001:                 <button class="tag-result-btn" onclick="location.reload()">Reintentar</button>
+1002:             `;
+1003:         } else {
+1004:             cont.innerHTML = `
+1005:                 <div class="tag-result-title win">¡SUPERVIVIENTE!</div>
+1006:                 <div class="tag-result-desc">El tiempo ha terminado.</div>
+1007:                 <div class="tag-result-eliminated">
+1008:                     <img src="${loser.image}">
+1009:                     <span>${loser.name} es eliminado.</span>
+1010:                 </div>
+1011:                 <div class="tag-result-desc" style="margin-top:20px; color:#00e5ff;">Tú y los otros 10 formaréis el EQUIPO.</div>
+1012:                 <button class="tag-result-btn" onclick="initPhase2()">Continuar Historia</button>
+1013:             `;
+1014:         }
+1015: 
+1016:         resEl.classList.remove('hidden');
+1017:     }
+1018: 
+1019:     // ==========================================
+1020:     // PHASE 2: LOBBY & ROBIN-ROUND SYSTEM
+1021:     // ==========================================
+1022:     
+1023:     // ---- IN-PAGE NOTIFICATION SYSTEM (replaces all alert() calls) ----
+1024:     function showNotification(message, type = 'info', duration = 3000) {
+1025:         // type: 'info', 'success', 'warning', 'error'
+1026:         let container = document.getElementById('p2-notification-container');
+1027:         if (!container) {
+1028:             container = document.createElement('div');
+1029:             container.id = 'p2-notification-container';
+1030:             container.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; flex-direction:column; align-items:center; gap:10px; pointer-events:none;';
+1031:             document.body.appendChild(container);
+1032:         }
+1033:         
+1034:         const colors = {
+1035:             info: { bg: 'linear-gradient(135deg, #10264a, #285b8c)', border: '#4a90e2', icon: 'ℹ️' },
+1036:             success: { bg: 'linear-gradient(135deg, #0a3d0a, #1a7a1a)', border: '#2ecc71', icon: '✅' },
+1037:             warning: { bg: 'linear-gradient(135deg, #4a3800, #8c6d00)', border: '#f4c430', icon: '⚠️' },
+1038:             error: { bg: 'linear-gradient(135deg, #4a0a0a, #8c1a1a)', border: '#e74c3c', icon: '❌' }
+1039:         };
+1040:         const c = colors[type] || colors.info;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

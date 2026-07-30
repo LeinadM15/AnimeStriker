@@ -1,0 +1,109 @@
+Created At: 2026-07-30T17:20:58+02:00
+Completed At: 2026-07-30T17:20:58+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5064
+Total Bytes: 265710
+Showing lines 4050 to 4150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4050:         // Instrucciones
+4051:         const helpOverlay = document.createElement('div');
+4052:         helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.7); padding:10px 20px; border-radius:10px; text-align:center; pointer-events:none; z-index:10010; text-shadow:0 0 5px #000; border:1px solid #00e5ff;';
+4053:         helpOverlay.innerHTML = '<b>MOVER</b>: Mover el Ratón (Las manos siguen al ratón)<br><b>NADA (Blanco)</b>: Agarre | <b>CLIC IZQ (Rojo)</b>: Puños | <b>CLIC DER (Morado)</b>: Estirada';
+4054:         engine.appendChild(helpOverlay);
+4055:         
+4056:         // --- MANOS DEL PORTERO ---
+4057:         let currentPose = 'AGARRE';
+4058:         let mouseX = 50, mouseY = 50;
+4059:         
+4060:         const leftGlove = document.createElement('img');
+4061:         leftGlove.src = 'assets/Match/PosicionAgarre.png';
+4062:         leftGlove.onerror = () => { leftGlove.style.display="none"; };
+4063:         leftGlove.style.cssText = 'position:absolute; top:50%; left:45%; transform:translate(-50%, -50%) scaleX(-1); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+4064:         engine.appendChild(leftGlove);
+4065:         
+4066:         const rightGlove = document.createElement('img');
+4067:         rightGlove.src = 'assets/Match/PosicionAgarre.png';
+4068:         rightGlove.onerror = () => { rightGlove.style.display="none"; };
+4069:         rightGlove.style.cssText = 'position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+4070:         engine.appendChild(rightGlove);
+4071:         
+4072:         document.body.appendChild(engine);
+4073:         
+4074:         // --- CONTROLES ---
+4075:         function setPose(pose) {
+4076:             currentPose = pose;
+4077:             let src = 'assets/Match/PosicionAgarre.png';
+4078:             let size = '180px';
+4079:             if (pose === 'PUNO') { src = 'assets/Match/PosicionPuño.png'; size = '140px'; }
+4080:             if (pose === 'ESTIRADA') { src = 'assets/Match/PosicionEstirada.png'; size = '280px'; }
+4081:             
+4082:             leftGlove.src = src; leftGlove.style.width = size; leftGlove.style.height = size;
+4083:             rightGlove.src = src; rightGlove.style.width = size; rightGlove.style.height = size;
+4084:             
+4085:             updateGlovePositions();
+4086:         }
+4087:         
+4088:         function updateGlovePositions() {
+4089:             let offsetX = (currentPose === 'PUNO') ? 3 : (currentPose === 'ESTIRADA' ? 10 : 5);
+4090:             leftGlove.style.left = `calc(${mouseX}% - ${offsetX}%)`;
+4091:             leftGlove.style.top = `${mouseY}%`;
+4092:             rightGlove.style.left = `calc(${mouseX}% + ${offsetX}%)`;
+4093:             rightGlove.style.top = `${mouseY}%`;
+4094:         }
+4095:         
+4096:         engine.addEventListener('mousemove', (e) => {
+4097:             const rect = engine.getBoundingClientRect();
+4098:             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+4099:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+4100:             updateGlovePositions();
+4101:         });
+4102:         
+4103:         engine.addEventListener('mousedown', (e) => {
+4104:             if (e.button === 0) setPose('PUNO'); // Izquierdo
+4105:             else if (e.button === 2) setPose('ESTIRADA'); // Derecho
+4106:         });
+4107:         
+4108:         engine.addEventListener('mouseup', () => setPose('AGARRE'));
+4109:         
+4110:         // --- MOTOR DE TIROS ---
+4111:         let totalShots = 5;
+4112:         let currentShot = 0;
+4113:         let saves = 0;
+4114:         let goalsConceded = 0;
+4115:         
+4116:         let finalTeamGoals = Math.floor(Math.random() * 4); // 0 to 3 goals from teammates
+4117:         let currentTeamGoals = 0;
+4118:         
+4119:         function updateHUD() {
+4120:             shotDisplay.innerText = `Tiro ${Math.min(currentShot + 1, totalShots)} / ${totalShots}`;
+4121:             scoreDisplay.innerText = `Marcador: Nosotros ${currentTeamGoals} - ${goalsConceded} Rival`;
+4122:         }
+4123:         
+4124:         function showScorerPopup(npc, isAlly) {
+4125:             const popup = document.createElement('div');
+4126:             popup.style.cssText = `position:absolute; top:20%; ${isAlly ? 'left:10%;' : 'right:10%;'} width:180px; text-align:center; z-index:10050; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: scale(0.1); opacity: 0;`;
+4127:             popup.innerHTML = `
+4128:                 <img src="${npc.image || 'assets/NPC_Default.png'}" style="width:100%; border-radius:10px; border:4px solid ${isAlly ? '#00e5ff' : '#ff4444'}; box-shadow:0 0 20px ${isAlly ? '#00e5ff' : '#ff4444'}; background:rgba(0,0,0,0.5); object-fit: cover;">
+4129:                 <div style="background:rgba(0,0,0,0.9); color:white; font-family:'Bangers'; font-size: 1.2rem; padding:8px; border-radius:5px; margin-top:5px; border:2px solid ${isAlly ? '#00e5ff' : '#ff4444'}; text-shadow: 2px 2px 0px #000;">${npc.name}</div>
+4130:             `;
+4131:             engine.appendChild(popup);
+4132:             setTimeout(() => { popup.style.transform = 'scale(1)'; popup.style.opacity = '1'; }, 50);
+4133:             setTimeout(() => {
+4134:                 popup.style.transform = 'scale(0.1)'; popup.style.opacity = '0';
+4135:                 setTimeout(() => popup.remove(), 300);
+4136:             }, 2000);
+4137:         }
+4138:         
+4139:         function endMatch() {
+4140:             engine.remove();
+4141:             
+4142:             // El resultado matemático se decide estrictamente por goles
+4143:             let win = false;
+4144:             let draw = false;
+4145:             if (currentTeamGoals > goalsConceded) win = true;
+4146:             else if (currentTeamGoals === goalsConceded) draw = true;
+4147:             
+4148:             // Update league standings, goals, and distribute goals across the stratum
+4149:             window.processMatchday(currentTeamGoals, goalsConceded, true);
+4150:             
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

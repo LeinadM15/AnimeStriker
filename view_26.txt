@@ -1,0 +1,49 @@
+Created At: 2026-07-29T02:42:24+02:00
+Completed At: 2026-07-29T02:42:24+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3448
+Total Bytes: 175544
+Showing lines 3200 to 3240
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3200:         const player = document.createElement('div');
+3201:         player.style.cssText = 'position:absolute; bottom:20px; width:80px; height:80px; transition:left 0.15s ease-out;';
+3202:         player.innerHTML = `<img src="${myPlayer.image}" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+3203:         gameArea.appendChild(player);
+3204:         
+3205:         let currentLane = 1;
+3206:         const updatePlayerPos = () => { 
+3207:             let maxOffsetX = gameArea.offsetWidth * 0.35;
+3208:             player.style.left = `calc(50% - 40px + ${maxOffsetX * (currentLane - 1)}px)`; 
+3209:         };
+3210:         setTimeout(updatePlayerPos, 50);
+3211:         
+3212:         const controls = document.createElement('div');
+3213:         controls.style.cssText = 'position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:150px; z-index:10; pointer-events:none;';
+3214:         const btnLeft = document.createElement('button'); btnLeft.innerText = '⬅️ IZQ';
+3215:         btnLeft.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3216:         btnLeft.onmousedown = () => { btnLeft.style.background = 'rgba(0,229,255,0.4)'; if(currentLane > 0) currentLane--; updatePlayerPos(); };
+3217:         btnLeft.onmouseup = () => btnLeft.style.background = 'rgba(0,0,0,0.5)';
+3218:         btnLeft.ontouchstart = btnLeft.onmousedown;
+3219:         btnLeft.ontouchend = btnLeft.onmouseup;
+3220:         
+3221:         const btnRight = document.createElement('button'); btnRight.innerText = 'DER ➡️';
+3222:         btnRight.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3223:         btnRight.onmousedown = () => { btnRight.style.background = 'rgba(0,229,255,0.4)'; if(currentLane < 2) currentLane++; updatePlayerPos(); };
+3224:         btnRight.onmouseup = () => btnRight.style.background = 'rgba(0,0,0,0.5)';
+3225:         btnRight.ontouchstart = btnRight.onmousedown;
+3226:         btnRight.ontouchend = btnRight.onmouseup;
+3227:         
+3228:         controls.appendChild(btnLeft); controls.appendChild(btnRight);
+3229:         overlay.appendChild(controls);
+3230:         
+3231:         document.body.appendChild(overlay);
+3232:         
+3233:         const handleKey = (e) => {
+3234:             if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') { btnLeft.onmousedown(); setTimeout(btnLeft.onmouseup, 100); }
+3235:             if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') { btnRight.onmousedown(); setTimeout(btnRight.onmouseup, 100); }
+3236:         };
+3237:         window.addEventListener('keydown', handleKey);
+3238:         
+3239:         let time = 30;
+3240:         let score = 0;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,808 @@
+Created At: 2026-07-30T17:05:22+02:00
+Completed At: 2026-07-30T17:05:23+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5063
+Total Bytes: 269931
+Showing lines 1 to 800
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: document.addEventListener('DOMContentLoaded', () => {
+2:     // ÃƒÂ¢Ã¢Â€Â¢Ã¢Â€ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢-
+3:     // ÃƒÂ¢Ã¢Â€Â¢Ã¢Â€Â˜  ÃƒÂ¢Ã…Â¡Ã¢Â„Â¢ÃƒÂ¯Ã‚Â¸Ã‚Â CONFIG                                               ÃƒÂ¢Ã¢Â€Â¢Ã¢Â€Â˜
+4:     // ÃƒÂ¢Ã¢Â€Â¢Ã…Â¡ÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚ÂÃƒÂ¢Ã¢Â€Â¢Ã‚Â
+5:     const MAX_STARTING_RATING = 70;
+6:     const RATING_PENALTY = 10;
+7:     const STORAGE_KEY = 'bluelock_story_roster';
+8:     const FILL_COUNT = 300;
+9: 
+10:     const DEFAULT_ROSTER_IDS = [
+11:         "isagi_oro","nagi_oro","barou_oro","shidou_oro","reo_oro",
+12:         "chigiri_oro","kunigami_oro","kurona_oro","gagamaru_oro",
+13:         "niko_oro","raichi_oro","yukimiya_oro","karasu_oro",
+14:         "kiyora_oro","hiiragi_oro","himizu_oro","hiori_oro"
+15:     ];
+16:     const DEFAULT_NAME_FALLBACKS = [
+17:         "HAIJI","YUZU","ENDOJI","SOKURA","TSUNZAKI",
+18:         "TOKIMITSU","EITA","OTOYA","ARYU"
+19:     ];
+20:     const BLUE_LOCK_NAMES = [
+21:         "ISAGI","BACHIRA","NAGI","REO","MIKAGE","BAROU","SHOEI",
+22:         "SHIDOU","CHIGIRI","KUNIGAMI","KURONA","GAGAMARU",
+23:         "NIKO","IKKI","RAICHI","YUKIMIYA","KARASU","KIYORA",
+24:         "HIIRAGI","HIMIZU","HIORI","HAIJI","YUZU","ENDOJI",
+25:         "SOKURA","TSUNZAKI","TOKIMITSU","EITA","OTOYA","ARYU"
+26:     ];
+27: 
+28:     // Country code ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ Spanish name
+29:     const COUNTRY_NAMES = {
+30:         jp:"JapÃƒÂ³n",de:"Alemania",fr:"Francia",es:"EspaÃƒÂ±a",it:"Italia",gb:"Inglaterra",
+31:         br:"Brasil",ar:"Argentina",pt:"Portugal",nl:"PaÃƒÂ­ses Bajos",be:"BÃƒÂ©lgica",
+32:         us:"EE.UU.",mx:"MÃƒÂ©xico",co:"Colombia",uy:"Uruguay",cl:"Chile",kr:"Corea del Sur",
+33:         cn:"China",th:"Tailandia",za:"SudÃƒÂ¡frica",ru:"Rusia",hr:"Croacia",dk:"Dinamarca",
+34:         se:"Suecia",eg:"Egipto",ua:"Ucrania",rs:"Serbia",ba:"Bosnia",gr:"Grecia",
+35:         au:"Australia",uz:"UzbekistÃƒÂ¡n",ro:"RumanÃƒÂ­a",tr:"TurquÃƒÂ­a",ch:"Suiza",at:"Austria",
+36:         pl:"Polonia",cz:"Chequia",ng:"Nigeria",cm:"CamerÃƒÂºn",sn:"Senegal",ci:"Costa de Marfil",
+37:         id:"Indonesia",sa:"Arabia SaudÃƒÂ­",bf:"Burkina Faso",no:"Noruega",ie:"Irlanda",
+38:         sc:"Seychelles",pk:"PakistÃƒÂ¡n",in:"India",pe:"PerÃƒÂº",ve:"Venezuela",ec:"Ecuador",
+39:         py:"Paraguay",bo:"Bolivia",cr:"Costa Rica",pa:"PanamÃƒÂ¡",gt:"Guatemala",hn:"Honduras",
+40:         sv:"El Salvador",do:"Rep. Dominicana",cu:"Cuba",jm:"Jamaica",tt:"Trinidad y Tobago"
+41:     };
+42: 
+43:     // Position groups
+44:     const POS_GROUPS = [
+45:         { label: "Todas", positions: null },
+46:         { label: "DEL", positions: ["ST","CF","FW"] },
+47:         { label: "EXT", positions: ["RW","LW","RM","LM"] },
+48:         { label: "MED", positions: ["CAM","CM","CDM"] },
+49:         { label: "DEF", positions: ["CB","RB","LB","RWB","LWB"] },
+50:         { label: "POR", positions: ["GK"] }
+51:     ];
+52: 
+53:     // =====================================================
+54:     // UTILITIES
+55:     // =====================================================
+56:     function calcRating(r) { return Math.min(MAX_STARTING_RATING, Math.max(1, r - RATING_PENALTY)); }
+57:     function ratingColor(r) {
+58:         if (r >= 68) return 'rating-green';
+59:         if (r >= 60) return 'rating-yellow';
+60:         if (r >= 50) return 'rating-orange';
+61:         return 'rating-red';
+62:     }
+63:     function extractCountryCode(flagUrl) {
+64:         if (!flagUrl) return null;
+65:         const m = flagUrl.match(/\/([a-z]{2})\.png/i);
+66:         return m ? m[1].toLowerCase() : null;
+67:     }
+68:     function getCountryName(code) { return COUNTRY_NAMES[code] || code.toUpperCase(); }
+69:     function getTeamName(icon) {
+70:         if (!icon) return '';
+71:         return icon.replace('teams/','').replace('.png','').replace(/([A-Z])/g, ' $1').trim();
+72:     }
+73: 
+74:     // =====================================================
+75:     // BUILD ALL ORO CARDS (lowest rating per name)
+76:     // =====================================================
+77:     window.allOroCards = new Map();
+78:     if (typeof cardsDB !== 'undefined') {
+79:         cardsDB.forEach(c => {
+80:             if (c.rarity !== 'Oro') return;
+81:             const existing = allOroCards.get(c.name);
+82:             if (!existing || c.rating < existing.rating) allOroCards.set(c.name, c);
+83:         });
+84:     }
+85: 
+86:     // Extract unique values for filters
+87:     const allLeagues = new Set();
+88:     const allTeams = new Map(); // teamIcon ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ display name
+89:     const allNations = new Map(); // countryCode ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ { code, name, flag }
+90:     allOroCards.forEach(c => {
+91:         if (c.league) allLeagues.add(c.league);
+92:         if (c.teamIcon) allTeams.set(c.teamIcon, getTeamName(c.teamIcon));
+93:         const cc = extractCountryCode(c.nationFlag);
+94:         if (cc && !allNations.has(cc)) {
+95:             allNations.set(cc, { code: cc, name: getCountryName(cc), flag: c.nationFlag });
+96:         }
+97:     });
+98:     const leagueList = ['Todas', ...Array.from(allLeagues).sort()];
+99:     const teamList = [{ icon: null, name: 'Todos' }, ...Array.from(allTeams.entries()).map(([icon, name]) => ({ icon, name })).sort((a,b) => a.name.localeCompare(b.name))];
+100:     const nationList = Array.from(allNations.values()).sort((a,b) => a.name.localeCompare(b.name));
+101: 
+102:     // =====================================================
+103:     // ROSTER STATE
+104:     // =====================================================
+105:     let roster = new Set();
+106: 
+107:     function loadRoster() {
+108:         const saved = localStorage.getItem(STORAGE_KEY);
+109:         if (saved) { try { roster = new Set(JSON.parse(saved)); } catch(e) { roster = new Set(); } }
+110:         if (roster.size === 0) {
+111:             DEFAULT_ROSTER_IDS.forEach(id => {
+112:                 const c = [...allOroCards.values()].find(x => x.id === id);
+113:                 if (c) roster.add(c.id);
+114:             });
+115:             DEFAULT_NAME_FALLBACKS.forEach(name => {
+116:                 const c = [...allOroCards.values()].find(x => x.name.toUpperCase().includes(name));
+117:                 if (c && !roster.has(c.id)) roster.add(c.id);
+118:             });
+119:             saveRoster();
+120:         }
+121:     }
+122:     function saveRoster() { localStorage.setItem(STORAGE_KEY, JSON.stringify([...roster])); }
+123:     function getRosterPlayers() {
+124:         if (window.gamePhase === 1) {
+125:             // En Hokkaido te saltas la lista, asÃƒÂ­ que muestras a TODOS los jugadores para elegir tu avatar
+126:             const players = [...allOroCards.values()];
+127:             players.sort((a,b) => calcRating(b.rating) - calcRating(a.rating) || a.name.localeCompare(b.name));
+128:             return players;
+129:         }
+130:         const players = [];
+131:         roster.forEach(id => {
+132:             const c = [...allOroCards.values()].find(x => x.id === id);
+133:             if (c) players.push(c);
+134:         });
+135:         players.sort((a,b) => calcRating(b.rating) - calcRating(a.rating) || a.name.localeCompare(b.name));
+136:         return players;
+137:     }
+138: 
+139:     function updateCounter() {
+140:         const counterEl = document.getElementById('main-roster-count');
+141:         if (counterEl) {
+142:             counterEl.textContent = `${roster.size} / ${FILL_COUNT} Jugadores`;
+143:             if (roster.size >= FILL_COUNT) {
+144:                 counterEl.classList.add('full');
+145:             } else {
+146:                 counterEl.classList.remove('full');
+147:             }
+148:         }
+149:     }
+150: 
+151:     loadRoster();
+152: 
+153:     // =====================================================
+154:     // PREQUEL SELECTION & CINEMATIC
+155:     // =====================================================
+156:     window.gamePhase = 1; // 1 = Colegio, 1.5 = Instituto, 2 = Blue Lock
+157:     window.currentPrefecture = "";
+158:     
+159:     document.getElementById('btn-select-hokkaido')?.addEventListener('click', () => {
+160:         window.currentPrefecture = "Hokkaido";
+161:         window.gamePhase = 1;
+162:         document.getElementById('prequel-selection-screen').classList.add('hidden');
+163:         document.getElementById('player-selection-screen').classList.remove('hidden');
+164:         document.querySelector('#player-selection-screen .story-logo').innerHTML = '<span>HOKKAIDO</span> - SELECCIÃƒÂ“N';
+165:         
+166:         // Estilo diferente para regiones
+167:         document.getElementById('player-selection-screen').style.background = 'radial-gradient(circle at center, #1a2a3a 0%, #050a11 100%)';
+168:         document.querySelector('#player-selection-screen .story-logo').style.color = '#fff';
+169:         document.querySelector('#player-selection-screen .story-logo span').style.color = '#74b9ff';
+170:         document.querySelector('#player-selection-screen .story-logo span').style.textShadow = '0 0 15px rgba(116, 185, 255, 0.8)';
+171:         
+172:         const subtitle = document.getElementById('d-subtitle');
+173:         if(subtitle) subtitle.textContent = 'Jugador Local (Hokkaido)';
+174:         
+175:         document.getElementById('btn-fill-random').style.display = 'none';
+176:         document.getElementById('btn-fill-jpst').style.display = 'none';
+177:         document.getElementById('btn-edit-roster').style.display = 'none';
+178:         document.getElementById('main-roster-count').style.display = 'none';
+179:         
+180:         const colRating = document.getElementById('col-rating-header');
+181:         if (colRating) colRating.style.display = 'none';
+182:         const dRating = document.getElementById('d-rating-cell');
+183:         if (dRating) dRating.style.display = 'none';
+184:         
+185:         renderPlayerList();
+186:     });
+187:     
+188:     document.getElementById('btn-select-bluelock')?.addEventListener('click', () => {
+189:         window.currentPrefecture = "";
+190:         window.gamePhase = 2; // Direct to Blue Lock
+191:         document.getElementById('prequel-selection-screen').classList.add('hidden');
+192:         document.getElementById('player-selection-screen').classList.remove('hidden');
+193:         
+194:         document.querySelector('#player-selection-screen .story-logo').innerHTML = '<span>BLUE LOCK</span> - STORY MODE';
+195:         
+196:         // Estilo Blue Lock normal
+197:         document.getElementById('player-selection-screen').style.background = '';
+198:         document.querySelector('#player-selection-screen .story-logo').style.color = '';
+199:         document.querySelector('#player-selection-screen .story-logo span').style.color = '';
+200:         document.querySelector('#player-selection-screen .story-logo span').style.textShadow = '';
+201:         
+202:         const subtitle = document.getElementById('d-subtitle');
+203:         if(subtitle) subtitle.textContent = 'Blue Lock Project';
+204:         
+205:         document.getElementById('btn-fill-random').style.display = 'inline-block';
+206:         document.getElementById('btn-fill-jpst').style.display = 'inline-block';
+207:         document.getElementById('btn-edit-roster').style.display = 'inline-block';
+208:         document.getElementById('main-roster-count').style.display = 'block';
+209:         
+210:         const colRating = document.getElementById('col-rating-header');
+211:         if (colRating) colRating.style.display = 'block';
+212:         const dRating = document.getElementById('d-rating-cell');
+213:         if (dRating) dRating.style.display = 'block';
+214:         
+215:         renderPlayerList();
+216:     });
+217: 
+218:     const cinematicScreen = document.getElementById('cinematic-screen');
+219:     const selectionScreen = document.getElementById('player-selection-screen');
+220:     
+221:     window.transitionScreen = function(imageSrc, text, callback) {
+222:         const overlay = document.getElementById('transition-overlay');
+223:         const img = document.getElementById('transition-img');
+224:         const txt = document.getElementById('transition-text');
+225:         
+226:         if (!overlay) { callback(); return; }
+227:         
+228:         img.src = imageSrc;
+229:         txt.textContent = text;
+230:         
+231:         overlay.classList.remove('hidden');
+232:         // PequeÃƒÂ±o delay para asegurar que el DOM actualiza
+233:         setTimeout(() => {
+234:             overlay.style.opacity = '1';
+235:             
+236:             setTimeout(() => {
+237:                 callback();
+238:                 
+239:                 setTimeout(() => {
+240:                     overlay.style.opacity = '0';
+241:                     setTimeout(() => overlay.classList.add('hidden'), 1000);
+242:                 }, 1500); // Mantiene la pantalla 1.5s despuÃƒÂ©s de cargar todo
+243:             }, 1000); // 1s para fundido a negro
+244:         }, 50);
+245:     };
+246:     const dialogues = [
+247:         { speaker:"Ego Jinpachi", text:"El fÃƒÂºtbol japonÃƒÂ©s necesita un cambio. Nuestro paÃƒÂ­s nunca ganarÃƒÂ¡ un Mundial... a menos que creemos al delantero mÃƒÂ¡s egoÃƒÂ­sta del mundo." },
+248:         { speaker:"Ego Jinpachi", text:"He reunido a 300 de los mejores delanteros jÃƒÂ³venes de JapÃƒÂ³n en esta instalaciÃƒÂ³n. Blue Lock. Solo uno sobrevivirÃƒÂ¡." },
+249:         { speaker:"Ego Jinpachi", text:"ÃƒÂ‚Ã‚Â¿EstÃƒÂ¡s listo para demostrar que eres el mejor? Olvida el trabajo en equipo. Olvida el fair play. AquÃƒÂ­ solo importa una cosa: marcar goles." },
+250:         { speaker:"Ego Jinpachi", text:"Has sido seleccionado. Tu media ha sido recalculada. A partir de ahora, empezarÃƒÂ¡s desde abajo. DemuÃƒÂ©strame que mereces sobrevivir en Blue Lock." }
+251:     ];
+252:     let dIdx = 0, isTyping = false, typeTimer = null;
+253: 
+254:     function typeText(el, text, speed=25) {
+255:         return new Promise(res => {
+256:             isTyping = true; el.innerHTML = ''; let i = 0;
+257:             (function go() {
+258:                 if (i < text.length) { el.innerHTML = text.substring(0,i+1)+'<span class="typed-cursor">|</span>'; i++; typeTimer = setTimeout(go, speed); }
+259:                 else { el.innerHTML = text; isTyping = false; res(); }
+260:             })();
+261:         });
+262:     }
+263:     function skipType(el, text) { clearTimeout(typeTimer); el.innerHTML = text; isTyping = false; }
+264:     function showDlg(idx) {
+265:         const d = dialogues[idx], tEl = document.getElementById('cin-text'), btn = document.getElementById('cin-continue');
+266:         document.getElementById('cin-speaker').textContent = d.speaker;
+267:         btn.classList.remove('visible');
+268:         typeText(tEl, d.text).then(() => { btn.textContent = idx < dialogues.length-1 ? 'Continuar ÃƒÂ¢Ã¢Â€Â“Ã‚Â¸' : 'Empezar Historia ÃƒÂ¢Ã¢Â€Â“Ã‚Â¸'; btn.classList.add('visible'); });
+269:     }
+270:     function onContinue() {
+271:         const tEl = document.getElementById('cin-text'), d = dialogues[dIdx];
+272:         if (isTyping) { skipType(tEl, d.text); const b=document.getElementById('cin-continue'); b.textContent=dIdx<dialogues.length-1?'Continuar ÃƒÂ¢Ã¢Â€Â“Ã‚Â¸':'Empezar Historia ÃƒÂ¢Ã¢Â€Â“Ã‚Â¸'; b.classList.add('visible'); return; }
+273:         dIdx++;
+274:         if (dIdx < dialogues.length) showDlg(dIdx);
+275:         else { cinematicScreen.style.opacity='0'; setTimeout(()=>{ cinematicScreen.classList.add('hidden'); startTagGame(); },800); }
+276:     }
+277:     function skipCin() { clearTimeout(typeTimer); cinematicScreen.style.opacity='0'; setTimeout(()=>{ cinematicScreen.classList.add('hidden'); startTagGame(); },500); }
+278: 
+279:     const cinBtn = document.getElementById('cin-continue');
+280:     const cinSkip = document.getElementById('cin-skip');
+281:     if (cinBtn) cinBtn.addEventListener('click', onContinue);
+282:     if (cinSkip) cinSkip.addEventListener('click', skipCin);
+283:     const cinDlg = document.querySelector('.cinematic-dialogue');
+284:     if (cinDlg) cinDlg.addEventListener('click', e => { if (e.target !== cinBtn) onContinue(); });
+285: 
+286:     // =====================================================
+287:     // MAIN PLAYER LIST
+288:     // =====================================================
+289:     const listContainer = document.getElementById('story-player-list');
+290:     const detailEmpty = document.getElementById('detail-empty');
+291:     const detailFilled = document.getElementById('detail-filled');
+292:     let selectedPlayer = null, selectedRating = 0;
+293: 
+294:     function renderPlayerList(filter='') {
+295:         updateCounter();
+296:         listContainer.innerHTML = '';
+297:         const players = getRosterPlayers();
+298:         const q = filter.toLowerCase().trim();
+299:         let count = 0;
+300:         players.forEach(player => {
+301:             if (q && !player.name.toLowerCase().includes(q)) return;
+302:             const adj = calcRating(player.rating);
+303:             const pos = window.gamePhase === 2 ? 'ST' : (player.position || 'ST');
+304:             const row = document.createElement('div');
+305:             row.className = 'list-row';
+306:             
+307:             if (window.gamePhase === 2) {
+308:                 row.innerHTML = `
+309:                     <span class="row-pos">${pos}</span>
+310:                     <img src="${player.image}" class="row-icon" alt="">
+311:                     <span class="row-name">${player.name}</span>
+312:                     <span class="row-rating ${ratingColor(adj)}">${adj}</span>
+313:                     <button class="row-remove" title="Quitar">Ã¢ÂœÂ–</button>
+314:                 `;
+315:             } else {
+316:                 row.innerHTML = `
+317:                     <span class="row-pos">${pos}</span>
+318:                     <img src="${player.image}" class="row-icon" alt="">
+319:                     <span class="row-name">${player.name}</span>
+320:                     <button class="row-remove" title="Quitar">Ã¢ÂœÂ–</button>
+321:                 `;
+322:             }
+323:             row.addEventListener('click', e => {
+324:                 if (e.target.classList.contains('row-remove')) return;
+325:                 document.querySelectorAll('.list-row').forEach(r => r.classList.remove('selected'));
+326:                 row.classList.add('selected');
+327:                 showDetail(player, window.gamePhase === 2 ? adj : 55);
+328:             });
+329:             row.querySelector('.row-remove').addEventListener('click', e => {
+330:                 e.stopPropagation();
+331:                 roster.delete(player.id);
+332:                 saveRoster();
+333:                 renderPlayerList(document.getElementById('search-input').value);
+334:                 if (selectedPlayer?.id === player.id) { selectedPlayer=null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden'); }
+335:             });
+336:             listContainer.appendChild(row);
+337:             count++;
+338:         });
+339:         if (count === 0) listContainer.innerHTML = '<p style="padding:20px;color:#555;font-family:Nunito;text-align:center;">Lista vacÃƒÂ­a. Usa "Editar Lista" para aÃƒÂ±adir jugadores.</p>';
+340:     }
+341:     document.getElementById('search-input').addEventListener('input', e => renderPlayerList(e.target.value));
+342:     renderPlayerList();
+343: 
+344:     // =====================================================
+345:     // DETAIL PANEL
+346:     // =====================================================
+347:     function showDetail(player, adjustedRating) {
+348:         selectedPlayer = player; selectedRating = adjustedRating;
+349:         detailEmpty.classList.add('hidden'); detailFilled.classList.remove('hidden');
+350:         document.getElementById('d-img').src = player.image;
+351:         document.getElementById('d-name').textContent = player.name;
+352:         document.getElementById('d-pos').textContent = window.gamePhase === 2 ? 'ST' : (player.position || 'ST');
+353:         document.getElementById('d-origpos').textContent = player.position;
+354:         if (player.teamIcon) { document.getElementById('d-badge').src = player.teamIcon; document.getElementById('d-badge').style.display = 'block'; }
+355:         const base = adjustedRating, seed = player.name.length;
+356:         const stats = {
+357:             Ritmo: Math.min(MAX_STARTING_RATING, base+((seed*3)%7)-2),
+358:             Tiro: Math.min(MAX_STARTING_RATING, base+((seed*5)%9)),
+359:             Pases: Math.min(MAX_STARTING_RATING, base+((seed*2)%6)-3),
+360:             Regate: Math.min(MAX_STARTING_RATING, base+((seed*7)%8)-2),
+361:             Defensa: Math.min(MAX_STARTING_RATING, Math.max(15, base-20+((seed*4)%12))),
+362:             Fisico: Math.min(MAX_STARTING_RATING, base+((seed*6)%6)-2)
+363:         };
+364:         const cont = document.getElementById('d-stats');
+365:         cont.innerHTML = '';
+366:         Object.entries(stats).forEach(([n,v]) => {
+367:             const c = v>=65?'#4cd137':v>=55?'#fbc531':v>=45?'#e67e22':'#e74c3c';
+368:             cont.innerHTML += `<div class="stat-row"><span class="stat-name">${n}</span><div class="stat-bar"><div class="stat-bar-fill" style="width:${v}%;background:${c}"></div></div><span class="stat-num">${v}</span></div>`;
+369:         });
+370:     }
+371:     document.getElementById('btn-select').addEventListener('click', () => {
+372:         if (!selectedPlayer) return;
+373:         selectionScreen.style.opacity = '0';
+374:         setTimeout(() => { 
+375:             selectionScreen.classList.add('hidden'); 
+376:             
+377:             if (window.gamePhase === 1) {
+378:                 // Modo Carrera: Hokkaido
+379:                 startPhase1();
+380:             } else {
+381:                 // Blue Lock (Fase 2 normal)
+382:                 cinematicScreen.classList.remove('hidden');
+383:                 void cinematicScreen.offsetWidth;
+384:                 cinematicScreen.style.opacity = '1';
+385:                 
+386:                 setTimeout(() => { 
+387:                     document.querySelector('.cinematic-speaker')?.classList.add('visible'); 
+388:                     document.querySelector('.cinematic-dialogue')?.classList.add('visible'); 
+389:                     dIdx = 0;
+390:                     showDlg(0); 
+391:                 }, 500);
+392:             }
+393:         }, 800);
+394:     });
+395: 
+396:     // =====================================================
+397:     // FILL BUTTONS
+398:     // =====================================================
+399:     document.getElementById('btn-fill-random').addEventListener('click', () => {
+400:         const arr = [...allOroCards.values()].sort(() => Math.random()-0.5);
+401:         roster.clear(); arr.slice(0, FILL_COUNT).forEach(c => roster.add(c.id));
+402:         saveRoster(); renderPlayerList(document.getElementById('search-input').value);
+403:         selectedPlayer=null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden');
+404:     });
+405: 
+406:     document.getElementById('btn-fill-jpst').addEventListener('click', () => {
+407:         roster.clear();
+408:         const oroArr = [...allOroCards.values()];
+409:         const isJP = c => c.nationFlag && c.nationFlag.includes('/jp.png');
+410:         const notInRoster = c => !roster.has(c.id);
+411:         const addToRoster = (arr) => {
+412:             arr.sort(() => Math.random() - 0.5);
+413:             for (const c of arr) {
+414:                 if (roster.size >= FILL_COUNT) break;
+415:                 if (!roster.has(c.id)) roster.add(c.id);
+416:             }
+417:         };
+418: 
+419:         // Step 1: Blue Lock players (always included)
+420:         DEFAULT_ROSTER_IDS.forEach(id => { const c = oroArr.find(x => x.id === id); if (c) roster.add(c.id); });
+421:         DEFAULT_NAME_FALLBACKS.forEach(name => { const c = oroArr.find(x => x.name.toUpperCase().includes(name) && !roster.has(x.id)); if (c) roster.add(c.id); });
+422:         BLUE_LOCK_NAMES.forEach(name => { const c = oroArr.find(x => x.name.toUpperCase().includes(name) && !roster.has(x.id)); if (c) roster.add(c.id); });
+423: 
+424:         // Step 2: Japanese ST (primary position)
+425:         addToRoster(oroArr.filter(c => isJP(c) && c.position === 'ST' && notInRoster(c)));
+426: 
+427:         // Step 3: Japanese CF (primary position)
+428:         addToRoster(oroArr.filter(c => isJP(c) && c.position === 'CF' && notInRoster(c)));
+429: 
+430:         // Step 4: Japanese players with ST or CF as secondary position
+431:         addToRoster(oroArr.filter(c => isJP(c) && notInRoster(c) && c.secondaryPositions && (c.secondaryPositions.includes('ST') || c.secondaryPositions.includes('CF'))));
+432: 
+433:         // Step 5: If still not enough, fill with any remaining Japanese players
+434:         addToRoster(oroArr.filter(c => isJP(c) && notInRoster(c)));
+435: 
+436:         saveRoster(); renderPlayerList(document.getElementById('search-input').value);
+437:         selectedPlayer = null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden');
+438:     });
+439: 
+440:     // =====================================================
+441:     // ROSTER MODAL: FIFA-style filters
+442:     // =====================================================
+443:     const modal = document.getElementById('roster-modal');
+444:     const modalList = document.getElementById('roster-modal-list');
+445: 
+446:     // Filter state
+447:     let filterName = '';
+448:     let filterPosIdx = 0;
+449:     let filterLeagueIdx = 0;
+450:     let filterTeamIdx = 0;
+451:     let filterNationCode = null; // null = all
+452: 
+453:     function resetFilters() {
+454:         filterName = ''; filterPosIdx = 0; filterLeagueIdx = 0; filterTeamIdx = 0; filterNationCode = null;
+455:         document.getElementById('filter-name').value = '';
+456:         updateArrowDisplay('sel-position', POS_GROUPS[0].label);
+457:         updateArrowDisplay('sel-league', leagueList[0]);
+458:         updateArrowDisplay('sel-team', teamList[0].name);
+459:         document.getElementById('league-logo').style.display = 'none';
+460:         document.getElementById('team-logo').style.display = 'none';
+461:         updateNationalityPreview();
+462:     }
+463: 
+464:     // Arrow selector helper
+465:     function setupArrowSelector(selectorId, items, getLabel, getLogo, onChange) {
+466:         const el = document.getElementById(selectorId);
+467:         const left = el.querySelector('.arrow-left');
+468:         const right = el.querySelector('.arrow-right');
+469: 
+470:         left.addEventListener('click', () => {
+471:             const current = parseInt(el.querySelector('.arrow-value').dataset.index);
+472:             const next = (current - 1 + items.length) % items.length;
+473:             updateArrow(el, next);
+474:             onChange(next);
+475:         });
+476:         right.addEventListener('click', () => {
+477:             const current = parseInt(el.querySelector('.arrow-value').dataset.index);
+478:             const next = (current + 1) % items.length;
+479:             updateArrow(el, next);
+480:             onChange(next);
+481:         });
+482: 
+483:         function updateArrow(el, idx) {
+484:             const valEl = el.querySelector('.arrow-value');
+485:             valEl.dataset.index = idx;
+486:             valEl.textContent = getLabel(idx);
+487:             const logo = el.querySelector('.arrow-logo');
+488:             if (logo) {
+489:                 const src = getLogo(idx);
+490:                 if (src) { logo.src = src; logo.style.display = 'block'; }
+491:                 else { logo.style.display = 'none'; }
+492:             }
+493:         }
+494:     }
+495: 
+496:     function updateArrowDisplay(selectorId, text, logoSrc) {
+497:         const el = document.getElementById(selectorId);
+498:         el.querySelector('.arrow-value').textContent = text;
+499:         const logo = el.querySelector('.arrow-logo');
+500:         if (logo) {
+501:             if (logoSrc) { logo.src = logoSrc; logo.style.display = 'block'; }
+502:             else { logo.style.display = 'none'; }
+503:         }
+504:     }
+505: 
+506:     // Setup position arrows
+507:     setupArrowSelector('sel-position', POS_GROUPS,
+508:         idx => POS_GROUPS[idx].label, () => null,
+509:         idx => { filterPosIdx = idx; applyFilters(); }
+510:     );
+511: 
+512:     // Setup league arrows
+513:     setupArrowSelector('sel-league', leagueList,
+514:         idx => leagueList[idx], () => null,
+515:         idx => { filterLeagueIdx = idx; filterTeamIdx = 0; updateArrowDisplay('sel-team', teamList[0].name); document.getElementById('team-logo').style.display='none'; applyFilters(); }
+516:     );
+517: 
+518:     // Setup team arrows
+519:     setupArrowSelector('sel-team', teamList,
+520:         idx => teamList[idx].name, idx => teamList[idx].icon,
+521:         idx => { filterTeamIdx = idx; applyFilters(); }
+522:     );
+523: 
+524:     // Name filter
+525:     document.getElementById('filter-name').addEventListener('input', e => {
+526:         filterName = e.target.value;
+527:         applyFilters();
+528:     });
+529: 
+530:     // Nationality click ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ opens sub-modal
+531:     document.getElementById('open-nationality').addEventListener('click', () => {
+532:         document.getElementById('nationality-modal').classList.remove('hidden');
+533:         renderNationalityModal();
+534:     });
+535: 
+536:     function updateNationalityPreview() {
+537:         const preview = document.getElementById('nationality-preview');
+538:         if (filterNationCode) {
+539:             const nat = allNations.get(filterNationCode);
+540:             preview.innerHTML = `<img src="${nat.flag}" alt=""><span class="filter-preview-text">${nat.name}</span>`;
+541:         } else {
+542:             preview.innerHTML = '<span class="filter-preview-text">Todas</span>';
+543:         }
+544:     }
+545: 
+546:     // Apply all filters and render results
+547:     function applyFilters() {
+548:         modalList.innerHTML = '';
+549:         const q = filterName.toLowerCase().trim();
+550:         const posGroup = POS_GROUPS[filterPosIdx];
+551:         const league = filterLeagueIdx === 0 ? null : leagueList[filterLeagueIdx];
+552:         const team = filterTeamIdx === 0 ? null : teamList[filterTeamIdx];
+553: 
+554:         const sorted = [...allOroCards.values()].sort((a,b) => b.rating - a.rating || a.name.localeCompare(b.name));
+555:         let count = 0;
+556: 
+557:         sorted.forEach(card => {
+558:             // Name filter
+559:             if (q && !card.name.toLowerCase().includes(q)) return;
+560:             // Position filter
+561:             if (posGroup.positions && !posGroup.positions.includes(card.position)) return;
+562:             // League filter
+563:             if (league && card.league !== league) return;
+564:             // Team filter
+565:             if (team && card.teamIcon !== team.icon) return;
+566:             // Nationality filter
+567:             if (filterNationCode) {
+568:                 const cc = extractCountryCode(card.nationFlag);
+569:                 if (cc !== filterNationCode) return;
+570:             }
+571:             if (count >= 200) return;
+572: 
+573:             const isIn = roster.has(card.id);
+574:             const adj = calcRating(card.rating);
+575:             const row = document.createElement('div');
+576:             row.className = 'modal-row';
+577:             row.innerHTML = `
+578:                 <img src="${card.image}" class="row-icon" alt="">
+579:                 <div class="modal-row-info">
+580:                     <div class="modal-row-name">${card.name}</div>
+581:                     <div class="modal-row-sub">${card.position} ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ ST  ÃƒÂ‚Ã‚Â·  GRL ${card.rating} ÃƒÂ¢Ã¢Â€Â Ã¢Â€Â™ ${adj}  ÃƒÂ‚Ã‚Â·  ${card.league || ''}</div>
+582:                 </div>
+583:                 <span class="modal-row-rating">${adj}</span>
+584:                 ${isIn ? '<button class="btn-added">ÃƒÂ¢Ã…Â“Ã¢Â€Âœ En lista</button>' : '<button class="btn-add-player">+ AÃƒÂ±adir</button>'}
+585:             `;
+586:             const btn = row.querySelector('.btn-add-player, .btn-added');
+587:             if (!isIn) {
+588:                 btn.addEventListener('click', () => {
+589:                     if (roster.size >= FILL_COUNT) {
+590:                         showNotification("Has alcanzado el lÃƒÂ­mite mÃƒÂ¡ximo de " + FILL_COUNT + " jugadores.", 'warning');
+591:                         return;
+592:                     }
+593:                     roster.add(card.id); saveRoster();
+594:                     btn.className = 'btn-added'; btn.textContent = 'ÃƒÂ¢Ã…Â“Ã¢Â€Âœ En lista';
+595:                     updateCounter();
+596:                     const nb = btn.cloneNode(true); btn.parentNode.replaceChild(nb, btn);
+597:                 });
+598:             }
+599:             modalList.appendChild(row);
+600:             count++;
+601:         });
+602: 
+603:         document.getElementById('results-count').textContent = count;
+604:         if (count === 0) modalList.innerHTML = '<p style="padding:30px;color:#555;text-align:center;font-family:Nunito;">No se encontraron jugadores con estos filtros.</p>';
+605:     }
+606: 
+607:     // Open modal
+608:     document.getElementById('btn-edit-roster').addEventListener('click', () => {
+609:         modal.classList.remove('hidden');
+610:         resetFilters();
+611:         applyFilters();
+612:         document.getElementById('filter-name').focus();
+613:     });
+614: 
+615:     // Close modal
+616:     document.getElementById('btn-close-roster').addEventListener('click', () => {
+617:         modal.classList.add('hidden');
+618:         renderPlayerList(document.getElementById('search-input').value);
+619:     });
+620:     modal.addEventListener('click', e => {
+621:         if (e.target === modal) { modal.classList.add('hidden'); renderPlayerList(document.getElementById('search-input').value); }
+622:     });
+623: 
+624:     // =====================================================
+625:     // NATIONALITY SUB-MODAL
+626:     // =====================================================
+627:     const natModal = document.getElementById('nationality-modal');
+628:     const natTabsEl = document.getElementById('nat-tabs');
+629:     const natListEl = document.getElementById('nat-list');
+630: 
+631:     const NAT_TABS = [
+632:         { label: 'Top 9', filter: list => list.sort((a,b) => { const order=['jp','de','fr','es','it','gb','br','ar','pt']; const ai=order.indexOf(a.code),bi=order.indexOf(b.code); return (ai===-1?99:ai)-(bi===-1?99:bi); }).slice(0,9) },
+633:         { label: '[A]', filter: list => list.filter(n => n.name.startsWith('A')) },
+634:         { label: '[B]', filter: list => list.filter(n => n.name.startsWith('B')) },
+635:         { label: '[C]', filter: list => list.filter(n => n.name.startsWith('C')) },
+636:         { label: '[D-G]', filter: list => list.filter(n => 'DEFG'.includes(n.name[0])) },
+637:         { label: '[H-L]', filter: list => list.filter(n => 'HIJKL'.includes(n.name[0])) },
+638:         { label: '[M-O]', filter: list => list.filter(n => 'MNO'.includes(n.name[0] || 'ÃƒÂƒÃ¢Â€Â˜')) },
+639:         { label: '[P-R]', filter: list => list.filter(n => 'PQR'.includes(n.name[0])) },
+640:         { label: '[S]', filter: list => list.filter(n => n.name.startsWith('S')) },
+641:         { label: '[T-Z]', filter: list => list.filter(n => 'TUVWXYZ'.includes(n.name[0])) }
+642:     ];
+643: 
+644:     let activeNatTab = 0;
+645: 
+646:     function renderNationalityModal() {
+647:         // Build tabs
+648:         natTabsEl.innerHTML = '';
+649:         // Add "Todas" clear option
+650:         const clearTab = document.createElement('button');
+651:         clearTab.className = 'nat-tab' + (!filterNationCode ? ' active' : '');
+652:         clearTab.textContent = 'ÃƒÂ¢Ã…Â“Ã¢Â€Â¢ Limpiar';
+653:         clearTab.addEventListener('click', () => {
+654:             filterNationCode = null;
+655:             updateNationalityPreview();
+656:             applyFilters();
+657:             natModal.classList.add('hidden');
+658:         });
+659:         natTabsEl.appendChild(clearTab);
+660: 
+661:         NAT_TABS.forEach((tab, idx) => {
+662:             const btn = document.createElement('button');
+663:             btn.className = 'nat-tab' + (idx === activeNatTab ? ' active' : '');
+664:             btn.textContent = tab.label;
+665:             btn.addEventListener('click', () => {
+666:                 activeNatTab = idx;
+667:                 renderNationalityModal();
+668:             });
+669:             natTabsEl.appendChild(btn);
+670:         });
+671: 
+672:         // Build list
+673:         natListEl.innerHTML = '';
+674:         const filtered = NAT_TABS[activeNatTab].filter([...nationList]);
+675:         filtered.forEach(nat => {
+676:             const row = document.createElement('div');
+677:             row.className = 'nat-row' + (filterNationCode === nat.code ? ' selected' : '');
+678:             row.innerHTML = `
+679:                 <span class="nat-row-clear">ÃƒÂ¢Ã…Â“Ã¢Â€Â¢</span>
+680:                 <span class="nat-row-name">${nat.name}</span>
+681:                 <img src="${nat.flag}" class="nat-row-flag" alt="${nat.name}">
+682:             `;
+683:             row.addEventListener('click', () => {
+684:                 if (filterNationCode === nat.code) {
+685:                     filterNationCode = null;
+686:                 } else {
+687:                     filterNationCode = nat.code;
+688:                 }
+689:                 updateNationalityPreview();
+690:                 applyFilters();
+691:                 natModal.classList.add('hidden');
+692:             });
+693:             natListEl.appendChild(row);
+694:         });
+695:         if (filtered.length === 0) natListEl.innerHTML = '<p style="padding:20px;color:#555;text-align:center;font-family:Nunito;">Sin resultados</p>';
+696:     }
+697: 
+698:     // Close nationality modal
+699:     document.getElementById('btn-close-nationality').addEventListener('click', () => natModal.classList.add('hidden'));
+700:     natModal.addEventListener('click', e => { if (e.target === natModal) natModal.classList.add('hidden'); });
+701: 
+702:     // =====================================================
+703:     // REAL-TIME TAG GAME LOGIC (AIM LAB + DODGE)
+704:     // =====================================================
+705:     const tagScreen = document.getElementById('tag-screen');
+706:     const introOverlay = document.getElementById('tag-intro-overlay');
+707:     const groupOverlay = document.getElementById('tag-group-overlay');
+708:     const countdownOverlay = document.getElementById('tag-countdown');
+709:     const gameUI = document.getElementById('tag-game-ui');
+710: 
+711:     let tagPlayers = [];
+712:     let myPlayer = null;
+713:     let ballHolderId = null;
+714:     let gameTime = 136;
+715:     let gameInterval = null;
+716:     let aiInterval = null;
+717:     let moveInterval = null;
+718:     let dodgeActive = false;
+719:     let qteActive = false;
+720:     let qtePos = 0;
+721:     let qteDir = 1;
+722:     let qteInterval = null;
+723:     let qteTarget = null;
+724: 
+725:     const timerEl = document.getElementById('tag-timer');
+726:     const arenaEl = document.getElementById('tag-arena');
+727:     const narrationEl = document.getElementById('tag-narration-text');
+728:     const dodgePanel = document.getElementById('tag-dodge-panel');
+729:     const qtePanel = document.getElementById('tag-qte-panel');
+730:     const qteCursor = document.getElementById('tag-qte-cursor');
+731:     const DIRECTIONS = ['up', 'left', 'right', 'down'];
+732: 
+733:     // ---- START GAME ----
+734:     window.startTagGame = function () {
+735:         if (!selectedPlayer) return;
+736:         myPlayer = selectedPlayer;
+737: 
+738:         const others = getRosterPlayers().filter(p => p.id !== myPlayer.id);
+739:         others.sort(() => Math.random() - 0.5);
+740:         tagPlayers = [myPlayer, ...others.slice(0, 11)];
+741: 
+742:         tagScreen.classList.remove('hidden');
+743:         introOverlay.classList.remove('hidden');
+744:         groupOverlay.classList.add('hidden');
+745:         countdownOverlay.classList.add('hidden');
+746:         gameUI.classList.add('hidden');
+747: 
+748:         setTimeout(() => {
+749:             introOverlay.classList.add('hidden');
+750:             showGroupAssignment();
+751:         }, 3000);
+752:     };
+753: 
+754:     function showGroupAssignment() {
+755:         groupOverlay.classList.remove('hidden');
+756:         document.getElementById('tag-group-name').textContent = `GRUPO ${Math.floor(Math.random() * 25) + 1}`;
+757:         const mEl = document.getElementById('tag-group-members');
+758:         mEl.innerHTML = '';
+759:         tagPlayers.forEach(p => {
+760:             mEl.innerHTML += `<div class="tag-member-chip ${p.id === myPlayer.id ? 'is-player' : ''}">
+761:                 <img src="${p.image}"><span>${p.name}</span>
+762:             </div>`;
+763:         });
+764: 
+765:         document.getElementById('tag-start-btn').onclick = () => {
+766:             groupOverlay.classList.add('hidden');
+767:             startCountdown();
+768:         };
+769:     }
+770: 
+771:     function startCountdown() {
+772:         countdownOverlay.classList.remove('hidden');
+773:         const numEl = document.getElementById('tag-countdown-num');
+774:         let count = 3;
+775:         numEl.textContent = count;
+776:         const iv = setInterval(() => {
+777:             count--;
+778:             if (count > 0) {
+779:                 numEl.textContent = count;
+780:                 numEl.style.animation = 'none';
+781:                 void numEl.offsetWidth;
+782:                 numEl.style.animation = 'countPop 0.5s ease';
+783:             } else {
+784:                 clearInterval(iv);
+785:                 countdownOverlay.classList.add('hidden');
+786:                 initGameArena();
+787:             }
+788:         }, 1000);
+789:     }
+790: 
+791:     // ---- NARRATION ----
+792:     function narrate(text, type = 'normal') {
+793:         const span = document.createElement('span');
+794:         if (type === 'highlight') span.className = 'nar-highlight';
+795:         else if (type === 'danger') span.className = 'nar-danger';
+796:         span.textContent = text;
+797:         narrationEl.innerHTML = '';
+798:         narrationEl.appendChild(span);
+799:     }
+800: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

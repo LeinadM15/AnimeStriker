@@ -1,0 +1,49 @@
+Created At: 2026-07-29T17:51:18+02:00
+Completed At: 2026-07-29T17:51:18+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4205
+Total Bytes: 215853
+Showing lines 3250 to 3290
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3250:         const btnLeft = createBtn('btn-gk-left', 'IZQUIERDA', '⬅️');
+3251:         const btnDown = createBtn('btn-gk-down', 'AGUANTAR', '⬇️');
+3252:         const btnUp = createBtn('btn-gk-up', 'PUÑOS', '⬆️');
+3253:         const btnRight = createBtn('btn-gk-right', 'DERECHA', '➡️');
+3254:         
+3255:         controls.appendChild(btnLeft);
+3256:         controls.appendChild(btnDown);
+3257:         controls.appendChild(btnUp);
+3258:         controls.appendChild(btnRight);
+3259:         engine.appendChild(controls);
+3260:         
+3261:         p2RoomBody.appendChild(engine);
+3262:         
+3263:         let minute = 0;
+3264:         let saves = 0;
+3265:         let goalsConceded = 0;
+3266:         let matchInterval = null;
+3267:         const highlightMinutes = [14, 31, 55, 78, 89]; // Added one more for variety
+3268:         
+3269:         // Control Logic
+3270:         let activeAction = null;
+3271:         let actionResolver = null;
+3272: 
+3273:         function triggerAction(action) {
+3274:             if (activeAction) return;
+3275:             activeAction = action;
+3276:             
+3277:             // Animate gloves
+3278:             if (action === 'LEFT') {
+3279:                 gloves.style.transform = 'translate(-120%, -30%) rotate(-30deg)';
+3280:             } else if (action === 'RIGHT') {
+3281:                 gloves.style.transform = 'translate(20%, -30%) rotate(30deg)';
+3282:             } else if (action === 'UP') {
+3283:                 gloves.style.transform = 'translate(-50%, -80%) scale(1.2)';
+3284:             } else if (action === 'DOWN') {
+3285:                 gloves.style.transform = 'translate(-50%, 0) scale(1.1)';
+3286:             }
+3287:             
+3288:             if (actionResolver) {
+3289:                 actionResolver(action);
+3290:                 actionResolver = null;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

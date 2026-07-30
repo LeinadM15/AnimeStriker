@@ -1,0 +1,46 @@
+Created At: 2026-07-30T20:31:27+02:00
+Completed At: 2026-07-30T20:31:27+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/patch_story_habitacion.js`
+Total Lines: 38
+Total Bytes: 1894
+Showing lines 1 to 38
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: const fs = require('fs');
+2: 
+3: function patchStoryHabitacion(filePath) {
+4:     let lines = fs.readFileSync(filePath, 'utf8').split(/\r?\n/);
+5:     
+6:     for (let i = 0; i < lines.length; i++) {
+7:         if (lines[i].includes("p2LobbyScreen.appendChild(btnAmistades);")) {
+8:             // Check if we are inside if (roomName === 'Habitacion')
+9:             // Let's insert the companion code here
+10:             let insertCode = `
+11:             if (window.gamePhase === 1 || window.gamePhase === 1.5) { // Hokkaido
+12:                 let companionName = 'Matsuyama';
+13:                 if (window.myPlayer && window.myPlayer.name === 'Matsuyama') {
+14:                     companionName = 'Kurona Ranze';
+15:                 }
+16:                 let companionNPC = p2StratumPlayers.find(p => p.name.includes(companionName) || (p.name === 'Kurona Ranze' && companionName === 'Kurona Ranze'));
+17:                 if (!companionNPC && p2StratumPlayers.length > 0) {
+18:                     companionNPC = p2StratumPlayers.find(p => p.name === 'Kurona Ranze' || p.name === 'Matsuyama');
+19:                 }
+20:                 if (companionNPC) {
+21:                     const npcDiv = document.createElement('div');
+22:                     npcDiv.className = 'p2-scene-overlay';
+23:                     npcDiv.style.cssText = 'bottom:15%; right:15%; width:280px; height:280px; z-index:15; cursor:pointer;';
+24:                     npcDiv.innerHTML = \`<img src="\${companionNPC.image}" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 5px #00e5ff);">\`;
+25:                     npcDiv.onclick = () => { openDialogue(companionNPC); };
+26:                     p2NpcContainer.appendChild(npcDiv);
+27:                 }
+28:             }`;
+29:             lines.splice(i + 1, 0, insertCode);
+30:             break;
+31:         }
+32:     }
+33:     
+34:     fs.writeFileSync(filePath, lines.join('\n'), 'utf8');
+35: }
+36: 
+37: patchStoryHabitacion('c:/Users/Admin/Desktop/WebFutbol/story.js');
+38: 
+The above content shows the entire, complete file contents of the requested file.

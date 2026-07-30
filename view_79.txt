@@ -1,0 +1,59 @@
+Created At: 2026-07-29T18:02:54+02:00
+Completed At: 2026-07-29T18:02:54+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4136
+Total Bytes: 211863
+Showing lines 3550 to 3600
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3550:                     startHighlight();
+3551:                 } else if (minute >= 90) {
+3552:                     clearInterval(matchInterval);
+3553:                     endMatch();
+3554:                 }
+3555:             }, 80);
+3556:         }
+3557:         
+3558:         resumeMatch();
+3559: 
+3560:     // ==========================================
+3561:     // FRIENDSHIP VIEWER (Inazuma Eleven style)
+3562:     // ==========================================
+3563:     window.openMyStatsViewer = function() {
+3564:         const modal = document.getElementById('p2-skill-modal');
+3565:         const title = document.getElementById('skill-modal-title');
+3566:         const body = document.getElementById('skill-modal-body');
+3567:         
+3568:         modal.classList.remove('hidden');
+3569:         title.textContent = 'MIS ESTADÍSTICAS';
+3570:         
+3571:         const statsHtml = [
+3572:             {id:'pace', label:'RIT', color:'#00e5ff'},
+3573:             {id:'shooting', label:'TIR', color:'#ff4444'},
+3574:             {id:'passing', label:'PAS', color:'#00ff00'},
+3575:             {id:'dribbling', label:'REG', color:'#ffd700'},
+3576:             {id:'defending', label:'DEF', color:'#ff8800'},
+3577:             {id:'physical', label:'FIS', color:'#aa66ff'}
+3578:         ].map(s => {
+3579:             const lvl = Math.floor(p2Stats[s.id]);
+3580:             const curXP = (p2Stats.statXP && p2Stats.statXP[s.id]) ? p2Stats.statXP[s.id] : 0;
+3581:             const reqXP = getRequiredStatXP(lvl);
+3582:             const pct = Math.min(100, Math.floor((curXP / reqXP) * 100));
+3583:             return `
+3584:             <div class="p2-stat-cell" style="display:flex; flex-direction:column; gap:5px; padding:10px; background:rgba(0,10,25,0.7); border:1px solid #1a4a75; border-radius:8px;" title="EXP: ${curXP} / ${reqXP}">
+3585:                 <div style="display:flex; justify-content:space-between; align-items:center;">
+3586:                     <span style="font-size:1.1rem; color:#ccc;">${s.label}</span>
+3587:                     <span style="color:${s.color}; font-size:1.4rem; font-family:'Bangers'; letter-spacing:1px;">${lvl}</span>
+3588:                 </div>
+3589:                 <div style="width:100%; height:8px; background:#050d1a; border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+3590:                     <div style="width:${pct}%; height:100%; background:${s.color}; box-shadow:0 0 8px ${s.color}; transition:width 0.3s;"></div>
+3591:                 </div>
+3592:             </div>`;
+3593:         }).join('');
+3594: 
+3595:         let skillsHtml = p2EquippedSkills.map(sk => `
+3596:             <div style="width:130px; height:60px; border:2px solid #00e5ff; background:${sk ? 'linear-gradient(45deg, #004d40, #00bfa5)' : 'rgba(0,0,0,0.5)'}; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; text-align:center; padding:5px; font-family:'Nunito',sans-serif; color:#fff;">
+3597:                 ${sk ? sk : '—'}
+3598:             </div>
+3599:         `).join('');
+3600: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

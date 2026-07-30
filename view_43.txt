@@ -1,0 +1,49 @@
+Created At: 2026-07-29T14:58:46+02:00
+Completed At: 2026-07-29T14:58:46+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3523
+Total Bytes: 178543
+Showing lines 1060 to 1100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1060:     
+1061:     let p2CurrentRoom = 0;
+1062:     let p2Rooms = ['Habitación', 'Comedor', 'Gimnasio', 'Campo', 'Sala TV', 'Tácticas', 'Meditación'];
+1063:     let p2StratumPlayers = []; // 44 NPCs in the building
+1064:     
+1065:     let p2DailyNPCs = {};
+1066:     
+1067:     function generateDailyNPCs() {
+1068:         if (!p2StratumPlayers || p2StratumPlayers.length === 0) {
+1069:             p2DailyNPCs = {
+1070:                 'Habitación': [],
+1071:                 'Comedor': [],
+1072:                 'Gimnasio': [],
+1073:                 'Meditación': [],
+1074:                 'Campo': [],
+1075:                 'Sala TV': [],
+1076:                 'Tácticas': []
+1077:             };
+1078:             return;
+1079:         }
+1080: 
+1081:         let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+1082:         let myTeamPool = pool.filter(p => p.team === myPlayer.team);
+1083:         
+1084:         let tacticasNpcs = [];
+1085:         let numTacticas = Math.floor(Math.random() * 3) + 2; // 2, 3, or 4 NPCs
+1086:         for(let i=0; i<numTacticas; i++) {
+1087:             if (myTeamPool.length > 0) {
+1088:                 let npc = myTeamPool.pop();
+1089:                 tacticasNpcs.push(npc);
+1090:                 pool = pool.filter(p => p.id !== npc.id);
+1091:             }
+1092:         }
+1093:         
+1094:         p2DailyNPCs = {
+1095:             'Habitación': [],
+1096:             'Comedor': pool.splice(0, 4),
+1097:             'Gimnasio': pool.splice(0, 1),
+1098:             'Meditación': pool.splice(0, 1),
+1099:             'Campo': pool.splice(0, 2),
+1100:             'Sala TV': pool.splice(0, 3),
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

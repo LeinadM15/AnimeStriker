@@ -1,0 +1,178 @@
+Created At: 2026-07-30T17:58:41+02:00
+Completed At: 2026-07-30T17:58:42+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5056
+Total Bytes: 263381
+Showing lines 1 to 170
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: document.addEventListener('DOMContentLoaded', () => {
+2:     
+3:     
+4:     
+5:     const MAX_STARTING_RATING = 70;
+6:     const RATING_PENALTY = 10;
+7:     const STORAGE_KEY = 'bluelock_story_roster';
+8:     const FILL_COUNT = 300;
+9: 
+10:     const DEFAULT_ROSTER_IDS = [
+11:         "isagi_oro","nagi_oro","barou_oro","shidou_oro","reo_oro",
+12:         "chigiri_oro","kunigami_oro","kurona_oro","gagamaru_oro",
+13:         "niko_oro","raichi_oro","yukimiya_oro","karasu_oro",
+14:         "kiyora_oro","hiiragi_oro","himizu_oro","hiori_oro"
+15:     ];
+16:     const DEFAULT_NAME_FALLBACKS = [
+17:         "HAIJI","YUZU","ENDOJI","SOKURA","TSUNZAKI",
+18:         "TOKIMITSU","EITA","OTOYA","ARYU"
+19:     ];
+20:     const BLUE_LOCK_NAMES = [
+21:         "ISAGI","BACHIRA","NAGI","REO","MIKAGE","BAROU","SHOEI",
+22:         "SHIDOU","CHIGIRI","KUNIGAMI","KURONA","GAGAMARU",
+23:         "NIKO","IKKI","RAICHI","YUKIMIYA","KARASU","KIYORA",
+24:         "HIIRAGI","HIMIZU","HIORI","HAIJI","YUZU","ENDOJI",
+25:         "SOKURA","TSUNZAKI","TOKIMITSU","EITA","OTOYA","ARYU"
+26:     ];
+27: 
+28:     // Country code¡¢â¬ â¬�" Spanish name
+29:     const COUNTRY_NAMES = {
+30:         jp:"Japón",de:"Alemania",fr:"Francia",es:"España",it:"Italia",gb:"Inglaterra",
+31:         br:"Brasil",ar:"Argentina",pt:"Portugal",nl:"Países Bajos",be:"Bélgica",
+32:         us:"EE.UU.",mx:"México",co:"Colombia",uy:"Uruguay",cl:"Chile",kr:"Corea del Sur",
+33:         cn:"China",th:"Tailandia",za:"Sudáfrica",ru:"Rusia",hr:"Croacia",dk:"Dinamarca",
+34:         se:"Suecia",eg:"Egipto",ua:"Ucrania",rs:"Serbia",ba:"Bosnia",gr:"Grecia",
+35:         au:"Australia",uz:"Uzbekistán",ro:"Rumanía",tr:"Turquía",ch:"Suiza",at:"Austria",
+36:         pl:"Polonia",cz:"Chequia",ng:"Nigeria",cm:"Camerún",sn:"Senegal",ci:"Costa de Marfil",
+37:         id:"Indonesia",sa:"Arabia Saudí",bf:"Burkina Faso",no:"Noruega",ie:"Irlanda",
+38:         sc:"Seychelles",pk:"Pakistán",in:"India",pe:"Perú",ve:"Venezuela",ec:"Ecuador",
+39:         py:"Paraguay",bo:"Bolivia",cr:"Costa Rica",pa:"Panamá",gt:"Guatemala",hn:"Honduras",
+40:         sv:"El Salvador",do:"Rep. Dominicana",cu:"Cuba",jm:"Jamaica",tt:"Trinidad y Tobago"
+41:     };
+42: 
+43:     // Position groups
+44:     const POS_GROUPS = [
+45:         { label: "Todas", positions: null },
+46:         { label: "DEL", positions: ["ST","CF","FW"] },
+47:         { label: "EXT", positions: ["RW","LW","RM","LM"] },
+48:         { label: "MED", positions: ["CAM","CM","CDM"] },
+49:         { label: "DEF", positions: ["CB","RB","LB","RWB","LWB"] },
+50:         { label: "POR", positions: ["GK"] }
+51:     ];
+52: 
+53:     // =====================================================
+54:     // UTILITIES
+55:     // =====================================================
+56:     function calcRating(r) { return Math.min(MAX_STARTING_RATING, Math.max(1, r - RATING_PENALTY)); }
+57:     function ratingColor(r) {
+58:         if (r >= 68) return 'rating-green';
+59:         if (r >= 60) return 'rating-yellow';
+60:         if (r >= 50) return 'rating-orange';
+61:         return 'rating-red';
+62:     }
+63:     function extractCountryCode(flagUrl) {
+64:         if (!flagUrl) return null;
+65:         const m = flagUrl.match(/\/([a-z]{2})\.png/i);
+66:         return m ? m[1].toLowerCase() : null;
+67:     }
+68:     function getCountryName(code) { return COUNTRY_NAMES[code] || code.toUpperCase(); }
+69:     function getTeamName(icon) {
+70:         if (!icon) return '';
+71:         return icon.replace('teams/','').replace('.png','').replace(/([A-Z])/g, ' $1').trim();
+72:     }
+73: 
+74:     // =====================================================
+75:     // BUILD ALL ORO CARDS (lowest rating per name)
+76:     // =====================================================
+77:     window.allOroCards = new Map();
+78:     if (typeof cardsDB !== 'undefined') {
+79:         cardsDB.forEach(c => {
+80:             if (c.rarity !== 'Oro') return;
+81:             const existing = allOroCards.get(c.name);
+82:             if (!existing || c.rating < existing.rating) allOroCards.set(c.name, c);
+83:         });
+84:     }
+85: 
+86:     // Extract unique values for filters
+87:     const allLeagues = new Set();
+88:     const allTeams = new Map(); // teamIcon¡¢â¬ â¬�" display name
+89:     const allNations = new Map(); // countryCode¡¢â¬ â¬�" { code, name, flag }
+90:     allOroCards.forEach(c => {
+91:         if (c.league) allLeagues.add(c.league);
+92:         if (c.teamIcon) allTeams.set(c.teamIcon, getTeamName(c.teamIcon));
+93:         const cc = extractCountryCode(c.nationFlag);
+94:         if (cc && !allNations.has(cc)) {
+95:             allNations.set(cc, { code: cc, name: getCountryName(cc), flag: c.nationFlag });
+96:         }
+97:     });
+98:     const leagueList = ['Todas', ...Array.from(allLeagues).sort()];
+99:     const teamList = [{ icon: null, name: 'Todos' }, ...Array.from(allTeams.entries()).map(([icon, name]) => ({ icon, name })).sort((a,b) => a.name.localeCompare(b.name))];
+100:     const nationList = Array.from(allNations.values()).sort((a,b) => a.name.localeCompare(b.name));
+101: 
+102:     // =====================================================
+103:     // ROSTER STATE
+104:     // =====================================================
+105:     let roster = new Set();
+106: 
+107:     function loadRoster() {
+108:         const saved = localStorage.getItem(STORAGE_KEY);
+109:         if (saved) { try { roster = new Set(JSON.parse(saved)); } catch(e) { roster = new Set(); } }
+110:         if (roster.size === 0) {
+111:             DEFAULT_ROSTER_IDS.forEach(id => {
+112:                 const c = [...allOroCards.values()].find(x => x.id === id);
+113:                 if (c) roster.add(c.id);
+114:             });
+115:             DEFAULT_NAME_FALLBACKS.forEach(name => {
+116:                 const c = [...allOroCards.values()].find(x => x.name.toUpperCase().includes(name));
+117:                 if (c && !roster.has(c.id)) roster.add(c.id);
+118:             });
+119:             saveRoster();
+120:         }
+121:     }
+122:     function saveRoster() { localStorage.setItem(STORAGE_KEY, JSON.stringify([...roster])); }
+123:     function getRosterPlayers() {
+124:         if (window.gamePhase === 1) {
+125:             // En Hokkaido te saltas la lista, así que muestras a TODOS los jugadores para elegir tu avatar
+126:             const players = [...allOroCards.values()];
+127:             players.sort((a,b) => calcRating(b.rating) - calcRating(a.rating) || a.name.localeCompare(b.name));
+128:             return players;
+129:         }
+130:         const players = [];
+131:         roster.forEach(id => {
+132:             const c = [...allOroCards.values()].find(x => x.id === id);
+133:             if (c) players.push(c);
+134:         });
+135:         players.sort((a,b) => calcRating(b.rating) - calcRating(a.rating) || a.name.localeCompare(b.name));
+136:         return players;
+137:     }
+138: 
+139:     function updateCounter() {
+140:         const counterEl = document.getElementById('main-roster-count');
+141:         if (counterEl) {
+142:             counterEl.textContent = `${roster.size} / ${FILL_COUNT} Jugadores`;
+143:             if (roster.size >= FILL_COUNT) {
+144:                 counterEl.classList.add('full');
+145:             } else {
+146:                 counterEl.classList.remove('full');
+147:             }
+148:         }
+149:     }
+150: 
+151:     loadRoster();
+152: 
+153:     // =====================================================
+154:     // PREQUEL SELECTION & CINEMATIC
+155:     // =====================================================
+156:     window.gamePhase = 1; // 1 = Colegio, 1.5 = Instituto, 2 = Blue Lock
+157:     window.currentPrefecture = "";
+158:     
+159:     document.getElementById('btn-select-hokkaido')?.addEventListener('click', () => {
+160:         window.currentPrefecture = "Hokkaido";
+161:         window.gamePhase = 1;
+162:         document.getElementById('prequel-selection-screen').classList.add('hidden');
+163:         document.getElementById('player-selection-screen').classList.remove('hidden');
+164:         document.querySelector('#player-selection-screen .story-logo').innerHTML = '<span>HOKKAIDO</span> - SELECCI¡�N';
+165:         
+166:         // Estilo diferente para regiones
+167:         document.getElementById('player-selection-screen').style.background = 'radial-gradient(circle at center, #1a2a3a 0%, #050a11 100%)';
+168:         document.querySelector('#player-selection-screen .story-logo').style.color = '#fff';
+169:         document.querySelector('#player-selection-screen .story-logo span').style.color = '#74b9ff';
+170:         document.querySelector('#player-selection-screen .story-logo span').style.textShadow = '0 0 15px rgba(116, 185, 255, 0.8)';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

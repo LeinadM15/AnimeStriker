@@ -1,0 +1,99 @@
+Created At: 2026-07-29T02:24:06+02:00
+Completed At: 2026-07-29T02:24:06+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3442
+Total Bytes: 175588
+Showing lines 3340 to 3430
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3340:         overlay.appendChild(gameArea);
+3341:         
+3342:         document.body.appendChild(overlay);
+3343:         
+3344:         let time = 20;
+3345:         let score = 0;
+3346:         let isGameOver = false;
+3347:         
+3348:         const spawnTarget = () => {
+3349:             if (isGameOver) return;
+3350:             const target = document.createElement('div');
+3351:             
+3352:             let isSmall = Math.random() > 0.7;
+3353:             let size = isSmall ? 50 : 100;
+3354:             let points = isSmall ? 3 : 1;
+3355:             let duration = isSmall ? 800 : 1500;
+3356:             
+3357:             target.style.cssText = `
+3358:                 position:absolute; width:${size}px; height:${size}px; border-radius:50%;
+3359:                 background:radial-gradient(circle, #ff007f 20%, white 25%, white 45%, #ff007f 50%, #ff007f 70%, white 75%, white 95%, #ff007f 100%);
+3360:                 box-shadow:0 0 15px rgba(255,0,127,0.8);
+3361:                 cursor:crosshair; transition:transform 0.1s;
+3362:             `;
+3363:             
+3364:             let maxX = gameArea.offsetWidth * 0.7 - size;
+3365:             let maxY = gameArea.offsetHeight * 0.4 - size;
+3366:             let offsetX = gameArea.offsetWidth * 0.15;
+3367:             let offsetY = gameArea.offsetHeight * 0.4;
+3368:             
+3369:             target.style.left = Math.floor(offsetX + Math.random() * (maxX || window.innerWidth * 0.7 - size)) + 'px';
+3370:             target.style.top = Math.floor(offsetY + Math.random() * (maxY || window.innerHeight * 0.4 - size)) + 'px';
+3371:             
+3372:             target.animate([{transform:'scale(0)'}, {transform:'scale(1)'}], {duration:200, fill:'forwards'});
+3373:             
+3374:             let clicked = false;
+3375:             target.onmousedown = () => {
+3376:                 if (clicked) return;
+3377:                 clicked = true;
+3378:                 
+3379:                 // Spawn a ball
+3380:                 let ball = document.createElement('div');
+3381:                 ball.innerText = '⚽';
+3382:                 ball.style.cssText = `position:absolute; left:50%; bottom:20px; font-size:60px; z-index:50; pointer-events:none; transition:all 0.3s ease-out;`;
+3383:                 gameArea.appendChild(ball);
+3384:                 
+3385:                 // Force reflow
+3386:                 ball.getBoundingClientRect();
+3387:                 
+3388:                 // Move ball to target and shrink
+3389:                 ball.style.left = (target.offsetLeft + size/2 - 10) + 'px';
+3390:                 ball.style.top = (target.offsetTop + size/2 - 10) + 'px';
+3391:                 ball.style.bottom = 'auto'; // Disable bottom since we are setting top
+3392:                 ball.style.fontSize = '20px';
+3393:                 
+3394:                 setTimeout(() => {
+3395:                     ball.remove();
+3396:                     score += points;
+3397:                     scoreEl.innerText = `Puntos: ${score}`;
+3398:                     
+3399:                     let pop = document.createElement('div');
+3400:                     pop.innerText = `+${points}`;
+3401:                     pop.style.cssText = `position:absolute; left:${target.style.left}; top:${target.style.top}; color:#00ff00; font-family:"Bangers"; font-size:3rem; text-shadow:0 0 5px #000; z-index:20; pointer-events:none;`;
+3402:                     gameArea.appendChild(pop);
+3403:                     pop.animate([{transform:'translateY(0)', opacity:1}, {transform:'translateY(-30px)', opacity:0}], {duration:500, fill:'forwards'}).onfinish = () => pop.remove();
+3404:                     
+3405:                     target.remove();
+3406:                 }, 300);
+3407:             };
+3408:             
+3409:             gameArea.appendChild(target);
+3410:             
+3411:             setTimeout(() => {
+3412:                 if (!clicked && target.parentNode) {
+3413:                     target.animate([{transform:'scale(1)'}, {transform:'scale(0)'}], {duration:200, fill:'forwards'}).onfinish = () => target.remove();
+3414:                 }
+3415:             }, duration);
+3416:             
+3417:             let nextSpawn = Math.max(300, 1000 - (20 - time)*30);
+3418:             setTimeout(spawnTarget, nextSpawn);
+3419:         };
+3420:         
+3421:         // Timeout needed to wait for layout engine to compute gameArea width
+3422:         setTimeout(spawnTarget, 100);
+3423:         
+3424:         const timeLoop = setInterval(() => {
+3425:             if (isGameOver) return;
+3426:             time--;
+3427:             timeEl.innerText = `Tiempo: ${time}s`;
+3428:             if (time <= 0) {
+3429:                 isGameOver = true;
+3430:                 clearInterval(timeLoop);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

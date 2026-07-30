@@ -1,0 +1,69 @@
+Created At: 2026-07-30T20:23:37+02:00
+Completed At: 2026-07-30T20:23:37+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 3160 to 3220
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3160:             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
+3161:             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating })),
+3162:             p2DailyNPCsIds: p2DailyNPCsIds
+3163:         };
+3164:         localStorage.setItem('webfutbol_story_save', JSON.stringify(state));
+3165:         showNotification('Partida guardada correctamente.', 'success');
+3166:     };
+3167: 
+3168:     window.loadGameState = function() {
+3169:         const saved = localStorage.getItem('webfutbol_story_save');
+3170:         if (!saved) { showNotification('No hay partida guardada.', 'error'); return; }
+3171:         
+3172:         try {
+3173:             const state = JSON.parse(saved);
+3174:             const allPlayers = getRosterPlayers();
+3175:             myPlayer = allPlayers.find(c => c.id === state.myPlayerId);
+3176:             if (!myPlayer) {
+3177:                 // Fallback: search in allOroCards
+3178:                 myPlayer = [...allOroCards.values()].find(c => c.id === state.myPlayerId);
+3179:             }
+3180:             if (!myPlayer) { showNotification('Error: no se encontró al jugador guardado.', 'error'); return; }
+3181:             
+3182:             p2Stats = state.p2Stats;
+3183:             p2Relationships = state.p2Relationships || {};
+3184:             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
+3185:             p2CurrentRoom = state.p2CurrentRoom || 0;
+3186:             p2League = state.p2League;
+3187:             p2TopScorers = state.p2TopScorers || [];
+3188:             
+3189:             p2StratumPlayers = [];
+3190:             if (state.p2StratumPlayersData) {
+3191:                 state.p2StratumPlayersData.forEach(item => {
+3192:                     const c = [...allOroCards.values()].find(x => x.id === item.id);
+3193:                     if (c) {
+3194:                         p2StratumPlayers.push({ ...c, p2Rating: item.p2Rating || calcRating(c.rating) });
+3195:                     }
+3196:                 });
+3197:             } else {
+3198:                 (state.p2StratumPlayersIds || []).forEach(id => {
+3199:                     const c = [...allOroCards.values()].find(x => x.id === id);
+3200:                     if (c) p2StratumPlayers.push({ ...c, p2Rating: calcRating(c.rating) });
+3201:                 });
+3202:             }
+3203:             
+3204:             if (state.p2DailyNPCsIds) {
+3205:                 p2DailyNPCs = {};
+3206:                 for (let room in state.p2DailyNPCsIds) {
+3207:                     p2DailyNPCs[room] = state.p2DailyNPCsIds[room].map(id => [...allOroCards.values()].find(c => c.id === id)).filter(Boolean);
+3208:                 }
+3209:             } else {
+3210:                 generateDailyNPCs();
+3211:             }
+3212:             
+3213:             document.getElementById('player-selection-screen').classList.add('hidden');
+3214:             document.getElementById('cinematic-screen').classList.add('hidden');
+3215:             document.getElementById('tag-screen').classList.add('hidden');
+3216:             document.getElementById('phase2-lobby').classList.remove('hidden');
+3217:             
+3218:             // Setup navigation (normally done in initPhase2)
+3219:             document.getElementById('p2-nav-left').onclick = () => {
+3220:                 p2CurrentRoom--;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

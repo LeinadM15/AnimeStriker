@@ -1,0 +1,18 @@
+Created At: 2026-07-30T20:26:35+02:00
+Completed At: 2026-07-30T20:26:35+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 1 to 10
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: document.addEventListener('DOMContentLoaded', () => {
+2:     // â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+3:     // â•‘  âš™ï¸ CONFIG                                               â•‘
+4:     // â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+5:     const MAX_STARTING_RATING = 70;
+6:     const RATING_PENALTY = 10;
+7:     const STORAGE_KEY = 'bluelock_story_roster';
+8:     const FILL_COUNT = 300;
+9: 
+10:     const DEFAULT_ROSTER_IDS = [
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

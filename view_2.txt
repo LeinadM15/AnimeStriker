@@ -1,0 +1,59 @@
+Created At: 2026-07-28T20:54:51Z
+Completed At: 2026-07-28T20:54:51Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3118
+Total Bytes: 157488
+Showing lines 2780 to 2830
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2780:             scorEl.appendChild(div);
+2781:         });
+2782:     };
+2783:     
+2784:     window.tryPersuade = function(stat) {
+2785:         const val = p2Stats[stat];
+2786:         const chat = document.getElementById('tactics-chat');
+2787:         const opts = document.getElementById('tactics-options');
+2788:         
+2789:         chat.innerHTML += `<div class="tactics-msg" style="border-left-color:#00ff00;"><b>Tú:</b> Confíad en mí, lo haré bien.</div>`;
+2790:         
+2791:         setTimeout(() => {
+2792:             if (val >= 65 || Math.random() > 0.5) { // Win negotiation
+2793:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> Está bien, rotaremos posiciones. ¡Tú serás nuestro DC titular los primeros minutos!</div>`;
+2794:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(true)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ JUGAR PARTIDO (Delantero)</span></button>`;
+2795:             } else {
+2796:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> No nos convences. Jugarás de defensa o te quedas en el banquillo.</div>`;
+2797:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(false)" style="border-color:#ff4444; color:#ff4444;"><span>⚽ JUGAR PARTIDO (Defensa)</span></button>`;
+2798:             }
+2799:         }, 1000);
+2800:     };
+2801:     
+2802:     window.startMatch = function(isStriker) {
+2803:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2804:         
+2805:         // Simulate Match result
+2806:         const goalsScored = isStriker ? Math.floor(Math.random() * 4) + 1 : Math.floor(Math.random() * 2);
+2807:         p2Stats.goals += goalsScored;
+2808:         
+2809:         const win = Math.random() > 0.4;
+2810:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+2811:         if (win) {
+2812:             myTeam.w++;
+2813:             myTeam.pts += 3;
+2814:             showNotification(`¡VICTORIA! Has marcado ${goalsScored} goles. (Total Goles: ${p2Stats.goals})`, 'success', 5000);
+2815:         } else {
+2816:             myTeam.l++;
+2817:             showNotification(`DERROTA... Has marcado ${goalsScored} goles. (Total Goles: ${p2Stats.goals})`, 'error', 5000);
+2818:         }
+2819:         
+2820:         // Simulate other matches
+2821:         p2League.forEach(t => {
+2822:             if (!t.name.includes("Tu Equipo")) {
+2823:                 t.w += Math.floor(Math.random() * 2);
+2824:                 t.pts = (t.w * 3) + t.d;
+2825:             }
+2826:         });
+2827:         
+2828:         // Simulate scorers
+2829:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+2830:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,49 @@
+Created At: 2026-07-29T16:23:34+02:00
+Completed At: 2026-07-29T16:23:34+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3727
+Total Bytes: 191498
+Showing lines 2980 to 3020
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2980:                 }
+2981:             `;
+2982:             document.head.appendChild(style);
+2983:         }
+2984:         
+2985:         cursor.style.left = `${state.affinity}%`;
+2986:         tensionBar.style.width = `${state.tension}%`;
+2987:         tensionVal.innerText = `${Math.floor(state.tension)}%`;
+2988:         
+2989:         if (state.tension > 75) {
+2990:             pulse.style.animation = 'tacticsPulse 0.5s infinite alternate';
+2991:         } else {
+2992:             pulse.style.animation = 'none';
+2993:             pulse.style.background = 'rgba(255,0,0,0)';
+2994:         }
+2995:         
+2996:         if (state.turn < 5 && state.turn !== 99) {
+2997:             state.timeLeft = 7.0;
+2998:             timerBar.style.width = '100%';
+2999:             timerBar.style.background = '#fff';
+3000:             
+3001:             state.timerId = setInterval(() => {
+3002:                 state.timeLeft -= 0.1;
+3003:                 const pct = (state.timeLeft / 7.0) * 100;
+3004:                 timerBar.style.width = `${pct}%`;
+3005:                 
+3006:                 if (pct < 30) timerBar.style.background = '#ff4444';
+3007:                 else if (pct < 60) timerBar.style.background = '#ffaa00';
+3008:                 
+3009:                 if (state.timeLeft <= 0) {
+3010:                     clearInterval(state.timerId);
+3011:                     state.timerId = null;
+3012:                     tacticsMakeChoice(-15, 20); // Penalty for silence
+3013:                 }
+3014:             }, 100);
+3015:         } else {
+3016:             timerBar.style.width = '0%';
+3017:         }
+3018:         
+3019:         if (state.turn === 0) {
+3020:             text.innerHTML = `<b>Compañero 1:</b> Escucha, novato. Hoy juego yo de delantero centro. Tú ponte en la defensa y no estorbes.`;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

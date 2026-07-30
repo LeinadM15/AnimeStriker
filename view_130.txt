@@ -1,0 +1,69 @@
+Created At: 2026-07-29T23:44:51+02:00
+Completed At: 2026-07-29T23:44:51+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 2020 to 2080
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2020:                 btnClasif.className = 'p2-scene-overlay';
+2021:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+2022:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+2023:                 btnClasif.onclick = () => { openTVStats(); };
+2024:                 p2LobbyScreen.appendChild(btnClasif);
+2025:                 
+2026:             } else {
+2027:                 setRoomBg(`${basePath}Tacticas4.jpeg`);
+2028:                 document.getElementById('p2-room-content').style.display = 'none';
+2029:                 p2RoomBody.innerHTML = '';
+2030:                 
+2031:                 spawnSceneNPCs(roomName, [
+2032:                     {x: 19.5, y: 27, w: 200, h: 250},
+2033:                     {x: 44, y: 10, w: 200, h: 250},
+2034:                     {x: 62, y: 10, w: 200, h: 250},
+2035:                     {x: 80, y: 28, w: 200, h: 250}
+2036:                 ]);
+2037:                 
+2038:                 const btnClasif = document.createElement('div');
+2039:                 btnClasif.className = 'p2-scene-overlay';
+2040:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+2041:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+2042:                 btnClasif.onclick = () => { openTVStats(); };
+2043:                 p2LobbyScreen.appendChild(btnClasif);
+2044:                 
+2045:                 const dialogOverlay = document.createElement('div');
+2046:                 dialogOverlay.id = 'tactics-detroit-overlay';
+2047:                 dialogOverlay.style.cssText = 'position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, rgba(0,0,0,0.95), transparent); display:none; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:40px; z-index:40; font-family:"Nunito",sans-serif;';
+2048:                 
+2049:                 const pulseOverlay = document.createElement('div');
+2050:                 pulseOverlay.id = 'tactics-pulse';
+2051:                 pulseOverlay.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,0,0,0); pointer-events:none; z-index:35; transition:background 0.5s ease-in-out; display:none;';
+2052:                 p2LobbyScreen.appendChild(pulseOverlay);
+2053: 
+2054:                 const labels = document.createElement('div');
+2055:                 labels.style.cssText = 'width:80%; display:flex; justify-content:space-between; color:#ccc; font-size:0.85rem; font-weight:bold; margin-bottom:5px; text-transform:uppercase; text-shadow:0 0 5px #000;';
+2056:                 labels.innerHTML = '<span>DEF</span><span style="padding-right:2%">MED</span><span style="padding-left:2%">DEL</span><span>POR</span>';
+2057:                 
+2058:                 const barContainer = document.createElement('div');
+2059:                 barContainer.style.cssText = 'width:80%; height:15px; background:#222; border-radius:10px; border:2px solid #555; position:relative; overflow:hidden; margin-bottom:15px; display:flex;';
+2060:                 
+2061:                 const zDef = document.createElement('div'); zDef.style.cssText = 'flex:1; background:rgba(0,150,255,0.4); border-right:1px solid #555;';
+2062:                 const zMed = document.createElement('div'); zMed.style.cssText = 'flex:1; background:rgba(0,255,100,0.4); border-right:1px solid #555;';
+2063:                 const zDel = document.createElement('div'); zDel.style.cssText = 'flex:1; background:rgba(255,150,0,0.4); border-right:1px solid #555;';
+2064:                 const zPor = document.createElement('div'); zPor.style.cssText = 'flex:1; background:rgba(255,0,255,0.4);';
+2065:                 barContainer.appendChild(zDef); barContainer.appendChild(zMed); barContainer.appendChild(zDel); barContainer.appendChild(zPor);
+2066:                 
+2067:                 const cursor = document.createElement('div');
+2068:                 cursor.id = 'detroit-cursor';
+2069:                 cursor.style.cssText = 'position:absolute; top:0; left:50%; transform:translateX(-50%); width:6px; height:100%; background:#fff; box-shadow:0 0 15px #fff, 0 0 5px #00e5ff; transition:left 0.5s ease-out; border-radius:3px;';
+2070:                 barContainer.appendChild(cursor);
+2071:                 
+2072:                 const tensionContainer = document.createElement('div');
+2073:                 tensionContainer.style.cssText = 'width:80%; margin-bottom:5px; display:flex; align-items:center; justify-content:space-between; color:#ff4444; font-size:0.8rem; font-weight:bold; text-transform:uppercase;';
+2074:                 tensionContainer.innerHTML = '<span>Tensión de compañeros</span><span id="detroit-tension-val">0%</span>';
+2075:                 
+2076:                 const tensionBarOuter = document.createElement('div');
+2077:                 tensionBarOuter.style.cssText = 'width:80%; height:6px; background:#222; border-radius:3px; border:1px solid #555; position:relative; overflow:hidden; margin-bottom:20px;';
+2078:                 
+2079:                 const tensionBarInner = document.createElement('div');
+2080:                 tensionBarInner.id = 'detroit-tension-bar';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

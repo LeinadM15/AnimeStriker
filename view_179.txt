@@ -1,0 +1,29 @@
+Created At: 2026-07-30T15:46:05+02:00
+Completed At: 2026-07-30T15:46:05+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4998
+Total Bytes: 259820
+Showing lines 2460 to 2480
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2460:             p2LobbyScreen.appendChild(btnConos);
+2461:             
+2462:         } else if (roomName === 'Sala TV') {
+2463:             // Aquí puedes cambiar la posición (x, y) y el tamaño (w, h) de los NPCs en la Sala TV
+2464:             spawnSceneNPCs(roomName, [
+2465:                 {x: 32.5, y: 53, w: 250, h: 260}, // NPC 1 (Izquierda)
+2466:                 {x: 55, y: 53, w: 250, h: 260}  // NPC 2 (Derecha)
+2467:             ]);
+2468:             setRoomBg(`${basePath}Camaras.jpeg`);
+2469:             
+2470:             // Ocultar el cuadrado de UI estándar
+2471:             document.getElementById('p2-room-content').style.display = 'none';
+2472:             
+2473:             // Añadir el icono TeleMin encima de la tele
+2474:             const teleminDiv = document.createElement('div');
+2475:             teleminDiv.className = 'p2-scene-overlay';
+2476:             teleminDiv.style.cssText = 'left:50%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; display:flex; flex-direction:column; align-items:center; z-index:10;';
+2477:             teleminDiv.innerHTML = `<img src="assets/Historia/Habitaciones/TeleMin.png" alt="TeleMin" style="width:100%; height:100%; object-fit:contain;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 100 100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%2300e5ff\\' rx=\\'10\\'/><text x=\\'50\\' y=\\'60\\' font-size=\\'40\\' text-anchor=\\'middle\\' font-family=\\'Arial\\'>📺</text></svg>'">`;
+2478:             teleminDiv.onclick = () => { openTeleMinGame(); };
+2479:             p2LobbyScreen.appendChild(teleminDiv);
+2480:             
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

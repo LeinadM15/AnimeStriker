@@ -1,0 +1,109 @@
+Created At: 2026-07-29T23:16:21+02:00
+Completed At: 2026-07-29T23:16:21+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4286
+Total Bytes: 220549
+Showing lines 3550 to 3650
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3550:             
+3551:             const matchXp = 250 + (win ? 200 : (teamGoals === goalsConceded ? 100 : 50)) + (saves * 75);
+3552:             const resultTxt = win ? '¡VICTORIA!' : (teamGoals === goalsConceded ? 'EMPATE' : 'DERROTA...');
+3553:             
+3554:             showNotification(`${resultTxt} Resultado: ${teamGoals}-${goalsConceded}. Paradas: ${saves}`, win ? 'success' : (teamGoals===goalsConceded ? 'warning':'error'), 6000);
+3555:             
+3556:             setTimeout(() => {
+3557:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${teamGoals} goles, encajaste ${goalsConceded} y paraste ${saves} tiros. XP Total: ${matchXp}`);
+3558:             }, 1000);
+3559:         }
+3560:         
+3561:         function startHighlight() {
+3562:             flash.style.opacity = '1';
+3563:             setTimeout(() => { flash.style.opacity = '0'; }, 200);
+3564:             
+3565:             const alertTxt = document.createElement('div');
+3566:             alertTxt.style.cssText = 'position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); font-size:3rem; color:#ff4444; text-shadow:0 0 10px #000, 0 0 20px #ff0000; font-weight:bold; z-index:115; white-space:nowrap; animation: bounce 1s infinite; pointer-events:none;';
+3567:             alertTxt.innerText = "¡PELIGRO!";
+3568:             engine.appendChild(alertTxt);
+3569:             
+3570:             const scenario = Math.floor(Math.random() * 5);
+3571:             
+3572:             setTimeout(() => {
+3573:                 alertTxt.remove();
+3574:                 playScenario(scenario);
+3575:             }, 1000);
+3576:         }
+3577:         
+3578:         function finishPlay(success, txtWin, txtLose) {
+3579:             if (success) {
+3580:                 saves++; showNotification(txtWin, 'success', 2000);
+3581:             } else {
+3582:                 goalsConceded++; showNotification(txtLose, 'error', 2000);
+3583:             }
+3584:             setTimeout(resumeMatch, 1000);
+3585:         }
+3586:         
+3587:         function playScenario(type) {
+3588:             let flightTime = 1500;
+3589:             
+3590:             const ball = document.createElement('img');
+3591:             ball.src = 'assets/Match/Balon.png';
+3592:             ball.onerror = () => { ball.style.display="none"; };
+3593:             ball.style.cssText = `position:absolute; top:50%; left:50%; width:10px; height:10px; z-index:115; filter:drop-shadow(0 0 10px #000); background:#fff; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none;`;
+3594:             engine.appendChild(ball);
+3595:             
+3596:             let targetX = 50, targetY = 50;
+3597:             let requiredPose = 'ANY';
+3598:             
+3599:             if (type === 0) { // TIRO LEJANO
+3600:                 targetX = 10 + Math.random()*80; 
+3601:                 targetY = 15 + Math.random()*70;
+3602:                 requiredPose = 'ESTIRADA';
+3603:                 flightTime = 1300;
+3604:             } else if (type === 1) { // PASE DE LA MUERTE
+3605:                 targetX = 20 + Math.random()*60;
+3606:                 targetY = 60 + Math.random()*30;
+3607:                 requiredPose = 'AGARRE'; 
+3608:                 flightTime = 900;
+3609:             } else if (type === 2) { // CORNER
+3610:                 targetX = 30 + Math.random()*40;
+3611:                 targetY = 10 + Math.random()*25; 
+3612:                 requiredPose = 'PUNO';
+3613:                 flightTime = 1600;
+3614:             } else if (type === 3) { // PENALTI
+3615:                 targetX = Math.random() > 0.5 ? 15 : 85;
+3616:                 targetY = 60 + Math.random()*20;
+3617:                 requiredPose = 'ESTIRADA';
+3618:                 flightTime = 550; // Súper rápido
+3619:             } else if (type === 4) { // FALTA (CURVA)
+3620:                 targetX = Math.random() > 0.5 ? 20 : 80;
+3621:                 const midX = targetX === 20 ? 60 : 40; 
+3622:                 targetY = 15 + Math.random()*20;
+3623:                 requiredPose = 'ESTIRADA';
+3624:                 flightTime = 1700;
+3625:                 
+3626:                 // Animación curva en 2 pasos
+3627:                 setTimeout(() => {
+3628:                     ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1)`;
+3629:                     ball.style.top = '10%';
+3630:                     ball.style.left = `${midX}%`;
+3631:                     ball.style.width = '50px'; ball.style.height = '50px';
+3632:                     
+3633:                     setTimeout(() => {
+3634:                         ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
+3635:                         ball.style.top = `${targetY}%`;
+3636:                         ball.style.left = `${targetX}%`;
+3637:                         ball.style.width = '120px'; ball.style.height = '120px';
+3638:                     }, flightTime*0.5);
+3639:                 }, 50);
+3640:             }
+3641:             
+3642:             // Animación recta normal
+3643:             if (type !== 4) {
+3644:                 setTimeout(() => {
+3645:                     ball.style.transition = `all ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+3646:                     ball.style.top = `${targetY}%`;
+3647:                     ball.style.left = `${targetX}%`;
+3648:                     ball.style.width = '120px';
+3649:                     ball.style.height = '120px';
+3650:                 }, 50);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,28 @@
+Created At: 2026-07-30T17:11:23+02:00
+Completed At: 2026-07-30T17:11:23+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5063
+Total Bytes: 266156
+Showing lines 2505 to 2524
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2505:                 p2LobbyScreen.appendChild(npcContainer);
+2506:             }
+2507:             
+2508:             // Icon ChutPrac (Shooting)
+2509:             const btnChut = document.createElement('div');
+2510:             btnChut.className = 'p2-scene-overlay';
+2511:             btnChut.style.cssText = 'left:20%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+2512:             btnChut.innerHTML = `<img src="${basePath}ChutPrac.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f); transition: transform 0.2s;">`;
+2513:             btnChut.onclick = () => { startChutMinigame(); };
+2514:             p2LobbyScreen.appendChild(btnChut);
+2515:             
+2516:             // Icon Conos (Dribbling)
+2517:             const btnConos = document.createElement('div');
+2518:             btnConos.className = 'p2-scene-overlay';
+2519:             btnConos.style.cssText = 'left:80%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+2520:             btnConos.innerHTML = `<img src="${basePath}Conos.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+2521:             btnConos.onclick = () => { startRegateMinigame(); };
+2522:             p2LobbyScreen.appendChild(btnConos);
+2523:             
+2524:         } else if (roomName === 'Sala TV') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,129 @@
+Created At: 2026-07-28T20:56:14Z
+Completed At: 2026-07-28T20:56:14Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3220
+Total Bytes: 163147
+Showing lines 2780 to 2900
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2780:             scorEl.appendChild(div);
+2781:         });
+2782:     };
+2783:     
+2784:     let selectedMatchFriends = [];
+2785:     window.openMatchFriendSelection = function(isStriker) {
+2786:         selectedMatchFriends = [];
+2787:         const modal = document.getElementById('p2-skill-modal');
+2788:         const title = document.getElementById('skill-modal-title');
+2789:         const body = document.getElementById('skill-modal-body');
+2790:         
+2791:         modal.classList.remove('hidden');
+2792:         title.textContent = 'SELECCIONA 3 ALIADOS PARA EL PARTIDO';
+2793:         
+2794:         const knownNPCs = Object.keys(p2Relationships);
+2795:         const friends = knownNPCs.map(id => {
+2796:             return {
+2797:                 id: id,
+2798:                 npc: p2StratumPlayers.find(p => p.id === id),
+2799:                 data: p2Relationships[id]
+2800:             };
+2801:         }).filter(f => f.npc);
+2802:         
+2803:         if (friends.length === 0) {
+2804:             body.innerHTML = `
+2805:                 <div style="text-align:center; color:#aaa; padding:20px;">No conoces a nadie todavía. Jugarás con desconocidos.</div>
+2806:                 <div style="text-align:center; margin-top:20px;">
+2807:                     <button class="p2-action-btn" onclick="document.getElementById('p2-skill-modal').classList.add('hidden'); startMatch(${isStriker}, [])" style="border-color:#00ff00; color:#00ff00;"><span>IR AL PARTIDO</span></button>
+2808:                 </div>
+2809:             `;
+2810:             return;
+2811:         }
+2812:         
+2813:         const renderFriendList = () => {
+2814:             body.innerHTML = '';
+2815:             body.style.maxHeight = '500px';
+2816:             body.style.overflowY = 'auto';
+2817:             
+2818:             const countDiv = document.createElement('div');
+2819:             countDiv.style.cssText = 'text-align:center; font-family:"Bangers"; font-size:1.4rem; color:#00ffcc; margin-bottom:10px;';
+2820:             countDiv.textContent = `SELECCIONADOS: ${selectedMatchFriends.length} / 3`;
+2821:             body.appendChild(countDiv);
+2822:             
+2823:             const grid = document.createElement('div');
+2824:             grid.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px;';
+2825:             
+2826:             friends.forEach(f => {
+2827:                 const friendVal = typeof f.data === 'object' ? (f.data.friendship || 0) : f.data;
+2828:                 const isSelected = selectedMatchFriends.includes(f.id);
+2829:                 const grl = Math.floor(f.npc.p2Rating || calcRating(f.npc.rating));
+2830:                 const bonusGRL = Math.floor(grl * (friendVal / 1000));
+2831:                 
+2832:                 const card = document.createElement('div');
+2833:                 card.style.cssText = `display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; cursor:pointer; border:2px solid ${isSelected ? '#00ffcc' : '#333'}; background:${isSelected ? 'rgba(0,255,204,0.1)' : 'rgba(0,0,0,0.5)'}; transition:all 0.2s;`;
+2834:                 
+2835:                 card.innerHTML = `
+2836:                     <img src="${f.npc.image}" style="width:50px; height:50px; object-fit:contain; border-radius:50%; background:#111;">
+2837:                     <div style="flex:1;">
+2838:                         <div style="font-weight:bold; font-size:1rem;">${f.npc.name}</div>
+2839:                         <div style="font-size:0.85rem; color:#ffd700;">GRL ${grl} <span style="color:#00ffcc;">(+${bonusGRL})</span></div>
+2840:                         <div style="font-size:0.8rem; color:#aaa;">Amistad: ${friendVal}%</div>
+2841:                     </div>
+2842:                 `;
+2843:                 
+2844:                 card.onclick = () => {
+2845:                     if (isSelected) {
+2846:                         selectedMatchFriends = selectedMatchFriends.filter(id => id !== f.id);
+2847:                         renderFriendList();
+2848:                     } else if (selectedMatchFriends.length < 3) {
+2849:                         selectedMatchFriends.push(f.id);
+2850:                         renderFriendList();
+2851:                     }
+2852:                 };
+2853:                 
+2854:                 grid.appendChild(card);
+2855:             });
+2856:             body.appendChild(grid);
+2857:             
+2858:             const btnDiv = document.createElement('div');
+2859:             btnDiv.style.cssText = 'text-align:center; margin-top:10px;';
+2860:             btnDiv.innerHTML = `<button class="p2-action-btn" onclick="document.getElementById('p2-skill-modal').classList.add('hidden'); startMatch(${isStriker}, selectedMatchFriends)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ JUGAR PARTIDO</span></button>`;
+2861:             body.appendChild(btnDiv);
+2862:         };
+2863:         
+2864:         renderFriendList();
+2865:     };
+2866: 
+2867:     window.tryPersuade = function(stat) {
+2868:         const val = p2Stats[stat];
+2869:         const chat = document.getElementById('tactics-chat');
+2870:         const opts = document.getElementById('tactics-options');
+2871:         
+2872:         chat.innerHTML += `<div class="tactics-msg" style="border-left-color:#00ff00;"><b>Tú:</b> Confíad en mí, lo haré bien.</div>`;
+2873:         
+2874:         setTimeout(() => {
+2875:             if (val >= 65 || Math.random() > 0.5) { // Win negotiation
+2876:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> Está bien, rotaremos posiciones. ¡Tú serás nuestro DC titular los primeros minutos!</div>`;
+2877:                 opts.innerHTML = `<button class="p2-action-btn" onclick="openMatchFriendSelection(true)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ ELEGIR AMIGOS PARA EL PARTIDO</span></button>`;
+2878:             } else {
+2879:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> No nos convences. Jugarás de defensa o te quedas en el banquillo.</div>`;
+2880:                 opts.innerHTML = `<button class="p2-action-btn" onclick="openMatchFriendSelection(false)" style="border-color:#ff4444; color:#ff4444;"><span>⚽ ELEGIR AMIGOS PARA EL PARTIDO</span></button>`;
+2881:             }
+2882:         }, 1000);
+2883:     };
+2884:     
+2885:     window.startMatch = function(isStriker, friendIds = []) {
+2886:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2887:         
+2888:         // Calculate Win Probability dynamically based on Friendship
+2889:         let teamBonus = 0;
+2890:         friendIds.forEach(id => {
+2891:             const npc = p2StratumPlayers.find(p => p.id === id);
+2892:             if (npc) {
+2893:                 const data = p2Relationships[id];
+2894:                 const friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+2895:                 const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+2896:                 teamBonus += (grl + Math.floor(grl * (friendVal / 1000))); // Base GRL + Up to 10% bonus
+2897:             }
+2898:         });
+2899:         
+2900:         const myGRL = calcOVR();
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

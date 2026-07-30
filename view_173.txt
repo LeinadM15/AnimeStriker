@@ -1,0 +1,39 @@
+Created At: 2026-07-30T03:10:57+02:00
+Completed At: 2026-07-30T03:10:57+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4817
+Total Bytes: 249913
+Showing lines 115 to 145
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+115:             DEFAULT_NAME_FALLBACKS.forEach(name => {
+116:                 const c = [...allOroCards.values()].find(x => x.name.toUpperCase().includes(name));
+117:                 if (c && !roster.has(c.id)) roster.add(c.id);
+118:             });
+119:             saveRoster();
+120:         }
+121:     }
+122:     function saveRoster() { localStorage.setItem(STORAGE_KEY, JSON.stringify([...roster])); }
+123:     function getRosterPlayers() {
+124:         const players = [];
+125:         roster.forEach(id => {
+126:             const c = [...allOroCards.values()].find(x => x.id === id);
+127:             if (c) players.push(c);
+128:         });
+129:         players.sort((a,b) => calcRating(b.rating) - calcRating(a.rating) || a.name.localeCompare(b.name));
+130:         return players;
+131:     }
+132: 
+133:     function updateCounter() {
+134:         const counterEl = document.getElementById('main-roster-count');
+135:         if (counterEl) {
+136:             counterEl.textContent = `${roster.size} / ${FILL_COUNT} Jugadores`;
+137:             if (roster.size >= FILL_COUNT) {
+138:                 counterEl.classList.add('full');
+139:             } else {
+140:                 counterEl.classList.remove('full');
+141:             }
+142:         }
+143:     }
+144: 
+145:     loadRoster();
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

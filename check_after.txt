@@ -1,0 +1,117 @@
+﻿
+>     function executeSimulation(position, win, context) {
+          let goalsScored = 0; // Goles individuales del jugador
+          if (position === 'DEL' || position === true) {
+              goalsScored = Math.floor(Math.random() * 4) + 1;
+          } else if (position === 'MED') {
+              goalsScored = Math.floor(Math.random() * 3);
+          } else if (position === 'DEF' || position === false) {
+              goalsScored = Math.floor(Math.random() * 2);
+          } else if (position === 'POR') {
+              goalsScored = 0;
+          }
+          
+          p2Stats.goals += goalsScored;
+          
+          // Determinar resultado matemÃ¡tico
+          let teamGoals = goalsScored + Math.floor(Math.random() * 3);
+          let enemyGoals = 0;
+          if (win) {
+              enemyGoals = Math.max(0, teamGoals - 1 - Math.floor(Math.random() * 2));
+          } else {
+              enemyGoals = teamGoals + 1 + Math.floor(Math.random() * 2);
+          }
+          
+          window.processMatchday(teamGoals, enemyGoals);
+          
+          if (win) {
+              showNotification(`Â¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 
+'success', 5000);
+          } else {
+              showNotification(`DERROTA... Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 
+'error', 5000);
+          }
+          
+          const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+          const summaryText = win 
+              ? `Â¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. Has ganado +${matchXp} EXP total y marcado 
+${goalsScored} goles.` 
+              : `DERROTA... Resultado: ${teamGoals}-${enemyGoals}. Ganaste +${matchXp} EXP total y ${goalsScored} 
+goles.`;
+          openMatchXpDistributor(matchXp, summaryText);
+      }
+  
+  
+      window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+          p2RoomBody.innerHTML = '';
+          
+          // Remove Detroit UI if somehow still there
+          const detroitUI = document.getElementById('tactics-detroit-overlay');
+          if (detroitUI) detroitUI.remove();
+          
+          const engine = document.createElement('div');
+          engine.id = 'gk-match-engine';
+          // Placeholder background if EstadioPortero.jpeg doesn't exist yet, it will fallback to a color
+          engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background-color:#2a5a2a; 
+background-image:url("assets/Match/EstadioPortero.jpeg"); background-size:cover; background-position:center; 
+z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none; cursor:crosshair;';
+          
+>     function executeSimulation(position, win, context) {
+          let goalsScored = 0; // Goles individuales del jugador
+          if (position === 'DEL' || position === true) {
+              goalsScored = Math.floor(Math.random() * 4) + 1;
+          } else if (position === 'MED') {
+              goalsScored = Math.floor(Math.random() * 3);
+          } else if (position === 'DEF' || position === false) {
+              goalsScored = Math.floor(Math.random() * 2);
+          } else if (position === 'POR') {
+              goalsScored = 0;
+          }
+          
+          p2Stats.goals += goalsScored;
+          
+          // Determinar resultado matemÃ¡tico
+          let teamGoals = goalsScored + Math.floor(Math.random() * 3);
+          let enemyGoals = 0;
+          if (win) {
+              enemyGoals = Math.max(0, teamGoals - 1 - Math.floor(Math.random() * 2));
+          } else {
+              enemyGoals = teamGoals + 1 + Math.floor(Math.random() * 2);
+          }
+          
+          window.processMatchday(teamGoals, enemyGoals);
+          
+          if (win) {
+              showNotification(`Â¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 
+'success', 5000);
+          } else {
+              showNotification(`DERROTA... Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 
+'error', 5000);
+          }
+          
+          const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+          const summaryText = win 
+              ? `Â¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. Has ganado +${matchXp} EXP total y marcado 
+${goalsScored} goles.` 
+              : `DERROTA... Resultado: ${teamGoals}-${enemyGoals}. Ganaste +${matchXp} EXP total y ${goalsScored} 
+goles.`;
+          openMatchXpDistributor(matchXp, summaryText);
+      }
+  
+  
+      window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+          p2RoomBody.innerHTML = '';
+          
+          // Remove Detroit UI if somehow still there
+          const detroitUI = document.getElementById('tactics-detroit-overlay');
+          if (detroitUI) detroitUI.remove();
+          
+          const engine = document.createElement('div');
+          engine.id = 'gk-match-engine';
+          // Placeholder background if EstadioPortero.jpeg doesn't exist yet, it will fallback to a color
+          engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background-color:#2a5a2a; 
+background-image:url("assets/Match/EstadioPortero.jpeg"); background-size:cover; background-position:center; 
+z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none;';
+          
+
+

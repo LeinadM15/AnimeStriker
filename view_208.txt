@@ -1,0 +1,49 @@
+Created At: 2026-07-30T20:26:11+02:00
+Completed At: 2026-07-30T20:26:11+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 3210 to 3250
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3210:                 generateDailyNPCs();
+3211:             }
+3212:             
+3213:             document.getElementById('player-selection-screen').classList.add('hidden');
+3214:             document.getElementById('cinematic-screen').classList.add('hidden');
+3215:             document.getElementById('tag-screen').classList.add('hidden');
+3216:             document.getElementById('phase2-lobby').classList.remove('hidden');
+3217:             
+3218:             // Setup navigation (normally done in initPhase2)
+3219:             document.getElementById('p2-nav-left').onclick = () => {
+3220:                 p2CurrentRoom--;
+3221:                 if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
+3222:                 renderP2Room();
+3223:             };
+3224:             document.getElementById('p2-nav-right').onclick = () => {
+3225:                 p2CurrentRoom++;
+3226:                 if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+3227:                 renderP2Room();
+3228:             };
+3229:             
+3230:             updateP2UI();
+3231:             renderP2Room();
+3232:             showNotification('Partida cargada correctamente.', 'success');
+3233:             
+3234:         } catch(e) {
+3235:             showNotification('Error al cargar la partida.', 'error');
+3236:             console.error(e);
+3237:         }
+3238:     };
+3239:     
+3240:     // Check for save on startup
+3241:     if (localStorage.getItem('webfutbol_story_save')) {
+3242:         const btnLoad = document.getElementById('btn-load-game');
+3243:         if (btnLoad) btnLoad.style.display = 'inline-block';
+3244:     }
+3245: 
+3246:     window.startRegateMinigame = function() {
+3247:         if (!checkStamina(35)) return;
+3248:         
+3249:         const overlay = document.createElement('div');
+3250:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/MinijuegoRegate.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden;';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

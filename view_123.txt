@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:37:22+02:00
+Completed At: 2026-07-29T23:37:22+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4332
+Total Bytes: 225791
+Showing lines 3960 to 4000
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3960:             const state = JSON.parse(saved);
+3961:             const allPlayers = getRosterPlayers();
+3962:             myPlayer = allPlayers.find(c => c.id === state.myPlayerId);
+3963:             if (!myPlayer) {
+3964:                 // Fallback: search in allOroCards
+3965:                 myPlayer = [...allOroCards.values()].find(c => c.id === state.myPlayerId);
+3966:             }
+3967:             if (!myPlayer) { showNotification('Error: no se encontró al jugador guardado.', 'error'); return; }
+3968:             
+3969:             p2Stats = state.p2Stats;
+3970:             p2Relationships = state.p2Relationships || {};
+3971:             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
+3972:             p2CurrentRoom = state.p2CurrentRoom || 0;
+3973:             p2League = state.p2League;
+3974:             p2TopScorers = state.p2TopScorers || [];
+3975:             
+3976:             p2StratumPlayers = [];
+3977:             if (state.p2StratumPlayersData) {
+3978:                 state.p2StratumPlayersData.forEach(item => {
+3979:                     const c = [...allOroCards.values()].find(x => x.id === item.id);
+3980:                     if (c) {
+3981:                         p2StratumPlayers.push({ ...c, p2Rating: item.p2Rating || calcRating(c.rating), team: item.team || "Equipo Y", goals: item.goals || 0 });
+3982:                     }
+3983:                 });
+3984:             } else {
+3985:                 (state.p2StratumPlayersIds || []).forEach(id => {
+3986:                     const c = [...allOroCards.values()].find(x => x.id === id);
+3987:                     if (c) p2StratumPlayers.push({ ...c, p2Rating: calcRating(c.rating) });
+3988:                 });
+3989:             }
+3990:             
+3991:             if (state.p2DailyNPCsIds) {
+3992:                 p2DailyNPCs = {};
+3993:                 for (let room in state.p2DailyNPCsIds) {
+3994:                     p2DailyNPCs[room] = state.p2DailyNPCsIds[room].map(id => [...allOroCards.values()].find(c => c.id === id)).filter(Boolean);
+3995:                 }
+3996:             } else {
+3997:                 generateDailyNPCs();
+3998:             }
+3999:             
+4000:             document.getElementById('player-selection-screen').classList.add('hidden');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

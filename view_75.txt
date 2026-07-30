@@ -1,0 +1,64 @@
+Created At: 2026-07-29T18:01:20+02:00
+Completed At: 2026-07-29T18:01:20+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4092
+Total Bytes: 210111
+Showing lines 3275 to 3330
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3275:             if (k === 'a' || k === 'arrowleft') keys.a = false;
+3276:             if (k === 's' || k === 'arrowdown') keys.s = false;
+3277:             if (k === 'd' || k === 'arrowright') keys.d = false;
+3278:         };
+3279:         
+3280:         window.addEventListener('keydown', keydownHandler);
+3281:         window.addEventListener('keyup', keyupHandler);
+3282:         
+3283:         engine.addEventListener('mousemove', (e) => {
+3284:             const rect = engine.getBoundingClientRect();
+3285:             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+3286:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+3287:         });
+3288:         
+3289:         engine.addEventListener('mousedown', (e) => {
+3290:             if (e.button === 0) { // Clic Izquierdo = Estirada
+3291:                 currentPose = 'ESTIRADA';
+3292:                 gloves.src = 'assets/Match/PosicionEstirada.png';
+3293:                 gloves.style.width = '280px';
+3294:                 gloves.style.height = '180px';
+3295:             } else if (e.button === 2) { // Clic Derecho = Puños
+3296:                 currentPose = 'PUNO';
+3297:                 gloves.src = 'assets/Match/PosicionPuño.png';
+3298:                 gloves.style.width = '140px';
+3299:                 gloves.style.height = '140px';
+3300:             }
+3301:         });
+3302:         
+3303:         engine.addEventListener('mouseup', (e) => {
+3304:             currentPose = 'AGARRE';
+3305:             gloves.src = 'assets/Match/PosicionAgarre.png';
+3306:             gloves.style.width = '180px';
+3307:             gloves.style.height = '180px';
+3308:         });
+3309:         
+3310:         // Bucle Físico (60fps)
+3311:         physicsLoop = setInterval(() => {
+3312:             // Mover el cuerpo del portero
+3313:             if (keys.w) bodyY = Math.max(-30, bodyY - 1.5);
+3314:             if (keys.s) bodyY = Math.min(30, bodyY + 1.5);
+3315:             if (keys.a) bodyX = Math.max(-40, bodyX - 1.5);
+3316:             if (keys.d) bodyX = Math.min(40, bodyX + 1.5);
+3317:             
+3318:             // El fondo se mueve en dirección contraria para dar sensación de cámara
+3319:             engine.style.backgroundPosition = `${50 + (bodyX*0.5)}% ${50 + (bodyY*0.5)}%`;
+3320:             
+3321:             // Los guantes son posición del ratón + desplazamiento del cuerpo
+3322:             let finalGx = mouseX + bodyX;
+3323:             let finalGy = mouseY + bodyY;
+3324:             
+3325:             gloves.style.left = `${finalGx}%`;
+3326:             gloves.style.top = `${finalGy}%`;
+3327:             
+3328:         }, 16);
+3329:         
+3330:         function updateHUD() {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,49 @@
+Created At: 2026-07-29T14:56:00+02:00
+Completed At: 2026-07-29T14:56:00+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3526
+Total Bytes: 178743
+Showing lines 1640 to 1680
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1640:         setTimeout(() => {
+1641:             modal.classList.add('hidden');
+1642:         }, 500);
+1643:     }
+1644: 
+1645:     function spawnNPCs(roomName, count) {
+1646:         p2NpcContainer.innerHTML = '';
+1647:         if (!p2DailyNPCs[roomName]) return;
+1648:         const npcs = p2DailyNPCs[roomName].slice(0, count);
+1649:         
+1650:         npcs.forEach(npc => {
+1651:             const div = document.createElement('div');
+1652:             div.className = 'p2-npc';
+1653:             div.innerHTML = `<img src="${npc.image}" draggable="false">`;
+1654:             div.onclick = () => { openDialogue(npc); };
+1655:             p2NpcContainer.appendChild(div);
+1656:         });
+1657:     }
+1658:     
+1659:     function spawnSceneNPCs(roomName, positions) {
+1660:         if (!p2DailyNPCs[roomName]) return;
+1661:         
+1662:         positions.forEach((pos, idx) => {
+1663:             // Get the specific NPC assigned to this slot
+1664:             const npc = p2DailyNPCs[roomName][idx];
+1665:             if (!npc) return;
+1666:             
+1667:             // If we already talked to this specific NPC today, leave their seat empty
+1668:             if (p2Stats.npcInteractionsToday.includes(npc.id)) return;
+1669:             
+1670:             const div = document.createElement('div');
+1671:             div.className = 'p2-scene-overlay';
+1672:             div.style.cssText = `left:${pos.x}%; top:${pos.y}%; width:${pos.w || 80}px; height:${pos.h || 100}px; cursor:pointer;`;
+1673:             div.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+1674:             div.onclick = () => { openDialogue(npc); };
+1675:             p2LobbyScreen.appendChild(div);
+1676:         });
+1677:     }
+1678:     
+1679:     function renderP2Room() {
+1680:         const roomName = p2Rooms[p2CurrentRoom];
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

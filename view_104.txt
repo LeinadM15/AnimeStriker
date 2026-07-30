@@ -1,0 +1,39 @@
+Created At: 2026-07-29T23:17:17+02:00
+Completed At: 2026-07-29T23:17:17+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4286
+Total Bytes: 220549
+Showing lines 3690 to 3720
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3690:         
+3691:         function resumeMatch() {
+3692:             updateHUD();
+3693:             matchInterval = setInterval(() => {
+3694:                 minute++;
+3695:                 updateHUD();
+3696:                 
+3697:                 if (highlightMinutes.includes(minute)) {
+3698:                     clearInterval(matchInterval);
+3699:                     startHighlight();
+3700:                 } else if (minute >= 90) {
+3701:                     clearInterval(matchInterval);
+3702:                     endMatch();
+3703:                 }
+3704:             }, 80);
+3705:         }
+3706:         
+3707:         resumeMatch();
+3708:     };
+3709: 
+3710:     // ==========================================
+3711:     // FRIENDSHIP VIEWER (Inazuma Eleven style)
+3712:     // ==========================================
+3713:     window.openMyStatsViewer = function() {
+3714:         const modal = document.getElementById('p2-skill-modal');
+3715:         const title = document.getElementById('skill-modal-title');
+3716:         const body = document.getElementById('skill-modal-body');
+3717:         
+3718:         modal.classList.remove('hidden');
+3719:         title.textContent = 'MIS ESTADÍSTICAS';
+3720:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

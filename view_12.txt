@@ -1,0 +1,33 @@
+Created At: 2026-07-29T02:19:32+02:00
+Completed At: 2026-07-29T02:19:32+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3194
+Total Bytes: 162607
+Showing lines 3170 to 3194
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3170:             document.getElementById('p2-nav-right').onclick = () => {
+3171:                 p2CurrentRoom++;
+3172:                 if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+3173:                 renderP2Room();
+3174:             };
+3175:             
+3176:             updateP2UI();
+3177:             renderP2Room();
+3178:             showNotification('Partida cargada correctamente.', 'success');
+3179:             
+3180:         } catch(e) {
+3181:             showNotification('Error al cargar la partida.', 'error');
+3182:             console.error(e);
+3183:         }
+3184:     };
+3185:     
+3186:     // Check for save on startup
+3187:     if (localStorage.getItem('webfutbol_story_save')) {
+3188:         const btnLoad = document.getElementById('btn-load-game');
+3189:         if (btnLoad) btnLoad.style.display = 'inline-block';
+3190:     }
+3191: 
+3192: });
+3193: 
+3194: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,49 @@
+Created At: 2026-07-29T18:00:14+02:00
+Completed At: 2026-07-29T18:00:14+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4121
+Total Bytes: 211068
+Showing lines 3490 to 3530
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3490:                     ball.style.width = '200px'; ball.style.height = '200px';
+3491:                     finishPlay(false, '', '¡GOL DEL RIVAL!');
+3492:                 }
+3493:                 
+3494:                 setTimeout(() => { ball.remove(); }, 500);
+3495:             }, flightTime + 50);
+3496:         }
+3497:         
+3498:         function resumeMatch() {
+3499:             updateHUD();
+3500:             matchInterval = setInterval(() => {
+3501:                 minute++;
+3502:                 updateHUD();
+3503:                 
+3504:                 if (highlightMinutes.includes(minute)) {
+3505:                     clearInterval(matchInterval);
+3506:                     startHighlight();
+3507:                 } else if (minute >= 90) {
+3508:                     clearInterval(matchInterval);
+3509:                     endMatch();
+3510:                 }
+3511:             }, 80);
+3512:         }
+3513:         
+3514:         resumeMatch();
+3515:     };{
+3516:                                 goalsConceded++; showNotification('¡GOL DE CABEZA!', 'error');
+3517:                             }
+3518:                             resumeMatch();
+3519:                         }, reactTime * 0.6); // Muy poco tiempo para el cabezazo
+3520:                     }
+3521:                 }, reactTime);
+3522:             }
+3523:         }
+3524:         
+3525:         function resumeMatch() {
+3526:             updateHUD();
+3527:             matchInterval = setInterval(() => {
+3528:                 minute++;
+3529:                 updateHUD();
+3530:                 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

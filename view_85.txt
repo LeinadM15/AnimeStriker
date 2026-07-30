@@ -1,0 +1,89 @@
+Created At: 2026-07-29T22:48:07+02:00
+Completed At: 2026-07-29T22:48:07+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4249
+Total Bytes: 217911
+Showing lines 1920 to 2000
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1920:                 setRoomBg(bgImage);
+1921:                 
+1922:                 document.getElementById('p2-room-content').style.display = 'none';
+1923:                 p2RoomBody.innerHTML = '';
+1924:                 
+1925:                 spawnSceneNPCs(roomName, positions);
+1926:                 
+1927:                 const btnClasif = document.createElement('div');
+1928:                 btnClasif.className = 'p2-scene-overlay';
+1929:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+1930:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1931:                 btnClasif.onclick = () => { openTVStats(); };
+1932:                 p2LobbyScreen.appendChild(btnClasif);
+1933:                 
+1934:             } else {
+1935:                 setRoomBg(`${basePath}Tacticas4.jpeg`);
+1936:                 document.getElementById('p2-room-content').style.display = 'none';
+1937:                 p2RoomBody.innerHTML = '';
+1938:                 
+1939:                 spawnSceneNPCs(roomName, [
+1940:                     {x: 19.5, y: 27, w: 200, h: 250},
+1941:                     {x: 44, y: 10, w: 200, h: 250},
+1942:                     {x: 62, y: 10, w: 200, h: 250},
+1943:                     {x: 80, y: 28, w: 200, h: 250}
+1944:                 ]);
+1945:                 
+1946:                 const btnClasif = document.createElement('div');
+1947:                 btnClasif.className = 'p2-scene-overlay';
+1948:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+1949:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1950:                 btnClasif.onclick = () => { openTVStats(); };
+1951:                 p2LobbyScreen.appendChild(btnClasif);
+1952:                 
+1953:                 const dialogOverlay = document.createElement('div');
+1954:                 dialogOverlay.id = 'tactics-detroit-overlay';
+1955:                 dialogOverlay.style.cssText = 'position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, rgba(0,0,0,0.95), transparent); display:none; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:40px; z-index:40; font-family:"Nunito",sans-serif;';
+1956:                 
+1957:                 const pulseOverlay = document.createElement('div');
+1958:                 pulseOverlay.id = 'tactics-pulse';
+1959:                 pulseOverlay.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,0,0,0); pointer-events:none; z-index:35; transition:background 0.5s ease-in-out; display:none;';
+1960:                 p2LobbyScreen.appendChild(pulseOverlay);
+1961: 
+1962:                 const labels = document.createElement('div');
+1963:                 labels.style.cssText = 'width:80%; display:flex; justify-content:space-between; color:#ccc; font-size:0.85rem; font-weight:bold; margin-bottom:5px; text-transform:uppercase; text-shadow:0 0 5px #000;';
+1964:                 labels.innerHTML = '<span>DEF</span><span style="padding-right:2%">MED</span><span style="padding-left:2%">DEL</span><span>POR</span>';
+1965:                 
+1966:                 const barContainer = document.createElement('div');
+1967:                 barContainer.style.cssText = 'width:80%; height:15px; background:#222; border-radius:10px; border:2px solid #555; position:relative; overflow:hidden; margin-bottom:15px; display:flex;';
+1968:                 
+1969:                 const zDef = document.createElement('div'); zDef.style.cssText = 'flex:1; background:rgba(0,150,255,0.4); border-right:1px solid #555;';
+1970:                 const zMed = document.createElement('div'); zMed.style.cssText = 'flex:1; background:rgba(0,255,100,0.4); border-right:1px solid #555;';
+1971:                 const zDel = document.createElement('div'); zDel.style.cssText = 'flex:1; background:rgba(255,150,0,0.4); border-right:1px solid #555;';
+1972:                 const zPor = document.createElement('div'); zPor.style.cssText = 'flex:1; background:rgba(255,0,255,0.4);';
+1973:                 barContainer.appendChild(zDef); barContainer.appendChild(zMed); barContainer.appendChild(zDel); barContainer.appendChild(zPor);
+1974:                 
+1975:                 const cursor = document.createElement('div');
+1976:                 cursor.id = 'detroit-cursor';
+1977:                 cursor.style.cssText = 'position:absolute; top:0; left:50%; transform:translateX(-50%); width:6px; height:100%; background:#fff; box-shadow:0 0 15px #fff, 0 0 5px #00e5ff; transition:left 0.5s ease-out; border-radius:3px;';
+1978:                 barContainer.appendChild(cursor);
+1979:                 
+1980:                 const tensionContainer = document.createElement('div');
+1981:                 tensionContainer.style.cssText = 'width:80%; margin-bottom:5px; display:flex; align-items:center; justify-content:space-between; color:#ff4444; font-size:0.8rem; font-weight:bold; text-transform:uppercase;';
+1982:                 tensionContainer.innerHTML = '<span>Tensión de compañeros</span><span id="detroit-tension-val">0%</span>';
+1983:                 
+1984:                 const tensionBarOuter = document.createElement('div');
+1985:                 tensionBarOuter.style.cssText = 'width:80%; height:6px; background:#222; border-radius:3px; border:1px solid #555; position:relative; overflow:hidden; margin-bottom:20px;';
+1986:                 
+1987:                 const tensionBarInner = document.createElement('div');
+1988:                 tensionBarInner.id = 'detroit-tension-bar';
+1989:                 tensionBarInner.style.cssText = 'width:0%; height:100%; background:linear-gradient(90deg, #ff9900, #ff0000); transition:width 0.5s ease-out;';
+1990:                 tensionBarOuter.appendChild(tensionBarInner);
+1991: 
+1992:                 const timerBarOuter = document.createElement('div');
+1993:                 timerBarOuter.style.cssText = 'width:80%; height:4px; background:#222; position:relative; overflow:hidden; margin-bottom:10px; border-radius:2px;';
+1994:                 const timerBarInner = document.createElement('div');
+1995:                 timerBarInner.id = 'detroit-timer-bar';
+1996:                 timerBarInner.style.cssText = 'width:100%; height:100%; background:#fff; transition:width 0.1s linear;';
+1997:                 timerBarOuter.appendChild(timerBarInner);
+1998:                 
+1999:                 const textBox = document.createElement('div');
+2000:                 textBox.id = 'detroit-text';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

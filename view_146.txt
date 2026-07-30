@@ -1,0 +1,69 @@
+Created At: 2026-07-30T02:20:24+02:00
+Completed At: 2026-07-30T02:20:24+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4378
+Total Bytes: 228358
+Showing lines 1170 to 1230
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1170:         // Filter players within range [-3, +3] of my Gold Card rating
+1171:         let inRange = allRoster.filter(p => {
+1172:             const r = calcRating(p.rating);
+1173:             return (r >= myBaseR - 3) && (r <= myBaseR + 3);
+1174:         });
+1175:         
+1176:         if (inRange.length < 54) {
+1177:             inRange = [...allRoster].sort((a, b) => {
+1178:                 const distA = Math.abs(calcRating(a.rating) - myBaseR);
+1179:                 const distB = Math.abs(calcRating(b.rating) - myBaseR);
+1180:                 return distA - distB || Math.random() - 0.5;
+1181:             });
+1182:         }
+1183:         
+1184:         inRange.sort(() => Math.random() - 0.5);
+1185:         const myStartOVR = calcOVR();
+1186:         p2StratumPlayers = inRange.slice(0, 54).map((p, index) => {
+1187:             const goldR = calcRating(p.rating);
+1188:             const diff = Math.max(-3, Math.min(3, goldR - myBaseR));
+1189:             
+1190:             let assignedTeam = "Equipo Y";
+1191:             if (index < 10) assignedTeam = "Tu Equipo (Z)";      // 10 NPCs + 1 Player = 11
+1192:             else if (index < 21) assignedTeam = "Equipo V";  // 11 NPCs
+1193:             else if (index < 32) assignedTeam = "Equipo W";  // 11 NPCs
+1194:             else if (index < 43) assignedTeam = "Equipo X";  // 11 NPCs
+1195:             else if (index < 54) assignedTeam = "Equipo Y";  // 11 NPCs
+1196:             
+1197:             return {
+1198:                 ...p,
+1199:                 p2Rating: Math.max(60, myStartOVR + diff + (Math.random() * 0.8 - 0.4)),
+1200:                 team: assignedTeam,
+1201:                 goals: 0
+1202:             };
+1203:         });
+1204:         
+1205:         generateDailyNPCs();
+1206:     }
+1207:     
+1208:     window.processMatchday = function(myGoalsFor, myGoalsAgainst, skipPlayerTeamsDistribution = false) {
+1209:         // 1. Process Our Match (Tu Equipo (Z) vs Equipo V)
+1210:         const myTeam = p2League.find(t => t.name === "Tu Equipo (Z)");
+1211:         const rivalTeam = p2League.find(t => t.name === "Equipo V");
+1212:         
+1213:         if (myTeam) {
+1214:             myTeam.gf += myGoalsFor;
+1215:             myTeam.gc += myGoalsAgainst;
+1216:             if (myGoalsFor > myGoalsAgainst) { myTeam.w++; myTeam.pts += 3; }
+1217:             else if (myGoalsFor === myGoalsAgainst) { myTeam.d++; myTeam.pts += 1; }
+1218:             else { myTeam.l++; }
+1219:         }
+1220:         if (rivalTeam) {
+1221:             rivalTeam.gf += myGoalsAgainst;
+1222:             rivalTeam.gc += myGoalsFor;
+1223:             if (myGoalsAgainst > myGoalsFor) { rivalTeam.w++; rivalTeam.pts += 3; }
+1224:             else if (myGoalsAgainst === myGoalsFor) { rivalTeam.d++; rivalTeam.pts += 1; }
+1225:             else { rivalTeam.l++; }
+1226:         }
+1227:         
+1228:         // Distribute goals to players (unless skipped because minigame did it live)
+1229:         if (!skipPlayerTeamsDistribution) {
+1230:             distributeGoals("Tu Equipo (Z)", myGoalsFor);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

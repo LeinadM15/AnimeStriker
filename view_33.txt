@@ -1,0 +1,49 @@
+Created At: 2026-07-29T14:26:36+02:00
+Completed At: 2026-07-29T14:26:36+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3481
+Total Bytes: 176642
+Showing lines 1060 to 1100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1060:     
+1061:     let p2CurrentRoom = 0;
+1062:     let p2Rooms = ['Habitación', 'Comedor', 'Gimnasio', 'Campo', 'Sala TV', 'Tácticas', 'Meditación'];
+1063:     let p2StratumPlayers = []; // 44 NPCs in the building
+1064:     
+1065:     let p2DailyNPCs = {};
+1066:     
+1067:     function generateDailyNPCs() {
+1068:         if (!p2StratumPlayers || p2StratumPlayers.length === 0) {
+1069:             p2DailyNPCs = {
+1070:                 'Habitación': [],
+1071:                 'Comedor': [],
+1072:                 'Gimnasio': [],
+1073:                 'Meditación': [],
+1074:                 'Campo': [],
+1075:                 'Sala TV': [],
+1076:                 'Tácticas': []
+1077:             };
+1078:             return;
+1079:         }
+1080: 
+1081:         let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+1082:         
+1083:         p2DailyNPCs = {
+1084:             'Habitación': [],
+1085:             'Comedor': pool.splice(0, 4),
+1086:             'Gimnasio': pool.splice(0, 1),
+1087:             'Meditación': pool.splice(0, 1),
+1088:             'Campo': pool.splice(0, 2),
+1089:             'Sala TV': pool.splice(0, 3),
+1090:             'Tácticas': pool.splice(0, 6)
+1091:         };
+1092:     }
+1093:     
+1094:     // Team Standings Mock
+1095:     let p2League = [
+1096:         {name: "Tu Equipo (V)", w: 0, d: 0, l: 0, pts: 0},
+1097:         {name: "Equipo W", w: 0, d: 0, l: 0, pts: 0},
+1098:         {name: "Equipo X", w: 0, d: 0, l: 0, pts: 0},
+1099:         {name: "Equipo Y", w: 0, d: 0, l: 0, pts: 0},
+1100:         {name: "Equipo Z", w: 0, d: 0, l: 0, pts: 0}
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

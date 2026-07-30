@@ -1,0 +1,80 @@
+const falamCards = [
+    {
+        id: "argon_bulgess_oro",
+        name: "ARGON BULGESS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 84,
+        position: "GK",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/ch.png",
+        teamIcon: "teams/Dortmund.png",
+        image: "assets/characters/Falam/Argon Bulgess.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "xenon_reith_oro",
+        name: "XENON REITH",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "CB",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/Chicorid.png",
+        image: "assets/characters/Falam/Xenon Reith.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "radon_mons_oro",
+        name: "RADON MONS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 79,
+        position: "RB",
+        league: "Ligue One",
+        nationFlag: "https://flagcdn.com/w40/sn.png",
+        teamIcon: "teams/Lyonn.png",
+        image: "assets/characters/Falam/Radon Mons.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "neon_rotarus_oro",
+        name: "NEON ROTARUS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 82,
+        position: "CM",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/tr.png",
+        teamIcon: "teams/Tottenham.png",
+        image: "assets/characters/Falam/Neon Rotarus.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "selenia_mund_oro",
+        name: "SELENIA MUND",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 80,
+        position: "CAM",
+        league: "La Liga",
+        nationFlag: "https://flagcdn.com/w40/ma.png",
+        teamIcon: "teams/Sevilla.png",
+        image: "assets/characters/Falam/Selenia Mund.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "brimstone_bol_oro",
+        name: "BRIMSTONE BOL",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "ST",
+        league: "Ligue One",
+        nationFlag: "https://flagcdn.com/w40/ca.png",
+        teamIcon: "teams/Lille.png",
+        image: "assets/characters/Falam/Brimstone Bol.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];

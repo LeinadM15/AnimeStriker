@@ -201,7 +201,7 @@ const scoutsPartThreeCards = [
         rarity: "Oro",
         rating: 74,
         position: "GK",
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Lyonn.png",
         image: "assets/characters/Scouts1/LouBeigh.png",

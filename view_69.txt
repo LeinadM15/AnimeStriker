@@ -1,0 +1,54 @@
+Created At: 2026-07-29T17:40:46+02:00
+Completed At: 2026-07-29T17:40:46+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4183
+Total Bytes: 214926
+Showing lines 3170 to 3215
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3170:         
+3171:         p2Stats.goals += goalsScored;
+3172:         
+3173:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3174:         if (win) {
+3175:             myTeam.w++;
+3176:             myTeam.pts += 3;
+3177:             showNotification(`¡VICTORIA! Probabilidad era ${Math.floor(winProbability*100)}%. Has marcado ${goalsScored} goles. (Goles Totales: ${p2Stats.goals})`, 'success', 5000);
+3178:         } else {
+3179:             myTeam.l++;
+3180:             showNotification(`DERROTA... Probabilidad era ${Math.floor(winP    window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+3181:         p2RoomBody.innerHTML = '';
+3182:         
+3183:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3184:         if (detroitUI) detroitUI.remove();
+3185:         
+3186:         const engine = document.createElement('div');
+3187:         engine.id = 'gk-match-engine';
+3188:         engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none;';
+3189:         
+3190:         const hud = document.createElement('div');
+3191:         hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110;';
+3192:         
+3193:         const timeDisplay = document.createElement('div');
+3194:         timeDisplay.innerText = "00:00";
+3195:         
+3196:         const scoreDisplay = document.createElement('div');
+3197:         scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+3198:         
+3199:         hud.appendChild(timeDisplay);
+3200:         hud.appendChild(scoreDisplay);
+3201:         engine.appendChild(hud);
+3202:         
+3203:         const flash = document.createElement('div');
+3204:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3205:         engine.appendChild(flash);
+3206:         
+3207:         // Guantes (Visuals)
+3208:         const gloves = document.createElement('img');
+3209:         gloves.src = 'assets/Match/Guantes.png';
+3210:         gloves.onerror = () => { gloves.style.display="none"; };
+3211:         gloves.style.cssText = 'position:absolute; bottom:-10%; left:50%; transform:translateX(-50%); width:300px; height:200px; object-fit:contain; z-index:125; transition:all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1); filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5));';
+3212:         engine.appendChild(gloves);
+3213:         
+3214:         // Controles UI
+3215:         const controls = document.createElement('div');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

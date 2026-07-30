@@ -1,0 +1,39 @@
+Created At: 2026-07-29T17:51:14+02:00
+Completed At: 2026-07-29T17:51:14+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4205
+Total Bytes: 215853
+Showing lines 3220 to 3250
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3220:         
+3221:         hud.appendChild(timeDisplay);
+3222:         hud.appendChild(scoreDisplay);
+3223:         engine.appendChild(hud);
+3224:         
+3225:         const flash = document.createElement('div');
+3226:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3227:         engine.appendChild(flash);
+3228:         
+3229:         // Guantes (Visuals)
+3230:         const gloves = document.createElement('img');
+3231:         gloves.src = 'assets/Match/Guantes.png';
+3232:         gloves.onerror = () => { gloves.style.display="none"; };
+3233:         gloves.style.cssText = 'position:absolute; bottom:-10%; left:50%; transform:translateX(-50%); width:300px; height:200px; object-fit:contain; z-index:125; transition:all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1); filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5));';
+3234:         engine.appendChild(gloves);
+3235:         
+3236:         // Controles UI
+3237:         const controls = document.createElement('div');
+3238:         controls.style.cssText = 'position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:15px; z-index:150;';
+3239:         
+3240:         function createBtn(id, text, icon) {
+3241:             const btn = document.createElement('div');
+3242:             btn.id = id;
+3243:             btn.innerHTML = `<span style="font-size:2rem; display:block;">${icon}</span><span style="font-size:0.8rem;">${text}</span>`;
+3244:             btn.style.cssText = 'width:80px; height:80px; background:rgba(0,0,0,0.7); border:2px solid #00e5ff; border-radius:15px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00e5ff; font-weight:bold; cursor:pointer; user-select:none; transition:all 0.1s; text-align:center;';
+3245:             btn.onmousedown = () => btn.style.transform = 'scale(0.9)';
+3246:             btn.onmouseup = () => btn.style.transform = 'scale(1)';
+3247:             return btn;
+3248:         }
+3249:         
+3250:         const btnLeft = createBtn('btn-gk-left', 'IZQUIERDA', '⬅️');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,109 @@
+Created At: 2026-07-29T18:06:08+02:00
+Completed At: 2026-07-29T18:06:08+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4136
+Total Bytes: 211792
+Showing lines 3350 to 3450
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3350:                 // Límites de la estirada (mucho más amplios)
+3351:                 bodyX = Math.max(-90, Math.min(90, bodyX));
+3352:                 bodyY = Math.max(-90, Math.min(90, bodyY));
+3353:             } else {
+3354:                 // Movimiento normal
+3355:                 if (keys.w) bodyY = Math.max(-30, bodyY - 1.5);
+3356:                 if (keys.s) bodyY = Math.min(30, bodyY + 1.5);
+3357:                 if (keys.a) bodyX = Math.max(-40, bodyX - 1.5);
+3358:                 if (keys.d) bodyX = Math.min(40, bodyX + 1.5);
+3359:             }
+3360:             
+3361:             // El fondo se mueve en dirección contraria
+3362:             engine.style.backgroundPosition = `${50 + (bodyX*0.3)}% ${50 + (bodyY*0.3)}%`;
+3363:             
+3364:             // Los guantes son posición del ratón + desplazamiento del cuerpo
+3365:             let finalGx = mouseX + bodyX;
+3366:             let finalGy = mouseY + bodyY;
+3367:             
+3368:             gloves.style.left = `${finalGx}%`;
+3369:             gloves.style.top = `${finalGy}%`;
+3370:             
+3371:         }, 16);
+3372:         
+3373:         function updateHUD() {
+3374:             timeDisplay.innerText = `${minute < 10 ? '0':''}${minute}:00`;
+3375:             scoreDisplay.innerText = `Goles Encajados: ${goalsConceded} | Paradas: ${saves}`;
+3376:         }
+3377:         
+3378:         function endMatch() {
+3379:             window.removeEventListener('keydown', keydownHandler);
+3380:             window.removeEventListener('keyup', keyupHandler);
+3381:             clearInterval(physicsLoop);
+3382:             engine.remove();
+3383:             
+3384:             const teamGoals = Math.floor(Math.random() * 3);
+3385:             const win = teamGoals > goalsConceded;
+3386:             
+3387:             const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3388:             if (myTeam) {
+3389:                 if (win) { myTeam.w++; myTeam.pts += 3; }
+3390:                 else if (teamGoals === goalsConceded) { myTeam.d++; myTeam.pts += 1; }
+3391:                 else { myTeam.l++; }
+3392:             }
+3393:             
+3394:             p2League.forEach(t => {
+3395:                 if (!t.name.includes("Tu Equipo")) {
+3396:                     t.w += Math.floor(Math.random() * 2);
+3397:                     t.pts = (t.w * 3) + t.d;
+3398:                 }
+3399:             });
+3400:             
+3401:             const matchXp = 250 + (win ? 200 : (teamGoals === goalsConceded ? 100 : 50)) + (saves * 75);
+3402:             const resultTxt = win ? '¡VICTORIA!' : (teamGoals === goalsConceded ? 'EMPATE' : 'DERROTA...');
+3403:             
+3404:             showNotification(`${resultTxt} Resultado: ${teamGoals}-${goalsConceded}. Paradas: ${saves}`, win ? 'success' : (teamGoals===goalsConceded ? 'warning':'error'), 6000);
+3405:             
+3406:             setTimeout(() => {
+3407:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${teamGoals} goles, encajaste ${goalsConceded} y paraste ${saves} tiros. XP Total: ${matchXp}`);
+3408:             }, 1000);
+3409:         }
+3410:         
+3411:         function startHighlight() {
+3412:             flash.style.opacity = '1';
+3413:             setTimeout(() => { flash.style.opacity = '0'; }, 200);
+3414:             
+3415:             const alertTxt = document.createElement('div');
+3416:             alertTxt.style.cssText = 'position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); font-size:3rem; color:#ff4444; text-shadow:0 0 10px #000, 0 0 20px #ff0000; font-weight:bold; z-index:115; white-space:nowrap; animation: bounce 1s infinite; pointer-events:none;';
+3417:             alertTxt.innerText = "¡PELIGRO!";
+3418:             engine.appendChild(alertTxt);
+3419:             
+3420:             const scenario = Math.floor(Math.random() * 5);
+3421:             
+3422:             setTimeout(() => {
+3423:                 alertTxt.remove();
+3424:                 playScenario(scenario);
+3425:             }, 1000);
+3426:         }
+3427:         
+3428:         function finishPlay(success, txtWin, txtLose) {
+3429:             if (success) {
+3430:                 saves++; showNotification(txtWin, 'success', 2000);
+3431:             } else {
+3432:                 goalsConceded++; showNotification(txtLose, 'error', 2000);
+3433:             }
+3434:             setTimeout(resumeMatch, 1000);
+3435:         }
+3436:         
+3437:         function playScenario(type) {
+3438:             let flightTime = 1500;
+3439:             
+3440:             const ball = document.createElement('img');
+3441:             ball.src = 'assets/Match/Pelota.png';
+3442:             ball.onerror = () => { ball.style.display="none"; };
+3443:             ball.style.cssText = `position:absolute; top:50%; left:50%; width:10px; height:10px; z-index:115; filter:drop-shadow(0 0 10px #000); background:#fff; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none;`;
+3444:             engine.appendChild(ball);
+3445:             
+3446:             let targetX = 50, targetY = 50;
+3447:             let requiredPose = 'ANY';
+3448:             
+3449:             if (type === 0) { // TIRO LEJANO
+3450:                 targetX = 10 + Math.random()*80; 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

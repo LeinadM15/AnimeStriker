@@ -7,9 +7,9 @@ const kisugiCards = [
         rarity: "Oro",
         rating: 81,
         position: "CF",
-        league: "Serie A",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Napoli.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Kisugi/KisugiOro.png",
         background: "assets/Cartas/Oro.png"
     }

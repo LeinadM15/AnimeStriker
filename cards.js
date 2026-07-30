@@ -1,7 +1,7 @@
 // cards.js - Catálogo Maestro
 // Este archivo reúne todos los arrays definidos en los archivos de la carpeta database/ y asigna la serie
 // Bump DB_VERSION whenever card data changes to invalidate draft localStorage cache
-const DB_VERSION = '1784634587548';
+const DB_VERSION = '1785372477982';
 
 const tsubasaAll = [
     ...tsubasaCards,
@@ -142,7 +142,32 @@ const tsubasaAll = [
     ...solariaZeusCards,
     ...twinfordCards,
     ...inagirlsCards,
-    ...lamineYamalCards
+    ...lamineYamalCards,
+    ...serbiaCards,
+    ...colombia2Cards,
+    ...manchesterUnitedCards,
+    ...falamCards,
+    ...falam2Cards,
+    ...falamSpecialsCards,
+    ...rumaniaCards,
+    ...greciaSpecialsCards,
+    ...rumaniaSpecialsCards,
+    ...scoutsgalaxyCards,
+    ...scoutsgalaxy2Cards,
+    ...seleccionJaponCards,
+    ...scoutsgalaxy3Cards,
+    ...scoutsgalaxy4Cards,
+    ...scoutsgalaxy5Cards,
+    ...scoutsgalaxy6Cards,
+    ...raimonJaponesesCards,
+    ...rollandbowlbyCards,
+    ...axelExtraCards,
+    ...plenilunioCards,
+    ...universalSolariaCards,
+    ...kirkwoodExtraCards,
+    ...rexremingtonExtraCards,
+    ...raimonGoCards,
+    ...alpinoExtraCards
 ];
 tsubasaAll.forEach(c => c._series = 'tsubasa');
 
@@ -179,7 +204,13 @@ const bluelockAll = [
     ...espanaLegendsCards,
     ...legendsUpdateCards,
     ...luisSuarezCards,
-    ...updatesV2Cards
+    ...updatesV2Cards,
+    ...rinItoshiCards,
+    ...bachiraCards,
+    ...nanaseCards,
+    ...zantetsuCards,
+    ...wanimaCards,
+    ...sendouCards
 ];
 bluelockAll.forEach(c => c._series = 'bluelock');
 

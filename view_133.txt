@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:45:15+02:00
+Completed At: 2026-07-29T23:45:15+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 1080 to 1120
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1080: 
+1081:         let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+1082:         let myTeamPool = pool.filter(p => p.team === myPlayer.team);
+1083:         
+1084:         let tacticasNpcs = [];
+1085:         let numTacticas = Math.floor(Math.random() * 3) + 2; // 2, 3, or 4 NPCs
+1086:         if (p2Stats && p2Stats.day && p2Stats.day % 3 === 0) {
+1087:             numTacticas = 4;
+1088:         }
+1089:         for(let i=0; i<numTacticas; i++) {
+1090:             if (myTeamPool.length > 0) {
+1091:                 let npc = myTeamPool.pop();
+1092:                 tacticasNpcs.push(npc);
+1093:                 pool = pool.filter(p => p.id !== npc.id);
+1094:             }
+1095:         }
+1096:         
+1097:         p2DailyNPCs = {
+1098:             'Habitación': [],
+1099:             'Comedor': pool.splice(0, 4),
+1100:             'Gimnasio': pool.splice(0, 1),
+1101:             'Meditación': pool.splice(0, 1),
+1102:             'Campo': pool.splice(0, 2),
+1103:             'Sala TV': pool.splice(0, 3),
+1104:             'Tácticas': tacticasNpcs
+1105:         };
+1106:     }
+1107:     
+1108:     // Team Standings Mock
+1109:     let p2League = [
+1110:         {name: "Equipo V", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1111:         {name: "Equipo W", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1112:         {name: "Equipo X", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1113:         {name: "Equipo Y", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1114:         {name: "Tu Equipo (Z)", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0}
+1115:     ];
+1116:     let p2TopScorers = [];
+1117:     
+1118:     const p2LobbyScreen = document.getElementById('phase2-lobby');
+1119:     const p2RoomTitle = document.getElementById('p2-room-title');
+1120:     const p2RoomBody = document.getElementById('p2-room-body');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,145 @@
+Created At: 2026-07-29T22:56:18+02:00
+Completed At: 2026-07-29T22:56:18+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4257
+Total Bytes: 218429
+Showing lines 3154 to 3290
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3154:     window.showFormationScreen = function(position, ourStrength, enemyStrength, winProbability, win, teammates, matchContext) {
+3155:         // Clean up the entire locker room / lobby screen
+3156:         document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img, #tactics-detroit-overlay, #tactics-pulse, #tactics-start-btn').forEach(el => el.remove());
+3157:         p2NpcContainer.innerHTML = '';
+3158:         p2RoomBody.innerHTML = '';
+3159:         document.getElementById('p2-room-content').style.display = 'none';
+3160:         
+3161:         const p2LobbyScreen = document.getElementById('phase2-lobby');
+3162:         
+3163:         const container = document.createElement('div');
+3164:         container.id = 'formation-screen';
+3165:         container.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#1b5e20; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; display:flex; flex-direction:column; align-items:center;';
+3166:         
+3167:         const title = document.createElement('h2');
+3168:         title.innerText = 'TU EQUIPO';
+3169:         title.style.cssText = 'color:#fff; text-shadow:0 0 5px #000; font-family:"Bangers"; font-size:3rem; margin-top:20px;';
+3170:         container.appendChild(title);
+3171:         
+3172:         const pitch = document.createElement('div');
+3173:         pitch.style.cssText = 'position:relative; width:80%; max-width:800px; height:65%; border:2px solid rgba(255,255,255,0.5); margin-top:20px; border-radius:10px; background:repeating-linear-gradient(0deg, transparent, transparent 10%, rgba(255,255,255,0.05) 10%, rgba(255,255,255,0.05) 20%);';
+3174:         
+3175:         const centerLine = document.createElement('div');
+3176:         centerLine.style.cssText = 'position:absolute; top:50%; left:0; width:100%; height:2px; background:rgba(255,255,255,0.5);';
+3177:         pitch.appendChild(centerLine);
+3178:         
+3179:         const centerCircle = document.createElement('div');
+3180:         centerCircle.style.cssText = 'position:absolute; top:50%; left:50%; width:100px; height:100px; border:2px solid rgba(255,255,255,0.5); border-radius:50%; transform:translate(-50%, -50%);';
+3181:         pitch.appendChild(centerCircle);
+3182:         
+3183:         let availableSpots = [
+3184:             {top:'90%', left:'50%', pos:'POR'},
+3185:             {top:'70%', left:'20%', pos:'DEF'}, {top:'70%', left:'40%', pos:'DEF'}, {top:'70%', left:'60%', pos:'DEF'}, {top:'70%', left:'80%', pos:'DEF'},
+3186:             {top:'45%', left:'30%', pos:'MED'}, {top:'45%', left:'50%', pos:'MED'}, {top:'45%', left:'70%', pos:'MED'},
+3187:             {top:'20%', left:'30%', pos:'DEL'}, {top:'20%', left:'50%', pos:'DEL'}, {top:'20%', left:'70%', pos:'DEL'}
+3188:         ];
+3189:         
+3190:         let userSpotIndex = availableSpots.findIndex(s => s.pos === position);
+3191:         if(userSpotIndex === -1) userSpotIndex = 0;
+3192:         let userSpot = availableSpots.splice(userSpotIndex, 1)[0];
+3193:         
+3194:         const drawPlayer = (spot, name, iconUrl, color, isUser) => {
+3195:             const p = document.createElement('div');
+3196:             p.style.cssText = `position:absolute; top:${spot.top}; left:${spot.left}; transform:translate(-50%, -50%); display:flex; flex-direction:column; align-items:center; z-index:2; transition: all 0.5s; opacity:0; transform:translate(-50%, -30%) scale(0.8);`;
+3197:             
+3198:             const img = document.createElement('img');
+3199:             img.src = iconUrl;
+3200:             img.onerror = () => { img.src = 'assets/NPC_Default.png'; };
+3201:             img.style.cssText = `width:50px; height:50px; border-radius:50%; border:2px solid ${color}; background:#000; box-shadow:0 0 10px ${color}; object-fit:cover;`;
+3202:             if(isUser) {
+3203:                 img.style.width = '70px'; img.style.height = '70px'; img.style.borderWidth = '3px'; img.style.boxShadow = '0 0 20px #ffd700';
+3204:             }
+3205:             
+3206:             const nameTag = document.createElement('div');
+3207:             nameTag.innerText = name;
+3208:             nameTag.style.cssText = `background:rgba(0,0,0,0.8); color:#fff; font-size:0.8rem; padding:2px 5px; border-radius:4px; margin-top:5px; font-weight:bold; white-space:nowrap; border:1px solid ${color};`;
+3209:             
+3210:             const posTag = document.createElement('div');
+3211:             posTag.innerText = spot.pos;
+3212:             posTag.style.cssText = `background:${color}; color:#fff; font-size:0.6rem; padding:1px 3px; border-radius:2px; margin-top:2px; font-weight:bold;`;
+3213:             
+3214:             p.appendChild(img);
+3215:             p.appendChild(nameTag);
+3216:             p.appendChild(posTag);
+3217:             pitch.appendChild(p);
+3218:             
+3219:             setTimeout(() => {
+3220:                 p.style.opacity = '1';
+3221:                 p.style.transform = 'translate(-50%, -50%) scale(1)';
+3222:             }, 100 + (Math.random() * 500));
+3223:         };
+3224:         
+3225:         drawPlayer(userSpot, p2Stats.name || 'TÚ', p2Stats.avatar || 'assets/Isagi.png', '#ffd700', true);
+3226:         
+3227:         teammates.forEach((npc, i) => {
+3228:             if (i < availableSpots.length) {
+3229:                 let spot = availableSpots[i];
+3230:                 drawPlayer(spot, npc.name, npc.img || 'assets/NPC_Default.png', '#00e5ff', false);
+3231:             }
+3232:         });
+3233:         
+3234:         container.appendChild(pitch);
+3235:         
+3236:         const nextBtn = document.createElement('button');
+3237:         nextBtn.className = 'p2-action-btn';
+3238:         nextBtn.innerText = 'Siguiente';
+3239:         nextBtn.style.marginTop = '20px';
+3240:         nextBtn.style.padding = '15px 40px';
+3241:         container.appendChild(nextBtn);
+3242:         
+3243:         p2LobbyScreen.appendChild(container);
+3244:         
+3245:         nextBtn.onclick = () => {
+3246:             title.innerText = 'EQUIPO RIVAL';
+3247:             title.style.color = '#ff4444';
+3248:             pitch.innerHTML = ''; 
+3249:             pitch.appendChild(centerLine);
+3250:             pitch.appendChild(centerCircle);
+3251:             
+3252:             let enemySpots = [
+3253:                 {top:'10%', left:'50%', pos:'POR'},
+3254:                 {top:'30%', left:'20%', pos:'DEF'}, {top:'30%', left:'40%', pos:'DEF'}, {top:'30%', left:'60%', pos:'DEF'}, {top:'30%', left:'80%', pos:'DEF'},
+3255:                 {top:'55%', left:'30%', pos:'MED'}, {top:'55%', left:'50%', pos:'MED'}, {top:'55%', left:'70%', pos:'MED'},
+3256:                 {top:'80%', left:'30%', pos:'DEL'}, {top:'80%', left:'50%', pos:'DEL'}, {top:'80%', left:'70%', pos:'DEL'}
+3257:             ];
+3258:             
+3259:             enemySpots.forEach((spot, i) => {
+3260:                 drawPlayer(spot, `Rival ${i+1}`, 'assets/NPC_Default.png', '#ff4444', false);
+3261:             });
+3262:             
+3263:             nextBtn.innerText = '¡AL CAMPO!';
+3264:             nextBtn.style.borderColor = '#ff4444';
+3265:             nextBtn.style.color = '#ff4444';
+3266:             
+3267:             nextBtn.onclick = () => {
+3268:                 container.style.transition = 'opacity 0.5s';
+3269:                 container.style.opacity = '0';
+3270:                 setTimeout(() => {
+3271:                     container.remove();
+3272:                     if (position === 'POR') {
+3273:                         startGKMinigame(ourStrength, enemyStrength, winProbability);
+3274:                     } else {
+3275:                         executeSimulation(position, win, matchContext);
+3276:                     }
+3277:                 }, 500);
+3278:             };
+3279:         };
+3280:     };
+3281:     
+3282:     function executeSimulation(position, win, context) {
+3283:         let goalsScored = 0;
+3284:         if (position === 'DEL' || position === true) {
+3285:             goalsScored = Math.floor(Math.random() * 4) + 1;
+3286:         } else if (position === 'MED') {
+3287:             goalsScored = Math.floor(Math.random() * 3);
+3288:         } else if (position === 'DEF' || position === false) {
+3289:             goalsScored = Math.floor(Math.random() * 2);
+3290:         } else if (position === 'POR') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

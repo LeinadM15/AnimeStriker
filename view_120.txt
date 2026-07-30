@@ -1,0 +1,159 @@
+Created At: 2026-07-29T23:32:33+02:00
+Completed At: 2026-07-29T23:32:33+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4302
+Total Bytes: 223718
+Showing lines 3550 to 3700
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3550:                 else draw = true;
+3551:             }
+3552:             
+3553:             // Update league standings, goals, and distribute goals across the stratum
+3554:             window.processMatchday(currentTeamGoals, goalsConceded);
+3555:             
+3556:             const matchXp = 250 + (win ? 200 : (draw ? 100 : 50)) + (saves * 75);
+3557:             const resultTxt = win ? '¡VICTORIA!' : (draw ? 'EMPATE' : 'DERROTA...');
+3558:             
+3559:             showNotification(`${resultTxt} Resultado: ${currentTeamGoals}-${goalsConceded}`, win ? 'success' : (draw ? 'warning' : 'error'), 6000);
+3560:             
+3561:             setTimeout(() => {
+3562:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${currentTeamGoals} goles y encajaste ${goalsConceded}. Paraste ${saves} tiros. XP Total: ${matchXp}`);
+3563:             }, 1000);
+3564:             
+3565:             // Show room content again after engine closes
+3566:             document.getElementById('p2-room-content').style.display = 'block';
+3567:         }
+3568:         
+3569:         function nextShot() {
+3570:             if (currentShot >= totalShots) {
+3571:                 setTimeout(endMatch, 1000);
+3572:                 return;
+3573:             }
+3574:             
+3575:             // Chance for teammate to score before this shot
+3576:             if (currentTeamGoals < finalTeamGoals && Math.random() > 0.5) {
+3577:                 currentTeamGoals++;
+3578:                 showNotification("¡GOL DE TUS COMPAÑEROS!", "success", 2000);
+3579:             }
+3580:             
+3581:             currentShot++;
+3582:             updateHUD();
+3583:             
+3584:             let startX = 35 + Math.random() * 30; // 35% to 65%
+3585:             let startY = 45 + Math.random() * 5;  // 45% to 50%
+3586:             
+3587:             setTimeout(() => playScenario(startX, startY), 1000);
+3588:         }
+3589:         
+3590:         function playScenario(startX, startY) {
+3591:             const ball = document.createElement('img');
+3592:             ball.src = 'assets/Match/Balon.png';
+3593:             ball.onerror = () => { ball.style.display="none"; };
+3594:             ball.style.cssText = `position:absolute; top:${startY}%; left:${startX}%; width:20px; height:20px; z-index:10002; transform:translate(-50%,-50%); pointer-events:none; border-radius:50%;`;
+3595:             engine.appendChild(ball);
+3596:             
+3597:             let type = Math.floor(Math.random() * 4); // 0=Normal, 1=Power, 2=Curve, 3=ZigZag
+3598:             
+3599:             let targetX = 10 + Math.random() * 80;
+3600:             let targetY = 10 + Math.random() * 80;
+3601:             
+3602:             let flightTime = 1100;
+3603:             let requiredPose = 'AGARRE';
+3604:             
+3605:             if (type === 0) {
+3606:                 // Tiro Normal
+3607:                 ball.style.boxShadow = '0 0 20px 8px rgba(255,255,255,0.8)';
+3608:                 requiredPose = 'AGARRE';
+3609:                 flightTime = 1100;
+3610:             } else if (type === 1) {
+3611:                 // Tiro Potente (Puños)
+3612:                 ball.style.boxShadow = '0 0 25px 12px rgba(255,0,0,0.9)';
+3613:                 requiredPose = 'PUNO';
+3614:                 flightTime = 550;
+3615:             } else if (type === 2) {
+3616:                 // Tiro con Efecto (Estirada)
+3617:                 ball.style.boxShadow = '0 0 25px 12px rgba(180,0,255,0.9)';
+3618:                 requiredPose = 'ESTIRADA';
+3619:                 flightTime = 1300;
+3620:                 targetX = Math.random() > 0.5 ? 10 + Math.random()*15 : 75 + Math.random()*15;
+3621:             } else if (type === 3) {
+3622:                 // Tiro Zig-Zag (Estirada)
+3623:                 ball.style.boxShadow = '0 0 25px 12px rgba(255,255,0,0.9)';
+3624:                 requiredPose = 'ESTIRADA';
+3625:                 flightTime = 1300;
+3626:             }
+3627:             
+3628:             setTimeout(() => {
+3629:                 if (type === 2) { // Efecto
+3630:                     const midX = (targetX > 50) ? 10 : 90;
+3631:                     ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1)`;
+3632:                     ball.style.top = '10%';
+3633:                     ball.style.left = `${midX}%`;
+3634:                     ball.style.width = '70px'; ball.style.height = '70px';
+3635:                     
+3636:                     setTimeout(() => {
+3637:                         ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
+3638:                         ball.style.top = `${targetY}%`;
+3639:                         ball.style.left = `${targetX}%`;
+3640:                         ball.style.width = '160px'; ball.style.height = '160px';
+3641:                     }, flightTime*0.5);
+3642:                 } else if (type === 3) { // Zig-Zag
+3643:                     const fakeX = (targetX > 50) ? 20 : 80;
+3644:                     const fakeY = (targetY > 50) ? 20 : 80;
+3645:                     ball.style.transition = `all ${flightTime*0.4}ms linear`;
+3646:                     ball.style.top = `${fakeY}%`;
+3647:                     ball.style.left = `${fakeX}%`;
+3648:                     ball.style.width = '80px'; ball.style.height = '80px';
+3649:                     
+3650:                     setTimeout(() => {
+3651:                         ball.style.transition = `all ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1)`;
+3652:                         ball.style.top = `${targetY}%`;
+3653:                         ball.style.left = `${targetX}%`;
+3654:                         ball.style.width = '160px'; ball.style.height = '160px';
+3655:                     }, flightTime*0.4);
+3656:                 } else { // Normal/Potente
+3657:                     ball.style.transition = `all ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+3658:                     ball.style.top = `${targetY}%`;
+3659:                     ball.style.left = `${targetX}%`;
+3660:                     ball.style.width = '160px'; ball.style.height = '160px';
+3661:                 }
+3662:             }, 50);
+3663:             
+3664:             // Resolución
+3665:             setTimeout(() => {
+3666:                 const dist = Math.sqrt(Math.pow(mouseX - targetX, 2) + Math.pow(mouseY - targetY, 2));
+3667:                 
+3668:                 let tolerance = 16; 
+3669:                 if (currentPose === 'ESTIRADA') tolerance = 28;
+3670:                 if (currentPose === 'PUNO') tolerance = 14;
+3671:                 
+3672:                 if (dist <= tolerance && currentPose === requiredPose) {
+3673:                     saves++;
+3674:                     ball.style.transition = 'all 0.2s';
+3675:                     ball.style.top = '-20%'; 
+3676:                     showNotification('¡PARADÓN!', 'success', 1000);
+3677:                 } else {
+3678:                     goalsConceded++;
+3679:                     ball.style.transition = 'all 0.2s';
+3680:                     ball.style.width = '300px'; ball.style.height = '300px';
+3681:                     showNotification('¡GOL...', 'error', 1000);
+3682:                     
+3683:                     // Efecto temblor pantalla
+3684:                     let shakeOffset = 0;
+3685:                     const shaker = setInterval(() => {
+3686:                         shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
+3687:                         engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
+3688:                     }, 50);
+3689:                     setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+3690:                 }
+3691:                 
+3692:                 updateHUD();
+3693:                 setTimeout(() => {
+3694:                     ball.remove();
+3695:                     nextShot();
+3696:                 }, 800);
+3697:             }, flightTime + 50);
+3698:         }
+3699:         
+3700:         const introPanel = document.createElement('div');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

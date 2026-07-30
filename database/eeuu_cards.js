@@ -254,7 +254,7 @@ const eeuuCards = [
         rarity: "Oro",
         rating: 82,
         position: "LB",
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/us.png",
         teamIcon: "teams/Monaco.png",
         image: "assets/characters/USA/Charmer.png",

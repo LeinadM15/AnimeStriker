@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:37:17+02:00
+Completed At: 2026-07-29T23:37:17+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4332
+Total Bytes: 225791
+Showing lines 3920 to 3960
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3920:             };
+3921:             
+3922:             graphContainer.appendChild(node);
+3923:         });
+3924:         
+3925:         body.appendChild(graphContainer);
+3926:     };
+3927: 
+3928:     // ==========================================
+3929:     // SAVE / LOAD SYSTEM
+3930:     // ==========================================
+3931:     window.saveGameState = function() {
+3932:         if (!myPlayer) { showNotification('No hay partida activa que guardar.', 'error'); return; }
+3933:         
+3934:         const p2DailyNPCsIds = {};
+3935:         for (let room in p2DailyNPCs) {
+3936:             p2DailyNPCsIds[room] = p2DailyNPCs[room].map(p => p.id);
+3937:         }
+3938:         
+3939:         const state = {
+3940:             myPlayerId: myPlayer.id,
+3941:             p2Stats: p2Stats,
+3942:             p2Relationships: p2Relationships,
+3943:             p2EquippedSkills: p2EquippedSkills,
+3944:             p2CurrentRoom: p2CurrentRoom,
+3945:             p2League: p2League,
+3946:             p2TopScorers: p2TopScorers,
+3947:             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
+3948:             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating, team: p.team, goals: p.goals })),
+3949:             p2DailyNPCsIds: p2DailyNPCsIds
+3950:         };
+3951:         localStorage.setItem('webfutbol_story_save', JSON.stringify(state));
+3952:         showNotification('Partida guardada correctamente.', 'success');
+3953:     };
+3954: 
+3955:     window.loadGameState = function() {
+3956:         const saved = localStorage.getItem('webfutbol_story_save');
+3957:         if (!saved) { showNotification('No hay partida guardada.', 'error'); return; }
+3958:         
+3959:         try {
+3960:             const state = JSON.parse(saved);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

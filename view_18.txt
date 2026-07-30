@@ -1,0 +1,49 @@
+Created At: 2026-07-29T02:26:59+02:00
+Completed At: 2026-07-29T02:26:59+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3432
+Total Bytes: 174675
+Showing lines 1040 to 1080
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1040:             notif.style.transform = 'translateY(0)';
+1041:         });
+1042:         
+1043:         setTimeout(() => {
+1044:             notif.style.opacity = '0';
+1045:             notif.style.transform = 'translateY(-20px)';
+1046:             setTimeout(() => notif.remove(), 400);
+1047:         }, duration);
+1048:     }
+1049:     
+1050:     let p2Stats = {
+1051:         pace: 60, shooting: 60, passing: 60, dribbling: 60, defending: 60, physical: 60,
+1052:         statXP: { pace: 0, shooting: 0, passing: 0, dribbling: 0, defending: 0, physical: 0 },
+1053:         stamina: 100, maxStamina: 100, goals: 0, day: 1, meditationBuff: false,
+1054:         yogaDoneToday: false, yogaBuff: false,
+1055:         npcInteractionsToday: []
+1056:     };
+1057:     
+1058:     let p2Relationships = {}; // Tracks friendship {npcId: value, dialogueStage: value}
+1059:     let p2EquippedSkills = [null, null, null, null];
+1060:     
+1061:     let p2CurrentRoom = 0;
+1062:     let p2Rooms = ['Habitación', 'Comedor', 'Gimnasio', 'Campo', 'Sala TV', 'Tácticas', 'Meditación'];
+1063:     let p2StratumPlayers = []; // 44 NPCs in the building
+1064:     
+1065:     let p2DailyNPCs = {};
+1066:     
+1067:     function generateDailyNPCs() {
+1068:         if (!p2StratumPlayers || p2StratumPlayers.length === 0) {
+1069:             p2DailyNPCs = {
+1070:                 'Habitación': [],
+1071:                 'Comedor': [],
+1072:                 'Gimnasio': [],
+1073:                 'Meditación': [],
+1074:                 'Campo': [],
+1075:                 'Sala TV': [],
+1076:                 'Tácticas': []
+1077:             };
+1078:             return;
+1079:         }
+1080: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

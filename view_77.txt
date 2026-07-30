@@ -1,0 +1,69 @@
+Created At: 2026-07-29T18:02:45+02:00
+Completed At: 2026-07-29T18:02:45+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4136
+Total Bytes: 211863
+Showing lines 3190 to 3250
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3190:         
+3191:         // Simulate scorers
+3192:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+3193:         
+3194:         // Award Match EXP and open interactive distributor
+3195:         const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+3196:         const summaryText = win 
+3197:             ? `¡VICTORIA! Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+3198:             : `DERROTA... Aún así ganaste +${matchXp} EXP total por tu esfuerzo y ${goalsScored} goles.`;
+3199:         openMatchXpDistributor(matchXp, summaryText);
+3200:     };
+3201: 
+3202:     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+3203:         p2RoomBody.innerHTML = '';
+3204:         
+3205:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3206:         if (detroitUI) detroitUI.remove();
+3207:         
+3208:         const engine = document.createElement('div');
+3209:         engine.id = 'gk-match-engine';
+3210:         engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none; cursor:crosshair;';
+3211:         
+3212:         // Evitar menú contextual clic derecho
+3213:         engine.oncontextmenu = e => e.preventDefault();
+3214:         
+3215:         const hud = document.createElement('div');
+3216:         hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110; pointer-events:none;';
+3217:         
+3218:         const timeDisplay = document.createElement('div');
+3219:         timeDisplay.innerText = "00:00";
+3220:         
+3221:         const scoreDisplay = document.createElement('div');
+3222:         scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+3223:         
+3224:         hud.appendChild(timeDisplay);
+3225:         hud.appendChild(scoreDisplay);
+3226:         engine.appendChild(hud);
+3227:         
+3228:         const flash = document.createElement('div');
+3229:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3230:         engine.appendChild(flash);
+3231:         
+3232:         // Instrucciones
+3233:         const helpOverlay = document.createElement('div');
+3234:         helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.5); padding:10px; border-radius:10px; text-align:center; pointer-events:none; z-index:110; text-shadow:0 0 5px #000;';
+3235:         helpOverlay.innerHTML = '<b>WASD</b>: Caminar | <b>Espacio + WASD</b>: Lanzarse<br><b>Ratón</b>: Mover Manos | <b>Clic Izq</b>: Mano Abierta | <b>Clic Der</b>: Puños';
+3236:         engine.appendChild(helpOverlay);
+3237:         
+3238:         // --- MOTOR FÍSICO ---
+3239:         
+3240:         const gloves = document.createElement('img');
+3241:         gloves.src = 'assets/Match/PosicionAgarre.png';
+3242:         gloves.onerror = () => { gloves.style.display="none"; };
+3243:         gloves.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:125; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+3244:         engine.appendChild(gloves);
+3245:         
+3246:         p2RoomBody.appendChild(engine);
+3247:         
+3248:         let minute = 0;
+3249:         let saves = 0;
+3250:         let goalsConceded = 0;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

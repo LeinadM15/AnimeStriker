@@ -1,0 +1,50 @@
+Created At: 2026-07-29T22:48:35+02:00
+Completed At: 2026-07-29T22:48:35+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4249
+Total Bytes: 217911
+Showing lines 3124 to 3165
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3124:     window.startMatch = function(position) {
+3125:         
+3126:         // Remove Detroit UI if it exists
+3127:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3128:         if (detroitUI) detroitUI.remove();
+3129:         
+3130:         const teammates = p2StratumPlayers.slice(0, 10);
+3131:         
+3132:         let teamStrength = 0;
+3133:         teammates.forEach(npc => {
+3134:             let friendVal = 0;
+3135:             if (p2Relationships[npc.id]) {
+3136:                 const data = p2Relationships[npc.id];
+3137:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+3138:             }
+3139:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+3140:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000)));
+3141:         });
+3142:         
+3143:         const myGRL = calcOVR();
+3144:         const ourStrength = myGRL + teamStrength;
+3145:         const enemyStrength = 75 * 11;
+3146:         
+3147:         const winProbability = Math.max(0.25, Math.min(0.90, ourStrength / (ourStrength + enemyStrength)));
+3148:         const win = Math.random() < winProbability;
+3149:         
+3150:         // Call the Pre-Match VS Formation Screen instead of simulating immediately
+3151:         showFormationScreen(position, ourStrength, enemyStrength, winProbability, win, teammates, null);
+3152:     };
+3153:     
+3154:     window.showFormationScreen = function(position, ourStrength, enemyStrength, winProbability, win, teammates, matchContext) {
+3155:         p2RoomBody.innerHTML = '';
+3156:         
+3157:         const container = document.createElement('div');
+3158:         container.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#1b5e20; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; display:flex; flex-direction:column; align-items:center;';
+3159:         
+3160:         const title = document.createElement('h2');
+3161:         title.innerText = 'TU EQUIPO';
+3162:         title.style.cssText = 'color:#fff; text-shadow:0 0 5px #000; font-family:"Bangers"; font-size:3rem; margin-top:20px;';
+3163:         container.appendChild(title);
+3164:         
+3165:         const pitch = document.createElement('div');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

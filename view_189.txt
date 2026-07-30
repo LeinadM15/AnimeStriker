@@ -1,0 +1,59 @@
+Created At: 2026-07-30T17:20:50+02:00
+Completed At: 2026-07-30T17:20:50+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5064
+Total Bytes: 265710
+Showing lines 4300 to 4350
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4300:                     const shaker = setInterval(() => {
+4301:                         shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
+4302:                         engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
+4303:                     }, 50);
+4304:                     setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+4305:                 }
+4306:                 
+4307:                 updateHUD();
+4308:                 setTimeout(() => {
+4309:                     ball.remove();
+4310:                     nextShot();
+4311:                 }, 800);
+4312:             }, flightTime + 50);
+4313:         }
+4314:         
+4315:         const introPanel = document.createElement('div');
+4316:         introPanel.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.85); padding:30px; border-radius:15px; border:2px solid #00e5ff; color:white; font-family:"Nunito",sans-serif; z-index:10050; text-align:center; min-width:400px; box-shadow:0 0 30px rgba(0,229,255,0.3);';
+4317:         introPanel.innerHTML = `
+4318:             <h2 style="font-family:'Bangers'; color:#00e5ff; font-size:3rem; margin:0 0 20px 0; letter-spacing:2px;">�¡ATENTO PORTERO!</h2>
+4319:             <div style="text-align:left; font-size:1.1rem; line-height:1.6; margin-bottom:25px;">
+4320:                 <p style="text-align:center; font-weight:bold; color:#ffd700;">El delantero va a realizar 5 tiros seguidos.</p>
+4321:                 <p>ð�x�±ï¸ <b>Mueve el ratón</b> para posicionar tus guantes.</p>
+4322:                 <p>â�aª <b>Tiro Normal (Blanco)</b>: Trayectoria recta. No pulses nada, usa el <b>Agarre</b>.</p>
+4323:                 <p>ð�x�´ <b>Tiro Potente (Rojo)</b>: Muy veloz. Mantén pulsado <b>Clic Izquierdo</b> (Puños).</p>
+4324:                 <p>ð�x�x£ <b>Tiro con Efecto (Morado)</b>: Trayectoria con curva. Mantén pulsado <b>Clic Derecho</b> (Estirada).</p>
+4325:                 <p>ð�x�x¡ <b>Tiro Zig-Zag (Amarillo)</b>: Cambia de dirección. Usa <b>Clic Derecho</b> (Estirada).</p>
+4326:             </div>
+4327:             <button id="btn-start-gk" style="background:linear-gradient(135deg, #00e5ff, #00b0ff); color:black; font-family:'Bangers'; font-size:1.5rem; padding:10px 40px; border:none; border-radius:8px; cursor:pointer; letter-spacing:2px; box-shadow:0 5px 15px rgba(0,229,255,0.4); transition:transform 0.2s;">�¡EMPEZAR!</button>
+4328:         `;
+4329:         engine.appendChild(introPanel);
+4330:         
+4331:         introPanel.querySelector('#btn-start-gk').onclick = () => {
+4332:             introPanel.style.transition = 'opacity 0.3s';
+4333:             introPanel.style.opacity = '0';
+4334:             setTimeout(() => {
+4335:                 introPanel.remove();
+4336:                 setTimeout(nextShot, 500); // Empieza el primer tiro
+4337:             }, 300);
+4338:         };
+4339:     };
+4340: 
+4341:     // ==========================================
+4342:     // FRIENDSHIP VIEWER (Inazuma Eleven style)
+4343:     // ==========================================
+4344:     window.openMyStatsViewer = function() {
+4345:         const modal = document.getElementById('p2-skill-modal');
+4346:         const title = document.getElementById('skill-modal-title');
+4347:         const body = document.getElementById('skill-modal-body');
+4348:         
+4349:         modal.classList.remove('hidden');
+4350:         title.textContent = 'MIS ESTAD¡STICAS';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,109 @@
+Created At: 2026-07-29T23:26:37+02:00
+Completed At: 2026-07-29T23:26:38+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4222
+Total Bytes: 219688
+Showing lines 3100 to 3200
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3100:             
+3101:             let posName = "Defensa";
+3102:             if(finalPos === 'MED') posName = "Centrocampista";
+3103:             if(finalPos === 'DEL') posName = "Delantero";
+3104:             if(finalPos === 'POR') posName = "Portero";
+3105:             
+3106:             let finalMsg = "";
+3107:             if (finalPos === 'DEL') {
+3108:                 finalMsg = "De acuerdo, tú ganas... Jugarás de Delantero. Pero como falles los goles, te vas a enterar.";
+3109:             } else if (finalPos === 'MED') {
+3110:                 finalMsg = "Trato hecho. Jugarás en el medio repartiendo juego. Es una buena tregua para todos.";
+3111:             } else if (finalPos === 'DEF') {
+3112:                 finalMsg = "Buena elección. Quédate atrás de Defensa y déjanos el trabajo sucio a nosotros.";
+3113:             } else if (finalPos === 'POR') {
+3114:                 finalMsg = "Perfecto. Te vas de Portero y dejas de molestar a los que saben jugar.";
+3115:             }
+3116:             
+3117:             text.innerHTML = `<b>Compañeros:</b> ${finalMsg}`;
+3118:             options.innerHTML = `
+3119:                 <button class="p2-action-btn" onclick="startMatch('${finalPos}')" style="border-color:#00e5ff; color:#00e5ff;"><span>⚽ SALTAR AL CAMPO (${posName})</span></button>
+3120:             `;
+3121:         }
+3122:     };
+3123:     
+3124:     window.startMatch = function(position) {
+3125:         
+3126:         // Remove Detroit UI if it exists
+3127:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3128:         if (detroitUI) detroitUI.remove();
+3129:         
+3130:         const teammates = p2StratumPlayers.slice(0, 10);
+3131:         
+3132:         let teamStrength = 0;
+3133:         teammates.forEach(npc => {
+3134:             let friendVal = 0;
+3135:             if (p2Relationships[npc.id]) {
+3136:                 const data = p2Relationships[npc.id];
+3137:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+3138:             }
+3139:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+3140:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000)));
+3141:         });
+3142:         
+3143:         const myGRL = calcOVR();
+3144:         const ourStrength = myGRL + teamStrength;
+3145:         const enemyStrength = 75 * 11;
+3146:         
+3147:         const winProbability = Math.max(0.25, Math.min(0.90, ourStrength / (ourStrength + enemyStrength)));
+3148:         const win = Math.random() < winProbability;
+3149:         
+3150:         // Call the Pre-Match VS Formation Screen instead of simulating immediately
+3151:         showFormationScreen(position, ourStrength, enemyStrength, winProbability, win, teammates, null);
+3152:     };
+3153:     
+3154:     window.showFormationScreen = function(position, ourStrength, enemyStrength, winProbability, win, teammates, matchContext) {
+3155:         // Clean up the entire locker room / lobby screen
+3156:         document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img, #tactics-detroit-overlay, #tactics-pulse, #tactics-start-btn, #formation-screen').forEach(el => el.remove());
+3157:         p2NpcContainer.innerHTML = '';
+3158:         p2RoomBody.innerHTML = '';
+3159:         document.getElementById('p2-room-content').style.display = 'none';
+3160:         
+3161:         const p2LobbyScreen = document.getElementById('phase2-lobby');
+3162:         
+3163:         // Build rival team from the OTHER NPCs in the building (indices 10-20)
+3164:         const rivals = p2StratumPlayers.slice(10, 21);
+3165:         // Fill to 11 if needed
+3166:         while (rivals.length < 11) {
+3167:             rivals.push({ name: 'RESERVA', image: 'assets/NPC_Default.png', p2Rating: 70 });
+3168:         }
+3169:         
+3170:         const container = document.createElement('div');
+3171:         container.id = 'formation-screen';
+3172:         container.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, #1a4d1a 0%, #2d7a2d 30%, #1a4d1a 100%); z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; display:flex; flex-direction:column; align-items:center;';
+3173:         
+3174:         // Team name
+3175:         const teamName = document.createElement('h2');
+3176:         teamName.innerText = 'EQUIPO Z';
+3177:         teamName.style.cssText = 'color:#00e5ff; text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 0 4px 10px rgba(0,229,255,0.5); font-family:"Bangers"; font-size:2.5rem; margin:8px 0 0 0; letter-spacing:3px;';
+3178:         container.appendChild(teamName);
+3179:         
+3180:         // Pitch container (full width, tall)
+3181:         const pitch = document.createElement('div');
+3182:         pitch.style.cssText = 'position:relative; width:92%; max-width:950px; flex:1; border:3px solid rgba(255,255,255,0.4); margin:5px auto; border-radius:6px; background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 50%, rgba(255,255,255,0.03) 100%); box-shadow: inset 0 0 30px rgba(0,0,0,0.3);';
+3183:         
+3184:         // Pitch markings
+3185:         pitch.innerHTML = `
+3186:             <div style="position:absolute; top:50%; left:5%; right:5%; height:2px; background:rgba(255,255,255,0.35);"></div>
+3187:             <div style="position:absolute; top:50%; left:50%; width:120px; height:120px; border:2px solid rgba(255,255,255,0.35); border-radius:50%; transform:translate(-50%,-50%);"></div>
+3188:             <div style="position:absolute; top:50%; left:50%; width:8px; height:8px; background:rgba(255,255,255,0.5); border-radius:50%; transform:translate(-50%,-50%);"></div>
+3189:             <div style="position:absolute; bottom:0; left:25%; right:25%; height:15%; border:2px solid rgba(255,255,255,0.25); border-bottom:none;"></div>
+3190:             <div style="position:absolute; top:0; left:25%; right:25%; height:15%; border:2px solid rgba(255,255,255,0.25); border-top:none;"></div>
+3191:         `;
+3192:         
+3193:         // Formation spots (4-3-3)
+3194:         const allySpots = [
+3195:             {top:'88%', left:'50%', pos:'POR'},
+3196:             {top:'72%', left:'15%', pos:'DEF'}, {top:'72%', left:'38%', pos:'DEF'}, {top:'72%', left:'62%', pos:'DEF'}, {top:'72%', left:'85%', pos:'DEF'},
+3197:             {top:'48%', left:'25%', pos:'MED'}, {top:'48%', left:'50%', pos:'MED'}, {top:'48%', left:'75%', pos:'MED'},
+3198:             {top:'22%', left:'25%', pos:'DEL'}, {top:'22%', left:'50%', pos:'DEL'}, {top:'22%', left:'75%', pos:'DEL'}
+3199:         ];
+3200:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

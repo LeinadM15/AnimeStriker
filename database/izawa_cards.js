@@ -7,9 +7,9 @@ const izawaCards = [
         rarity: "Oro",
         rating: 81,
         position: "CF",
-        league: "Premier League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Izawa/IzawaNankatsu.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -21,9 +21,9 @@ const izawaCards = [
         rarity: "Especial",
         rating: 86,
         position: "CB",
-        league: "Premier League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Izawa/Izawa.png",
         background: "assets/Cartas/Azul.png"
     },
@@ -34,9 +34,9 @@ const izawaCards = [
         rarity: "Especial",
         rating: 84,
         position: "CB",
-        league: "Premier League",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Manshine.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Izawa/IzawaPrime.png",
         background: "assets/Cartas/Manshine.png"
     }

@@ -1,0 +1,34 @@
+Created At: 2026-07-28T21:13:21Z
+Completed At: 2026-07-28T21:13:21Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3150
+Total Bytes: 159293
+Showing lines 1685 to 1710
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1685:             img.draggable = false;
+1686:             p2LobbyScreen.insertBefore(img, p2LobbyScreen.firstChild);
+1687:         }
+1688:         
+1689:         if (roomName === 'Habitación') {
+1690:             setRoomBg(`${basePath}Habitacion.jpeg`);
+1691:             document.getElementById('p2-room-content').style.display = 'none';
+1692:             
+1693:             // Botón Dormir
+1694:             const btnDormir = document.createElement('div');
+1695:             btnDormir.className = 'p2-scene-overlay';
+1696:             btnDormir.innerHTML = `
+1697:                 <button class="p2-action-btn" id="btn-dormir" style="background:transparent; border:none; padding:0; box-shadow:none;">
+1698:                     <img src="assets/Historia/Habitaciones/Cama.png" alt="Dormir" style="width:15%; height:15%; object-fit:contain; filter:drop-shadow(0 0 10px #fff); cursor:pointer;">
+1699:                 </button>
+1700:             `;
+1701: 
+1702:             const btnAmistades = document.createElement('div');
+1703:             btnAmistades.className = 'p2-scene-overlay';
+1704:             btnAmistades.id = 'btn-amistades';
+1705:             // AQUÍ MUEVES EL ICONO DE AMISTAD (top y left)
+1706:             btnAmistades.style.cssText = 'top: 80%; left: 50%; transform: translate(-50%,-50%); z-index:10;';
+1707:             btnAmistades.innerHTML = `<img src="assets/Historia/Habitaciones/Amistad.png" alt="Amistades" style="width:80px; height:80px; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f);">`;
+1708: 
+1709:             const btnStats = document.createElement('div');
+1710:             btnStats.className = 'p2-scene-overlay';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

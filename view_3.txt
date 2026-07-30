@@ -1,0 +1,39 @@
+Created At: 2026-07-28T20:56:07Z
+Completed At: 2026-07-28T20:56:07Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3220
+Total Bytes: 163147
+Showing lines 1485 to 1515
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1485:         if (p2Stats.npcInteractionsToday.includes(npc.id)) {
+1486:             showNotification(`${npc.name}: Ahora estoy ocupado, déjame entrenar.`, 'info');
+1487:             return;
+1488:         }
+1489: 
+1490:         if (typeof p2Relationships[npc.id] !== 'object') {
+1491:             // Check if this NPC uses generic dialogues
+1492:             const isGeneric = typeof npcDialogues !== 'undefined' && !npcDialogues[npc.name.toUpperCase()];
+1493:             let startingStage = 0;
+1494:             
+1495:             // Give generics a random starting dialogue so they don't all say the same thing on Day 1
+1496:             if (isGeneric && typeof npcDialogues !== 'undefined' && npcDialogues["GENERIC"]) {
+1497:                 startingStage = Math.floor(Math.random() * npcDialogues["GENERIC"].length);
+1498:             }
+1499:             
+1500:             p2Relationships[npc.id] = { friendship: p2Relationships[npc.id] || 0, dialogueStage: startingStage };
+1501:         }
+1502:         
+1503:         const rel = p2Relationships[npc.id];
+1504:         
+1505:         // If relationship is maxed out
+1506:         if (rel.friendship >= 100) {
+1507:             showNotification(`${npc.name}: ¡Somos los mejores amigos! (Amistad al máximo)`, 'success');
+1508:             // We can still let them talk, but maybe they don't gain stats. Let's just continue.
+1509:         }
+1510: 
+1511:         let dialogues = typeof npcDialogues !== 'undefined' && npcDialogues[npc.name.toUpperCase()] ? npcDialogues[npc.name.toUpperCase()] : (typeof npcDialogues !== 'undefined' ? npcDialogues["GENERIC"] : null);
+1512:         
+1513:         // Fallback if dialogues.js didn't load properly
+1514:         if (!dialogues) {
+1515:             dialogues = [{
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,58 @@
+Created At: 2026-07-30T20:25:30+02:00
+Completed At: 2026-07-30T20:25:30+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 1 to 50
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: document.addEventListener('DOMContentLoaded', () => {
+2:     // â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+3:     // â•‘  âš™ï¸ CONFIG                                               â•‘
+4:     // â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+5:     const MAX_STARTING_RATING = 70;
+6:     const RATING_PENALTY = 10;
+7:     const STORAGE_KEY = 'bluelock_story_roster';
+8:     const FILL_COUNT = 300;
+9: 
+10:     const DEFAULT_ROSTER_IDS = [
+11:         "isagi_oro","nagi_oro","barou_oro","shidou_oro","reo_oro",
+12:         "chigiri_oro","kunigami_oro","kurona_oro","gagamaru_oro",
+13:         "niko_oro","raichi_oro","yukimiya_oro","karasu_oro",
+14:         "kiyora_oro","hiiragi_oro","himizu_oro","hiori_oro"
+15:     ];
+16:     const DEFAULT_NAME_FALLBACKS = [
+17:         "HAIJI","YUZU","ENDOJI","SOKURA","TSUNZAKI",
+18:         "TOKIMITSU","EITA","OTOYA","ARYU"
+19:     ];
+20:     const BLUE_LOCK_NAMES = [
+21:         "ISAGI","BACHIRA","NAGI","REO","MIKAGE","BAROU","SHOEI",
+22:         "SHIDOU","CHIGIRI","KUNIGAMI","KURONA","GAGAMARU",
+23:         "NIKO","IKKI","RAICHI","YUKIMIYA","KARASU","KIYORA",
+24:         "HIIRAGI","HIMIZU","HIORI","HAIJI","YUZU","ENDOJI",
+25:         "SOKURA","TSUNZAKI","TOKIMITSU","EITA","OTOYA","ARYU"
+26:     ];
+27: 
+28:     // Country code â†’ Spanish name
+29:     const COUNTRY_NAMES = {
+30:         jp:"Japón",de:"Alemania",fr:"Francia",es:"España",it:"Italia",gb:"Inglaterra",
+31:         br:"Brasil",ar:"Argentina",pt:"Portugal",nl:"Países Bajos",be:"Bélgica",
+32:         us:"EE.UU.",mx:"México",co:"Colombia",uy:"Uruguay",cl:"Chile",kr:"Corea del Sur",
+33:         cn:"China",th:"Tailandia",za:"Sudáfrica",ru:"Rusia",hr:"Croacia",dk:"Dinamarca",
+34:         se:"Suecia",eg:"Egipto",ua:"Ucrania",rs:"Serbia",ba:"Bosnia",gr:"Grecia",
+35:         au:"Australia",uz:"Uzbekistán",ro:"Rumanía",tr:"Turquía",ch:"Suiza",at:"Austria",
+36:         pl:"Polonia",cz:"Chequia",ng:"Nigeria",cm:"Camerún",sn:"Senegal",ci:"Costa de Marfil",
+37:         id:"Indonesia",sa:"Arabia Saudí",bf:"Burkina Faso",no:"Noruega",ie:"Irlanda",
+38:         sc:"Seychelles",pk:"Pakistán",in:"India",pe:"Perú",ve:"Venezuela",ec:"Ecuador",
+39:         py:"Paraguay",bo:"Bolivia",cr:"Costa Rica",pa:"Panamá",gt:"Guatemala",hn:"Honduras",
+40:         sv:"El Salvador",do:"Rep. Dominicana",cu:"Cuba",jm:"Jamaica",tt:"Trinidad y Tobago"
+41:     };
+42: 
+43:     // Position groups
+44:     const POS_GROUPS = [
+45:         { label: "Todas", positions: null },
+46:         { label: "DEL", positions: ["ST","CF","FW"] },
+47:         { label: "EXT", positions: ["RW","LW","RM","LM"] },
+48:         { label: "MED", positions: ["CAM","CM","CDM"] },
+49:         { label: "DEF", positions: ["CB","RB","LB","RWB","LWB"] },
+50:         { label: "POR", positions: ["GK"] }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

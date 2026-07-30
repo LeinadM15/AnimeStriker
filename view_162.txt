@@ -1,0 +1,69 @@
+Created At: 2026-07-30T02:51:09+02:00
+Completed At: 2026-07-30T02:51:09+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4585
+Total Bytes: 237972
+Showing lines 2020 to 2080
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2020: 
+2021:             const btnAmistades = document.createElement('div');
+2022:             btnAmistades.className = 'p2-scene-overlay';
+2023:             btnAmistades.id = 'btn-amistades';
+2024:             // AQUÍ MUEVES EL ICONO DE AMISTAD (top y left)
+2025:             btnAmistades.style.cssText = 'top: 60%; left: 50%; transform: translate(-50%,-50%); z-index:10;';
+2026:             btnAmistades.innerHTML = `<img src="assets/Historia/Habitaciones/Amistad.png" alt="Amistades" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f);">`;
+2027: 
+2028:             const btnStats = document.createElement('div');
+2029:             btnStats.className = 'p2-scene-overlay';
+2030:             btnStats.id = 'btn-stats';
+2031:             // AQUÍ MUEVES EL ICONO DE PERSONAJE (top y left)
+2032:             btnStats.style.cssText = 'top: 60%; left: 75%; transform: translate(-50%,-50%); z-index:10;';
+2033:             btnStats.innerHTML = `<img src="assets/Historia/Habitaciones/Personaje.png" alt="Stats" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+2034:             
+2035:             p2LobbyScreen.appendChild(btnDormir);
+2036:             p2LobbyScreen.appendChild(btnAmistades);
+2037:             p2LobbyScreen.appendChild(btnStats);
+2038:             p2RoomBody.innerHTML = '';
+2039:             
+2040:             document.getElementById('btn-dormir').onclick = () => {
+2041:                 if (p2Stats.day % 3 === 0) { showNotification('¡Hoy hay partido! Debes jugarlo antes de ir a dormir (Sala de Tácticas).', 'warning'); return; }
+2042:                 advanceP2Day(false);
+2043:             };
+2044:             document.getElementById('btn-amistades').onclick = () => {
+2045:                 openFriendshipViewer();
+2046:             };
+2047:             document.getElementById('btn-stats').onclick = () => {
+2048:                 openMyStatsViewer();
+2049:             };   
+2050:             
+2051:             // Render equipped skills
+2052:             const skillContainer = document.getElementById('p2-equipped-skills-container');
+2053:             p2EquippedSkills.forEach((sk, idx) => {
+2054:                 const box = document.createElement('div');
+2055:                 box.style.cssText = "width:120px; height:55px; border:1px solid #00e5ff; background:rgba(0,0,0,0.5); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; text-align:center; padding:5px; font-family:'Nunito',sans-serif;";
+2056:                 box.textContent = sk ? sk : '—';
+2057:                 if (sk) {
+2058:                     box.style.background = 'linear-gradient(45deg, #004d40, #00bfa5)';
+2059:                     box.style.color = '#fff';
+2060:                     box.style.fontWeight = 'bold';
+2061:                 } else {
+2062:                     box.style.color = '#555';
+2063:                 }
+2064:                 skillContainer.appendChild(box);
+2065:             });
+2066:             
+2067:         } else if (roomName === 'Comedor') {
+2068:             setRoomBg(`${basePath}Cocina.jpeg`);
+2069:             
+2070:             // Hide the central panel for this room
+2071:             document.getElementById('p2-room-content').style.display = 'none';
+2072:             
+2073:             // Add Shop icon (TiendaIcono.png) - near taquilla 1
+2074:             const shopIcon = document.createElement('div');
+2075:             shopIcon.className = 'p2-shop-icon p2-scene-overlay';
+2076:             shopIcon.style.cssText = 'left:28%; top:22%; width:120px; height:120px; cursor:pointer;';
+2077:             shopIcon.innerHTML = `<img src="${basePath}TiendaIcono.png" style="width:100%; height:100%; animation:float-idle 3s ease-in-out infinite;" draggable="false">`;
+2078:             shopIcon.onclick = () => { openShopMenu(); };
+2079:             p2LobbyScreen.appendChild(shopIcon);
+2080:             
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

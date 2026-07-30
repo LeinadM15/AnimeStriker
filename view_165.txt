@@ -1,0 +1,44 @@
+Created At: 2026-07-30T03:01:33+02:00
+Completed At: 2026-07-30T03:01:33+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4599
+Total Bytes: 239035
+Showing lines 145 to 180
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+145:     loadRoster();
+146: 
+147:     // =====================================================
+148:     // PREQUEL SELECTION & CINEMATIC
+149:     // =====================================================
+150:     window.gamePhase = 1; // 1 = Colegio, 1.5 = Instituto, 2 = Blue Lock
+151:     window.currentPrefecture = "";
+152:     
+153:     document.getElementById('btn-select-hokkaido')?.addEventListener('click', () => {
+154:         window.currentPrefecture = "Hokkaido";
+155:         document.getElementById('prequel-selection-screen').classList.add('hidden');
+156:         document.getElementById('player-selection-screen').classList.remove('hidden');
+157:     });
+158: 
+159:     const cinematicScreen = document.getElementById('cinematic-screen');
+160:     const selectionScreen = document.getElementById('player-selection-screen');
+161:     const dialogues = [
+162:         { speaker:"Ego Jinpachi", text:"El fútbol japonés necesita un cambio. Nuestro país nunca ganará un Mundial... a menos que creemos al delantero más egoísta del mundo." },
+163:         { speaker:"Ego Jinpachi", text:"He reunido a 300 de los mejores delanteros jóvenes de Japón en esta instalación. Blue Lock. Solo uno sobrevivirá." },
+164:         { speaker:"Ego Jinpachi", text:"Â¿Estás listo para demostrar que eres el mejor? Olvida el trabajo en equipo. Olvida el fair play. Aquí solo importa una cosa: marcar goles." },
+165:         { speaker:"Ego Jinpachi", text:"Has sido seleccionado. Tu media ha sido recalculada. A partir de ahora, empezarás desde abajo. Demuéstrame que mereces sobrevivir en Blue Lock." }
+166:     ];
+167:     let dIdx = 0, isTyping = false, typeTimer = null;
+168: 
+169:     function typeText(el, text, speed=25) {
+170:         return new Promise(res => {
+171:             isTyping = true; el.innerHTML = ''; let i = 0;
+172:             (function go() {
+173:                 if (i < text.length) { el.innerHTML = text.substring(0,i+1)+'<span class="typed-cursor">|</span>'; i++; typeTimer = setTimeout(go, speed); }
+174:                 else { el.innerHTML = text; isTyping = false; res(); }
+175:             })();
+176:         });
+177:     }
+178:     function skipType(el, text) { clearTimeout(typeTimer); el.innerHTML = text; isTyping = false; }
+179:     function showDlg(idx) {
+180:         const d = dialogues[idx], tEl = document.getElementById('cin-text'), btn = document.getElementById('cin-continue');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

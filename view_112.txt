@@ -1,0 +1,69 @@
+Created At: 2026-07-29T23:27:44+02:00
+Completed At: 2026-07-29T23:27:44+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4231
+Total Bytes: 220147
+Showing lines 3380 to 3440
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3380:         
+3381:         hud.appendChild(shotDisplay);
+3382:         hud.appendChild(scoreDisplay);
+3383:         engine.appendChild(hud);
+3384:         
+3385:         // Instrucciones
+3386:         const helpOverlay = document.createElement('div');
+3387:         helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.7); padding:10px 20px; border-radius:10px; text-align:center; pointer-events:none; z-index:10010; text-shadow:0 0 5px #000; border:1px solid #00e5ff;';
+3388:         helpOverlay.innerHTML = '<b>MOVER</b>: Mover el Ratón (Las manos siguen al ratón)<br><b>NADA (Blanco)</b>: Agarre | <b>CLIC IZQ (Rojo)</b>: Puños | <b>CLIC DER (Morado)</b>: Estirada';
+3389:         engine.appendChild(helpOverlay);
+3390:         
+3391:         // --- MANOS DEL PORTERO ---
+3392:         let currentPose = 'AGARRE';
+3393:         let mouseX = 50, mouseY = 50;
+3394:         
+3395:         const leftGlove = document.createElement('img');
+3396:         leftGlove.src = 'assets/Match/PosicionAgarre.png';
+3397:         leftGlove.onerror = () => { leftGlove.style.display="none"; };
+3398:         leftGlove.style.cssText = 'position:absolute; top:50%; left:45%; transform:translate(-50%, -50%) scaleX(-1); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+3399:         engine.appendChild(leftGlove);
+3400:         
+3401:         const rightGlove = document.createElement('img');
+3402:         rightGlove.src = 'assets/Match/PosicionAgarre.png';
+3403:         rightGlove.onerror = () => { rightGlove.style.display="none"; };
+3404:         rightGlove.style.cssText = 'position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+3405:         engine.appendChild(rightGlove);
+3406:         
+3407:         document.body.appendChild(engine);
+3408:         
+3409:         // --- CONTROLES ---
+3410:         function setPose(pose) {
+3411:             currentPose = pose;
+3412:             let src = 'assets/Match/PosicionAgarre.png';
+3413:             let size = '180px';
+3414:             if (pose === 'PUNO') { src = 'assets/Match/PosicionPuño.png'; size = '140px'; }
+3415:             if (pose === 'ESTIRADA') { src = 'assets/Match/PosicionEstirada.png'; size = '280px'; }
+3416:             
+3417:             leftGlove.src = src; leftGlove.style.width = size; leftGlove.style.height = size;
+3418:             rightGlove.src = src; rightGlove.style.width = size; rightGlove.style.height = size;
+3419:             
+3420:             updateGlovePositions();
+3421:         }
+3422:         
+3423:         function updateGlovePositions() {
+3424:             let offsetX = (currentPose === 'PUNO') ? 3 : (currentPose === 'ESTIRADA' ? 10 : 5);
+3425:             leftGlove.style.left = `calc(${mouseX}% - ${offsetX}%)`;
+3426:             leftGlove.style.top = `${mouseY}%`;
+3427:             rightGlove.style.left = `calc(${mouseX}% + ${offsetX}%)`;
+3428:             rightGlove.style.top = `${mouseY}%`;
+3429:         }
+3430:         
+3431:         engine.addEventListener('mousemove', (e) => {
+3432:             const rect = engine.getBoundingClientRect();
+3433:             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+3434:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+3435:             updateGlovePositions();
+3436:         });
+3437:         
+3438:         engine.addEventListener('mousedown', (e) => {
+3439:             if (e.button === 0) setPose('PUNO'); // Izquierdo
+3440:             else if (e.button === 2) setPose('ESTIRADA'); // Derecho
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

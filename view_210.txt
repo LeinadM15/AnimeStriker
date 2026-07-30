@@ -1,0 +1,49 @@
+Created At: 2026-07-30T20:26:30+02:00
+Completed At: 2026-07-30T20:26:30+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 620 to 660
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+620:     const qteCursor = document.getElementById('tag-qte-cursor');
+621:     const DIRECTIONS = ['up', 'left', 'right', 'down'];
+622: 
+623:     // ---- START GAME ----
+624:     window.startTagGame = function () {
+625:         if (!selectedPlayer) return;
+626:         myPlayer = selectedPlayer;
+627: 
+628:         const others = getRosterPlayers().filter(p => p.id !== myPlayer.id);
+629:         others.sort(() => Math.random() - 0.5);
+630:         tagPlayers = [myPlayer, ...others.slice(0, 11)];
+631: 
+632:         tagScreen.classList.remove('hidden');
+633:         introOverlay.classList.remove('hidden');
+634:         groupOverlay.classList.add('hidden');
+635:         countdownOverlay.classList.add('hidden');
+636:         gameUI.classList.add('hidden');
+637: 
+638:         setTimeout(() => {
+639:             introOverlay.classList.add('hidden');
+640:             showGroupAssignment();
+641:         }, 3000);
+642:     };
+643: 
+644:     function showGroupAssignment() {
+645:         groupOverlay.classList.remove('hidden');
+646:         document.getElementById('tag-group-name').textContent = `GRUPO ${Math.floor(Math.random() * 25) + 1}`;
+647:         const mEl = document.getElementById('tag-group-members');
+648:         mEl.innerHTML = '';
+649:         tagPlayers.forEach(p => {
+650:             mEl.innerHTML += `<div class="tag-member-chip ${p.id === myPlayer.id ? 'is-player' : ''}">
+651:                 <img src="${p.image}"><span>${p.name}</span>
+652:             </div>`;
+653:         });
+654: 
+655:         document.getElementById('tag-start-btn').onclick = () => {
+656:             groupOverlay.classList.add('hidden');
+657:             startCountdown();
+658:         };
+659:     }
+660: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

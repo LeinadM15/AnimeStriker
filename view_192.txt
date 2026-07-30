@@ -1,0 +1,18 @@
+Created At: 2026-07-30T17:31:52+02:00
+Completed At: 2026-07-30T17:31:52+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5041
+Total Bytes: 262926
+Showing lines 4296 to 4305
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4296:             <div style="text-align:left; font-size:1.1rem; line-height:1.6; margin-bottom:25px;">
+4297:                 <p style="text-align:center; font-weight:bold; color:#ffd700;">El delantero va a realizar 5 tiros seguidos.</p>
+4298:                 <p>ð�x�±ï¸ <b>Mueve el ratón</b> para posicionar tus guantes.</p>
+4299:                 <p>â�aª <b>Tiro Normal (Blanco)</b>: Trayectoria recta. No pulses nada, usa el <b>Agarre</b>.</p>
+4300:                 <p>ð�x�´ <b>Tiro Potente (Rojo)</b>: Muy veloz. Mantén pulsado <b>Clic Izquierdo</b> (Puños).</p>
+4301:                 <p>ð�x�x£ <b>Tiro con Efecto (Morado)</b>: Trayectoria con curva. Mantén pulsado <b>Clic Derecho</b> (Estirada).</p>
+4302:                 <p>ð�x�x¡ <b>Tiro Zig-Zag (Amarillo)</b>: Cambia de dirección. Usa <b>Clic Derecho</b> (Estirada).</p>
+4303:             </div>
+4304:             <button id="btn-start-gk" style="background:linear-gradient(135deg, #00e5ff, #00b0ff); color:black; font-family:'Bangers'; font-size:1.5rem; padding:10px 40px; border:none; border-radius:8px; cursor:pointer; letter-spacing:2px; box-shadow:0 5px 15px rgba(0,229,255,0.4); transition:transform 0.2s;">�¡EMPEZAR!</button>
+4305:         `;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,49 @@
+Created At: 2026-07-30T02:21:27+02:00
+Completed At: 2026-07-30T02:21:27+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4482
+Total Bytes: 232944
+Showing lines 3690 to 3730
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3690:             setTimeout(() => {
+3691:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${currentTeamGoals} goles y encajaste ${goalsConceded}. Paraste ${saves} tiros. XP Total: ${matchXp}`);
+3692:             }, 1000);
+3693:             
+3694:             // Show room content again after engine closes
+3695:             document.getElementById('p2-room-content').style.display = 'block';
+3696:         }
+3697:         
+3698:         function nextShot() {
+3699:             if (currentShot >= totalShots) {
+3700:                 setTimeout(endMatch, 1000);
+3701:                 return;
+3702:             }
+3703:             
+3704:             // Chance for teammate to score before this shot
+3705:             if (currentTeamGoals < finalTeamGoals && Math.random() > 0.5) {
+3706:                 currentTeamGoals++;
+3707:                 
+3708:                 const roster = p2StratumPlayers.filter(p => p.team === "Tu Equipo (Z)");
+3709:                 let scorer = null;
+3710:                 if(roster.length > 0) {
+3711:                     scorer = roster[Math.floor(Math.random() * roster.length)];
+3712:                     scorer.goals++;
+3713:                 }
+3714:                 
+3715:                 showNotification(`¡GOOOL DE ${scorer ? scorer.name : 'TU EQUIPO'}!`, "success", 2000);
+3716:                 if(scorer) showScorerPopup(scorer, true);
+3717:             }
+3718:             
+3719:             currentShot++;
+3720:             updateHUD();
+3721:             
+3722:             let startX = 35 + Math.random() * 30; // 35% to 65%
+3723:             let startY = 45 + Math.random() * 5;  // 45% to 50%
+3724:             
+3725:             setTimeout(() => playScenario(startX, startY), 1000);
+3726:         }
+3727:         
+3728:         function playScenario(startX, startY) {
+3729:             const ball = document.createElement('img');
+3730:             ball.src = 'assets/Match/Balon.png';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

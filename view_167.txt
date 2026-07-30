@@ -1,0 +1,39 @@
+Created At: 2026-07-30T03:02:17+02:00
+Completed At: 2026-07-30T03:02:17+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4599
+Total Bytes: 239035
+Showing lines 270 to 300
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+270:         cont.innerHTML = '';
+271:         Object.entries(stats).forEach(([n,v]) => {
+272:             const c = v>=65?'#4cd137':v>=55?'#fbc531':v>=45?'#e67e22':'#e74c3c';
+273:             cont.innerHTML += `<div class="stat-row"><span class="stat-name">${n}</span><div class="stat-bar"><div class="stat-bar-fill" style="width:${v}%;background:${c}"></div></div><span class="stat-num">${v}</span></div>`;
+274:         });
+275:     }
+276:     document.getElementById('btn-select').addEventListener('click', () => {
+277:         if (!selectedPlayer) return;
+278:         selectionScreen.style.opacity = '0';
+279:         setTimeout(() => { 
+280:             selectionScreen.classList.add('hidden'); 
+281:             
+282:             if (window.gamePhase === 1) {
+283:                 // Modo Carrera: Hokkaido
+284:                 startPhase1();
+285:             } else {
+286:                 // Blue Lock (Fase 2 normal)
+287:                 cinematicScreen.classList.remove('hidden');
+288:                 void cinematicScreen.offsetWidth;
+289:                 cinematicScreen.style.opacity = '1';
+290:                 
+291:                 setTimeout(() => { 
+292:                     document.querySelector('.cinematic-speaker')?.classList.add('visible'); 
+293:                     document.querySelector('.cinematic-dialogue')?.classList.add('visible'); 
+294:                     dIdx = 0;
+295:                     showDlg(0); 
+296:                 }, 500);
+297:             }
+298:         }, 800);
+299:     });
+300: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,139 @@
+Created At: 2026-07-30T02:21:56+02:00
+Completed At: 2026-07-30T02:21:56+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4483
+Total Bytes: 233026
+Showing lines 1950 to 2080
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1950:                 openMyStatsViewer();
+1951:             };   
+1952:             
+1953:             // Render equipped skills
+1954:             const skillContainer = document.getElementById('p2-equipped-skills-container');
+1955:             p2EquippedSkills.forEach((sk, idx) => {
+1956:                 const box = document.createElement('div');
+1957:                 box.style.cssText = "width:120px; height:55px; border:1px solid #00e5ff; background:rgba(0,0,0,0.5); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; text-align:center; padding:5px; font-family:'Nunito',sans-serif;";
+1958:                 box.textContent = sk ? sk : '—';
+1959:                 if (sk) {
+1960:                     box.style.background = 'linear-gradient(45deg, #004d40, #00bfa5)';
+1961:                     box.style.color = '#fff';
+1962:                     box.style.fontWeight = 'bold';
+1963:                 } else {
+1964:                     box.style.color = '#555';
+1965:                 }
+1966:                 skillContainer.appendChild(box);
+1967:             });
+1968:             
+1969:         } else if (roomName === 'Comedor') {
+1970:             setRoomBg(`${basePath}Cocina.jpeg`);
+1971:             
+1972:             // Hide the central panel for this room
+1973:             document.getElementById('p2-room-content').style.display = 'none';
+1974:             
+1975:             // Add Shop icon (TiendaIcono.png) - near taquilla 1
+1976:             const shopIcon = document.createElement('div');
+1977:             shopIcon.className = 'p2-shop-icon p2-scene-overlay';
+1978:             shopIcon.style.cssText = 'left:28%; top:22%; width:120px; height:120px; cursor:pointer;';
+1979:             shopIcon.innerHTML = `<img src="${basePath}TiendaIcono.png" style="width:100%; height:100%; animation:float-idle 3s ease-in-out infinite;" draggable="false">`;
+1980:             shopIcon.onclick = () => { openShopMenu(); };
+1981:             p2LobbyScreen.appendChild(shopIcon);
+1982:             
+1983:             // Place NPCs sitting on chairs - 4 chairs visible
+1984:             spawnSceneNPCs(roomName, [
+1985:                 {x: 5,  y: 27, w: 220, h: 460},
+1986:                 {x: 20, y: 47, w: 350, h: 460},
+1987:                 {x: 65, y: 47, w: 350, h: 460},
+1988:                 {x: 85, y: 27, w: 220, h: 460}
+1989:             ]);
+1990:             
+1991:         } else if (roomName === 'Gimnasio') {
+1992:             setRoomBg(`${basePath}Gimnasio.jpeg`);
+1993:             
+1994:             // Hide central panel
+1995:             document.getElementById('p2-room-content').style.display = 'none';
+1996:             
+1997:             // Spawn NPC on the right treadmill
+1998:             spawnSceneNPCs(roomName, [
+1999:                 {x: 23, y: 20, w: 200, h: 200} // right treadmill head area
+2000:             ]);
+2001:             
+2002:             // Panelmaquina overlay on right treadmill (z-index priority)
+2003:             const panel = document.createElement('div');
+2004:             panel.className = 'p2-scene-overlay';
+2005:             panel.style.cssText = 'right:67%; top:29%; width:250px; height:250px; pointer-events:none; z-index:30;';
+2006:             panel.innerHTML = `<img src="${basePath}Panelmaquina.png" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+2007:             p2LobbyScreen.appendChild(panel);
+2008:             
+2009:             // Cinta Button
+2010:             const cintaBtn = document.createElement('div');
+2011:             cintaBtn.className = 'p2-scene-overlay';
+2012:             cintaBtn.style.cssText = 'left:25%; top:50%; width:250px; height:250px; cursor:pointer; transition:transform 0.2s; z-index:50;';
+2013:             cintaBtn.innerHTML = `<img src="${basePath}Cinta.png" draggable="false" style="width:55%; height:55%; object-fit:contain; filter:drop-shadow(0 0 15px rgba(0,229,255,0.6));">`;
+2014:             cintaBtn.onmouseenter = () => { cintaBtn.style.transform = 'scale(1.1)'; };
+2015:             cintaBtn.onmouseleave = () => { cintaBtn.style.transform = 'scale(1)'; };
+2016:             cintaBtn.onclick = () => { startCintaMinigame(); };
+2017:             p2LobbyScreen.appendChild(cintaBtn);
+2018:             
+2019:             // Fuerza Button
+2020:             const fuerzaBtn = document.createElement('div');
+2021:             fuerzaBtn.className = 'p2-scene-overlay';
+2022:             fuerzaBtn.style.cssText = 'right:31%; bottom:20%; width:250px; height:250px; cursor:pointer; transition:transform 0.2s; z-index:50;';
+2023:             fuerzaBtn.innerHTML = `<img src="${basePath}Fuerza.png" draggable="false" style="width:55%; height:55%; object-fit:contain; filter:drop-shadow(0 0 15px rgba(255,68,68,0.6));">`;
+2024:             fuerzaBtn.onmouseenter = () => { fuerzaBtn.style.transform = 'scale(1.1)'; };
+2025:             fuerzaBtn.onmouseleave = () => { fuerzaBtn.style.transform = 'scale(1)'; };
+2026:             fuerzaBtn.onclick = () => { startPesasMinigame(); };
+2027:             p2LobbyScreen.appendChild(fuerzaBtn);
+2028:             
+2029:         } else if (roomName === 'Campo') {
+2030:             setRoomBg(`${basePath}HabitacionCampo.jpeg`);
+2031:             document.getElementById('p2-room-content').style.display = 'none';
+2032:             p2RoomBody.innerHTML = '';
+2033:             
+2034:             // Get the daily NPC for the field
+2035:             const roomNPCs = p2DailyNPCs['Campo'] || [];
+2036:             const availableNPCs = roomNPCs.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+2037:             const npc = availableNPCs.length > 0 ? availableNPCs[0] : null;
+2038:             
+2039:             if (npc) {
+2040:                 // NPC Container
+2041:                 const npcContainer = document.createElement('div');
+2042:                 npcContainer.className = 'p2-scene-overlay';
+2043:                 npcContainer.style.cssText = 'left:35%; bottom:15%; width:600px; height:600px; cursor:pointer; z-index:15;';
+2044:                 
+2045:                 // Body
+2046:                 const bodyImg = document.createElement('img');
+2047:                 bodyImg.src = `${basePath}Sincabeza.png`;
+2048:                 bodyImg.draggable = false;
+2049:                 bodyImg.style.cssText = 'position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; z-index:1;';
+2050:                 npcContainer.appendChild(bodyImg);
+2051:                 
+2052:                 // Head
+2053:                 const headImg = document.createElement('img');
+2054:                 headImg.src = npc.image;
+2055:                 headImg.draggable = false;
+2056:                 headImg.style.cssText = 'position:absolute; left:49.5%; top:6%; width:135px; height:135px; transform:translate(-50%, 0); object-fit:contain; z-index:2;';
+2057:                 npcContainer.appendChild(headImg);
+2058:                 
+2059:                 npcContainer.onclick = () => { openDialogue(npc); };
+2060:                 p2LobbyScreen.appendChild(npcContainer);
+2061:             }
+2062:             
+2063:             // Icon ChutPrac (Shooting)
+2064:             const btnChut = document.createElement('div');
+2065:             btnChut.className = 'p2-scene-overlay';
+2066:             btnChut.style.cssText = 'left:20%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+2067:             btnChut.innerHTML = `<img src="${basePath}ChutPrac.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f); transition: transform 0.2s;">`;
+2068:             btnChut.onclick = () => { startChutMinigame(); };
+2069:             p2LobbyScreen.appendChild(btnChut);
+2070:             
+2071:             // Icon Conos (Dribbling)
+2072:             const btnConos = document.createElement('div');
+2073:             btnConos.className = 'p2-scene-overlay';
+2074:             btnConos.style.cssText = 'left:80%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+2075:             btnConos.innerHTML = `<img src="${basePath}Conos.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+2076:             btnConos.onclick = () => { startRegateMinigame(); };
+2077:             p2LobbyScreen.appendChild(btnConos);
+2078:             
+2079:         } else if (roomName === 'Sala TV') {
+2080:             // Aquí puedes cambiar la posición (x, y) y el tamaño (w, h) de los NPCs en la Sala TV
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,69 @@
+Created At: 2026-07-29T16:22:11+02:00
+Completed At: 2026-07-29T16:22:11+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3645
+Total Bytes: 187265
+Showing lines 2935 to 2995
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2935:         });
+2936:     };
+2937:     
+2938:     window.tacticsMakeChoice = function(shift) {
+2939:         window.tacticsDetroitState.affinity += shift;
+2940:         window.tacticsDetroitState.affinity = Math.max(0, Math.min(100, window.tacticsDetroitState.affinity));
+2941:         window.tacticsDetroitState.turn++;
+2942:         updateTacticsDetroitUI();
+2943:     };
+2944: 
+2945:     window.updateTacticsDetroitUI = function() {
+2946:         const state = window.tacticsDetroitState;
+2947:         const cursor = document.getElementById('detroit-cursor');
+2948:         const text = document.getElementById('detroit-text');
+2949:         const options = document.getElementById('detroit-options');
+2950:         
+2951:         if (!cursor) return;
+2952:         
+2953:         // Visual update
+2954:         cursor.style.left = `${state.affinity}%`;
+2955:         
+2956:         if (state.turn === 0) {
+2957:             text.innerHTML = `<b>Compañeros:</b> Ni lo sueñes, novato. Hoy juego yo de delantero. Tú vete a la defensa a mirar cómo marco goles.`;
+2958:             options.innerHTML = `
+2959:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(20)"><span>"Te vas a comer el banquillo. El '9' es mío."</span></button>
+2960:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(10)"><span>"Con mi talento, marcaré hasta cojo."</span></button>
+2961:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-15)"><span>"Bueno... igual puedo jugar en el medio campo y pasártela."</span></button>
+2962:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-35)"><span>"Vale, me pondré atrás para que te luzcas..."</span></button>
+2963:             `;
+2964:         } else if (state.turn === 1) {
+2965:             text.innerHTML = `<b>Compañeros:</b> ¡Ja! Si juegas tan arriba, nos van a golear a la contra porque no bajas a defender ni por equivocación.`;
+2966:             options.innerHTML = `
+2967:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15)"><span>"¿Para qué defender si vamos a ganar 5-0 con mis goles?"</span></button>
+2968:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-10)"><span>"Tranquilo, bajaré a recibir al mediocampo si hace falta."</span></button>
+2969:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-25)"><span>"Quizás tengas razón... me quedaré cerrando el muro atrás."</span></button>
+2970:             `;
+2971:         } else if (state.turn === 2) {
+2972:             text.innerHTML = `<b>Compañeros:</b> Me da igual lo que digas. ¡Convénceme de que mereces el puesto o te vas de portero castigado!`;
+2973:             options.innerHTML = `
+2974:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15)"><span>"Mírame a los ojos. Soy la estrella de este equipo. Asúmelo."</span></button>
+2975:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-15)"><span>"Venga, jugaré de '10' y te dejaré el protagonismo arriba."</span></button>
+2976:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(40)"><span>"Paso de discutir. Me pongo los guantes y tú haz el ridículo."</span></button>
+2977:             `;
+2978:         } else if (state.turn === 3) {
+2979:             let finalPos = 'DEF';
+2980:             if(state.affinity >= 25) finalPos = 'MED';
+2981:             if(state.affinity >= 50) finalPos = 'DEL';
+2982:             if(state.affinity >= 75) finalPos = 'POR';
+2983:             
+2984:             let posName = "Defensa";
+2985:             if(finalPos === 'MED') posName = "Centrocampista";
+2986:             if(finalPos === 'DEL') posName = "Delantero";
+2987:             if(finalPos === 'POR') posName = "Portero";
+2988:             
+2989:             text.innerHTML = `<b>Compañeros:</b> Vale, tú ganas. Hoy jugarás de ${posName}. ¡Más te vale no pifiarla!`;
+2990:             options.innerHTML = `
+2991:                 <button class="p2-action-btn" onclick="startMatch('${finalPos}')" style="border-color:#00e5ff; color:#00e5ff;"><span>⚽ SALTAR AL CAMPO</span></button>
+2992:             `;
+2993:         }
+2994:     };
+2995:     
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

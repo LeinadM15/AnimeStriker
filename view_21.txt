@@ -1,0 +1,269 @@
+Created At: 2026-07-29T02:30:43+02:00
+Completed At: 2026-07-29T02:30:43+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3433
+Total Bytes: 174707
+Showing lines 3170 to 3430
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3170:     // Check for save on startup
+3171:     if (localStorage.getItem('webfutbol_story_save')) {
+3172:         const btnLoad = document.getElementById('btn-load-game');
+3173:         if (btnLoad) btnLoad.style.display = 'inline-block';
+3174:     }
+3175: 
+3176:     window.startRegateMinigame = function() {
+3177:         if (!checkStamina(35)) return;
+3178:         
+3179:         const overlay = document.createElement('div');
+3180:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/MinijuegoRegate.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden;';
+3181:         
+3182:         const topBar = document.createElement('div');
+3183:         topBar.style.cssText = 'padding:20px; display:flex; justify-content:space-between; font-family:"Bangers",cursive; font-size:2rem; color:#00e5ff; text-shadow:0 0 10px #000; z-index:10;';
+3184:         
+3185:         const scoreEl = document.createElement('div'); scoreEl.innerText = 'Esquivados: 0';
+3186:         const timeEl = document.createElement('div'); timeEl.innerText = 'Tiempo: 30s';
+3187:         topBar.appendChild(scoreEl); topBar.appendChild(timeEl);
+3188:         overlay.appendChild(topBar);
+3189:         
+3190:         const gameArea = document.createElement('div');
+3191:         gameArea.style.cssText = 'flex:1; position:relative; width:100%; max-width:800px; margin:0 auto; overflow:hidden;';
+3192:         overlay.appendChild(gameArea);
+3193:         
+3194:         const player = document.createElement('div');
+3195:         player.style.cssText = 'position:absolute; bottom:20px; width:80px; height:80px; transition:left 0.15s ease-out;';
+3196:         player.innerHTML = `<img src="${myPlayer.image}" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+3197:         gameArea.appendChild(player);
+3198:         
+3199:         const lanes = [20, 50, 80];
+3200:         let currentLane = 1;
+3201:         const updatePlayerPos = () => { player.style.left = `calc(${lanes[currentLane]}% - 40px)`; };
+3202:         updatePlayerPos();
+3203:         
+3204:         const controls = document.createElement('div');
+3205:         controls.style.cssText = 'position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:150px; z-index:10; pointer-events:none;';
+3206:         const btnLeft = document.createElement('button'); btnLeft.innerText = '⬅️ IZQ';
+3207:         btnLeft.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3208:         btnLeft.onmousedown = () => { btnLeft.style.background = 'rgba(0,229,255,0.4)'; if(currentLane > 0) currentLane--; updatePlayerPos(); };
+3209:         btnLeft.onmouseup = () => btnLeft.style.background = 'rgba(0,0,0,0.5)';
+3210:         btnLeft.ontouchstart = btnLeft.onmousedown;
+3211:         btnLeft.ontouchend = btnLeft.onmouseup;
+3212:         
+3213:         const btnRight = document.createElement('button'); btnRight.innerText = 'DER ➡️';
+3214:         btnRight.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3215:         btnRight.onmousedown = () => { btnRight.style.background = 'rgba(0,229,255,0.4)'; if(currentLane < 2) currentLane++; updatePlayerPos(); };
+3216:         btnRight.onmouseup = () => btnRight.style.background = 'rgba(0,0,0,0.5)';
+3217:         btnRight.ontouchstart = btnRight.onmousedown;
+3218:         btnRight.ontouchend = btnRight.onmouseup;
+3219:         
+3220:         controls.appendChild(btnLeft); controls.appendChild(btnRight);
+3221:         overlay.appendChild(controls);
+3222:         
+3223:         document.body.appendChild(overlay);
+3224:         
+3225:         const handleKey = (e) => {
+3226:             if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') { btnLeft.onmousedown(); setTimeout(btnLeft.onmouseup, 100); }
+3227:             if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') { btnRight.onmousedown(); setTimeout(btnRight.onmouseup, 100); }
+3228:         };
+3229:         window.addEventListener('keydown', handleKey);
+3230:         
+3231:         let time = 30;
+3232:         let score = 0;
+3233:         let speed = 7;
+3234:         let obstacles = [];
+3235:         let isGameOver = false;
+3236:         let spawnTimer = 0;
+3237:         let spawnRate = 50;
+3238:         
+3239:         setTimeout(() => {
+3240:             const gameLoop = setInterval(() => {
+3241:                 if (isGameOver) return;
+3242:             spawnTimer++;
+3243:             if (spawnTimer >= spawnRate) {
+3244:                 spawnTimer = 0;
+3245:                 let num = Math.random() > 0.8 ? 2 : 1;
+3246:                 let avail = [0, 1, 2];
+3247:                 for(let i=0; i<num; i++) {
+3248:                     let r = Math.floor(Math.random() * avail.length);
+3249:                     let lane = avail.splice(r, 1)[0];
+3250:                     let obs = document.createElement('div');
+3251:                     obs.style.cssText = `position:absolute; top:-100px; width:60px; height:80px;`;
+3252:                     obs.innerHTML = `<img src="assets/Historia/Habitaciones/Barrera.png" style="width:100%; height:100%; object-fit:contain;">`;
+3253:                     obs.style.left = `calc(${lanes[lane]}% - 30px)`;
+3254:                     gameArea.appendChild(obs);
+3255:                     obstacles.push({ el: obs, y: -100, lane: lane, passed: false });
+3256:                 }
+3257:                 if (spawnRate > 15) spawnRate -= 2;
+3258:                 speed += 0.2;
+3259:             }
+3260:             
+3261:             let playerTop = gameArea.offsetHeight - 100;
+3262:             let playerBottom = gameArea.offsetHeight - 20;
+3263:             
+3264:             for (let i = obstacles.length - 1; i >= 0; i--) {
+3265:                 let obs = obstacles[i];
+3266:                 obs.y += speed;
+3267:                 obs.el.style.top = obs.y + 'px';
+3268:                 
+3269:                 let obsTop = obs.y;
+3270:                 let obsBottom = obs.y + 80;
+3271:                 
+3272:                 if (obs.lane === currentLane && obsBottom > playerTop + 20 && obsTop < playerBottom - 20) {
+3273:                     endGame(false);
+3274:                     break;
+3275:                 }
+3276:                 if (obs.y > playerBottom && !obs.passed) {
+3277:                     obs.passed = true;
+3278:                     score++;
+3279:                     scoreEl.innerText = `Esquivados: ${score}`;
+3280:                 }
+3281:                 if (obs.y > gameArea.offsetHeight + 100) {
+3282:                     obs.el.remove();
+3283:                     obstacles.splice(i, 1);
+3284:                 }
+3285:             }
+3286:         }, 1000/60);
+3287:         
+3288:         const timeLoop = setInterval(() => {
+3289:             if (isGameOver) return;
+3290:             time--;
+3291:             timeEl.innerText = `Tiempo: ${time}s`;
+3292:             if (time <= 0) endGame(true);
+3293:         }, 1000);
+3294:         }, 100);
+3295:         
+3296:         function endGame(won) {
+3297:             isGameOver = true;
+3298:             clearInterval(gameLoop); clearInterval(timeLoop);
+3299:             window.removeEventListener('keydown', handleKey);
+3300:             
+3301:             consumeStamina(35);
+3302:             let expGained = won ? 15 + Math.floor(score/2) : Math.floor(score/2);
+3303:             if (expGained < 5) expGained = 5;
+3304:             
+3305:             overlay.remove();
+3306:             showTrainingResultModal(null, 'dribbling', 'Regate de Barreras', expGained, won ? '¡Tiempo cumplido! Excelente agilidad.' : '¡Choque! Cuidado con las barreras.', '#00e5ff');
+3307:         }
+3308:     };
+3309: 
+3310:     window.startChutMinigame = function() {
+3311:         if (!checkStamina(35)) return;
+3312:         
+3313:         const overlay = document.createElement('div');
+3314:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/Minijuegochut.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden; cursor:crosshair;';
+3315:         
+3316:         const topBar = document.createElement('div');
+3317:         topBar.style.cssText = 'padding:20px; display:flex; justify-content:space-between; font-family:"Bangers",cursive; font-size:2rem; color:#ff007f; text-shadow:0 0 10px #000; z-index:10; pointer-events:none;';
+3318:         
+3319:         const scoreEl = document.createElement('div'); scoreEl.innerText = 'Puntos: 0';
+3320:         const timeEl = document.createElement('div'); timeEl.innerText = 'Tiempo: 20s';
+3321:         topBar.appendChild(scoreEl); topBar.appendChild(timeEl);
+3322:         overlay.appendChild(topBar);
+3323:         
+3324:         const gameArea = document.createElement('div');
+3325:         gameArea.style.cssText = 'flex:1; position:relative; width:100%; max-width:900px; margin:0 auto; overflow:hidden;';
+3326:         overlay.appendChild(gameArea);
+3327:         
+3328:         document.body.appendChild(overlay);
+3329:         
+3330:         let time = 20;
+3331:         let score = 0;
+3332:         let isGameOver = false;
+3333:         
+3334:         const spawnTarget = () => {
+3335:             if (isGameOver) return;
+3336:             const target = document.createElement('div');
+3337:             
+3338:             let isSmall = Math.random() > 0.7;
+3339:             let size = isSmall ? 50 : 100;
+3340:             let points = isSmall ? 3 : 1;
+3341:             let duration = isSmall ? 800 : 1500;
+3342:             
+3343:             target.style.cssText = `
+3344:                 position:absolute; width:${size}px; height:${size}px; border-radius:50%;
+3345:                 background:radial-gradient(circle, #ff007f 20%, white 25%, white 45%, #ff007f 50%, #ff007f 70%, white 75%, white 95%, #ff007f 100%);
+3346:                 box-shadow:0 0 15px rgba(255,0,127,0.8);
+3347:                 cursor:crosshair; transition:transform 0.1s;
+3348:             `;
+3349:             
+3350:             let maxX = gameArea.offsetWidth * 0.7 - size;
+3351:             let maxY = gameArea.offsetHeight * 0.4 - size;
+3352:             let offsetX = gameArea.offsetWidth * 0.15;
+3353:             let offsetY = gameArea.offsetHeight * 0.4;
+3354:             
+3355:             target.style.left = Math.floor(offsetX + Math.random() * (maxX || window.innerWidth * 0.7 - size)) + 'px';
+3356:             target.style.top = Math.floor(offsetY + Math.random() * (maxY || window.innerHeight * 0.4 - size)) + 'px';
+3357:             
+3358:             target.animate([{transform:'scale(0)'}, {transform:'scale(1)'}], {duration:200, fill:'forwards'});
+3359:             
+3360:             let clicked = false;
+3361:             target.onmousedown = () => {
+3362:                 if (clicked) return;
+3363:                 clicked = true;
+3364:                 
+3365:                 // Spawn a ball
+3366:                 let ball = document.createElement('div');
+3367:                 ball.innerText = '⚽';
+3368:                 ball.style.cssText = `position:absolute; left:50%; bottom:20px; font-size:60px; z-index:50; pointer-events:none; transition:all 0.3s ease-out;`;
+3369:                 gameArea.appendChild(ball);
+3370:                 
+3371:                 // Force reflow
+3372:                 ball.getBoundingClientRect();
+3373:                 
+3374:                 // Move ball to target and shrink
+3375:                 ball.style.left = (target.offsetLeft + size/2 - 10) + 'px';
+3376:                 ball.style.top = (target.offsetTop + size/2 - 10) + 'px';
+3377:                 ball.style.bottom = 'auto'; // Disable bottom since we are setting top
+3378:                 ball.style.fontSize = '20px';
+3379:                 
+3380:                 setTimeout(() => {
+3381:                     ball.remove();
+3382:                     score += points;
+3383:                     scoreEl.innerText = `Puntos: ${score}`;
+3384:                     
+3385:                     let pop = document.createElement('div');
+3386:                     pop.innerText = `+${points}`;
+3387:                     pop.style.cssText = `position:absolute; left:${target.style.left}; top:${target.style.top}; color:#00ff00; font-family:"Bangers"; font-size:3rem; text-shadow:0 0 5px #000; z-index:20; pointer-events:none;`;
+3388:                     gameArea.appendChild(pop);
+3389:                     pop.animate([{transform:'translateY(0)', opacity:1}, {transform:'translateY(-30px)', opacity:0}], {duration:500, fill:'forwards'}).onfinish = () => pop.remove();
+3390:                     
+3391:                     target.remove();
+3392:                     
+3393:                     // Spawn extra targets as you progress
+3394:                     if (score > 0 && (score % 4 === 0 || score % 5 === 0)) {
+3395:                         setTimeout(spawnTarget, 200);
+3396:                     }
+3397:                 }, 300);
+3398:             };
+3399:             
+3400:             gameArea.appendChild(target);
+3401:             
+3402:             setTimeout(() => {
+3403:                 if (!clicked && target.parentNode) {
+3404:                     target.animate([{transform:'scale(1)'}, {transform:'scale(0)'}], {duration:200, fill:'forwards'}).onfinish = () => target.remove();
+3405:                 }
+3406:             }, duration);
+3407:             
+3408:             let nextSpawn = Math.max(300, 1000 - (20 - time)*30);
+3409:             setTimeout(spawnTarget, nextSpawn);
+3410:         };
+3411:         
+3412:         // Timeout needed to wait for layout engine to compute gameArea width
+3413:         setTimeout(spawnTarget, 100);
+3414:         
+3415:         const timeLoop = setInterval(() => {
+3416:             if (isGameOver) return;
+3417:             time--;
+3418:             timeEl.innerText = `Tiempo: ${time}s`;
+3419:             if (time <= 0) {
+3420:                 isGameOver = true;
+3421:                 clearInterval(timeLoop);
+3422:                 
+3423:                 consumeStamina(35);
+3424:                 let expGained = Math.max(5, Math.floor(score * 1.5));
+3425:                 overlay.remove();
+3426:                 showTrainingResultModal(null, 'shooting', 'Tiro de Precisión', expGained, '¡Sesión de tiro completada!', '#ff007f');
+3427:             }
+3428:         }, 1000);
+3429:     };
+3430: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

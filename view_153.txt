@@ -1,0 +1,79 @@
+Created At: 2026-07-30T02:21:50+02:00
+Completed At: 2026-07-30T02:21:50+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4483
+Total Bytes: 233026
+Showing lines 1880 to 1950
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1880:             div.className = 'p2-scene-overlay';
+1881:             div.style.cssText = `left:${pos.x}%; top:${pos.y}%; width:${pos.w || 80}px; height:${pos.h || 100}px; cursor:pointer;`;
+1882:             div.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+1883:             div.onclick = () => { openDialogue(npc); };
+1884:             p2LobbyScreen.appendChild(div);
+1885:         });
+1886:     }
+1887:     
+1888:     function renderP2Room() {
+1889:         const roomName = p2Rooms[p2CurrentRoom];
+1890:         p2RoomTitle.textContent = roomName.toUpperCase();
+1891:         p2RoomBody.innerHTML = '';
+1892:         
+1893:         // Clear NPCs and scene overlays
+1894:         p2NpcContainer.innerHTML = '';
+1895:         document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img, #tactics-detroit-overlay, #tactics-pulse, #tactics-start-btn').forEach(el => el.remove());
+1896:         
+1897:         // Ensure central panel is visible by default
+1898:         document.getElementById('p2-room-content').style.display = 'block';
+1899:         
+1900:         const basePath = 'assets/Historia/Habitaciones/';
+1901:         
+1902:         function setRoomBg(src) {
+1903:             p2LobbyScreen.style.backgroundImage = 'none';
+1904:             const img = document.createElement('img');
+1905:             img.className = 'p2-bg-img';
+1906:             img.src = src;
+1907:             img.draggable = false;
+1908:             p2LobbyScreen.insertBefore(img, p2LobbyScreen.firstChild);
+1909:         }
+1910:         
+1911:         if (roomName === 'Habitación') {
+1912:             setRoomBg(`${basePath}Habitacion.jpeg`);
+1913:             document.getElementById('p2-room-content').style.display = 'none';
+1914:             
+1915:             // Botón Dormir
+1916:             const btnDormir = document.createElement('div');
+1917:             btnDormir.className = 'p2-scene-overlay';
+1918:             btnDormir.id = 'btn-dormir';
+1919:             // AQUÍ MUEVES LA CAMA (top y left)
+1920:             btnDormir.style.cssText = 'top: 60%; left: 25%; transform: translate(-50%,-50%); z-index:10;';
+1921:             btnDormir.innerHTML = `<img src="assets/Historia/Habitaciones/Cama.png" alt="Dormir" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #fff);">`;
+1922: 
+1923:             const btnAmistades = document.createElement('div');
+1924:             btnAmistades.className = 'p2-scene-overlay';
+1925:             btnAmistades.id = 'btn-amistades';
+1926:             // AQUÍ MUEVES EL ICONO DE AMISTAD (top y left)
+1927:             btnAmistades.style.cssText = 'top: 60%; left: 50%; transform: translate(-50%,-50%); z-index:10;';
+1928:             btnAmistades.innerHTML = `<img src="assets/Historia/Habitaciones/Amistad.png" alt="Amistades" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f);">`;
+1929: 
+1930:             const btnStats = document.createElement('div');
+1931:             btnStats.className = 'p2-scene-overlay';
+1932:             btnStats.id = 'btn-stats';
+1933:             // AQUÍ MUEVES EL ICONO DE PERSONAJE (top y left)
+1934:             btnStats.style.cssText = 'top: 60%; left: 75%; transform: translate(-50%,-50%); z-index:10;';
+1935:             btnStats.innerHTML = `<img src="assets/Historia/Habitaciones/Personaje.png" alt="Stats" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+1936:             
+1937:             p2LobbyScreen.appendChild(btnDormir);
+1938:             p2LobbyScreen.appendChild(btnAmistades);
+1939:             p2LobbyScreen.appendChild(btnStats);
+1940:             p2RoomBody.innerHTML = '';
+1941:             
+1942:             document.getElementById('btn-dormir').onclick = () => {
+1943:                 if (p2Stats.day % 3 === 0) { showNotification('¡Hoy hay partido! Debes jugarlo antes de ir a dormir (Sala de Tácticas).', 'warning'); return; }
+1944:                 advanceP2Day(false);
+1945:             };
+1946:             document.getElementById('btn-amistades').onclick = () => {
+1947:                 openFriendshipViewer();
+1948:             };
+1949:             document.getElementById('btn-stats').onclick = () => {
+1950:                 openMyStatsViewer();
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

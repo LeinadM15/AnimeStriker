@@ -1,0 +1,49 @@
+Created At: 2026-07-30T17:11:18+02:00
+Completed At: 2026-07-30T17:11:18+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5063
+Total Bytes: 266156
+Showing lines 2470 to 2510
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2470:             fuerzaBtn.onmouseleave = () => { fuerzaBtn.style.transform = 'scale(1)'; };
+2471:             fuerzaBtn.onclick = () => { startPesasMinigame(); };
+2472:             p2LobbyScreen.appendChild(fuerzaBtn);
+2473:             
+2474:         } else if (roomName === 'Campo') {
+2475:             setRoomBg(`${basePath}HabitacionCampo.jpeg`);
+2476:             document.getElementById('p2-room-content').style.display = 'none';
+2477:             p2RoomBody.innerHTML = '';
+2478:             
+2479:             // Get the daily NPC for the field
+2480:             const roomNPCs = p2DailyNPCs['Campo'] || [];
+2481:             const availableNPCs = roomNPCs.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+2482:             const npc = availableNPCs.length > 0 ? availableNPCs[0] : null;
+2483:             
+2484:             if (npc) {
+2485:                 // NPC Container
+2486:                 const npcContainer = document.createElement('div');
+2487:                 npcContainer.className = 'p2-scene-overlay';
+2488:                 npcContainer.style.cssText = 'left:35%; bottom:15%; width:600px; height:600px; cursor:pointer; z-index:15;';
+2489:                 
+2490:                 // Body
+2491:                 const bodyImg = document.createElement('img');
+2492:                 bodyImg.src = `${basePath}Sincabeza.png`;
+2493:                 bodyImg.draggable = false;
+2494:                 bodyImg.style.cssText = 'position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; z-index:1;';
+2495:                 npcContainer.appendChild(bodyImg);
+2496:                 
+2497:                 // Head
+2498:                 const headImg = document.createElement('img');
+2499:                 headImg.src = npc.image;
+2500:                 headImg.draggable = false;
+2501:                 headImg.style.cssText = 'position:absolute; left:49.5%; top:6%; width:135px; height:135px; transform:translate(-50%, 0); object-fit:contain; z-index:2;';
+2502:                 npcContainer.appendChild(headImg);
+2503:                 
+2504:                 npcContainer.onclick = () => { openDialogue(npc); };
+2505:                 p2LobbyScreen.appendChild(npcContainer);
+2506:             }
+2507:             
+2508:             // Icon ChutPrac (Shooting)
+2509:             const btnChut = document.createElement('div');
+2510:             btnChut.className = 'p2-scene-overlay';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,21 @@
+Created At: 2026-07-30T20:25:44+02:00
+Completed At: 2026-07-30T20:25:44+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 148 to 160
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+148:     // CINEMATIC
+149:     // =====================================================
+150:     const cinematicScreen = document.getElementById('cinematic-screen');
+151:     const selectionScreen = document.getElementById('player-selection-screen');
+152:     const dialogues = [
+153:         { speaker:"Ego Jinpachi", text:"El fútbol japonés necesita un cambio. Nuestro país nunca ganará un Mundial... a menos que creemos al delantero más egoísta del mundo." },
+154:         { speaker:"Ego Jinpachi", text:"He reunido a 300 de los mejores delanteros jóvenes de Japón en esta instalación. Blue Lock. Solo uno sobrevivirá." },
+155:         { speaker:"Ego Jinpachi", text:"Â¿Estás listo para demostrar que eres el mejor? Olvida el trabajo en equipo. Olvida el fair play. Aquí solo importa una cosa: marcar goles." },
+156:         { speaker:"Ego Jinpachi", text:"Has sido seleccionado. Tu media ha sido recalculada. A partir de ahora, empezarás desde abajo. Demuéstrame que mereces sobrevivir en Blue Lock." }
+157:     ];
+158:     let dIdx = 0, isTyping = false, typeTimer = null;
+159: 
+160:     function typeText(el, text, speed=25) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

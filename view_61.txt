@@ -1,0 +1,49 @@
+Created At: 2026-07-29T16:36:05+02:00
+Completed At: 2026-07-29T16:36:05+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3773
+Total Bytes: 195024
+Showing lines 2000 to 2040
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2000:                 textBox.id = 'detroit-text';
+2001:                 textBox.style.cssText = 'width:80%; min-height:60px; background:rgba(0,0,0,0.6); border:1px solid rgba(0,229,255,0.5); border-radius:8px; padding:15px; color:#fff; font-size:1.1rem; margin-bottom:15px; text-align:center; text-shadow:0 0 5px #000; display:flex; align-items:center; justify-content:center;';
+2002:                 
+2003:                 const optionsBox = document.createElement('div');
+2004:                 optionsBox.id = 'detroit-options';
+2005:                 optionsBox.style.cssText = 'width:80%; display:flex; flex-direction:column; gap:10px;';
+2006:                 
+2007:                 dialogOverlay.appendChild(tensionContainer);
+2008:                 dialogOverlay.appendChild(tensionBarOuter);
+2009:                 dialogOverlay.appendChild(labels);
+2010:                 dialogOverlay.appendChild(barContainer);
+2011:                 dialogOverlay.appendChild(timerBarOuter);
+2012:                 dialogOverlay.appendChild(textBox);
+2013:                 dialogOverlay.appendChild(optionsBox);
+2014:                 p2LobbyScreen.appendChild(dialogOverlay);
+2015:                 
+2016:                 const startBtn = document.createElement('div');
+2017:                 startBtn.id = 'tactics-start-btn';
+2018:                 startBtn.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:100px; height:100px; cursor:pointer; z-index:50;';
+2019:                 // Animación sencilla de latido para el botón
+2020:                 startBtn.innerHTML = `
+2021:                     <style>
+2022:                         @keyframes iconPulse {
+2023:                             0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0,229,255,0.5)); }
+2024:                             50% { transform: scale(1.1); filter: drop-shadow(0 0 20px rgba(0,229,255,1)); }
+2025:                             100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0,229,255,0.5)); }
+2026:                         }
+2027:                     </style>
+2028:                     <img src="${basePath}Dialogotext.png" draggable="false" style="width:100%; height:100%; object-fit:contain; animation: iconPulse 1.5s infinite;">
+2029:                 `;
+2030:                 startBtn.onclick = () => {
+2031:                     startBtn.remove();
+2032:                     dialogOverlay.style.display = 'flex';
+2033:                     pulseOverlay.style.display = 'block';
+2034:                     updateTacticsDetroitUI();
+2035:                 };
+2036:                 p2LobbyScreen.appendChild(startBtn);
+2037:                 
+2038:                 window.tacticsDetroitState = { turn: 0, affinity: 50, tension: 0, timeLeft: 7.0, timerId: null };
+2039:             }
+2040:         } else if (roomName === 'Meditación') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

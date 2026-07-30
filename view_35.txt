@@ -1,0 +1,39 @@
+Created At: 2026-07-29T14:42:01+02:00
+Completed At: 2026-07-29T14:42:01+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3500
+Total Bytes: 177514
+Showing lines 1070 to 1100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1070:                 'Habitación': [],
+1071:                 'Comedor': [],
+1072:                 'Gimnasio': [],
+1073:                 'Meditación': [],
+1074:                 'Campo': [],
+1075:                 'Sala TV': [],
+1076:                 'Tácticas': []
+1077:             };
+1078:             return;
+1079:         }
+1080: 
+1081:         let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+1082:         let myTeamPool = pool.filter(p => p.team === myPlayer.team);
+1083:         
+1084:         let tacticasNpcs = [];
+1085:         for(let i=0; i<3; i++) {
+1086:             if (myTeamPool.length > 0) {
+1087:                 let npc = myTeamPool.pop();
+1088:                 tacticasNpcs.push(npc);
+1089:                 pool = pool.filter(p => p.id !== npc.id);
+1090:             }
+1091:         }
+1092:         
+1093:         p2DailyNPCs = {
+1094:             'Habitación': [],
+1095:             'Comedor': pool.splice(0, 4),
+1096:             'Gimnasio': pool.splice(0, 1),
+1097:             'Meditación': pool.splice(0, 1),
+1098:             'Campo': pool.splice(0, 2),
+1099:             'Sala TV': pool.splice(0, 3),
+1100:             'Tácticas': tacticasNpcs
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

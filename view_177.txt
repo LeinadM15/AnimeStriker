@@ -1,0 +1,109 @@
+Created At: 2026-07-30T15:43:26+02:00
+Completed At: 2026-07-30T15:43:26+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4963
+Total Bytes: 257559
+Showing lines 2600 to 2700
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2600:                 dialogOverlay.appendChild(tensionBarOuter);
+2601:                 dialogOverlay.appendChild(labels);
+2602:                 dialogOverlay.appendChild(barContainer);
+2603:                 dialogOverlay.appendChild(timerBarOuter);
+2604:                 dialogOverlay.appendChild(textBox);
+2605:                 dialogOverlay.appendChild(optionsBox);
+2606:                 p2LobbyScreen.appendChild(dialogOverlay);
+2607:                 
+2608:                 const startBtn = document.createElement('div');
+2609:                 startBtn.id = 'tactics-start-btn';
+2610:                 startBtn.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:100px; height:100px; cursor:pointer; z-index:50;';
+2611:                 // Animación sencilla de latido para el botón
+2612:                 startBtn.innerHTML = `
+2613:                     <style>
+2614:                         @keyframes iconPulse {
+2615:                             0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0,229,255,0.5)); }
+2616:                             50% { transform: scale(1.1); filter: drop-shadow(0 0 20px rgba(0,229,255,1)); }
+2617:                             100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0,229,255,0.5)); }
+2618:                         }
+2619:                     </style>
+2620:                     <img src="${basePath}Dialogotext.png" draggable="false" style="width:100%; height:100%; object-fit:contain; animation: iconPulse 1.5s infinite;">
+2621:                 `;
+2622:                 startBtn.onclick = () => {
+2623:                     startBtn.remove();
+2624:                     dialogOverlay.style.display = 'flex';
+2625:                     pulseOverlay.style.display = 'block';
+2626:                     updateTacticsDetroitUI();
+2627:                 };
+2628:                 p2LobbyScreen.appendChild(startBtn);
+2629:                 
+2630:                 window.tacticsDetroitState = { turn: 0, affinity: 50, tension: 0, timeLeft: 7.0, timerId: null };
+2631:             }
+2632:         } else if (roomName === 'Meditación') {
+2633:             setRoomBg(`${basePath}Yoga.jpeg`);
+2634:             
+2635:             // Hide the central panel for this room
+2636:             document.getElementById('p2-room-content').style.display = 'none';
+2637:             
+2638:             // Get the NPC that will be spawned
+2639:             const roomNpcs = p2DailyNPCs[roomName];
+2640:             const npc = roomNpcs && roomNpcs.length > 0 ? roomNpcs[0] : null;
+2641:             
+2642:             // CuerpoYoga overlay on mat
+2643:             const cuerpoYoga = document.createElement('div');
+2644:             cuerpoYoga.className = 'p2-scene-overlay';
+2645:             cuerpoYoga.style.cssText = 'right:17%; bottom:5%; width:500px; height:500px; cursor:pointer; z-index:30; transition:none;';
+2646:             cuerpoYoga.innerHTML = `<img src="${basePath}CuerpoYoga.png" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+2647:             p2LobbyScreen.appendChild(cuerpoYoga);
+2648:             
+2649:             // NPC Head
+2650:             if (npc) {
+2651:                 const npcHead = document.createElement('div');
+2652:                 npcHead.className = 'p2-scene-overlay';
+2653:                 npcHead.style.cssText = `left:62%; top:30%; width:300px; height:300px; cursor:pointer; z-index:20; transition:none;`;
+2654:                 npcHead.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+2655:                 p2LobbyScreen.appendChild(npcHead);
+2656:                 
+2657:                 // Link clicks
+2658:                 cuerpoYoga.onclick = npcHead.onclick = () => { openDialogue(npc); };
+2659:                 
+2660:                 // Link hovers manually by targeting the inner imgs
+2661:                 const yogaImg = cuerpoYoga.querySelector('img');
+2662:                 const headImg = npcHead.querySelector('img');
+2663:                 
+2664:                 const syncHover = () => {
+2665:                     yogaImg.style.transform = 'scale(1.05)';
+2666:                     yogaImg.style.filter = 'brightness(1.3)';
+2667:                     headImg.style.transform = 'scale(1.05)';
+2668:                     headImg.style.filter = 'brightness(1.3)';
+2669:                 };
+2670:                 const syncLeave = () => {
+2671:                     yogaImg.style.transform = 'scale(1)';
+2672:                     yogaImg.style.filter = 'brightness(1)';
+2673:                     headImg.style.transform = 'scale(1)';
+2674:                     headImg.style.filter = 'brightness(1)';
+2675:             yogaBtn.onclick = () => {
+2676:                 if (p2Stats.yogaDoneToday) { showNotification('Ya has hecho yoga hoy. Descansa.', 'info'); return; }
+2677:                 if (checkStamina(20)) {
+2678:                     startYogaMinigame();
+2679:                 }
+2680:             };
+2681:             p2LobbyScreen.appendChild(yogaBtn);
+2682:             
+2683:         }
+2684:     }
+2685:     
+2686:     // ===== GLOBAL PRELOADER FOR MINIGAME FRAMES =====
+2687:     const preloadedCintaFrames = [];
+2688:     for (let i = 0; i < 120; i++) {
+2689:         const img = new Image();
+2690:         img.src = `assets/Historia/Habitaciones/cinta_frames/frame_${i}.png`;
+2691:         preloadedCintaFrames.push(img);
+2692:     }
+2693:     const preloadedPesasFrames = [];
+2694:     for (let i = 0; i < 80; i++) {
+2695:         const img = new Image();
+2696:         img.src = `assets/Historia/Habitaciones/pesas_frames/frame_${i}.png`;
+2697:         preloadedPesasFrames.push(img);
+2698:     }
+2699: 
+2700:     // ===== CINTA MINIGAME =====
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

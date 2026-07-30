@@ -1,0 +1,89 @@
+Created At: 2026-07-29T17:40:41+02:00
+Completed At: 2026-07-29T17:40:42+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4183
+Total Bytes: 214926
+Showing lines 3700 to 3780
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3700:         const friends = knownNPCs.map(id => {
+3701:             return {
+3702:                 id: id,
+3703:                 npc: p2StratumPlayers.find(p => p.id === id),
+3704:                 data: p2Relationships[id]
+3705:             };
+3706:         }).filter(f => f.npc);
+3707:         
+3708:         if (friends.length === 0) {
+3709:             body.innerHTML = '<div style="text-align:center; color:#aaa; padding:30px;">Tus conocidos ya no están en esta fase.</div>';
+3710:             return;
+3711:         }
+3712: 
+3713:         // Draw My Player in the center
+3714:         const myNode = document.createElement('div');
+3715:         myNode.style.cssText = `position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90px; height:90px; border-radius:50%; border:4px solid #00ffcc; box-shadow:0 0 20px rgba(0,255,204,0.6); z-index:5; background:url('${myPlayer.image}') center/contain no-repeat #111;`;
+3716:         graphContainer.appendChild(myNode);
+3717:         
+3718:         // Draw NPCs
+3719:         const angleStep = (2 * Math.PI) / friends.length;
+3720:         
+3721:         friends.forEach((f, idx) => {
+3722:             const angle = idx * angleStep - Math.PI / 2; // start from top
+3723:             const rPercent = 38;
+3724:             const posX = 50 + rPercent * Math.cos(angle);
+3725:             const posY = 50 + rPercent * Math.sin(angle);
+3726:             
+3727:             // Extract the friend value correctly (handling the object bug)
+3728:             const friendVal = typeof f.data === 'object' ? (f.data.friendship || 0) : f.data;
+3729:             
+3730:             // Line color logic
+3731:             let lineColor = '#555';
+3732:             let strokeW = 2;
+3733:             if (friendVal >= 100) { lineColor = '#ff007f'; strokeW = 4; }
+3734:             else if (friendVal >= 80) { lineColor = '#ffaa00'; strokeW = 3; }
+3735:             else if (friendVal >= 40) { lineColor = '#00e5ff'; strokeW = 2; }
+3736:             
+3737:             // Draw line
+3738:             const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+3739:             line.setAttribute('x1', '50%');
+3740:             line.setAttribute('y1', '50%');
+3741:             line.setAttribute('x2', `${posX}%`);
+3742:             line.setAttribute('y2', `${posY}%`);
+3743:             line.setAttribute('stroke', lineColor);
+3744:             line.setAttribute('stroke-width', strokeW);
+3745:             if (friendVal >= 100) {
+3746:                 line.style.filter = 'drop-shadow(0 0 5px #ff007f)';
+3747:             }
+3748:             svg.appendChild(line);
+3749:             
+3750:             // Draw Node
+3751:             const node = document.createElement('div');
+3752:             node.style.cssText = `position:absolute; top:${posY}%; left:${posX}%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; border:3px solid ${lineColor}; z-index:5; background:url('${f.npc.image}') center/contain no-repeat #111; cursor:pointer; transition:transform 0.2s;`;
+3753:             
+3754:             node.onmouseenter = () => {
+3755:                 node.style.transform = 'translate(-50%,-50%) scale(1.25)';
+3756:                 node.style.boxShadow = `0 0 15px ${lineColor}`;
+3757:                 const grl = Math.floor(f.npc.p2Rating || calcRating(f.npc.rating));
+3758:                 const bonusGRL = Math.floor(grl * (friendVal / 1000)); // Max +10% bonus
+3759:                 infoPanel.innerHTML = `
+3760:                     <div style="font-family:'Bangers'; font-size:1.5rem; letter-spacing:1px; color:#fff;">${f.npc.name.toUpperCase()} <span style="color:#ffd700;">(GRL ${grl})</span></div>
+3761:                     <div style="font-weight:bold; color:${lineColor}; margin-top:5px; font-size:1.2rem;">Amistad: ${friendVal}%</div>
+3762:                     ${friendVal >= 100 ? `<div style="color:#ff007f; margin-top:3px; font-size:0.9rem; text-shadow:0 0 5px #ff007f;">★ ¡MEJOR AMIGO! (Bonus: +${bonusGRL} GRL) ★</div>` : ''}
+3763:                     ${friendVal > 0 && friendVal < 100 ? `<div style="color:#aaa; margin-top:3px; font-size:0.9rem;">(Bonus en partido: +${bonusGRL} GRL)</div>` : ''}
+3764:                 `;
+3765:                 infoPanel.style.opacity = '1';
+3766:             };
+3767:             node.onmouseleave = () => {
+3768:                 node.style.transform = 'translate(-50%,-50%) scale(1)';
+3769:                 node.style.boxShadow = 'none';
+3770:                 infoPanel.style.opacity = '0';
+3771:             };
+3772:             
+3773:             graphContainer.appendChild(node);
+3774:         });
+3775:         
+3776:         body.appendChild(graphContainer);
+3777:     };
+3778: 
+3779:     // ==========================================
+3780:     // SAVE / LOAD SYSTEM
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

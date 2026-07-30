@@ -1,0 +1,61 @@
+Created At: 2026-07-30T03:09:18+02:00
+Completed At: 2026-07-30T03:09:18+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4736
+Total Bytes: 245698
+Showing lines 1290 to 1342
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1290:         
+1291:         generateDailyNPCs();
+1292:     }
+1293:     
+1294:     window.triggerTimeSkip = function() {
+1295:         if (window.gamePhase === 1) {
+1296:             transitionScreen('assets/Historia/Hokkaido/Alpino.png', 'VIAJANDO A ALPINO...', () => {
+1297:                 window.gamePhase = 1.5; // Instituto Alpino
+1298:                 
+1299:                 // Subir edad
+1300:                 p2Stats.age += 3; // Pasa de 13 a 16
+1301:                 
+1302:                 // Subir medias drásticamente (Simula 3 años de entreno)
+1303:                 p2Stats.pace = Math.min(99, p2Stats.pace + 15);
+1304:                 p2Stats.shooting = Math.min(99, p2Stats.shooting + 15);
+1305:                 p2Stats.passing = Math.min(99, p2Stats.passing + 15);
+1306:                 p2Stats.dribbling = Math.min(99, p2Stats.dribbling + 15);
+1307:                 p2Stats.defending = Math.min(99, p2Stats.defending + 15);
+1308:                 p2Stats.physical = Math.min(99, p2Stats.physical + 15);
+1309:                 
+1310:                 p2League = [
+1311:                     {name: "Alpino", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1312:                     {name: "Rival Nacional A", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1313:                     {name: "Rival Nacional B", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1314:                     {name: "Rival Nacional C", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0}
+1315:                 ];
+1316:                 
+1317:                 generateAlpinoPlayers();
+1318:                 updateP2UI();
+1319:                 renderP2Room();
+1320:                 
+1321:                 showNotification("¡Han pasado 3 años! Ahora estás en el Instituto Alpino. Edad: 16.", "info", 5000);
+1322:             });
+1323:         } else if (window.gamePhase === 1.5) {
+1324:             // Aquí iría el salto a Blue Lock u ofertas de Europa
+1325:             transitionScreen('assets/Historia/Habitaciones/BlueLock.png', 'VIAJANDO A BLUE LOCK...', () => {
+1326:                 window.gamePhase = 2;
+1327:                 p2Stats.age += 1;
+1328:                 // Reiniciar sala a la 0 (Habitación)
+1329:                 p2CurrentRoom = 0;
+1330:                 updateP2UI();
+1331:                 renderP2Room();
+1332:                 showNotification("Has aceptado la invitación a Blue Lock.", "info", 5000);
+1333:             });
+1334:         }
+1335:     };
+1336:     
+1337:     window.startPhase1 = function() {
+1338:         document.getElementById('player-selection-screen').classList.add('hidden');
+1339:         p2LobbyScreen.classList.remove('hidden');
+1340:         
+1341:         // Override player stats for Phase 1 (Colegio)
+1342:         const baseRating = 55;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

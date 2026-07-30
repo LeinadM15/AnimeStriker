@@ -1,0 +1,119 @@
+Created At: 2026-07-29T23:16:15+02:00
+Completed At: 2026-07-29T23:16:15+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4286
+Total Bytes: 220549
+Showing lines 3440 to 3550
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3440:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+3441:         });
+3442:         
+3443:         engine.addEventListener('mousedown', (e) => {
+3444:             if (e.button === 0) { // Clic Izquierdo = Estirada
+3445:                 currentPose = 'ESTIRADA';
+3446:                 gloves.src = 'assets/Match/PosicionEstirada.png';
+3447:                 gloves.style.width = '280px';
+3448:                 gloves.style.height = '180px';
+3449:             } else if (e.button === 2) { // Clic Derecho = Puños
+3450:                 currentPose = 'PUNO';
+3451:                 gloves.src = 'assets/Match/PosicionPuño.png';
+3452:                 gloves.style.width = '140px';
+3453:                 gloves.style.height = '140px';
+3454:             }
+3455:         });
+3456:         
+3457:         engine.addEventListener('mouseup', (e) => {
+3458:             currentPose = 'AGARRE';
+3459:             gloves.src = 'assets/Match/PosicionAgarre.png';
+3460:             gloves.style.width = '180px';
+3461:             gloves.style.height = '180px';
+3462:         });
+3463:         
+3464:         // Bucle Físico (60fps)
+3465:         physicsLoop = setInterval(() => {
+3466:             
+3467:             // Lógica de Salto (Espacio)
+3468:             if (keys.space && !isDiving) {
+3469:                 let dx = 0; let dy = 0;
+3470:                 if (keys.w) dy = -1;
+3471:                 if (keys.s) dy = 1;
+3472:                 if (keys.a) dx = -1;
+3473:                 if (keys.d) dx = 1;
+3474:                 
+3475:                 if (dx !== 0 || dy !== 0) {
+3476:                     isDiving = true;
+3477:                     diveVelocityX = dx * 8; // Velocidad de estirada
+3478:                     diveVelocityY = dy * 8;
+3479:                     
+3480:                     engine.style.transition = 'filter 0.2s';
+3481:                     engine.style.filter = 'blur(2px)';
+3482:                     
+3483:                     setTimeout(() => {
+3484:                         diveVelocityX = 0;
+3485:                         diveVelocityY = 0;
+3486:                         engine.style.filter = 'none';
+3487:                     }, 400); // 400ms de vuelo
+3488:                     
+3489:                     setTimeout(() => {
+3490:                         isDiving = false;
+3491:                     }, 1200); // Cooldown antes del próximo salto
+3492:                 }
+3493:             }
+3494:             
+3495:             // Mover el cuerpo del portero
+3496:             if (isDiving) {
+3497:                 bodyX += diveVelocityX;
+3498:                 bodyY += diveVelocityY;
+3499:                 
+3500:                 // Límites de la estirada (mucho más amplios)
+3501:                 bodyX = Math.max(-90, Math.min(90, bodyX));
+3502:                 bodyY = Math.max(-90, Math.min(90, bodyY));
+3503:             } else {
+3504:                 // Movimiento normal
+3505:                 if (keys.w) bodyY = Math.max(-30, bodyY - 1.5);
+3506:                 if (keys.s) bodyY = Math.min(30, bodyY + 1.5);
+3507:                 if (keys.a) bodyX = Math.max(-40, bodyX - 1.5);
+3508:                 if (keys.d) bodyX = Math.min(40, bodyX + 1.5);
+3509:             }
+3510:             
+3511:             // El fondo se mueve en dirección contraria
+3512:             engine.style.backgroundPosition = `${50 + (bodyX*0.3)}% ${50 + (bodyY*0.3)}%`;
+3513:             
+3514:             // Los guantes son posición del ratón + desplazamiento del cuerpo
+3515:             let finalGx = mouseX + bodyX;
+3516:             let finalGy = mouseY + bodyY;
+3517:             
+3518:             gloves.style.left = `${finalGx}%`;
+3519:             gloves.style.top = `${finalGy}%`;
+3520:             
+3521:         }, 16);
+3522:         
+3523:         function updateHUD() {
+3524:             timeDisplay.innerText = `${minute < 10 ? '0':''}${minute}:00`;
+3525:             scoreDisplay.innerText = `Goles Encajados: ${goalsConceded} | Paradas: ${saves}`;
+3526:         }
+3527:         
+3528:         function endMatch() {
+3529:             window.removeEventListener('keydown', keydownHandler);
+3530:             window.removeEventListener('keyup', keyupHandler);
+3531:             clearInterval(physicsLoop);
+3532:             engine.remove();
+3533:             
+3534:             const teamGoals = Math.floor(Math.random() * 3);
+3535:             const win = teamGoals > goalsConceded;
+3536:             
+3537:             const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3538:             if (myTeam) {
+3539:                 if (win) { myTeam.w++; myTeam.pts += 3; }
+3540:                 else if (teamGoals === goalsConceded) { myTeam.d++; myTeam.pts += 1; }
+3541:                 else { myTeam.l++; }
+3542:             }
+3543:             
+3544:             p2League.forEach(t => {
+3545:                 if (!t.name.includes("Tu Equipo")) {
+3546:                     t.w += Math.floor(Math.random() * 2);
+3547:                     t.pts = (t.w * 3) + t.d;
+3548:                 }
+3549:             });
+3550:             
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

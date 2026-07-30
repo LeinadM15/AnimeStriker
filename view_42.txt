@@ -1,0 +1,36 @@
+Created At: 2026-07-29T14:56:37+02:00
+Completed At: 2026-07-29T14:56:37+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3526
+Total Bytes: 178743
+Showing lines 1493 to 1520
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1493:     window.openDialogue = function(npc) {
+1494:         if (!p2Stats.npcInteractionsToday) p2Stats.npcInteractionsToday = [];
+1495:         
+1496:         if (p2Stats.npcInteractionsToday.includes(npc.id)) {
+1497:             showNotification(`${npc.name}: Ahora estoy ocupado, déjame entrenar.`, 'info');
+1498:             return;
+1499:         }
+1500: 
+1501:         if (typeof p2Relationships[npc.id] !== 'object') {
+1502:             // Check if this NPC uses generic dialogues
+1503:             const isGeneric = typeof npcDialogues !== 'undefined' && !npcDialogues[npc.name.toUpperCase()];
+1504:             let startingStage = 0;
+1505:             
+1506:             // Give generics a random starting dialogue so they don't all say the same thing on Day 1
+1507:             if (isGeneric && typeof npcDialogues !== 'undefined' && npcDialogues["GENERIC"]) {
+1508:                 startingStage = Math.floor(Math.random() * npcDialogues["GENERIC"].length);
+1509:             }
+1510:             
+1511:             p2Relationships[npc.id] = { friendship: p2Relationships[npc.id] || 5, dialogueStage: startingStage };
+1512:         }
+1513:         
+1514:         const rel = p2Relationships[npc.id];
+1515:         
+1516:         // If relationship is maxed out
+1517:         if (rel.friendship >= 100) {
+1518:             showNotification(`${npc.name}: ¡Somos los mejores amigos! (Amistad al máximo)`, 'success');
+1519:             // We can still let them talk, but maybe they don't gain stats. Let's just continue.
+1520:         }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

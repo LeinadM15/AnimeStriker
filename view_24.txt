@@ -1,0 +1,29 @@
+Created At: 2026-07-29T02:39:16+02:00
+Completed At: 2026-07-29T02:39:16+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3448
+Total Bytes: 175460
+Showing lines 3270 to 3290
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3270:             let playerY = gameArea.offsetHeight - 100;
+3271:             
+3272:             for (let i = obstacles.length - 1; i >= 0; i--) {
+3273:                 let obs = obstacles[i];
+3274:                 obs.z += speed;
+3275:                 
+3276:                 let scale = obs.z * obs.z; // Non-linear for better perspective
+3277:                 let targetY = horizonY + (playerY - horizonY) * obs.z;
+3278:                 let currentOffsetX = maxOffsetX * (obs.lane - 1) * obs.z;
+3279:                 
+3280:                 obs.el.style.left = `calc(50% - 40px + ${currentOffsetX}px)`;
+3281:                 obs.el.style.top = `${targetY}px`;
+3282:                 obs.el.style.transform = `scale(${Math.max(0, scale)})`;
+3283:                 obs.el.style.zIndex = Math.floor(obs.z * 100);
+3284:                 
+3285:                 // Collision
+3286:                 if (obs.lane === currentLane && obs.z > 0.85 && obs.z < 1.15) {
+3287:                     endGame(false);
+3288:                     break;
+3289:                 }
+3290:                 if (obs.z > 1.15 && !obs.passed) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

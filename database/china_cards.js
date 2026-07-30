@@ -254,7 +254,7 @@ const chinaCards = [
         rarity: "Oro",
         rating: 78,
         position: "ST",
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/cn.png",
         teamIcon: "teams/Marsella.png",
         image: "assets/characters/China/JetLong.png",

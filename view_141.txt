@@ -1,0 +1,59 @@
+Created At: 2026-07-30T00:40:07+02:00
+Completed At: 2026-07-30T00:40:07+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4372
+Total Bytes: 228117
+Showing lines 170 to 220
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+170:         return new Promise(res => {
+171:             isTyping = true; el.innerHTML = ''; let i = 0;
+172:             (function go() {
+173:                 if (i < text.length) { el.innerHTML = text.substring(0,i+1)+'<span class="typed-cursor">|</span>'; i++; typeTimer = setTimeout(go, speed); }
+174:                 else { el.innerHTML = text; isTyping = false; res(); }
+175:             })();
+176:         });
+177:     }
+178:     function skipType(el, text) { clearTimeout(typeTimer); el.innerHTML = text; isTyping = false; }
+179:     function showDlg(idx) {
+180:         const d = dialogues[idx], tEl = document.getElementById('cin-text'), btn = document.getElementById('cin-continue');
+181:         document.getElementById('cin-speaker').textContent = d.speaker;
+182:         btn.classList.remove('visible');
+183:         typeText(tEl, d.text).then(() => { btn.textContent = idx < dialogues.length-1 ? 'Continuar â–¸' : 'Empezar Historia â–¸'; btn.classList.add('visible'); });
+184:     }
+185:     function onContinue() {
+186:         const tEl = document.getElementById('cin-text'), d = dialogues[dIdx];
+187:         if (isTyping) { skipType(tEl, d.text); const b=document.getElementById('cin-continue'); b.textContent=dIdx<dialogues.length-1?'Continuar â–¸':'Empezar Historia â–¸'; b.classList.add('visible'); return; }
+188:         dIdx++;
+189:         if (dIdx < dialogues.length) showDlg(dIdx);
+190:         else { cinematicScreen.style.opacity='0'; setTimeout(()=>{ cinematicScreen.classList.add('hidden'); startTagGame(); },800); }
+191:     }
+192:     function skipCin() { clearTimeout(typeTimer); cinematicScreen.style.opacity='0'; setTimeout(()=>{ cinematicScreen.classList.add('hidden'); startTagGame(); },500); }
+193: 
+194:     const cinBtn = document.getElementById('cin-continue');
+195:     const cinSkip = document.getElementById('cin-skip');
+196:     if (cinBtn) cinBtn.addEventListener('click', onContinue);
+197:     if (cinSkip) cinSkip.addEventListener('click', skipCin);
+198:     const cinDlg = document.querySelector('.cinematic-dialogue');
+199:     if (cinDlg) cinDlg.addEventListener('click', e => { if (e.target !== cinBtn) onContinue(); });
+200: 
+201:     // =====================================================
+202:     // MAIN PLAYER LIST
+203:     // =====================================================
+204:     const listContainer = document.getElementById('story-player-list');
+205:     const detailEmpty = document.getElementById('detail-empty');
+206:     const detailFilled = document.getElementById('detail-filled');
+207:     let selectedPlayer = null, selectedRating = 0;
+208: 
+209:     function renderPlayerList(filter='') {
+210:         updateCounter();
+211:         listContainer.innerHTML = '';
+212:         const players = getRosterPlayers();
+213:         const q = filter.toLowerCase().trim();
+214:         let count = 0;
+215:         players.forEach(player => {
+216:             if (q && !player.name.toLowerCase().includes(q)) return;
+217:             const adj = calcRating(player.rating);
+218:             const row = document.createElement('div');
+219:             row.className = 'list-row';
+220:             row.innerHTML = `
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,59 @@
+Created At: 2026-07-29T18:00:08+02:00
+Completed At: 2026-07-29T18:00:09+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4121
+Total Bytes: 211068
+Showing lines 3440 to 3490
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3440:                     setTimeout(() => {
+3441:                         ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
+3442:                         ball.style.top = `${targetY}%`;
+3443:                         ball.style.left = `${targetX}%`;
+3444:                         ball.style.width = '120px'; ball.style.height = '120px';
+3445:                     }, flightTime*0.5);
+3446:                 }, 50);
+3447:             }
+3448:             
+3449:             // Animación recta normal
+3450:             if (type !== 4) {
+3451:                 setTimeout(() => {
+3452:                     ball.style.transition = `all ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+3453:                     ball.style.top = `${targetY}%`;
+3454:                     ball.style.left = `${targetX}%`;
+3455:                     ball.style.width = '120px';
+3456:                     ball.style.height = '120px';
+3457:                 }, 50);
+3458:             }
+3459:             
+3460:             // Resolución del choque
+3461:             setTimeout(() => {
+3462:                 // Posición final virtual de los guantes
+3463:                 const gx = mouseX + bodyX;
+3464:                 const gy = mouseY + bodyY;
+3465:                 
+3466:                 // Distancia euclidiana (%)
+3467:                 const dist = Math.sqrt(Math.pow(gx - targetX, 2) + Math.pow(gy - targetY, 2));
+3468:                 
+3469:                 // Tolerancia de hitbox según la pose
+3470:                 let tolerance = 12; // Base (AGARRE)
+3471:                 if (currentPose === 'ESTIRADA') tolerance = 25; // Más área
+3472:                 if (currentPose === 'PUNO') tolerance = 15;
+3473:                 
+3474:                 let success = false;
+3475:                 if (dist <= tolerance) {
+3476:                     if (requiredPose === 'ANY' || currentPose === requiredPose) {
+3477:                         success = true;
+3478:                     } else if (requiredPose === 'ESTIRADA' && currentPose === 'AGARRE' && dist <= 8) {
+3479:                         // Si le da justo en el pecho aunque sea un tiro lejano, la para
+3480:                         success = true;
+3481:                     }
+3482:                 }
+3483:                 
+3484:                 if (success) {
+3485:                     ball.style.transition = 'all 0.2s';
+3486:                     ball.style.top = '-20%'; // Despeje arriba
+3487:                     finishPlay(true, '¡PARADÓN VITAL!', '');
+3488:                 } else {
+3489:                     ball.style.transition = 'all 0.2s';
+3490:                     ball.style.width = '200px'; ball.style.height = '200px';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

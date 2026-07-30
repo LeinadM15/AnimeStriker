@@ -1,0 +1,119 @@
+Created At: 2026-07-29T23:06:54+02:00
+Completed At: 2026-07-29T23:06:55+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4283
+Total Bytes: 220351
+Showing lines 3340 to 3450
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3340:         const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+3341:         const summaryText = win 
+3342:             ? `¡VICTORIA! Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+3343:             : `DERROTA... Aún así ganaste +${matchXp} EXP total por tu esfuerzo y ${goalsScored} goles.`;
+3344:         openMatchXpDistributor(matchXp, summaryText);
+3345:     }
+3346: 
+3347: 
+3348:     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+3349:         p2RoomBody.innerHTML = '';
+3350:         
+3351:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3352:         if (detroitUI) detroitUI.remove();
+3353:         
+3354:         const engine = document.createElement('div');
+3355:         engine.id = 'gk-match-engine';
+3356:         engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none; cursor:crosshair;';
+3357:         
+3358:         // Evitar menú contextual clic derecho
+3359:         engine.oncontextmenu = e => e.preventDefault();
+3360:         
+3361:         const hud = document.createElement('div');
+3362:         hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110; pointer-events:none;';
+3363:         
+3364:         const timeDisplay = document.createElement('div');
+3365:         timeDisplay.innerText = "00:00";
+3366:         
+3367:         const scoreDisplay = document.createElement('div');
+3368:         scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+3369:         
+3370:         hud.appendChild(timeDisplay);
+3371:         hud.appendChild(scoreDisplay);
+3372:         engine.appendChild(hud);
+3373:         
+3374:         const flash = document.createElement('div');
+3375:         flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+3376:         engine.appendChild(flash);
+3377:         
+3378:         // Instrucciones
+3379:         const helpOverlay = document.createElement('div');
+3380:         helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.5); padding:10px; border-radius:10px; text-align:center; pointer-events:none; z-index:110; text-shadow:0 0 5px #000;';
+3381:         helpOverlay.innerHTML = '<b>WASD</b>: Caminar | <b>Espacio + WASD</b>: Lanzarse<br><b>Ratón</b>: Mover Manos | <b>Clic Izq</b>: Mano Abierta | <b>Clic Der</b>: Puños';
+3382:         engine.appendChild(helpOverlay);
+3383:         
+3384:         // --- MOTOR FÍSICO ---
+3385:         
+3386:         const gloves = document.createElement('img');
+3387:         gloves.src = 'assets/Match/PosicionAgarre.png';
+3388:         gloves.onerror = () => { gloves.style.display="none"; };
+3389:         gloves.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:125; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+3390:         engine.appendChild(gloves);
+3391:         
+3392:         p2RoomBody.appendChild(engine);
+3393:         
+3394:         let minute = 0;
+3395:         let saves = 0;
+3396:         let goalsConceded = 0;
+3397:         let matchInterval = null;
+3398:         let physicsLoop = null;
+3399:         const highlightMinutes = [14, 31, 55, 78, 89];
+3400:         
+3401:         // --- CONTROLES ---
+3402:         let bodyX = 0; // % displacement
+3403:         let bodyY = 0;
+3404:         let mouseX = 50; // %
+3405:         let mouseY = 50; // %
+3406:         
+3407:         let currentPose = 'AGARRE'; // AGARRE, ESTIRADA, PUNO
+3408:         let isDiving = false;
+3409:         let diveVelocityX = 0;
+3410:         let diveVelocityY = 0;
+3411:         
+3412:         const keys = { w:false, a:false, s:false, d:false, space:false };
+3413:         
+3414:         const keydownHandler = (e) => {
+3415:             const k = e.key.toLowerCase();
+3416:             if (k === 'w' || k === 'arrowup') keys.w = true;
+3417:             if (k === 'a' || k === 'arrowleft') keys.a = true;
+3418:             if (k === 's' || k === 'arrowdown') keys.s = true;
+3419:             if (k === 'd' || k === 'arrowright') keys.d = true;
+3420:             if (e.code === 'Space') keys.space = true;
+3421:         };
+3422:         const keyupHandler = (e) => {
+3423:             const k = e.key.toLowerCase();
+3424:             if (k === 'w' || k === 'arrowup') keys.w = false;
+3425:             if (k === 'a' || k === 'arrowleft') keys.a = false;
+3426:             if (k === 's' || k === 'arrowdown') keys.s = false;
+3427:             if (k === 'd' || k === 'arrowright') keys.d = false;
+3428:             if (e.code === 'Space') keys.space = false;
+3429:         };
+3430:         
+3431:         window.addEventListener('keydown', keydownHandler);
+3432:         window.addEventListener('keyup', keyupHandler);
+3433:         
+3434:         engine.addEventListener('mousemove', (e) => {
+3435:             const rect = engine.getBoundingClientRect();
+3436:             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+3437:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+3438:         });
+3439:         
+3440:         engine.addEventListener('mousedown', (e) => {
+3441:             if (e.button === 0) { // Clic Izquierdo = Estirada
+3442:                 currentPose = 'ESTIRADA';
+3443:                 gloves.src = 'assets/Match/PosicionEstirada.png';
+3444:                 gloves.style.width = '280px';
+3445:                 gloves.style.height = '180px';
+3446:             } else if (e.button === 2) { // Clic Derecho = Puños
+3447:                 currentPose = 'PUNO';
+3448:                 gloves.src = 'assets/Match/PosicionPuño.png';
+3449:                 gloves.style.width = '140px';
+3450:                 gloves.style.height = '140px';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

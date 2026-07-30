@@ -1,0 +1,49 @@
+Created At: 2026-07-29T16:36:10+02:00
+Completed At: 2026-07-29T16:36:10+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3773
+Total Bytes: 195024
+Showing lines 1790 to 1830
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1790:                 {x: 23, y: 20, w: 200, h: 200} // right treadmill head area
+1791:             ]);
+1792:             
+1793:             // Panelmaquina overlay on right treadmill (z-index priority)
+1794:             const panel = document.createElement('div');
+1795:             panel.className = 'p2-scene-overlay';
+1796:             panel.style.cssText = 'right:67%; top:29%; width:250px; height:250px; pointer-events:none; z-index:30;';
+1797:             panel.innerHTML = `<img src="${basePath}Panelmaquina.png" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+1798:             p2LobbyScreen.appendChild(panel);
+1799:             
+1800:             // Cinta Button
+1801:             const cintaBtn = document.createElement('div');
+1802:             cintaBtn.className = 'p2-scene-overlay';
+1803:             cintaBtn.style.cssText = 'left:25%; top:50%; width:250px; height:250px; cursor:pointer; transition:transform 0.2s; z-index:50;';
+1804:             cintaBtn.innerHTML = `<img src="${basePath}Cinta.png" draggable="false" style="width:55%; height:55%; object-fit:contain; filter:drop-shadow(0 0 15px rgba(0,229,255,0.6));">`;
+1805:             cintaBtn.onmouseenter = () => { cintaBtn.style.transform = 'scale(1.1)'; };
+1806:             cintaBtn.onmouseleave = () => { cintaBtn.style.transform = 'scale(1)'; };
+1807:             cintaBtn.onclick = () => { startCintaMinigame(); };
+1808:             p2LobbyScreen.appendChild(cintaBtn);
+1809:             
+1810:             // Fuerza Button
+1811:             const fuerzaBtn = document.createElement('div');
+1812:             fuerzaBtn.className = 'p2-scene-overlay';
+1813:             fuerzaBtn.style.cssText = 'right:31%; bottom:20%; width:250px; height:250px; cursor:pointer; transition:transform 0.2s; z-index:50;';
+1814:             fuerzaBtn.innerHTML = `<img src="${basePath}Fuerza.png" draggable="false" style="width:55%; height:55%; object-fit:contain; filter:drop-shadow(0 0 15px rgba(255,68,68,0.6));">`;
+1815:             fuerzaBtn.onmouseenter = () => { fuerzaBtn.style.transform = 'scale(1.1)'; };
+1816:             fuerzaBtn.onmouseleave = () => { fuerzaBtn.style.transform = 'scale(1)'; };
+1817:             fuerzaBtn.onclick = () => { startPesasMinigame(); };
+1818:             p2LobbyScreen.appendChild(fuerzaBtn);
+1819:             
+1820:         } else if (roomName === 'Campo') {
+1821:             setRoomBg(`${basePath}HabitacionCampo.jpeg`);
+1822:             document.getElementById('p2-room-content').style.display = 'none';
+1823:             p2RoomBody.innerHTML = '';
+1824:             
+1825:             // Get the daily NPC for the field
+1826:             const roomNPCs = p2DailyNPCs['Campo'] || [];
+1827:             const availableNPCs = roomNPCs.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+1828:             const npc = availableNPCs.length > 0 ? availableNPCs[0] : null;
+1829:             
+1830:             if (npc) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

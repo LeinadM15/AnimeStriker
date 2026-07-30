@@ -1,0 +1,68 @@
+Created At: 2026-07-30T20:30:46+02:00
+Completed At: 2026-07-30T20:30:46+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/build_story.js`
+Total Lines: 60
+Total Bytes: 3937
+Showing lines 1 to 60
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: const fs = require('fs');
+2: const indexHtml = fs.readFileSync('index.html', 'utf-8');
+3: const scriptMatch = indexHtml.match(/<!-- Firebase SDKs -->[\s\S]*?<\/body>/);
+4: let scripts = scriptMatch ? scriptMatch[0].replace('</body>', '').trim() : '';
+5: scripts = scripts.replace(/<script src="app\.js.*><\/script>/, '');
+6: 
+7: const storyHtml = `<!DOCTYPE html>
+8: <html lang="es">
+9: <head>
+10:     <meta charset="UTF-8">
+11:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+12:     <title>STORY MODE - Blue Lock</title>
+13:     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+14:     <link rel="stylesheet" href="styles.css">
+15:     <link rel="stylesheet" href="story.css">
+16: </head>
+17: <body>
+18:     <div class="bg-fixed">
+19:         <img src="assets/BlueLockFondo.jpg" alt="" class="bg-img" style="filter: brightness(0.4);">
+20:     </div>
+21: 
+22:     <div class="app">
+23:         <header class="story-header" style="display:flex; justify-content:space-between; align-items:center; padding: 20px; background: rgba(0,0,0,0.7); border-bottom: 2px solid #00f0ff;">
+24:             <a href="index.html" class="back-btn" style="color:#00f0ff; text-decoration:none; font-family:'Bangers'; font-size:1.5rem;">⬅ Atrás</a>
+25:             <h1 class="story-title" style="color:white; margin:0; font-family:'Bangers'; text-shadow: 0 0 10px #00f0ff;">BLUE LOCK: THE STRIKER</h1>
+26:             <div style="width: 50px;"></div>
+27:         </header>
+28: 
+29:         <main class="story-main" id="story-main" style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+30:             <!-- Screen 1: Select Player -->
+31:             <div id="player-selection-screen" class="story-screen active">
+32:                 <h2 class="section-title" style="color:#00f0ff; text-align:center; text-shadow: 0 0 10px #00f0ff; margin-top:20px; font-family:'Bangers'; font-size:3rem;">SELECCIONA A TU DELANTERO</h2>
+33:                 <p style="text-align:center; color:#ddd; margin-bottom: 30px; font-family:'Nunito'; font-size:1.2rem;">Elige a tu jugador. Empezará con 10 puntos de media menos en su versión Oro.</p>
+34:                 <div class="story-player-grid" id="story-player-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+35:                     <!-- Cards will be injected here -->
+36:                 </div>
+37:             </div>
+38: 
+39:             <!-- Screen 2: Story/Dialogue (Hidden initially) -->
+40:             <div id="dialogue-screen" class="story-screen hidden" style="display:none; height: 70vh; flex-direction:column; justify-content:flex-end;">
+41:                 <div class="dialogue-box" style="background: rgba(0,0,0,0.85); border: 2px solid #00f0ff; border-radius:10px; padding:20px; display:flex; gap:20px; align-items:flex-end; position:relative;">
+42:                     <img src="assets/Ego.png" id="speaker-img" class="speaker-img" alt="Speaker" style="width:150px; height:auto; position:absolute; bottom:0; left:20px; filter: drop-shadow(0 0 10px rgba(0,240,255,0.5));">
+43:                     <div class="dialogue-content" style="margin-left: 180px; flex-grow:1;">
+44:                         <h3 id="speaker-name" class="speaker-name" style="color:#00f0ff; font-family:'Bangers'; font-size:2rem; margin:0 0 10px 0;">Ego Jinpachi</h3>
+45:                         <p id="dialogue-text" class="dialogue-text" style="color:white; font-family:'Nunito'; font-size:1.2rem; margin:0 0 20px 0; min-height: 60px;">...</p>
+46:                         <button id="next-dialogue-btn" class="next-btn" style="background:#00f0ff; color:black; border:none; padding:10px 20px; font-family:'Bangers'; font-size:1.2rem; cursor:pointer; border-radius:5px; float:right;">Continuar ➡</button>
+47:                     </div>
+48:                 </div>
+49:             </div>
+50:         </main>
+51:     </div>
+52: 
+53:     ${scripts}
+54:     <script src="story.js"></script>
+55: </body>
+56: </html>`;
+57: 
+58: fs.writeFileSync('story.html', storyHtml);
+59: console.log('story.html created successfully.');
+60: 
+The above content shows the entire, complete file contents of the requested file.

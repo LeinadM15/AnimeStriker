@@ -568,7 +568,7 @@ const judeSharpCards = [
         rating: 86,
         position: "CM",
         secondaryPositions: ["CAM"],
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Monaco.png",
         image: "assets/characters/Jude/Juleb.png",

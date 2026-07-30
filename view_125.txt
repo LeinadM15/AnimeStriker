@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:44:15+02:00
+Completed At: 2026-07-29T23:44:16+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 1450 to 1490
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1450:                     <div style="font-size:1.2rem; color:#ddd; text-align:center; background:rgba(0,255,204,0.1); padding:10px; border-radius:10px; border:1px solid rgba(0,255,204,0.3); font-weight:700;">${summaryHtml}</div>
+1451:                     
+1452:                     <div style="text-align:center; background:rgba(0,0,0,0.6); border:2px dashed #ffd700; padding:15px; border-radius:15px; box-shadow:inset 0 0 15px rgba(255,215,0,0.2);">
+1453:                         <div style="font-family:'Nunito'; font-weight:800; font-size:1rem; color:#aaa; text-transform:uppercase;">Puntos de Experiencia de Partido Disponibles</div>
+1454:                         <div style="font-family:'Bangers'; font-size:3.5rem; color:#ffd700; text-shadow:0 0 20px rgba(255,215,0,0.6);">${p2Stats.freeMatchXP || 0} <span style="font-size:1.8rem; color:#fff;">EXP</span></div>
+1455:                         <div style="font-size:0.85rem; color:#888;">¡Reparte tus puntos entre tus estadísticas! Puedes guardar lo que te sobre para después.</div>
+1456:                     </div>
+1457:                     
+1458:                     <div style="display:flex; flex-direction:column; gap:10px;">
+1459:                         ${statsHtml}
+1460:                     </div>
+1461:                     
+1462:                     <button id="finish-xp-dist" style="background:linear-gradient(135deg, #00ff00, #00bb00); border:2px solid #fff; border-radius:12px; color:#000; font-family:'Bangers'; font-size:2rem; padding:14px; cursor:pointer; box-shadow:0 0 25px rgba(0,255,0,0.5); text-align:center; transition:all 0.2s; margin-top:5px;">
+1463:                         ${(p2Stats.freeMatchXP || 0) > 0 ? '▶ GUARDAR EXP SOBRANTE Y CONTINUAR AL DÍA SIGUIENTE' : '✅ CONTINUAR AL DÍA SIGUIENTE'}
+1464:                     </button>
+1465:                 </div>
+1466:             `;
+1467:             
+1468:             document.getElementById('finish-xp-dist').onclick = () => {
+1469:                 overlay.remove();
+1470:                 advanceP2Day(true);
+1471:             };
+1472:         }
+1473:         
+1474:         window.assignMatchXP = function(stat, amt) {
+1475:             if (!p2Stats.freeMatchXP || p2Stats.freeMatchXP <= 0) {
+1476:                 showNotification('¡No te quedan puntos de experiencia por repartir!', 'warning');
+1477:                 return;
+1478:             }
+1479:             const actualAmt = Math.min(amt, p2Stats.freeMatchXP);
+1480:             if (actualAmt <= 0) return;
+1481:             
+1482:             p2Stats.freeMatchXP -= actualAmt;
+1483:             addStatXP(stat, actualAmt);
+1484:             renderDistributor();
+1485:         };
+1486:         
+1487:         document.body.appendChild(overlay);
+1488:         renderDistributor();
+1489:     };
+1490: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

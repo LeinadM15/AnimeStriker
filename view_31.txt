@@ -1,0 +1,39 @@
+Created At: 2026-07-29T02:49:43+02:00
+Completed At: 2026-07-29T02:49:43+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3449
+Total Bytes: 175613
+Showing lines 3320 to 3350
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3320:             overlay.remove();
+3321:             showTrainingResultModal(null, 'dribbling', 'Regate de Barreras', expGained, won ? '¡Tiempo cumplido! Excelente agilidad.' : '¡Choque! Cuidado con las barreras.', '#00e5ff');
+3322:         }
+3323:     };
+3324: 
+3325:     window.startChutMinigame = function() {
+3326:         if (!checkStamina(35)) return;
+3327:         
+3328:         const overlay = document.createElement('div');
+3329:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/Minijuegochut.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden; cursor:crosshair;';
+3330:         
+3331:         const topBar = document.createElement('div');
+3332:         topBar.style.cssText = 'padding:20px; display:flex; justify-content:space-between; font-family:"Bangers",cursive; font-size:2rem; color:#ff007f; text-shadow:0 0 10px #000; z-index:10; pointer-events:none;';
+3333:         
+3334:         const scoreEl = document.createElement('div'); scoreEl.innerText = 'Puntos: 0';
+3335:         const timeEl = document.createElement('div'); timeEl.innerText = 'Tiempo: 20s';
+3336:         topBar.appendChild(scoreEl); topBar.appendChild(timeEl);
+3337:         overlay.appendChild(topBar);
+3338:         
+3339:         const gameArea = document.createElement('div');
+3340:         gameArea.style.cssText = 'flex:1; position:relative; width:100%; max-width:900px; margin:0 auto; overflow:hidden;';
+3341:         overlay.appendChild(gameArea);
+3342:         
+3343:         document.body.appendChild(overlay);
+3344:         
+3345:         let time = 20;
+3346:         let score = 0;
+3347:         let isGameOver = false;
+3348:         
+3349:         const spawnTarget = () => {
+3350:             if (isGameOver) return;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

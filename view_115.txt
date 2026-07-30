@@ -1,0 +1,54 @@
+Created At: 2026-07-29T23:28:17+02:00
+Completed At: 2026-07-29T23:28:17+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4301
+Total Bytes: 223376
+Showing lines 3370 to 3415
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3370:             // Remove ALL ally players using class
+3371:             pitch.querySelectorAll('.formation-player').forEach(el => el.remove());
+3372:             
+3373:             // Draw rival team
+3374:             enemySpots.forEach((spot, i) => {
+3375:                 if (i < rivals.length) {
+3376:                     drawPlayer(spot, rivals[i].name, rivals[i].image || 'assets/NPC_Default.png', '#ff4444', false, 200 + i * 80);
+3377:                 }
+3378:             });
+3379:             
+3380:             nextBtn.innerHTML = '<span>¡AL CAMPO! ⚽</span>';
+3381:             nextBtn.style.borderColor = '#ff4444';
+3382:             nextBtn.style.color = '#ff4444';
+3383:             
+3384:             nextBtn.onclick = () => {
+3385:                 container.style.transition = 'opacity 0.6s';
+3386:                 container.style.opacity = '0';
+3387:                 setTimeout(() => {
+3388:                     container.remove();
+3389:                     // Re-show room content so the GK engine can render
+3390:                     document.getElementById('p2-room-content').style.display = 'block';
+3391:                     if (position === 'POR') {
+3392:                         startGKMinigame(ourStrength, enemyStrength, winProbability);
+3393:                     } else {
+3394:                         executeSimulation(position, win, matchContext);
+3395:                     }
+3396:                 }, 600);
+3397:             };
+3398:         };
+3399:     };
+3400:     
+3401:     function executeSimulation(position, win, context) {
+3402:         let goalsScored = 0;
+3403:         if (position === 'DEL' || position === true) {
+3404:             goalsScored = Math.floor(Math.random() * 4) + 1;
+3405:         } else if (position === 'MED') {
+3406:             goalsScored = Math.floor(Math.random() * 3);
+3407:         } else if (position === 'DEF' || position === false) {
+3408:             goalsScored = Math.floor(Math.random() * 2);
+3409:         } else if (position === 'POR') {
+3410:             goalsScored = 0;
+3411:         }
+3412:         
+3413:         p2Stats.goals += goalsScored;
+3414:         
+3415:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

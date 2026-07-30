@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:36:32+02:00
+Completed At: 2026-07-29T23:36:33+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4335
+Total Bytes: 225901
+Showing lines 3540 to 3580
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3540:         
+3541:         function showScorerPopup(npc, isAlly) {
+3542:             const popup = document.createElement('div');
+3543:             popup.style.cssText = `position:absolute; top:20%; ${isAlly ? 'left:10%;' : 'right:10%;'} width:180px; text-align:center; z-index:10050; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: scale(0.1); opacity: 0;`;
+3544:             popup.innerHTML = `
+3545:                 <img src="${npc.image || 'assets/NPC_Default.png'}" style="width:100%; border-radius:10px; border:4px solid ${isAlly ? '#00e5ff' : '#ff4444'}; box-shadow:0 0 20px ${isAlly ? '#00e5ff' : '#ff4444'}; background:rgba(0,0,0,0.5); object-fit: cover;">
+3546:                 <div style="background:rgba(0,0,0,0.9); color:white; font-family:'Bangers'; font-size: 1.2rem; padding:8px; border-radius:5px; margin-top:5px; border:2px solid ${isAlly ? '#00e5ff' : '#ff4444'}; text-shadow: 2px 2px 0px #000;">${npc.name}</div>
+3547:             `;
+3548:             engine.appendChild(popup);
+3549:             setTimeout(() => { popup.style.transform = 'scale(1)'; popup.style.opacity = '1'; }, 50);
+3550:             setTimeout(() => {
+3551:                 popup.style.transform = 'scale(0.1)'; popup.style.opacity = '0';
+3552:                 setTimeout(() => popup.remove(), 300);
+3553:             }, 2000);
+3554:         }
+3555:         
+3556:         function endMatch() {
+3557:             engine.remove();
+3558:             
+3559:             // Si el partido acaba en empate de goles, decide las paradas. Si no, decide los goles.
+3560:             let win = false;
+3561:             let draw = false;
+3562:             if (currentTeamGoals > goalsConceded) win = true;
+3563:             else if (currentTeamGoals === goalsConceded) {
+3564:                 if (saves >= 3) win = true;
+3565:                 else draw = true;
+3566:             }
+3567:             
+3568:             // Update league standings, goals, and distribute goals across the stratum
+3569:             window.processMatchday(currentTeamGoals, goalsConceded, true);
+3570:             
+3571:             const matchXp = 250 + (win ? 200 : (draw ? 100 : 50)) + (saves * 75);
+3572:             const resultTxt = win ? '¡VICTORIA!' : (draw ? 'EMPATE' : 'DERROTA...');
+3573:             
+3574:             showNotification(`${resultTxt} Resultado: ${currentTeamGoals}-${goalsConceded}`, win ? 'success' : (draw ? 'warning' : 'error'), 6000);
+3575:             
+3576:             setTimeout(() => {
+3577:                 openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${currentTeamGoals} goles y encajaste ${goalsConceded}. Paraste ${saves} tiros. XP Total: ${matchXp}`);
+3578:             }, 1000);
+3579:             
+3580:             // Show room content again after engine closes
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

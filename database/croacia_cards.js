@@ -6,13 +6,6 @@ const croaciaCards = [
         version: "Oro",
         rarity: "Oro",
         rating: 84,
-const croaciaCards = [
-    {
-        id: "madric_oro",
-        name: "MADRIC",
-        version: "Oro",
-        rarity: "Oro",
-        rating: 84,
         position: "CM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/hr.png",
@@ -92,7 +85,7 @@ const croaciaCards = [
         rarity: "Oro",
         rating: 80,
         position: "CM",
-        league: "Ligue 1",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/hr.png",
         teamIcon: "teams/Monaco.png",
         image: "assets/characters/Croacia/Puddel Khaspian.png",
@@ -224,7 +217,7 @@ const croaciaCards = [
         position: "CM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/hr.png",
-        teamIcon: "teams/Malaga.png",
+        teamIcon: "teams/malaga.png",
         image: "assets/characters/Croacia/Plink Powai.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -237,7 +230,7 @@ const croaciaCards = [
         position: "CM",
         league: "La Liga",
         nationFlag: "https://flagcdn.com/w40/hr.png",
-        teamIcon: "teams/Malaga.png",
+        teamIcon: "teams/malaga.png",
         image: "assets/characters/Croacia/Plink PowaiPrime.png",
         background: "assets/Cartas/Tots.png"
     }

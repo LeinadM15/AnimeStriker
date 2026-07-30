@@ -1,0 +1,80 @@
+const falamSpecialsCards = [
+    {
+        id: "ozrock_boldar_futurestar",
+        name: "OZROCK BOLDAR",
+        version: "FutureStar",
+        rarity: "Especial",
+        rating: 91,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Falam/Ozrock BoldarMet.png",
+        background: "assets/Cartas/FutureStar.png"
+    },
+    {
+        id: "ozrock_boldar_joker",
+        name: "OZROCK BOLDAR",
+        version: "Joker",
+        rarity: "Especial",
+        rating: 94,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Falam/Ozrock BoldarTot.png",
+        background: "assets/Cartas/Joker.png"
+    },
+    {
+        id: "ozrock_boldar_mordiscos",
+        name: "OZROCK BOLDAR",
+        version: "Mordiscos",
+        rarity: "Especial",
+        rating: 96,
+        position: "ST",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Liverpool.png",
+        image: "assets/characters/Falam/Ozrock BoldarPrime.png",
+        background: "assets/Cartas/Mordiscos.png"
+    },
+    {
+        id: "phobos_quasar_trophy",
+        name: "PHOBOS QUASAR",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 90,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Falam/Phobos Quasar2.png",
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "phobos_quasar_tots",
+        name: "PHOBOS QUASAR",
+        version: "Tots",
+        rarity: "Especial",
+        rating: 93,
+        position: "GK",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Manshine.png",
+        image: "assets/characters/Falam/Phobos QuasarPrime.png",
+        background: "assets/Cartas/Tots.png"
+    },
+    {
+        id: "meteo_garnet_gris",
+        name: "METEO GARNET",
+        version: "Gris",
+        rarity: "Especial",
+        rating: 85,
+        position: "CB",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/no.png",
+        teamIcon: "teams/Lazio.png",
+        image: "assets/characters/Falam/Meteo GarnetPrime.png",
+        background: "assets/Cartas/Gris.png"
+    }
+];

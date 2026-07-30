@@ -1,0 +1,49 @@
+Created At: 2026-07-30T15:45:49+02:00
+Completed At: 2026-07-30T15:45:49+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4998
+Total Bytes: 259820
+Showing lines 2480 to 2520
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2480:             
+2481:             p2RoomBody.innerHTML = '';
+2482:             
+2483:         } else if (roomName === 'Tácticas') {
+2484:             if (!window.isTodayMatchDay()) {
+2485:                 let generatedCount = p2DailyNPCs['Tácticas'] ? p2DailyNPCs['Tácticas'].length : 3;
+2486:                 let bgImage = `${basePath}Tacticas.jpeg`;
+2487:                 let positions = [];
+2488:                 
+2489:                 if (generatedCount === 2) {
+2490:                     bgImage = `${basePath}Tacticas.jpeg`;
+2491:                     positions = [
+2492:                          {x: 19.5, y: 27, w: 200, h: 250},
+2493:                           {x: 62, y: 10, w: 200, h: 250},
+2494:                     ];
+2495:                 } else if (generatedCount === 3) {
+2496:                     bgImage = `${basePath}Tacticas3.jpeg`;
+2497:                     positions = [
+2498:                          {x: 19.5, y: 27, w: 200, h: 250},
+2499:                           {x: 62, y: 10, w: 200, h: 250},
+2500:                         {x: 75, y: 45, w: 220, h: 250}
+2501:                     ];
+2502:                 } else {
+2503:                     bgImage = `${basePath}Tacticas4.jpeg`;
+2504:                     positions = [
+2505:                         {x: 19.5, y: 27, w: 200, h: 250},
+2506:                         {x: 44, y: 10, w: 200, h: 250},
+2507:                         {x: 62, y: 10, w: 200, h: 250},
+2508:                         {x: 80, y: 28, w: 200, h: 250}
+2509:                     ];
+2510:                 }
+2511:                 
+2512:                 setRoomBg(bgImage);
+2513:                 
+2514:                 document.getElementById('p2-room-content').style.display = 'none';
+2515:                 p2RoomBody.innerHTML = '';
+2516:                 
+2517:                 spawnSceneNPCs(roomName, positions);
+2518:                 
+2519:                 const btnClasif = document.createElement('div');
+2520:                 btnClasif.className = 'p2-scene-overlay';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

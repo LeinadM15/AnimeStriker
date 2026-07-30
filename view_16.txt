@@ -1,0 +1,34 @@
+Created At: 2026-07-29T02:25:08+02:00
+Completed At: 2026-07-29T02:25:08+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3449
+Total Bytes: 175880
+Showing lines 1840 to 1865
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1840:                     bImg.style.transform = 'scale(1)'; bImg.style.filter = 'brightness(1)';
+1841:                     hImg.style.transform = 'scale(1)'; hImg.style.filter = 'brightness(1)';
+1842:                 };
+1843:                 bodyDiv.onmouseenter = headDiv.onmouseenter = syncHover;
+1844:                 bodyDiv.onmouseleave = headDiv.onmouseleave = syncLeave;
+1845:             }
+1846:             
+1847:             // Icon ChutPrac (Shooting)
+1848:             const btnChut = document.createElement('div');
+1849:             btnChut.className = 'p2-scene-overlay';
+1850:             btnChut.style.cssText = 'left:20%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+1851:             btnChut.innerHTML = `<img src="${basePath}ChutPrac.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f); transition: transform 0.2s;">`;
+1852:             btnChut.onclick = () => { startChutMinigame(); };
+1853:             btnChut.onmouseenter = () => btnChut.querySelector('img').style.transform = 'scale(1.1)';
+1854:             btnChut.onmouseleave = () => btnChut.querySelector('img').style.transform = 'scale(1)';
+1855:             p2LobbyScreen.appendChild(btnChut);
+1856:             
+1857:             // Icon Conos (Dribbling)
+1858:             const btnConos = document.createElement('div');
+1859:             btnConos.className = 'p2-scene-overlay';
+1860:             btnConos.style.cssText = 'left:80%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+1861:             btnConos.innerHTML = `<img src="${basePath}Conos.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1862:             btnConos.onclick = () => { startRegateMinigame(); };
+1863:             btnConos.onmouseenter = () => btnConos.querySelector('img').style.transform = 'scale(1.1)';
+1864:             btnConos.onmouseleave = () => btnConos.querySelector('img').style.transform = 'scale(1)';
+1865:             p2LobbyScreen.appendChild(btnConos);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

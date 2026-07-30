@@ -1,0 +1,33 @@
+Created At: 2026-07-30T18:15:40+02:00
+Completed At: 2026-07-30T18:15:41+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/fix_encoding.js`
+Total Lines: 25
+Total Bytes: 684
+Showing lines 1 to 25
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: const fs = require('fs');
+2: let s = fs.readFileSync('c:/Users/Admin/Desktop/WebFutbol/story.js', 'utf8');
+3: const map = {
+4:     'Ò¡': 'á',
+5:     'Ò©': 'é',
+6:     'Ò­': 'í',
+7:     'Ò³': 'ó',
+8:     'Òº': 'ú',
+9:     'Ò±': 'ñ',
+10:     'Ò¿': '¿',
+11:     'Ò¢â¬ â¬"': '->',
+12:     'Ò¢â¬  ¸': '->',
+13:     'Ò¢& â¬S': '✓',
+14:     'Ò¢& â¬¢': '🧹',
+15:     'Ò  ·': '·'
+16: };
+17: for (const [k, v] of Object.entries(map)) {
+18:     s = s.split(k).join(v);
+19: }
+20: // Also fix any isolated Ò left behind as ¡
+21: s = s.replace(/Ò/g, '¡');
+22: s = s.replace(/ ¡/g, '¡').replace(/ ¿/g, '¿');
+23: fs.writeFileSync('c:/Users/Admin/Desktop/WebFutbol/story.js', s, 'utf8');
+24: console.log('Fixed Spanish chars');
+25: 
+The above content shows the entire, complete file contents of the requested file.

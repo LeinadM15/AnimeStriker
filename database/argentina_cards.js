@@ -294,7 +294,7 @@ const argentinaCards = [
         rarity: "Oro",
         rating: 80,
         position: "CM",
-        league: "Superliga Europea",
+        league: "Ligue One",
         nationFlag: "https://flagcdn.com/w40/ar.png",
         teamIcon: "teams/Marsella.png",
         image: "assets/characters/Argentina/PabloCastillo.png",

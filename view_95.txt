@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:00:03+02:00
+Completed At: 2026-07-29T23:00:03+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4281
+Total Bytes: 220198
+Showing lines 3240 to 3280
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3240:             pitch.appendChild(p);
+3241:             
+3242:             setTimeout(() => {
+3243:                 p.style.opacity = '1';
+3244:                 p.style.transform = 'translate(-50%,-50%) scale(1)';
+3245:             }, delay);
+3246:         };
+3247:         
+3248:         // Draw user
+3249:         const userImg = (myPlayer && myPlayer.image) ? myPlayer.image : 'assets/Isagi.png';
+3250:         const userName = (myPlayer && myPlayer.name) ? myPlayer.name : 'TÚ';
+3251:         drawPlayer(userSpot, userName, userImg, '#ffd700', true, 100);
+3252:         
+3253:         // Draw teammates
+3254:         teammates.forEach((npc, i) => {
+3255:             if (i < allySpots.length) {
+3256:                 drawPlayer(allySpots[i], npc.name, npc.image || 'assets/NPC_Default.png', '#00e5ff', false, 200 + i * 80);
+3257:             }
+3258:         });
+3259:         
+3260:         container.appendChild(pitch);
+3261:         
+3262:         // Bottom button
+3263:         const nextBtn = document.createElement('button');
+3264:         nextBtn.className = 'p2-action-btn';
+3265:         nextBtn.innerHTML = '<span>Siguiente ▶</span>';
+3266:         nextBtn.style.cssText = 'margin:10px 0 15px 0; padding:12px 50px; font-size:1.2rem;';
+3267:         container.appendChild(nextBtn);
+3268:         
+3269:         p2LobbyScreen.appendChild(container);
+3270:         
+3271:         // Phase 2: Rival Team
+3272:         nextBtn.onclick = () => {
+3273:             title.innerText = 'EQUIPO RIVAL';
+3274:             title.style.color = '#ff4444';
+3275:             title.style.textShadow = '2px 2px 0 #000, -1px -1px 0 #000, 0 4px 10px rgba(255,0,0,0.5)';
+3276:             
+3277:             // Clear pitch players but keep markings
+3278:             pitch.querySelectorAll('div[style*="position:absolute"][style*="flex-direction:column"]').forEach(el => el.remove());
+3279:             
+3280:             // Draw rival team
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

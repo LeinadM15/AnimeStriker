@@ -1,0 +1,78 @@
+Created At: 2026-07-29T14:56:18+02:00
+Completed At: 2026-07-29T14:56:18+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3526
+Total Bytes: 178743
+Showing lines 2831 to 2900
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2831:     window.openTVStats = function() {
+2832:         document.getElementById('p2-tv-modal').classList.remove('hidden');
+2833:         const standEl = document.getElementById('p2-tv-standings');
+2834:         const scorEl = document.getElementById('p2-tv-scorers');
+2835:         
+2836:         // Sort league
+2837:         p2League.sort((a,b) => b.pts - a.pts);
+2838:         
+2839:         let tableHTML = `
+2840:             <table class="p2-table">
+2841:                 <tr><th>Equipo</th><th>V</th><th>E</th><th>D</th><th>PTS</th></tr>
+2842:         `;
+2843:         p2League.forEach(t => {
+2844:             tableHTML += `<tr><td>${t.name}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td><b>${t.pts}</b></td></tr>`;
+2845:         });
+2846:         tableHTML += `</table>`;
+2847:         standEl.innerHTML = tableHTML;
+2848:         
+2849:         // Populate mock scorers if empty
+2850:         if (p2TopScorers.length === 0 && p2StratumPlayers.length > 0) {
+2851:             for(let i=0; i<5; i++) {
+2852:                 p2TopScorers.push({
+2853:                     npc: p2StratumPlayers[i],
+2854:                     g: Math.floor(Math.random()*5)
+2855:                 });
+2856:             }
+2857:         }
+2858:         
+2859:         p2TopScorers.sort((a,b) => b.g - a.g);
+2860:         scorEl.innerHTML = '';
+2861:         p2TopScorers.slice(0, 5).forEach(s => {
+2862:             const div = document.createElement('div');
+2863:             div.className = 'p2-scorer-card';
+2864:             div.innerHTML = `
+2865:                 <img src="${s.npc.image}">
+2866:                 <div style="font-size:0.9rem; margin:5px 0;">${s.npc.name}</div>
+2867:                 <div class="p2-scorer-goals">${s.g} Goles</div>
+2868:             `;
+2869:             scorEl.appendChild(div);
+2870:         });
+2871:     };
+2872:     
+2873:     window.tryPersuade = function(stat) {
+2874:         const val = p2Stats[stat];
+2875:         const chat = document.getElementById('tactics-chat');
+2876:         const opts = document.getElementById('tactics-options');
+2877:         
+2878:         chat.innerHTML += `<div class="tactics-msg" style="border-left-color:#00ff00;"><b>Tú:</b> Confíad en mí, lo haré bien.</div>`;
+2879:         
+2880:         setTimeout(() => {
+2881:             if (val >= 65 || Math.random() > 0.5) { // Win negotiation
+2882:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> Está bien, rotaremos posiciones. ¡Tú serás nuestro DC titular los primeros minutos!</div>`;
+2883:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(true)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ JUGAR PARTIDO (Delantero)</span></button>`;
+2884:             } else {
+2885:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> No nos convences. Jugarás de defensa o te quedas en el banquillo.</div>`;
+2886:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(false)" style="border-color:#ff4444; color:#ff4444;"><span>⚽ JUGAR PARTIDO (Defensa)</span></button>`;
+2887:             }
+2888:         }, 1000);
+2889:     };
+2890:     
+2891:     window.startMatch = function(isStriker) {
+2892:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2893:         
+2894:         // El equipo está formado por ti y los 10 primeros NPCs supervivientes del estrato
+2895:         const teammates = p2StratumPlayers.slice(0, 10);
+2896:         
+2897:         // Calculate Win Probability dynamically based on Friendship
+2898:         let teamStrength = 0;
+2899:         teammates.forEach(npc => {
+2900:             let friendVal = 0;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

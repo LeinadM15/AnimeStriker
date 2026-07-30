@@ -1,0 +1,79 @@
+Created At: 2026-07-29T14:26:20+02:00
+Completed At: 2026-07-29T14:26:20+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3481
+Total Bytes: 176642
+Showing lines 1850 to 1920
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1850:             const btnConos = document.createElement('div');
+1851:             btnConos.className = 'p2-scene-overlay';
+1852:             btnConos.style.cssText = 'left:80%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+1853:             btnConos.innerHTML = `<img src="${basePath}Conos.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1854:             btnConos.onclick = () => { startRegateMinigame(); };
+1855:             p2LobbyScreen.appendChild(btnConos);
+1856:             
+1857:         } else if (roomName === 'Sala TV') {
+1858:             // Aquí puedes cambiar la posición (x, y) y el tamaño (w, h) de los NPCs en la Sala TV
+1859:             spawnSceneNPCs(roomName, [
+1860:                 {x: 32.5, y: 53, w: 250, h: 260}, // NPC 1 (Izquierda)
+1861:                 {x: 55, y: 53, w: 250, h: 260}  // NPC 2 (Derecha)
+1862:             ]);
+1863:             setRoomBg(`${basePath}Camaras.jpeg`);
+1864:             
+1865:             // Ocultar el cuadrado de UI estándar
+1866:             document.getElementById('p2-room-content').style.display = 'none';
+1867:             
+1868:             // Añadir el icono TeleMin encima de la tele
+1869:             const teleminDiv = document.createElement('div');
+1870:             teleminDiv.className = 'p2-scene-overlay';
+1871:             teleminDiv.style.cssText = 'left:50%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; display:flex; flex-direction:column; align-items:center; z-index:10;';
+1872:             teleminDiv.innerHTML = `<img src="assets/Historia/Habitaciones/TeleMin.png" alt="TeleMin" style="width:100%; height:100%; object-fit:contain;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 100 100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%2300e5ff\\' rx=\\'10\\'/><text x=\\'50\\' y=\\'60\\' font-size=\\'40\\' text-anchor=\\'middle\\' font-family=\\'Arial\\'>📺</text></svg>'">`;
+1873:             teleminDiv.onclick = () => { openTeleMinGame(); };
+1874:             p2LobbyScreen.appendChild(teleminDiv);
+1875:             
+1876:             p2RoomBody.innerHTML = '';
+1877:             
+1878:         } else if (roomName === 'Tácticas') {
+1879:             if (p2Stats.day % 3 !== 0) {
+1880:                 setRoomBg(`${basePath}Tacticas.jpeg`);
+1881:                 p2RoomBody.innerHTML = `
+1882:                     <div style="font-size:1.2rem; text-align:center; margin-top:20px; color:#aaa; margin-bottom:20px;">La sala está vacía. Hoy no hay partido programado.</div>
+1883:                     <div style="display:flex; justify-content:center;">
+1884:                         <button class="p2-action-btn" onclick="openTVStats()">
+1885:                             <span>🏆 Clasificación y Goleadores</span>
+1886:                         </button>
+1887:                     </div>
+1888:                 `;
+1889:             } else {
+1890:                 spawnNPCs(6);
+1891:                 setRoomBg(`${basePath}Tacticas.jpeg`);
+1892:                 p2RoomBody.innerHTML = `
+1893:                     <div style="font-size:1.2rem; text-align:center; margin-bottom:20px; color:#ff4444;">¡DÍA DE PARTIDO! Reunión de equipo.</div>
+1894:                     <div style="display:flex; justify-content:center; margin-bottom:20px;">
+1895:                         <button class="p2-action-btn" onclick="openTVStats()" style="transform:scale(0.9);">
+1896:                             <span>🏆 Clasificación y Goleadores</span>
+1897:                         </button>
+1898:                     </div>
+1899:                     <div class="tactics-chat" id="tactics-chat">
+1900:                         <div class="tactics-msg"><b>Compañeros:</b> ¡Todos queremos jugar de delantero hoy! ¿Por qué deberías ser tú?</div>
+1901:                     </div>
+1902:                     <div id="tactics-options" style="display:flex; flex-direction:column; gap:10px;">
+1903:                         <button class="p2-action-btn" onclick="tryPersuade('pace')"><span>"Soy el más rápido. Dejadme rotar cada 5 minutos." (Requiere Velocidad)</span></button>
+1904:                         <button class="p2-action-btn" onclick="tryPersuade('passing')"><span>"Os daré las mejores asistencias, compartiremos los goles." (Requiere Pase)</span></button>
+1905:                         <button class="p2-action-btn" onclick="tryPersuade('physical')"><span>"Soy el más fuerte. Yo abriré la defensa." (Requiere Físico)</span></button>
+1906:                     </div>
+1907:                 `;
+1908:             }
+1909:         } else if (roomName === 'Meditación') {
+1910:             setRoomBg(`${basePath}Yoga.jpeg`);
+1911:             
+1912:             // Hide the central panel for this room
+1913:             document.getElementById('p2-room-content').style.display = 'none';
+1914:             
+1915:             // Get the NPC that will be spawned
+1916:             const roomNpcs = p2DailyNPCs[roomName];
+1917:             const npc = roomNpcs && roomNpcs.length > 0 ? roomNpcs[0] : null;
+1918:             
+1919:             // CuerpoYoga overlay on mat
+1920:             const cuerpoYoga = document.createElement('div');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

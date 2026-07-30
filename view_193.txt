@@ -1,0 +1,34 @@
+Created At: 2026-07-30T17:35:21+02:00
+Completed At: 2026-07-30T17:35:22+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5041
+Total Bytes: 262887
+Showing lines 3985 to 4010
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3985:     
+3986:     function executeSimulation(position, win, context) {
+3987:         let goalsScored = 0; // Goles individuales del jugador
+3988:         if (position === 'DEL' || position === true) {
+3989:             goalsScored = Math.floor(Math.random() * 4) + 1;
+3990:         } else if (position === 'MED') {
+3991:             goalsScored = Math.floor(Math.random() * 3);
+3992:         } else if (position === 'DEF' || position === false) {
+3993:             goalsScored = Math.floor(Math.random() * 2);
+3994:         } else if (position === 'POR'🏆 ¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 'success', 5000);
+3995:         } else {
+3996:             showNotification(`DERROTA... Resultado: ${teamGoals}-${enemyGoals}. (Tus Goles: ${goalsScored})`, 'error'🏆 ¡VICTORIA! Resultado: ${teamGoals}-${enemyGoals}. Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+3997:             : `DERROTA... Resultado: ${teamGoals}-${enemyGoals}. Ganaste +${matchXp} EXP total y ${goalsScored} goles.`;
+3998:         openMatchXpDistributor(matchXp, summaryText);
+3999:     }
+4000: 
+4001: 
+4002:     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+4003:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+4004:         if (detroitUI) detroitUI.remove();
+4005:         
+4006:         const engine = document.createElement('div');
+4007:         engine.id = 'gk-match-engine';
+4008:         engine.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:9999; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none; cursor:crosshair;';
+4009:         
+4010:         // Evitar menú contextual clic derecho
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

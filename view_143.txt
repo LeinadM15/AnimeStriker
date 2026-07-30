@@ -1,0 +1,59 @@
+Created At: 2026-07-30T02:20:05+02:00
+Completed At: 2026-07-30T02:20:05+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4372
+Total Bytes: 228117
+Showing lines 1100 to 1150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1100:                 let npc = myTeamPool.pop();
+1101:                 tacticasNpcs.push(npc);
+1102:                 pool = pool.filter(p => p.id !== npc.id);
+1103:             }
+1104:         }
+1105:         
+1106:         p2DailyNPCs = {
+1107:             'Habitación': [],
+1108:             'Comedor': pool.splice(0, 4),
+1109:             'Gimnasio': pool.splice(0, 1),
+1110:             'Meditación': pool.splice(0, 1),
+1111:             'Campo': pool.splice(0, 2),
+1112:             'Sala TV': pool.splice(0, 3),
+1113:             'Tácticas': tacticasNpcs
+1114:         };
+1115:     }
+1116:     
+1117:     // Team Standings Mock
+1118:     let p2League = [
+1119:         {name: "Equipo V", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1120:         {name: "Equipo W", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1121:         {name: "Equipo X", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1122:         {name: "Equipo Y", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+1123:         {name: "Tu Equipo (Z)", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0}
+1124:     ];
+1125:     let p2TopScorers = [];
+1126:     
+1127:     const p2LobbyScreen = document.getElementById('phase2-lobby');
+1128:     const p2RoomTitle = document.getElementById('p2-room-title');
+1129:     const p2RoomBody = document.getElementById('p2-room-body');
+1130:     const p2NpcContainer = document.getElementById('p2-npc-container');
+1131:     
+1132:     window.initPhase2 = function() {
+1133:         document.getElementById('tag-screen').classList.add('hidden');
+1134:         p2LobbyScreen.classList.remove('hidden');
+1135:         
+1136:         // Setup initial stats based on selected player if they have base stats
+1137:         if (myPlayer.rating) {
+1138:             const base = parseInt(myPlayer.rating);
+1139:             p2Stats.pace = p2Stats.shooting = p2Stats.passing = p2Stats.dribbling = p2Stats.defending = p2Stats.physical = Math.min(base, 70);
+1140:         }
+1141:         
+1142:         generateStratumPlayers();
+1143:         
+1144:         // Navigation events
+1145:         document.getElementById('p2-nav-left').onclick = () => {
+1146:             p2CurrentRoom--;
+1147:             if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
+1148:             renderP2Room();
+1149:         };
+1150:         document.getElementById('p2-nav-right').onclick = () => {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

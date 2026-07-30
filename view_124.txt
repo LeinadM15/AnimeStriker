@@ -1,0 +1,24 @@
+Created At: 2026-07-29T23:39:42+02:00
+Completed At: 2026-07-29T23:39:42+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4355
+Total Bytes: 227134
+Showing lines 3970 to 3985
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3970:             p2Relationships = state.p2Relationships || {};
+3971:             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
+3972:             p2CurrentRoom = state.p2CurrentRoom || 0;
+3973:             p2League = state.p2League;
+3974:             // Migración para partidas guardadas antiguas (renombrar Tu Equipo y añadir gf/gc)
+3975:             if (p2League) {
+3976:                 p2League.forEach(t => {
+3977:                     if (t.name === "Tu Equipo (V)") t.name = "Tu Equipo (Z)";
+3978:                     if (typeof t.gf === 'undefined') t.gf = 0;
+3979:                     if (typeof t.gc === 'undefined') t.gc = 0;
+3980:                 });
+3981:             }
+3982:             p2TopScorers = state.p2TopScorers || [];
+3983:             
+3984:             p2StratumPlayers = [];
+3985:             if (state.p2StratumPlayersData) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

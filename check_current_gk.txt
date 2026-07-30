@@ -1,0 +1,117 @@
+﻿
+  
+  
+>     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
+          p2RoomBody.innerHTML = '';
+          
+          // Remove Detroit UI if somehow still there
+          const detroitUI = document.getElementById('tactics-detroit-overlay');
+          if (detroitUI) detroitUI.remove();
+          
+          const engine = document.createElement('div');
+          engine.id = 'gk-match-engine';
+          // Placeholder background if EstadioPortero.jpeg doesn't exist yet, it will fallback to a color
+          engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; 
+background:url("assets/Match/EstadioPortero.jpeg") center/cover, #2a5a2a; z-index:100; 
+font-family:"Nunito",sans-serif; overflow:hidden; user-select:none;';
+          
+          const hud = document.createElement('div');
+          hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; 
+justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; 
+background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110;';
+          
+          const timeDisplay = document.createElement('div');
+          timeDisplay.innerText = "00:00";
+          
+          const scoreDisplay = document.createElement('div');
+          scoreDisplay.innerText = "Goles Encajados: 0 | Paradas: 0";
+          
+          hud.appendChild(timeDisplay);
+          hud.appendChild(scoreDisplay);
+          engine.appendChild(hud);
+          
+          const flash = document.createElement('div');
+          flash.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; 
+opacity:0; z-index:120; pointer-events:none; transition:opacity 0.2s;';
+          engine.appendChild(flash);
+          
+          p2RoomBody.appendChild(engine);
+          
+          let minute = 0;
+          let saves = 0;
+          let goalsConceded = 0;
+          let matchInterval = null;
+          
+          const highlightMinutes = [14, 38, 62, 85];
+          
+          function updateHUD() {
+              timeDisplay.innerText = `${minute < 10 ? '0':''}${minute}:00`;
+              scoreDisplay.innerText = `Goles Encajados: ${goalsConceded} | Paradas: ${saves}`;
+          }
+          
+          function endMatch() {
+              engine.remove();
+              
+              // Simular los goles que mete NUESTRO equipo solos
+              const teamGoals = Math.floor(Math.random() * 3); // 0 a 2 goles
+              const win = teamGoals > goalsConceded;
+              
+              const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+              if (myTeam) {
+                  if (win) { myTeam.w++; myTeam.pts += 3; }
+                  else if (teamGoals === goalsConceded) { myTeam.d++; myTeam.pts += 1; }
+                  else { myTeam.l++; }
+              }
+              
+              // Simulate other matches
+              p2League.forEach(t => {
+                  if (!t.name.includes("Tu Equipo")) {
+                      t.w += Math.floor(Math.random() * 2);
+                      t.pts = (t.w * 3) + t.d;
+                  }
+              });
+              
+              const matchXp = 250 + (win ? 200 : (teamGoals === goalsConceded ? 100 : 50)) + (saves * 75);
+              const resultTxt = win ? 'Â¡VICTORIA!' : (teamGoals === goalsConceded ? 'EMPATE' : 'DERROTA...');
+              
+              showNotification(`${resultTxt} Resultado: ${teamGoals}-${goalsConceded}. Paradas: ${saves}`, win ? 
+'success' : (teamGoals===goalsConceded ? 'warning':'error'), 6000);
+              
+              setTimeout(() => {
+                  openMatchXpDistributor(matchXp, `${resultTxt} El equipo metiÃ³ ${teamGoals} goles, encajaste 
+${goalsConceded} y paraste ${saves} tiros. XP Total: ${matchXp}`);
+              }, 1000);
+          }
+          
+          function startHighlight() {
+              flash.style.opacity = '1';
+              setTimeout(() => { flash.style.opacity = '0'; }, 200);
+              
+              const alertTxt = document.createElement('div');
+              alertTxt.style.cssText = 'position:absolute; top:40%; left:50%; transform:translate(-50%,-50%); 
+font-size:3rem; color:#ff4444; text-shadow:0 0 10px #000, 0 0 20px #ff0000; font-weight:bold; z-index:115; 
+white-space:nowrap; animation: bounce 1s infinite;';
+              alertTxt.innerText = "Â¡PELIGRO! Â¡EL RIVAL ATACA!";
+              engine.appendChild(alertTxt);
+              
+              // Elegir tipo de jugada: 0=Tiro Lejano, 1=Pase de la muerte, 2=CÃ³rner
+              const scenario = Math.floor(Math.random() * 3);
+              
+              setTimeout(() => {
+                  alertTxt.remove();
+                  playScenario(scenario);
+              }, 1500);
+          }
+          
+          function playScenario(type) {
+              let reactTime = 1300; // ms base para reaccionar
+              // Reducir tiempo segÃºn estadÃ­stica de Reflejos si estuviera implementada
+              // reactTime -= (p2Stats.stats.reflejos * 5); 
+              
+              const target = document.createElement('div');
+              target.className = 'gk-target';
+              target.style.cssText = 'position:absolute; width:100px; height:100px; background:rgba(0,229,255,0.4); 
+border:4px solid #00e5ff; border-radius:50%; cursor:pointer; z-index:130; animation: pulse 0.3s infinite alternate; 
+transition: transform 0.1s;';
+
+

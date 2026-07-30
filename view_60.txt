@@ -1,0 +1,129 @@
+Created At: 2026-07-29T16:30:17+02:00
+Completed At: 2026-07-29T16:30:17+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3759
+Total Bytes: 193493
+Showing lines 3030 to 3150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3030:                 if (state.timeLeft <= 0) {
+3031:                     clearInterval(state.timerId);
+3032:                     state.timerId = null;
+3033:                     tacticsMakeChoice(-15, 20); // Penalty for silence
+3034:                 }
+3035:             }, 100);
+3036:         } else {
+3037:             timerBar.style.width = '0%';
+3038:         }
+3039:         
+3040:         if (state.turn === 0) {
+3041:             text.innerHTML = `<b>Compañero 1:</b> Escucha, novato. Hoy juego yo de delantero centro. Tú ponte en la defensa y no estorbes.`;
+3042:             options.innerHTML = `
+3043:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(20, 25)"><span>"Vas a chupar banquillo. El dorsal '9' es mío."</span></button>
+3044:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(10, 10)"><span>"Venga ya, si no le marcas ni al arcoíris. Yo voy arriba."</span></button>
+3045:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-15, -10)"><span>"Bueno, quizás pueda jugar un poco más atrasado..."</span></button>
+3046:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-35, -20)"><span>"Vale, jugaré en la defensa para que tú destaques."</span></button>
+3047:             `;
+3048:         } else if (state.turn === 1) {
+3049:             text.innerHTML = `<b>Compañero 2:</b> ¡Un momento! Si este crío juega arriba, no va a bajar a presionar. ¿Quién va a defender los contraataques?`;
+3050:             options.innerHTML = `
+3051:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15, 30)"><span>"La mejor defensa es marcar cinco goles, inútil."</span></button>
+3052:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(0, -15)"><span>"Tranquilos, prometo que bajaré a defender si es necesario."</span></button>
+3053:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-20, -10)"><span>"Vale, entonces jugaré en el medio para equilibrar."</span></button>
+3054:             `;
+3055:         } else if (state.turn === 2) {
+3056:             text.innerHTML = `<b>Compañero 3:</b> No me fío un pelo de él. Sus números físicos son una basura. Nos van a aplastar.`;
+3057:             options.innerHTML = `
+3058:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15, 30)"><span>"Mis piernas valen más que todo tu linaje. Apártate."</span></button>
+3059:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(5, 5)"><span>"El talento supera al físico, os lo demostraré hoy."</span></button>
+3060:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-20, -15)"><span>"Supongo que me quedaré atrás cerrando huecos entonces..."</span></button>
+3061:             `;
+3062:         } else if (state.turn === 3) {
+3063:             text.innerHTML = `<b>Compañero 1:</b> El míster cuenta conmigo para marcar. Dame una buena razón para dejarte mi puesto.`;
+3064:             options.innerHTML = `
+3065:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15, 35)"><span>"Porque yo soy la estrella de este equipo, no tú."</span></button>
+3066:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(5, -20)"><span>"Porque si me das asistencias, los dos saldremos ganando."</span></button>
+3067:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-15, -15)"><span>"De acuerdo, jugaré en el medio y te daré pases."</span></button>
+3068:             `;
+3069:         } else if (state.turn === 4) {
+3070:             text.innerHTML = `<b>Compañeros:</b> ¡Esta es tu última oportunidad! ¿Qué te hace pensar que mereces ese puesto en el once?`;
+3071:             options.innerHTML = `
+3072:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(20, 20)"><span>"Porque soy el mejor y punto."</span></button>
+3073:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(0, -15)"><span>"Dejadme demostrarlo hoy. Si fallo, jugaré donde queráis mañana."</span></button>
+3074:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(30, -50)"><span>"Paso de vosotros. Me voy a la portería, haced el ridículo solos."</span></button>
+3075:             `;
+3076:         } else if (state.turn === 99) {
+3077:             text.innerHTML = `<b>Compañeros:</b> ¡SE ACABÓ! Estamos hartos de tu chulería. ¡Te vas a la portería castigado por listo!`;
+3078:             options.innerHTML = `
+3079:                 <button class="p2-action-btn" onclick="startMatch('POR')" style="border-color:#ff4444; color:#ff4444;"><span>⚽ IR A LA PORTERÍA (Castigado)</span></button>
+3080:             `;
+3081:         } else if (state.turn === 5) {
+3082:             let finalPos = 'DEF';
+3083:             if(state.affinity >= 25) finalPos = 'MED';
+3084:             if(state.affinity >= 50) finalPos = 'DEL';
+3085:             if(state.affinity >= 75) finalPos = 'POR';
+3086:             
+3087:             let posName = "Defensa";
+3088:             if(finalPos === 'MED') posName = "Centrocampista";
+3089:             if(finalPos === 'DEL') posName = "Delantero";
+3090:             if(finalPos === 'POR') posName = "Portero";
+3091:             
+3092:             let finalMsg = "";
+3093:             if (finalPos === 'DEL') {
+3094:                 finalMsg = "De acuerdo, tú ganas... Jugarás de Delantero. Pero como falles los goles, te vas a enterar.";
+3095:             } else if (finalPos === 'MED') {
+3096:                 finalMsg = "Trato hecho. Jugarás en el medio repartiendo juego. Es una buena tregua para todos.";
+3097:             } else if (finalPos === 'DEF') {
+3098:                 finalMsg = "Buena elección. Quédate atrás de Defensa y déjanos el trabajo sucio a nosotros.";
+3099:             } else if (finalPos === 'POR') {
+3100:                 finalMsg = "Perfecto. Te vas de Portero y dejas de molestar a los que saben jugar.";
+3101:             }
+3102:             
+3103:             text.innerHTML = `<b>Compañeros:</b> ${finalMsg}`;
+3104:             options.innerHTML = `
+3105:                 <button class="p2-action-btn" onclick="startMatch('${finalPos}')" style="border-color:#00e5ff; color:#00e5ff;"><span>⚽ SALTAR AL CAMPO (${posName})</span></button>
+3106:             `;
+3107:         }
+3108:     };
+3109:     
+3110:     window.startMatch = function(position) {
+3111:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+3112:         
+3113:         // Remove Detroit UI if it exists
+3114:         const detroitUI = document.getElementById('tactics-detroit-overlay');
+3115:         if (detroitUI) detroitUI.remove();
+3116:         
+3117:         // El equipo está formado por ti y los 10 primeros NPCs supervivientes del estrato
+3118:         const teammates = p2StratumPlayers.slice(0, 10);
+3119:         
+3120:         // Calculate Win Probability dynamically based on Friendship
+3121:         let teamStrength = 0;
+3122:         teammates.forEach(npc => {
+3123:             let friendVal = 0;
+3124:             if (p2Relationships[npc.id]) {
+3125:                 const data = p2Relationships[npc.id];
+3126:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+3127:             }
+3128:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+3129:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000))); // Base GRL + Up to 10% bonus
+3130:         });
+3131:         
+3132:         const myGRL = calcOVR();
+3133:         const ourStrength = myGRL + teamStrength;
+3134:         const enemyStrength = 75 * 11; // Equipo rival tiene de media 75 de GRL por jugador aprox
+3135:         
+3136:         // Min prob 25%, max prob 90%
+3137:         const winProbability = Math.max(0.25, Math.min(0.90, ourStrength / (ourStrength + enemyStrength)));
+3138:         const win = Math.random() < winProbability;
+3139:         
+3140:         // Simulate Match result based on position
+3141:         let goalsScored = 0;
+3142:         if (position === 'DEL' || position === true) {
+3143:             goalsScored = Math.floor(Math.random() * 4) + 1; // 1 to 4 goals
+3144:         } else if (position === 'MED') {
+3145:             goalsScored = Math.floor(Math.random() * 3);     // 0 to 2 goals
+3146:         } else if (position === 'DEF' || position === false) {
+3147:             goalsScored = Math.floor(Math.random() * 2);     // 0 to 1 goals
+3148:         } else if (position === 'POR') {
+3149:             goalsScored = 0;                                 // Goalkeeper scores 0
+3150:         }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

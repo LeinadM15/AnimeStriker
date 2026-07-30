@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:26:41+02:00
+Completed At: 2026-07-29T23:26:41+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4222
+Total Bytes: 219688
+Showing lines 1150 to 1190
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1150:     
+1151:     function generateStratumPlayers() {
+1152:         const myBaseR = myPlayer.rating ? calcRating(myPlayer.rating) : 70;
+1153:         const allRoster = getRosterPlayers().filter(p => p.id !== myPlayer.id && !tagPlayers.find(tp => tp.id === p.id));
+1154:         
+1155:         // Filter players within range [-3, +3] of my Gold Card rating
+1156:         let inRange = allRoster.filter(p => {
+1157:             const r = calcRating(p.rating);
+1158:             return (r >= myBaseR - 3) && (r <= myBaseR + 3);
+1159:         });
+1160:         
+1161:         if (inRange.length < 44) {
+1162:             inRange = [...allRoster].sort((a, b) => {
+1163:                 const distA = Math.abs(calcRating(a.rating) - myBaseR);
+1164:                 const distB = Math.abs(calcRating(b.rating) - myBaseR);
+1165:                 return distA - distB || Math.random() - 0.5;
+1166:             });
+1167:         }
+1168:         
+1169:         inRange.sort(() => Math.random() - 0.5);
+1170:         const myStartOVR = calcOVR();
+1171:         p2StratumPlayers = inRange.slice(0, 44).map(p => {
+1172:             const goldR = calcRating(p.rating);
+1173:             const diff = Math.max(-3, Math.min(3, goldR - myBaseR));
+1174:             return {
+1175:                 ...p,
+1176:                 p2Rating: Math.max(60, myStartOVR + diff + (Math.random() * 0.8 - 0.4))
+1177:             };
+1178:         });
+1179:         
+1180:         generateDailyNPCs();
+1181:     }
+1182:     
+1183:     function calcOVR() {
+1184:         const sum = p2Stats.pace + p2Stats.shooting + p2Stats.passing + p2Stats.dribbling + p2Stats.defending + p2Stats.physical;
+1185:         let ovr = Math.floor(sum / 6);
+1186:         return Math.min(99, ovr);
+1187:     }
+1188: 
+1189:     window.advanceP2Day = function(fromMatch) {
+1190:         p2Stats.day++;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

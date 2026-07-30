@@ -1,0 +1,79 @@
+Created At: 2026-07-30T03:03:09+02:00
+Completed At: 2026-07-30T03:03:10+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4609
+Total Bytes: 239618
+Showing lines 4160 to 4230
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4160:                 infoPanel.style.opacity = '0';
+4161:             };
+4162:             
+4163:             graphContainer.appendChild(node);
+4164:         });
+4165:         
+4166:         body.appendChild(graphContainer);
+4167:     };
+4168: 
+4169:     // ==========================================
+4170:     // SAVE / LOAD SYSTEM
+4171:     // ==========================================
+4172:     window.saveGameState = function() {
+4173:         if (!myPlayer) { showNotification('No hay partida activa que guardar.', 'error'); return; }
+4174:         
+4175:         const p2DailyNPCsIds = {};
+4176:         for (let room in p2DailyNPCs) {
+4177:             p2DailyNPCsIds[room] = p2DailyNPCs[room].map(p => p.id);
+4178:         }
+4179:         
+4180:         const state = {
+4181:             gamePhase: window.gamePhase,
+4182:             myPlayerId: myPlayer.id,
+4183:             p2Stats: p2Stats,
+4184:             p2Relationships: p2Relationships,
+4185:             p2EquippedSkills: p2EquippedSkills,
+4186:             p2CurrentRoom: p2CurrentRoom,
+4187:             p2League: p2League,
+4188:             p2TopScorers: p2TopScorers,
+4189:             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
+4190:             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating, team: p.team, goals: p.goals })),
+4191:             p2DailyNPCsIds: p2DailyNPCsIds
+4192:         };
+4193:         localStorage.setItem('webfutbol_story_save', JSON.stringify(state));
+4194:         showNotification('Partida guardada correctamente.', 'success');
+4195:     };
+4196: 
+4197:     window.loadGameState = function() {
+4198:         const saved = localStorage.getItem('webfutbol_story_save');
+4199:         if (!saved) { showNotification('No hay partida guardada.', 'error'); return; }
+4200:         
+4201:         try {
+4202:             const state = JSON.parse(saved);
+4203:             const allPlayers = getRosterPlayers();
+4204:             myPlayer = allPlayers.find(c => c.id === state.myPlayerId);
+4205:             if (!myPlayer) {
+4206:                 // Fallback: search in allOroCards
+4207:                 myPlayer = [...allOroCards.values()].find(c => c.id === state.myPlayerId);
+4208:             }
+4209:             if (!myPlayer) { showNotification('Error: no se encontró al jugador guardado.', 'error'); return; }
+4210:             
+4211:             p2Stats = state.p2Stats;
+4212:             p2Relationships = state.p2Relationships || {};
+4213:             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
+4214:             p2CurrentRoom = state.p2CurrentRoom || 0;
+4215:             window.gamePhase = state.gamePhase || 2; // Old saves default to Blue Lock
+4216:             
+4217:             p2League = state.p2League;
+4218:             // Migración para partidas guardadas antiguas (renombrar Tu Equipo y añadir gf/gc)
+4219:             if (p2League) {
+4220:                 p2League.forEach(t => {
+4221:                     if (t.name === "Equipo Z") t.name = "Equipo V";
+4222:                 });
+4223:                 p2League.forEach(t => {
+4224:                     if (t.name === "Tu Equipo (V)") t.name = "Tu Equipo (Z)";
+4225:                     if (typeof t.gf === 'undefined') t.gf = 0;
+4226:                     if (typeof t.gc === 'undefined') t.gc = 0;
+4227:                 });
+4228:             }
+4229:             p2TopScorers = state.p2TopScorers || [];
+4230:             
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

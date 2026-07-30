@@ -1,0 +1,44 @@
+Created At: 2026-07-30T03:00:45+02:00
+Completed At: 2026-07-30T03:00:45+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4599
+Total Bytes: 239035
+Showing lines 4150 to 4185
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4150:                 infoPanel.style.opacity = '0';
+4151:             };
+4152:             
+4153:             graphContainer.appendChild(node);
+4154:         });
+4155:         
+4156:         body.appendChild(graphContainer);
+4157:     };
+4158: 
+4159:     // ==========================================
+4160:     // SAVE / LOAD SYSTEM
+4161:     // ==========================================
+4162:     window.saveGameState = function() {
+4163:         if (!myPlayer) { showNotification('No hay partida activa que guardar.', 'error'); return; }
+4164:         
+4165:         const p2DailyNPCsIds = {};
+4166:         for (let room in p2DailyNPCs) {
+4167:             p2DailyNPCsIds[room] = p2DailyNPCs[room].map(p => p.id);
+4168:         }
+4169:         
+4170:         const state = {
+4171:             gamePhase: window.gamePhase,
+4172:             myPlayerId: myPlayer.id,
+4173:             p2Stats: p2Stats,
+4174:             p2Relationships: p2Relationships,
+4175:             p2EquippedSkills: p2EquippedSkills,
+4176:             p2CurrentRoom: p2CurrentRoom,
+4177:             p2League: p2League,
+4178:             p2TopScorers: p2TopScorers,
+4179:             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
+4180:             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating, team: p.team, goals: p.goals })),
+4181:             p2DailyNPCsIds: p2DailyNPCsIds
+4182:         };
+4183:         localStorage.setItem('webfutbol_story_save', JSON.stringify(state));
+4184:         showNotification('Partida guardada correctamente.', 'success');
+4185:     };
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

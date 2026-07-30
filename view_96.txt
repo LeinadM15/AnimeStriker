@@ -1,0 +1,39 @@
+Created At: 2026-07-29T23:00:12+02:00
+Completed At: 2026-07-29T23:00:12+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4281
+Total Bytes: 220198
+Showing lines 3280 to 3310
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3280:             // Draw rival team
+3281:             enemySpots.forEach((spot, i) => {
+3282:                 if (i < rivals.length) {
+3283:                     drawPlayer(spot, rivals[i].name, rivals[i].image || 'assets/NPC_Default.png', '#ff4444', false, 200 + i * 80);
+3284:                 }
+3285:             });
+3286:             
+3287:             nextBtn.innerHTML = '<span>¡AL CAMPO! ⚽</span>';
+3288:             nextBtn.style.borderColor = '#ff4444';
+3289:             nextBtn.style.color = '#ff4444';
+3290:             
+3291:             nextBtn.onclick = () => {
+3292:                 container.style.transition = 'opacity 0.6s';
+3293:                 container.style.opacity = '0';
+3294:                 setTimeout(() => {
+3295:                     container.remove();
+3296:                     if (position === 'POR') {
+3297:                         startGKMinigame(ourStrength, enemyStrength, winProbability);
+3298:                     } else {
+3299:                         executeSimulation(position, win, matchContext);
+3300:                     }
+3301:                 }, 600);
+3302:             };
+3303:         };
+3304:     };
+3305:     
+3306:     function executeSimulation(position, win, context) {
+3307:         let goalsScored = 0;
+3308:         if (position === 'DEL' || position === true) {
+3309:             goalsScored = Math.floor(Math.random() * 4) + 1;
+3310:         } else if (position === 'MED') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

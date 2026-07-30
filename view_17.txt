@@ -1,0 +1,89 @@
+Created At: 2026-07-29T02:26:47+02:00
+Completed At: 2026-07-29T02:26:47+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3432
+Total Bytes: 174675
+Showing lines 3170 to 3250
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3170:     if (localStorage.getItem('webfutbol_story_save')) {
+3171:         const btnLoad = document.getElementById('btn-load-game');
+3172:         if (btnLoad) btnLoad.style.display = 'inline-block';
+3173:     }
+3174: 
+3175:     window.startRegateMinigame = function() {
+3176:         if (!checkStamina(35)) return;
+3177:         
+3178:         const overlay = document.createElement('div');
+3179:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/MinijuegoRegate.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden;';
+3180:         
+3181:         const topBar = document.createElement('div');
+3182:         topBar.style.cssText = 'padding:20px; display:flex; justify-content:space-between; font-family:"Bangers",cursive; font-size:2rem; color:#00e5ff; text-shadow:0 0 10px #000; z-index:10;';
+3183:         
+3184:         const scoreEl = document.createElement('div'); scoreEl.innerText = 'Esquivados: 0';
+3185:         const timeEl = document.createElement('div'); timeEl.innerText = 'Tiempo: 30s';
+3186:         topBar.appendChild(scoreEl); topBar.appendChild(timeEl);
+3187:         overlay.appendChild(topBar);
+3188:         
+3189:         const gameArea = document.createElement('div');
+3190:         gameArea.style.cssText = 'flex:1; position:relative; width:100%; max-width:800px; margin:0 auto; overflow:hidden;';
+3191:         overlay.appendChild(gameArea);
+3192:         
+3193:         const player = document.createElement('div');
+3194:         player.style.cssText = 'position:absolute; bottom:20px; width:80px; height:80px; transition:left 0.15s ease-out;';
+3195:         player.innerHTML = `<img src="${p2Stats.card.image}" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+3196:         gameArea.appendChild(player);
+3197:         
+3198:         const lanes = [20, 50, 80];
+3199:         let currentLane = 1;
+3200:         const updatePlayerPos = () => { player.style.left = `calc(${lanes[currentLane]}% - 40px)`; };
+3201:         updatePlayerPos();
+3202:         
+3203:         const controls = document.createElement('div');
+3204:         controls.style.cssText = 'position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:150px; z-index:10; pointer-events:none;';
+3205:         const btnLeft = document.createElement('button'); btnLeft.innerText = '⬅️ IZQ';
+3206:         btnLeft.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3207:         btnLeft.onmousedown = () => { btnLeft.style.background = 'rgba(0,229,255,0.4)'; if(currentLane > 0) currentLane--; updatePlayerPos(); };
+3208:         btnLeft.onmouseup = () => btnLeft.style.background = 'rgba(0,0,0,0.5)';
+3209:         btnLeft.ontouchstart = btnLeft.onmousedown;
+3210:         btnLeft.ontouchend = btnLeft.onmouseup;
+3211:         
+3212:         const btnRight = document.createElement('button'); btnRight.innerText = 'DER ➡️';
+3213:         btnRight.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3214:         btnRight.onmousedown = () => { btnRight.style.background = 'rgba(0,229,255,0.4)'; if(currentLane < 2) currentLane++; updatePlayerPos(); };
+3215:         btnRight.onmouseup = () => btnRight.style.background = 'rgba(0,0,0,0.5)';
+3216:         btnRight.ontouchstart = btnRight.onmousedown;
+3217:         btnRight.ontouchend = btnRight.onmouseup;
+3218:         
+3219:         controls.appendChild(btnLeft); controls.appendChild(btnRight);
+3220:         overlay.appendChild(controls);
+3221:         
+3222:         document.body.appendChild(overlay);
+3223:         
+3224:         const handleKey = (e) => {
+3225:             if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') { btnLeft.onmousedown(); setTimeout(btnLeft.onmouseup, 100); }
+3226:             if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') { btnRight.onmousedown(); setTimeout(btnRight.onmouseup, 100); }
+3227:         };
+3228:         window.addEventListener('keydown', handleKey);
+3229:         
+3230:         let time = 30;
+3231:         let score = 0;
+3232:         let speed = 7;
+3233:         let obstacles = [];
+3234:         let isGameOver = false;
+3235:         let spawnTimer = 0;
+3236:         let spawnRate = 50;
+3237:         
+3238:         setTimeout(() => {
+3239:             const gameLoop = setInterval(() => {
+3240:                 if (isGameOver) return;
+3241:             spawnTimer++;
+3242:             if (spawnTimer >= spawnRate) {
+3243:                 spawnTimer = 0;
+3244:                 let num = Math.random() > 0.8 ? 2 : 1;
+3245:                 let avail = [0, 1, 2];
+3246:                 for(let i=0; i<num; i++) {
+3247:                     let r = Math.floor(Math.random() * avail.length);
+3248:                     let lane = avail.splice(r, 1)[0];
+3249:                     let obs = document.createElement('div');
+3250:                     obs.style.cssText = `position:absolute; top:-100px; width:60px; height:80px;`;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

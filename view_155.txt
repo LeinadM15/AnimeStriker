@@ -1,0 +1,59 @@
+Created At: 2026-07-30T02:22:07+02:00
+Completed At: 2026-07-30T02:22:07+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4489
+Total Bytes: 233574
+Showing lines 2980 to 3030
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2980:                         GOLES: <span id="shop-goles-display" style="color:#ffd700; font-size: 1.4rem; margin-left:5px;">${p2Stats.goals}</span>
+2981:                     </div>
+2982:                 </div>
+2983: 
+2984:                 <!-- BODY -->
+2985:                 <div style="display:flex; flex:1; gap:20px; overflow:hidden;">
+2986:                     
+2987:                     <!-- LEFT COLUMN (Info & Back) -->
+2988:                     <div style="flex: 1; display:flex; flex-direction:column; justify-content:space-between;">
+2989:                         <div id="shop-item-detail" style="flex:1; background: rgba(0,20,40,0.6); border: 2px solid #1a4a75; border-radius: 8px; padding: 15px; display:flex; flex-direction:column; justify-content:center;">
+2990:                             <div style="font-size:4rem; text-align:center; margin-bottom:10px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));">🛒</div>
+2991:                             <h3 style="font-family:'Bangers'; font-size:1.6rem; color:#2da6ff; text-align:center; margin-bottom:10px; letter-spacing:1px;">BIENVENIDO</h3>
+2992:                             <p style="font-size:1rem; color:#aaa; text-align:center;">Selecciona un objeto de la lista para ver sus detalles.</p>
+2993:                         </div>
+2994:                         
+2995:                         <div style="margin-top:15px;">
+2996:                             <button onclick="document.getElementById('p2-shop-modal').classList.add('hidden')" 
+2997:                                     style="width:100%; background: linear-gradient(180deg, #ff3333 0%, #aa0000 100%); border: 2px solid #ffaaaa; color: #fff; font-family:'Nunito'; font-weight:bold; font-size:1.2rem; padding: 10px; border-radius: 8px; cursor:pointer; box-shadow: 0 4px 0 #660000; transition:all 0.1s;"
+2998:                                     onmousedown="this.style.transform='translateY(4px)'; this.style.boxShadow='0 0 0 #660000';"
+2999:                                     onmouseup="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 0 #660000';">
+3000:                                 ✖ Atrás
+3001:                             </button>
+3002:                         </div>
+3003:                     </div>
+3004: 
+3005:                     <!-- RIGHT COLUMN (Item List) -->
+3006:                     <div style="flex: 1.3; overflow-y:auto; padding-right:5px; display:flex; flex-direction:column; gap:8px;">
+3007:                         ${foods.map((f) => `
+3008:                             <div onclick="buyFood('${f.name}', ${f.cost}, '${f.stat}', ${f.amount})"
+3009:                                  onmouseover="showItemDetail('${f.name}', '${f.emoji}', '${f.desc}', ${f.cost})"
+3010:                                  style="background: linear-gradient(rgba(10,30,60,0.85), rgba(10,30,60,0.85)), url('assets/Historia/Habitaciones/Tienda.png') center/cover; border: 2px solid #2da6ff; border-radius: 8px; padding: 12px 20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; transition:all 0.1s; color:#fff;"
+3011:                                  onmouseenter="this.style.background='linear-gradient(rgba(20,60,110,0.7), rgba(20,60,110,0.7)), url(\\\'assets/Historia/Habitaciones/Tienda.png\\\') center/cover'; this.style.transform='scale(1.02)';"
+3012:                                  onmouseleave="this.style.background='linear-gradient(rgba(10,30,60,0.85), rgba(10,30,60,0.85)), url(\\\'assets/Historia/Habitaciones/Tienda.png\\\') center/cover'; this.style.transform='scale(1)';">
+3013:                                  
+3014:                                  <div style="display:flex; align-items:center; gap:15px; font-size:1.3rem; font-weight:bold; text-shadow:1px 1px 2px #000;">
+3015:                                      <span style="font-size:1.6rem; background:rgba(0,0,0,0.4); padding:5px; border-radius:50%; border:1px solid #1a4a75;">${f.emoji}</span>
+3016:                                      ${f.name}
+3017:                                  </div>
+3018:                                  <div style="font-size:1.4rem; font-weight:bold; color:#ffd700; text-shadow:1px 1px 2px #000;">
+3019:                                      ${f.cost} G
+3020:                                  </div>
+3021:                             </div>
+3022:                         `).join('')}
+3023:                     </div>
+3024:                 </div>
+3025:             </div>
+3026:         `;
+3027:     };
+3028:     
+3029:     window.buyFood = function(name, cost, stat, amount) {
+3030:         if (p2Stats.goals < cost) { showNotification('¡No tienes suficientes Goles!', 'error'); return; }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

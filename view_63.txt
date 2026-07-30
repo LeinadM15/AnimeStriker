@@ -1,0 +1,59 @@
+Created At: 2026-07-29T16:36:15+02:00
+Completed At: 2026-07-29T16:36:15+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3773
+Total Bytes: 195024
+Showing lines 1680 to 1730
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1680:         const roomName = p2Rooms[p2CurrentRoom];
+1681:         p2RoomTitle.textContent = roomName.toUpperCase();
+1682:         p2RoomBody.innerHTML = '';
+1683:         
+1684:         // Clear NPCs and scene overlays
+1685:         p2NpcContainer.innerHTML = '';
+1686:         document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img').forEach(el => el.remove());
+1687:         
+1688:         // Ensure central panel is visible by default
+1689:         document.getElementById('p2-room-content').style.display = 'block';
+1690:         
+1691:         const basePath = 'assets/Historia/Habitaciones/';
+1692:         
+1693:         function setRoomBg(src) {
+1694:             p2LobbyScreen.style.backgroundImage = 'none';
+1695:             const img = document.createElement('img');
+1696:             img.className = 'p2-bg-img';
+1697:             img.src = src;
+1698:             img.draggable = false;
+1699:             p2LobbyScreen.insertBefore(img, p2LobbyScreen.firstChild);
+1700:         }
+1701:         
+1702:         if (roomName === 'Habitación') {
+1703:             setRoomBg(`${basePath}Habitacion.jpeg`);
+1704:             document.getElementById('p2-room-content').style.display = 'none';
+1705:             
+1706:             // Botón Dormir
+1707:             const btnDormir = document.createElement('div');
+1708:             btnDormir.className = 'p2-scene-overlay';
+1709:             btnDormir.id = 'btn-dormir';
+1710:             // AQUÍ MUEVES LA CAMA (top y left)
+1711:             btnDormir.style.cssText = 'top: 60%; left: 25%; transform: translate(-50%,-50%); z-index:10;';
+1712:             btnDormir.innerHTML = `<img src="assets/Historia/Habitaciones/Cama.png" alt="Dormir" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #fff);">`;
+1713: 
+1714:             const btnAmistades = document.createElement('div');
+1715:             btnAmistades.className = 'p2-scene-overlay';
+1716:             btnAmistades.id = 'btn-amistades';
+1717:             // AQUÍ MUEVES EL ICONO DE AMISTAD (top y left)
+1718:             btnAmistades.style.cssText = 'top: 60%; left: 50%; transform: translate(-50%,-50%); z-index:10;';
+1719:             btnAmistades.innerHTML = `<img src="assets/Historia/Habitaciones/Amistad.png" alt="Amistades" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f);">`;
+1720: 
+1721:             const btnStats = document.createElement('div');
+1722:             btnStats.className = 'p2-scene-overlay';
+1723:             btnStats.id = 'btn-stats';
+1724:             // AQUÍ MUEVES EL ICONO DE PERSONAJE (top y left)
+1725:             btnStats.style.cssText = 'top: 60%; left: 75%; transform: translate(-50%,-50%); z-index:10;';
+1726:             btnStats.innerHTML = `<img src="assets/Historia/Habitaciones/Personaje.png" alt="Stats" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+1727:             
+1728:             p2LobbyScreen.appendChild(btnDormir);
+1729:             p2LobbyScreen.appendChild(btnAmistades);
+1730:             p2LobbyScreen.appendChild(btnStats);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

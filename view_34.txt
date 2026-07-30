@@ -1,0 +1,49 @@
+Created At: 2026-07-29T14:26:47+02:00
+Completed At: 2026-07-29T14:26:47+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3481
+Total Bytes: 176642
+Showing lines 1630 to 1670
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1630:             modal.classList.add('hidden');
+1631:         }, 500);
+1632:     }
+1633: 
+1634:     function spawnNPCs(roomName, count) {
+1635:         p2NpcContainer.innerHTML = '';
+1636:         if (!p2DailyNPCs[roomName]) return;
+1637:         const npcs = p2DailyNPCs[roomName].slice(0, count);
+1638:         
+1639:         npcs.forEach(npc => {
+1640:             const div = document.createElement('div');
+1641:             div.className = 'p2-npc';
+1642:             div.innerHTML = `<img src="${npc.image}" draggable="false">`;
+1643:             div.onclick = () => { openDialogue(npc); };
+1644:             p2NpcContainer.appendChild(div);
+1645:         });
+1646:     }
+1647:     
+1648:     // Spawn NPCs at fixed positions on the scene (for rooms like Comedor)
+1649:     function spawnSceneNPCs(roomName, positions) {
+1650:         if (!p2DailyNPCs[roomName]) return;
+1651:         const npcs = p2DailyNPCs[roomName];
+1652:         
+1653:         positions.forEach((pos, idx) => {
+1654:             const npc = npcs[idx % npcs.length];
+1655:             if (!npc) return;
+1656:             
+1657:             const div = document.createElement('div');
+1658:             div.className = 'p2-scene-overlay';
+1659:             div.style.cssText = `left:${pos.x}%; top:${pos.y}%; width:${pos.w || 80}px; height:${pos.h || 100}px; cursor:pointer;`;
+1660:             div.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+1661:             div.onclick = () => { openDialogue(npc); };
+1662:             p2LobbyScreen.appendChild(div);
+1663:         });
+1664:     }
+1665:     
+1666:     function renderP2Room() {
+1667:         const roomName = p2Rooms[p2CurrentRoom];
+1668:         p2RoomTitle.textContent = roomName.toUpperCase();
+1669:         p2RoomBody.innerHTML = '';
+1670:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

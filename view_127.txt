@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:44:26+02:00
+Completed At: 2026-07-29T23:44:26+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 1280 to 1320
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1280: 
+1281:     window.advanceP2Day = function(fromMatch) {
+1282:         p2Stats.day++;
+1283:         p2Stats.stamina = p2Stats.maxStamina;
+1284:         if (!fromMatch && p2Stats.yogaBuff) {
+1285:             const bonus = Math.floor(p2Stats.maxStamina * 0.30);
+1286:             p2Stats.stamina = Math.min(p2Stats.maxStamina + bonus, p2Stats.stamina + bonus);
+1287:             p2Stats.yogaBuff = false;
+1288:             showNotification(`¡El Yoga te ha dado +${bonus} energía extra hoy!`, 'success', 3000);
+1289:         }
+1290:         if (!fromMatch) {
+1291:             p2Stats.meditationBuff = false;
+1292:             p2Stats.yogaDoneToday = false;
+1293:             if (!p2Stats.npcInteractionsToday) p2Stats.npcInteractionsToday = [];
+1294:             p2Stats.npcInteractionsToday.length = 0;
+1295:             generateDailyNPCs();
+1296:         }
+1297:         
+1298:         // Simular progreso diario de compañeros y rivales de la selección
+1299:         if (p2StratumPlayers && p2StratumPlayers.length > 0) {
+1300:             const myBaseR = myPlayer.rating ? calcRating(myPlayer.rating) : 70;
+1301:             p2StratumPlayers.forEach(npc => {
+1302:                 if (!npc.p2Rating) npc.p2Rating = calcRating(npc.rating);
+1303:                 const goldR = calcRating(npc.rating);
+1304:                 const diff = goldR - myBaseR; // -3 to +3
+1305:                 
+1306:                 // Quienes tienen más media en su carta oro (+2, +3) suben más por día
+1307:                 let dailyGrowth = 0.30 + (diff * 0.08) + (Math.random() * 0.15);
+1308:                 dailyGrowth = Math.max(0.15, Math.min(0.65, dailyGrowth));
+1309:                 npc.p2Rating += dailyGrowth;
+1310:             });
+1311:         }
+1312:         
+1313:         updateP2UI();
+1314:         renderP2Room();
+1315:         
+1316:         if (fromMatch) {
+1317:             showNotification(`Día ${p2Stats.day}. Volvéis agotados del partido. A descansar.`, 'info', 4000);
+1318:         } else if (p2Stats.day % 3 === 0) {
+1319:             showNotification(`Día ${p2Stats.day}. ¡DÍA DE PARTIDO! Prepárate y ve a la Sala de Tácticas.`, 'warning', 4000);
+1320:         } else {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:32:29+02:00
+Completed At: 2026-07-29T23:32:30+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4302
+Total Bytes: 223718
+Showing lines 3510 to 3550
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3510:             rightGlove.style.top = `${mouseY}%`;
+3511:         }
+3512:         
+3513:         engine.addEventListener('mousemove', (e) => {
+3514:             const rect = engine.getBoundingClientRect();
+3515:             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+3516:             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+3517:             updateGlovePositions();
+3518:         });
+3519:         
+3520:         engine.addEventListener('mousedown', (e) => {
+3521:             if (e.button === 0) setPose('PUNO'); // Izquierdo
+3522:             else if (e.button === 2) setPose('ESTIRADA'); // Derecho
+3523:         });
+3524:         
+3525:         engine.addEventListener('mouseup', () => setPose('AGARRE'));
+3526:         
+3527:         // --- MOTOR DE TIROS ---
+3528:         let totalShots = 5;
+3529:         let currentShot = 0;
+3530:         let saves = 0;
+3531:         let goalsConceded = 0;
+3532:         
+3533:         let finalTeamGoals = Math.floor(Math.random() * 4); // 0 to 3 goals from teammates
+3534:         let currentTeamGoals = 0;
+3535:         
+3536:         function updateHUD() {
+3537:             shotDisplay.innerText = `Tiro ${Math.min(currentShot + 1, totalShots)} / ${totalShots}`;
+3538:             scoreDisplay.innerText = `Marcador: Nosotros ${currentTeamGoals} - ${goalsConceded} Rival`;
+3539:         }
+3540:         
+3541:         function endMatch() {
+3542:             engine.remove();
+3543:             
+3544:             // Si el partido acaba en empate de goles, decide las paradas. Si no, decide los goles.
+3545:             let win = false;
+3546:             let draw = false;
+3547:             if (currentTeamGoals > goalsConceded) win = true;
+3548:             else if (currentTeamGoals === goalsConceded) {
+3549:                 if (saves >= 3) win = true;
+3550:                 else draw = true;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,34 @@
+Created At: 2026-07-30T02:29:28+02:00
+Completed At: 2026-07-30T02:29:28+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4489
+Total Bytes: 233574
+Showing lines 4050 to 4075
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4050:         body.appendChild(graphContainer);
+4051:     };
+4052: 
+4053:     // ==========================================
+4054:     // SAVE / LOAD SYSTEM
+4055:     // ==========================================
+4056:     window.saveGameState = function() {
+4057:         if (!myPlayer) { showNotification('No hay partida activa que guardar.', 'error'); return; }
+4058:         
+4059:         const p2DailyNPCsIds = {};
+4060:         for (let room in p2DailyNPCs) {
+4061:             p2DailyNPCsIds[room] = p2DailyNPCs[room].map(p => p.id);
+4062:         }
+4063:         
+4064:         const state = {
+4065:             myPlayerId: myPlayer.id,
+4066:             p2Stats: p2Stats,
+4067:             p2Relationships: p2Relationships,
+4068:             p2EquippedSkills: p2EquippedSkills,
+4069:             p2CurrentRoom: p2CurrentRoom,
+4070:             p2League: p2League,
+4071:             p2TopScorers: p2TopScorers,
+4072:             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
+4073:             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating, team: p.team, goals: p.goals })),
+4074:             p2DailyNPCsIds: p2DailyNPCsIds
+4075:         };
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

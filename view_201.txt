@@ -1,0 +1,48 @@
+Created At: 2026-07-30T18:15:47+02:00
+Completed At: 2026-07-30T18:15:47+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/fix_encoding_final.js`
+Total Lines: 40
+Total Bytes: 1449
+Showing lines 1 to 40
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: const fs = require('fs');
+2: 
+3: function cleanFile(filePath) {
+4:     let content = fs.readFileSync(filePath, 'utf8');
+5:     
+6:     // Replace all corrupted Habitación variants with plain "Habitacion"
+7:     content = content.replace(/Habitaci\S*/g, 'Habitacion');
+8:     
+9:     // Replace the corrupted dash with a normal dash
+10:     content = content.replace(/â\x80\x94/g, '-');
+11:     content = content.replace(/—/g, '-');
+12:     
+13:     // Also fix the backgrounds path in hokkaido.js just in case it had "Habitacion.jpeg" but maybe "HabitaciÃ³n.jpeg"?
+14:     // The actual file on disk is "HokkaidoSnow.jpeg" for Hokkaido!
+15:     // But for Blue Lock rooms, it might have been "Habitacion.jpeg"
+16:     
+17:     fs.writeFileSync(filePath, content, 'utf8');
+18: }
+19: 
+20: cleanFile('c:/Users/Admin/Desktop/WebFutbol/story.js');
+21: cleanFile('c:/Users/Admin/Desktop/WebFutbol/locations/hokkaido.js');
+22: 
+23: // Let's also check if there are other files with "Habitaci" and fix them
+24: const filesToCheck = [
+25:     'c:/Users/Admin/Desktop/WebFutbol/locations/bluelock.js',
+26:     'c:/Users/Admin/Desktop/WebFutbol/locations/hokkaido.js',
+27:     'c:/Users/Admin/Desktop/WebFutbol/story.js'
+28: ];
+29: 
+30: filesToCheck.forEach(f => {
+31:     try {
+32:         let content = fs.readFileSync(f, 'utf8');
+33:         content = content.replace(/Habitaci\S*/g, 'Habitacion');
+34:         content = content.replace(/â\x80\x94/g, '-');
+35:         content = content.replace(/—/g, '-');
+36:         fs.writeFileSync(f, content, 'utf8');
+37:     } catch(e) {}
+38: });
+39: 
+40: 
+The above content shows the entire, complete file contents of the requested file.

@@ -1,0 +1,34 @@
+Created At: 2026-07-28T21:03:04Z
+Completed At: 2026-07-28T21:03:04Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3140
+Total Bytes: 158805
+Showing lines 1690 to 1715
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1690:             setRoomBg(`${basePath}Habitacion.jpeg`);
+1691:             document.getElementById('p2-room-content').style.display = 'none';
+1692:             
+1693:             const btnContainer = document.createElement('div');
+1694:             btnContainer.className = 'p2-scene-overlay';
+1695:             btnContainer.style.cssText = 'bottom: 30px; left: 50%; transform: translateX(-50%); display:flex; flex-wrap:wrap; justify-content:center; gap:20px; z-index:10; width:100%; max-width:800px;';
+1696:             
+1697:             btnContainer.innerHTML = `
+1698:                 <button class="p2-action-btn" id="btn-dormir" style="background:rgba(0,0,0,0.8); border:2px solid #fff; box-shadow:0 0 15px rgba(255,255,255,0.3);">
+1699:                     <span>🛏️ DORMIR</span>
+1700:                 </button>
+1701:                 <button class="p2-action-btn" id="btn-amistades" style="background:rgba(0,0,0,0.8); border:2px solid #ff007f; box-shadow:0 0 15px rgba(255,0,127,0.3);">
+1702:                     <span>🤝 VER AMISTADES</span>
+1703:                 </button>
+1704:                 <button class="p2-action-btn" id="btn-stats" style="background:transparent; border:none; padding:0; box-shadow:none;">
+1705:                     <img src="assets/Historia/Habitaciones/Personaje.png" alt="Stats" style="width:70px; height:70px; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); cursor:pointer;">
+1706:                 </button>
+1707:             `;
+1708:             p2LobbyScreen.appendChild(btnContainer);
+1709:             p2RoomBody.innerHTML = '';
+1710:             
+1711:             document.getElementById('btn-dormir').onclick = () => {
+1712:                 if (p2Stats.day % 3 === 0) { showNotification('¡Hoy hay partido! Debes jugarlo antes de ir a dormir (Sala de Tácticas).', 'warning'); return; }
+1713:                 advanceP2Day(false);
+1714:             };
+1715:             document.getElementById('btn-amistades').onclick = () => {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

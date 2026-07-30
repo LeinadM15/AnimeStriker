@@ -1,0 +1,37 @@
+Created At: 2026-07-29T15:06:36+02:00
+Completed At: 2026-07-29T15:06:36+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3534
+Total Bytes: 179017
+Showing lines 1934 to 1962
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1934:             } else {
+1935:                 setRoomBg(`${basePath}Tacticas4.jpeg`);
+1936:                 document.getElementById('p2-room-content').style.display = 'block';
+1937:                 
+1938:                 spawnSceneNPCs(roomName, [
+1939:                     {x: 19.5, y: 27, w: 200, h: 250},
+1940:                     {x: 44, y: 10, w: 200, h: 250},
+1941:                     {x: 62, y: 10, w: 200, h: 250},
+1942:                     {x: 80, y: 28, w: 200, h: 250}
+1943:                 ]);
+1944:                 
+1945:                 p2RoomBody.innerHTML = `
+1946:                     <div style="font-size:1.2rem; text-align:center; margin-bottom:20px; color:#ff4444;">¡DÍA DE PARTIDO! Reunión de equipo.</div>
+1947:                     <div style="display:flex; justify-content:center; margin-bottom:20px;">
+1948:                         <button class="p2-action-btn" onclick="openTVStats()" style="transform:scale(0.9);">
+1949:                             <span>🏆 Clasificación y Goleadores</span>
+1950:                         </button>
+1951:                     </div>
+1952:                     <div class="tactics-chat" id="tactics-chat">
+1953:                         <div class="tactics-msg"><b>Compañeros:</b> ¡Todos queremos jugar de delantero hoy! ¿Por qué deberías ser tú?</div>
+1954:                     </div>
+1955:                     <div id="tactics-options" style="display:flex; flex-direction:column; gap:10px;">
+1956:                         <button class="p2-action-btn" onclick="tryPersuade('pace')"><span>"Soy el más rápido. Dejadme rotar cada 5 minutos." (Requiere Velocidad)</span></button>
+1957:                         <button class="p2-action-btn" onclick="tryPersuade('passing')"><span>"Os daré las mejores asistencias, compartiremos los goles." (Requiere Pase)</span></button>
+1958:                         <button class="p2-action-btn" onclick="tryPersuade('physical')"><span>"Soy el más fuerte. Yo abriré la defensa." (Requiere Físico)</span></button>
+1959:                     </div>
+1960:                 `;
+1961:             }
+1962:         } else if (roomName === 'Meditación') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

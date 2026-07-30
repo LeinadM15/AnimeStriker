@@ -1,0 +1,39 @@
+Created At: 2026-07-29T02:19:25+02:00
+Completed At: 2026-07-29T02:19:25+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3194
+Total Bytes: 162607
+Showing lines 2470 to 2500
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2470:                 updateP2UI();
+2471:             };
+2472:         }
+2473:     }
+2474:     
+2475:     window.doTraining = function(name, cost, stat, amount) {
+2476:         if (checkStamina(cost)) {
+2477:             consumeStamina(cost);
+2478:             const rawXp = Math.max(5, Math.floor(cost * 0.85));
+2479:             showTrainingResultModal(null, stat, name, rawXp, `Sesión de entrenamiento de ${name} completada`, '#00e5ff');
+2480:         }
+2481:     };
+2482:     
+2483:     window.openTeleMinGame = function() {
+2484:         if (!checkStamina(20)) return;
+2485:         
+2486:         const overlay = document.createElement('div');
+2487:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.95); z-index:1000; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; font-family:"Bangers",sans-serif; overflow:hidden; transition:opacity 0.3s;';
+2488:         
+2489:         let score = 0;
+2490:         let timeLeft = 30;
+2491:         let difficulty = 1;
+2492:         let currentAnswer = 0;
+2493:         let timer = null;
+2494:         
+2495:         overlay.innerHTML = `
+2496:             <h1 style="color:#00e5ff; font-size:4rem; margin-bottom:10px; text-shadow:0 0 20px rgba(0,229,255,0.5);"><span style="font-size:3.5rem;">📺</span> TELE MIN</h1>
+2497:             <div style="font-size:1.5rem; color:#aaa; margin-bottom:30px; font-family:'Nunito',sans-serif; text-align:center;">Resuelve mentalmente las operaciones.<br>A más aciertos, mayor dificultad y más EXP de Pase.</div>
+2498:             
+2499:             <div style="display:flex; gap:60px; font-size:2.5rem; margin-bottom:40px; background:rgba(0,229,255,0.1); padding:15px 40px; border-radius:15px; border:2px solid rgba(0,229,255,0.3);">
+2500:                 <div>Tiempo: <span id="telemin-time" style="color:#ffaa00; transition:color 0.2s;">${timeLeft}</span>s</div>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

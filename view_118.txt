@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:32:10+02:00
+Completed At: 2026-07-29T23:32:10+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4301
+Total Bytes: 223668
+Showing lines 3020 to 3060
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3020:         p2League.forEach(t => {
+3021:             tableHTML += `<tr><td>${t.name}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td><b>${t.pts}</b></td></tr>`;
+3022:         });
+3023:         tableHTML += `</table>`;
+3024:         standEl.innerHTML = tableHTML;
+3025:         
+3026:         // Populate mock scorers if empty
+3027:         if (p2TopScorers.length === 0 && p2StratumPlayers.length > 0) {
+3028:             for(let i=0; i<5; i++) {
+3029:                 p2TopScorers.push({
+3030:                     npc: p2StratumPlayers[i],
+3031:                     g: 0
+3032:                 });
+3033:             }
+3034:         }
+3035:         
+3036:         p2TopScorers.sort((a,b) => b.g - a.g);
+3037:         scorEl.innerHTML = '';
+3038:         p2TopScorers.slice(0, 5).forEach(s => {
+3039:             const div = document.createElement('div');
+3040:             div.className = 'p2-scorer-card';
+3041:             div.innerHTML = `
+3042:                 <img src="${s.npc.image}">
+3043:                 <div style="font-size:0.9rem; margin:5px 0;">${s.npc.name}</div>
+3044:                 <div class="p2-scorer-goals">${s.g} Goles</div>
+3045:             `;
+3046:             scorEl.appendChild(div);
+3047:         });
+3048:     };
+3049:     
+3050:     window.tacticsMakeChoice = function(shiftAffinity, shiftTension) {
+3051:         const state = window.tacticsDetroitState;
+3052:         
+3053:         if (state.timerId) {
+3054:             clearInterval(state.timerId);
+3055:             state.timerId = null;
+3056:         }
+3057: 
+3058:         state.affinity += shiftAffinity;
+3059:         state.affinity = Math.max(0, Math.min(100, state.affinity));
+3060:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

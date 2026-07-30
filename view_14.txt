@@ -1,0 +1,119 @@
+Created At: 2026-07-29T02:23:54+02:00
+Completed At: 2026-07-29T02:23:54+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3442
+Total Bytes: 175588
+Showing lines 3190 to 3300
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3190:     }
+3191: 
+3192:     window.startRegateMinigame = function() {
+3193:         if (!checkStamina(35)) return;
+3194:         
+3195:         const overlay = document.createElement('div');
+3196:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/MinijuegoRegate.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden;';
+3197:         
+3198:         const topBar = document.createElement('div');
+3199:         topBar.style.cssText = 'padding:20px; display:flex; justify-content:space-between; font-family:"Bangers",cursive; font-size:2rem; color:#00e5ff; text-shadow:0 0 10px #000; z-index:10;';
+3200:         
+3201:         const scoreEl = document.createElement('div'); scoreEl.innerText = 'Esquivados: 0';
+3202:         const timeEl = document.createElement('div'); timeEl.innerText = 'Tiempo: 30s';
+3203:         topBar.appendChild(scoreEl); topBar.appendChild(timeEl);
+3204:         overlay.appendChild(topBar);
+3205:         
+3206:         const gameArea = document.createElement('div');
+3207:         gameArea.style.cssText = 'flex:1; position:relative; width:100%; max-width:800px; margin:0 auto; overflow:hidden;';
+3208:         overlay.appendChild(gameArea);
+3209:         
+3210:         const player = document.createElement('div');
+3211:         player.style.cssText = 'position:absolute; bottom:20px; width:80px; height:80px; transition:left 0.15s ease-out;';
+3212:         player.innerHTML = `<img src="${p2Stats.card.image}" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+3213:         gameArea.appendChild(player);
+3214:         
+3215:         const lanes = [20, 50, 80];
+3216:         let currentLane = 1;
+3217:         const updatePlayerPos = () => { player.style.left = `calc(${lanes[currentLane]}% - 40px)`; };
+3218:         updatePlayerPos();
+3219:         
+3220:         const controls = document.createElement('div');
+3221:         controls.style.cssText = 'position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:150px; z-index:10; pointer-events:none;';
+3222:         const btnLeft = document.createElement('button'); btnLeft.innerText = '⬅️ IZQ';
+3223:         btnLeft.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3224:         btnLeft.onmousedown = () => { btnLeft.style.background = 'rgba(0,229,255,0.4)'; if(currentLane > 0) currentLane--; updatePlayerPos(); };
+3225:         btnLeft.onmouseup = () => btnLeft.style.background = 'rgba(0,0,0,0.5)';
+3226:         btnLeft.ontouchstart = btnLeft.onmousedown;
+3227:         btnLeft.ontouchend = btnLeft.onmouseup;
+3228:         
+3229:         const btnRight = document.createElement('button'); btnRight.innerText = 'DER ➡️';
+3230:         btnRight.style.cssText = 'pointer-events:auto; font-size:1.5rem; font-family:"Bangers"; background:rgba(0,0,0,0.5); color:#fff; border:2px solid #00e5ff; padding:10px 20px; border-radius:10px; cursor:pointer; transition:background 0.2s;';
+3231:         btnRight.onmousedown = () => { btnRight.style.background = 'rgba(0,229,255,0.4)'; if(currentLane < 2) currentLane++; updatePlayerPos(); };
+3232:         btnRight.onmouseup = () => btnRight.style.background = 'rgba(0,0,0,0.5)';
+3233:         btnRight.ontouchstart = btnRight.onmousedown;
+3234:         btnRight.ontouchend = btnRight.onmouseup;
+3235:         
+3236:         controls.appendChild(btnLeft); controls.appendChild(btnRight);
+3237:         overlay.appendChild(controls);
+3238:         
+3239:         document.body.appendChild(overlay);
+3240:         
+3241:         const handleKey = (e) => {
+3242:             if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') { btnLeft.onmousedown(); setTimeout(btnLeft.onmouseup, 100); }
+3243:             if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') { btnRight.onmousedown(); setTimeout(btnRight.onmouseup, 100); }
+3244:         };
+3245:         window.addEventListener('keydown', handleKey);
+3246:         
+3247:         let time = 30;
+3248:         let score = 0;
+3249:         let speed = 7;
+3250:         let obstacles = [];
+3251:         let isGameOver = false;
+3252:         let spawnTimer = 0;
+3253:         let spawnRate = 50;
+3254:         
+3255:         const gameLoop = setInterval(() => {
+3256:             if (isGameOver) return;
+3257:             spawnTimer++;
+3258:             if (spawnTimer >= spawnRate) {
+3259:                 spawnTimer = 0;
+3260:                 let num = Math.random() > 0.8 ? 2 : 1;
+3261:                 let avail = [0, 1, 2];
+3262:                 for(let i=0; i<num; i++) {
+3263:                     let r = Math.floor(Math.random() * avail.length);
+3264:                     let lane = avail.splice(r, 1)[0];
+3265:                     let obs = document.createElement('div');
+3266:                     obs.style.cssText = `position:absolute; top:-100px; width:60px; height:80px;`;
+3267:                     obs.innerHTML = `<img src="assets/Historia/Habitaciones/Barrera.png" style="width:100%; height:100%; object-fit:contain;">`;
+3268:                     obs.style.left = `calc(${lanes[lane]}% - 30px)`;
+3269:                     gameArea.appendChild(obs);
+3270:                     obstacles.push({ el: obs, y: -100, lane: lane, passed: false });
+3271:                 }
+3272:                 if (spawnRate > 15) spawnRate -= 2;
+3273:                 speed += 0.2;
+3274:             }
+3275:             
+3276:             let playerTop = gameArea.offsetHeight - 100;
+3277:             let playerBottom = gameArea.offsetHeight - 20;
+3278:             
+3279:             for (let i = obstacles.length - 1; i >= 0; i--) {
+3280:                 let obs = obstacles[i];
+3281:                 obs.y += speed;
+3282:                 obs.el.style.top = obs.y + 'px';
+3283:                 
+3284:                 let obsTop = obs.y;
+3285:                 let obsBottom = obs.y + 80;
+3286:                 
+3287:                 if (obs.lane === currentLane && obsBottom > playerTop + 20 && obsTop < playerBottom - 20) {
+3288:                     endGame(false);
+3289:                     break;
+3290:                 }
+3291:                 if (obs.y > playerBottom && !obs.passed) {
+3292:                     obs.passed = true;
+3293:                     score++;
+3294:                     scoreEl.innerText = `Esquivados: ${score}`;
+3295:                 }
+3296:                 if (obs.y > gameArea.offsetHeight + 100) {
+3297:                     obs.el.remove();
+3298:                     obstacles.splice(i, 1);
+3299:                 }
+3300:             }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

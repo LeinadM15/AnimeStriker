@@ -1,0 +1,49 @@
+Created At: 2026-07-29T16:21:47+02:00
+Completed At: 2026-07-29T16:21:47+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3618
+Total Bytes: 185010
+Showing lines 1950 to 1990
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1950:                 btnClasif.onclick = () => { openTVStats(); };
+1951:                 p2LobbyScreen.appendChild(btnClasif);
+1952:                 
+1953:                 const dialogOverlay = document.createElement('div');
+1954:                 dialogOverlay.id = 'tactics-detroit-overlay';
+1955:                 dialogOverlay.style.cssText = 'position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, rgba(0,0,0,0.95), transparent); display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:40px; z-index:40; font-family:"Nunito",sans-serif;';
+1956:                 
+1957:                 const labels = document.createElement('div');
+1958:                 labels.style.cssText = 'width:80%; display:flex; justify-content:space-between; color:#ccc; font-size:0.85rem; font-weight:bold; margin-bottom:5px; text-transform:uppercase; text-shadow:0 0 5px #000;';
+1959:                 labels.innerHTML = '<span>DEF</span><span style="padding-right:2%">MED</span><span style="padding-left:2%">DEL</span><span>POR</span>';
+1960:                 
+1961:                 const barContainer = document.createElement('div');
+1962:                 barContainer.style.cssText = 'width:80%; height:15px; background:#222; border-radius:10px; border:2px solid #555; position:relative; overflow:hidden; margin-bottom:20px; display:flex;';
+1963:                 
+1964:                 const zDef = document.createElement('div'); zDef.style.cssText = 'flex:1; background:rgba(0,150,255,0.4); border-right:1px solid #555;';
+1965:                 const zMed = document.createElement('div'); zMed.style.cssText = 'flex:1; background:rgba(0,255,100,0.4); border-right:1px solid #555;';
+1966:                 const zDel = document.createElement('div'); zDel.style.cssText = 'flex:1; background:rgba(255,150,0,0.4); border-right:1px solid #555;';
+1967:                 const zPor = document.createElement('div'); zPor.style.cssText = 'flex:1; background:rgba(255,0,255,0.4);';
+1968:                 barContainer.appendChild(zDef); barContainer.appendChild(zMed); barContainer.appendChild(zDel); barContainer.appendChild(zPor);
+1969:                 
+1970:                 const cursor = document.createElement('div');
+1971:                 cursor.id = 'detroit-cursor';
+1972:                 cursor.style.cssText = 'position:absolute; top:0; left:50%; transform:translateX(-50%); width:6px; height:100%; background:#fff; box-shadow:0 0 15px #fff, 0 0 5px #00e5ff; transition:left 0.5s ease-out; border-radius:3px;';
+1973:                 barContainer.appendChild(cursor);
+1974:                 
+1975:                 const textBox = document.createElement('div');
+1976:                 textBox.id = 'detroit-text';
+1977:                 textBox.style.cssText = 'width:80%; min-height:60px; background:rgba(0,0,0,0.6); border:1px solid rgba(0,229,255,0.5); border-radius:8px; padding:15px; color:#fff; font-size:1.1rem; margin-bottom:15px; text-align:center; text-shadow:0 0 5px #000; display:flex; align-items:center; justify-content:center;';
+1978:                 
+1979:                 const optionsBox = document.createElement('div');
+1980:                 optionsBox.id = 'detroit-options';
+1981:                 optionsBox.style.cssText = 'width:80%; display:flex; flex-direction:column; gap:10px;';
+1982:                 
+1983:                 dialogOverlay.appendChild(labels);
+1984:                 dialogOverlay.appendChild(barContainer);
+1985:                 dialogOverlay.appendChild(textBox);
+1986:                 dialogOverlay.appendChild(optionsBox);
+1987:                 p2LobbyScreen.appendChild(dialogOverlay);
+1988:                 
+1989:                 window.tacticsDetroitState = { turn: 0, affinity: 50 };
+1990:                 updateTacticsDetroitUI();
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

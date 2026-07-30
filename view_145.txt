@@ -1,0 +1,59 @@
+Created At: 2026-07-30T02:20:20+02:00
+Completed At: 2026-07-30T02:20:20+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4378
+Total Bytes: 228358
+Showing lines 1045 to 1095
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1045:         };
+1046:         const c = colors[type] || colors.info;
+1047:         
+1048:         const notif = document.createElement('div');
+1049:         notif.style.cssText = `background:${c.bg}; border:3px solid ${c.border}; border-radius:12px; padding:15px 25px; color:#fff; font-family:'Nunito',sans-serif; font-weight:bold; font-size:1.1rem; box-shadow:0 8px 25px rgba(0,0,0,0.6); pointer-events:auto; max-width:600px; text-align:center; opacity:0; transform:translateY(-20px); transition:all 0.4s ease;`;
+1050:         notif.innerHTML = `<span style="margin-right:8px;">${c.icon}</span> ${message}`;
+1051:         container.appendChild(notif);
+1052:         
+1053:         requestAnimationFrame(() => {
+1054:             notif.style.opacity = '1';
+1055:             notif.style.transform = 'translateY(0)';
+1056:         });
+1057:         
+1058:         setTimeout(() => {
+1059:             notif.style.opacity = '0';
+1060:             notif.style.transform = 'translateY(-20px)';
+1061:             setTimeout(() => notif.remove(), 400);
+1062:         }, duration);
+1063:     }
+1064:     
+1065:     let p2Stats = {
+1066:         pace: 60, shooting: 60, passing: 60, dribbling: 60, defending: 60, physical: 60,
+1067:         statXP: { pace: 0, shooting: 0, passing: 0, dribbling: 0, defending: 0, physical: 0 },
+1068:         stamina: 100, maxStamina: 100, goals: 0, day: 1, meditationBuff: false,
+1069:         yogaDoneToday: false, yogaBuff: false,
+1070:         npcInteractionsToday: []
+1071:     };
+1072:     
+1073:     let p2Relationships = {}; // Tracks friendship {npcId: value, dialogueStage: value}
+1074:     let p2EquippedSkills = [null, null, null, null];
+1075:     
+1076:     let p2CurrentRoom = 0;
+1077:     let p2Rooms = ['Habitación', 'Comedor', 'Gimnasio', 'Campo', 'Sala TV', 'Tácticas', 'Meditación'];
+1078:     let p2StratumPlayers = []; // 44 NPCs in the building
+1079:     
+1080:     let p2DailyNPCs = {};
+1081:     
+1082:     function generateDailyNPCs() {
+1083:         if (!p2StratumPlayers || p2StratumPlayers.length === 0) {
+1084:             p2DailyNPCs = {
+1085:                 'Habitación': [],
+1086:                 'Comedor': [],
+1087:                 'Gimnasio': [],
+1088:                 'Meditación': [],
+1089:                 'Campo': [],
+1090:                 'Sala TV': [],
+1091:                 'Tácticas': []
+1092:             };
+1093:             return;
+1094:         }
+1095: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

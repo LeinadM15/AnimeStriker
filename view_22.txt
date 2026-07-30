@@ -1,0 +1,49 @@
+Created At: 2026-07-29T02:37:33+02:00
+Completed At: 2026-07-29T02:37:33+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3442
+Total Bytes: 175341
+Showing lines 1800 to 1840
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1800:             fuerzaBtn.style.cssText = 'right:31%; bottom:20%; width:250px; height:250px; cursor:pointer; transition:transform 0.2s; z-index:50;';
+1801:             fuerzaBtn.innerHTML = `<img src="${basePath}Fuerza.png" draggable="false" style="width:55%; height:55%; object-fit:contain; filter:drop-shadow(0 0 15px rgba(255,68,68,0.6));">`;
+1802:             fuerzaBtn.onmouseenter = () => { fuerzaBtn.style.transform = 'scale(1.1)'; };
+1803:             fuerzaBtn.onmouseleave = () => { fuerzaBtn.style.transform = 'scale(1)'; };
+1804:             fuerzaBtn.onclick = () => { startPesasMinigame(); };
+1805:             p2LobbyScreen.appendChild(fuerzaBtn);
+1806:             
+1807:         } else if (roomName === 'Campo') {
+1808:             setRoomBg(`${basePath}HabitacionCampo.jpeg`);
+1809:             document.getElementById('p2-room-content').style.display = 'none';
+1810:             p2RoomBody.innerHTML = '';
+1811:             
+1812:             // Get the daily NPC for the field
+1813:             const roomNPCs = p2DailyNPCs['Campo'] || [];
+1814:             const availableNPCs = roomNPCs.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+1815:             const npc = availableNPCs.length > 0 ? availableNPCs[0] : null;
+1816:             
+1817:             if (npc) {
+1818:                 // NPC Body (Sincabeza)
+1819:                 const bodyDiv = document.createElement('div');
+1820:                 bodyDiv.className = 'p2-scene-overlay';
+1821:                 bodyDiv.style.cssText = 'left:35%; bottom:15%; width:600px; height:600px; cursor:pointer; z-index:15;';
+1822:                 bodyDiv.innerHTML = `<img src="${basePath}Sincabeza.png" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1823:                 p2LobbyScreen.appendChild(bodyDiv);
+1824:                 
+1825:                 // NPC Head (In front of the body)
+1826:                 const headDiv = document.createElement('div');
+1827:                 headDiv.className = 'p2-scene-overlay';
+1828:                 headDiv.style.cssText = `left:47%; bottom:61%; width:135px; height:135px; cursor:pointer; z-index:20;`;
+1829:                 headDiv.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1830:                 p2LobbyScreen.appendChild(headDiv);
+1831:                 
+1832:                 bodyDiv.onclick = headDiv.onclick = () => { openDialogue(npc); };
+1833:             }
+1834:             
+1835:             // Icon ChutPrac (Shooting)
+1836:             const btnChut = document.createElement('div');
+1837:             btnChut.className = 'p2-scene-overlay';
+1838:             btnChut.style.cssText = 'left:20%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+1839:             btnChut.innerHTML = `<img src="${basePath}ChutPrac.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f); transition: transform 0.2s;">`;
+1840:             btnChut.onclick = () => { startChutMinigame(); };
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,69 @@
+Created At: 2026-07-29T23:44:32+02:00
+Completed At: 2026-07-29T23:44:32+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4358
+Total Bytes: 227265
+Showing lines 2460 to 2520
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2460:         
+2461:         function endPesas() {
+2462:             gameActive = false;
+2463:             clearInterval(pesasGameLoop);
+2464:             clearInterval(pesasTimerInterval);
+2465:             clearInterval(animInterval);
+2466:             document.removeEventListener('keydown', onPesasKey);
+2467:             
+2468:             const rawXp = Math.max(5, Math.floor(reps * (weight * 0.075)));
+2469:             showTrainingResultModal(modal, 'physical', 'Físico', rawXp, `Repeticiones logradas: ${reps} | Peso elegido: ${weight} KG`, '#ffaa00');
+2470:         }
+2471:     };
+2472: 
+2473:     // ===== YOGA BALANCE MINIGAME =====
+2474:     function startYogaMinigame() {
+2475:         consumeStamina(20);
+2476:         
+2477:         const modal = document.getElementById('yoga-minigame-modal');
+2478:         modal.classList.remove('hidden');
+2479:         
+2480:         const bodyContainer = document.getElementById('yoga-body-container');
+2481:         const yogaHead = document.getElementById('yoga-player-head');
+2482:         if (typeof myPlayer !== 'undefined' && myPlayer) {
+2483:             yogaHead.src = myPlayer.image;
+2484:             yogaHead.style.display = 'block';
+2485:         } else {
+2486:             yogaHead.style.display = 'none';
+2487:         }
+2488:         
+2489:         const timerEl = document.getElementById('yoga-timer');
+2490:         const stabilityBar = document.getElementById('yoga-stability-bar');
+2491:         const stabilityText = document.getElementById('yoga-stability-text');
+2492:         const tiltMarker = document.getElementById('yoga-tilt-marker');
+2493:         const instruction = document.getElementById('yoga-instruction');
+2494:         
+2495:         let tilt = 0;           // Current tilt angle (-45 to 45)
+2496:         let tiltVelocity = 0;   // Tilt speed
+2497:         let stability = 100;    // Stability percentage
+2498:         let timeLeft = 20;      // Seconds
+2499:         let gameActive = false;
+2500:         let yogaGameLoop = null;
+2501:         let yogaTimerInterval = null;
+2502:         let keysPressed = { left: false, right: false };
+2503:         
+2504:         // Difficulty ramp
+2505:         let gravity = 0.12;     // How fast gravity pulls (increases over time)
+2506:         let windForce = 0;      // Random wind gusts
+2507:         let windTimer = 0;
+2508:         
+2509:         // Show instruction for 2 seconds then start
+2510:         instruction.style.display = 'block';
+2511:         instruction.style.opacity = '1';
+2512:         
+2513:         setTimeout(() => {
+2514:             instruction.style.opacity = '0';
+2515:             setTimeout(() => { instruction.style.display = 'none'; }, 500);
+2516:             gameActive = true;
+2517:             startGameLoop();
+2518:         }, 2000);
+2519:         
+2520:         // Keyboard controls
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

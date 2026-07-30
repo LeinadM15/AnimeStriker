@@ -50,9 +50,10 @@ const CLUB_TEAMS = [
     { name: 'LYON',             badge: 'teams/Lyonn.png',            league: 'Superliga Europea',        teamIcon: 'teams/Lyonn.png' },
     { name: 'BRIGHTON',         badge: 'teams/Brighton.png',         league: 'Premier League', teamIcon: 'teams/Brighton.png' },
     { name: 'ALPINO',           badge: 'teams/Alpino.png',           league: 'J-League',       teamIcon: 'teams/Alpino.png' },
-    { name: 'CHICORID',         badge: 'teams/Chicorid.png',         league: 'J-League',       teamIcon: 'teams/Chicorid.png' },
+    { name: 'CHICORID', badge: 'teams/Chicorid.png', league: 'La Liga', teamIcon: 'teams/Chicorid.png' },
     { name: 'SOUTH CIRRUS',     badge: 'teams/SouthCirrus.png',      league: 'J-League',       teamIcon: 'teams/SouthCirrus.png' },
-    { name: 'LEVERKUSEN',       badge: 'teams/Leverkusen.png',       league: 'Bundesliga',     teamIcon: 'teams/Leverkusen.png' },
+    { name: 'LEVERKUSEN', badge: 'teams/Leverkusen.png', league: 'Bundesliga', teamIcon: 'teams/Leverkusen.png' },
+    { name: 'HAMBURGO', badge: 'teams/Hamburgo.png', league: 'Bundesliga', teamIcon: 'teams/Hamburgo.png' },
     { name: 'REAL',             badge: 'teams/Real.png',             league: 'La Liga',        teamIcon: 'teams/Real.png' },
     { name: 'ACADEMIA ALIA',    badge: 'teams/AcademiaAlia.png',     league: 'J-League',       teamIcon: 'teams/AcademiaAlia.png' }
     ,{ name: 'BRASIL', badge: 'teams/Brasil.png', flag: 'https://flagcdn.com/w40/br.png', flagCode: 'br' }
@@ -143,9 +144,10 @@ const LIGA_TEAMS = [
     { name: 'MÁLAGA', badge: 'teams/malaga.png', league: 'La Liga', teamIcon: 'teams/malaga.png' },
     { name: 'OSASUNA', badge: 'teams/Osasuna.png', league: 'La Liga', teamIcon: 'teams/Osasuna.png' },
     { name: 'ALPINO', badge: 'teams/Alpino.png', league: 'J-League', teamIcon: 'teams/Alpino.png' },
-    { name: 'CHICORID', badge: 'teams/Chicorid.png', league: 'J-League', teamIcon: 'teams/Chicorid.png' },
+    { name: 'CHICORID', badge: 'teams/Chicorid.png', league: 'La Liga', teamIcon: 'teams/Chicorid.png' },
     { name: 'SOUTH CIRRUS', badge: 'teams/SouthCirrus.png', league: 'J-League', teamIcon: 'teams/SouthCirrus.png' },
     { name: 'LEVERKUSEN', badge: 'teams/Leverkusen.png', league: 'Bundesliga', teamIcon: 'teams/Leverkusen.png' },
+    { name: 'HAMBURGO', badge: 'teams/Hamburgo.png', league: 'Bundesliga', teamIcon: 'teams/Hamburgo.png' },
     { name: 'REAL', badge: 'teams/Real.png', league: 'La Liga', teamIcon: 'teams/Real.png' },
     { name: 'ACADEMIA ALIA', badge: 'teams/AcademiaAlia.png', league: 'J-League', teamIcon: 'teams/AcademiaAlia.png' }
 ];

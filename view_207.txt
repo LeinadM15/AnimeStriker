@@ -1,0 +1,64 @@
+Created At: 2026-07-30T20:25:48+02:00
+Completed At: 2026-07-30T20:25:48+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3545
+Total Bytes: 176478
+Showing lines 185 to 240
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+185:     const cinBtn = document.getElementById('cin-continue');
+186:     const cinSkip = document.getElementById('cin-skip');
+187:     if (cinBtn) cinBtn.addEventListener('click', onContinue);
+188:     if (cinSkip) cinSkip.addEventListener('click', skipCin);
+189:     const cinDlg = document.querySelector('.cinematic-dialogue');
+190:     if (cinDlg) cinDlg.addEventListener('click', e => { if (e.target !== cinBtn) onContinue(); });
+191: 
+192:     // =====================================================
+193:     // MAIN PLAYER LIST
+194:     // =====================================================
+195:     const listContainer = document.getElementById('story-player-list');
+196:     const detailEmpty = document.getElementById('detail-empty');
+197:     const detailFilled = document.getElementById('detail-filled');
+198:     let selectedPlayer = null, selectedRating = 0;
+199: 
+200:     function renderPlayerList(filter='') {
+201:         updateCounter();
+202:         listContainer.innerHTML = '';
+203:         const players = getRosterPlayers();
+204:         const q = filter.toLowerCase().trim();
+205:         let count = 0;
+206:         players.forEach(player => {
+207:             if (q && !player.name.toLowerCase().includes(q)) return;
+208:             const adj = calcRating(player.rating);
+209:             const row = document.createElement('div');
+210:             row.className = 'list-row';
+211:             row.innerHTML = `
+212:                 <span class="row-pos">ST</span>
+213:                 <img src="${player.image}" class="row-icon" alt="">
+214:                 <span class="row-name">${player.name}</span>
+215:                 <span class="row-rating ${ratingColor(adj)}">${adj}</span>
+216:                 <button class="row-remove" title="Quitar">âœ•</button>
+217:             `;
+218:             row.addEventListener('click', e => {
+219:                 if (e.target.classList.contains('row-remove')) return;
+220:                 document.querySelectorAll('.list-row').forEach(r => r.classList.remove('selected'));
+221:                 row.classList.add('selected');
+222:                 showDetail(player, adj);
+223:             });
+224:             row.querySelector('.row-remove').addEventListener('click', e => {
+225:                 e.stopPropagation();
+226:                 roster.delete(player.id);
+227:                 saveRoster();
+228:                 renderPlayerList(document.getElementById('search-input').value);
+229:                 if (selectedPlayer?.id === player.id) { selectedPlayer=null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden'); }
+230:             });
+231:             listContainer.appendChild(row);
+232:             count++;
+233:         });
+234:         if (count === 0) listContainer.innerHTML = '<p style="padding:20px;color:#555;font-family:Nunito;text-align:center;">Lista vacía. Usa "Editar Lista" para añadir jugadores.</p>';
+235:     }
+236:     document.getElementById('search-input').addEventListener('input', e => renderPlayerList(e.target.value));
+237:     renderPlayerList();
+238: 
+239:     // =====================================================
+240:     // DETAIL PANEL
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

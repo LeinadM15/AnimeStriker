@@ -658,5 +658,19 @@ const coachesDB = [
         image: "assets/characters/Egipto/Zundar Zand.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/eg.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Egipto" }
+    },
+    {
+        id: "coach_sect_feromona",
+        name: "SECT FEROMONA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/co.png",
+        teamIcon: "teams/Colombia.png",
+        image: "assets/characters/Colombia/Sect Feromona.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/co.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Colombia" }
     }
 ];

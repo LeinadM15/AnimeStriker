@@ -1,0 +1,79 @@
+Created At: 2026-07-30T15:41:26+02:00
+Completed At: 2026-07-30T15:41:26+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4977
+Total Bytes: 258908
+Showing lines 4560 to 4630
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4560:                     }
+4561:                 });
+4562:             } else {
+4563:                 (state.p2StratumPlayersIds || []).forEach((id, index) => {
+4564:                     const c = [...allOroCards.values()].find(x => x.id === id);
+4565:                     if (c) {
+4566:                         let assignedTeam = "Equipo Y";
+4567:                         if (index < 10) assignedTeam = "Tu Equipo (Z)";
+4568:                         else if (index < 21) assignedTeam = "Equipo V";
+4569:                         else if (index < 32) assignedTeam = "Equipo W";
+4570:                         else if (index < 43) assignedTeam = "Equipo X";
+4571:                         p2StratumPlayers.push({ ...c, p2Rating: calcRating(c.rating), team: assignedTeam, goals: 0 });
+4572:                     }
+4573:                 });
+4574:             }
+4575:             
+4576:             if (state.p2DailyNPCsIds) {
+4577:                 p2DailyNPCs = {};
+4578:                 for (let room in state.p2DailyNPCsIds) {
+4579:                     p2DailyNPCs[room] = state.p2DailyNPCsIds[room].map(id => [...allOroCards.values()].find(c => c.id === id)).filter(Boolean);
+4580:                 }
+4581:                 if (!p2DailyNPCs['Tácticas'] || p2DailyNPCs['Tácticas'].length === 0) {
+4582:                     let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+4583:                     let miEquipo = (window.gamePhase === 1) ? "Furano" : "Tu Equipo (Z)";
+4584:                     let myTeamPool = pool.filter(p => p.team === miEquipo);
+4585:                     p2DailyNPCs['Tácticas'] = myTeamPool.slice(0, (p2Stats && window.isTodayMatchDay()) ? 4 : 3);
+4586:                 }
+4587:             } else {
+4588:                 generateDailyNPCs();
+4589:             }
+4590:             
+4591:             document.getElementById('prequel-selection-screen').classList.add('hidden');
+4592:             document.getElementById('player-selection-screen').classList.add('hidden');
+4593:             document.getElementById('cinematic-screen').classList.add('hidden');
+4594:             document.getElementById('tag-screen').classList.add('hidden');
+4595:             document.getElementById('phase2-lobby').classList.remove('hidden');
+4596:             
+4597:             // Setup navigation (normally done in initPhase2)
+4598:             document.getElementById('p2-nav-left').onclick = () => {
+4599:                 p2CurrentRoom--;
+4600:                 if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
+4601:                 renderP2Room();
+4602:             };
+4603:             document.getElementById('p2-nav-right').onclick = () => {
+4604:                 p2CurrentRoom++;
+4605:                 if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+4606:                 renderP2Room();
+4607:             };
+4608:             
+4609:             updateP2UI();
+4610:             renderP2Room();
+4611:             showNotification('Partida cargada correctamente.', 'success');
+4612:             
+4613:         } catch(e) {
+4614:             showNotification('Error al cargar la partida.', 'error');
+4615:             console.error(e);
+4616:         }
+4617:     };
+4618:     
+4619:     // Check for save on startup
+4620:     if (localStorage.getItem('webfutbol_story_save')) {
+4621:         const btnLoad = document.getElementById('btn-load-game');
+4622:         if (btnLoad) btnLoad.style.display = 'inline-block';
+4623:     }
+4624: 
+4625:     window.startRegateMinigame = function() {
+4626:         if (!checkStamina(35)) return;
+4627:         
+4628:         const overlay = document.createElement('div');
+4629:         overlay.style.cssText = 'position:fixed; top:0;left:0;right:0;bottom:0; background:url("assets/Historia/Habitaciones/MinijuegoRegate.jpeg") center/cover; z-index:1000; display:flex; flex-direction:column; overflow:hidden;';
+4630:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

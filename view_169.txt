@@ -1,0 +1,59 @@
+Created At: 2026-07-30T03:02:47+02:00
+Completed At: 2026-07-30T03:02:47+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4599
+Total Bytes: 239035
+Showing lines 300 to 350
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+300: 
+301:     // =====================================================
+302:     // FILL BUTTONS
+303:     // =====================================================
+304:     document.getElementById('btn-fill-random').addEventListener('click', () => {
+305:         const arr = [...allOroCards.values()].sort(() => Math.random()-0.5);
+306:         roster.clear(); arr.slice(0, FILL_COUNT).forEach(c => roster.add(c.id));
+307:         saveRoster(); renderPlayerList(document.getElementById('search-input').value);
+308:         selectedPlayer=null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden');
+309:     });
+310: 
+311:     document.getElementById('btn-fill-jpst').addEventListener('click', () => {
+312:         roster.clear();
+313:         const oroArr = [...allOroCards.values()];
+314:         const isJP = c => c.nationFlag && c.nationFlag.includes('/jp.png');
+315:         const notInRoster = c => !roster.has(c.id);
+316:         const addToRoster = (arr) => {
+317:             arr.sort(() => Math.random() - 0.5);
+318:             for (const c of arr) {
+319:                 if (roster.size >= FILL_COUNT) break;
+320:                 if (!roster.has(c.id)) roster.add(c.id);
+321:             }
+322:         };
+323: 
+324:         // Step 1: Blue Lock players (always included)
+325:         DEFAULT_ROSTER_IDS.forEach(id => { const c = oroArr.find(x => x.id === id); if (c) roster.add(c.id); });
+326:         DEFAULT_NAME_FALLBACKS.forEach(name => { const c = oroArr.find(x => x.name.toUpperCase().includes(name) && !roster.has(x.id)); if (c) roster.add(c.id); });
+327:         BLUE_LOCK_NAMES.forEach(name => { const c = oroArr.find(x => x.name.toUpperCase().includes(name) && !roster.has(x.id)); if (c) roster.add(c.id); });
+328: 
+329:         // Step 2: Japanese ST (primary position)
+330:         addToRoster(oroArr.filter(c => isJP(c) && c.position === 'ST' && notInRoster(c)));
+331: 
+332:         // Step 3: Japanese CF (primary position)
+333:         addToRoster(oroArr.filter(c => isJP(c) && c.position === 'CF' && notInRoster(c)));
+334: 
+335:         // Step 4: Japanese players with ST or CF as secondary position
+336:         addToRoster(oroArr.filter(c => isJP(c) && notInRoster(c) && c.secondaryPositions && (c.secondaryPositions.includes('ST') || c.secondaryPositions.includes('CF'))));
+337: 
+338:         // Step 5: If still not enough, fill with any remaining Japanese players
+339:         addToRoster(oroArr.filter(c => isJP(c) && notInRoster(c)));
+340: 
+341:         saveRoster(); renderPlayerList(document.getElementById('search-input').value);
+342:         selectedPlayer = null; detailFilled.classList.add('hidden'); detailEmpty.classList.remove('hidden');
+343:     });
+344: 
+345:     // =====================================================
+346:     // ROSTER MODAL: FIFA-style filters
+347:     // =====================================================
+348:     const modal = document.getElementById('roster-modal');
+349:     const modalList = document.getElementById('roster-modal-list');
+350: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

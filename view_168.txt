@@ -1,0 +1,49 @@
+Created At: 2026-07-30T03:02:38+02:00
+Completed At: 2026-07-30T03:02:38+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4599
+Total Bytes: 239035
+Showing lines 510 to 550
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+510:     }
+511: 
+512:     // Open modal
+513:     document.getElementById('btn-edit-roster').addEventListener('click', () => {
+514:         modal.classList.remove('hidden');
+515:         resetFilters();
+516:         applyFilters();
+517:         document.getElementById('filter-name').focus();
+518:     });
+519: 
+520:     // Close modal
+521:     document.getElementById('btn-close-roster').addEventListener('click', () => {
+522:         modal.classList.add('hidden');
+523:         renderPlayerList(document.getElementById('search-input').value);
+524:     });
+525:     modal.addEventListener('click', e => {
+526:         if (e.target === modal) { modal.classList.add('hidden'); renderPlayerList(document.getElementById('search-input').value); }
+527:     });
+528: 
+529:     // =====================================================
+530:     // NATIONALITY SUB-MODAL
+531:     // =====================================================
+532:     const natModal = document.getElementById('nationality-modal');
+533:     const natTabsEl = document.getElementById('nat-tabs');
+534:     const natListEl = document.getElementById('nat-list');
+535: 
+536:     const NAT_TABS = [
+537:         { label: 'Top 9', filter: list => list.sort((a,b) => { const order=['jp','de','fr','es','it','gb','br','ar','pt']; const ai=order.indexOf(a.code),bi=order.indexOf(b.code); return (ai===-1?99:ai)-(bi===-1?99:bi); }).slice(0,9) },
+538:         { label: '[A]', filter: list => list.filter(n => n.name.startsWith('A')) },
+539:         { label: '[B]', filter: list => list.filter(n => n.name.startsWith('B')) },
+540:         { label: '[C]', filter: list => list.filter(n => n.name.startsWith('C')) },
+541:         { label: '[D-G]', filter: list => list.filter(n => 'DEFG'.includes(n.name[0])) },
+542:         { label: '[H-L]', filter: list => list.filter(n => 'HIJKL'.includes(n.name[0])) },
+543:         { label: '[M-O]', filter: list => list.filter(n => 'MNO'.includes(n.name[0] || 'Ã‘')) },
+544:         { label: '[P-R]', filter: list => list.filter(n => 'PQR'.includes(n.name[0])) },
+545:         { label: '[S]', filter: list => list.filter(n => n.name.startsWith('S')) },
+546:         { label: '[T-Z]', filter: list => list.filter(n => 'TUVWXYZ'.includes(n.name[0])) }
+547:     ];
+548: 
+549:     let activeNatTab = 0;
+550: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

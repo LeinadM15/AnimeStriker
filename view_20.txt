@@ -1,0 +1,29 @@
+Created At: 2026-07-29T02:27:56+02:00
+Completed At: 2026-07-29T02:27:56+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3432
+Total Bytes: 174673
+Showing lines 1810 to 1830
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1810:             p2RoomBody.innerHTML = '';
+1811:             
+1812:             // Spawn 1 random NPC
+1813:             const roomNPCs = p2StratumPlayers.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+1814:             const npc = roomNPCs.length > 0 ? roomNPCs[Math.floor(Math.random() * roomNPCs.length)] : null;
+1815:             
+1816:             if (npc) {
+1817:                 // NPC Body (Sincabeza)
+1818:                 const bodyDiv = document.createElement('div');
+1819:                 bodyDiv.className = 'p2-scene-overlay';
+1820:                 bodyDiv.style.cssText = 'left:35%; bottom:15%; width:600px; height:600px; cursor:pointer; z-index:20;';
+1821:                 bodyDiv.innerHTML = `<img src="${basePath}Sincabeza.png" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1822:                 p2LobbyScreen.appendChild(bodyDiv);
+1823:                 
+1824:                 // NPC Head (Behind the body)
+1825:                 const headDiv = document.createElement('div');
+1826:                 headDiv.className = 'p2-scene-overlay';
+1827:                 headDiv.style.cssText = `left:48.5%; bottom:26%; width:600px; height:600px; cursor:pointer; z-index:15;`;
+1828:                 headDiv.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1829:                 p2LobbyScreen.appendChild(headDiv);
+1830:                 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

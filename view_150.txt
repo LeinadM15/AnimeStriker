@@ -1,0 +1,54 @@
+Created At: 2026-07-30T02:21:23+02:00
+Completed At: 2026-07-30T02:21:23+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4482
+Total Bytes: 232944
+Showing lines 3815 to 3860
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3815:                 } else {
+3816:                     goalsConceded++;
+3817:                     
+3818:                     const rivalName = (window.gamePhase === 1) ? "Rival Regional A" : "Equipo V";
+3819:                     const roster = p2StratumPlayers.filter(p => p.team === rivalName);
+3820:                     let scorer = null;
+3821:                     if(roster.length > 0) {
+3822:                         scorer = roster[Math.floor(Math.random() * roster.length)];
+3823:                         scorer.goals++;
+3824:                     }
+3825:                     
+3826:                     ball.style.transition = 'all 0.2s';
+3827:                     ball.style.width = '300px'; ball.style.height = '300px';
+3828:                     showNotification(`¡GOL DE ${scorer ? scorer.name : 'RIVAL'}!`, 'error', 1500);
+3829:                     if(scorer) showScorerPopup(scorer, false);
+3830:                     
+3831:                     // Efecto temblor pantalla
+3832:                     let shakeOffset = 0;
+3833:                     const shaker = setInterval(() => {
+3834:                         shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
+3835:                         engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
+3836:                     }, 50);
+3837:                     setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+3838:                 }
+3839:                 
+3840:                 updateHUD();
+3841:                 setTimeout(() => {
+3842:                     ball.remove();
+3843:                     nextShot();
+3844:                 }, 800);
+3845:             }, flightTime + 50);
+3846:         }
+3847:         
+3848:         const introPanel = document.createElement('div');
+3849:         introPanel.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.85); padding:30px; border-radius:15px; border:2px solid #00e5ff; color:white; font-family:"Nunito",sans-serif; z-index:10050; text-align:center; min-width:400px; box-shadow:0 0 30px rgba(0,229,255,0.3);';
+3850:         introPanel.innerHTML = `
+3851:             <h2 style="font-family:'Bangers'; color:#00e5ff; font-size:3rem; margin:0 0 20px 0; letter-spacing:2px;">¡ATENTO PORTERO!</h2>
+3852:             <div style="text-align:left; font-size:1.1rem; line-height:1.6; margin-bottom:25px;">
+3853:                 <p style="text-align:center; font-weight:bold; color:#ffd700;">El delantero va a realizar 5 tiros seguidos.</p>
+3854:                 <p>🖱️ <b>Mueve el ratón</b> para posicionar tus guantes.</p>
+3855:                 <p>⚪ <b>Tiro Normal (Blanco)</b>: Trayectoria recta. No pulses nada, usa el <b>Agarre</b>.</p>
+3856:                 <p>🔴 <b>Tiro Potente (Rojo)</b>: Muy veloz. Mantén pulsado <b>Clic Izquierdo</b> (Puños).</p>
+3857:                 <p>🟣 <b>Tiro con Efecto (Morado)</b>: Trayectoria con curva. Mantén pulsado <b>Clic Derecho</b> (Estirada).</p>
+3858:                 <p>🟡 <b>Tiro Zig-Zag (Amarillo)</b>: Cambia de dirección. Usa <b>Clic Derecho</b> (Estirada).</p>
+3859:             </div>
+3860:             <button id="btn-start-gk" style="background:linear-gradient(135deg, #00e5ff, #00b0ff); color:black; font-family:'Bangers'; font-size:1.5rem; padding:10px 40px; border:none; border-radius:8px; cursor:pointer; letter-spacing:2px; box-shadow:0 5px 15px rgba(0,229,255,0.4); transition:transform 0.2s;">¡EMPEZAR!</button>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

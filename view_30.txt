@@ -1,0 +1,108 @@
+Created At: 2026-07-29T02:49:25+02:00
+Completed At: 2026-07-29T02:49:25+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3449
+Total Bytes: 175613
+Showing lines 3350 to 3449
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3350:             if (isGameOver) return;
+3351:             const target = document.createElement('div');
+3352:             
+3353:             let isSmall = Math.random() > 0.7;
+3354:             let size = isSmall ? 50 : 100;
+3355:             let points = isSmall ? 3 : 1;
+3356:             let duration = isSmall ? 800 : 1500;
+3357:             
+3358:             target.style.cssText = `
+3359:                 position:absolute; width:${size}px; height:${size}px; border-radius:50%;
+3360:                 background:radial-gradient(circle, #ff007f 20%, white 25%, white 45%, #ff007f 50%, #ff007f 70%, white 75%, white 95%, #ff007f 100%);
+3361:                 box-shadow:0 0 15px rgba(255,0,127,0.8);
+3362:                 cursor:crosshair; transition:transform 0.1s;
+3363:             `;
+3364:             
+3365:             let maxX = gameArea.offsetWidth * 0.7 - size;
+3366:             let maxY = gameArea.offsetHeight * 0.4 - size;
+3367:             let offsetX = gameArea.offsetWidth * 0.15;
+3368:             let offsetY = gameArea.offsetHeight * 0.4;
+3369:             
+3370:             target.style.left = Math.floor(offsetX + Math.random() * (maxX || window.innerWidth * 0.7 - size)) + 'px';
+3371:             target.style.top = Math.floor(offsetY + Math.random() * (maxY || window.innerHeight * 0.4 - size)) + 'px';
+3372:             
+3373:             target.animate([{transform:'scale(0)'}, {transform:'scale(1)'}], {duration:200, fill:'forwards'});
+3374:             
+3375:             let clicked = false;
+3376:             target.onmousedown = () => {
+3377:                 if (clicked) return;
+3378:                 clicked = true;
+3379:                 
+3380:                 // Spawn a ball
+3381:                 let ball = document.createElement('div');
+3382:                 ball.style.cssText = `position:absolute; left:50%; bottom:20px; width:60px; height:60px; z-index:50; pointer-events:none; transition:all 0.3s ease-out;`;
+3383:                 ball.innerHTML = `<img src="assets/Historia/Oni Pretend/Balon.png" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #fff);">`;
+3384:                 gameArea.appendChild(ball);
+3385:                 
+3386:                 // Force reflow
+3387:                 ball.getBoundingClientRect();
+3388:                 
+3389:                 // Move ball to target and shrink
+3390:                 ball.style.left = (target.offsetLeft + size/2 - 15) + 'px';
+3391:                 ball.style.top = (target.offsetTop + size/2 - 15) + 'px';
+3392:                 ball.style.bottom = 'auto'; // Disable bottom since we are setting top
+3393:                 ball.style.width = '30px';
+3394:                 ball.style.height = '30px';
+3395:                 
+3396:                 setTimeout(() => {
+3397:                     ball.remove();
+3398:                     score += points;
+3399:                     scoreEl.innerText = `Puntos: ${score}`;
+3400:                     
+3401:                     let pop = document.createElement('div');
+3402:                     pop.innerText = `+${points}`;
+3403:                     pop.style.cssText = `position:absolute; left:${target.style.left}; top:${target.style.top}; color:#00ff00; font-family:"Bangers"; font-size:3rem; text-shadow:0 0 5px #000; z-index:20; pointer-events:none;`;
+3404:                     gameArea.appendChild(pop);
+3405:                     pop.animate([{transform:'translateY(0)', opacity:1}, {transform:'translateY(-30px)', opacity:0}], {duration:500, fill:'forwards'}).onfinish = () => pop.remove();
+3406:                     
+3407:                     target.remove();
+3408:                     
+3409:                     // Spawn extra targets as you progress
+3410:                     if (score > 0 && (score % 4 === 0 || score % 5 === 0)) {
+3411:                         setTimeout(spawnTarget, 200);
+3412:                     }
+3413:                 }, 300);
+3414:             };
+3415:             
+3416:             gameArea.appendChild(target);
+3417:             
+3418:             setTimeout(() => {
+3419:                 if (!clicked && target.parentNode) {
+3420:                     target.animate([{transform:'scale(1)'}, {transform:'scale(0)'}], {duration:200, fill:'forwards'}).onfinish = () => target.remove();
+3421:                 }
+3422:             }, duration);
+3423:             
+3424:             let nextSpawn = Math.max(300, 1000 - (20 - time)*30);
+3425:             setTimeout(spawnTarget, nextSpawn);
+3426:         };
+3427:         
+3428:         // Timeout needed to wait for layout engine to compute gameArea width
+3429:         setTimeout(spawnTarget, 100);
+3430:         
+3431:         const timeLoop = setInterval(() => {
+3432:             if (isGameOver) return;
+3433:             time--;
+3434:             timeEl.innerText = `Tiempo: ${time}s`;
+3435:             if (time <= 0) {
+3436:                 isGameOver = true;
+3437:                 clearInterval(timeLoop);
+3438:                 
+3439:                 consumeStamina(35);
+3440:                 let expGained = Math.max(5, Math.floor(score * 1.5));
+3441:                 overlay.remove();
+3442:                 showTrainingResultModal(null, 'shooting', 'Tiro de Precisión', expGained, '¡Sesión de tiro completada!', '#ff007f');
+3443:             }
+3444:         }, 1000);
+3445:     };
+3446: 
+3447: });
+3448: 
+3449: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,34 @@
+Created At: 2026-07-29T22:49:41+02:00
+Completed At: 2026-07-29T22:49:41+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4256
+Total Bytes: 218388
+Showing lines 3260 to 3285
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3260:                 drawPlayer(spot, `Rival ${i+1}`, 'assets/NPC_Default.png', '#ff4444', false);
+3261:             });
+3262:             
+3263:             nextBtn.innerText = '¡AL CAMPO!';
+3264:             nextBtn.style.borderColor = '#ff4444';
+3265:             nextBtn.style.color = '#ff4444';
+3266:             
+3267:             nextBtn.onclick = () => {
+3268:                 container.style.transition = 'opacity 0.5s';
+3269:                 container.style.opacity = '0';
+3270:                 setTimeout(() => {
+3271:                     if (position === 'POR') {
+3272:                         startGKMinigame(ourStrength, enemyStrength, winProbability);
+3273:                     } else {
+3274:                         executeSimulation(position, win, matchContext);
+3275:                     }
+3276:                 }, 500);
+3277:             };
+3278:         };
+3279:     };
+3280:     
+3281:     function executeSimulation(position, win, context) {
+3282:         let goalsScored = 0;
+3283:         if (position === 'DEL' || position === true) {
+3284:             goalsScored = Math.floor(Math.random() * 4) + 1;
+3285:         } else if (position === 'MED') {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

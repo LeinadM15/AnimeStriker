@@ -1,0 +1,59 @@
+Created At: 2026-07-28T20:54:40Z
+Completed At: 2026-07-28T20:54:40Z
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3118
+Total Bytes: 157488
+Showing lines 2800 to 2850
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2800:     };
+2801:     
+2802:     window.startMatch = function(isStriker) {
+2803:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2804:         
+2805:         // Simulate Match result
+2806:         const goalsScored = isStriker ? Math.floor(Math.random() * 4) + 1 : Math.floor(Math.random() * 2);
+2807:         p2Stats.goals += goalsScored;
+2808:         
+2809:         const win = Math.random() > 0.4;
+2810:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+2811:         if (win) {
+2812:             myTeam.w++;
+2813:             myTeam.pts += 3;
+2814:             showNotification(`¡VICTORIA! Has marcado ${goalsScored} goles. (Total Goles: ${p2Stats.goals})`, 'success', 5000);
+2815:         } else {
+2816:             myTeam.l++;
+2817:             showNotification(`DERROTA... Has marcado ${goalsScored} goles. (Total Goles: ${p2Stats.goals})`, 'error', 5000);
+2818:         }
+2819:         
+2820:         // Simulate other matches
+2821:         p2League.forEach(t => {
+2822:             if (!t.name.includes("Tu Equipo")) {
+2823:                 t.w += Math.floor(Math.random() * 2);
+2824:                 t.pts = (t.w * 3) + t.d;
+2825:             }
+2826:         });
+2827:         
+2828:         // Simulate scorers
+2829:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+2830:         
+2831:         // Award Match EXP and open interactive distributor
+2832:         const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+2833:         const summaryText = win 
+2834:             ? `¡VICTORIA! Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+2835:             : `DERROTA... Aún así ganaste +${matchXp} EXP total por tu esfuerzo y ${goalsScored} goles.`;
+2836:         openMatchXpDistributor(matchXp, summaryText);
+2837:     };
+2838: 
+2839:     // ==========================================
+2840:     // FRIENDSHIP VIEWER (Inazuma Eleven style)
+2841:     // ==========================================
+2842:     window.openMyStatsViewer = function() {
+2843:         const modal = document.getElementById('p2-skill-modal');
+2844:         const title = document.getElementById('skill-modal-title');
+2845:         const body = document.getElementById('skill-modal-body');
+2846:         
+2847:         modal.classList.remove('hidden');
+2848:         title.textContent = 'MIS ESTADÍSTICAS';
+2849:         
+2850:         const statsHtml = [
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,54 @@
+Created At: 2026-07-30T02:29:25+02:00
+Completed At: 2026-07-30T02:29:25+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4489
+Total Bytes: 233574
+Showing lines 4135 to 4180
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4135:                         else if (index < 32) assignedTeam = "Equipo W";
+4136:                         else if (index < 43) assignedTeam = "Equipo X";
+4137:                         p2StratumPlayers.push({ ...c, p2Rating: calcRating(c.rating), team: assignedTeam, goals: 0 });
+4138:                     }
+4139:                 });
+4140:             }
+4141:             
+4142:             if (state.p2DailyNPCsIds) {
+4143:                 p2DailyNPCs = {};
+4144:                 for (let room in state.p2DailyNPCsIds) {
+4145:                     p2DailyNPCs[room] = state.p2DailyNPCsIds[room].map(id => [...allOroCards.values()].find(c => c.id === id)).filter(Boolean);
+4146:                 }
+4147:                 if (!p2DailyNPCs['Tácticas'] || p2DailyNPCs['Tácticas'].length === 0) {
+4148:                     let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+4149:                     let miEquipo = (window.gamePhase === 1) ? "Furano" : "Tu Equipo (Z)";
+4150:                     let myTeamPool = pool.filter(p => p.team === miEquipo);
+4151:                     p2DailyNPCs['Tácticas'] = myTeamPool.slice(0, (p2Stats && p2Stats.day % 3 === 0) ? 4 : 3);
+4152:                 }
+4153:             } else {
+4154:                 generateDailyNPCs();
+4155:             }
+4156:             
+4157:             document.getElementById('player-selection-screen').classList.add('hidden');
+4158:             document.getElementById('cinematic-screen').classList.add('hidden');
+4159:             document.getElementById('tag-screen').classList.add('hidden');
+4160:             document.getElementById('phase2-lobby').classList.remove('hidden');
+4161:             
+4162:             // Setup navigation (normally done in initPhase2)
+4163:             document.getElementById('p2-nav-left').onclick = () => {
+4164:                 p2CurrentRoom--;
+4165:                 if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
+4166:                 renderP2Room();
+4167:             };
+4168:             document.getElementById('p2-nav-right').onclick = () => {
+4169:                 p2CurrentRoom++;
+4170:                 if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+4171:                 renderP2Room();
+4172:             };
+4173:             
+4174:             updateP2UI();
+4175:             renderP2Room();
+4176:             showNotification('Partida cargada correctamente.', 'success');
+4177:             
+4178:         } catch(e) {
+4179:             showNotification('Error al cargar la partida.', 'error');
+4180:             console.error(e);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

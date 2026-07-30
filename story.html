@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORY MODE - Blue Lock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="story.css">
+</head>
+<body>
+
+    <!-- ============ PREQUEL SELECTION (PHASE 1) ============ -->
+    <div id="prequel-selection-screen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+        <h1 style="font-family: 'Bangers'; font-size: 4rem; color: #00e5ff; text-shadow: 0 0 20px rgba(0,229,255,0.8); margin-bottom: 20px;">MODO CARRERA: INICIOS</h1>
+        <p style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; max-width: 600px; text-align: center; margin-bottom: 40px; color: #ccc;">Antes de aspirar a la cima, debes forjarte en los torneos escolares de tu prefectura. Todos empezáis con 13 años. Elige tu destino.</p>
+        
+        <div style="display: flex; gap: 30px; margin-bottom: 40px;">
+            <!-- Hokkaido Card -->
+            <div id="btn-select-hokkaido" style="cursor: pointer; background: #111; border: 3px solid #fff; border-radius: 15px; width: 300px; height: 400px; display: flex; flex-direction: column; align-items: center; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;">
+                <div style="height: 60%; width: 100%; background: url('assets/Historia/Hokkaido/Base.jpg') center/cover; position: relative;">
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #111, transparent);"></div>
+                </div>
+                <div style="padding: 20px; text-align: center; height: 40%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: #fff; margin: 0;">HOKKAIDO</h2>
+                    <div style="font-family: 'Nunito', sans-serif; color: #aaa; font-size: 0.9rem;">
+                        <strong>Colegio:</strong> Furano<br>
+                        <strong>Instituto:</strong> Alpino
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Direct Blue Lock Card -->
+            <div id="btn-select-bluelock" style="cursor: pointer; background: #111; border: 3px solid #0055ff; border-radius: 15px; width: 300px; height: 400px; display: flex; flex-direction: column; align-items: center; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 15px rgba(0,85,255,0.4);">
+                <div style="height: 60%; width: 100%; background: url('assets/Historia/Habitaciones/BlueLock.png') center/cover; position: relative;">
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #111, transparent);"></div>
+                </div>
+                <div style="padding: 20px; text-align: center; height: 40%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: #fff; margin: 0;">BLUE LOCK</h2>
+                    <div style="font-family: 'Nunito', sans-serif; color: #aaa; font-size: 0.9rem;">
+                        <strong>Proyecto Blue Lock</strong><br>
+                        (Torneo de Supervivencia)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Multi-Save Slots UI -->
+        <div id="save-slots-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 900px; margin-top: 20px; border-top: 2px solid #333; padding-top: 20px;">
+            <!-- JS will inject slots here -->
+        </div>
+    </div>
+    
+    <!-- ============ FULL SCREEN TRANSITION OVERLAY ============ -->
+    <div id="transition-overlay" class="hidden" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: opacity 1s ease-in-out;">
+        <img id="transition-img" src="" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.4; filter: blur(3px);">
+        <h1 id="transition-text" style="font-family: 'Bangers'; font-size: 5rem; text-shadow: 0 0 20px #000; z-index: 10000; letter-spacing: 3px;">SALTANDO EN EL TIEMPO...</h1>
+    </div>
+
+    <!-- ============ CINEMATIC INTRO ============ -->
+    <div id="cinematic-screen" class="cinematic-screen hidden" style="transition: opacity 0.8s; opacity: 0;">
+        <div class="cinematic-bg"></div>
+        <div class="cinematic-vignette"></div>
+        <button id="cin-skip" class="cinematic-skip">Saltar >></button>
+        <img src="assets/characters/Isagi/Isagi.png" alt="Ego Jinpachi" class="cinematic-speaker">
+        <div class="cinematic-dialogue">
+            <div class="speaker-label" id="cin-speaker">Ego Jinpachi</div>
+            <div class="dialogue-line" id="cin-text"></div>
+            <div class="cinematic-continue">
+                <button id="cin-continue" class="btn-continue">Continuar ></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TAG GAME (FIRST SELECTION) ============ -->
+    <div id="tag-screen" class="tag-screen hidden">
+        <!-- Intro overlay ("PRIMERA SELECCIÓN") -->
+        <div id="tag-intro-overlay" class="tag-intro-overlay">
+            <div class="tag-intro-text">
+                <div class="tag-intro-sub">BLUE LOCK</div>
+                <h1 class="tag-intro-title">PRIMERA SELECCIÓN</h1>
+                <div class="tag-intro-desc">TAG  136 SEGUNDOS</div>
+            </div>
+        </div>
+
+        <!-- Group assignment overlay -->
+        <div id="tag-group-overlay" class="tag-group-overlay hidden">
+            <div class="tag-group-text">
+                <div class="tag-group-label">Has sido asignado al</div>
+                <h1 id="tag-group-name" class="tag-group-title">GRUPO X</h1>
+                <div id="tag-group-members" class="tag-group-members">
+                    <!-- JS fills: 12 small player icons -->
+                </div>
+                <button id="tag-start-btn" class="tag-start-btn">¡EMPIEZA EL TAG!</button>
+            </div>
+        </div>
+
+        <!-- Countdown 3-2-1 -->
+        <div id="tag-countdown" class="tag-countdown hidden">
+            <span id="tag-countdown-num">3</span>
+        </div>
+
+        <!-- Main Tag Game UI -->
+        <div id="tag-game-ui" class="tag-game-ui hidden">
+            <!-- Scoreboard (centered at top) -->
+            <div class="tag-scoreboard">
+                <div class="tag-scoreboard-inner">
+                    <img class="tag-scoreboard-bg" src="assets/Historia/Oni Pretend/Marcador.png" alt="Marcador">
+                    <div class="tag-scoreboard-oni-portrait">
+                        <img id="tag-scoreboard-oni-img" src="" alt="ONI">
+                    </div>
+                    <div class="tag-scoreboard-oni-name" id="tag-scoreboard-oni-name"></div>
+                    <div class="tag-timer" id="tag-timer">02 16</div>
+                </div>
+            </div>
+
+            <!-- Arena: full screen with moving targets -->
+            <div class="tag-arena" id="tag-arena">
+                <!-- JS fills: clickable moving player nodes -->
+            </div>
+
+            <!-- Floating narration (overlay text, no bar) -->
+            <div class="tag-narration-float" id="tag-narration">
+                <span id="tag-narration-text">Preparándose...</span>
+            </div>
+
+            <!-- Dodge Panel (appears when someone shoots at you) -->
+            <div class="tag-dodge-panel hidden" id="tag-dodge-panel">
+                <div class="tag-dodge-title">¡TE DISPARAN! Elige dirección para esquivar:</div>
+                <div class="tag-dodge-buttons">
+                    <button class="tag-dodge-btn" data-dir="up">
+                        <img class="dodge-icon-img" src="assets/Historia/Arriba.png" alt="Arriba">
+                        <span>SALTAR</span>
+                    </button>
+                    <button class="tag-dodge-btn" data-dir="left">
+                        <img class="dodge-icon-img" src="assets/Historia/Izquierda.png" alt="Izquierda">
+                        <span>IZQUIERDÍA</span>
+                    </button>
+                    <button class="tag-dodge-btn" data-dir="right">
+                        <img class="dodge-icon-img" src="assets/Historia/Derecha.png" alt="Derecha">
+                        <span>DERECHA</span>
+                    </button>
+                    <button class="tag-dodge-btn" data-dir="down">
+                        <img class="dodge-icon-img" src="assets/Historia/Abajo.png" alt="Abajo">
+                        <span>ABAJO</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- QTE Bar Panel (appears when shooting) -->
+            <div class="tag-qte-panel hidden" id="tag-qte-panel">
+                <div class="tag-qte-title">HIT!</div>
+                <div class="tag-qte-bar-container">
+                    <div class="tag-qte-bar">
+                        <!-- Zones: Red (0-20), Orange(20-40), Green(40-60), DarkGreen(48-52), Orange(60-80), Red(80-100) -->
+                        <div class="qte-zone qte-red" style="left:0%; width:20%;"></div>
+                        <div class="qte-zone qte-orange" style="left:20%; width:20%;"></div>
+                        <div class="qte-zone qte-green" style="left:40%; width:20%;"></div>
+                        <div class="qte-zone qte-darkgreen" style="left:48%; width:4%;"></div>
+                        <div class="qte-zone qte-orange" style="left:60%; width:20%;"></div>
+                        <div class="qte-zone qte-red" style="left:80%; width:20%;"></div>
+                    </div>
+                    <div class="tag-qte-cursor" id="tag-qte-cursor">+</div>
+                </div>
+                <div class="tag-qte-instruction">Pulsa ESPACIO o HAZ CLIC para disparar</div>
+            </div>
+        </div>
+
+        <!-- Result screen -->
+        <div id="tag-result" class="tag-result hidden">
+            <div id="tag-result-content" class="tag-result-content">
+                <!-- JS fills -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PHASE 2: LOBBY ============ -->
+    <div id="phase2-lobby" class="hidden">
+        <header class="story-header">
+            <div class="story-logo"><span>BLUE LOCK</span>  2ND SELECTION</div>
+            <div style="display:flex; gap:15px; align-items:center;">
+                <button id="btn-save-game" class="p2-save-btn" onclick="saveGameState()" style="background:#00e5ff; color:#000; font-family:'Bangers'; border:none; padding:5px 15px; border-radius:5px; cursor:pointer; font-size:1.2rem; display:flex; align-items:center; gap:5px;">💾 GUARDAR</button>
+                <div class="p2-status-bar">
+                    <div class="p2-stat">DÍA: <span id="p2-day">1</span></div>
+                    <div class="p2-stat">GOLES: <span id="p2-goals" class="p2-goals-text">0</span></div>
+                    <div class="p2-stat">GRL: <span id="p2-ovr">--</span></div>
+                    <div class="p2-stamina-wrap">
+                        <span>CANSANCIO: <span id="p2-stamina-text">100</span>%</span>
+                        <div class="p2-stamina-bar"><div id="p2-stamina-fill" style="width:100%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="p2-main-area">
+            <!-- Left Arrow -->
+            <button class="p2-nav-arrow left" id="p2-nav-left">
+                <img src="assets/Historia/Izquierda.png" alt="Anterior" draggable="false">
+            </button>
+
+            <!-- Room Content -->
+            <div id="p2-room-content" class="p2-room-content">
+                <h1 id="p2-room-title" class="p2-room-title">HABITACIÓN</h1>
+                <div id="p2-room-body" class="p2-room-body">
+                    <!-- Dynamic content injected via JS -->
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="p2-nav-arrow right" id="p2-nav-right">
+                <img src="assets/Historia/Derecha.png" alt="Siguiente" draggable="false">
+            </button>
+        </div>
+        
+        <!-- NPCs around the room -->
+        <div id="p2-npc-container" class="p2-npc-container"></div>
+    </div>
+
+    <!-- ============ TV STATS MODÍAL ============ -->
+    <div id="p2-tv-modal" class="hidden" style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.9); z-index:200; display:flex; align-items:center; justify-content:center;">
+        <div style="background:#0d1117; border: 2px solid #00e5ff; border-radius:12px; padding:30px; width:800px; max-width:95%; color:#fff; font-family:'Nunito', sans-serif; max-height:90vh; overflow-y:auto;">
+            <h2 style="font-family:'Bangers'; color:#00e5ff; font-size:2.5rem; text-align:center; margin-bottom:20px;">CLASIFICACIÓN DEL ESTRATO</h2>
+            <div id="p2-tv-standings" style="margin-bottom:20px;">
+                <!-- Table generated by JS -->
+            </div>
+            <h3 style="color:#ffd700; text-align:center; font-family:'Bangers'; font-size:1.8rem; margin-bottom:15px; letter-spacing:1px;">TOP GOLEADORES</h3>
+            <div id="p2-tv-scorers" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                <!-- Players generated by JS -->
+            </div>
+            <button onclick="document.getElementById('p2-tv-modal').classList.add('hidden')" style="margin-top:30px; width:100%; padding:15px; background:linear-gradient(90deg, transparent, rgba(0,229,255,0.2), transparent); border:1px solid #00e5ff; color:#fff; cursor:pointer; font-weight:bold; font-size:1.2rem;">CERRAR</button>
+        </div>
+    </div>
+
+    <!-- ============ SKILL MODÍAL ============ -->
+    <div id="p2-skill-modal" class="hidden" style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.85); z-index:200; display:flex; align-items:center; justify-content:center;">
+        <div style="background:#111; border: 2px solid #00e5ff; border-radius:12px; padding:30px; width:600px; max-width:90%; color:#fff; font-family:'Nunito', sans-serif;">
+            <h2 id="skill-modal-title" style="font-family:'Bangers'; color:#00e5ff; font-size:2.5rem; text-align:center; margin-bottom:20px;">ELIGE TU RUTA</h2>
+            <div id="skill-modal-body" style="display:flex; flex-direction:column; gap:10px;">
+                <!-- Filled dynamically -->
+            </div>
+            <button onclick="document.getElementById('p2-skill-modal').classList.add('hidden')" style="margin-top:20px; width:100%; padding:10px; background:none; border:1px solid #555; color:#aaa; cursor:pointer;">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- ============ INAZUMA SHOP MODÍAL ============ -->
+    <div id="p2-shop-modal" class="hidden" style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.7); z-index:200; display:flex; align-items:center; justify-content:center;">
+        <div id="p2-shop-container" style="width:750px; max-width:95%; height:450px;">
+            <!-- JS fills this -->
+        </div>
+    </div>
+
+    <!-- ============ YOGA MINIGAME MODÍAL ============ -->
+    <div id="yoga-minigame-modal" class="hidden" style="position:fixed; top:0;left:0;right:0;bottom:0; z-index:500; overflow:hidden;">
+        <!-- Background -->
+        <img src="assets/Historia/Habitaciones/Yoga.jpeg" style="position:absolute; top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;" draggable="false">
+        <div style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.4); z-index:1;"></div>
+        
+        <!-- HUD -->
+        <div id="yoga-hud" style="position:absolute; top:20px; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <div style="font-family:'Bangers'; font-size:2.5rem; color:#fff; text-shadow:0 0 20px rgba(0,229,255,0.6); letter-spacing:3px;">EQUILIBRIO YOGA</div>
+            <div style="display:flex; gap:20px; align-items:center;">
+                <div style="font-family:'Nunito'; font-weight:800; color:#fff; font-size:1.1rem;">TIEMPO: <span id="yoga-timer" style="color:#00e5ff;">20</span>s</div>
+                <div style="width:300px; height:18px; background:rgba(0,0,0,0.6); border:2px solid #00e5ff; border-radius:9px; overflow:hidden;">
+                    <div id="yoga-stability-bar" style="height:100%; width:100%; background:linear-gradient(90deg, #00ff00, #00e5ff); transition:width 0.1s; border-radius:7px;"></div>
+                </div>
+                <div style="font-family:'Nunito'; font-weight:800; color:#fff; font-size:1.1rem;"><span id="yoga-stability-text" style="color:#00ff00;">100</span>%</div>
+            </div>
+        </div>
+        
+        <!-- Body Container -->
+        <div id="yoga-body-container" style="position:absolute; bottom:8%; left:50%; transform:translateX(-50%); z-index:5; display:flex; flex-direction:column; align-items:center; transform-origin:bottom center; transition:transform 0.05s linear;">
+            <img id="yoga-player-head" src="" style="width:300px; height:300px; object-fit:contain; margin-bottom:-17vh; z-index:1;" draggable="false">
+            <img id="yoga-body-img" src="assets/Historia/Habitaciones/CuerpoYoga.png" style="height:55vh; object-fit:contain; z-index:2;" draggable="false">
+        </div>
+        
+        <!-- Tilt Indicator -->
+        <div id="yoga-tilt-indicator" style="position:absolute; bottom:5%; left:50%; transform:translateX(-50%); z-index:10; width:300px; height:12px; background:rgba(0,0,0,0.5); border:2px solid #555; border-radius:6px; overflow:visible;">
+            <div id="yoga-tilt-marker" style="position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:20px; height:20px; background:#00e5ff; border-radius:50%; border:2px solid #fff; box-shadow:0 0 10px rgba(0,229,255,0.8); transition:left 0.05s linear;"></div>
+            <div style="position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:4px; height:20px; background:rgba(255,255,255,0.3); border-radius:2px;"></div>
+        </div>
+        
+        <!-- Arrow Controls (mobile/visual) -->
+        <div style="position:absolute; bottom:12%; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:80px;">
+            <button id="yoga-btn-left" style="width:70px; height:70px; background:rgba(0,0,0,0.6); border:3px solid #00e5ff; border-radius:50%; color:#00e5ff; font-size:2rem; cursor:pointer; font-family:'Nunito'; font-weight:900; display:flex; align-items:center; justify-content:center; transition:all 0.1s;">L</button>
+            <button id="yoga-btn-right" style="width:70px; height:70px; background:rgba(0,0,0,0.6); border:3px solid #00e5ff; border-radius:50%; color:#00e5ff; font-size:2rem; cursor:pointer; font-family:'Nunito'; font-weight:900; display:flex; align-items:center; justify-content:center; transition:all 0.1s;">R</button>
+        </div>
+        
+        <!-- Instruction -->
+        <div id="yoga-instruction" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:20; text-align:center; pointer-events:none;">
+            <div style="font-family:'Bangers'; font-size:3rem; color:#fff; text-shadow:0 0 30px rgba(0,229,255,0.8);">¡MANTÉN EL EQUILIBRIO!</div>
+            <div style="font-family:'Nunito'; font-weight:700; font-size:1.2rem; color:#aaa; margin-top:10px;">Usa A D o los botones para no caerte</div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes cintaBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    <!-- ============ CINTA MINIGAME MODÍAL ============ -->
+    <div id="cinta-minigame-modal" class="hidden" style="position:fixed; top:0;left:0;right:0;bottom:0; z-index:500; overflow:hidden;">
+        <!-- Blurred Background -->
+        <img src="assets/Historia/Habitaciones/Gimnasio.jpeg" style="position:absolute; top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0; filter:blur(6px) brightness(0.4);" draggable="false">
+        
+        <!-- Player + CintaMin scene -->
+        <div id="cinta-scene-container" style="position:absolute; bottom:5%; left:50%; transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center;">
+            <img id="cinta-player-head" src="" style="width:175px; height:175px; object-fit:contain; margin-bottom:-130px; margin-left: 40px; z-index:5;" draggable="false">
+            <img id="cinta-animation" src="assets/Historia/Habitaciones/cinta_frames/frame_0.png" style="height:75vh; object-fit:contain; z-index:1;" draggable="false">
+        </div>
+        
+        <!-- HUD -->
+        <div style="position:absolute; top:20px; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <div style="font-family:'Bangers'; font-size:2.5rem; color:#fff; text-shadow:0 0 20px rgba(0,229,255,0.6); letter-spacing:3px;">CINTA DE CORRER</div>
+            <div style="font-family:'Nunito'; font-weight:800; color:#fff; font-size:1.3rem;">TIEMPO: <span id="cinta-timer" style="color:#00e5ff;">15</span>s</div>
+        </div>
+        
+        <!-- Stats Panel -->
+        <div style="position:absolute; left:30px; top:50%; transform:translateY(-50%); z-index:10; width:350px; background:rgba(0,0,0,0.9); border:3px solid #00e5ff; border-radius:15px; padding:20px;">
+            <div style="font-family:'Bangers'; font-size:1.8rem; color:#fff; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <span>POTENCIA</span>
+                <div style="width:180px; height:22px; background:#222; border:2px solid #555; border-radius:12px; overflow:hidden;">
+                    <div id="cinta-power-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #00e5ff, #00ffcc); transition:width 0.05s;"></div>
+                </div>
+            </div>
+            <div style="font-family:'Bangers'; font-size:2.2rem; color:#fff; display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span>NIVEL</span>
+                <span id="cinta-level-text" style="color:#ffdd00; transition:transform 0.2s;">1</span>
+            </div>
+            <div style="font-family:'Bangers'; font-size:2.2rem; color:#fff; display:flex; justify-content:space-between;">
+                <span>DISTANCIA</span>
+                <span id="cinta-dist-text" style="color:#00ff00;">0</span>
+            </div>
+        </div>
+        
+        <!-- Click Button -->
+        <button id="cinta-click-btn" style="position:absolute; right:50px; top:50%; transform:translateY(-50%); z-index:10; width:200px; height:200px; border-radius:50%; font-size:2.5rem; font-family:'Bangers'; background:linear-gradient(45deg, #004d40, #00bfa5); color:#fff; border:5px solid #00e5ff; cursor:pointer; box-shadow:0 0 30px rgba(0,229,255,0.4); text-shadow:1px 1px 2px #000; transition:all 0.1s;">¡CORRER!</button>
+    </div>
+
+    <!-- ============ PESAS MINIGAME MODÍAL ============ -->
+    <div id="pesas-minigame-modal" class="hidden" style="position:fixed; top:0;left:0;right:0;bottom:0; z-index:500; overflow:hidden;">
+        <!-- Blurred Background -->
+        <img src="assets/Historia/Habitaciones/Gimnasio.jpeg" style="position:absolute; top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0; filter:blur(6px) brightness(0.4);" draggable="false">
+        
+        <!-- Player + Pesas Animation scene -->
+        <div style="position:absolute; bottom:5%; left:50%; transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center;">
+            <img id="pesas-player-head" src="" style="width:170px; height:170px; object-fit:contain; margin-bottom:-300px; margin-left: 14px; z-index:2;" draggable="false">
+            <img id="pesas-animation" src="assets/Historia/Habitaciones/pesas_frames/frame_0.png" style="height:75vh; object-fit:contain; z-index:1;" draggable="false">
+        </div>
+        
+        <!-- HUD -->
+        <div style="position:absolute; top:20px; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <div style="font-family:'Bangers'; font-size:2.5rem; color:#fff; text-shadow:0 0 20px rgba(255,68,68,0.6); letter-spacing:3px;">PRESS BANCA</div>
+            <div style="font-family:'Nunito'; font-weight:800; color:#fff; font-size:1.3rem;">TIEMPO: <span id="pesas-timer" style="color:#ff4444;">15</span>s</div>
+        </div>
+        
+        <!-- Stats Panel -->
+        <div style="position:absolute; left:30px; top:50%; transform:translateY(-50%); z-index:10; width:300px; background:rgba(0,0,0,0.9); border:3px solid #ff4444; border-radius:15px; padding:20px;">
+            <div style="font-family:'Bangers'; font-size:2rem; color:#fff; display:flex; justify-content:space-between; border-bottom:2px solid #555; padding-bottom:10px; margin-bottom:10px;">
+                <span>REPETICIONES</span>
+                <span id="pesas-reps-text" style="color:#00ff00;">0</span>
+            </div>
+            <div style="font-family:'Bangers'; font-size:2rem; color:#fff; display:flex; justify-content:space-between;">
+                <span>PESO</span>
+                <span id="pesas-weight-text" style="color:#00e5ff;">10 KG</span>
+            </div>
+        </div>
+        
+        <!-- Vertical Bar (green on TOP, red on BOTTOM) -->
+        <div id="pesas-bar-container" style="position:absolute; right:120px; top:50%; transform:translateY(-50%); z-index:10; width:80px; height:400px; background:#222; border:4px solid #555; border-radius:10px; overflow:hidden; display:flex; flex-direction:column;">
+            <div id="pesas-green-zone" style="height:40%; background:#00ff00; opacity:0.6;"></div> <!-- Green Zone on TOP -->
+            <div style="flex:1; background:linear-gradient(to bottom, #ffaa00, #ff0000);"></div>
+            
+            <!-- Moving Indicator -->
+            <div id="pesas-indicator" style="position:absolute; top:50%; left:0; width:100%; height:20px; background:#fff; border-top:3px solid #000; border-bottom:3px solid #000; transition:top 0.03s linear; pointer-events:none;"></div>
+        </div>
+        
+        <!-- Action Button -->
+        <div style="position:absolute; right:30px; top:50%; transform:translateY(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <button id="pesas-action-btn" style="width:100px; height:100px; border-radius:50%; background:#222; border:5px solid #555; color:#fff; font-family:'Bangers'; font-size:3rem; cursor:pointer; transition:all 0.1s;">A</button>
+            <div style="font-family:'Nunito'; color:#fff; font-weight:bold; width:130px; text-align:center; background:rgba(0,0,0,0.5); padding:8px; border-radius:10px; font-size:0.9rem;">Pulsa A en lo verde</div>
+        </div>
+        
+        <!-- WEIGHT SELECTOR OVERLAY -->
+        <div id="pesas-weight-selector" class="hidden" style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.88); z-index:100; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:25px; font-family:'Nunito',sans-serif;">
+            <div style="font-family:'Bangers'; font-size:3.5rem; color:#ff4444; letter-spacing:2px; text-shadow:0 0 20px rgba(255,68,68,0.6); text-align:center;">SELECCIONA EL PESO A LEVANTAR</div>
+            <div style="color:#ddd; font-size:1.2rem; max-width:650px; text-align:center; line-height:1.4;">A mayor peso, la zona verde será <b>mucho más pequeña</b> (hasta un 4%) y el reto más difícil, pero recibirás <b>mucha más EXP</b> por repetición lograda.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:10px;">
+                <button onclick="selectPesasWeight(20)" class="pesas-weight-btn" style="background:linear-gradient(135deg,#004d40,#00bfa5); border:3px solid #00e5ff; border-radius:14px; padding:15px 25px; color:#fff; font-family:'Bangers'; font-size:2.2rem; cursor:pointer; transition:transform 0.1s; box-shadow:0 0 15px rgba(0,229,255,0.3);">20 KG<br><span style="font-size:1rem; font-family:'Nunito'; display:block; font-weight:800; color:#00e5ff;">🟢 Fácil</span></button>
+                <button onclick="selectPesasWeight(40)" class="pesas-weight-btn" style="background:linear-gradient(135deg,#e65100,#ff9800); border:3px solid #ffcc00; border-radius:14px; padding:15px 25px; color:#fff; font-family:'Bangers'; font-size:2.2rem; cursor:pointer; transition:transform 0.1s; box-shadow:0 0 15px rgba(255,152,0,0.3);">40 KG<br><span style="font-size:1rem; font-family:'Nunito'; display:block; font-weight:800; color:#ffcc00;">🟡 Normal</span></button>
+                <button onclick="selectPesasWeight(60)" class="pesas-weight-btn" style="background:linear-gradient(135deg,#b71c1c,#ff5252); border:3px solid #ff8888; border-radius:14px; padding:15px 25px; color:#fff; font-family:'Bangers'; font-size:2.2rem; cursor:pointer; transition:transform 0.1s; box-shadow:0 0 15px rgba(255,82,82,0.3);">60 KG<br><span style="font-size:1rem; font-family:'Nunito'; display:block; font-weight:800; color:#ff8888;">🔴 Duro</span></button>
+                <button onclick="selectPesasWeight(80)" class="pesas-weight-btn" style="background:linear-gradient(135deg,#4a148c,#ab47bc); border:3px solid #e085fe; border-radius:14px; padding:15px 25px; color:#fff; font-family:'Bangers'; font-size:2.2rem; cursor:pointer; transition:transform 0.1s; box-shadow:0 0 15px rgba(171,71,188,0.3);">80 KG<br><span style="font-size:1rem; font-family:'Nunito'; display:block; font-weight:800; color:#e085fe;">=4 Experto</span></button>
+                <button onclick="selectPesasWeight(100)" class="pesas-weight-btn" style="background:linear-gradient(135deg,#311b92,#7c4dff,#ff4081); border:3px solid #ffd700; border-radius:14px; padding:15px 25px; color:#fff; font-family:'Bangers'; font-size:2.2rem; cursor:pointer; transition:transform 0.1s; box-shadow:0 0 25px rgba(255,215,0,0.6);">100 KG<br><span style="font-size:1rem; font-family:'Nunito'; display:block; font-weight:800; color:#ffd700;">=% Bestia (4%)</span></button>
+            </div>
+            
+            <button onclick="document.getElementById('pesas-minigame-modal').classList.add('hidden');" style="margin-top:15px; background:transparent; border:2px solid #777; color:#aaa; border-radius:8px; padding:10px 30px; font-weight:bold; font-size:1.1rem; cursor:pointer; transition:all 0.1s;" onmouseover="this.style.borderColor='#fff'; this.style.color='#fff';" onmouseout="this.style.borderColor='#777'; this.style.color='#aaa';"> Cancelar</button>
+        </div>
+    </div>
+
+    <!-- ============ DIALOGUE VISUAL NOVEL MODÍAL ============ -->
+    <div id="p2-dialogue-modal" class="hidden" style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.6); z-index:300; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden;">
+        
+        <!-- Portraits container -->
+        <div style="position:absolute; bottom:0; left:0; width:100%; height:100%; pointer-events:none; z-index:301;">
+            <img id="dialogue-portrait-left" src="" style="position:absolute; bottom:0; left:5%; height:75%; object-fit:contain; filter:drop-shadow(5px 5px 15px rgba(0,0,0,0.8)); transform:translateX(-50px); opacity:0; transition:all 0.5s;">
+            <img id="dialogue-portrait-right" src="" style="position:absolute; bottom:0; right:5%; height:75%; object-fit:contain; filter:drop-shadow(-5px 5px 15px rgba(0,0,0,0.8)); transform:translateX(50px); opacity:0; transition:all 0.5s;">
+        </div>
+
+        <!-- Options Menu (Diamond/Cross Layout) -->
+        <div id="dialogue-options-container" class="hidden" style="position:absolute; top:35%; left:50%; transform:translate(-50%, -50%); z-index:303; width:80%; max-width:750px; display:grid; grid-template-areas: '. top .' 'left center right' '. bottom .'; grid-template-columns:1fr 1fr 1fr; grid-template-rows:auto auto auto; gap:12px; justify-items:center; align-items:center;">
+            <!-- JS fills options in diamond formation -->
+        </div>
+
+        <!-- Text Box Bottom -->
+        <div id="dialogue-box" style="position:relative; z-index:302; width:90%; margin:0 auto 20px auto; background:#f4f7f6; border:6px solid #4a90e2; border-radius:12px; padding:25px; box-shadow:0 10px 25px rgba(0,0,0,0.8); display:flex; flex-direction:column; gap:10px;">
+            <!-- Speaker Name Tab -->
+            <div id="dialogue-speaker-tab" style="position:absolute; top:-35px; left:20px; background: linear-gradient(90deg, #10264a, #285b8c); border:4px solid #f4c430; border-radius:8px; padding:5px 25px; color:#fff; font-family:'Bangers'; font-size:1.8rem; letter-spacing:1px; box-shadow:2px 2px 0 rgba(0,0,0,0.5); display:flex; align-items:center; gap:10px;">
+                <img src="assets/Historia/Habitaciones/Dialogo.png" style="width:28px; height:28px; object-fit:contain; border-radius:50%; background:#f4c430;" alt="Dialogo">
+                <span id="dialogue-speaker-name">Nombre</span>
+            </div>
+            
+            <!-- Dialogue Text -->
+            <div id="dialogue-text" style="font-family:'Nunito', sans-serif; font-size:1.4rem; color:#222; font-weight:bold; min-height:80px; display:flex; align-items:center;">
+                <!-- JS fills text -->
+            </div>
+            
+            <div id="dialogue-continue-icon" class="hidden" style="position:absolute; bottom:10px; right:20px; color:#f4c430; font-size:2rem; animation:bounce 1s infinite;">▼</div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN PLAYER SELECTION ============ -->
+    <div id="player-selection-screen" class="hidden" style="transition: opacity 0.8s;">
+        <!-- Header -->
+        <header class="story-header">
+            <a href="index.html" class="back-btn">◀ Atrás</a>
+            <div class="story-logo"><span>BLUE LOCK</span>  STORY MODE</div>
+        </header>
+
+        <div class="layout-fifa">
+            <!-- Left: Player List -->
+            <div class="left-panel">
+                <div class="list-toolbar">
+                    <div class="search-wrap">
+                        <span class="search-icon">=</span>
+                        <input type="text" id="search-input" class="search-input" placeholder="Buscar jugador...">
+                    </div>
+                    <button id="btn-fill-random" class="btn-fill" title="Rellenar con jugadores aleatorios">🎲 Aleatorio</button>
+                    <button id="btn-fill-jpst" class="btn-fill btn-fill-jp" title="Rellenar con delanteros japoneses">🇯🇵 Del. Japón</button>
+                    <button id="btn-edit-roster" class="btn-edit-roster"> Editar Lista</button>
+                    <button id="btn-load-game" onclick="loadGameState()" style="background:#00e5ff; color:#000; font-family:'Bangers'; border:none; padding:5px 15px; border-radius:5px; cursor:pointer; font-size:1.1rem; display:none; margin-left:10px;">Cargar Partida</button>
+                </div>
+                <div class="list-header">
+                    <div style="display:flex; flex:1; align-items:center;">
+                        <span class="col-pos">POS</span>
+                        <span class="col-icon"></span>
+                        <span class="col-name">Nombre</span>
+                        <span class="col-rating" id="col-rating-header">GRL</span>
+                    </div>
+                    <div class="roster-counter" id="main-roster-count">
+                        0 / 300 Jugadores
+                    </div>
+                </div>
+                <div class="player-list" id="story-player-list">
+                    <!-- JS fills this -->
+                </div>
+            </div>
+
+            <!-- Modal: Roster Editor (FIFA-style filter grid) -->
+            <div id="roster-modal" class="roster-modal hidden">
+                <div class="roster-modal-content">
+                    <!-- Header -->
+                    <div class="roster-modal-header">
+                        <h2>BÚSQUEDA DE JUGADORES</h2>
+                        <button id="btn-close-roster" class="btn-close-roster"></button>
+                    </div>
+
+                    <!-- Filter Grid -->
+                    <div class="filter-grid">
+                        <!-- Nombre -->
+                        <div class="filter-box filter-nombre">
+                            <span class="filter-label">Nombre</span>
+                            <input type="text" id="filter-name" class="filter-text-input" placeholder="Cualquiera">
+                        </div>
+
+                        <!-- Posición (arrows) -->
+                        <div class="filter-box">
+                            <span class="filter-label">Posición</span>
+                            <div class="arrow-selector" id="sel-position">
+                                <button class="arrow-btn arrow-left">◀</button>
+                                <span class="arrow-value" data-index="0">Todas</span>
+                                <button class="arrow-btn arrow-right">▶</button>
+                            </div>
+                        </div>
+
+                        <!-- Nacionalidad (opens sub-modal) -->
+                        <div class="filter-box filter-clickable" id="open-nationality">
+                            <span class="filter-label">Nacionalidad</span>
+                            <div class="filter-preview" id="nationality-preview">
+                                <span class="filter-preview-text">Todas</span>
+                            </div>
+                        </div>
+
+                        <!-- Liga (arrows) -->
+                        <div class="filter-box">
+                            <span class="filter-label">Liga</span>
+                            <div class="arrow-selector" id="sel-league">
+                                <button class="arrow-btn arrow-left">◀</button>
+                                <div class="arrow-value-wrap">
+                                    <img class="arrow-logo" id="league-logo" src="" alt="" style="display:none;">
+                                    <span class="arrow-value" data-index="0">Todas</span>
+                                </div>
+                                <button class="arrow-btn arrow-right">▶</button>
+                            </div>
+                        </div>
+
+                        <!-- Equipo (arrows) -->
+                        <div class="filter-box">
+                            <span class="filter-label">Equipo</span>
+                            <div class="arrow-selector" id="sel-team">
+                                <button class="arrow-btn arrow-left">◀</button>
+                                <div class="arrow-value-wrap">
+                                    <img class="arrow-logo" id="team-logo" src="" alt="" style="display:none;">
+                                    <span class="arrow-value" data-index="0">Todos</span>
+                                </div>
+                                <button class="arrow-btn arrow-right">▶</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results List -->
+                    <div class="roster-results-header">
+                        <span>Resultados</span>
+                        <span id="results-count">0</span>
+                    </div>
+                    <div class="roster-modal-list" id="roster-modal-list">
+                        <!-- JS fills -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-Modal: Nationality Picker -->
+            <div id="nationality-modal" class="roster-modal hidden" style="z-index:600;">
+                <div class="roster-modal-content nat-modal-content">
+                    <div class="roster-modal-header">
+                        <h2>Nacionalidad</h2>
+                        <button id="btn-close-nationality" class="btn-close-roster"></button>
+                    </div>
+                    <div class="nat-tabs" id="nat-tabs">
+                        <!-- JS fills: Top, [A], [B], etc. -->
+                    </div>
+                    <div class="nat-list" id="nat-list">
+                        <!-- JS fills -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Detail Panel -->
+            <div class="right-panel">
+                <!-- Empty State -->
+                <div id="detail-empty" class="detail-empty-state">
+                    <div class="empty-icon">❌</div>
+                    <p>Selecciona un jugador</p>
+                </div>
+
+                <!-- Filled State -->
+                <div id="detail-filled" class="hidden" style="display:flex;flex-direction:column;height:100%;">
+                    <div class="detail-hero">
+                        <div class="detail-hero-badge">
+                            <img src="" id="d-badge" alt="" style="display:none;">
+                        </div>
+                        <img src="" id="d-img" class="detail-hero-img" alt="">
+                        <div class="detail-hero-name">
+                            <h2 id="d-name"></h2>
+                            <p id="d-subtitle">Blue Lock Project</p>
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <div class="info-grid">
+                            <div class="info-cell" id="d-rating-cell">
+                                <span class="cell-label">GRL</span>
+                                <span class="cell-value" id="d-rating"></span>
+                            </div>
+                            <div class="info-cell">
+                                <span class="cell-label">Posición</span>
+                                <span class="cell-value" id="d-pos">ST</span>
+                            </div>
+                            <div class="info-cell">
+                                <span class="cell-label">Pos. Original</span>
+                                <span class="cell-value" id="d-origpos"></span>
+                            </div>
+                        </div>
+                        <div class="stats-section">
+                            <h4>Resumen</h4>
+                            <div id="d-stats">
+                                <!-- JS fills this -->
+                            </div>
+                        </div>
+                        <button id="btn-select" class="btn-select">Elegir Jugador</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAILBOX MODÍAL ============ -->
+    <div id="mailbox-modal" class="hidden" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 5000; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+        <div style="background: #111; border: 3px solid #ffd700; border-radius: 15px; width: 800px; height: 600px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 30px rgba(255,215,0,0.3);">
+            <!-- Header -->
+            <div style="background: #222; padding: 20px; border-bottom: 2px solid #ffd700; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: #ffd700; margin: 0; text-shadow: 1px 1px 5px #000;">📬 BUZÓN DE OFERTAS</h2>
+                <div style="font-family: 'Nunito'; color: #aaa;">Tienes nuevas notificaciones importantes</div>
+            </div>
+            
+            <!-- Content Area -->
+            <div style="display: flex; flex: 1; height: calc(100% - 85px);">
+                <!-- Inbox List -->
+                <div id="inbox-list" style="width: 35%; background: #1a1a1a; border-right: 2px solid #333; overflow-y: auto; padding: 10px;">
+                    <!-- JS will inject letters here -->
+                </div>
+                <!-- Letter View -->
+                <div id="letter-view" style="width: 65%; padding: 30px; background: url('assets/Historia/Hokkaido/Base.jpg') center/cover; position: relative;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.95); z-index: 0;"></div>
+                    <div id="letter-content" style="position: relative; z-index: 1; display: none; flex-direction: column; height: 100%;">
+                        <div id="letter-header" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
+                            <img id="letter-logo" src="" style="height: 50px; float: right;">
+                            <h3 id="letter-sender" style="font-family: 'Bangers'; font-size: 2rem; color: #000; margin: 0;">Remitente</h3>
+                            <div id="letter-date" style="font-family: monospace; color: #555;">Fecha</div>
+                        </div>
+                        <div id="letter-body" style="font-family: 'Courier New', monospace; font-size: 1.1rem; color: #000; line-height: 1.6; flex: 1; overflow-y: auto; text-align: justify; padding-right: 15px;">
+                            Cuerpo del mensaje...
+                        </div>
+                        <div style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 15px; border-top: 2px solid #ccc; padding-top: 20px;">
+                            <button id="btn-reject-offer" style="background: #ff4444; border: none; padding: 10px 30px; border-radius: 5px; color: #fff; font-family: 'Bangers'; font-size: 1.5rem; cursor: pointer;">RECHAZAR</button>
+                            <button id="btn-accept-offer" style="background: #00e5ff; border: none; padding: 10px 30px; border-radius: 5px; color: #000; font-family: 'Bangers'; font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 15px rgba(0,229,255,0.5);">ACEPTAR</button>
+                        </div>
+                    </div>
+                    <div id="letter-empty" style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #555;">
+                        <span style="font-size: 4rem;">	</span>
+                        <h3 style="font-family: 'Nunito'; margin-top: 10px;">Selecciona una carta para leer</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN SCRIPT ============ -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="database/sol_cards.js"></script>
+    <script src="database/amoros_cards.js"></script>
+    <script src="database/argentina_cards.js"></script>
+    <script src="database/bluelock_cards.js"></script>
+    <script src="database/brain_cards.js"></script>
+    <script src="database/china_cards.js"></script>
+    <script src="database/coaches.js"></script>
+    <script src="database/croacia_cards.js"></script>
+    <script src="database/dinamarca_cards.js"></script>
+    <script src="database/eeuu_cards.js"></script>
+    <script src="database/egipto_cards.js"></script>
+    <script src="database/espana_cards.js"></script>
+    <script src="database/farm_cards.js"></script>
+    <script src="database/gentile_cards.js"></script>
+    <script src="database/genzo_cards.js"></script>
+    <script src="database/gino_cards.js"></script>
+    <script src="database/holanda_cards.js"></script>
+    <script src="database/italia_cards.js"></script>
+    <script src="database/izawa_cards.js"></script>
+    <script src="database/jean_cards.js"></script>
+    <script src="database/jude_sharp_cards.js"></script>
+    <script src="database/kirkwood_cards.js"></script>
+    <script src="database/kishida_cards.js"></script>
+    <script src="database/kisugi_cards.js"></script>
+    <script src="database/kits.js"></script>
+    <script src="database/kojiro_cards.js"></script>
+    <script src="database/kraus_cards.js"></script>
+    <script src="database/levin_cards.js"></script>
+    <script src="database/makelolo_cards.js"></script>
+    <script src="database/mark_evans_cards.js"></script>
+    <script src="database/mexico_cards.js"></script>
+    <script src="database/napoleon_cards.js"></script>
+    <script src="database/nathan_cards.js"></script>
+    <script src="database/niko_cards.js"></script>
+    <script src="database/occult_cards.js"></script>
+    <script src="database/otaku_cards.js"></script>
+    <script src="database/internacional_cards.js"></script>
+    <script src="database/otros_francia_cards.js"></script>
+    <script src="database/pierre_cards.js"></script>
+    <script src="database/porto_cards.js"></script>
+    <script src="database/raimon_cards.js"></script>
+    <script src="database/reo_cards.js"></script>
+    <script src="database/riccardo_cards.js"></script>
+    <script src="database/rusia_cards.js"></script>
+    <script src="database/sae_cards.js"></script>
+    <script src="database/sano_cards.js"></script>
+    <script src="database/sawada_cards.js"></script>
+    <script src="database/shuriken_cards.js"></script>
+    <script src="database/sorimachi_cards.js"></script>
+    <script src="database/sudafrica_cards.js"></script>
+    <script src="database/suecia_cards.js"></script>
+    <script src="database/tailandia_cards.js"></script>
+    <script src="database/takasugi_cards.js"></script>
+    <script src="database/taki_cards.js"></script>
+    <script src="database/tecmo_cards.js"></script>
+    <script src="database/thoram_cards.js"></script>
+    <script src="database/tsubasa_cards.js"></script>
+    <script src="database/urabe_cards.js"></script>
+    <script src="database/uruguay_cards.js"></script>
+    <script src="database/wakashimazu_cards.js"></script>
+    <script src="database/wild_cards.js"></script>
+    <script src="database/zeus_cards.js"></script>
+    <script src="database/raichi_cards.js"></script>
+    <script src="database/gabi_cards.js"></script>
+    <script src="database/zanark_cards.js"></script>
+    <script src="database/goldie_lemon_cards.js"></script>
+    <script src="database/sor_cards.js"></script>
+    <script src="database/ryoma_cards.js"></script>
+    <script src="database/fei_rune_cards.js"></script>
+    <script src="database/victor_cards.js"></script>
+    <script src="database/jp_cards.js"></script>
+    <script src="database/arion_cards.js"></script>
+    <script src="database/simeon_cards.js"></script>
+    <script src="database/vulpeen_cards.js"></script>
+    <script src="database/drakul_cards.js"></script>
+    <script src="database/destra_cards.js"></script>
+    <script src="database/sanctus_cards.js"></script>
+    <script src="database/lancer_cards.js"></script>
+    <script src="database/quentin_cards.js"></script>
+    <script src="database/romero_cards.js"></script>
+    <script src="database/jawato_cards.js"></script>
+    <script src="database/finn_cards.js"></script>
+    <script src="database/angdem_cards.js"></script>
+    <script src="database/angdem2_cards.js"></script>
+    <script src="database/ogre_cards.js"></script>
+    <script src="database/terry_cards.js"></script>
+    <script src="database/calapirata_cards.js"></script>
+    <script src="database/falco_cards.js"></script>
+    <script src="database/eartheleven_cards.js"></script>
+    <script src="database/alpino_cards.js"></script>
+    <script src="database/buddy_fury_cards.js"></script>
+    <script src="database/briar_cards.js"></script>
+    <script src="database/southcirrus_cards.js"></script>
+    <script src="database/luzsom_cards.js"></script>
+    <script src="database/cross_cards.js"></script>
+    <script src="database/fuegohielo_cards.js"></script>
+    <script src="database/recovered_cards.js"></script>
+    <script src="database/inazumakids_cards.js"></script>
+    <script src="database/riberakasamino_cards.js"></script>
+    <script src="database/sallys_cards.js"></script>
+    <script src="database/scouts_1_cards.js"></script>
+    <script src="database/scouts_part2_cards.js"></script>
+    <script src="database/scouts_part3_cards.js"></script>
+    <script src="database/scouts_part4_cards.js"></script>
+    <script src="database/isagi_cards.js"></script>
+    <script src="database/kurona_cards.js"></script>
+    <script src="database/shidou_cards.js"></script>
+    <script src="database/barou_cards.js"></script>
+    <script src="database/gagamaru_cards.js"></script>
+    <script src="database/lavinho_cards.js"></script>
+    <script src="database/king_prime_cards.js"></script>
+    <script src="database/dvalin_cards.js"></script>
+    <script src="database/geminis_cards.js"></script>
+    <script src="database/cucurella_cards.js"></script>
+    <script src="database/romero_espana_cards.js"></script>
+    <script src="database/espana_legends_cards.js"></script>
+    <script src="database/legends_update_cards.js"></script>
+    <script src="database/luis_suarez_cards.js"></script>
+    <script src="database/updates_v2_cards.js"></script>
+    <script src="database/celtic_cards.js"></script>
+    <script src="database/uzbekistan_cards.js"></script>
+    <script src="database/arsenal_cards.js"></script>
+    <script src="database/bosnia_cards.js"></script>
+    <script src="database/barcha_cards.js"></script>
+    <script src="database/racing_cards.js"></script>
+    <script src="database/grecia_cards.js"></script>
+    <script src="database/inglaterra_cards.js"></script>
+    <script src="database/australia_cards.js"></script>
+    <script src="database/argentina_updates_cards.js"></script>
+    <script src="database/corea_cards.js"></script>
+    <script src="database/corea_extra_cards.js"></script>
+    <script src="database/usa_updates_cards.js"></script>
+    <script src="database/brasil_updates_cards.js"></script>
+    <script src="database/alemania_updates_cards.js"></script>
+    <script src="database/inglaterra_updates2_cards.js"></script>
+    <script src="database/italia_updates_cards.js"></script>
+    <script src="database/espana_updates2_cards.js"></script>
+    <script src="database/colombia_updates_cards.js"></script>
+    <script src="database/francia_updates_cards.js"></script>
+    <script src="database/italia_updates2_cards.js"></script>
+    <script src="database/uruguay_updates_cards.js"></script>
+    <script src="database/alemania_updates2_cards.js"></script>
+    <script src="database/brasil_updates2_cards.js"></script>
+    <script src="database/alemania_updates3_cards.js"></script>
+    <script src="database/realjapon_cards.js"></script>
+    <script src="database/internacional_prime_cards.js"></script>
+    <script src="database/stormridge_cards.js"></script>
+    <script src="database/stormridge_mirela_cards.js"></script>
+    <script src="database/solaria_zeus_cards.js"></script>
+    <script src="database/twinford_cards.js"></script>
+    <script src="database/inagirls_cards.js"></script>
+    <script src="database/lamine_yamal_cards.js"></script>
+    <script src="database/serbia_cards.js"></script>
+    <script src="database/colombia2_cards.js"></script>
+    <script src="database/manchester_united_cards.js"></script>
+    <script src="database/falam_cards.js"></script>
+    <script src="database/falam2_cards.js"></script>
+    <script src="database/falam_specials_cards.js"></script>
+    <script src="database/rumania_cards.js"></script>
+    <script src="database/grecia_specials_cards.js"></script>
+    <script src="database/rumania_specials_cards.js"></script>
+    <script src="database/scoutsgalaxy_cards.js"></script>
+    <script src="database/scoutsgalaxy2_cards.js"></script>
+    <script src="database/seleccion_japon_cards.js"></script>
+    <script src="database/scoutsgalaxy3_cards.js"></script>
+    <script src="database/scoutsgalaxy4_cards.js"></script>
+    <script src="database/scoutsgalaxy5_cards.js"></script>
+    <script src="database/scoutsgalaxy6_cards.js"></script>
+    <script src="database/wataru_cards.js"></script>
+    <script src="database/stratum_players.js"></script>
+    <script src="locations/bluelock.js"></script>
+    <script src="locations/hokkaido.js"></script>
+    <script src="locations/odaiba.js"></script>
+    <script src="locations/hokkaido_dialogues.js"></script>
+    <script src="database/dialogues.js"></script>
+    <script src="database/rinitoshi_cards.js"></script>
+    <script src="database/bachira_cards.js"></script>
+    <script src="database/nanase_cards.js"></script>
+    <script src="database/zantetsu_cards.js"></script>
+    <script src="database/wanima_cards.js"></script>
+    <script src="database/sendou_cards.js"></script>
+    <script src="database/raimon_japoneses_cards.js"></script>
+    <script src="database/rollandbowlby_cards.js"></script>
+    <script src="database/axel_extra_cards.js"></script>
+    <script src="database/plenilunio_cards.js"></script>
+    <script src="database/universal_solaria_cards.js"></script>
+    <script src="database/kirkwood_extra_cards.js"></script>
+    <script src="database/rexremington_extra_cards.js"></script>
+    <script src="database/raimon_go_cards.js"></script>
+    <script src="database/alpino_extra_cards.js"></script>
+    <script src="cards.js"></script>
+    <script src="story.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+Created At: 2026-07-29T15:13:48+02:00
+Completed At: 2026-07-29T15:13:48+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3623
+Total Bytes: 185067
+Showing lines 1930 to 1970
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1930:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1931:                 btnClasif.onclick = () => { openTVStats(); };
+1932:                 p2LobbyScreen.appendChild(btnClasif);
+1933:                 
+1934:             } else {
+1935:                 setRoomBg(`${basePath}Tacticas4.jpeg`);
+1936:                 document.getElementById('p2-room-content').style.display = 'none';
+1937:                 p2RoomBody.innerHTML = '';
+1938:                 
+1939:                 spawnSceneNPCs(roomName, [
+1940:                     {x: 19.5, y: 27, w: 200, h: 250},
+1941:                     {x: 44, y: 10, w: 200, h: 250},
+1942:                     {x: 62, y: 10, w: 200, h: 250},
+1943:                     {x: 80, y: 28, w: 200, h: 250}
+1944:                 ]);
+1945:                 
+1946:                 const btnClasif = document.createElement('div');
+1947:                 btnClasif.className = 'p2-scene-overlay';
+1948:                 btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+1949:                 btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+1950:                 btnClasif.onclick = () => { openTVStats(); };
+1951:                 p2LobbyScreen.appendChild(btnClasif);
+1952:                 
+1953:                 const dialogOverlay = document.createElement('div');
+1954:                 dialogOverlay.id = 'tactics-detroit-overlay';
+1955:                 dialogOverlay.style.cssText = 'position:absolute; bottom:0; left:0; width:100%; height:45%; background:linear-gradient(to top, rgba(0,0,0,0.95), transparent); display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:20px; z-index:40; font-family:"Nunito",sans-serif;';
+1956:                 
+1957:                 const labels = document.createElement('div');
+1958:                 labels.style.cssText = 'width:80%; display:flex; justify-content:space-between; color:#ccc; font-size:0.85rem; font-weight:bold; margin-bottom:5px; text-transform:uppercase; text-shadow:0 0 5px #000;';
+1959:                 labels.innerHTML = '<span>DEF</span><span style="padding-right:2%">MED</span><span style="padding-left:2%">DEL</span><span>POR</span>';
+1960:                 
+1961:                 const barContainer = document.createElement('div');
+1962:                 barContainer.style.cssText = 'width:80%; height:15px; background:#222; border-radius:10px; border:2px solid #555; position:relative; overflow:hidden; margin-bottom:20px; display:flex;';
+1963:                 
+1964:                 const zDef = document.createElement('div'); zDef.style.cssText = 'flex:1; background:rgba(0,150,255,0.4); border-right:1px solid #555;';
+1965:                 const zMed = document.createElement('div'); zMed.style.cssText = 'flex:1; background:rgba(0,255,100,0.4); border-right:1px solid #555;';
+1966:                 const zDel = document.createElement('div'); zDel.style.cssText = 'flex:1; background:rgba(255,150,0,0.4); border-right:1px solid #555;';
+1967:                 const zPor = document.createElement('div'); zPor.style.cssText = 'flex:1; background:rgba(255,0,255,0.4);';
+1968:                 barContainer.appendChild(zDef); barContainer.appendChild(zMed); barContainer.appendChild(zDel); barContainer.appendChild(zPor);
+1969:                 
+1970:                 const cursor = document.createElement('div');
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

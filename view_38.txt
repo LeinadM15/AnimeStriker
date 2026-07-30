@@ -1,0 +1,51 @@
+Created At: 2026-07-29T14:49:27+02:00
+Completed At: 2026-07-29T14:49:27+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3524
+Total Bytes: 178670
+Showing lines 1758 to 1800
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1758:         } else if (roomName === 'Comedor') {
+1759:             setRoomBg(`${basePath}Cocina.jpeg`);
+1760:             
+1761:             // Hide the central panel for this room
+1762:             document.getElementById('p2-room-content').style.display = 'none';
+1763:             
+1764:             // Add Shop icon (TiendaIcono.png) - near taquilla 1
+1765:             const shopIcon = document.createElement('div');
+1766:             shopIcon.className = 'p2-shop-icon p2-scene-overlay';
+1767:             shopIcon.style.cssText = 'left:28%; top:22%; width:120px; height:120px; cursor:pointer;';
+1768:             shopIcon.innerHTML = `<img src="${basePath}TiendaIcono.png" style="width:100%; height:100%; animation:float-idle 3s ease-in-out infinite;" draggable="false">`;
+1769:             shopIcon.onclick = () => { openShopMenu(); };
+1770:             p2LobbyScreen.appendChild(shopIcon);
+1771:             
+1772:             // Place NPCs sitting on chairs - 4 chairs visible
+1773:             spawnSceneNPCs(roomName, [
+1774:                 {x: 5,  y: 27, w: 220, h: 460},
+1775:                 {x: 20, y: 47, w: 350, h: 460},
+1776:                 {x: 65, y: 47, w: 350, h: 460},
+1777:                 {x: 85, y: 27, w: 220, h: 460}
+1778:             ]);
+1779:             
+1780:         } else if (roomName === 'Gimnasio') {
+1781:             setRoomBg(`${basePath}Gimnasio.jpeg`);
+1782:             
+1783:             // Hide central panel
+1784:             document.getElementById('p2-room-content').style.display = 'none';
+1785:             
+1786:             // Spawn NPC on the right treadmill
+1787:             spawnSceneNPCs(roomName, [
+1788:                 {x: 23, y: 20, w: 200, h: 200} // right treadmill head area
+1789:             ]);
+1790:             
+1791:             // Panelmaquina overlay on right treadmill (z-index priority)
+1792:             const panel = document.createElement('div');
+1793:             panel.className = 'p2-scene-overlay';
+1794:             panel.style.cssText = 'right:67%; top:29%; width:250px; height:250px; pointer-events:none; z-index:30;';
+1795:             panel.innerHTML = `<img src="${basePath}Panelmaquina.png" draggable="false" style="width:100%; height:100%; object-fit:contain;">`;
+1796:             p2LobbyScreen.appendChild(panel);
+1797:             
+1798:             // Cinta Button
+1799:             const cintaBtn = document.createElement('div');
+1800:             cintaBtn.className = 'p2-scene-overlay';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

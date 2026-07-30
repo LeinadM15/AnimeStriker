@@ -7,9 +7,9 @@ const takasugiCards = [
         rarity: "Oro",
         rating: 82,
         position: "CB",
-        league: "La Liga",
+        league: "Bundesliga",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/RealSociedad.png",
+        teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Takasugi/TakasugiHiro.png",
         background: "assets/Cartas/Oro.png"
     },

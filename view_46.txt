@@ -1,0 +1,68 @@
+Created At: 2026-07-29T15:05:20+02:00
+Completed At: 2026-07-29T15:05:20+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3534
+Total Bytes: 179017
+Showing lines 2891 to 2950
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2891:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(true)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ JUGAR PARTIDO (Delantero)</span></button>`;
+2892:             } else {
+2893:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> No nos convences. Jugarás de defensa o te quedas en el banquillo.</div>`;
+2894:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(false)" style="border-color:#ff4444; color:#ff4444;"><span>⚽ JUGAR PARTIDO (Defensa)</span></button>`;
+2895:             }
+2896:         }, 1000);
+2897:     };
+2898:     
+2899:     window.startMatch = function(isStriker) {
+2900:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2901:         
+2902:         // El equipo está formado por ti y los 10 primeros NPCs supervivientes del estrato
+2903:         const teammates = p2StratumPlayers.slice(0, 10);
+2904:         
+2905:         // Calculate Win Probability dynamically based on Friendship
+2906:         let teamStrength = 0;
+2907:         teammates.forEach(npc => {
+2908:             let friendVal = 0;
+2909:             if (p2Relationships[npc.id]) {
+2910:                 const data = p2Relationships[npc.id];
+2911:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+2912:             }
+2913:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+2914:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000))); // Base GRL + Up to 10% bonus
+2915:         });
+2916:         
+2917:         const myGRL = calcOVR();
+2918:         const ourStrength = myGRL + teamStrength;
+2919:         const enemyStrength = 75 * 11; // Equipo rival tiene de media 75 de GRL por jugador aprox
+2920:         
+2921:         // Min prob 25%, max prob 90%
+2922:         const winProbability = Math.max(0.25, Math.min(0.90, ourStrength / (ourStrength + enemyStrength)));
+2923:         const win = Math.random() < winProbability;
+2924:         
+2925:         // Simulate Match result
+2926:         const goalsScored = isStriker ? Math.floor(Math.random() * 4) + 1 : Math.floor(Math.random() * 2);
+2927:         p2Stats.goals += goalsScored;
+2928:         
+2929:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+2930:         if (win) {
+2931:             myTeam.w++;
+2932:             myTeam.pts += 3;
+2933:             showNotification(`¡VICTORIA! Probabilidad era ${Math.floor(winProbability*100)}%. Has marcado ${goalsScored} goles. (Goles Totales: ${p2Stats.goals})`, 'success', 5000);
+2934:         } else {
+2935:             myTeam.l++;
+2936:             showNotification(`DERROTA... Probabilidad era ${Math.floor(winProbability*100)}%. Has marcado ${goalsScored} goles. (Goles Totales: ${p2Stats.goals})`, 'error', 5000);
+2937:         }
+2938:         
+2939:         // Simulate other matches
+2940:         p2League.forEach(t => {
+2941:             if (!t.name.includes("Tu Equipo")) {
+2942:                 t.w += Math.floor(Math.random() * 2);
+2943:                 t.pts = (t.w * 3) + t.d;
+2944:             }
+2945:         });
+2946:         
+2947:         // Simulate scorers
+2948:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+2949:         
+2950:         // Award Match EXP and open interactive distributor
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

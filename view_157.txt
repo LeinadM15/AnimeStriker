@@ -1,0 +1,69 @@
+Created At: 2026-07-30T02:29:09+02:00
+Completed At: 2026-07-30T02:29:09+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4489
+Total Bytes: 233574
+Showing lines 3980 to 4040
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3980:         }).filter(f => f.npc);
+3981:         
+3982:         if (friends.length === 0) {
+3983:             body.innerHTML = '<div style="text-align:center; color:#aaa; padding:30px;">Tus conocidos ya no están en esta fase.</div>';
+3984:             return;
+3985:         }
+3986: 
+3987:         // Draw My Player in the center
+3988:         const myNode = document.createElement('div');
+3989:         myNode.style.cssText = `position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90px; height:90px; border-radius:50%; border:4px solid #00ffcc; box-shadow:0 0 20px rgba(0,255,204,0.6); z-index:5; background:url('${myPlayer.image}') center/contain no-repeat #111;`;
+3990:         graphContainer.appendChild(myNode);
+3991:         
+3992:         // Draw NPCs
+3993:         const angleStep = (2 * Math.PI) / friends.length;
+3994:         
+3995:         friends.forEach((f, idx) => {
+3996:             const angle = idx * angleStep - Math.PI / 2; // start from top
+3997:             const rPercent = 38;
+3998:             const posX = 50 + rPercent * Math.cos(angle);
+3999:             const posY = 50 + rPercent * Math.sin(angle);
+4000:             
+4001:             // Extract the friend value correctly (handling the object bug)
+4002:             const friendVal = typeof f.data === 'object' ? (f.data.friendship || 0) : f.data;
+4003:             
+4004:             // Line color logic
+4005:             let lineColor = '#555';
+4006:             let strokeW = 2;
+4007:             if (friendVal >= 100) { lineColor = '#ff007f'; strokeW = 4; }
+4008:             else if (friendVal >= 80) { lineColor = '#ffaa00'; strokeW = 3; }
+4009:             else if (friendVal >= 40) { lineColor = '#00e5ff'; strokeW = 2; }
+4010:             
+4011:             // Draw line
+4012:             const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+4013:             line.setAttribute('x1', '50%');
+4014:             line.setAttribute('y1', '50%');
+4015:             line.setAttribute('x2', `${posX}%`);
+4016:             line.setAttribute('y2', `${posY}%`);
+4017:             line.setAttribute('stroke', lineColor);
+4018:             line.setAttribute('stroke-width', strokeW);
+4019:             if (friendVal >= 100) {
+4020:                 line.style.filter = 'drop-shadow(0 0 5px #ff007f)';
+4021:             }
+4022:             svg.appendChild(line);
+4023:             
+4024:             // Draw Node
+4025:             const node = document.createElement('div');
+4026:             node.style.cssText = `position:absolute; top:${posY}%; left:${posX}%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; border:3px solid ${lineColor}; z-index:5; background:url('${f.npc.image}') center/contain no-repeat #111; cursor:pointer; transition:transform 0.2s;`;
+4027:             
+4028:             node.onmouseenter = () => {
+4029:                 node.style.transform = 'translate(-50%,-50%) scale(1.25)';
+4030:                 node.style.boxShadow = `0 0 15px ${lineColor}`;
+4031:                 const grl = Math.floor(f.npc.p2Rating || calcRating(f.npc.rating));
+4032:                 const bonusGRL = Math.floor(grl * (friendVal / 1000)); // Max +10% bonus
+4033:                 infoPanel.innerHTML = `
+4034:                     <div style="font-family:'Bangers'; font-size:1.5rem; letter-spacing:1px; color:#fff;">${f.npc.name.toUpperCase()} <span style="color:#ffd700;">(GRL ${grl})</span></div>
+4035:                     <div style="font-weight:bold; color:${lineColor}; margin-top:5px; font-size:1.2rem;">Amistad: ${friendVal}%</div>
+4036:                     ${friendVal >= 100 ? `<div style="color:#ff007f; margin-top:3px; font-size:0.9rem; text-shadow:0 0 5px #ff007f;">★ ¡MEJOR AMIGO! (Bonus: +${bonusGRL} GRL) ★</div>` : ''}
+4037:                     ${friendVal > 0 && friendVal < 100 ? `<div style="color:#aaa; margin-top:3px; font-size:0.9rem;">(Bonus en partido: +${bonusGRL} GRL)</div>` : ''}
+4038:                 `;
+4039:                 infoPanel.style.opacity = '1';
+4040:             };
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

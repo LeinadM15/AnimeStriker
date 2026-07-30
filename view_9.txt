@@ -1,0 +1,39 @@
+Created At: 2026-07-29T02:18:03+02:00
+Completed At: 2026-07-29T02:18:03+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3149
+Total Bytes: 159285
+Showing lines 1885 to 1915
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1885:             const cuerpoYoga = document.createElement('div');
+1886:             cuerpoYoga.className = 'p2-scene-overlay';
+1887:             cuerpoYoga.style.cssText = 'right:17%; bottom:5%; width:500px; height:500px; cursor:pointer; z-index:30; transition:none;';
+1888:             cuerpoYoga.innerHTML = `<img src="${basePath}CuerpoYoga.png" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1889:             p2LobbyScreen.appendChild(cuerpoYoga);
+1890:             
+1891:             // NPC Head
+1892:             if (npc) {
+1893:                 const npcHead = document.createElement('div');
+1894:                 npcHead.className = 'p2-scene-overlay';
+1895:                 npcHead.style.cssText = `left:62%; top:30%; width:300px; height:300px; cursor:pointer; z-index:20; transition:none;`;
+1896:                 npcHead.innerHTML = `<img src="${npc.image}" draggable="false" style="width:100%; height:100%; object-fit:contain; transition: transform 0.2s, filter 0.2s;">`;
+1897:                 p2LobbyScreen.appendChild(npcHead);
+1898:                 
+1899:                 // Link clicks
+1900:                 cuerpoYoga.onclick = npcHead.onclick = () => { openDialogue(npc); };
+1901:                 
+1902:                 // Link hovers manually by targeting the inner imgs
+1903:                 const yogaImg = cuerpoYoga.querySelector('img');
+1904:                 const headImg = npcHead.querySelector('img');
+1905:                 
+1906:                 const syncHover = () => {
+1907:                     yogaImg.style.transform = 'scale(1.05)';
+1908:                     yogaImg.style.filter = 'brightness(1.3)';
+1909:                     headImg.style.transform = 'scale(1.05)';
+1910:                     headImg.style.filter = 'brightness(1.3)';
+1911:                 };
+1912:                 const syncLeave = () => {
+1913:                     yogaImg.style.transform = 'scale(1)';
+1914:                     yogaImg.style.filter = 'brightness(1)';
+1915:                     headImg.style.transform = 'scale(1)';
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

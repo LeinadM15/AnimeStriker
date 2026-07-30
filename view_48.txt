@@ -1,0 +1,59 @@
+Created At: 2026-07-29T15:06:12+02:00
+Completed At: 2026-07-29T15:06:12+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3534
+Total Bytes: 179017
+Showing lines 2870 to 2920
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2870:             const div = document.createElement('div');
+2871:             div.className = 'p2-scorer-card';
+2872:             div.innerHTML = `
+2873:                 <img src="${s.npc.image}">
+2874:                 <div style="font-size:0.9rem; margin:5px 0;">${s.npc.name}</div>
+2875:                 <div class="p2-scorer-goals">${s.g} Goles</div>
+2876:             `;
+2877:             scorEl.appendChild(div);
+2878:         });
+2879:     };
+2880:     
+2881:     window.tryPersuade = function(stat) {
+2882:         const val = p2Stats[stat];
+2883:         const chat = document.getElementById('tactics-chat');
+2884:         const opts = document.getElementById('tactics-options');
+2885:         
+2886:         chat.innerHTML += `<div class="tactics-msg" style="border-left-color:#00ff00;"><b>Tú:</b> Confíad en mí, lo haré bien.</div>`;
+2887:         
+2888:         setTimeout(() => {
+2889:             if (val >= 65 || Math.random() > 0.5) { // Win negotiation
+2890:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> Está bien, rotaremos posiciones. ¡Tú serás nuestro DC titular los primeros minutos!</div>`;
+2891:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(true)" style="border-color:#00ff00; color:#00ff00;"><span>⚽ JUGAR PARTIDO (Delantero)</span></button>`;
+2892:             } else {
+2893:                 chat.innerHTML += `<div class="tactics-msg"><b>Compañeros:</b> No nos convences. Jugarás de defensa o te quedas en el banquillo.</div>`;
+2894:                 opts.innerHTML = `<button class="p2-action-btn" onclick="startMatch(false)" style="border-color:#ff4444; color:#ff4444;"><span>⚽ JUGAR PARTIDO (Defensa)</span></button>`;
+2895:             }
+2896:         }, 1000);
+2897:     };
+2898:     
+2899:     window.startMatch = function(isStriker) {
+2900:         showNotification('Simulando partido de 90 minutos...', 'info', 4000);
+2901:         
+2902:         // El equipo está formado por ti y los 10 primeros NPCs supervivientes del estrato
+2903:         const teammates = p2StratumPlayers.slice(0, 10);
+2904:         
+2905:         // Calculate Win Probability dynamically based on Friendship
+2906:         let teamStrength = 0;
+2907:         teammates.forEach(npc => {
+2908:             let friendVal = 0;
+2909:             if (p2Relationships[npc.id]) {
+2910:                 const data = p2Relationships[npc.id];
+2911:                 friendVal = typeof data === 'object' ? (data.friendship || 0) : data;
+2912:             }
+2913:             const grl = Math.floor(npc.p2Rating || calcRating(npc.rating));
+2914:             teamStrength += (grl + Math.floor(grl * (friendVal / 1000))); // Base GRL + Up to 10% bonus
+2915:         });
+2916:         
+2917:         const myGRL = calcOVR();
+2918:         const ourStrength = myGRL + teamStrength;
+2919:         const enemyStrength = 75 * 11; // Equipo rival tiene de media 75 de GRL por jugador aprox
+2920:         
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

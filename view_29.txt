@@ -1,0 +1,59 @@
+Created At: 2026-07-29T02:47:23+02:00
+Completed At: 2026-07-29T02:47:23+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3449
+Total Bytes: 175614
+Showing lines 3230 to 3280
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3230:         
+3231:         document.body.appendChild(overlay);
+3232:         
+3233:         const handleKey = (e) => {
+3234:             if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') { btnLeft.onmousedown(); setTimeout(btnLeft.onmouseup, 100); }
+3235:             if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') { btnRight.onmousedown(); setTimeout(btnRight.onmouseup, 100); }
+3236:         };
+3237:         window.addEventListener('keydown', handleKey);
+3238:         
+3239:         let time = 30;
+3240:         let score = 0;
+3241:         let speed = 0.012;
+3242:         let obstacles = [];
+3243:         let isGameOver = false;
+3244:         let spawnTimer = 100; // start almost ready
+3245:         let spawnRate = 120; // 2 seconds at 60fps
+3246:         let gameLoop, timeLoop;
+3247:         
+3248:         setTimeout(() => {
+3249:             gameLoop = setInterval(() => {
+3250:                 if (isGameOver) return;
+3251:             spawnTimer++;
+3252:             if (spawnTimer >= spawnRate) {
+3253:                 spawnTimer = 0;
+3254:                 let num = Math.random() > 0.5 ? 2 : 1; // 50% chance of double barriers
+3255:                 let avail = [0, 1, 2];
+3256:                 for(let i=0; i<num; i++) {
+3257:                     let r = Math.floor(Math.random() * avail.length);
+3258:                     let lane = avail.splice(r, 1)[0];
+3259:                     let obs = document.createElement('div');
+3260:                     obs.style.cssText = `position:absolute; top:20%; width:600px; height:600px; transform:scale(0); transform-origin:bottom center; filter:drop-shadow(0 0 5px rgba(0,0,0,0.5));`;
+3261:                     obs.innerHTML = `<img src="assets/Historia/Habitaciones/Barrera.png" style="width:100%; height:100%; object-fit:contain;">`;
+3262:                     gameArea.appendChild(obs);
+3263:                     obstacles.push({ el: obs, z: 0, lane: lane, passed: false });
+3264:                 }
+3265:                 if (spawnRate > 70) spawnRate -= 5;
+3266:                 speed += 0.0005;
+3267:             }
+3268:             
+3269:             let maxOffsetX = gameArea.offsetWidth * 0.40;
+3270:             let horizonY = gameArea.offsetHeight * 0.50;
+3271:             let playerY = gameArea.offsetHeight - 20;
+3272:             
+3273:             for (let i = obstacles.length - 1; i >= 0; i--) {
+3274:                 let obs = obstacles[i];
+3275:                 obs.z += speed;
+3276:                 
+3277:                 let scale = obs.z; // Linear scale is better for 3D realism
+3278:                 let targetY = horizonY + (playerY - horizonY) * obs.z;
+3279:                 let currentOffsetX = maxOffsetX * (obs.lane - 1) * obs.z;
+3280:                 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

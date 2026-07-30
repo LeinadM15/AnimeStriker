@@ -1,0 +1,29 @@
+Created At: 2026-07-30T18:15:25+02:00
+Completed At: 2026-07-30T18:15:25+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5056
+Total Bytes: 263401
+Showing lines 3756 to 3776
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3756:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(-25, -25)"><span>"Vale, jugaré en el medio y os daré pases todo el partido."</span></button>
+3757:             `;
+3758:         } else if (state.turn === 6) {
+3759:             text.innerHTML = `<b>Compañeros:</b>¡�altima oportunidad. Si te dejamos decidir, más vale que ganemos. �¿Alguna última palabra?`;
+3760:             options.innerHTML = `
+3761:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(15, 15)"><span>"Preparaos para celebrar mis goles."</span></button>
+3762:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(5, -15)"><span>"Me dejaré el alma por este escudo, jugaré donde haga falta."</span></button>
+3763:                 <button class="p2-action-btn" onclick="tacticsMakeChoice(40, -50)"><span>"Me habéis aburrido. Me voy a la portería a dormir."</span></button>
+3764:             `;
+3765:         } else if (state.turn === 99) {
+3766:             text.innerHTML = `<b>Compañeros:</b> �¡SE ACAB¡�! Estamos hartos de tu ego y tus tonterías. �¡Te vas a la portería castigado por listo!`;
+3767:             options.innerHTML = `
+3768:                 <button class="p2-action-btn" onclick="startMatch('POR')" style="border-color:#ff4444; color:#ff4444;"><span>â�a½ IR A LA PORTER¡A (Castigado)</span></button>
+3769:             `;
+3770:         } else if (state.turn === 7) {
+3771:             let finalPos = 'DEF';
+3772:             if(state.affinity >= 25) finalPos = 'MED';
+3773:             if(state.affinity >= 50) finalPos = 'DEL';
+3774:             if(state.affinity >= 75) finalPos = 'POR';
+3775:             
+3776:             let posName = "Defensa";
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

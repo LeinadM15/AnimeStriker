@@ -1,0 +1,49 @@
+Created At: 2026-07-29T23:27:40+02:00
+Completed At: 2026-07-29T23:27:40+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4231
+Total Bytes: 220147
+Showing lines 3450 to 3490
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3450:         
+3451:         let finalTeamGoals = Math.floor(Math.random() * 4); // 0 to 3 goals from teammates
+3452:         let currentTeamGoals = 0;
+3453:         
+3454:         function updateHUD() {
+3455:             shotDisplay.innerText = `Tiro ${Math.min(currentShot + 1, totalShots)} / ${totalShots}`;
+3456:             scoreDisplay.innerText = `Marcador: Nosotros ${currentTeamGoals} - ${goalsConceded} Rival`;
+3457:         }
+3458:         
+3459:         function endMatch() {
+3460:             engine.remove();
+3461:             
+3462:             // Si el partido acaba en empate de goles, decide las paradas. Si no, decide los goles.
+3463:             let win = false;
+3464:             let draw = false;
+3465:             if (currentTeamGoals > goalsConceded) win = true;
+3466:             else if (currentTeamGoals === goalsConceded) {
+3467:                 if (saves >= 3) win = true;
+3468:                 else draw = true;
+3469:             }
+3470:             
+3471:             const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3472:             if (myTeam) {
+3473:                 if (win) { myTeam.w++; myTeam.pts += 3; }
+3474:                 else if (draw) { myTeam.d++; myTeam.pts += 1; }
+3475:                 else { myTeam.l++; }
+3476:             }
+3477:             
+3478:             p2League.forEach(t => {
+3479:                 if (!t.name.includes("Tu Equipo")) {
+3480:                     t.w += Math.floor(Math.random() * 2);
+3481:                     t.pts = (t.w * 3) + t.d;
+3482:                 }
+3483:             });
+3484:             
+3485:             const matchXp = 250 + (win ? 200 : (draw ? 100 : 50)) + (saves * 75);
+3486:             const resultTxt = win ? '¡VICTORIA!' : (draw ? 'EMPATE' : 'DERROTA...');
+3487:             
+3488:             showNotification(`${resultTxt} Resultado: ${currentTeamGoals}-${goalsConceded}`, win ? 'success' : (draw ? 'warning' : 'error'), 6000);
+3489:             
+3490:             setTimeout(() => {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

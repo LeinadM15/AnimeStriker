@@ -1,0 +1,122 @@
+Created At: 2026-07-30T17:05:30+02:00
+Completed At: 2026-07-30T17:05:30+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 5063
+Total Bytes: 269931
+Showing lines 4950 to 5063
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4950:                 ball.getBoundingClientRect();
+4951:                 
+4952:                 // Move ball to target and shrink
+4953:                 ball.style.left = (tx + size/2 - 15) + 'px';
+4954:                 ball.style.top = (ty + size/2 - 15) + 'px';
+4955:                 ball.style.bottom = 'auto'; // Disable bottom since we are setting top
+4956:                 ball.style.width = '30px';
+4957:                 ball.style.height = '30px';
+4958:                 
+4959:                 setTimeout(() => {
+4960:                     ball.remove();
+4961:                     score += points;
+4962:                     scoreEl.innerText = `Puntos: ${score}`;
+4963:                     
+4964:                     let pop = document.createElement('div');
+4965:                     pop.innerText = `+${points}`;
+4966:                     pop.style.cssText = `position:absolute; left:${tx}px; top:${ty}px; color:#00ff00; font-family:"Bangers"; font-size:3rem; text-shadow:0 0 5px #000; z-index:20; pointer-events:none;`;
+4967:                     gameArea.appendChild(pop);
+4968:                     pop.animate([{transform:'translateY(0)', opacity:1}, {transform:'translateY(-30px)', opacity:0}], {duration:500, fill:'forwards'}).onfinish = () => pop.remove();
+4969:                     
+4970:                     target.remove();
+4971:                 }, 300);
+4972:             };
+4973:             
+4974:             gameArea.appendChild(target);
+4975:             
+4976:             setTimeout(() => {
+4977:                 if (!target.clickedFlag && target.parentNode) {
+4978:                     target.animate([{transform:'scale(1)'}, {transform:'scale(0)'}], {duration:200, fill:'forwards'}).onfinish = () => target.remove();
+4979:                 }
+4980:             }, duration);
+4981:             
+4982:             let nextSpawn = Math.max(300, 1000 - (20 - time)*30);
+4983:             setTimeout(spawnTarget, nextSpawn);
+4984:         };
+4985:         
+4986:         // Timeout needed to wait for layout engine to compute gameArea width
+4987:         setTimeout(spawnTarget, 100);
+4988:         
+4989:         const timeLoop = setInterval(() => {
+4990:             if (isGameOver) return;
+4991:             time--;
+4992:             timeEl.innerText = `Tiempo: ${time}s`;
+4993:             if (time <= 0) {
+4994:                 isGameOver = true;
+4995:                 clearInterval(timeLoop);
+4996:                 
+4997:                 consumeStamina(35);
+4998:                 let expGained = Math.max(5, Math.floor(score * 1.5));
+4999:                 overlay.remove();
+5000:                 showTrainingResultModal(null, 'shooting', 'Tiro de PrecisiÃƒÂ³n', expGained, 'Ã‚Â¡SesiÃƒÂ³n de tiro completada!', '#ff007f');
+5001:             }
+5002:         }, 1000);
+5003:     };
+5004: 
+5005:     // Funciones de UI para Multi-Save en el MenÃƒÂº Principal
+5006:     window.renderSaveSlots = function() {
+5007:         const container = document.getElementById('save-slots-container');
+5008:         if (!container) return;
+5009:         
+5010:         const savesIndex = JSON.parse(localStorage.getItem('webfutbol_story_saves_index') || '[]');
+5011:         
+5012:         // Backward compatibility: If old save exists, convert it to the new system so it doesn't get lost
+5013:         const oldSave = localStorage.getItem('webfutbol_story_save');
+5014:         if (oldSave && !savesIndex.find(s => s.id === 'old_save')) {
+5015:             try {
+5016:                 const s = JSON.parse(oldSave);
+5017:                 let p = [...allOroCards.values()].find(x => x.id === s.myPlayerId);
+5018:                 if (p) {
+5019:                     savesIndex.push({
+5020:                         id: 'old_save',
+5021:                         date: 'Antigua Guardada',
+5022:                         playerName: p.name,
+5023:                         playerImage: p.image,
+5024:                         phaseText: (s.gamePhase === 1) ? 'Hokkaido' : 'Blue Lock',
+5025:                         ovr: '?'
+5026:                     });
+5027:                     localStorage.setItem('webfutbol_story_old_save', oldSave);
+5028:                 }
+5029:             } catch(e){}
+5030:         }
+5031:         
+5032:         if (savesIndex.length === 0) {
+5033:             container.innerHTML = '<p style="color:#777; font-family:\'Nunito\'; text-align:center; width:100%;">No hay partidas guardadas.</p>';
+5034:             return;
+5035:         }
+5036:         
+5037:         container.innerHTML = savesIndex.map(save => `
+5038:             <div style="background:#111; border:2px solid #00e5ff; border-radius:10px; width:200px; padding:15px; display:flex; flex-direction:column; align-items:center; cursor:pointer; transition:all 0.2s; box-shadow:0 0 10px rgba(0,229,255,0.2);" 
+5039:                  onmouseover="this.style.transform='scale(1.05)'; this.style.background='#1a1a1a';" 
+5040:                  onmouseout="this.style.transform='scale(1)'; this.style.background='#111';"
+5041:                  onclick="loadGameState('${save.id === 'old_save' ? '' : save.id}')">
+5042:                 <img src="${save.playerImage}" style="width:80px; height:80px; border-radius:50%; object-fit:contain; background:#000; border:2px solid #00e5ff; margin-bottom:10px;">
+5043:                 <h3 style="font-family:'Bangers'; color:#fff; font-size:1.3rem; margin:0; text-align:center;">${save.playerName}</h3>
+5044:                 <div style="font-family:'Nunito'; color:#ffd700; font-weight:bold; font-size:1.1rem; margin-top:5px;">GRL: ${save.ovr}</div>
+5045:                 <div style="font-family:'Nunito'; color:#00e5ff; font-size:0.9rem; text-align:center; margin-top:10px; border-top:1px solid #333; padding-top:10px; width:100%;">
+5046:                     ${save.phaseText}<br>
+5047:                     <span style="color:#777; font-size:0.75rem;">${save.date}</span>
+5048:                 </div>
+5049:             </div>
+5050:         `).join('');
+5051:     };
+5052:     
+5053:     // Call on load
+5054:     if (document.getElementById('prequel-selection-screen')) {
+5055:         renderSaveSlots();
+5056:     }
+5057: 
+5058: });
+5059: 
+5060: 
+5061: 
+5062: 
+5063: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

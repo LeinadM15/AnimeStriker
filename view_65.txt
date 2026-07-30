@@ -1,0 +1,59 @@
+Created At: 2026-07-29T17:36:45+02:00
+Completed At: 2026-07-29T17:36:46+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 3773
+Total Bytes: 195086
+Showing lines 3150 to 3200
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3150:         // Min prob 25%, max prob 90%
+3151:         const winProbability = Math.max(0.25, Math.min(0.90, ourStrength / (ourStrength + enemyStrength)));
+3152:         const win = Math.random() < winProbability;
+3153:         
+3154:         // Simulate Match result based on position
+3155:         let goalsScored = 0;
+3156:         if (position === 'DEL' || position === true) {
+3157:             goalsScored = Math.floor(Math.random() * 4) + 1; // 1 to 4 goals
+3158:         } else if (position === 'MED') {
+3159:             goalsScored = Math.floor(Math.random() * 3);     // 0 to 2 goals
+3160:         } else if (position === 'DEF' || position === false) {
+3161:             goalsScored = Math.floor(Math.random() * 2);     // 0 to 1 goals
+3162:         } else if (position === 'POR') {
+3163:             goalsScored = 0;                                 // Goalkeeper scores 0
+3164:         }
+3165:         
+3166:         p2Stats.goals += goalsScored;
+3167:         
+3168:         const myTeam = p2League.find(t => t.name.includes("Tu Equipo"));
+3169:         if (win) {
+3170:             myTeam.w++;
+3171:             myTeam.pts += 3;
+3172:             showNotification(`¡VICTORIA! Probabilidad era ${Math.floor(winProbability*100)}%. Has marcado ${goalsScored} goles. (Goles Totales: ${p2Stats.goals})`, 'success', 5000);
+3173:         } else {
+3174:             myTeam.l++;
+3175:             showNotification(`DERROTA... Probabilidad era ${Math.floor(winProbability*100)}%. Has marcado ${goalsScored} goles. (Goles Totales: ${p2Stats.goals})`, 'error', 5000);
+3176:         }
+3177:         
+3178:         // Simulate other matches
+3179:         p2League.forEach(t => {
+3180:             if (!t.name.includes("Tu Equipo")) {
+3181:                 t.w += Math.floor(Math.random() * 2);
+3182:                 t.pts = (t.w * 3) + t.d;
+3183:             }
+3184:         });
+3185:         
+3186:         // Simulate scorers
+3187:         p2TopScorers.forEach(s => s.g += Math.floor(Math.random() * 3));
+3188:         
+3189:         // Award Match EXP and open interactive distributor
+3190:         const matchXp = 250 + (win ? 200 : 50) + (goalsScored * 75);
+3191:         const summaryText = win 
+3192:             ? `¡VICTORIA! Has ganado +${matchXp} EXP total y marcado ${goalsScored} goles.` 
+3193:             : `DERROTA... Aún así ganaste +${matchXp} EXP total por tu esfuerzo y ${goalsScored} goles.`;
+3194:         openMatchXpDistributor(matchXp, summaryText);
+3195:     };
+3196: 
+3197:     // ==========================================
+3198:     // FRIENDSHIP VIEWER (Inazuma Eleven style)
+3199:     // ==========================================
+3200:     window.openMyStatsViewer = function() {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

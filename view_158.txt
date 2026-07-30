@@ -1,0 +1,74 @@
+Created At: 2026-07-30T02:29:20+02:00
+Completed At: 2026-07-30T02:29:20+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4489
+Total Bytes: 233574
+Showing lines 4075 to 4140
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4075:         };
+4076:         localStorage.setItem('webfutbol_story_save', JSON.stringify(state));
+4077:         showNotification('Partida guardada correctamente.', 'success');
+4078:     };
+4079: 
+4080:     window.loadGameState = function() {
+4081:         const saved = localStorage.getItem('webfutbol_story_save');
+4082:         if (!saved) { showNotification('No hay partida guardada.', 'error'); return; }
+4083:         
+4084:         try {
+4085:             const state = JSON.parse(saved);
+4086:             const allPlayers = getRosterPlayers();
+4087:             myPlayer = allPlayers.find(c => c.id === state.myPlayerId);
+4088:             if (!myPlayer) {
+4089:                 // Fallback: search in allOroCards
+4090:                 myPlayer = [...allOroCards.values()].find(c => c.id === state.myPlayerId);
+4091:             }
+4092:             if (!myPlayer) { showNotification('Error: no se encontró al jugador guardado.', 'error'); return; }
+4093:             
+4094:             p2Stats = state.p2Stats;
+4095:             p2Relationships = state.p2Relationships || {};
+4096:             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
+4097:             p2CurrentRoom = state.p2CurrentRoom || 0;
+4098:             p2League = state.p2League;
+4099:             // Migración para partidas guardadas antiguas (renombrar Tu Equipo y añadir gf/gc)
+4100:             if (p2League) {
+4101:                 p2League.forEach(t => {
+4102:                     if (t.name === "Equipo Z") t.name = "Equipo V";
+4103:                 });
+4104:                 p2League.forEach(t => {
+4105:                     if (t.name === "Tu Equipo (V)") t.name = "Tu Equipo (Z)";
+4106:                     if (typeof t.gf === 'undefined') t.gf = 0;
+4107:                     if (typeof t.gc === 'undefined') t.gc = 0;
+4108:                 });
+4109:             }
+4110:             p2TopScorers = state.p2TopScorers || [];
+4111:             
+4112:             p2StratumPlayers = [];
+4113:             if (state.p2StratumPlayersData) {
+4114:                 state.p2StratumPlayersData.forEach((item, index) => {
+4115:                     const c = [...allOroCards.values()].find(x => x.id === item.id);
+4116:                     if (c) {
+4117:                         let assignedTeam = item.team;
+4118:                         if (!assignedTeam) {
+4119:                             if (index < 10) assignedTeam = "Tu Equipo (Z)";
+4120:                             else if (index < 21) assignedTeam = "Equipo V";
+4121:                             else if (index < 32) assignedTeam = "Equipo W";
+4122:                             else if (index < 43) assignedTeam = "Equipo X";
+4123:                             else assignedTeam = "Equipo Y";
+4124:                         }
+4125:                         p2StratumPlayers.push({ ...c, p2Rating: item.p2Rating || calcRating(c.rating), team: assignedTeam, goals: item.goals || 0 });
+4126:                     }
+4127:                 });
+4128:             } else {
+4129:                 (state.p2StratumPlayersIds || []).forEach((id, index) => {
+4130:                     const c = [...allOroCards.values()].find(x => x.id === id);
+4131:                     if (c) {
+4132:                         let assignedTeam = "Equipo Y";
+4133:                         if (index < 10) assignedTeam = "Tu Equipo (Z)";
+4134:                         else if (index < 21) assignedTeam = "Equipo V";
+4135:                         else if (index < 32) assignedTeam = "Equipo W";
+4136:                         else if (index < 43) assignedTeam = "Equipo X";
+4137:                         p2StratumPlayers.push({ ...c, p2Rating: calcRating(c.rating), team: assignedTeam, goals: 0 });
+4138:                     }
+4139:                 });
+4140:             }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

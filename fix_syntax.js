@@ -1,8 +1,15 @@
 const fs = require('fs');
-let content = fs.readFileSync('squad.js', 'utf8');
 
-content = content.replace(/\\`/g, '`');
-content = content.replace(/\\\$/g, '$');
+function fixSyntax(filePath) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    // Fix array syntax error: 'Habitacion 'Comedor' -> 'Habitacion', 'Comedor'
+    content = content.replace(/'Habitacion 'Comedor'/g, "'Habitacion', 'Comedor'");
+    
+    // Fix object syntax error: 'Habitacion 'assets/ -> 'Habitacion': 'assets/
+    content = content.replace(/'Habitacion 'assets\//g, "'Habitacion': 'assets/");
+    
+    fs.writeFileSync(filePath, content, 'utf8');
+}
 
-fs.writeFileSync('squad.js', content);
-console.log('Syntax errors fixed!');
+fixSyntax('c:/Users/Admin/Desktop/WebFutbol/locations/hokkaido.js');

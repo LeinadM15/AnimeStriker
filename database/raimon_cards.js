@@ -231,7 +231,7 @@ const raimonCards = [
         nationFlag: "https://flagcdn.com/w40/jp.png",
         teamIcon: "teams/Raimon.png",
         image: "assets/characters/Raimon/Talon LewisPrime.png",
-        background: "assets/Cartas/Morada.png"
+        background: "assets/Cartas/Morado.png"
     },
     {
         id: "ninogamberini_oro",

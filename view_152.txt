@@ -1,0 +1,99 @@
+Created At: 2026-07-30T02:21:42+02:00
+Completed At: 2026-07-30T02:21:42+02:00
+File Path: `file:///c:/Users/Admin/Desktop/WebFutbol/story.js`
+Total Lines: 4483
+Total Bytes: 233026
+Showing lines 1770 to 1860
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1770:             rightPortrait.style.transform = 'translateX(0)';
+1771:             rightPortrait.style.opacity = '1';
+1772:         }, 50);
+1773:         
+1774:         let charIndex = 0;
+1775:         textContainer.innerHTML = '';
+1776:         const typeInterval = setInterval(() => {
+1777:             textContainer.innerHTML += currentDialogue.text.charAt(charIndex);
+1778:             charIndex++;
+1779:             if (charIndex >= currentDialogue.text.length) {
+1780:                 clearInterval(typeInterval);
+1781:                 showOptions(currentDialogue.options, npc, rel);
+1782:             }
+1783:         }, 30);
+1784:     };
+1785: 
+1786:     function showOptions(options, npc, rel) {
+1787:         const optionsContainer = document.getElementById('dialogue-options-container');
+1788:         optionsContainer.innerHTML = '';
+1789:         
+1790:         // Diamond/cross positions: top, left, right, bottom
+1791:         const gridAreas = ['top', 'left', 'right', 'bottom'];
+1792:         
+1793:         options.forEach((opt, idx) => {
+1794:             const btn = document.createElement('div');
+1795:             btn.className = 'dialogue-option';
+1796:             btn.style.gridArea = gridAreas[idx] || 'bottom';
+1797:             btn.innerHTML = `${opt.text}`;
+1798:             btn.onclick = () => {
+1799:                 rel.friendship = Math.min(100, rel.friendship + opt.friendship);
+1800:                 rel.dialogueStage++;
+1801:                 p2Stats.npcInteractionsToday.push(npc.id);
+1802:                 
+1803:                 // Hide options
+1804:                 optionsContainer.classList.add('hidden');
+1805:                 
+1806:                 // Show friendship feedback
+1807:                 const fFeedback = document.createElement('div');
+1808:                 fFeedback.className = 'floating-friendship';
+1809:                 fFeedback.style.top = '30%';
+1810:                 fFeedback.style.left = '50%';
+1811:                 fFeedback.style.transform = 'translate(-50%, -50%)';
+1812:                 fFeedback.innerHTML = opt.friendship >= 0 ? `+${opt.friendship} 💖` : `${opt.friendship} 💔`;
+1813:                 document.getElementById('p2-dialogue-modal').appendChild(fFeedback);
+1814:                 
+1815:                 // Show NPC response in the dialogue box
+1816:                 const textContainer = document.getElementById('dialogue-text');
+1817:                 const speakerName = document.getElementById('dialogue-speaker-name');
+1818:                 speakerName.textContent = `${npc.name.toUpperCase()} (GRL ${Math.floor(npc.p2Rating || calcRating(npc.rating))})`;
+1819:                 
+1820:                 const responseText = opt.response || '...';
+1821:                 textContainer.innerHTML = '';
+1822:                 let rIdx = 0;
+1823:                 const respInterval = setInterval(() => {
+1824:                     textContainer.innerHTML += responseText.charAt(rIdx);
+1825:                     rIdx++;
+1826:                     if (rIdx >= responseText.length) {
+1827:                         clearInterval(respInterval);
+1828:                         // Wait then close
+1829:                         setTimeout(() => {
+1830:                             closeDialogue();
+1831:                             fFeedback.remove();
+1832:                         }, 2500);
+1833:                     }
+1834:                 }, 25);
+1835:             };
+1836:             optionsContainer.appendChild(btn);
+1837:         });
+1838:         
+1839:         optionsContainer.classList.remove('hidden');
+1840:     }
+1841: 
+1842:     function closeDialogue() {
+1843:         const modal = document.getElementById('p2-dialogue-modal');
+1844:         const leftPortrait = document.getElementById('dialogue-portrait-left');
+1845:         const rightPortrait = document.getElementById('dialogue-portrait-right');
+1846:         
+1847:         leftPortrait.style.transform = 'translateX(-50px)';
+1848:         leftPortrait.style.opacity = '0';
+1849:         rightPortrait.style.transform = 'translateX(50px)';
+1850:         rightPortrait.style.opacity = '0';
+1851:         
+1852:         setTimeout(() => {
+1853:             modal.classList.add('hidden');
+1854:         }, 500);
+1855:     }
+1856: 
+1857:     function spawnNPCs(roomName, count) {
+1858:         p2NpcContainer.innerHTML = '';
+1859:         if (!p2DailyNPCs[roomName]) return;
+1860:         const npcs = p2DailyNPCs[roomName].slice(0, count);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
