@@ -672,5 +672,47 @@ const coachesDB = [
         image: "assets/characters/Colombia/Sect Feromona.png",
         background: "assets/Cartas/Oro.png",
         boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/co.png", amount: 2, chem: 2, condition: "+2 Media y Química a todos los jugadores de Colombia" }
+    },
+    {
+        id: "coach_ray_dark_pifa",
+        name: "RAY DARK",
+        version: "Oro",
+        rarity: "Coach",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/de.png",
+        teamIcon: "teams/Alemania.png",
+        image: "assets/entrenadores/PifaRayDark.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/de.png", amount: 1, chem: 1, condition: "+1 Media y Química a todos los jugadores de Alemania" }
+    },
+    {
+        id: "coach_matilda",
+        name: "COACH MATILDA",
+        version: "Oro",
+        rarity: "Coach",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/Uruguay.png",
+        image: "assets/entrenadores/Coach Matilda.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/uy.png", amount: 1, chem: 1, condition: "+1 Media y Química a todos los jugadores de Uruguay" }
+    },
+    {
+        id: "coach_barbas",
+        name: "COACH BARBAS",
+        version: "Oro",
+        rarity: "Coach",
+        rating: 81,
+        position: "COACH",
+        league: "Federaciones",
+        nationFlag: "https://flagcdn.com/w40/ar.png",
+        teamIcon: "teams/Argentina.png",
+        image: "assets/entrenadores/Coach Barbas.png",
+        background: "assets/Cartas/Oro.png",
+        boost: { type: "nation", nationFlag: "https://flagcdn.com/w40/ar.png", amount: 1, chem: 1, condition: "+1 Media y Química a todos los jugadores de Argentina" }
     }
 ];

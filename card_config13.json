@@ -1,0 +1,35 @@
+{
+    "fileName": "los_arions",
+    "arrayName": "losArionsCards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "vladimirblade_oro", "name": "VLADIMIR BLADE", "version": "Oro", "rarity": "Oro", "rating": 86, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir Blade.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "vladimirbladebase_pxg", "name": "VLADIMIR BLADE", "version": "PXG", "rarity": "Especial", "rating": 88, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir BladeBase.png", "background": "assets/Cartas/PXG.png" },
+        { "id": "vladimirbladeflas_flashback", "name": "VLADIMIR BLADE", "version": "Flashback", "rarity": "Especial", "rating": 90, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir BladeFlas.png", "background": "assets/Cartas/Flashback.png" },
+        { "id": "vladimirbladearm_morado", "name": "VLADIMIR BLADE", "version": "Morado", "rarity": "Especial", "rating": 92, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir BladeArm.png", "background": "assets/Cartas/Morado.png" },
+        { "id": "vladimirblademix_joker", "name": "VLADIMIR BLADE", "version": "Joker", "rarity": "Especial", "rating": 94, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir BladeMix.png", "background": "assets/Cartas/Joker.png" },
+        { "id": "vladimirbladeprime_rulebraker", "name": "VLADIMIR BLADE", "version": "Rulebraker", "rarity": "Especial", "rating": 96, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/PXG.png", "image": "assets/characters/LosArions/Vladimir BladePrime.png", "background": "assets/Cartas/Rulebraker.png" },
+        
+        { "id": "creepy_oro", "name": "CREEPY", "version": "Oro", "rarity": "Oro", "rating": 80, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Troyes.png", "image": "assets/characters/LosArions/Creepy.png", "background": "assets/Cartas/Oro.png" },
+        
+        { "id": "chunky_oro", "name": "CHUNKY", "version": "Oro", "rarity": "Oro", "rating": 79, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/AstonVilla.png", "image": "assets/characters/LosArions/Chunky.png", "background": "assets/Cartas/Oro.png" },
+
+        { "id": "spikey_oro", "name": "SPIKEY", "version": "Oro", "rarity": "Oro", "rating": 79, "position": "CAM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Lorient.png", "image": "assets/characters/LosArions/Spikey.png", "background": "assets/Cartas/Oro.png" },
+
+        { "id": "skinny_oro", "name": "SKINNY", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "LB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/WestHam.png", "image": "assets/characters/LosArions/Skinny.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "skinnyprime_azul", "name": "SKINNY", "version": "Azul", "rarity": "Especial", "rating": 81, "position": "LB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/WestHam.png", "image": "assets/characters/LosArions/SkinnyPrime.png", "background": "assets/Cartas/Azul.png" },
+
+        { "id": "biggsy_oro", "name": "BIGGSY", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "GK", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Blackburn.png", "image": "assets/characters/LosArions/Biggsy.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "biggsyprime_azul", "name": "BIGGSY", "version": "Azul", "rarity": "Especial", "rating": 81, "position": "GK", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Blackburn.png", "image": "assets/characters/LosArions/BiggsyPrime.png", "background": "assets/Cartas/Azul.png" },
+
+        { "id": "tiny_oro", "name": "TINY", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "CM", "league": "La Liga", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Depor.png", "image": "assets/characters/LosArions/Tiny.png", "background": "assets/Cartas/Oro.png" },
+
+        { "id": "smiley_oro", "name": "SMILEY", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/CrystalPalace.png", "image": "assets/characters/LosArions/Smiley.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "smileyprime_azul", "name": "SMILEY", "version": "Azul", "rarity": "Especial", "rating": 80, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/CrystalPalace.png", "image": "assets/characters/LosArions/SmileyPrime.png", "background": "assets/Cartas/Azul.png" },
+
+        { "id": "smarty_oro", "name": "SMARTY", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "RB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Leicester.png", "image": "assets/characters/LosArions/Smarty.png", "background": "assets/Cartas/Oro.png" },
+
+        { "id": "hairy_oro", "name": "HAIRY", "version": "Oro", "rarity": "Oro", "rating": 82, "position": "CDM", "league": "La Liga", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Espanol.png", "image": "assets/characters/LosArions/Hairy.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "hairyprime_azul", "name": "HAIRY", "version": "Azul", "rarity": "Especial", "rating": 82, "position": "CDM", "league": "La Liga", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Espanol.png", "image": "assets/characters/LosArions/HairyPrime.png", "background": "assets/Cartas/Azul.png" }
+    ]
+}

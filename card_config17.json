@@ -1,0 +1,18 @@
+{
+    "fileName": "aullido_lunar",
+    "arrayName": "aullidoLunarCards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "canthrup_oro", "name": "LEE CANTHRUP", "version": "Oro", "rarity": "Oro", "rating": 86, "position": "GK", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Newcastle.png", "image": "assets/characters/AullidoLunar/Lee Canthrup.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "canthrup_roja", "name": "LEE CANTHRUP", "version": "Roja", "rarity": "Especial", "rating": 89, "position": "GK", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/jp.png", "teamIcon": "teams/Newcastle.png", "image": "assets/characters/AullidoLunar/Lee CanthrupPrime.png", "background": "assets/Cartas/Roja.png" },
+        { "id": "fuss_oro", "name": "GERALD FUSS", "version": "Oro", "rarity": "Oro", "rating": 82, "position": "CB", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/ch.png", "teamIcon": "teams/Stuttgart.png", "image": "assets/characters/AullidoLunar/Gerald Fuss.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "errer_oro", "name": "KYM ERRER", "version": "Oro", "rarity": "Oro", "rating": 81, "position": "RB", "league": "Serie A", "nationFlag": "https://flagcdn.com/w40/cy.png", "teamIcon": "teams/Torino.png", "image": "assets/characters/AullidoLunar/Kym Errer.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "omann_oro", "name": "HUNTER O'MANN", "version": "Oro", "rarity": "Oro", "rating": 83, "position": "LB", "league": "Scottish Premiership", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/Celtic.png", "image": "assets/characters/AullidoLunar/Hunter O'Mann.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "selene_oro", "name": "MONA SELENE", "version": "Oro", "rarity": "Oro", "rating": 81, "position": "CB", "league": "Serie A", "nationFlag": "https://flagcdn.com/w40/mt.png", "teamIcon": "teams/Sampdoria.png", "image": "assets/characters/AullidoLunar/Mona Selene.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "garrou_oro", "name": "LOU GARROU", "version": "Oro", "rarity": "Oro", "rating": 84, "position": "CDM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/ca.png", "teamIcon": "teams/Lyonn.png", "image": "assets/characters/AullidoLunar/Lou Garrou.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "woo_oro", "name": "AL WOO", "version": "Oro", "rarity": "Oro", "rating": 81, "position": "CM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/vn.png", "teamIcon": "teams/Nice.png", "image": "assets/characters/AullidoLunar/Al Woo.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "bullet_oro", "name": "SYLVESTER BULLET", "version": "Oro", "rarity": "Oro", "rating": 82, "position": "CM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/dk.png", "teamIcon": "teams/Everton.png", "image": "assets/characters/AullidoLunar/Sylvester Bullet.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "thrope_oro", "name": "TERRI ANN THROPE", "version": "Oro", "rarity": "Oro", "rating": 83, "position": "CAM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/gb-wls.png", "teamIcon": "teams/Leicester.png", "image": "assets/characters/AullidoLunar/Terri Ann Thrope.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "kayon_oro", "name": "LUKE KAYON", "version": "Oro", "rarity": "Oro", "rating": 85, "position": "ST", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/Wolfsburg.png", "image": "assets/characters/AullidoLunar/Luke Kayon.png", "background": "assets/Cartas/Oro.png" }
+    ]
+}

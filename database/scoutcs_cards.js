@@ -1,0 +1,28 @@
+const scoutCSCards = [
+    {
+        id: "quetzalcoatlus_oro",
+        name: "QUETZALCOATLUS",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 77,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/CrystalPalace.png",
+        image: "assets/characters/ScoutCS/Pa.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "big_oro",
+        name: "BIG",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 81,
+        position: "ST",
+        league: "Bundesliga",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
+        teamIcon: "teams/Wolfsburg.png",
+        image: "assets/characters/ScoutCS/Big.png",
+        background: "assets/Cartas/Oro.png"
+    }
+];

@@ -1,0 +1,28 @@
+const zanarkTeamCards = [
+    {
+        id: "zanark_team_oro",
+        name: "ZANARK",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 87,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ZanarkTeam.png",
+        image: "assets/characters/Zanark/ZanarkOro.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "zanark_team_roja",
+        name: "ZANARK",
+        version: "Especial",
+        rarity: "Especial",
+        rating: 90,
+        position: "ST",
+        league: "J-League",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/ZanarkTeam.png",
+        image: "assets/characters/Zanark/Zanark.png",
+        background: "assets/Cartas/Roja.png"
+    }
+];

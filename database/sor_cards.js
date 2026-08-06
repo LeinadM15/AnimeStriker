@@ -7,7 +7,7 @@ const sorCards = [
         rating: 86,
         position: "CB",
         league: "J-League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
         teamIcon: "teams/Raimon.png",
         image: "assets/characters/Sor/SorOro.png",
         background: "assets/Cartas/Oro.png"
@@ -20,7 +20,7 @@ const sorCards = [
         rating: 88,
         position: "CB",
         league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
         teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Sor/SorMixOro.png",
         background: "assets/Cartas/Oro.png"
@@ -33,7 +33,7 @@ const sorCards = [
         rating: 89,
         position: "CB",
         league: "J-League",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
         teamIcon: "teams/Raimon.png",
         image: "assets/characters/Sor/SorMix.png",
         background: "assets/Cartas/Raimon.png"
@@ -46,7 +46,7 @@ const sorCards = [
         rating: 91,
         position: "CB",
         league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
         teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Sor/Sor.png",
         background: "assets/Cartas/Wild.png"
@@ -59,7 +59,7 @@ const sorCards = [
         rating: 93,
         position: "CB",
         league: "Bundesliga",
-        nationFlag: "https://flagcdn.com/w40/jp.png",
+        nationFlag: "https://flagcdn.com/w40/uy.png",
         teamIcon: "teams/Hamburgo.png",
         image: "assets/characters/Sor/SorPrime.png",
         background: "assets/Cartas/Tots.png"

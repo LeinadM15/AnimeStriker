@@ -7,9 +7,9 @@ const simeonCards = [
         rating: 88,
         position: "RW",
         secondaryPositions: ["ST", "LW", "CF", "CAM", "RM", "LM", "CM"],
-        league: "Bundesliga",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Dortmund.png",
+        teamIcon: "teams/Ragnah.png",
         image: "assets/characters/Simeon/SimeonOro.png",
         background: "assets/Cartas/Oro.png"
     },
@@ -21,9 +21,9 @@ const simeonCards = [
         rating: 91,
         position: "RW",
         secondaryPositions: ["ST", "LW", "CF", "CAM", "RM", "LM", "CM"],
-        league: "Bundesliga",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Dortmund.png",
+        teamIcon: "teams/Ragnah.png",
         image: "assets/characters/Simeon/Simeon.png",
         background: "assets/Cartas/Dormund.png"
     },
@@ -35,9 +35,9 @@ const simeonCards = [
         rating: 93,
         position: "RW",
         secondaryPositions: ["ST", "LW", "CF", "CAM", "RM", "LM", "CM"],
-        league: "Bundesliga",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Dortmund.png",
+        teamIcon: "teams/Ragnah.png",
         image: "assets/characters/Simeon/SimeonChetao.png",
         background: "assets/Cartas/Mordiscos.png"
     },
@@ -49,9 +49,9 @@ const simeonCards = [
         rating: 96,
         position: "RW",
         secondaryPositions: ["ST", "LW", "CF", "CAM", "RM", "LM", "CM"],
-        league: "Bundesliga",
+        league: "J-League",
         nationFlag: "https://flagcdn.com/w40/jp.png",
-        teamIcon: "teams/Dortmund.png",
+        teamIcon: "teams/Ragnah.png",
         image: "assets/characters/Simeon/SimeonPrime.png",
         background: "assets/Cartas/Tots.png"
     }

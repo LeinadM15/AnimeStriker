@@ -1,0 +1,33 @@
+{
+    "fileName": "preston_princeton_specials",
+    "arrayName": "prestonPrincetonSpecialsCards",
+    "series": "tsubasa",
+    "cards": [
+        {
+            "id": "prestonprincetonprime2_trophy",
+            "name": "PRESTON PRINCETON",
+            "version": "Trophy",
+            "rarity": "Especial",
+            "rating": 89,
+            "position": "GK",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/jp.png",
+            "teamIcon": "teams/Royal.png",
+            "image": "assets/characters/Royal/PrestonPrincetonPrime2.png",
+            "background": "assets/Cartas/Trophy.png"
+        },
+        {
+            "id": "prestonprincetonprime_centurion",
+            "name": "PRESTON PRINCETON",
+            "version": "Centurion",
+            "rarity": "Especial",
+            "rating": 92,
+            "position": "GK",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/jp.png",
+            "teamIcon": "teams/Royal.png",
+            "image": "assets/characters/Royal/PrestonPrincetonPrime.png",
+            "background": "assets/Cartas/Centurion.png"
+        }
+    ]
+}

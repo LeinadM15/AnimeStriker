@@ -12,43 +12,86 @@
 <body>
 
     <!-- ============ PREQUEL SELECTION (PHASE 1) ============ -->
-    <div id="prequel-selection-screen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
-        <h1 style="font-family: 'Bangers'; font-size: 4rem; color: #00e5ff; text-shadow: 0 0 20px rgba(0,229,255,0.8); margin-bottom: 20px;">MODO CARRERA: INICIOS</h1>
-        <p style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; max-width: 600px; text-align: center; margin-bottom: 40px; color: #ccc;">Antes de aspirar a la cima, debes forjarte en los torneos escolares de tu prefectura. Todos empezáis con 13 años. Elige tu destino.</p>
-        
-        <div style="display: flex; gap: 30px; margin-bottom: 40px;">
-            <!-- Hokkaido Card -->
-            <div id="btn-select-hokkaido" style="cursor: pointer; background: #111; border: 3px solid #fff; border-radius: 15px; width: 300px; height: 400px; display: flex; flex-direction: column; align-items: center; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;">
-                <div style="height: 60%; width: 100%; background: url('assets/Historia/Hokkaido/Base.jpg') center/cover; position: relative;">
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #111, transparent);"></div>
+    <div id="prequel-selection-screen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 50; display: flex; flex-direction: column; align-items: center; color: white; overflow-y: auto;">
+        <div style="padding: 30px 20px; width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-family: 'Bangers'; font-size: 3.5rem; color: #00e5ff; text-shadow: 0 0 20px rgba(0,229,255,0.8); margin-bottom: 10px;">MODO CARRERA: INICIOS</h1>
+            <p style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; max-width: 700px; text-align: center; margin-bottom: 25px; color: #ccc;">Elige la region donde comenzar tu carrera. Todos empezais con 13 anos en un colegio de tu prefectura.</p>
+            
+            <!-- Region Grid -->
+            <div id="region-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; max-width: 1100px; margin-bottom: 25px;">
+                <!-- Hokkaido -->
+                <div class="region-card" data-region="Hokkaido" style="cursor:pointer; background: url('assets/Historia/Hokkaido/Base.jpg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">HOKKAIDO</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">1 Colegio</p>
                 </div>
-                <div style="padding: 20px; text-align: center; height: 40%; display: flex; flex-direction: column; justify-content: space-between;">
-                    <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: #fff; margin: 0;">HOKKAIDO</h2>
-                    <div style="font-family: 'Nunito', sans-serif; color: #aaa; font-size: 0.9rem;">
-                        <strong>Colegio:</strong> Furano<br>
-                        <strong>Instituto:</strong> Alpino
-                    </div>
+                <!-- Tokyo -->
+                <div class="region-card" data-region="Tokyo" style="cursor:pointer; background: url('assets/Historia/Tokyo/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">TOKYO</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">4 Colegios</p>
+                </div>
+                <!-- Saitama -->
+                <div class="region-card" data-region="Saitama" style="cursor:pointer; background: url('assets/Historia/Saitama/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">SAITAMA</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">3 Colegios</p>
+                </div>
+                <!-- Kanagawa -->
+                <div class="region-card" data-region="Kanagawa" style="cursor:pointer; background: url('assets/Historia/Kanagawa/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">KANAGAWA</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">3 Colegios</p>
+                </div>
+                <!-- Kansai -->
+                <div class="region-card" data-region="Kansai" style="cursor:pointer; background: url('assets/Historia/Kansai/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">KANSAI</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">3 Colegios</p>
+                </div>
+                <!-- Chubu -->
+                <div class="region-card" data-region="Chubu" style="cursor:pointer; background: url('assets/Historia/Chubu/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">CHUBU</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">4 Colegios</p>
+                </div>
+                <!-- Tohoku -->
+                <div class="region-card" data-region="Tohoku" style="cursor:pointer; background: url('assets/Historia/Tohoku/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">TOHOKU</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">3 Colegios</p>
+                </div>
+                <!-- Kyushu -->
+                <div class="region-card" data-region="Kyushu" style="cursor:pointer; background: url('assets/Historia/Kyushu/Base.jpeg') center/cover; border:2px solid #3a3a5a; border-radius:12px; padding:30px 15px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; min-height:120px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#fff; margin:0; position:relative; z-index:2; text-shadow:0 0 10px #000;">KYUSHU</h3>
+                    <p style="font-family:'Nunito'; color:#ddd; font-size:0.9rem; margin:5px 0 0; position:relative; z-index:2;">4 Colegios</p>
+                </div>
+            </div>
+
+            <!-- Blue Lock Direct -->
+            <div id="btn-select-bluelock" style="cursor: pointer; background: linear-gradient(145deg,#0a0a2e,#000510); border: 2px solid #0055ff; border-radius: 12px; width: 100%; max-width: 1100px; padding: 15px 30px; display: flex; align-items: center; gap: 20px; transition: all 0.3s; box-shadow: 0 0 15px rgba(0,85,255,0.2); margin-bottom: 25px;">
+                <img src="assets/Historia/Habitaciones/BlueLock.png" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
+                <div>
+                    <h3 style="font-family:'Bangers'; font-size:1.8rem; color:#00aaff; margin:0;">BLUE LOCK — Proyecto Blue Lock</h3>
+                    <p style="font-family:'Nunito'; color:#666; font-size:0.85rem; margin:3px 0 0;">Torneo de Supervivencia (Saltar carrera escolar)</p>
                 </div>
             </div>
             
-            <!-- Direct Blue Lock Card -->
-            <div id="btn-select-bluelock" style="cursor: pointer; background: #111; border: 3px solid #0055ff; border-radius: 15px; width: 300px; height: 400px; display: flex; flex-direction: column; align-items: center; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 15px rgba(0,85,255,0.4);">
-                <div style="height: 60%; width: 100%; background: url('assets/Historia/Habitaciones/BlueLock.png') center/cover; position: relative;">
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #111, transparent);"></div>
-                </div>
-                <div style="padding: 20px; text-align: center; height: 40%; display: flex; flex-direction: column; justify-content: space-between;">
-                    <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: #fff; margin: 0;">BLUE LOCK</h2>
-                    <div style="font-family: 'Nunito', sans-serif; color: #aaa; font-size: 0.9rem;">
-                        <strong>Proyecto Blue Lock</strong><br>
-                        (Torneo de Supervivencia)
-                    </div>
-                </div>
+            <!-- Multi-Save Slots UI -->
+            <div id="save-slots-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 900px; border-top: 2px solid #333; padding-top: 20px;">
+                <!-- JS will inject slots here -->
             </div>
         </div>
-        
-        <!-- Multi-Save Slots UI -->
-        <div id="save-slots-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 900px; margin-top: 20px; border-top: 2px solid #333; padding-top: 20px;">
-            <!-- JS will inject slots here -->
+    </div>
+
+    <!-- ============ COLEGIO PICKER OVERLAY ============ -->
+    <div id="colegio-picker-screen" class="hidden" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.92); z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+        <button id="colegio-picker-back" style="position:absolute; top:20px; left:30px; background:none; border:2px solid #555; color:#fff; font-family:'Bangers'; font-size:1.3rem; padding:8px 20px; border-radius:8px; cursor:pointer; transition:all 0.2s;">&larr; VOLVER</button>
+        <h2 id="colegio-picker-title" style="font-family:'Bangers'; font-size:3rem; color:#00e5ff; text-shadow:0 0 15px rgba(0,229,255,0.6); margin-bottom:10px;">ELIGE TU COLEGIO</h2>
+        <p id="colegio-picker-subtitle" style="font-family:'Nunito'; color:#999; font-size:1rem; margin-bottom:30px;">Grupo de X — Pasan los Y mejores al Nacional</p>
+        <div id="colegio-picker-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; max-width: 1000px;">
+            <!-- JS injects colegio cards here -->
         </div>
     </div>
     
@@ -822,6 +865,13 @@
     <script src="locations/bluelock.js"></script>
     <script src="locations/hokkaido.js"></script>
     <script src="locations/odaiba.js"></script>
+    <script src="locations/tokyo.js"></script>
+    <script src="locations/saitama.js"></script>
+    <script src="locations/kanagawa.js"></script>
+    <script src="locations/kansai.js"></script>
+    <script src="locations/chubu.js"></script>
+    <script src="locations/tohoku.js"></script>
+    <script src="locations/kyushu.js"></script>
     <script src="locations/hokkaido_dialogues.js"></script>
     <script src="database/dialogues.js"></script>
     <script src="database/rinitoshi_cards.js"></script>
@@ -839,7 +889,26 @@
     <script src="database/rexremington_extra_cards.js"></script>
     <script src="database/raimon_go_cards.js"></script>
     <script src="database/alpino_extra_cards.js"></script>
-    <script src="cards.js"></script>
+    <script src="database/kirkwood_vision_cards.js"></script>
+    <script src="database/ia_brain_cards.js"></script>
+    <script src="database/japoneses_europa_cards.js"></script>
+    <script src="database/ryosukekira_cards.js"></script>
+    <script src="database/destructores_cards.js"></script>
+    <script src="database/hazimenishioka_cards.js"></script>
+    <script src="database/protocoloomega_cards.js"></script>
+    <script src="database/protocoloomega_specials_cards.js"></script>
+    <script src="database/fauxshore_cards.js"></script>
+    <script src="database/cascadaperfecta_cards.js"></script>
+    <script src="database/cascadaperfecta_specials_cards.js"></script>
+    <script src="database/zanark_team_cards.js"></script>
+        <script src="database/zanarkdomain_cards.js"></script>
+        <script src="database/preston_princeton_specials_cards.js"></script>
+    <script src="database/ragnah_cards.js"></script>
+    <script src="database/ragnah_specials_cards.js"></script>
+    <script src="database/scoutcs_cards.js"></script>
+    <script src="database/aullido_lunar_cards.js"></script>
+    <script src="database/nosfanaticos_cards.js"></script>
+        <script src="cards.js"></script>
     <script src="story.js"></script>
 </body>
 </html>

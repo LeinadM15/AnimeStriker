@@ -1,0 +1,85 @@
+{
+    "fileName": "cascadaperfecta_specials",
+    "arrayName": "cascadaPerfectaSpecialsCards",
+    "series": "tsubasa",
+    "cards": [
+        {
+            "id": "veewaiprime_gris",
+            "name": "VEE WAI",
+            "version": "Gris",
+            "rarity": "Especial",
+            "rating": 86,
+            "position": "GK",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Vee WaiPrime.png",
+            "background": "assets/Cartas/Gris.png"
+        },
+        {
+            "id": "oughceeprime_gris",
+            "name": "OUGH CEE",
+            "version": "Gris",
+            "rarity": "Especial",
+            "rating": 86,
+            "position": "RW",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Ough CeePrime.png",
+            "background": "assets/Cartas/Gris.png"
+        },
+        {
+            "id": "aytbeeprime_gris",
+            "name": "AYT BEE",
+            "version": "Gris",
+            "rarity": "Especial",
+            "rating": 86,
+            "position": "LB",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Ayt BeePrime.png",
+            "background": "assets/Cartas/Gris.png"
+        },
+        {
+            "id": "arecks2_gris",
+            "name": "AR ECKS",
+            "version": "Gris",
+            "rarity": "Especial",
+            "rating": 90,
+            "position": "ST",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Ar Ecks2.png",
+            "background": "assets/Cartas/Gris.png"
+        },
+        {
+            "id": "areckssemiprime_trophy",
+            "name": "AR ECKS",
+            "version": "Trophy",
+            "rarity": "Especial",
+            "rating": 92,
+            "position": "ST",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Ar EcksSemiPrime.png",
+            "background": "assets/Cartas/Trophy.png"
+        },
+        {
+            "id": "arecksprime_roja",
+            "name": "AR ECKS",
+            "version": "Roja",
+            "rarity": "Especial",
+            "rating": 94,
+            "position": "ST",
+            "league": "J-League",
+            "nationFlag": "https://flagcdn.com/w40/id.png",
+            "teamIcon": "teams/ProtocoloOmega.png",
+            "image": "assets/characters/CascadaPerfecta/Ar EcksPrime.png",
+            "background": "assets/Cartas/Roja.png"
+        }
+    ]
+}

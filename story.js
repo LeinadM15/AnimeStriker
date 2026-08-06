@@ -1,3 +1,92 @@
+window.superShotsDB = {
+    'Karl Heinz Schneider': [
+        { id: 'fire_shoot', name: 'Fire Shoot', clicksReq: 3, asset: 'assets/Match/Supertiros/FireShoot.png', desc: 'Llamas rojas. Requiere golpear con puños (3 clicks rápidos).' },
+        { id: 'neo_fire_shoot', name: 'Neo Fire Shoot', clicksReq: 5, asset: 'assets/Match/Supertiros/NeoFireShoot.png', desc: 'Fuego azul fatuo. Muy potente. Requiere golpear con puños (5 clicks rápidos).' }
+    ],
+    'Kojiro Hyuga': [
+        { id: 'tiger_shoot', name: 'Tiger Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/TigerShoot.png', desc: 'Tiro salvaje del tigre. Va a ras de suelo con muchísima velocidad. Se para con AGARRE.' },
+        { id: 'raiju_shoot', name: 'Raiju Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/RaijuShoot.png', desc: 'Efecto Raiju. Viaja a ras de suelo y en el último segundo sube repentinamente hacia arriba. ¡Estáte atento!' }
+    ],
+    'Bailong': [
+        { id: 'rizo_dragon', name: 'Rizo Dragon', clicksReq: 0, asset: 'assets/Match/Supertiros/RizoDragon.png', desc: 'El balón hace un movimiento circular impredecible y termina en un lugar aleatorio del círculo. ¡Páralo con una ESTIRADA!' }
+    ],
+    'Ryoma Hino': [
+        { id: 'tornado_shoot', name: 'Tornado Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/TornadoShoot.png', desc: 'Sustituye la pelota por completo. Disparo de tornado directo al centro. Para detenerlo, debes asestar un uppercut: mantén apretado PUÑO por debajo del balón y arrástralo hacia arriba hasta golpearlo.' }
+    ],
+    'Levin': [
+        { id: 'levin_shoot', name: 'Levin Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/LevinShot.png', desc: 'Un trallazo destructor en el que el balón gira brutalmente. Requiere un uppercut para ser bloqueado, al igual que el Tornado Shoot.' }
+    ],
+    'Tsubasa Ozora': [
+        { id: 'drive_shoot', name: 'Drive Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/DriveShot.png', desc: 'El balón se eleva hacia el cielo y cae en picado hacia la portería. Puedes intentar bloquearlo con AGARRE en la cima antes de que caiga, o esperarlo pacientemente abajo con AGARRE.' }
+    ],
+    'Shun Nitta': [
+        { id: 'hayabusa_shoot', name: 'Hayabusa Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/HayabusaShot.png', desc: 'El tiro del halcón. Viaja a una velocidad vertiginosa. Reacciona rápido con una ESTIRADA.' }
+    ],
+    'Makoto Soda': [
+        { id: 'navaja_shoot', name: 'Navaja Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/NavajaShot.png', desc: 'El infame tiro navaja. Realiza una curva exageradamente brusca y veloz en el aire, engañando la vista. Tírate a por él con una ESTIRADA.' }
+    ],
+    'Taro Misaki': [
+        { id: 'boomerang_shot', name: 'Boomerang Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/BoomerangShot.png', desc: 'Sube y se abre muchísimo hacia afuera como un boomerang, dando la ilusión de que va fuera, para acabar metiéndose rozando el palo. Requiere ESTIRADA.' }
+    ],
+    'Hikaru Matsuyama': [
+        { id: 'eagle_shoot', name: 'Eagle Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/EagleShot.png', desc: 'El tiro del águila viaja potentísimo a ras de suelo, sustituyendo la forma del balón. Prepárate para rechazarlo con los PUÑOS.' }
+    ],
+    'Carlos Santana': [
+        { id: 'arrow_skywing_shoot', name: 'Arrow Skywing Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/ArrowSkywingShot.png', desc: 'El balón se convierte en una flecha celestial. Viaja raso, pero justo antes de que lo atrapes salta repentinamente a la escuadra, de forma idéntica al Raiju Shoot. Detenlo con ESTIRADA.' }
+    ],
+    'Elle Sid Pierre': [
+        { id: 'eiffel_shoot', name: 'Eiffel Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/EffielShot.png', desc: 'Una jugada rapidísima de primer toque. Sustituye al balón. Al requerir de un pase previo, tu mejor opción es interceptarlo (puño) antes de que reciba el balón, o reaccionar rapidísimo con una ESTIRADA.' }
+    ],
+    'Louis Napoleon': [
+        { id: 'cannon_shoot', name: 'Cannon Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/CannonShot.png', desc: 'Un cañonazo brutal. Al momento de disparar, verás el efecto del cañón en su pierna, pero el balón viajará normal y rapidísimo. Necesitas detenerlo con los PUÑOS.' }
+    ],
+    'Rivaul': [
+        { id: 'golden_hawk_shoot', name: 'Golden Hawk Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/GoldenHawkShot.png', desc: 'Sustituye la pelota por el halcón dorado. Al igual que el tiro de Tsubasa, se eleva hacia el cielo y cae en picado, por lo que puedes pararlo con AGARRE arriba antes de que caiga, o abajo.' }
+    ],
+    'Jun Misugi': [
+        { id: 'splendid_overhead_kick', name: 'Splendid Overhead Kick', clicksReq: 0, asset: 'assets/Match/Supertiros/SplendidOverheadKick.png', desc: 'Sustituye la pelota por completo. Una chilena perfecta. El balón subirá rápidamente para luego bajar con muchísima potencia. Necesitas pararlo con los PUÑOS.' }
+    ],
+    'Juan Diaz': [
+        { id: 'miracle_overhead_kick', name: 'Miracle Overhead Kick', clicksReq: 0, asset: 'assets/Match/Supertiros/MiracleOverheadKick.png', desc: 'Sustituye la pelota por completo. Una chilena milagrosa. Al igual que la chilena de Misugi, bajará con mucha potencia desde arriba. Prepárate para rechazarla con los PUÑOS.' }
+    ],
+    'Chigiri': [
+        { id: 'pink_shoot', name: 'Pink Shoot', clicksReq: 0, asset: 'assets/Match/Supertiros/PinkShoot.png', desc: 'Un trallazo envuelto en un aura rosa. Tiene muchísima velocidad y potencia, e irá siempre dirigido directamente a la escuadra izquierda. Requiere una rápida ESTIRADA.' }
+    ],
+    'Shidou': [
+        { id: 'shidou_drag', name: 'Shidou Drag', clicksReq: 0, asset: 'assets/Match/Supertiros/ShidouDrag.png', desc: '¡Un disparo descomunal! Sustituye el balón y cae violentamente con efecto hacia abajo y hacia los lados. Necesitarás una ESTIRADA a tiempo.' }
+    ],
+    'Noel Noa': [
+        { id: 'ambidextrismo_perfecto', name: 'Ambidextrismo Perfecto', clicksReq: 0, asset: 'assets/Match/Supertiros/GoldenHawkShot.png', desc: 'Súper veloz. Fíjate en el color de su aura para saber con qué defender (Agarre, Puño o Estirada).' }
+    ],
+    'Michael Kaiser': [
+        { id: 'kaiser_impact', name: 'Kaiser Impact', clicksReq: 0, asset: 'assets/Match/Supertiros/EffielShot.png', desc: 'Un disparo supersónico por el ojo de una aguja. Es tan rápido que casi no se ve. Requiere ESTIRADA instantánea.' },
+        { id: 'kaiser_impact_magnus', name: 'Kaiser Impact: Magnus', clicksReq: 0, asset: 'assets/Match/Supertiros/EffielShot.png', desc: 'El balón coge un efecto imposible a velocidad supersónica. Requiere ESTIRADA brutal.' }
+    ],
+    'Kunigami': [
+        { id: 'antiheroe_shot', name: 'AntiHeroe Shot', clicksReq: 0, asset: '', desc: 'El balón vuela estático, luego empieza a temblar en zigzag y finalmente cae bruscamente o da un latigazo. Aguanta hasta el final y usa PUÑO.' }
+    ],
+    'Isagi': [
+        { id: 'doble_gun_voley', name: 'Doble Gun Voley', clicksReq: 0, asset: 'assets/Match/Supertiros/Humo.png', desc: 'Un engaño total. Parecerá que remata a la derecha pero chuta recto con potencia. Disparo con efecto de humo rapidísimo. Requiere ESTIRADA.' }
+    ],
+    'Nagi': [
+        { id: 'calavera_shot', name: 'Five shots revolver fake volley', clicksReq: 0, asset: 'assets/Match/Supertiros/Calavera.jpeg', desc: 'Realiza falsas voleas en el aire, levantando el balón de forma impredecible. Tras varios toques al azar, dispara rapidísimo. Requiere ESTIRADA en el momento justo.' }
+    ],
+    'Reo Mikage': [
+        { id: 'chameleon_shot', name: 'Chameleon Shot', clicksReq: 0, asset: '', desc: 'Copia aleatoriamente cualquier súper tiro del juego. Ten cuidado, ¡nunca sabes qué habilidad usará!' }
+    ],
+    'Chris Prince': [
+        { id: 'knuckle_ball', name: 'Knuckle Ball', clicksReq: 0, asset: '', desc: 'El balón vuela estático, luego empieza a temblar en zigzag y finalmente cae bruscamente o da un latigazo. Aguanta hasta el final y usa PUÑO.' }
+    ],
+    'Yukimiya': [
+        { id: 'la_boba', name: 'La Boba', clicksReq: 0, asset: '', desc: 'El balón vuela estático, luego empieza a temblar en zigzag y finalmente cae bruscamente o da un latigazo. Aguanta hasta el final y usa PUÑO.' }
+    ],
+    'Hugo': [
+        { id: 'tiro_engranaje', name: 'Tiro Engranaje', clicksReq: 0, asset: 'assets/Match/Supertiros/GoldenHawkShot.png', desc: 'Ataque sorpresa. En lugar de dar un pase (jugada verde), remata directamente a escuadra. Requiere ESTIRADA.' }
+    ],
+    'Rin Itoshi': [
+        { id: 'water_shot', name: 'Water Shot', clicksReq: 0, asset: 'assets/Match/Supertiros/WaterShot.png', desc: 'Sustituye la pelota con un imponente torrente de agua. Hace una curva impredecible y va súper colocado a la portería. ¡Lánzate con una ESTIRADA rápida!' }
+    ]
+};
     // Funciones de UI para Multi-Save en el Menú Principal
     window.renderSaveSlots = function() {
         const container = document.getElementById('save-slots-container');
@@ -556,28 +645,125 @@
     // =====================================================
     window.gamePhase = 1; // 1 = Colegio, 1.5 = Instituto, 2 = Blue Lock
     window.currentPrefecture = "";
-    
-    document.getElementById('btn-select-hokkaido')?.addEventListener('click', () => {
-        window.currentPrefecture = "Hokkaido";
-        window.gamePhase = 1;
-        document.getElementById('prequel-selection-screen').classList.add('hidden');
-        document.getElementById('player-selection-screen').classList.remove('hidden');
-        
-        document.querySelector('.story-logo').innerHTML = '<span>HOKKAIDO</span> — INICIOS';
-        document.getElementById('btn-fill-random').style.display = 'none';
-        document.getElementById('btn-fill-jpst').style.display = 'none';
-        document.getElementById('btn-edit-roster').style.display = 'none';
-        document.getElementById('main-roster-count').style.display = 'none';
-        renderPlayerList();
+    window.currentColegio = "";        // e.g. 'colegio_raimon'
+    window.currentColegioTeamName = ""; // e.g. 'Colegio Raimon'
+
+    // --- Region Card Click Handlers ---
+    document.querySelectorAll('.region-card').forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.borderColor = '#00e5ff';
+            card.style.transform = 'translateY(-3px)';
+            card.style.boxShadow = '0 0 20px rgba(0,229,255,0.3)';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.borderColor = '#3a3a5a';
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'none';
+        });
+        card.addEventListener('click', () => {
+            const regionName = card.getAttribute('data-region');
+            
+            // Special case: Hokkaido has only 1 colegio (Furano), go direct
+            if (regionName === 'Hokkaido') {
+                window.currentPrefecture = 'Hokkaido';
+                window.currentColegio = 'furano';
+                window.currentColegioTeamName = 'Furano';
+                window.gamePhase = 1;
+                document.getElementById('prequel-selection-screen').classList.add('hidden');
+                document.getElementById('player-selection-screen').classList.remove('hidden');
+                const storyLogo = document.querySelector('.story-logo');
+                if (storyLogo) storyLogo.innerHTML = '<span>FURANO</span> — INICIOS';
+                document.getElementById('btn-fill-random').style.display = 'none';
+                document.getElementById('btn-fill-jpst').style.display = 'none';
+                document.getElementById('btn-edit-roster').style.display = 'none';
+                document.getElementById('main-roster-count').style.display = 'none';
+                renderPlayerList();
+                return;
+            }
+            
+            // Other regions: open colegio picker
+            window.showColegioPicker(regionName);
+        });
     });
-    
+
+    // --- Colegio Picker Logic ---
+    window.showColegioPicker = function(regionName) {
+        const config = window.RegionConfigs && window.RegionConfigs[regionName];
+        if (!config) {
+            console.error('RegionConfigs not found for:', regionName);
+            return;
+        }
+
+        const pickerScreen = document.getElementById('colegio-picker-screen');
+        const titleEl = document.getElementById('colegio-picker-title');
+        const subtitleEl = document.getElementById('colegio-picker-subtitle');
+        const gridEl = document.getElementById('colegio-picker-grid');
+
+        if (titleEl) titleEl.textContent = regionName.toUpperCase() + ' — ELIGE TU COLEGIO';
+        if (subtitleEl) subtitleEl.textContent = 'Grupo de ' + config.groupSize + ' — Pasan los ' + config.advanceCount + ' mejores al Nacional';
+
+        // Build colegio cards
+        gridEl.innerHTML = '';
+        config.colegios.forEach(col => {
+            const colCard = document.createElement('div');
+            colCard.style.cssText = 'cursor:pointer; background:linear-gradient(145deg,#111,#0a0a1a); border:2px solid #444; border-radius:15px; width:200px; padding:25px 15px; text-align:center; transition:all 0.3s;';
+            colCard.innerHTML = '<img src="' + col.icon + '" style="width:80px; height:80px; object-fit:contain; margin-bottom:12px; filter:drop-shadow(0 0 10px rgba(255,255,255,0.2));">' +
+                '<h3 style="font-family:\'Bangers\'; font-size:1.3rem; color:#fff; margin:0;">' + col.name + '</h3>';
+            
+            colCard.addEventListener('mouseover', () => {
+                colCard.style.borderColor = '#ffd700';
+                colCard.style.transform = 'translateY(-5px)';
+                colCard.style.boxShadow = '0 0 25px rgba(255,215,0,0.3)';
+            });
+            colCard.addEventListener('mouseout', () => {
+                colCard.style.borderColor = '#444';
+                colCard.style.transform = 'translateY(0)';
+                colCard.style.boxShadow = 'none';
+            });
+            colCard.addEventListener('click', () => {
+                window.currentPrefecture = regionName;
+                window.currentColegio = col.id;
+                // Get the team name from StoryLocations
+                const loc = window.StoryLocations && window.StoryLocations[col.id];
+                window.currentColegioTeamName = loc ? loc.myTeamName : col.name;
+                window.gamePhase = 1;
+
+                pickerScreen.classList.add('hidden');
+                document.getElementById('prequel-selection-screen').classList.add('hidden');
+                document.getElementById('player-selection-screen').classList.remove('hidden');
+
+                const storyLogo = document.querySelector('.story-logo');
+                if (storyLogo) storyLogo.innerHTML = '<span>' + col.name.toUpperCase() + '</span> — INICIOS';
+                document.getElementById('btn-fill-random').style.display = 'none';
+                document.getElementById('btn-fill-jpst').style.display = 'none';
+                document.getElementById('btn-edit-roster').style.display = 'none';
+                document.getElementById('main-roster-count').style.display = 'none';
+                renderPlayerList();
+            });
+
+            gridEl.appendChild(colCard);
+        });
+
+        // Show picker
+        pickerScreen.classList.remove('hidden');
+    };
+
+    // Back button on colegio picker
+    document.getElementById('colegio-picker-back')?.addEventListener('click', () => {
+        document.getElementById('colegio-picker-screen').classList.add('hidden');
+    });
+
+    // --- Blue Lock Direct ---
     document.getElementById('btn-select-bluelock')?.addEventListener('click', () => {
         window.currentPrefecture = "";
+        window.currentColegio = "";
+        window.currentColegioTeamName = "";
         window.gamePhase = 2; // Direct to Blue Lock
         document.getElementById('prequel-selection-screen').classList.add('hidden');
         document.getElementById('player-selection-screen').classList.remove('hidden');
         
-        document.querySelector('.story-logo').innerHTML = '<span>BLUE LOCK</span> — STORY MODE';
+        const storyLogo = document.querySelector('.story-logo');
+        if (storyLogo) storyLogo.innerHTML = '<span>BLUE LOCK</span> — STORY MODE';
         document.getElementById('btn-fill-random').style.display = 'inline-block';
         document.getElementById('btn-fill-jpst').style.display = 'inline-block';
         document.getElementById('btn-edit-roster').style.display = 'inline-block';
@@ -669,21 +855,29 @@
         let count = 0;
         players.forEach(player => {
             if (q && !player.name.toLowerCase().includes(q)) return;
-            const adj = calcRating(player.rating);
+            
+            let displayPos = "ST";
+            let displayRating = calcRating(player.rating);
+            
+            if (window.gamePhase === 1) {
+                displayPos = player.position || "ST";
+                displayRating = 55;
+            }
+            
             const row = document.createElement('div');
             row.className = 'list-row';
             row.innerHTML = `
-                <span class="row-pos">ST</span>
+                <span class="row-pos">${displayPos}</span>
                 <img src="${player.image}" class="row-icon" alt="">
                 <span class="row-name">${player.name}</span>
-                <span class="row-rating ${ratingColor(adj)}">${adj}</span>
-                <button class="row-remove" title="Quitar">âœ•</button>
+                <span class="row-rating ${ratingColor(displayRating)}">${displayRating}</span>
+                <button class="row-remove" title="Quitar">✖</button>
             `;
             row.addEventListener('click', e => {
                 if (e.target.classList.contains('row-remove')) return;
                 document.querySelectorAll('.list-row').forEach(r => r.classList.remove('selected'));
                 row.classList.add('selected');
-                showDetail(player, adj);
+                showDetail(player, displayRating);
             });
             row.querySelector('.row-remove').addEventListener('click', e => {
                 e.stopPropagation();
@@ -709,18 +903,42 @@
         document.getElementById('d-img').src = player.image;
         document.getElementById('d-name').textContent = player.name;
         document.getElementById('d-rating').textContent = adjustedRating;
-        document.getElementById('d-pos').textContent = 'ST';
-        document.getElementById('d-origpos').textContent = player.position;
+        if (window.gamePhase === 1) {
+            document.getElementById('d-pos').textContent = player.position || 'ST';
+            document.getElementById('d-origpos').parentElement.style.display = 'none'; // Hide Pos. Original in Colegio mode
+        } else {
+            document.getElementById('d-pos').textContent = 'ST';
+            document.getElementById('d-origpos').textContent = player.position;
+            document.getElementById('d-origpos').parentElement.style.display = 'block';
+        }
         if (player.teamIcon) { document.getElementById('d-badge').src = player.teamIcon; document.getElementById('d-badge').style.display = 'block'; }
         const base = adjustedRating, seed = player.name.length;
+        const actualPos = (window.gamePhase === 1) ? (player.position || 'ST') : 'ST';
+        
+        let modRitmo = 0, modTiro = 0, modPases = 0, modRegate = 0, modDefensa = 0, modFisico = 0;
+        if (['CB', 'LB', 'RB', 'LWB', 'RWB'].includes(actualPos)) {
+            modDefensa = 8; modFisico = 5; modTiro = -15; modRegate = -5;
+        } else if (['CDM', 'CM', 'CAM', 'LM', 'RM'].includes(actualPos)) {
+            modPases = 8; modRegate = 5; modDefensa = 2; modTiro = -5;
+        } else if (['GK'].includes(actualPos)) {
+            modDefensa = 10; modFisico = 5; modTiro = -20; modRitmo = -15; modPases = -10;
+        } else {
+            modTiro = 8; modRitmo = 5; modDefensa = -20;
+        }
+        
         const stats = {
-            Ritmo: Math.min(MAX_STARTING_RATING, base+((seed*3)%7)-2),
-            Tiro: Math.min(MAX_STARTING_RATING, base+((seed*5)%9)),
-            Pases: Math.min(MAX_STARTING_RATING, base+((seed*2)%6)-3),
-            Regate: Math.min(MAX_STARTING_RATING, base+((seed*7)%8)-2),
-            Defensa: Math.min(MAX_STARTING_RATING, Math.max(15, base-20+((seed*4)%12))),
-            Fisico: Math.min(MAX_STARTING_RATING, base+((seed*6)%6)-2)
+            Ritmo: Math.max(15, base + modRitmo + ((seed*3)%7)-2),
+            Tiro: Math.max(15, base + modTiro + ((seed*5)%9)),
+            Pases: Math.max(15, base + modPases + ((seed*2)%6)-3),
+            Regate: Math.max(15, base + modRegate + ((seed*7)%8)-2),
+            Defensa: Math.max(15, base + modDefensa + ((seed*4)%12)),
+            Fisico: Math.max(15, base + modFisico + ((seed*6)%6)-2)
         };
+        
+        const cap = (window.gamePhase === 1) ? (base + 12) : MAX_STARTING_RATING;
+        for (let k in stats) {
+            stats[k] = Math.min(cap, stats[k]);
+        }
         const cont = document.getElementById('d-stats');
         cont.innerHTML = '';
         Object.entries(stats).forEach(([n,v]) => {
@@ -1863,30 +2081,52 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
         p2Stats.pace = p2Stats.shooting = p2Stats.passing = p2Stats.dribbling = p2Stats.defending = p2Stats.physical = baseRating;
         p2Stats.age = 13;
         
-        // Reset League for Hokkaido
-        p2League = [
-            {name: "Furano", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
-            {name: "Rival Regional A", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
-            {name: "Rival Regional B", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
-            {name: "Rival Regional C", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0}
-        ];
+        var region = window.currentPrefecture;
+        var teamName = window.currentColegioTeamName;
         
-        generateFuranoPlayers();
+        // --- Build League from RegionConfigs ---
+        if (region === 'Hokkaido') {
+            p2League = [
+                {name: "Furano", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+                {name: "Rival Regional A", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+                {name: "Rival Regional B", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0},
+                {name: "Rival Regional C", w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0}
+            ];
+            generateFuranoPlayers();
+        } else {
+            var config = window.RegionConfigs && window.RegionConfigs[region];
+            if (config) {
+                p2League = config.colegios.map(function(col) {
+                    var loc = window.StoryLocations && window.StoryLocations[col.id];
+                    var tn = loc ? loc.myTeamName : col.name;
+                    return {name: tn, w: 0, d: 0, l: 0, pts: 0, gf: 0, gc: 0};
+                });
+                var genName = 'generate' + region + 'Players';
+                if (typeof window[genName] === 'function') {
+                    window[genName](teamName);
+                }
+            }
+        }
+        
+        // Store league team names for processMatchday
+        window.p2LeagueTeamNames = p2League.map(function(t) { return t.name; });
         
         // Navigation events
-        document.getElementById('p2-nav-left').onclick = () => {
+        document.getElementById('p2-nav-left').onclick = function() {
             p2CurrentRoom--;
             if (p2CurrentRoom < 0) p2CurrentRoom = p2Rooms.length - 1;
             renderP2Room();
         };
-        document.getElementById('p2-nav-right').onclick = () => {
+        document.getElementById('p2-nav-right').onclick = function() {
             p2CurrentRoom++;
             if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
             renderP2Room();
         };
         
         renderP2Room();
-        showNotification("Has comenzado en el Colegio Furano (Hokkaido). Edad: 13, OVR: 55.", "success", 4000);
+        var colegioDisplay = teamName || 'Furano';
+        var regionDisplay = region || 'Hokkaido';
+        showNotification("Has comenzado en " + colegioDisplay + " (" + regionDisplay + "). Edad: 13, OVR: 55.", "success", 4000);
     };
 
     window.initPhase2 = function() {
@@ -1960,11 +2200,18 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
     }
     
     window.processMatchday = function(myGoalsFor, myGoalsAgainst, skipPlayerTeamsDistribution = false) {
-        const miEquipoName = (window.gamePhase === 1) ? "Furano" : "Tu Equipo (Z)";
-        const miRivalName = (window.gamePhase === 1) ? "Rival Regional A" : "Equipo V";
-        const equipo3Name = (window.gamePhase === 1) ? "Rival Regional B" : "Equipo W";
-        const equipo4Name = (window.gamePhase === 1) ? "Rival Regional C" : "Equipo X";
+        if (window.gamePhase === 1 && (!window.p2LeagueTeamNames || window.p2LeagueTeamNames.length < 2)) return;
         
+        let miEquipoName, miRivalName;
+        
+        if (window.gamePhase === 2) {
+            miEquipoName = "Tu Equipo (Z)";
+            miRivalName = "Equipo V";
+        } else {
+            miEquipoName = window.p2LeagueTeamNames[0];
+            miRivalName = window.p2LeagueTeamNames[1];
+        }
+
         // 1. Process Our Match
         const myTeam = p2League.find(t => t.name === miEquipoName);
         const rivalTeam = p2League.find(t => t.name === miRivalName);
@@ -1984,29 +2231,42 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
             else { rivalTeam.l++; }
         }
         
-        // Distribute goals to players (unless skipped because minigame did it live)
         if (!skipPlayerTeamsDistribution) {
             distributeGoals(miEquipoName, myGoalsFor);
             distributeGoals(miRivalName, myGoalsAgainst);
         }
         
-        // 2. Process Rest of League
-        const teamW = p2League.find(t => t.name === equipo3Name);
-        const teamX = p2League.find(t => t.name === equipo4Name);
+        // 2. Process Rest of League dynamically based on available teams
+        let remainingTeams = [];
+        if (window.gamePhase === 2) {
+            remainingTeams = ["Equipo W", "Equipo X"];
+        } else {
+            remainingTeams = window.p2LeagueTeamNames.slice(2);
+        }
         
-        if (teamW && teamX) {
-            const wGoals = Math.floor(Math.random() * 4);
-            const xGoals = Math.floor(Math.random() * 4);
-            
-            teamW.gf += wGoals; teamW.gc += xGoals;
-            teamX.gf += xGoals; teamX.gc += wGoals;
-            
-            if (wGoals > xGoals) { teamW.w++; teamW.pts += 3; teamX.l++; }
-            else if (wGoals === xGoals) { teamW.d++; teamW.pts += 1; teamX.d++; teamX.pts += 1; }
-            else { teamX.w++; teamX.pts += 3; teamW.l++; }
-            
-            distributeGoals(equipo3Name, wGoals);
-            distributeGoals(equipo4Name, xGoals);
+        // Pair remaining teams up to play matches against each other
+        for (let i = 0; i < remainingTeams.length; i += 2) {
+            if (i + 1 < remainingTeams.length) {
+                let team1Name = remainingTeams[i];
+                let team2Name = remainingTeams[i+1];
+                let team1 = p2League.find(t => t.name === team1Name);
+                let team2 = p2League.find(t => t.name === team2Name);
+                
+                if (team1 && team2) {
+                    const t1Goals = Math.floor(Math.random() * 4);
+                    const t2Goals = Math.floor(Math.random() * 4);
+                    
+                    team1.gf += t1Goals; team1.gc += t2Goals;
+                    team2.gf += t2Goals; team2.gc += t1Goals;
+                    
+                    if (t1Goals > t2Goals) { team1.w++; team1.pts += 3; team2.l++; }
+                    else if (t1Goals === t2Goals) { team1.d++; team1.pts += 1; team2.d++; team2.pts += 1; }
+                    else { team2.w++; team2.pts += 3; team1.l++; }
+                    
+                    distributeGoals(team1Name, t1Goals);
+                    distributeGoals(team2Name, t2Goals);
+                }
+            }
         }
         
         // 3. Update League and Top Scorers
@@ -3605,11 +3865,43 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
                 setTimeout(() => {
                     overlay.remove();
                     consumeStamina(20);
-                    // Reward formula: base 10 XP + 3 XP per correct answer, with a small random variation
-                    let xpEarned = (score > 0) ? Math.floor(10 + (score * 3) + (Math.random() * 5)) : 5; 
-                    const summary = score > 0 ? `¡Has resuelto ${score} operaciones! Tu inteligencia y visión de Pase mejoran.` : `No has resuelto ninguna operación. ¡Debes ser más rápido!`;
-                    showTrainingResultModal(null, 'passing', 'Pase', xpEarned, summary, '#00e5ff');
-                }, 300);
+                      
+                      if (p2Stats.position === 'POR' || p2Stats.position === 'Portero') {
+                          // Lógica de Scouting
+                          p2Stats.scoutedRivals = p2Stats.scoutedRivals || {};
+                          let unlockedInfo = null;
+                          let scoutingMsg = "No lograste concentrarte lo suficiente para estudiar al rival.";
+                          
+                          if (score >= 5) {
+                              // Desbloquear un Super Tiro aleatorio que no tenga
+                              const db = window.superShotsDB || {};
+                              const allPlayers = Object.keys(db);
+                              let lockedShots = [];
+                              allPlayers.forEach(pName => {
+                                  db[pName].forEach(shot => {
+                                      if (!p2Stats.scoutedRivals[shot.id]) lockedShots.push({p: pName, s: shot});
+                                  });
+                              });
+                              
+                              if (lockedShots.length > 0) {
+                                  const randomUnlock = lockedShots[Math.floor(Math.random() * lockedShots.length)];
+                                  p2Stats.scoutedRivals[randomUnlock.s.id] = true;
+                                  unlockedInfo = randomUnlock;
+                                  scoutingMsg = `¡Has estudiado con éxito a ${randomUnlock.p}! Ahora conoces su '${randomUnlock.s.name}'. Consúltalo en la pestaña Rivales.`;
+                              } else {
+                                  scoutingMsg = "¡Ya conoces todos los Super Tiros de la liga! No hay más que estudiar.";
+                              }
+                          }
+                          
+                          const summary = score > 0 ? scoutingMsg : `No has resuelto ninguna operación. ¡Debes ser más rápido!`;
+                          showTrainingResultModal(null, 'intel', 'Scouting', 0, summary, '#00e5ff');
+                      } else {
+                          // Lógica normal de Pase
+                          let xpEarned = (score > 0) ? Math.floor(10 + (score * 3) + (Math.random() * 5)) : 5; 
+                          const summary = score > 0 ? `¡Has resuelto ${score} operaciones! Tu inteligencia y visión de Pase mejoran.` : `No has resuelto ninguna operación. ¡Debes ser más rápido!`;
+                          showTrainingResultModal(null, 'passing', 'Pase', xpEarned, summary, '#00e5ff');
+                      }
+                  }, 300);
             }, 1500);
         }
     };
@@ -4232,64 +4524,91 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
 
     window.startGKMinigame = function(ourStrength, enemyStrength, winProbability) {
         p2RoomBody.innerHTML = '';
-        
-        // Remove Detroit UI if somehow still there
         const detroitUI = document.getElementById('tactics-detroit-overlay');
         if (detroitUI) detroitUI.remove();
         
         const engine = document.createElement('div');
         engine.id = 'gk-match-engine';
-        // Placeholder background if EstadioPortero.jpeg doesn't exist yet, it will fallback to a color
         engine.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background-color:#2a5a2a; background-image:url("assets/Match/EstadioPortero.jpeg"); background-size:cover; background-position:center; z-index:100; font-family:"Nunito",sans-serif; overflow:hidden; user-select:none; cursor:crosshair;';
         
         const hud = document.createElement('div');
         hud.style.cssText = 'position:absolute; top:20px; left:10%; right:10%; display:flex; justify-content:space-between; color:#fff; text-shadow:0 0 5px #000; font-size:1.5rem; font-weight:bold; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; border:2px solid #00e5ff; z-index:110;';
         
-        const shotDisplay = document.createElement('div');
-        shotDisplay.innerText = "Tiro 1 / 5";
-        
         const scoreDisplay = document.createElement('div');
         scoreDisplay.innerText = "Marcador: Nosotros 0 - 0 Rival";
-        
-        hud.appendChild(shotDisplay);
         hud.appendChild(scoreDisplay);
         engine.appendChild(hud);
         
-        // Instrucciones
+        // TUTORIAL DEL PORTERO
         const helpOverlay = document.createElement('div');
-        helpOverlay.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.7); padding:10px 20px; border-radius:10px; text-align:center; pointer-events:none; z-index:10010; text-shadow:0 0 5px #000; border:1px solid #00e5ff; font-size: 1.1rem;';
-        helpOverlay.innerHTML = '<b>MOVER</b>: Mover el Ratón<br><b>NADA (Blanco)</b>: Agarre | <b>CLIC DER (Rojo)</b>: Puños | <b>CLIC IZQ (Morado/Amarillo)</b>: Estirada';
+        helpOverlay.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; z-index:10010; font-family:"Nunito",sans-serif; text-shadow:0 0 5px #000; text-align:center; padding:20px;';
+        helpOverlay.innerHTML = "<h1 style='color:#00e5ff; font-family:\"Bangers\"; font-size:4rem; margin-bottom:10px; letter-spacing:2px; text-shadow:0 0 20px #00e5ff;'>TUTORIAL DEL PORTERO</h1>" +
+            "<div style='font-size:1.4rem; max-width:800px; line-height:1.6; margin-bottom:40px; background:rgba(0,0,0,0.5); border:2px solid #00e5ff; padding:20px; border-radius:15px; text-align:left;'>" +
+                "<p><b>MOVER EL RATÓN</b>: Coloca los guantes encima del balón para intentar pararlo.</p>" +
+                "<div style='display:flex; align-items:center; margin-bottom:10px;'><div style='width:20px;height:20px;background:#fff;border-radius:50%;margin-right:15px;box-shadow:0 0 10px #fff;'></div><b>BALÓN BLANCO:</b> Agarre. ¡No pulses nada!</div>" +
+                "<div style='display:flex; align-items:center; margin-bottom:10px;'><div style='width:20px;height:20px;background:#ff0000;border-radius:50%;margin-right:15px;box-shadow:0 0 10px #ff0000;'></div><b>BALÓN ROJO/VERDE:</b> Puños. Mantén pulsado <b>CLICK DERECHO</b>.</div>" +
+                "<div style='display:flex; align-items:center; margin-bottom:10px;'><div style='width:20px;height:20px;background:#b400ff;border-radius:50%;margin-right:15px;box-shadow:0 0 10px #b400ff;'></div><b>BALÓN MORADO/AMARILLO:</b> Estirada. Mantén pulsado <b>CLICK IZQUIERDO</b>.</div>" +
+                "<hr style='border-color:#555; margin:15px 0;'>" +
+                "<p style='color:#ffaa00; text-align:center;'><b>SUPER TIROS</b><br>Si conoces el super tiro del rival (Scouting), atento a sus mecánicas ocultas.</p>" +
+            "</div>" +
+            "<button id='btn-start-gk' style='padding:15px 40px; font-size:2rem; font-family:\"Bangers\"; background:linear-gradient(45deg, #00e5ff, #0077ff); color:#fff; border:none; border-radius:10px; cursor:pointer; box-shadow:0 0 20px rgba(0,229,255,0.6); transition:transform 0.2s;'>EMPEZAR PARTIDO</button>";
         engine.appendChild(helpOverlay);
         
-        // --- MANOS DEL PORTERO ---
+        // --- CALCULO STATS Y OCASIONES ---
         let currentPose = 'AGARRE';
+        let currentSuperShotClicks = 0;
+        let requiredSuperShotClicks = 0;
+        let isSuperShotActive = false;
+        
         let mouseX = 50, mouseY = 50;
+        let lowestMouseYDuringPuno = 0;
+        
+        let reflexes = p2Stats.reflexes || 60;
+        let diving = p2Stats.diving || 60;
+        
+        let baseShots = Math.floor(Math.random() * 3) + 6; 
+        let diff = Math.round((enemyStrength / 11) - (ourStrength / 11));
+        if (diff > 0) baseShots += diff * 2;
+        if (baseShots > 10) baseShots = 10; 
+        let totalShots = Math.floor(baseShots);
+        
+        let currentShot = 0; 
+        let saves = 0;
+        let goalsConceded = 0;
+        
+        let baseAllyShots = Math.floor(Math.random() * 3) + 6; 
+        if (diff < 0) baseAllyShots += Math.abs(diff) * 2; 
+        if (baseAllyShots > 10) baseAllyShots = 10;
+        let totalAllyShots = Math.floor(baseAllyShots);
+        
+        let currentAllyShots = 0;
+        let currentTeamGoals = 0;
+        
+        let baseSize = 180 + (diving - 60) * 1.5;
         
         const leftGlove = document.createElement('img');
         leftGlove.src = 'assets/Match/PosicionAgarre.png';
         leftGlove.onerror = () => { leftGlove.style.display="none"; };
-        leftGlove.style.cssText = 'position:absolute; top:50%; left:45%; transform:translate(-50%, -50%) scaleX(-1); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+        leftGlove.style.cssText = `position:absolute; top:50%; left:45%; transform:translate(-50%, -50%) scaleX(-1); width:${baseSize}px; height:${baseSize}px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;`;
         engine.appendChild(leftGlove);
         
         const rightGlove = document.createElement('img');
         rightGlove.src = 'assets/Match/PosicionAgarre.png';
         rightGlove.onerror = () => { rightGlove.style.display="none"; };
-        rightGlove.style.cssText = 'position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); width:180px; height:180px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;';
+        rightGlove.style.cssText = `position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); width:${baseSize}px; height:${baseSize}px; object-fit:contain; z-index:10005; filter:drop-shadow(0 10px 10px rgba(0,0,0,0.5)); pointer-events:none; transition: width 0.1s, height 0.1s;`;
         engine.appendChild(rightGlove);
         
         document.getElementById('phase2-lobby').appendChild(engine);
         
-        // --- CONTROLES ---
         function setPose(pose) {
             currentPose = pose;
             let src = 'assets/Match/PosicionAgarre.png';
-            let size = '180px';
-            if (pose === 'PUNO') { src = 'assets/Match/PosicionPuño.png'; size = '140px'; }
-            if (pose === 'ESTIRADA') { src = 'assets/Match/PosicionEstirada.png'; size = '280px'; }
+            let size = baseSize + 'px';
+            if (pose === 'PUNO') { src = 'assets/Match/PosicionPuño.png'; size = (baseSize - 40) + 'px'; }
+            if (pose === 'ESTIRADA') { src = 'assets/Match/PosicionEstirada.png'; size = (baseSize + 100) + 'px'; }
             
             leftGlove.src = src; leftGlove.style.width = size; leftGlove.style.height = size;
             rightGlove.src = src; rightGlove.style.width = size; rightGlove.style.height = size;
-            
             updateGlovePositions();
         }
         
@@ -4305,231 +4624,981 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
             const rect = engine.getBoundingClientRect();
             mouseX = ((e.clientX - rect.left) / rect.width) * 100;
             mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+            if (currentPose === 'PUNO' && mouseY > lowestMouseYDuringPuno) {
+                lowestMouseYDuringPuno = mouseY;
+            }
             updateGlovePositions();
         });
         
         engine.addEventListener('mousedown', (e) => {
-            if (e.button === 0) setPose('ESTIRADA'); // Izquierdo
-            else if (e.button === 2) setPose('PUNO'); // Derecho
+            if (e.button === 0) setPose('ESTIRADA');
+            else if (e.button === 2) {
+                setPose('PUNO');
+                lowestMouseYDuringPuno = mouseY;
+                if (isSuperShotActive) currentSuperShotClicks++;
+            }
         });
-        
         engine.addEventListener('mouseup', () => setPose('AGARRE'));
-        
-        // Evitar men contextual al hacer click derecho
         engine.addEventListener('contextmenu', (e) => e.preventDefault());
         
-        // --- MOTOR DE TIROS ---
-        let totalShots = 5;
-        let currentShot = 0;
-        let saves = 0;
-        let goalsConceded = 0;
-        
-        let finalTeamGoals = Math.floor(Math.random() * 4); // 0 to 3 goals from teammates
-        let currentTeamGoals = 0;
-        
         function updateHUD() {
-            shotDisplay.innerText = `Tiro ${Math.min(currentShot + 1, totalShots)} / ${totalShots}`;
-            scoreDisplay.innerText = `Marcador: Nosotros ${currentTeamGoals} - ${goalsConceded} Rival`;
+            let totalEvents = totalShots + totalAllyShots;
+            let currentEvents = currentShot + currentAllyShots;
+            let currentMinute = Math.floor((currentEvents / totalEvents) * 90);
+            if (currentMinute > 90) currentMinute = 90;
+            if (currentMinute === 0 && currentEvents > 0) currentMinute = 1;
+            scoreDisplay.innerText = `Min ${currentMinute}' | Nosotros ${currentTeamGoals} - ${goalsConceded} Rival`;
         }
         
         function endMatch() {
             engine.remove();
-            
-            // Si el partido acaba en empate de goles, decide las paradas. Si no, decide los goles.
-            let win = false;
-            let draw = false;
+            let win = false; let draw = false;
             if (currentTeamGoals > goalsConceded) win = true;
             else if (currentTeamGoals === goalsConceded) {
-                if (saves >= 3) win = true;
+                if (saves >= Math.floor(totalShots/2)) win = true;
                 else draw = true;
             }
-            
-            // Update league standings, goals, and distribute goals across the stratum
-            window.processMatchday(currentTeamGoals, goalsConceded);
-            
+            window.processMatchday(currentTeamGoals, goalsConceded, true);
             const matchXp = 250 + (win ? 200 : (draw ? 100 : 50)) + (saves * 75);
             const resultTxt = win ? '¡VICTORIA!' : (draw ? 'EMPATE' : 'DERROTA...');
-            
             showNotification(`${resultTxt} Resultado: ${currentTeamGoals}-${goalsConceded}`, win ? 'success' : (draw ? 'warning' : 'error'), 6000);
-            
-            setTimeout(() => {
-                openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${currentTeamGoals} goles y encajaste ${goalsConceded}. Paraste ${saves} tiros. XP Total: ${matchXp}`);
-            }, 1000);
-            
-            // Show room content again after engine closes
+            setTimeout(() => { openMatchXpDistributor(matchXp, `${resultTxt} El equipo metió ${currentTeamGoals} goles y encajaste ${goalsConceded}. Paraste ${saves} tiros de ${totalShots}. XP Total: ${matchXp}`); }, 1000);
             document.getElementById('p2-room-content').style.display = 'block';
         }
         
+        function getCardImageAndOvr(npc) {
+            let img = 'assets/Isagi.png';
+            let ovr = 60;
+            if (npc) {
+                const globalCards = (typeof cardsDB !== 'undefined') ? cardsDB : (window.allCards || []);
+                const npcCards = globalCards.filter(c => c.name.toLowerCase().includes(npc.name.toLowerCase()));
+                if (npcCards.length > 0) {
+                    const specialCards = npcCards.filter(c => c.rarity !== 'Básico' && c.rarity !== 'Plata' && c.rarity !== 'Oro');
+                    const oroCard = npcCards.find(c => c.rarity === 'Oro');
+                    ovr = oroCard ? oroCard.rating : (npcCards[0].rating || 60);
+                    
+                    if (specialCards.length > 0) {
+                        const randomSpecial = specialCards[Math.floor(Math.random() * specialCards.length)];
+                        img = randomSpecial.image || npc.image || 'assets/Isagi.png';
+                    } else if (oroCard) {
+                        img = oroCard.image || npc.image || 'assets/Isagi.png';
+                    } else {
+                        img = npcCards[0].image || npc.image || 'assets/Isagi.png';
+                    }
+                } else {
+                    img = npc.image || 'assets/Isagi.png';
+                }
+            }
+            return { img, ovr, npc };
+        }
+        
+        let topForwards = [];
+        const rivals = (typeof p2StratumPlayers !== 'undefined') ? p2StratumPlayers.slice(10, 21) : [];
+        if (rivals.length > 0) {
+            const allRivs = rivals.map(r => {
+                const globalCards = (typeof cardsDB !== 'undefined') ? cardsDB : (window.allCards || []);
+                const cards = globalCards.filter(c => c.name.toLowerCase().includes(r.name.toLowerCase()));
+                const oro = cards.find(c => c.rarity === 'Oro');
+                const ovr = oro ? oro.rating : (cards[0] ? cards[0].rating : 60);
+                return { npc: r, ovr: ovr };
+            });
+            allRivs.sort((a,b) => b.ovr - a.ovr);
+            topForwards = allRivs.slice(0, 3).map(r => r.npc);
+        }
+
         function nextShot() {
-            if (currentShot >= totalShots) {
+            if (currentShot >= totalShots && currentAllyShots >= totalAllyShots) {
                 setTimeout(endMatch, 1000);
                 return;
             }
             
-            // Chance for teammate to score before this shot
-            if (currentTeamGoals < finalTeamGoals && Math.random() > 0.5) {
-                currentTeamGoals++;
-                showNotification("¡GOL DE TUS COMPAÑEROS!", "success", 2000);
+            let remainingEnemy = totalShots - currentShot;
+            let remainingAlly = totalAllyShots - currentAllyShots;
+            
+            let chanceForAlly = remainingAlly / (remainingAlly + remainingEnemy);
+            
+            if (Math.random() < chanceForAlly && remainingAlly > 0) {
+                currentAllyShots++;
+                updateHUD();
+                
+                const allies = (typeof p2StratumPlayers !== 'undefined') ? p2StratumPlayers.slice(0, 10) : [];
+                const scorer = allies.length > 0 ? allies[Math.floor(Math.random() * allies.length)] : null;
+                const scorerInfo = getCardImageAndOvr(scorer);
+                
+                if (Math.random() < winProbability) {
+                    currentTeamGoals++;
+                    if (scorer) scorer.goals = (scorer.goals || 0) + 1;
+                    showNotification(`¡GOL DE ${scorer ? scorer.name.toUpperCase() : 'TUS COMPAÑEROS'}! <img src='${scorerInfo.img}' style='height:30px; vertical-align:middle; margin-left:10px; border-radius:50%;'>`, "success", 3000);
+                } else {
+                    const failMsgs = ["ha fallado un tiro claro", "se topó con el portero", "mandó el balón al palo", "la tiró a las nubes"];
+                    const msg = failMsgs[Math.floor(Math.random() * failMsgs.length)];
+                    showNotification(`¡${scorer ? scorer.name.toUpperCase() : 'Tu equipo'} ${msg}! <img src='${scorerInfo.img}' style='height:30px; vertical-align:middle; margin-left:10px; border-radius:50%; filter:grayscale(100%);'>`, "warning", 3000);
+                }
+                
+                setTimeout(nextShot, 3500);
+                return;
             }
             
             currentShot++;
             updateHUD();
             
-            let startX = 35 + Math.random() * 30; // 35% to 65%
-            let startY = 45 + Math.random() * 5;  // 45% to 50%
+            const aviso = document.createElement('div');
+            aviso.innerText = '¡OCASIÓN DE ATAQUE RIVAL!';
+            aviso.style.cssText = 'position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); color:#ff4444; font-size:3rem; font-weight:900; text-shadow:3px 3px 0 #000, -2px -2px 0 #000, 0 0 20px #ff0000; z-index:10050; animation: pulse 0.5s infinite alternate; pointer-events:none;';
+            engine.appendChild(aviso);
             
-            setTimeout(() => playScenario(startX, startY), 1000);
+            setTimeout(() => {
+                aviso.remove();
+                playScenario();
+            }, 1800);
         }
         
-        function playScenario(startX, startY) {
-            // -- LOGICA DEL TIRADOR (RIVAL) Y SU PNG --
-            const rivals = window.p2StratumPlayers ? window.p2StratumPlayers.slice(10, 21) : [];
-            const shooter = rivals.length > 0 ? rivals[Math.floor(Math.random() * rivals.length)] : null;
-            let shooterImg = 'assets/NPC_Default.png';
-            if (shooter) {
-                // Fetch the global cardsDB if it exists, fallback to window.allCards or empty
-                const globalCards = (typeof cardsDB !== 'undefined') ? cardsDB : (window.allCards || []);
-                const shooterCards = globalCards.filter(c => c.name.toLowerCase().includes(shooter.name.toLowerCase()));
-                if (shooterCards.length > 0) {
-                    const randomCard = shooterCards[Math.floor(Math.random() * shooterCards.length)];
-                    shooterImg = randomCard.image || shooter.image || 'assets/NPC_Default.png';
-                } else {
-                    shooterImg = shooter.image || 'assets/NPC_Default.png';
-                }
+        function playScenario() {
+            const npc1 = topForwards.length > 0 ? topForwards[Math.floor(Math.random() * topForwards.length)] : null;
+            let npc2 = rivals.length > 0 ? rivals[Math.floor(Math.random() * rivals.length)] : null;
+            if (npc1 === npc2 && rivals.length > 1) npc2 = rivals.find(r => r !== npc1);
+            
+            const info1 = getCardImageAndOvr(npc1);
+            const info2 = getCardImageAndOvr(npc2);
+            
+            const isGreenPlay = Math.random() < 0.3;
+            
+            let depth1 = 0.2 + Math.random() * 0.4;
+            let depth2 = depth1 + 0.2 + Math.random() * 0.2;
+            
+            let x1, x2;
+            if (Math.random() > 0.5) {
+                x1 = 15 + Math.random() * 25;
+                x2 = 60 + Math.random() * 25;
+            } else {
+                x1 = 60 + Math.random() * 25;
+                x2 = 15 + Math.random() * 25;
             }
-
-            const shooterNode = document.createElement('img');
-            shooterNode.src = shooterImg;
-            shooterNode.style.cssText = `position:absolute; top:${startY - 15}%; left:${startX - 5}%; width:10%; object-fit:contain; z-index:10001; pointer-events:none; filter:drop-shadow(0px 5px 10px rgba(0,0,0,0.8)); opacity:0; transform:translateY(20px); transition:all 0.5s;`;
-            engine.appendChild(shooterNode);
-
-            // Animar entrada del rival
+            
+            let width1 = 12 + (depth1 * 18);
+            let bottom1 = 45 - (depth1 * 35);
+            
+            let width2 = 12 + (depth2 * 18);
+            let bottom2 = 45 - (depth2 * 35);
+            
+            const node1 = document.createElement('img');
+            node1.src = info1.img;
+            node1.onerror = () => { node1.style.display="none"; };
+            node1.style.cssText = `position:absolute; bottom:${bottom1}%; left:${x1}%; width:${width1}%; object-fit:contain; z-index:10001; pointer-events:none; filter:drop-shadow(0px 5px 10px rgba(0,0,0,0.8)); opacity:0; transform:translate(-50%, 20px); transition:all 0.5s;`;
+            
+            let node2 = null;
+            if (isGreenPlay) {
+                node2 = document.createElement('img');
+                node2.src = info2.img;
+                node2.onerror = () => { node2.style.display="none"; };
+                node2.style.cssText = `position:absolute; bottom:${bottom2}%; left:${x2}%; width:${width2}%; object-fit:contain; z-index:10003; pointer-events:none; filter:drop-shadow(0px 8px 15px rgba(0,0,0,0.9)); opacity:0; transform:translate(-50%, 20px); transition:all 0.5s;`;
+                engine.appendChild(node2);
+            }
+            engine.appendChild(node1);
+            
             setTimeout(() => {
-                shooterNode.style.opacity = '1';
-                shooterNode.style.transform = 'translateY(0)';
+                node1.style.opacity = '1'; node1.style.transform = 'translate(-50%, 0)';
+                if(node2) { node2.style.opacity = '1'; node2.style.transform = 'translate(-50%, 0)'; }
             }, 100);
+            
+            const ballContainer = document.createElement('div');
+            ballContainer.style.cssText = `position:absolute; bottom:${bottom1}%; left:${x1}%; width:20px; height:20px; z-index:10002; transform:translate(-50%,50%); pointer-events:none;`;
             
             const ball = document.createElement('img');
             ball.src = 'assets/Match/Balon.png';
             ball.onerror = () => { ball.style.display="none"; };
-            ball.style.cssText = `position:absolute; top:${startY}%; left:${startX}%; width:20px; height:20px; z-index:10002; transform:translate(-50%,-50%); pointer-events:none; border-radius:50%;`;
+            ball.style.cssText = `position:absolute; top:0; left:0; width:100%; height:100%; border-radius:50%; transition:box-shadow 0.2s;`;
             
-            let type = Math.floor(Math.random() * 4); // 0=Normal, 1=Power, 2=Curve, 3=ZigZag
+            // FX Container
+            const fxImage = document.createElement('img');
+            fxImage.style.cssText = `position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:250%; height:250%; object-fit:contain; opacity:0; z-index:-1;`;
             
-            let targetX = 10 + Math.random() * 80;
-            let targetY = 10 + Math.random() * 80;
+            ballContainer.appendChild(fxImage);
+            ballContainer.appendChild(ball);
             
-            let flightTime = 1100;
-            let requiredPose = 'AGARRE';
-            
-            if (type === 0) {
-                // Tiro Normal
-                ball.style.boxShadow = '0 0 20px 8px rgba(255,255,255,0.8)';
-                requiredPose = 'AGARRE';
-                flightTime = 1100;
-            } else if (type === 1) {
-                // Tiro Potente (Puños) - Ahora es click DERECHO
-                ball.style.boxShadow = '0 0 25px 12px rgba(255,0,0,0.9)';
-                requiredPose = 'PUNO';
-                flightTime = 550;
-            } else if (type === 2) {
-                // Tiro con Efecto (Estirada) - Ahora es click IZQUIERDO
-                ball.style.boxShadow = '0 0 25px 12px rgba(180,0,255,0.9)';
-                requiredPose = 'ESTIRADA';
-                flightTime = 1300;
-                targetX = Math.random() > 0.5 ? 10 + Math.random()*15 : 75 + Math.random()*15;
-            } else if (type === 3) {
-                // Tiro Zig-Zag (Estirada) - Ahora es click IZQUIERDO
-                ball.style.boxShadow = '0 0 25px 12px rgba(255,255,0,0.9)';
-                requiredPose = 'ESTIRADA';
-                flightTime = 1300;
+            let willPass = false;
+            if (isGreenPlay) {
+                ball.style.boxShadow = '0 0 25px 12px rgba(0,255,0,0.9)';
+                willPass = Math.random() < 0.5;
             }
             
-            // Aparece el balon despues de que el rival est visible
             setTimeout(() => {
-                engine.appendChild(ball);
-                setTimeout(() => {
-                    if (type === 2) { // Efecto
-                        const midX = (targetX > 50) ? 10 : 90;
-                        ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1)`;
-                        ball.style.top = '10%';
-                        ball.style.left = `${midX}%`;
-                        ball.style.width = '70px'; ball.style.height = '70px';
-                        
-                        setTimeout(() => {
-                            ball.style.transition = `all ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
-                            ball.style.top = `${targetY}%`;
-                            ball.style.left = `${targetX}%`;
-                            ball.style.width = '160px'; ball.style.height = '160px';
-                        }, flightTime*0.5);
-                    } else if (type === 3) { // Zig-Zag
-                        const fakeX = (targetX > 50) ? 20 : 80;
-                        const fakeY = (targetY > 50) ? 20 : 80;
-                        ball.style.transition = `all ${flightTime*0.4}ms linear`;
-                        ball.style.top = `${fakeY}%`;
-                        ball.style.left = `${fakeX}%`;
-                        ball.style.width = '80px'; ball.style.height = '80px';
-                        
-                        setTimeout(() => {
-                            ball.style.transition = `all ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1)`;
-                            ball.style.top = `${targetY}%`;
-                            ball.style.left = `${targetX}%`;
-                            ball.style.width = '160px'; ball.style.height = '160px';
-                        }, flightTime*0.4);
-                    } else { // Normal/Potente
-                        ball.style.transition = `all ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
-                        ball.style.top = `${targetY}%`;
-                        ball.style.left = `${targetX}%`;
-                        ball.style.width = '160px'; ball.style.height = '160px';
-                    }
-                }, 50);
-            }, 600); // Darle 600ms al PNG del jugador para aparecer
-            
-            // Resolución
-            setTimeout(() => {
-                const dist = Math.sqrt(Math.pow(mouseX - targetX, 2) + Math.pow(mouseY - targetY, 2));
+                engine.appendChild(ballContainer);
                 
-                let tolerance = 16; 
-                if (currentPose === 'ESTIRADA') tolerance = 28;
-                if (currentPose === 'PUNO') tolerance = 14;
-                
-                if (dist <= tolerance && currentPose === requiredPose) {
-                    saves++;
-                    ball.style.transition = 'all 0.2s';
-                    ball.style.top = '-20%'; 
-                    showNotification('¡PARADÓN!', 'success', 1000);
+                if (isGreenPlay) {
+                    setTimeout(() => {
+                        const targetBallTop2 = 100 - bottom2;
+                        const targetBallTop1 = 100 - bottom1;
+                        const distToPass = Math.sqrt(Math.pow(mouseX - x2, 2) + Math.pow(mouseY - targetBallTop2, 2));
+                        const isAnticipatingPass = distToPass < 30 && currentPose === 'PUNO';
+                        
+                        if (willPass) {
+                            ballContainer.style.transition = `bottom 250ms linear, left 250ms linear, width 250ms linear, height 250ms linear`;
+                            ballContainer.style.bottom = `${bottom2}%`;
+                            ballContainer.style.left = `${x2}%`;
+                            ballContainer.style.width = '55px'; ballContainer.style.height = '55px';
+                            
+                            setTimeout(() => {
+                                if (isAnticipatingPass) {
+                                    saves++;
+                                    ballContainer.style.transition = 'all 0.2s';
+                                    ballContainer.style.top = '-20%'; 
+                                    showNotification('¡CORTASTE EL PASE!', 'success', 1500);
+                                    updateHUD();
+                                    cleanup();
+                                } else {
+                                    executeShot(x2, 100-bottom2, info2, node1, node2, ballContainer, ball, fxImage, true, 300);
+                                }
+                            }, 300);
+                        } else {
+                            if (isAnticipatingPass) {
+                                executeShot(x1, 100-bottom1, info1, node1, node2, ballContainer, ball, fxImage, false, 400);
+                            } else {
+                                executeShot(x1, 100-bottom1, info1, node1, node2, ballContainer, ball, fxImage, false, 800);
+                            }
+                        }
+                    }, 600);
                 } else {
-                    goalsConceded++;
-                    ball.style.transition = 'all 0.2s';
-                    ball.style.width = '300px'; ball.style.height = '300px';
-                    showNotification('¡GOL...', 'error', 1000);
-                    
-                    // Efecto temblor pantalla
-                    let shakeOffset = 0;
-                    const shaker = setInterval(() => {
-                        shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
-                        engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
-                    }, 50);
-                    setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+                    executeShot(x1, 100-bottom1, info1, node1, node2, ballContainer, ball, fxImage, false, null);
+                }
+            }, 600);
+            
+            function cleanup() {
+                setTimeout(() => {
+                    ballContainer.style.opacity = '0';
+                    node1.style.opacity = '0';
+                    if(node2) node2.style.opacity = '0';
+                    setTimeout(() => { ballContainer.remove(); node1.remove(); if(node2) node2.remove(); }, 500);
+                }, 800);
+                setTimeout(nextShot, 2000);
+            }
+            
+            function executeShot(startX, startY, shooterInfo, node1, node2, ballContainer, ball, fxImage, isFastPassShot, forceFlightTime) {
+                isSuperShotActive = false;
+                currentSuperShotClicks = 0;
+                requiredSuperShotClicks = 0;
+                let isSuperShotResolvedEarly = false;
+                
+                let superShot = null;
+                if (shooterInfo && shooterInfo.npc && window.superShotsDB) {
+                    const npcNameKey = Object.keys(window.superShotsDB).find(k => k.toLowerCase() === shooterInfo.npc.name.toLowerCase());
+                    if (npcNameKey) {
+                        const shots = window.superShotsDB[npcNameKey];
+                        if (Math.random() < 0.8) {
+                            superShot = shots[Math.floor(Math.random() * shots.length)];
+                            // Chameleon Logic
+                            if (superShot && superShot.id === 'chameleon_shot') {
+                                const allKeys = Object.keys(window.superShotsDB);
+                                const allShots = [];
+                                for (let k of allKeys) {
+                                    for (let s of window.superShotsDB[k]) {
+                                        if (s.id !== 'chameleon_shot' && s.id !== 'tiro_engranaje') {
+                                            allShots.push(s);
+                                        }
+                                    }
+                                }
+                                if (allShots.length > 0) {
+                                    superShot = allShots[Math.floor(Math.random() * allShots.length)];
+                                    baseFlight *= 1.15; // 15% más lento
+                                }
+                            }
+                        }
+                    }
                 }
                 
-                updateHUD();
+                let type = Math.floor(Math.random() * 4);
+                let requiredPose = 'AGARRE';
+                if (isGreenPlay) {
+                    type = 1;
+                    if (shooterInfo && shooterInfo.npc && shooterInfo.npc.name.toLowerCase() === 'hugo' && Math.random() < 0.8) {
+                        isGreenPlay = false; // Cancel green play
+                        isSuperShotActive = true;
+                        superShot = { id: 'tiro_engranaje', asset: 'assets/Match/Supertiros/GoldenHawkShot.png', name: 'Tiro Engranaje' };
+                        showNotification('¡HUGO PREPARA EL TIRO ENGRANAJE POR SORPRESA!', 'warning', 2000);
+                    }
+                }
                 
-                // Desaparecer baln y tirador
+                let targetX = 20 + Math.random() * 60;
+                let targetY = 20 + Math.random() * 45;
+                
+                const reflexDiff = reflexes - shooterInfo.ovr;
+                let baseFlight = 1000;
+                
+                if (superShot) {
+                    isSuperShotActive = true;
+                    requiredSuperShotClicks = superShot.clicksReq || 0;
+                    fxImage.src = superShot.asset;
+                    fxImage.style.opacity = '1';
+                    ball.style.boxShadow = 'none'; // El asset hace de efecto
+                    
+                    if (requiredSuperShotClicks > 0) {
+                        requiredPose = 'PUNO';
+                        type = -1;
+                        baseFlight = 800;
+                    } else if (superShot.id === 'raiju_shoot' || superShot.id === 'arrow_skywing_shoot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -2;
+                        baseFlight = 1100;
+                        if (superShot.id === 'arrow_skywing_shoot') {
+                            fxImage.style.opacity = '0';
+                            ball.src = superShot.asset;
+                            ball.style.boxShadow = 'none';
+                        }
+                    } else if (superShot.id === 'tiger_shoot') {
+                        requiredPose = 'AGARRE'; // El usuario pidió agarre
+                        type = -3;
+                        baseFlight = 450; // Muy potente y rápido
+                    } else if (superShot.id === 'rizo_dragon') {
+                        requiredPose = 'ESTIRADA'; // Pidió estirada
+                        type = -4;
+                        baseFlight = 1200; // Un poco más lento para dar tiempo a ver el círculo
+                    } else if (superShot.id === 'tornado_shoot' || superShot.id === 'levin_shoot') {
+                        requiredPose = 'PUNO';
+                        type = -5;
+                        baseFlight = 800;
+                        if (superShot.id === 'levin_shoot' || superShot.id === 'tornado_shoot') {
+                            fxImage.style.opacity = '0';
+                            ball.src = superShot.asset;
+                            ball.style.boxShadow = 'none';
+                        }
+                    } else if (superShot.id === 'drive_shoot' || superShot.id === 'golden_hawk_shoot') {
+                        requiredPose = 'AGARRE';
+                        type = -6;
+                        baseFlight = 1500; // Lento porque sube y baja
+                        if (superShot.id === 'golden_hawk_shoot') {
+                            fxImage.style.opacity = '0';
+                            ball.src = superShot.asset;
+                            ball.style.boxShadow = 'none';
+                        }
+                    } else if (superShot.id === 'splendid_overhead_kick' || superShot.id === 'miracle_overhead_kick') {
+                        requiredPose = 'PUNO';
+                        type = -12;
+                        baseFlight = 1000; 
+                        fxImage.style.opacity = '0';
+                        ball.src = superShot.asset;
+                        ball.style.boxShadow = 'none';
+                    } else if (superShot.id === 'doble_gun_voley') {
+                        requiredPose = 'ESTIRADA'; type = -16; baseFlight = 350;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'calavera_shot') {
+                        requiredPose = 'ESTIRADA'; type = -17; baseFlight = 300;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '0.9';
+                    } else if (superShot.id === 'knuckle_ball' || superShot.id === 'la_boba') {
+                        requiredPose = 'PUNO'; type = -18; baseFlight = 700;
+                        fxImage.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:250%; height:250%; object-fit:contain; opacity:0.6; z-index:-1; background:radial-gradient(circle, orange, transparent); border-radius:50%;';
+                    } else if (superShot.id === 'ambidextrismo_perfecto') {
+                        const rnd = Math.random();
+                        if (rnd < 0.33) { requiredPose = 'AGARRE'; ball.style.boxShadow = '0 0 25px 12px rgba(180,0,255,0.9)'; }
+                        else if (rnd < 0.66) { requiredPose = 'PUNO'; ball.style.boxShadow = '0 0 25px 12px rgba(255,0,0,0.9)'; }
+                        else { requiredPose = 'ESTIRADA'; ball.style.boxShadow = '0 0 25px 12px rgba(255,255,0,0.9)'; }
+                        type = -20; baseFlight = 250;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'kaiser_impact') {
+                        requiredPose = 'ESTIRADA'; type = -21; baseFlight = 250;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'kaiser_impact_magnus') {
+                        requiredPose = 'ESTIRADA'; type = -22; baseFlight = 300;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'tiro_engranaje') {
+                        requiredPose = 'ESTIRADA'; type = -19; baseFlight = 450;
+                        fxImage.src = superShot.asset; fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'shidou_drag') {
+                        requiredPose = 'ESTIRADA';
+                        type = -15;
+                        baseFlight = 450;
+                        fxImage.style.opacity = '0';
+                        ball.src = superShot.asset;
+                        ball.style.boxShadow = 'none';
+                    } else if (superShot.id === 'water_shot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -14;
+                        baseFlight = 500;
+                        fxImage.src = superShot.asset;
+                        fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'pink_shoot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -13;
+                        baseFlight = 450;
+                        fxImage.src = superShot.asset;
+                        fxImage.style.opacity = '1';
+                    } else if (superShot.id === 'hayabusa_shoot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -7;
+                        baseFlight = 450; // Super rápido
+                    } else if (superShot.id === 'navaja_shoot' || superShot.id === 'boomerang_shot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -8;
+                        baseFlight = 600; // Curva extrema y rápida
+                    } else if (superShot.id === 'eagle_shoot') {
+                        requiredPose = 'PUNO';
+                        type = -9;
+                        baseFlight = 450;
+                        fxImage.style.opacity = '0';
+                        ball.src = superShot.asset;
+                        ball.style.boxShadow = 'none';
+                    } else if (superShot.id === 'eiffel_shoot') {
+                        requiredPose = 'ESTIRADA';
+                        type = -10;
+                        baseFlight = 300;
+                        fxImage.style.opacity = '0';
+                        ball.src = superShot.asset;
+                        ball.style.boxShadow = 'none';
+                    } else if (superShot.id === 'cannon_shoot') {
+                        requiredPose = 'PUNO';
+                        type = -11;
+                        baseFlight = 450;
+                        fxImage.style.opacity = '0';
+                        // Efecto estático en el origen
+                        const cannonFx = document.createElement('img');
+                        cannonFx.src = superShot.asset;
+                        cannonFx.style.cssText = `position:absolute; bottom:${100 - startY}%; left:${startX}%; width:200px; height:200px; z-index:9000; transform:translate(-50%,20%); opacity:1; transition:opacity 0.3s; pointer-events:none;`;
+                        engine.appendChild(cannonFx);
+                        setTimeout(() => cannonFx.style.opacity = '0', 300);
+                        setTimeout(() => cannonFx.remove(), 700);
+                    }
+                    
+                    showNotification(`¡${shooterInfo.npc.name.toUpperCase()} PREPARA EL ${superShot.name.toUpperCase()}!`, "warning", 2000);
+                }
+                
+                if (type === 0) {
+                    if(!isGreenPlay && !superShot) ball.style.boxShadow = '0 0 20px 8px rgba(255,255,255,0.8)';
+                    requiredPose = 'AGARRE';
+                    baseFlight = 1000;
+                } else if (type === 1) {
+                    if(!isGreenPlay && !superShot) ball.style.boxShadow = '0 0 25px 12px rgba(255,0,0,0.9)';
+                    requiredPose = 'PUNO';
+                    baseFlight = 750;
+                } else if (type === 2) {
+                    if(!isGreenPlay && !superShot) ball.style.boxShadow = '0 0 25px 12px rgba(180,0,255,0.9)';
+                    requiredPose = 'ESTIRADA';
+                    baseFlight = 1100;
+                    targetX = Math.random() > 0.5 ? 10 + Math.random()*15 : 75 + Math.random()*15;
+                } else if (type === 3) {
+                    if(!isGreenPlay && !superShot) ball.style.boxShadow = '0 0 25px 12px rgba(255,255,0,0.9)';
+                    requiredPose = 'ESTIRADA';
+                    baseFlight = 850;
+                }
+                
+                if (isGreenPlay && !superShot) requiredPose = 'PUNO';
+                
+                let flightTime = forceFlightTime ? forceFlightTime : (baseFlight + (reflexDiff * 8));
+                if (flightTime < 450) flightTime = 450;
+                
+                ballContainer.style.bottom = '';
+                ballContainer.style.transform = 'translate(-50%, -50%)';
+                
                 setTimeout(() => {
-                    ball.style.opacity = '0';
-                    shooterNode.style.opacity = '0';
-                    setTimeout(() => { ball.remove(); shooterNode.remove(); }, 500);
-                }, 800);
-
-                setTimeout(nextShot, 2000);
-            }, 600 + flightTime + 50);
+                    if (type === 2 && !isGreenPlay && !forceFlightTime) { 
+                        const midX = (targetX > 50) ? 10 : 90;
+                        ballContainer.style.transition = `top ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1), bottom ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1), left ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1), width ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1), height ${flightTime*0.5}ms cubic-bezier(0.1, 0.7, 0.4, 1)`;
+                        ballContainer.style.top = '10%'; ballContainer.style.left = `${midX}%`;
+                        ballContainer.style.width = '70px'; ballContainer.style.height = '70px';
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2), bottom ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2), left ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2), width ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2), height ${flightTime*0.5}ms cubic-bezier(0.5, 0, 0.9, 0.2)`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '160px'; ballContainer.style.height = '160px';
+                        }, flightTime*0.5);
+                    } else if (type === 3 && !isGreenPlay && !forceFlightTime) { 
+                        const fakeX = (targetX > 50) ? 20 : 80;
+                        const fakeY = (targetY > 50) ? 20 : 80;
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms linear, bottom ${flightTime*0.4}ms linear, left ${flightTime*0.4}ms linear, width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${fakeY}%`; ballContainer.style.left = `${fakeX}%`;
+                        ballContainer.style.width = '80px'; ballContainer.style.height = '80px';
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1), bottom ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1), left ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1), width ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1), height ${flightTime*0.6}ms cubic-bezier(0, 0, 0.2, 1)`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '160px'; ballContainer.style.height = '160px';
+                        }, flightTime*0.4);
+                    } else if (type === -2 && !isGreenPlay && !forceFlightTime) { 
+                        const fakeY = 85; 
+                        ballContainer.style.transition = `top ${flightTime*0.75}ms linear, bottom ${flightTime*0.75}ms linear, left ${flightTime*0.75}ms linear, width ${flightTime*0.75}ms linear, height ${flightTime*0.75}ms linear`;
+                        ballContainer.style.top = `${fakeY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '120px'; ballContainer.style.height = '120px';
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.25}ms cubic-bezier(0, 0, 0.2, 1), bottom ${flightTime*0.25}ms cubic-bezier(0, 0, 0.2, 1), left ${flightTime*0.25}ms cubic-bezier(0, 0, 0.2, 1), width ${flightTime*0.25}ms cubic-bezier(0, 0, 0.2, 1), height ${flightTime*0.25}ms cubic-bezier(0, 0, 0.2, 1)`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        }, flightTime*0.75);
+                    } else if (type === -3 && !isGreenPlay && !forceFlightTime) {
+                        // Tiger Shoot: Muy rápido a ras de suelo (targetY cerca de 90)
+                        const rasY = 85 + Math.random() * 5; // A ras de suelo
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), bottom ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), left ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), width ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), height ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
+                        ballContainer.style.top = `${rasY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        
+                        // Modificamos targetY real para la evaluación de colisión
+                        targetY = rasY;
+                    } else if (type === -4 && !isGreenPlay && !forceFlightTime) {
+                        // Rizo Dragon: Hace un circulo enorme y acaba aleatorio en el borde del circulo
+                        const circleCenterX = 50;
+                        const circleCenterY = 40;
+                        const radius = 30; // Radio del circulo en %
+                        const randomAngle = Math.random() * Math.PI * 2; // Donde termina exactamente
+                        const endX = circleCenterX + Math.cos(randomAngle) * radius;
+                        const endY = circleCenterY + Math.sin(randomAngle) * radius;
+                        
+                        ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.5, -0.5, 0.5, 1.5), left ${flightTime*0.6}ms cubic-bezier(0.5, -0.5, 0.5, 1.5), width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                        ballContainer.style.top = `${circleCenterY}%`; ballContainer.style.left = `${circleCenterX}%`;
+                        ballContainer.style.width = '100px'; ballContainer.style.height = '100px';
+                        
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.2, 0.8, 0.2, 1), left ${flightTime*0.4}ms cubic-bezier(0.2, 0.8, 0.2, 1), width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                            ballContainer.style.top = `${endY}%`; ballContainer.style.left = `${endX}%`;
+                            ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        }, flightTime*0.6);
+                        
+                        targetX = endX;
+                        targetY = endY;
+                    } else if (type === -5 && !isGreenPlay && !forceFlightTime) {
+                        // Tornado Shoot / Levin Shoot: Directo al centro, requiere uppercut (PUNO desde abajo)
+                        targetX = 50;
+                        targetY = 50;
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.4, 0, 1, 1), bottom ${flightTime}ms cubic-bezier(0.4, 0, 1, 1), left ${flightTime}ms cubic-bezier(0.4, 0, 1, 1), width ${flightTime}ms cubic-bezier(0.4, 0, 1, 1), height ${flightTime}ms cubic-bezier(0.4, 0, 1, 1)`;
+                        ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                    } else if (type === -6 && !isGreenPlay && !forceFlightTime) {
+                        const peakY = 5;
+                        const dropY = 85;
+                        targetY = dropY; // Evaluamos abajo si no lo para arriba
+                        
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.2, 0.5, 0.5, 1), left ${flightTime*0.4}ms cubic-bezier(0.2, 0.5, 0.5, 1), width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${peakY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '100px'; ballContainer.style.height = '100px';
+                        
+                        setTimeout(() => {
+                            const distPeak = Math.sqrt(Math.pow(mouseX - targetX, 2) + Math.pow(mouseY - peakY, 2));
+                            let tolerancePeak = (baseSize / 180) * 18;
+                            if (distPeak <= tolerancePeak && currentPose === 'AGARRE') {
+                                isSuperShotResolvedEarly = true;
+                                saves++;
+                                ballContainer.style.transition = 'all 0.2s';
+                                ballContainer.style.top = '-20%'; 
+                                showNotification("¡PARADÓN EN LA CIMA!", "success");
+                                updateHUD();
+                                cleanup();
+                            } else {
+                                // Cae en picado
+                                ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.5, 0, 0.8, 0.2), left ${flightTime*0.6}ms cubic-bezier(0.5, 0, 0.8, 0.2), width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                                ballContainer.style.top = `${dropY}%`;
+                                ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                            }
+                        }, flightTime*0.4);
+                        
+                    } else if ((type === -7 || type === -10 || type === -11) && !isGreenPlay && !forceFlightTime) {
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), bottom ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), left ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), width ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), height ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+                        ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '160px'; ballContainer.style.height = '160px';
+                    } else if (type === -8 && !isGreenPlay && !forceFlightTime) {
+                        if (superShot.id === 'boomerang_shot') {
+                            targetX = targetX > 50 ? (92 + Math.random()*5) : (3 + Math.random()*5);
+                        }
+                        const fakeX = targetX > 50 ? -15 : 115; 
+                        const fakeY = 20; 
+                        
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.1, 0.8, 0.2, 1), left ${flightTime*0.4}ms cubic-bezier(0.1, 0.8, 0.2, 1), width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${fakeY}%`; ballContainer.style.left = `${fakeX}%`;
+                        ballContainer.style.width = '100px'; ballContainer.style.height = '100px';
+                        
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.8, 0.1, 0.9, 0.2), left ${flightTime*0.6}ms cubic-bezier(0.8, 0.1, 0.9, 0.2), width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        }, flightTime*0.4);
+                    } else if (type === -9 && !isGreenPlay && !forceFlightTime) {
+                        const rasY = 85 + Math.random() * 5; 
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), bottom ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), left ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), width ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1), height ${flightTime}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
+                        ballContainer.style.top = `${rasY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        targetY = rasY;
+                    } else if (type === -16 && !isGreenPlay && !forceFlightTime) {
+// Doble Gun Voley (Isagi)
+// Sale de la derecha hacia el medio, luego dispara recto (blanco)
+const fakeX = 100;
+const fakeY = 30;
+ballContainer.style.transition = `top ${flightTime*0.3}ms linear, left ${flightTime*0.3}ms linear`;
+ballContainer.style.top = `${fakeY}%`; ballContainer.style.left = `${fakeX}%`;
+setTimeout(() => {
+    
+    ballContainer.style.transition = `top ${flightTime*0.7}ms cubic-bezier(0, 0, 0, 1), left ${flightTime*0.7}ms cubic-bezier(0, 0, 0, 1)`;
+    ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+}, flightTime*0.3);
+} else if (type === -17 && !isGreenPlay && !forceFlightTime) {
+// Calavera Shot (Nagi)
+const volleys = 2 + Math.floor(Math.random() * 4); // 2 to 5
+const timePerVolley = 300;
+let currentVolley = 0;
+ballContainer.style.top = '70%'; ballContainer.style.left = '50%';
+const volleyInterval = setInterval(() => {
+    if (currentVolley >= volleys) {
+        clearInterval(volleyInterval);
+        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0, 0.5, 0.5, 1), left ${flightTime}ms cubic-bezier(0, 0.5, 0.5, 1), width ${flightTime}ms linear, height ${flightTime}ms linear`;
+        ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+        ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+    } else {
+        const up = currentVolley % 2 === 0;
+        ballContainer.style.transition = `top ${timePerVolley}ms ease-out`;
+        ballContainer.style.top = up ? '30%' : '70%';
+        currentVolley++;
+    }
+}, timePerVolley);
+targetY = targetY; // keeps target
+} else if (type === -18 && !isGreenPlay && !forceFlightTime) {
+// Knuckle Ball
+const styleEl = document.createElement('style');
+styleEl.innerHTML = `@keyframes knuckle { 0% { transform: translateX(0); } 25% { transform: translateX(30px); } 50% { transform: translateX(-30px); } 75% { transform: translateX(20px); } 100% { transform: translateX(0); } }`;
+document.head.appendChild(styleEl);
+ball.style.animation = `knuckle ${flightTime*0.7}ms ease-in-out`;
+ballContainer.style.transition = `top ${flightTime*0.8}ms linear, left ${flightTime*0.8}ms linear`;
+ballContainer.style.top = `50%`; ballContainer.style.left = `50%`;
+setTimeout(() => {
+    ball.style.animation = 'none';
+    const randomDropX = targetX + (Math.random() > 0.5 ? 20 : -20);
+    const randomDropY = targetY + (Math.random() > 0.5 ? 30 : -30);
+    ballContainer.style.transition = `top ${flightTime*0.2}ms cubic-bezier(0, 1, 0, 1), left ${flightTime*0.2}ms cubic-bezier(0, 1, 0, 1)`;
+    ballContainer.style.top = `${randomDropY}%`; ballContainer.style.left = `${randomDropX}%`;
+    targetX = randomDropX; targetY = randomDropY;
+}, flightTime*0.8);
+} else if (type === -20 && !isGreenPlay && !forceFlightTime) {
+// Ambidextrismo Perfecto (Noa)
+ballContainer.style.transition = `top ${flightTime}ms linear, left ${flightTime}ms linear`;
+ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+} else if (type === -21 && !isGreenPlay && !forceFlightTime) {
+// Kaiser Impact
+ballContainer.style.transition = `top ${flightTime}ms linear, left ${flightTime}ms linear`;
+ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+ballContainer.style.opacity = '0';
+setTimeout(() => {
+    ballContainer.style.opacity = '1';
+}, flightTime * 0.7);
+} else if (type === -22 && !isGreenPlay && !forceFlightTime) {
+// Kaiser Impact Magnus
+ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.1, 0.8, 0.2, 1), left ${flightTime}ms cubic-bezier(0.8, 0.1, 0.2, 1)`;
+ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+} else if (type === -19 && !isGreenPlay && !forceFlightTime) {
+// Tiro Engranaje (Hugo)
+// Similar a Golden Hawk
+ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.2, 0.5, 0.5, 1), left ${flightTime*0.4}ms linear, width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+ballContainer.style.top = '10%'; ballContainer.style.left = `${targetX}%`;
+ballContainer.style.width = '100px'; ballContainer.style.height = '100px';
+setTimeout(() => {
+    ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.5, 0, 1, 1), left ${flightTime*0.6}ms linear, width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+    ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+    ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+}, flightTime*0.4);
+} else if (type === -15 && !isGreenPlay && !forceFlightTime) {
+                        const fakeX = targetX > 50 ? -20 : 120; 
+                        const peakY = 0; 
+                        
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.2, 0.5, 0.5, 1), left ${flightTime*0.4}ms cubic-bezier(0.2, 0.5, 0.5, 1), width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${peakY}%`; ballContainer.style.left = `${fakeX}%`;
+                        ballContainer.style.width = '120px'; ballContainer.style.height = '120px';
+                        
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.8, 0, 1, 0.2), left ${flightTime*0.6}ms cubic-bezier(0.8, 0, 1, 0.2), width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        }, flightTime*0.4);
+                    } else if (type === -14 && !isGreenPlay && !forceFlightTime) {
+                        const fakeX = targetX > 50 ? -25 : 125; 
+                        const fakeY = 15; 
+                        
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.1, 0.8, 0.2, 1), left ${flightTime*0.4}ms cubic-bezier(0.1, 0.8, 0.2, 1), width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${fakeY}%`; ballContainer.style.left = `${fakeX}%`;
+                        ballContainer.style.width = '100px'; ballContainer.style.height = '100px';
+                        
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.8, 0.1, 0.9, 0.2), left ${flightTime*0.6}ms cubic-bezier(0.8, 0.1, 0.9, 0.2), width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '200px'; ballContainer.style.height = '200px';
+                        }, flightTime*0.4);
+                    } else if (type === -12 && !isGreenPlay && !forceFlightTime) {
+                        const fakeY = 10;
+                        ballContainer.style.transition = `top ${flightTime*0.4}ms cubic-bezier(0.1, 0.8, 0.2, 1), left ${flightTime*0.4}ms linear, width ${flightTime*0.4}ms linear, height ${flightTime*0.4}ms linear`;
+                        ballContainer.style.top = `${fakeY}%`;
+                        
+                        setTimeout(() => {
+                            ballContainer.style.transition = `top ${flightTime*0.6}ms cubic-bezier(0.8, 0.1, 0.9, 0.2), left ${flightTime*0.6}ms linear, width ${flightTime*0.6}ms linear, height ${flightTime*0.6}ms linear`;
+                            ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                            ballContainer.style.width = '180px'; ballContainer.style.height = '180px';
+                        }, flightTime*0.4);
+                    } else if (type === -13 && !isGreenPlay && !forceFlightTime) {
+                        targetX = 5 + Math.random() * 5;
+                        targetY = 5 + Math.random() * 5;
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), bottom ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), left ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), width ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), height ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+                        ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                        ballContainer.style.width = '200px'; ballContainer.style.height = '200px';
+                    } else { 
+                        ballContainer.style.transition = `top ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), bottom ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), left ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), width ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1), height ${flightTime}ms cubic-bezier(0.3, 0, 0.8, 1)`;
+                        ballContainer.style.top = `${targetY}%`; ballContainer.style.left = `${targetX}%`;
+                        if (type === -1) { ballContainer.style.width = '200px'; ballContainer.style.height = '200px'; } 
+                        else { ballContainer.style.width = '160px'; ballContainer.style.height = '160px'; }
+                    }
+                }, 50);
+                
+                setTimeout(() => {
+                    if (isSuperShotResolvedEarly) return;
+                    
+                    const dist = Math.sqrt(Math.pow(mouseX - targetX, 2) + Math.pow(mouseY - targetY, 2));
+                    let tolerance = (baseSize / 180) * 18; 
+                    if (currentPose === 'ESTIRADA') tolerance = (baseSize / 180) * 32; 
+                    if (currentPose === 'PUNO') tolerance = (baseSize / 180) * 16; 
+                    
+                    let saveSuccess = false;
+                    if (dist <= tolerance && currentPose === requiredPose) {
+                        if (isSuperShotActive && requiredSuperShotClicks > 0) {
+                            if (currentSuperShotClicks >= requiredSuperShotClicks) saveSuccess = true;
+                        } else if (isSuperShotActive && (superShot.id === 'tornado_shoot' || superShot.id === 'levin_shoot')) {
+                            // Require that the mouse was significantly below the ball when PUNO was held down
+                            if (lowestMouseYDuringPuno >= 65) saveSuccess = true;
+                        } else {
+                            saveSuccess = true;
+                        }
+                    }
+                    
+                    if (saveSuccess) {
+                        saves++;
+                        ballContainer.style.transition = 'all 0.2s';
+                        ballContainer.style.top = '120%';
+                        ballContainer.style.width = '20px'; ballContainer.style.height = '20px';
+                        showNotification("¡PARADÓN!", "success");
+                    } else {
+                        goalsConceded++;
+                        if (shooterInfo && shooterInfo.npc) shooterInfo.npc.goals = (shooterInfo.npc.goals || 0) + 1; 
+                        ballContainer.style.transition = 'all 0.2s';
+                        ballContainer.style.width = '300px'; ballContainer.style.height = '300px';
+                        showNotification(`¡GOL DE ${shooterInfo.npc ? shooterInfo.npc.name.toUpperCase() : 'RIVAL'}! <img src='${shooterInfo.img}' style='height:30px; vertical-align:middle; margin-left:10px; border-radius:50%;'>`, 'error', 3000);
+                        
+                        let shakeOffset = 0;
+                        const shaker = setInterval(() => {
+                            shakeOffset = shakeOffset === 0 ? 5 : (shakeOffset === 5 ? -5 : 0);
+                            engine.style.transform = `translate(${shakeOffset}px, ${shakeOffset}px)`;
+                        }, 50);
+                        setTimeout(() => { clearInterval(shaker); engine.style.transform = 'none'; }, 300);
+                    }
+                    updateHUD();
+                    cleanup();
+                }, flightTime + 50);
+            }
         }
         
-        setTimeout(nextShot, 1000);
+        // Empezar TRAS CLICK
+        document.getElementById('btn-start-gk').onclick = () => {
+            helpOverlay.remove();
+            
+            const miniHelp = document.createElement('div');
+            miniHelp.style.cssText = 'position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.7); padding:10px 20px; border-radius:10px; text-align:center; pointer-events:none; z-index:10010; text-shadow:0 0 5px #000; border:1px solid #00e5ff; font-size: 1.1rem;';
+            miniHelp.innerHTML = '<b>BLANCO</b>: Nada | <b>ROJO/VERDE</b>: Clic Der | <b>MORADO/AMARILLO</b>: Clic Izq';
+            engine.appendChild(miniHelp);
+            
+            setTimeout(nextShot, 1000);
+        };
     };
 
     // ==========================================
+    window.openMyStatsViewer = function() {
+        const modal = document.getElementById('p2-skill-modal');
+        const title = document.getElementById('skill-modal-title');
+        const body = document.getElementById('skill-modal-body');
+        
+        modal.classList.remove('hidden');
+        title.textContent = 'MIS ESTADÍSTICAS';
+        
+        const statsHtml = [
+            {id:'pace', label:'RIT', color:'#00e5ff'},
+            {id:'shooting', label:'TIR', color:'#ff4444'},
+            {id:'passing', label:'PAS', color:'#00ff00'},
+            {id:'dribbling', label:'REG', color:'#ffd700'},
+            {id:'defending', label:'DEF', color:'#ff8800'},
+            {id:'physical', label:'FIS', color:'#aa66ff'}
+        ].map(s => {
+            const lvl = Math.floor(p2Stats[s.id]);
+            const curXP = (p2Stats.statXP && p2Stats.statXP[s.id]) ? p2Stats.statXP[s.id] : 0;
+            const reqXP = getRequiredStatXP(lvl);
+            const pct = Math.min(100, Math.floor((curXP / reqXP) * 100));
+            return `
+            <div class="p2-stat-cell" style="display:flex; flex-direction:column; gap:5px; padding:10px; background:rgba(0,10,25,0.7); border:1px solid #1a4a75; border-radius:8px;" title="EXP: ${curXP} / ${reqXP}">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:1.1rem; color:#ccc;">${s.label}</span>
+                    <span style="color:${s.color}; font-size:1.4rem; font-family:'Bangers'; letter-spacing:1px;">${lvl}</span>
+                </div>
+                <div style="width:100%; height:8px; background:#050d1a; border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+                    <div style="width:${pct}%; height:100%; background:${s.color}; box-shadow:0 0 8px ${s.color}; transition:width 0.3s;"></div>
+                </div>
+            </div>`;
+        }).join('');
+
+        let skillsHtml = p2EquippedSkills.map(sk => `
+            <div style="width:130px; height:60px; border:2px solid #00e5ff; background:${sk ? 'linear-gradient(45deg, #004d40, #00bfa5)' : 'rgba(0,0,0,0.5)'}; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; text-align:center; padding:5px; font-family:'Nunito',sans-serif; color:#fff;">
+                ${sk ? sk : '—'}
+            </div>
+        `).join('');
+
+        body.innerHTML = `
+            <div style="display:flex; flex-direction:column; gap:20px; max-height:600px; overflow-y:auto; padding-right:10px;">
+                <div>
+                    <h3 style="color:#00e5ff; text-align:center; font-family:'Bangers'; letter-spacing:2px; font-size:1.6rem; margin-bottom:10px;">HABILIDADES EQUIPADAS</h3>
+                    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                        ${skillsHtml}
+                    </div>
+                </div>
+                <hr style="border-color:#333; margin:0;">
+                <div>
+                    <h3 style="color:#00e5ff; text-align:center; font-family:'Bangers'; letter-spacing:2px; font-size:1.6rem; margin-bottom:10px;">PROGRESIÓN</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; font-family:'Nunito',sans-serif; font-weight:700;">
+                        ${statsHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+    window.openFriendshipViewer = function(activeTab = 'amistades') {
+        const modal = document.getElementById('p2-skill-modal');
+        const title = document.getElementById('skill-modal-title');
+        const body = document.getElementById('skill-modal-body');
+        
+        modal.classList.remove('hidden');
+        title.innerHTML = `<div style="display:flex; justify-content:center; gap:20px;">
+            <div id="tab-amistades" style="cursor:pointer; color:${activeTab === 'amistades' ? '#ff007f' : '#555'}; text-shadow:${activeTab === 'amistades' ? '0 0 10px #ff007f' : 'none'};">AMISTADES</div>
+            <div style="color:#fff;">|</div>
+            <div id="tab-rivales" style="cursor:pointer; color:${activeTab === 'rivales' ? '#00e5ff' : '#555'}; text-shadow:${activeTab === 'rivales' ? '0 0 10px #00e5ff' : 'none'};">RIVALES (SCOUTING)</div>
+        </div>`;
+        
+        document.getElementById('tab-amistades').onclick = () => window.openFriendshipViewer('amistades');
+        document.getElementById('tab-rivales').onclick = () => window.openFriendshipViewer('rivales');
+        
+        body.innerHTML = '';
+        body.style.maxHeight = '600px';
+        body.style.overflow = 'hidden'; 
+        
+        if (activeTab === 'amistades') {
+            const knownNPCs = Object.keys(p2Relationships);
+            
+            if (knownNPCs.length === 0) {
+                body.innerHTML = '<div style="text-align:center; color:#aaa; padding:30px;">Aún no has conocido a nadie.<br>¡Visita las otras salas y habla con los jugadores!</div>';
+                return;
+            }
+            
+            const graphContainer = document.createElement('div');
+            graphContainer.style.cssText = 'position:relative; width:100%; height:500px; background:radial-gradient(circle, #051020 0%, #000 80%); border:2px solid #00e5ff; border-radius:10px; overflow:hidden;';
+            
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;';
+            graphContainer.appendChild(svg);
+            
+            const infoPanel = document.createElement('div');
+            infoPanel.style.cssText = 'position:absolute; bottom:15px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); border:1px solid #00e5ff; padding:10px 20px; border-radius:8px; color:#fff; font-family:"Nunito",sans-serif; text-align:center; opacity:0; transition:opacity 0.3s; z-index:10; pointer-events:none; width:85%;';
+            graphContainer.appendChild(infoPanel);
+            
+            const friends = knownNPCs.map(id => {
+                return {
+                    id: id,
+                    npc: p2StratumPlayers.find(p => p.id === id),
+                    data: p2Relationships[id]
+                };
+            }).filter(f => f.npc);
+            
+            if (friends.length === 0) {
+                body.innerHTML = '<div style="text-align:center; color:#aaa; padding:30px;">Tus conocidos ya no están en esta fase.</div>';
+                return;
+            }
+            
+            const myNode = document.createElement('div');
+            myNode.style.cssText = `position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90px; height:90px; border-radius:50%; border:4px solid #00ffcc; box-shadow:0 0 20px rgba(0,255,204,0.6); z-index:5; background:url('${myPlayer.image}') center/contain no-repeat #111;`;
+            graphContainer.appendChild(myNode);
+            
+            const radiusX = 200;
+            const radiusY = 150;
+            const centerX = 250; 
+            const centerY = 250;
+            
+            friends.forEach((f, idx) => {
+                const angle = (idx / friends.length) * 2 * Math.PI - (Math.PI / 2);
+                const nx = centerX + radiusX * Math.cos(angle);
+                const ny = centerY + radiusY * Math.sin(angle);
+                
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', '50%');
+                line.setAttribute('y1', '50%');
+                line.setAttribute('x2', `${(nx / 500) * 100}%`);
+                line.setAttribute('y2', `${(ny / 500) * 100}%`);
+                
+                const friendVal = f.data.points;
+                let lineColor = '#555';
+                let strokeW = 1;
+                if (friendVal > 25) { lineColor = '#ffaa00'; strokeW = 2; }
+                if (friendVal > 60) { lineColor = '#ff007f'; strokeW = 3; }
+                if (friendVal >= 100) { lineColor = '#00ffcc'; strokeW = 5; }
+                
+                line.setAttribute('stroke', lineColor);
+                line.setAttribute('stroke-width', strokeW);
+                if (friendVal < 25) line.setAttribute('stroke-dasharray', '5,5');
+                svg.appendChild(line);
+                
+                const fNode = document.createElement('div');
+                let imgScale = 1;
+                if(f.npc.image === 'assets/Isagi.png' && f.npc.name === 'Gin Gagamaru') imgScale = 1.3;
+                if(f.npc.image === 'assets/Isagi.png' && f.npc.name === 'Oliver Aiku') imgScale = 1.3;
+                
+                fNode.style.cssText = `position:absolute; top:${(ny/500)*100}%; left:${(nx/500)*100}%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; border:2px solid ${lineColor}; box-shadow:0 0 10px ${lineColor}; z-index:5; background:url('${f.npc.image}') center/cover no-repeat #111; cursor:pointer; transition:transform 0.2s;`;
+                
+                fNode.onmouseenter = () => {
+                    fNode.style.transform = 'translate(-50%,-50%) scale(1.2)';
+                    infoPanel.style.opacity = '1';
+                    infoPanel.innerHTML = `<div style="font-weight:900; font-size:1.5rem;">${f.npc.name}</div>
+                        <div style="color:#aaa; font-size:0.9rem;">${f.data.levelDesc}</div>
+                        <div style="font-weight:bold; color:${lineColor}; margin-top:5px; font-size:1.2rem;">Amistad: ${friendVal}%</div>`;
+                };
+                fNode.onmouseleave = () => {
+                    fNode.style.transform = 'translate(-50%,-50%) scale(1)';
+                    infoPanel.style.opacity = '0';
+                };
+                
+                graphContainer.appendChild(fNode);
+            });
+            body.appendChild(graphContainer);
+        } else {
+            // RIVALES / SCOUTING TAB
+            body.style.overflowY = 'auto'; // allow scrolling
+            const scouted = p2Stats.scoutedRivals || {};
+            const keys = Object.keys(scouted);
+            
+            if (keys.length === 0) {
+                body.innerHTML = '<div style="text-align:center; color:#aaa; padding:30px;">Aún no has investigado a ningún rival.<br>¡Juega al minijuego de Tele-Minigame (Matemáticas) para estudiar a tus oponentes!</div>';
+                return;
+            }
+            
+            const db = window.superShotsDB || {};
+            let html = '<div style="display:flex; flex-direction:column; gap:15px; padding:10px;">';
+            
+            Object.keys(db).forEach(pName => {
+                let hasAny = false;
+                let pHTML = `<div style="background:rgba(0,0,0,0.6); border:1px solid #00e5ff; border-radius:10px; padding:15px;">
+                    <h3 style="color:#00e5ff; font-family:'Bangers'; font-size:1.5rem; margin-top:0; margin-bottom:10px; border-bottom:1px solid #00e5ff; padding-bottom:5px;">${pName}</h3>
+                    <div style="display:flex; flex-direction:column; gap:10px;">`;
+                
+                db[pName].forEach(shot => {
+                    if (scouted[shot.id]) {
+                        hasAny = true;
+                        pHTML += `
+                            <div style="display:flex; gap:15px; align-items:center; background:rgba(0,229,255,0.1); padding:10px; border-radius:8px;">
+                                <img src="${shot.asset}" style="width:60px; height:60px; object-fit:contain; border-radius:8px; background:#111;" onerror="this.src='assets/Match/Balon.png'">
+                                <div>
+                                    <div style="font-weight:bold; color:#fff; font-size:1.2rem;">${shot.name.toUpperCase()}</div>
+                                    <div style="color:#ccc; font-size:0.9rem; margin-top:3px; font-family:'Nunito',sans-serif;">${shot.desc}</div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+                pHTML += `</div></div>`;
+                if (hasAny) html += pHTML;
+            });
+            
+            html += '</div>';
+            body.innerHTML = html;
+        }
+    };
     window.openMyStatsViewer = function() {
         const modal = document.getElementById('p2-skill-modal');
         const title = document.getElementById('skill-modal-title');
@@ -5174,3 +6243,5 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
                 showTrainingResultModal(null, 'shooting', 'Tiro de Precisión', expGained, '¡Sesión de tiro completada!', '#ff007f');
             }
         }, 1000);
+    };
+})();
