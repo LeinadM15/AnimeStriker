@@ -1,0 +1,17 @@
+{
+    "fileName": "scoutsie32",
+    "arrayName": "scoutsIE32Cards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "bobjobbe_oro", "name": "BOB JOBBE", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "ST", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/ke.png", "teamIcon": "teams/Bochum.png", "image": "assets/characters/ScoutsIE32/Bob Jobbe.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "leebei_oro", "name": "LEE BEI", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "GK", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/vn.png", "teamIcon": "teams/Nice.png", "image": "assets/characters/ScoutsIE32/Lee Bei .png", "background": "assets/Cartas/Oro.png" },
+        { "id": "quincywang_oro", "name": "QUINCY WANG", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "ST", "league": "La Liga", "nationFlag": "https://flagcdn.com/w40/vn.png", "teamIcon": "teams/Elche.png", "image": "assets/characters/ScoutsIE32/Quincy Wang.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "danfei_oro", "name": "DAN FEI", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/ca.png", "teamIcon": "teams/Strasbourg.png", "image": "assets/characters/ScoutsIE32/Dan Fei.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "liddygan_oro", "name": "LIDDY GAN", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "LB", "league": "Serie A", "nationFlag": "https://flagcdn.com/w40/pe.png", "teamIcon": "teams/Torino.png", "image": "assets/characters/ScoutsIE32/Liddy Gan.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "tombulldown_oro", "name": "TOM BULLDOWN", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "CDM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/Fulham.png", "image": "assets/characters/ScoutsIE32/Tom Bulldown.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "riavivalist_oro", "name": "RIA VIVALIST", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "RW", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/pa.png", "teamIcon": "teams/NottinghamFores.png", "image": "assets/characters/ScoutsIE32/Ria Vivalist.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "sunniffascentgood_oro", "name": "SUNNIFFA SCENTGOOD", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "LW", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/is.png", "teamIcon": "teams/UnionBerlin.png", "image": "assets/characters/ScoutsIE32/Sunniffa Scentgood.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "juliamason_oro", "name": "JULIA MASON", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "GK", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/mt.png", "teamIcon": "teams/Metz.png", "image": "assets/characters/ScoutsIE32/Julia Mason.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "riacarnival_oro", "name": "RIA CARNIVAL", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "GK", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/ve.png", "teamIcon": "teams/Freiburg.png", "image": "assets/characters/ScoutsIE32/Ria Carnival.png", "background": "assets/Cartas/Oro.png" }
+    ]
+}

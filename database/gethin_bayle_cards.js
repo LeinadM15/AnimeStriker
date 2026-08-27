@@ -1,0 +1,72 @@
+const gethinBayleCards = [
+    {
+        id: "gethinbayle_oro",
+        name: "GETHIN BAYLE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "RW",
+        secondaryPositions: ["LB", "LW"],
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-wls.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Gethin Bayle.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "gethinbaylebase_gris",
+        name: "GETHIN BAYLE",
+        version: "Gris",
+        rarity: "Especial",
+        rating: 86,
+        position: "RW",
+        secondaryPositions: ["LB", "LW"],
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-wls.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Gethin BayleBase.png",
+        background: "assets/Cartas/Gris.png"
+    },
+    {
+        id: "gethinbaylechut_imperial",
+        name: "GETHIN BAYLE",
+        version: "Imperial",
+        rarity: "Especial",
+        rating: 89,
+        position: "RW",
+        secondaryPositions: ["LB", "LW"],
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-wls.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Gethin BayleChut.png",
+        background: "assets/Cartas/Imperial.png"
+    },
+    {
+        id: "gethinbaylecorr_shapesifters",
+        name: "GETHIN BAYLE",
+        version: "Shapesifters",
+        rarity: "Especial",
+        rating: 92,
+        position: "LB",
+        secondaryPositions: ["RW", "LW"],
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-wls.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Gethin BayleCorr.png",
+        background: "assets/Cartas/Shapesifters.png"
+    },
+    {
+        id: "gethinbayleprime_trophy",
+        name: "GETHIN BAYLE",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 95,
+        position: "RW",
+        secondaryPositions: ["LB", "LW"],
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/gb-wls.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Gethin BaylePrime.png",
+        background: "assets/Cartas/Trophy.png"
+    }
+];

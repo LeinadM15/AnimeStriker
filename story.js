@@ -1735,6 +1735,51 @@ window.superShotsDB = {
         }, duration);
     }
     
+    function generateDailyNPCs() {
+        p2DailyNPCs = {};
+        p2Rooms.forEach(r => p2DailyNPCs[r] = []);
+        
+        if (!p2StratumPlayers || p2StratumPlayers.length === 0) return;
+
+        let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
+        if (window.gamePhase === 1 || window.gamePhase === 1.5) {
+            let validTeams = [window.currentColegioTeamName || "Furano", (window.currentColegioTeamName || "Furano") + " Suplentes", "Alpino", "Alpino Suplentes"];
+            pool = pool.filter(p => validTeams.includes(p.team) && !p.image.includes('MysteryPlayer'));
+        }
+        let miEquipo = (window.gamePhase === 1 || window.gamePhase === 1.5) ? (window.currentColegioTeamName || "Furano") : "Tu Equipo (Z)";
+        let myTeamPool = pool.filter(p => p.team === miEquipo);
+        
+        // Assign team NPCs to the tactical/match room
+        let tacticasRoom = p2Rooms.find(r => r.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes("tacticas"));
+        if (!tacticasRoom && (window.gamePhase === 1 || window.gamePhase === 1.5)) {
+            tacticasRoom = p2Rooms.find(r => r === 'Campo');
+        }
+        if (tacticasRoom) {
+            let numTacticas = Math.floor(Math.random() * 3) + 2;
+            if (p2Stats && p2Stats.day && p2Stats.day % 3 === 0) {
+                numTacticas = 4;
+            }
+            for(let i=0; i<numTacticas; i++) {
+                if (myTeamPool.length > 0) {
+                    let npc = myTeamPool.pop();
+                    p2DailyNPCs[tacticasRoom].push(npc);
+                    pool = pool.filter(p => p.id !== npc.id);
+                }
+            }
+        }
+        
+        // Distribute remaining NPCs evenly among all rooms
+        let currentRoomIdx = 0;
+        if (p2Rooms.length > 0) {
+            pool.forEach(npc => {
+                let r = p2Rooms[currentRoomIdx];
+                if (!p2DailyNPCs[r]) p2DailyNPCs[r] = [];
+                p2DailyNPCs[r].push(npc);
+                currentRoomIdx = (currentRoomIdx + 1) % p2Rooms.length;
+            });
+        }
+    }
+
     let p2Stats = {
         pace: 60, shooting: 60, passing: 60, dribbling: 60, defending: 60, physical: 60,
         statXP: { pace: 0, shooting: 0, passing: 0, dribbling: 0, defending: 0, physical: 0 },
@@ -1751,48 +1796,6 @@ window.superShotsDB = {
     let p2StratumPlayers = []; // 44 NPCs in the building
     
     let p2DailyNPCs = {};
-    
-    function generateDailyNPCs() {
-        if (!p2StratumPlayers || p2StratumPlayers.length === 0) {
-            p2DailyNPCs = {
-                'Habitación': [],
-                'Comedor': [],
-                'Gimnasio': [],
-                'Meditación': [],
-                'Campo': [],
-                'Sala TV': [],
-                'Tácticas': []
-            };
-            return;
-        }
-
-        let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
-        let miEquipo = (window.gamePhase === 1) ? "Furano" : "Tu Equipo (Z)";
-        let myTeamPool = pool.filter(p => p.team === miEquipo);
-        
-        let tacticasNpcs = [];
-        let numTacticas = Math.floor(Math.random() * 3) + 2; // 2, 3, or 4 NPCs
-        if (p2Stats && p2Stats.day && p2Stats.day % 3 === 0) {
-            numTacticas = 4;
-        }
-        for(let i=0; i<numTacticas; i++) {
-            if (myTeamPool.length > 0) {
-                let npc = myTeamPool.pop();
-                tacticasNpcs.push(npc);
-                pool = pool.filter(p => p.id !== npc.id);
-            }
-        }
-        
-        p2DailyNPCs = {
-            'Habitación': [],
-            'Comedor': pool.splice(0, 4),
-            'Gimnasio': pool.splice(0, 1),
-            'Meditación': pool.splice(0, 1),
-            'Campo': pool.splice(0, 2),
-            'Sala TV': pool.splice(0, 3),
-            'Tácticas': tacticasNpcs
-        };
-    }
     
     // Team Standings Mock
     let p2League = [
@@ -2073,6 +2076,7 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
     };
     
     window.startPhase1 = function() {
+
         document.getElementById('player-selection-screen').classList.add('hidden');
         p2LobbyScreen.classList.remove('hidden');
         
@@ -2080,6 +2084,15 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
         const baseRating = 55;
         p2Stats.pace = p2Stats.shooting = p2Stats.passing = p2Stats.dribbling = p2Stats.defending = p2Stats.physical = baseRating;
         p2Stats.age = 13;
+        
+        // Set rooms from location config
+        var loc = window.StoryLocations && window.StoryLocations[window.currentColegio];
+        if (loc && loc.rooms) {
+            p2Rooms = loc.rooms;
+        } else {
+            p2Rooms = ['Habitacion', 'ClubRoom', 'Campo'];
+        }
+        p2CurrentRoom = 0;
         
         var region = window.currentPrefecture;
         var teamName = window.currentColegioTeamName;
@@ -2103,7 +2116,7 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
                 });
                 var genName = 'generate' + region + 'Players';
                 if (typeof window[genName] === 'function') {
-                    window[genName](teamName);
+                    try { window[genName](teamName); } catch(e) { console.error('[startPhase1] ' + genName + ' error:', e); }
                 }
             }
         }
@@ -2123,7 +2136,21 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
             renderP2Room();
         };
         
-        renderP2Room();
+        try {
+            generateDailyNPCs();
+        } catch(e) {
+            console.error('[startPhase1] generateDailyNPCs error:', e);
+        }
+        try {
+            updateP2UI();
+        } catch(e) {
+            console.error('[startPhase1] updateP2UI error:', e);
+        }
+        try {
+            renderP2Room();
+        } catch(e) {
+            console.error('[startPhase1] renderP2Room error:', e);
+        }
         var colegioDisplay = teamName || 'Furano';
         var regionDisplay = region || 'Hokkaido';
         showNotification("Has comenzado en " + colegioDisplay + " (" + regionDisplay + "). Edad: 13, OVR: 55.", "success", 4000);
@@ -2802,7 +2829,212 @@ Es una oportunidad única para salir de Japón y probarte en el mejor fútbol de
         });
     }
     
+    function renderPhase1Room() {
+        const roomName = p2Rooms[p2CurrentRoom];
+        if (roomName === 'ClubRoom') {
+            p2RoomTitle.textContent = 'SALA DEL CLUB';
+        } else {
+            p2RoomTitle.textContent = roomName.toUpperCase();
+        }
+        p2RoomBody.innerHTML = '';
+        p2NpcContainer.innerHTML = '';
+        document.querySelectorAll('.p2-scene-overlay, .p2-shop-icon, .p2-bg-img, #tactics-detroit-overlay, #tactics-pulse, #tactics-start-btn, #formation-screen').forEach(el => el.remove());
+        document.getElementById('p2-room-content').style.display = 'none';
+
+        function setRoomBg(src) {
+            var loc = window.StoryLocations && window.StoryLocations[window.currentColegio];
+            if (loc && loc.backgrounds && loc.backgrounds[roomName]) {
+                src = loc.backgrounds[roomName];
+            }
+            p2LobbyScreen.style.backgroundImage = 'none';
+            const img = document.createElement('img');
+            img.className = 'p2-bg-img';
+            img.src = src;
+            img.draggable = false;
+            p2LobbyScreen.insertBefore(img, p2LobbyScreen.firstChild);
+        }
+
+        const basePath = 'assets/Historia/Habitaciones/';
+
+        if (roomName === 'Habitacion') {
+            setRoomBg(`${basePath}Habitacion.jpeg`);
+            
+            const btnDormir = document.createElement('div');
+            btnDormir.className = 'p2-scene-overlay';
+            btnDormir.id = 'btn-dormir';
+            btnDormir.style.cssText = 'top: 60%; left: 25%; transform: translate(-50%,-50%); z-index:10;';
+            btnDormir.innerHTML = `<img src="${basePath}Cama.png" alt="Dormir" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #fff);">`;
+            btnDormir.onclick = () => {
+                if (p2Stats.day % 3 === 0) { showNotification('¡Hoy hay partido! Debes jugarlo antes de ir a dormir.', 'warning'); return; }
+                advanceP2Day(false);
+            };
+
+            const btnAmistades = document.createElement('div');
+            btnAmistades.className = 'p2-scene-overlay';
+            btnAmistades.id = 'btn-amistades';
+            btnAmistades.style.cssText = 'top: 60%; left: 50%; transform: translate(-50%,-50%); z-index:10;';
+            btnAmistades.innerHTML = `<img src="${basePath}Amistad.png" alt="Amistades" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f);">`;
+            btnAmistades.onclick = () => { openFriendshipViewer(); };
+
+            const btnStats = document.createElement('div');
+            btnStats.className = 'p2-scene-overlay';
+            btnStats.id = 'btn-stats';
+            btnStats.style.cssText = 'top: 60%; left: 75%; transform: translate(-50%,-50%); z-index:10;';
+            btnStats.innerHTML = `<img src="${basePath}Personaje.png" alt="Stats" style="width:150px; height:150px; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff);">`;
+            btnStats.onclick = () => { openMyStatsViewer(); };
+
+            const btnTimeSkip = document.createElement('div');
+            btnTimeSkip.className = 'p2-scene-overlay';
+            btnTimeSkip.id = 'btn-time-skip';
+            btnTimeSkip.style.cssText = 'top: 15%; right: 5%; padding:15px 25px; background:linear-gradient(135deg, #f39c12, #e67e22); color:#fff; font-family:"Bangers"; font-size:1.5rem; border:2px solid #fff; border-radius:10px; cursor:pointer; z-index:20; box-shadow:0 0 15px rgba(243,156,18,0.5); text-align:center; transition:transform 0.2s;';
+            btnTimeSkip.innerHTML = 'SIMULAR TEMPORADA';
+            btnTimeSkip.onmouseenter = () => btnTimeSkip.style.transform = 'scale(1.1)';
+            btnTimeSkip.onmouseleave = () => btnTimeSkip.style.transform = 'scale(1)';
+            btnTimeSkip.onclick = () => { triggerTimeSkip(); };
+            
+            p2LobbyScreen.appendChild(btnDormir);
+            p2LobbyScreen.appendChild(btnAmistades);
+            p2LobbyScreen.appendChild(btnStats);
+            p2LobbyScreen.appendChild(btnTimeSkip);
+
+            const skillContainer = document.getElementById('p2-equipped-skills-container');
+            if (skillContainer) {
+                skillContainer.innerHTML = '';
+                p2EquippedSkills.forEach((sk) => {
+                    const box = document.createElement('div');
+                    box.style.cssText = "width:120px; height:55px; border:1px solid #00e5ff; background:rgba(0,0,0,0.5); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; text-align:center; padding:5px; font-family:'Nunito',sans-serif;";
+                    box.textContent = sk ? sk : '—';
+                    if (sk) {
+                        box.style.background = 'linear-gradient(45deg, #004d40, #00bfa5)';
+                        box.style.color = '#fff';
+                        box.style.fontWeight = 'bold';
+                    } else {
+                        box.style.color = '#555';
+                    }
+                    skillContainer.appendChild(box);
+                });
+            }
+
+        } else if (roomName === 'ClubRoom') {
+            setRoomBg('assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg');
+
+            const shopIcon = document.createElement('div');
+            shopIcon.className = 'p2-shop-icon p2-scene-overlay';
+            shopIcon.style.cssText = 'left:28%; top:22%; width:120px; height:120px; cursor:pointer;';
+            shopIcon.innerHTML = `<img src="${basePath}TiendaIcono.png" style="width:100%; height:100%; animation:float-idle 3s ease-in-out infinite;" draggable="false">`;
+            shopIcon.onclick = () => { openShopMenu(); };
+            p2LobbyScreen.appendChild(shopIcon);
+            
+            const btnClasif = document.createElement('div');
+            btnClasif.className = 'p2-scene-overlay';
+            btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+            btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+            btnClasif.onclick = () => { openTVStats(); };
+            p2LobbyScreen.appendChild(btnClasif);
+
+            spawnSceneNPCs('ClubRoom', [
+                {x: 5,  y: 27, w: 220, h: 460},
+                {x: 20, y: 47, w: 350, h: 460},
+                {x: 65, y: 47, w: 350, h: 460},
+                {x: 85, y: 27, w: 220, h: 460}
+            ]);
+
+        } else if (roomName === 'Campo') {
+            setRoomBg('assets/Historia/Hokkaido/HokkaidoCampo.png');
+
+            const roomNPCs = p2DailyNPCs['Campo'] || [];
+            const availableNPCs = roomNPCs.filter(p => !p2Stats.npcInteractionsToday.includes(p.id));
+            const npc = availableNPCs.length > 0 ? availableNPCs[0] : null;
+            
+            if (npc) {
+                const npcContainer = document.createElement('div');
+                npcContainer.className = 'p2-scene-overlay';
+                npcContainer.style.cssText = 'left:50%; bottom:10%; width:500px; height:500px; transform:translate(-50%, 0); cursor:pointer; z-index:15;';
+                
+                const bodyImg = document.createElement('img');
+                bodyImg.src = `${basePath}Sincabeza.png`;
+                bodyImg.draggable = false;
+                bodyImg.style.cssText = 'position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; z-index:1;';
+                npcContainer.appendChild(bodyImg);
+                
+                const headImg = document.createElement('img');
+                headImg.src = npc.image;
+                headImg.draggable = false;
+                headImg.style.cssText = 'position:absolute; left:49.5%; top:7%; width:115px; height:115px; transform:translate(-50%, 0); object-fit:contain; z-index:2;';
+                npcContainer.appendChild(headImg);
+                
+                npcContainer.onclick = () => { openDialogue(npc); };
+                p2LobbyScreen.appendChild(npcContainer);
+            }
+            
+            const btnChut = document.createElement('div');
+            btnChut.className = 'p2-scene-overlay';
+            btnChut.style.cssText = 'left:20%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+            btnChut.innerHTML = `<img src="${basePath}ChutPrac.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #ff007f); transition: transform 0.2s;">`;
+            btnChut.onclick = () => { startChutMinigame(); };
+            p2LobbyScreen.appendChild(btnChut);
+            
+            const btnConos = document.createElement('div');
+            btnConos.className = 'p2-scene-overlay';
+            btnConos.style.cssText = 'left:80%; top:50%; transform:translate(-50%,-50%); width:120px; height:120px; cursor:pointer; z-index:10;';
+            btnConos.innerHTML = `<img src="${basePath}Conos.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+            btnConos.onclick = () => { startRegateMinigame(); };
+            p2LobbyScreen.appendChild(btnConos);
+            
+            if (p2Stats.day % 3 === 0) {
+                const matchBtn = document.createElement('div');
+                matchBtn.className = 'p2-scene-overlay';
+                matchBtn.id = 'p2-match-btn';
+                matchBtn.style.cssText = 'left:50%; top:35%; transform:translate(-50%,-50%); cursor:pointer; z-index:50; text-align:center; animation: p2-float 2s ease-in-out infinite;';
+                matchBtn.innerHTML = `<div style="background:linear-gradient(135deg, #ff4444 0%, #cc0000 100%); border:3px solid #ffd700; border-radius:15px; padding:20px 40px; box-shadow:0 0 30px rgba(255,68,68,0.6); transition:transform 0.2s;">
+                    <div style="font-family:'Bangers'; font-size:2.5rem; color:#fff; text-shadow:0 0 10px rgba(255,255,255,0.5); letter-spacing:3px;">⚽ JUGAR PARTIDO</div>
+                    <div style="font-family:'Nunito'; font-size:1rem; color:#ffd700; margin-top:5px;">Día ${p2Stats.day} - Jornada ${Math.floor(p2Stats.day / 3)}</div>
+                </div>`;
+                matchBtn.onmouseenter = () => matchBtn.querySelector('div').style.transform = 'scale(1.05)';
+                matchBtn.onmouseleave = () => matchBtn.querySelector('div').style.transform = 'scale(1)';
+                matchBtn.onclick = () => {
+                    let bestStat = 'shooting';
+                    let bestVal = p2Stats.shooting || 60;
+                    if ((p2Stats.pace || 60) > bestVal) { bestStat = 'pace'; bestVal = p2Stats.pace; }
+                    if ((p2Stats.dribbling || 60) > bestVal) { bestStat = 'dribbling'; bestVal = p2Stats.dribbling; }
+                    if ((p2Stats.defending || 60) > bestVal) { bestStat = 'defending'; bestVal = p2Stats.defending; }
+                    if ((p2Stats.passing || 60) > bestVal) { bestStat = 'passing'; bestVal = p2Stats.passing; }
+                    
+                    let position = 'DEL'; 
+                    if (bestStat === 'defending') position = 'DEF';
+                    else if (bestStat === 'passing') position = 'MED';
+                    else if (bestStat === 'shooting' || bestStat === 'pace' || bestStat === 'dribbling') position = 'DEL';
+                    
+                    if (window.myPlayer && window.myPlayer.position === 'POR') position = 'POR';
+                    
+                    startMatch(position);
+                };
+                p2LobbyScreen.appendChild(matchBtn);
+            } else {
+                const btnClasif = document.createElement('div');
+                btnClasif.className = 'p2-scene-overlay';
+                btnClasif.style.cssText = 'left:85%; top:15%; width:110px; height:110px; cursor:pointer; z-index:10;';
+                btnClasif.innerHTML = `<img src="${basePath}Clasificacion.png" draggable="false" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 10px #00e5ff); transition: transform 0.2s;">`;
+                btnClasif.onclick = () => { openTVStats(); };
+                p2LobbyScreen.appendChild(btnClasif);
+            }
+        }
+    }
+
     function renderP2Room() {
+        // Force correct rooms for Phase 1
+        if ((window.gamePhase === 1 || window.gamePhase === 1.5) && p2Rooms && p2Rooms[0] !== 'Habitacion') {
+            var loc = window.StoryLocations && window.StoryLocations[window.currentColegio];
+            if (loc && loc.rooms) {
+                p2Rooms = loc.rooms;
+            } else {
+                p2Rooms = ['Habitacion', 'ClubRoom', 'Campo'];
+            }
+            if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+        }
+        if (window.gamePhase === 1 || window.gamePhase === 1.5) {
+            return renderPhase1Room();
+        }
         const roomName = p2Rooms[p2CurrentRoom];
         p2RoomTitle.textContent = roomName.toUpperCase();
         p2RoomBody.innerHTML = '';
@@ -5792,9 +6024,11 @@ setTimeout(() => {
             p2TopScorers: p2TopScorers,
             p2StratumPlayersIds: p2StratumPlayers.map(p => p.id),
             p2StratumPlayersData: p2StratumPlayers.map(p => ({ id: p.id, p2Rating: p.p2Rating, team: p.team, goals: p.goals })),
-            p2DailyNPCsIds: p2DailyNPCsIds
+            p2DailyNPCsIds: p2DailyNPCsIds,
+            currentColegio: window.currentColegio || '',
+            currentColegioTeamName: window.currentColegioTeamName || '',
+            currentPrefecture: window.currentPrefecture || ''
         };
-        
         if (!window.currentSaveId) {
             window.currentSaveId = 'save_' + Date.now();
         }
@@ -5807,8 +6041,10 @@ setTimeout(() => {
         const existingIndex = savesIndex.findIndex(s => s.id === window.currentSaveId);
         
         let phaseText = "Blue Lock";
-        if (window.gamePhase === 1) phaseText = "Hokkaido (Furano)";
-        if (window.gamePhase === 1.5) phaseText = "Hokkaido (Alpino)";
+        if (window.gamePhase === 1 || window.gamePhase === 1.5) {
+            const loc = window.StoryLocations && window.StoryLocations[window.currentColegio];
+            phaseText = loc ? loc.name : (window.currentColegioTeamName || 'Colegio');
+        }
         
         const meta = {
             id: window.currentSaveId,
@@ -5854,6 +6090,25 @@ setTimeout(() => {
             p2EquippedSkills = state.p2EquippedSkills || [null, null, null, null];
             p2CurrentRoom = state.p2CurrentRoom || 0;
             window.gamePhase = state.gamePhase || 2; // Old saves default to Blue Lock
+            
+            // Restore colegio/school data for Phase 1
+            if (state.currentColegio) {
+                window.currentColegio = state.currentColegio;
+                window.currentColegioTeamName = state.currentColegioTeamName || '';
+                window.currentPrefecture = state.currentPrefecture || '';
+            }
+            
+            // Restore p2Rooms from location config
+            if (window.gamePhase === 1 || window.gamePhase === 1.5) {
+                var loc = window.StoryLocations && window.StoryLocations[window.currentColegio];
+                if (loc && loc.rooms) {
+                    p2Rooms = loc.rooms;
+                } else {
+                    p2Rooms = ['Habitacion', 'ClubRoom', 'Campo'];
+                }
+                // Clamp p2CurrentRoom to valid range
+                if (p2CurrentRoom >= p2Rooms.length) p2CurrentRoom = 0;
+            }
             
             p2League = state.p2League;
             // Migración para partidas guardadas antiguas (renombrar Tu Equipo y añadir gf/gc)
@@ -5904,11 +6159,15 @@ setTimeout(() => {
                 for (let room in state.p2DailyNPCsIds) {
                     p2DailyNPCs[room] = state.p2DailyNPCsIds[room].map(id => [...allOroCards.values()].find(c => c.id === id)).filter(Boolean);
                 }
-                if (!p2DailyNPCs['Tácticas'] || p2DailyNPCs['Tácticas'].length === 0) {
+                // For Phase 1, ensure Campo has team NPCs (replaces old Tácticas logic)
+                let npcFallbackRoom = (window.gamePhase === 1 || window.gamePhase === 1.5) ? 'Campo' : 'Tácticas';
+                let locTeamName = (window.gamePhase === 1 || window.gamePhase === 1.5) 
+                    ? ((window.StoryLocations && window.StoryLocations[window.currentColegio] && window.StoryLocations[window.currentColegio].myTeamName) || 'Furano')
+                    : 'Tu Equipo (Z)';
+                if (!p2DailyNPCs[npcFallbackRoom] || p2DailyNPCs[npcFallbackRoom].length === 0) {
                     let pool = [...p2StratumPlayers].sort(() => Math.random() - 0.5);
-                    let miEquipo = (window.gamePhase === 1) ? "Furano" : "Tu Equipo (Z)";
-                    let myTeamPool = pool.filter(p => p.team === miEquipo);
-                    p2DailyNPCs['Tácticas'] = myTeamPool.slice(0, (p2Stats && p2Stats.day % 3 === 0) ? 4 : 3);
+                    let myTeamPool = pool.filter(p => p.team === locTeamName);
+                    p2DailyNPCs[npcFallbackRoom] = myTeamPool.slice(0, (p2Stats && p2Stats.day % 3 === 0) ? 4 : 3);
                 }
             } else {
                 generateDailyNPCs();

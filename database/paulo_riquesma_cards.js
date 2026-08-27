@@ -1,0 +1,54 @@
+const pauloRiquesmaCards = [
+    {
+        id: "pauloriquesma_oro",
+        name: "PAULO RIQUESMA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "GK",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Paulo Riquesma.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "pauloriquesmapos_shapesifters",
+        name: "PAULO RIQUESMA",
+        version: "Shapesifters",
+        rarity: "Especial",
+        rating: 89,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Paulo RiquesmaPos.png",
+        background: "assets/Cartas/Shapesifters.png"
+    },
+    {
+        id: "pauloriquesmatoc_roja",
+        name: "PAULO RIQUESMA",
+        version: "Roja",
+        rarity: "Especial",
+        rating: 92,
+        position: "GK",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Paulo RiquesmaToc.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "pauloriquesmaprime_pirata",
+        name: "PAULO RIQUESMA",
+        version: "Pirata",
+        rarity: "Especial",
+        rating: 95,
+        position: "GK",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/pt.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/Paulo RiquesmaPrime.png",
+        background: "assets/Cartas/Pirata.png"
+    }
+];

@@ -1,0 +1,54 @@
+const tucoAguilarCards = [
+    {
+        id: "tucoaguilar_oro",
+        name: "TUCO AGUILAR",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/mx.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/TucoAguilar.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "tucoaguilarcuer_naranja",
+        name: "TUCO AGUILAR",
+        version: "Naranja",
+        rarity: "Especial",
+        rating: 89,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/mx.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/TucoAguilarCuer.png",
+        background: "assets/Cartas/Naranja.png"
+    },
+    {
+        id: "tucoaguilarare_trophy",
+        name: "TUCO AGUILAR",
+        version: "Trophy",
+        rarity: "Especial",
+        rating: 92,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/mx.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/TucoAguilarAre.png",
+        background: "assets/Cartas/Trophy.png"
+    },
+    {
+        id: "tucoaguilarprime_centurion",
+        name: "TUCO AGUILAR",
+        version: "Centurion",
+        rarity: "Especial",
+        rating: 95,
+        position: "CB",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/mx.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/TucoAguilarPrime.png",
+        background: "assets/Cartas/Centurion.png"
+    }
+];

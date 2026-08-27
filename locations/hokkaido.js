@@ -9,10 +9,10 @@ window.StoryLocations['furano'] = {
     id: 'furano',
     name: 'Colegio Furano (Hokkaido)',
     headerTitle: 'HOKKAIDO - COLEGIO FURANO',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
-        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Habitacion': 'assets/Historia/Hokkaido/HokkaidoSnow.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     getAssignedTeam: function(index) {
@@ -39,13 +39,11 @@ window.StoryLocations['alpino'] = {
     id: 'alpino',
     name: 'Instituto Alpino (Hokkaido)',
     headerTitle: 'HOKKAIDO - INSTITUTO ALPINO',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
-        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
-        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png',
-        'Gimnasio': 'assets/Historia/Hokkaido/HokkaidoCampo.png',
-        'Termas': 'assets/Historia/Hokkaido/HokkaidoSnow.jpeg'
+        'Habitacion': 'assets/Historia/Hokkaido/HokkaidoSnow.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     getAssignedTeam: function(index) {
         if (index < 10) return "Alpino";
@@ -76,7 +74,7 @@ window.StoryLocations['alpino'] = {
 window.createHokkaidoNPC = function(name, baseRating, teamName, overrideRating = null) {
     let c = [...allOroCards.values()].find(x => x.name.toLowerCase().includes(name.toLowerCase()));
     if (!c) {
-        c = { id: name.toLowerCase().replace(/\s/g, "_"), name: name, rating: baseRating, image: "assets/Historia/MysteryPlayer.png", nationFlag: "assets/flags/jp.png" };
+        c = { id: name.toLowerCase().replace(/\s/g, "_"), name: name, rating: baseRating, image: "assets/characters/Alpino/" + name + ".png", nationFlag: "assets/flags/jp.png" };
     }
     let finalRating = overrideRating ? overrideRating : (baseRating + (Math.random() * 5));
     return { ...c, p2Rating: finalRating, team: teamName, goals: 0 };

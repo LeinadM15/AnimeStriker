@@ -19,8 +19,13 @@ window.StoryLocations['colegio_fauxshore'] = {
     headerTitle: 'Colegio Crosswind-Fauxshore - Kyushu',
     myTeamName: 'Crosswind-Fauxshore',
     regionId: 'Kyushu',
-    backgrounds: { entry: 'assets/Historia/Kyushu/Crosswind-Fauxshore.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Kyushu/Crosswind-Fauxshore.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Kyushu/Crosswind-Fauxshore.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.StoryLocations['colegio_hirado'] = {
@@ -29,8 +34,13 @@ window.StoryLocations['colegio_hirado'] = {
     headerTitle: 'Colegio Hirado - Kyushu',
     myTeamName: 'Hirado',
     regionId: 'Kyushu',
-    backgrounds: { entry: 'assets/Historia/Kyushu/Hirado.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Kyushu/Hirado.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Kyushu/Hirado.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.StoryLocations['colegio_eastwind'] = {
@@ -39,8 +49,13 @@ window.StoryLocations['colegio_eastwind'] = {
     headerTitle: 'Colegio Internacional Eastwind - Kyushu',
     myTeamName: 'Internacional Eastwind',
     regionId: 'Kyushu',
-    backgrounds: { entry: 'assets/Historia/Kyushu/Internacional Eastwind.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Kyushu/Internacional Eastwind.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Kyushu/Internacional Eastwind.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.StoryLocations['colegio_southcirrus'] = {
@@ -49,8 +64,13 @@ window.StoryLocations['colegio_southcirrus'] = {
     headerTitle: 'Colegio SouthCirrus - Kyushu',
     myTeamName: 'SouthCirrus',
     regionId: 'Kyushu',
-    backgrounds: { entry: 'assets/Historia/Kyushu/SouthCirrus.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Kyushu/SouthCirrus.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Kyushu/SouthCirrus.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.generateKyushuPlayers = function(chosenColegio) {

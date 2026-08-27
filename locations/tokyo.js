@@ -18,10 +18,10 @@ window.StoryLocations['colegio_raimon'] = {
     id: 'colegio_raimon',
     name: 'Colegio Raimon',
     headerTitle: 'Colegio Raimon',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Colegio Raimon',
@@ -33,10 +33,10 @@ window.StoryLocations['colegio_royal'] = {
     id: 'colegio_royal',
     name: 'Colegio Royal Academy',
     headerTitle: 'Colegio Royal Academy',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Colegio Royal',
@@ -48,10 +48,10 @@ window.StoryLocations['colegio_musashi'] = {
     id: 'colegio_musashi',
     name: 'Colegio Musashi',
     headerTitle: 'Colegio Musashi',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Colegio Musashi',
@@ -63,10 +63,10 @@ window.StoryLocations['colegio_ia'] = {
     id: 'colegio_ia',
     name: 'Colegio IA',
     headerTitle: 'Colegio IA',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Colegio IA',

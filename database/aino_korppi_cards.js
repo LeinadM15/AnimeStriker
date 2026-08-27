@@ -1,0 +1,54 @@
+const ainoKorppiCards = [
+    {
+        id: "ainokorppi_oro",
+        name: "AINO KORPPI",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 86,
+        position: "RW",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fi.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/AinoKorppi.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "ainokorppichut_roja",
+        name: "AINO KORPPI",
+        version: "Roja",
+        rarity: "Especial",
+        rating: 89,
+        position: "RW",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fi.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/AinoKorppichut.png",
+        background: "assets/Cartas/Roja.png"
+    },
+    {
+        id: "ainokorppivol_rojiazul",
+        name: "AINO KORPPI",
+        version: "RojiAzul",
+        rarity: "Especial",
+        rating: 92,
+        position: "RW",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fi.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/AinoKorppiVol.png",
+        background: "assets/Cartas/RojiAzul.png"
+    },
+    {
+        id: "ainokorppiprime_trailblaze",
+        name: "AINO KORPPI",
+        version: "Trailblaze",
+        rarity: "Especial",
+        rating: 95,
+        position: "RW",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/fi.png",
+        teamIcon: "teams/RecreativoJonense.png",
+        image: "assets/characters/Custom/AinoKorppiPrime.png",
+        background: "assets/Cartas/Trailblaze.png"
+    }
+];

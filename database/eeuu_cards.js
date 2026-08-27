@@ -416,8 +416,7 @@ const eeuuCards = [
         image: "assets/characters/USA/Switch.png",
         background: "assets/Cartas/Oro.png"
 },
-
-    {
+{
         id: "bacchus_oro",
         name: "BACCHUS",
         version: "Oro",
@@ -429,8 +428,8 @@ const eeuuCards = [
         teamIcon: "teams/Ubers.png",
         image: "assets/characters/USA/BacchusOro.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
+},
+{
         id: "bacchus_custom",
         name: "BACCHUS",
         version: "Ubers",
@@ -442,8 +441,8 @@ const eeuuCards = [
         teamIcon: "teams/Ubers.png",
         image: "assets/characters/USA/Bacchus.png",
         background: "assets/backgrounds/Fondo_Bacchus.png"
-    },
-    {
+},
+{
         id: "azwan_oro",
         name: "AZWAN",
         version: "Oro",
@@ -455,8 +454,8 @@ const eeuuCards = [
         teamIcon: "teams/Dortmund.png",
         image: "assets/characters/USA/AzwanOro.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
+},
+{
         id: "azwan_eeuu",
         name: "AZWAN",
         version: "EEUU",
@@ -468,8 +467,8 @@ const eeuuCards = [
         teamIcon: "teams/Dortmund.png",
         image: "assets/characters/USA/Azwan.png",
         background: "assets/Cartas/EEUU.png"
-    },
-    {
+},
+{
         id: "blake_oro",
         name: "BLAKE",
         version: "Oro",
@@ -481,8 +480,8 @@ const eeuuCards = [
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/USA/BlakeOro.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
+},
+{
         id: "blake_eeuu",
         name: "BLAKE",
         version: "EEUU",
@@ -494,33 +493,46 @@ const eeuuCards = [
         teamIcon: "teams/Chicorid.png",
         image: "assets/characters/USA/Blake.png",
         background: "assets/Cartas/EEUU.png"
-    },
-    {
+},
+{
         id: "ortiz_oro",
-        name: "ORTIZ",
+        name: "RYAN ORTIZ",
         version: "Oro",
         rarity: "Oro",
-        rating: 86,
+        rating: 88,
         position: "CM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/us.png",
         teamIcon: "teams/Inter.png",
         image: "assets/characters/USA/OrtizOro.png",
         background: "assets/Cartas/Oro.png"
-    },
-    {
+},
+{
         id: "ortiz_eeuu",
-        name: "ORTIZ",
-        version: "Joker",
+        name: "RYAN ORTIZ",
+        version: "EEUU",
         rarity: "Especial",
-        rating: 89,
+        rating: 91,
         position: "CM",
         league: "Serie A",
         nationFlag: "https://flagcdn.com/w40/us.png",
         teamIcon: "teams/Inter.png",
         image: "assets/characters/USA/Ortiz.png",
+        background: "assets/Cartas/EEUU.png"
+},
+{
+        id: "ortiz_joker",
+        name: "RYAN ORTIZ",
+        version: "Joker",
+        rarity: "Especial",
+        rating: 94,
+        position: "CM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/us.png",
+        teamIcon: "teams/Inter.png",
+        image: "assets/characters/USA/OrtizPrime.png",
         background: "assets/Cartas/Joker.png"
-    }
+}
 ];
 
 // ==========================================

@@ -21,11 +21,12 @@ window.StoryLocations['colegio_arions'] = {
     myTeamName: 'Arions',
     regionId: 'Chubu',
     backgrounds: {
-        entry: 'assets/Historia/Chubu/Arions.png'
+        entry: 'assets/Historia/Chubu/Arions.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
-    rooms: [
-        { id: 'entrada', name: 'Entrada', image: 'assets/Historia/Chubu/Arions.png' }
-    ]
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 // Colegio Gir
@@ -36,11 +37,12 @@ window.StoryLocations['colegio_gir'] = {
     myTeamName: 'Gir',
     regionId: 'Chubu',
     backgrounds: {
-        entry: 'assets/Historia/Chubu/Gir.png'
+        entry: 'assets/Historia/Chubu/Gir.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
-    rooms: [
-        { id: 'entrada', name: 'Entrada', image: 'assets/Historia/Chubu/Gir.png' }
-    ]
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 // Colegio Geminis
@@ -51,11 +53,12 @@ window.StoryLocations['colegio_geminis'] = {
     myTeamName: 'Geminis',
     regionId: 'Chubu',
     backgrounds: {
-        entry: 'assets/Historia/Chubu/Geminis.png'
+        entry: 'assets/Historia/Chubu/Geminis.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
-    rooms: [
-        { id: 'entrada', name: 'Entrada', image: 'assets/Historia/Chubu/Geminis.png' }
-    ]
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 // Colegio Nankatsu
@@ -66,11 +69,12 @@ window.StoryLocations['colegio_nankatsu'] = {
     myTeamName: 'Nankatsu',
     regionId: 'Chubu',
     backgrounds: {
-        entry: 'assets/Historia/Chubu/Nankatsu.png'
+        entry: 'assets/Historia/Chubu/Nankatsu.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
-    rooms: [
-        { id: 'entrada', name: 'Entrada', image: 'assets/Historia/Chubu/Nankatsu.png' }
-    ]
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.generateChubuPlayers = function(chosenColegio) {

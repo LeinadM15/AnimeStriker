@@ -1,0 +1,20 @@
+{
+    "fileName": "eeuu2",
+    "arrayName": "eeuu2Cards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "stone_oro", "name": "STONE", "version": "Oro", "rarity": "Oro", "rating": 82, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/Fulham.png", "image": "assets/characters/USA/Stone.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "clarke_oro", "name": "CLARKE", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "GK", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/Everton.png", "image": "assets/characters/USA/Clarke.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "allen_oro", "name": "ALLEN", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "RB", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/Monchengladbach.png", "image": "assets/characters/USA/Allen.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "thompson_oro", "name": "THOMPSON", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/CrystalPalace.png", "image": "assets/characters/USA/Thompson.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "bell_oro", "name": "BELL", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "CDM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/LeedsUnited.png", "image": "assets/characters/USA/Bell.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "sanders_oro", "name": "SANDERS", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "CM", "league": "La Liga", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/RealBetis.png", "image": "assets/characters/USA/Sanders.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "emile_oro", "name": "EMILE", "version": "Oro", "rarity": "Oro", "rating": 79, "position": "CAM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/LeedsUnited.png", "image": "assets/characters/USA/Emile.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "jack_oro", "name": "JACK", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "RM", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/NottinghamFores.png", "image": "assets/characters/USA/Jack.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "joshua_oro", "name": "JOSHUA", "version": "Oro", "rarity": "Oro", "rating": 79, "position": "ST", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/WerderBremen.png", "image": "assets/characters/USA/Joshua.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "crawford_oro", "name": "CRAWFORD", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "ST", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/UnionBerlin.png", "image": "assets/characters/USA/Crawford.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "flint_oro", "name": "FLINT", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "RW", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/StadedeReims.png", "image": "assets/characters/USA/Flint.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "freeman_oro", "name": "FREEMAN", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "CB", "league": "Premier League", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/AstonVilla.png", "image": "assets/characters/USA/Freeman.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "william_oro", "name": "WILLIAM", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "LB", "league": "Bundesliga", "nationFlag": "https://flagcdn.com/w40/us.png", "teamIcon": "teams/Frankfurt.png", "image": "assets/characters/USA/William.png", "background": "assets/Cartas/Oro.png" }
+    ]
+}

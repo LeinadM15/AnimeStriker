@@ -1,0 +1,18 @@
+{
+    "fileName": "francia",
+    "arrayName": "franciaCards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "belmond_oro", "name": "BELMOND", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Toulouse.png", "image": "assets/characters/Francia/Belmond.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "montana_oro", "name": "MONTANA", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "ST", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Montpellier.png", "image": "assets/characters/Francia/Montana.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "bolgui_oro", "name": "BOLGUI", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "LM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Montpellier.png", "image": "assets/characters/Francia/Bolgui.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "delacour_oro", "name": "DELACOUR", "version": "Oro", "rarity": "Oro", "rating": 79, "position": "RM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Strasbourg.png", "image": "assets/characters/Francia/Delacour.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "marcel_oro", "name": "MARCEL", "version": "Oro", "rarity": "Oro", "rating": 77, "position": "CDM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Lens.png", "image": "assets/characters/Francia/Marcel.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "georges_oro", "name": "GEORGES", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "CAM", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Montpellier.png", "image": "assets/characters/Francia/Georges.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "ferreri_oro", "name": "FERRERI", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "LB", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Marsella.png", "image": "assets/characters/Francia/Ferreri.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "degaulle_oro", "name": "DEGAULLE", "version": "Oro", "rarity": "Oro", "rating": 78, "position": "CB", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Nantes.png", "image": "assets/characters/Francia/Degaulle.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "bergerus_oro", "name": "BERGERUS", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "CB", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/Troyes.png", "image": "assets/characters/Francia/Bergeus.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "rust_oro", "name": "RUST", "version": "Oro", "rarity": "Oro", "rating": 75, "position": "RB", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/StadedeReims.png", "image": "assets/characters/Francia/Rust.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "anrieu_oro", "name": "ANRIEU", "version": "Oro", "rarity": "Oro", "rating": 76, "position": "CB", "league": "Ligue One", "nationFlag": "https://flagcdn.com/w40/fr.png", "teamIcon": "teams/StadeBrestois.png", "image": "assets/characters/Francia/Anrieu.png", "background": "assets/Cartas/Oro.png" }
+    ]
+}

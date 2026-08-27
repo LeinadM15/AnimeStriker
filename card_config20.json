@@ -1,0 +1,11 @@
+{
+    "fileName": "cloudy_lennox",
+    "arrayName": "cloudyLennoxCards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "cloudylennox_oro", "name": "CLOUDY LENNOX", "version": "Oro", "rarity": "Oro", "rating": 86, "position": "CM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/CloudyLennox.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "cloudylennoxcon_morado", "name": "CLOUDY LENNOX", "version": "Morado", "rarity": "Especial", "rating": 89, "position": "CM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/CloudyLennoxCon.png", "background": "assets/Cartas/Morado.png" },
+        { "id": "cloudylennoxnube_rulebraker", "name": "CLOUDY LENNOX", "version": "Rulebraker", "rarity": "Especial", "rating": 92, "position": "CM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/CloudyLennoxNube.png", "background": "assets/Cartas/Rulebraker.png" },
+        { "id": "cloudylennoxprime_futurestar", "name": "CLOUDY LENNOX", "version": "FutureStar", "rarity": "Especial", "rating": 95, "position": "CM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/gb-sct.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/CloudyLennoxPrime.png", "background": "assets/Cartas/FutureStar.png" }
+    ]
+}

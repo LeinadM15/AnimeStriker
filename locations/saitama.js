@@ -17,10 +17,10 @@ window.StoryLocations['colegio_omega'] = {
     id: 'colegio_omega',
     name: 'Colegio Protocolo Omega',
     headerTitle: 'Colegio Protocolo Omega',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Protocolo Omega',
@@ -32,10 +32,10 @@ window.StoryLocations['colegio_vision_noble'] = {
     id: 'colegio_vision_noble',
     name: 'Colegio Vision Noble',
     headerTitle: 'Colegio Vision Noble',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Vision Noble',
@@ -47,10 +47,10 @@ window.StoryLocations['colegio_meiwa'] = {
     id: 'colegio_meiwa',
     name: 'Colegio Meiwa',
     headerTitle: 'Colegio Meiwa',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Colegio Meiwa',

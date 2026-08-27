@@ -5,10 +5,10 @@ window.StoryLocations['colegio_cascada'] = {
     id: 'colegio_cascada',
     name: 'Colegio Cascada Perfecta',
     headerTitle: 'Colegio Cascada Perfecta',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Cascada Perfecta',
@@ -20,10 +20,10 @@ window.StoryLocations['colegio_zanark'] = {
     id: 'colegio_zanark',
     name: 'Colegio Zanark Domain',
     headerTitle: 'Colegio Zanark Domain',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Zanark Domain',
@@ -35,10 +35,10 @@ window.StoryLocations['colegio_solaria'] = {
     id: 'colegio_solaria',
     name: 'Colegio Solaria-Zeus',
     headerTitle: 'Colegio Solaria-Zeus',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Solaria-Zeus',

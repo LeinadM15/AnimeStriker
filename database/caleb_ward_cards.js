@@ -1,0 +1,28 @@
+const calebWardCards = [
+    {
+        id: "calebward_oro",
+        name: "CALEB WARD",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/us.png",
+        teamIcon: "teams/Fulham.png",
+        image: "assets/characters/USA/Caleb Ward.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "calebwardprime_rulebraker",
+        name: "CALEB WARD",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 86,
+        position: "CB",
+        league: "Premier League",
+        nationFlag: "https://flagcdn.com/w40/us.png",
+        teamIcon: "teams/Fulham.png",
+        image: "assets/characters/USA/Caleb WardPrime.png",
+        background: "assets/Cartas/Rulebraker.png"
+    }
+];

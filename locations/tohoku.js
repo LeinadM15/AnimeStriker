@@ -19,8 +19,13 @@ window.StoryLocations['colegio_hanawa'] = {
     headerTitle: 'Colegio Hanawa - Tohoku',
     myTeamName: 'Hanawa',
     regionId: 'Tohoku',
-    backgrounds: { entry: 'assets/Historia/Tohoku/Hanawa.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Tohoku/Hanawa.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Tohoku/Hanawa.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 // Colegio Aullido Lunar
@@ -30,8 +35,13 @@ window.StoryLocations['colegio_aullido'] = {
     headerTitle: 'Colegio Aullido Lunar - Tohoku',
     myTeamName: 'Aullido Lunar',
     regionId: 'Tohoku',
-    backgrounds: { entry: 'assets/Historia/Tohoku/AullidoLunar.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Tohoku/AullidoLunar.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Tohoku/AullidoLunar.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 // Colegio Nosfanaticos
@@ -41,8 +51,13 @@ window.StoryLocations['colegio_nosfanaticos'] = {
     headerTitle: 'Colegio Nosfanaticos - Tohoku',
     myTeamName: 'Nosfanaticos',
     regionId: 'Tohoku',
-    backgrounds: { entry: 'assets/Historia/Tohoku/Nosfanaticos.png' },
-    rooms: [{ id: 'entrada', name: 'Entrada', image: 'assets/Historia/Tohoku/Nosfanaticos.png' }]
+    backgrounds: {
+        entry: 'assets/Historia/Tohoku/Nosfanaticos.png',
+        'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
+    },
+    rooms: ['Habitacion', 'ClubRoom', 'Campo']
 };
 
 window.generateTohokuPlayers = function(chosenColegio) {

@@ -5,10 +5,10 @@ window.StoryLocations['colegio_stormridge'] = {
     id: 'colegio_stormridge',
     name: 'Colegio Stormridge',
     headerTitle: 'Colegio Stormridge',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Stormridge',
@@ -20,10 +20,10 @@ window.StoryLocations['colegio_azumaichi'] = {
     id: 'colegio_azumaichi',
     name: 'Colegio Azumaichi',
     headerTitle: 'Colegio Azumaichi',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Azumaichi',
@@ -35,10 +35,10 @@ window.StoryLocations['colegio_orchid'] = {
     id: 'colegio_orchid',
     name: 'Colegio Orchid',
     headerTitle: 'Colegio Orchid',
-    rooms: ['Habitacion', 'Comedor', 'Campo'],
+    rooms: ['Habitacion', 'ClubRoom', 'Campo'],
     backgrounds: {
         'Habitacion': 'assets/Historia/Hokkaido/HabitacionHokkaido.jpeg',
-        'Comedor': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
+        'ClubRoom': 'assets/Historia/Hokkaido/HokkaidoClubRoom.jpeg',
         'Campo': 'assets/Historia/Hokkaido/HokkaidoCampo.png'
     },
     myTeamName: 'Orchid',

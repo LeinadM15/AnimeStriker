@@ -1,0 +1,12 @@
+{
+    "fileName": "lilith_rilke",
+    "arrayName": "lilithRilkeCards",
+    "series": "tsubasa",
+    "cards": [
+        { "id": "lilithrilke_oro", "name": "LILITH RILKE", "version": "Oro", "rarity": "Oro", "rating": 83, "position": "CAM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/Lilith Rilke.png", "background": "assets/Cartas/Oro.png" },
+        { "id": "lilithrilke2_morado", "name": "LILITH RILKE", "version": "Morado", "rarity": "Especial", "rating": 86, "position": "CAM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/Lilith Rilke2.png", "background": "assets/Cartas/Morado.png" },
+        { "id": "lilithrilkecon_ninja", "name": "LILITH RILKE", "version": "Ninja", "rarity": "Especial", "rating": 89, "position": "CAM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/Lilith RilkeCon.png", "background": "assets/Cartas/Ninja.png" },
+        { "id": "lilithrilkemanos_futurestar", "name": "LILITH RILKE", "version": "FutureStar", "rarity": "Especial", "rating": 92, "position": "CAM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/Lilith RilkeManos.png", "background": "assets/Cartas/FutureStar.png" },
+        { "id": "lilithrilkeprime_joker", "name": "LILITH RILKE", "version": "Joker", "rarity": "Especial", "rating": 95, "position": "CAM", "league": "Superliga Europea", "nationFlag": "https://flagcdn.com/w40/bg.png", "teamIcon": "teams/RecreativoJonense.png", "image": "assets/characters/Custom/Lilith RilkePrime.png", "background": "assets/Cartas/Joker.png" }
+    ]
+}

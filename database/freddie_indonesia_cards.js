@@ -1,0 +1,28 @@
+const freddieIndonesiaCards = [
+    {
+        id: "freddie_oro",
+        name: "FREDDIE",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 83,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/id.png",
+        teamIcon: "teams/Feyenoord.png",
+        image: "assets/characters/Indonesia/Freddie.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "freddieprime_rulebraker",
+        name: "FREDDIE",
+        version: "Rulebraker",
+        rarity: "Especial",
+        rating: 86,
+        position: "ST",
+        league: "Superliga Europea",
+        nationFlag: "https://flagcdn.com/w40/id.png",
+        teamIcon: "teams/Feyenoord.png",
+        image: "assets/characters/Indonesia/FreddiePrime.png",
+        background: "assets/Cartas/Rulebraker.png"
+    }
+];

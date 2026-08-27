@@ -117,6 +117,32 @@ const japonesesEuropaCards = [
         background: "assets/Cartas/Oro.png"
     },
     {
+        id: "koyama_oro",
+        name: "KOYAMA",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 76,
+        position: "CDM",
+        league: "Serie A",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Udinese.png",
+        image: "assets/characters/Meiwa/Koyama.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
+        id: "kazushigeenomoto_oro",
+        name: "KAZUSHIGE ENOMOTO",
+        version: "Oro",
+        rarity: "Oro",
+        rating: 77,
+        position: "CM",
+        league: "Ligue 1",
+        nationFlag: "https://flagcdn.com/w40/jp.png",
+        teamIcon: "teams/Lens.png",
+        image: "assets/characters/Meiwa/Kazushige Enomoto.png",
+        background: "assets/Cartas/Oro.png"
+    },
+    {
         id: "hiromichihori_oro",
         name: "HIROMICHI HORI",
         version: "Oro",
