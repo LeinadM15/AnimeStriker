@@ -5511,6 +5511,89 @@ const FORMATIONS = {
                 7
             ]
         ]
+    },
+    "3-3-2-2": {
+        "positions": [
+            {
+                role: "GK",
+                x: 50,
+                y: 91
+            },
+            {
+                role: "CB",
+                x: 22,
+                y: 72
+            },
+            {
+                role: "CB",
+                x: 50,
+                y: 70
+            },
+            {
+                role: "CB",
+                x: 78,
+                y: 72
+            },
+            {
+                role: "CAM",
+                x: 22,
+                y: 52
+            },
+            {
+                role: "CAM",
+                x: 50,
+                y: 49
+            },
+            {
+                role: "CAM",
+                x: 78,
+                y: 52
+            },
+            {
+                role: "CF",
+                x: 32,
+                y: 32
+            },
+            {
+                role: "CF",
+                x: 68,
+                y: 32
+            },
+            {
+                role: "ST",
+                x: 38,
+                y: 14
+            },
+            {
+                role: "ST",
+                x: 62,
+                y: 14
+            }
+        ],
+        "links": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [1, 2],
+            [2, 3],
+            [1, 4],
+            [2, 4],
+            [2, 5],
+            [2, 6],
+            [3, 6],
+            [4, 5],
+            [5, 6],
+            [4, 7],
+            [5, 7],
+            [5, 8],
+            [6, 8],
+            [7, 8],
+            [7, 9],
+            [7, 10],
+            [8, 9],
+            [8, 10],
+            [9, 10]
+        ]
     }
 };
 
@@ -6282,8 +6365,9 @@ function calcPlayerChemistry(index) {
 }
 
 function isIconCard(card) {
-    return card && ((card.version && card.version === 'Icono') ||
-           (card.background && card.background.indexOf('Icono') !== -1));
+    return card && ((card.version && (card.version === 'Icono' || card.version === 'Heroe' || card.version === 'Héroe')) ||
+           (card.rarity && (card.rarity === 'Icono' || card.rarity === 'Heroe' || card.rarity === 'Héroe')) ||
+           (card.background && (card.background.indexOf('Icono') !== -1 || card.background.indexOf('Heroe') !== -1 || card.background.indexOf('Héroe') !== -1)));
 }
 
 function calcLinkChemistry(cardA, cardB) {

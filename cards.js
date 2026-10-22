@@ -1,7 +1,7 @@
 // cards.js - Catálogo Maestro
 // Este archivo reúne todos los arrays definidos en los archivos de la carpeta database/ y asigna la serie
 // Bump DB_VERSION whenever card data changes to invalidate draft localStorage cache
-const DB_VERSION = '1787796741009';
+const DB_VERSION = '1792669294849';
 
 const tsubasaAll = [
     ...tsubasaCards,
@@ -213,7 +213,51 @@ const tsubasaAll = [
     ...holandaSelCards,
     ...franciaSelCards,
     ...zanarkDomainCards,
-    ...losArionsCards
+    ...losArionsCards,
+    ...alemaniaSelCards,
+    ...brasilSelCards,
+    ...argentinaBatch2Cards,
+    ...brasilBatch2Cards,
+    ...camerunSelCards,
+    ...brasilBatch3Cards,
+    ...alemaniaStuttgartCards,
+    ...uruguayBatch2Cards,
+    ...mexicoBatch2Cards,
+    ...holandaBatch2Cards,
+    ...franciaBatch2Cards,
+    ...italiaBatch2Cards,
+    ...sueciaSelCards,
+    ...chinaBatch2Cards,
+    ...arabiaSaudiBatch2Cards,
+    ...tailandiaSelCards,
+    ...uzbekistanSelCards,
+    ...alemaniaBatch3Cards,
+    ...coreaBatch2Cards,
+    ...indonesiaBatch2Cards,
+    ...inglaterraBatch2Cards,
+    ...espanaBatch2Cards,
+    ...olivieroCards,
+    ...raffaelloAmatiCards,
+    ...olivieroSpecialsCards,
+    ...olivieroSpecials2Cards,
+    ...olivieroSpecials3Cards,
+    ...olivieroSpecials4Cards,
+    ...sassuoloBatch1Cards,
+    ...sassuoloBatch2Cards,
+    ...olivieroSpecials5Cards,
+    ...atalantaBatch1Cards,
+    ...olivieroBatch6Cards,
+    ...ubersBatch1Cards,
+    ...lecceBatch1Cards,
+    ...milanBatch1Cards,
+    ...aoashiBatch1Cards,
+    ...aoashiBatch2Cards,
+    ...aoashiBatch3Cards,
+    ...aoashiBatch4Cards,
+    ...aoashiBatch5Cards,
+    ...heroesBatch1Cards,
+    ...heroesBatch2Cards,
+    ...heroesBatch3Cards
 ];
 tsubasaAll.forEach(c => c._series = 'tsubasa');
 
