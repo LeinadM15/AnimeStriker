@@ -2,6 +2,242 @@
    ANIME STRIKERS — My Club Logic
    ============================================ */
 
+// ==========================================
+// COMPLETE COUNTRY NAME MAP
+// ==========================================
+const NATION_NAMES = {
+    'jp': 'Japón',
+    'de': 'Alemania',
+    'fr': 'Francia',
+    'br': 'Brasil',
+    'it': 'Italia',
+    'ar': 'Argentina',
+    'nl': 'Holanda',
+    'cm': 'Camerún',
+    'ci': 'Costa de Marfil',
+    'es': 'España',
+    'se': 'Suecia',
+    'uy': 'Uruguay',
+    'kr': 'Corea del Sur',
+    'cn': 'China',
+    'th': 'Tailandia',
+    'dk': 'Dinamarca',
+    'mx': 'México',
+    'us': 'Estados Unidos',
+    'za': 'Sudáfrica',
+    'hr': 'Croacia',
+    'pt': 'Portugal',
+    'rs': 'Serbia',
+    'jm': 'Jamaica',
+    'ng': 'Nigeria',
+    'mt': 'Malta',
+    'co': 'Colombia',
+    'gr': 'Grecia',
+    'id': 'Indonesia',
+    'uz': 'Uzbekistán',
+    'no': 'Noruega',
+    'ba': 'Bosnia y Herzegovina',
+    'ga': 'Gabón',
+    'gb-eng': 'Inglaterra',
+    'gb-sct': 'Escocia',
+    'gb-wls': 'Gales',
+    'sa': 'Arabia Saudí',
+    'ru': 'Rusia',
+    'sn': 'Senegal',
+    'eg': 'Egipto',
+    'au': 'Australia',
+    'bf': 'Burkina Faso',
+    'in': 'India',
+    'be': 'Bélgica',
+    'vn': 'Vietnam',
+    'fi': 'Finlandia',
+    'gn': 'Guinea',
+    'gh': 'Ghana',
+    'pl': 'Polonia',
+    'is': 'Islandia',
+    'ca': 'Canadá',
+    'cr': 'Costa Rica',
+    'tr': 'Turquía',
+    'ma': 'Marruecos',
+    'nz': 'Nueva Zelanda',
+    'bg': 'Bulgaria',
+    'ch': 'Suiza',
+    'bo': 'Bolivia',
+    'ro': 'Rumanía',
+    'cz': 'República Checa',
+    'ie': 'Irlanda',
+    'cl': 'Chile',
+    'sk': 'Eslovaquia',
+    'pe': 'Perú',
+    'py': 'Paraguay',
+    've': 'Venezuela',
+    'ec': 'Ecuador',
+    'at': 'Austria',
+    'hu': 'Hungría',
+    'ua': 'Ucrania',
+    'ke': 'Kenia',
+    'tz': 'Tanzania',
+    'dz': 'Argelia',
+    'tn': 'Túnez',
+    'sd': 'Sudán',
+    'ly': 'Libia',
+    'ir': 'Irán',
+    'iq': 'Irak',
+    'sy': 'Siria',
+    'lb': 'Líbano',
+    'jo': 'Jordania',
+    'qa': 'Catar',
+    'ae': 'Emiratos Árabes',
+    'kw': 'Kuwait',
+    'bh': 'Baréin',
+    'om': 'Omán',
+    'ye': 'Yemen',
+    'pk': 'Pakistán',
+    'bd': 'Bangladés',
+    'lk': 'Sri Lanka',
+    'mm': 'Birmania',
+    'kh': 'Camboya',
+    'la': 'Laos',
+    'my': 'Malasia',
+    'sg': 'Singapur',
+    'ph': 'Filipinas',
+    'tw': 'Taiwán',
+    'hk': 'Hong Kong',
+    'np': 'Nepal',
+    'af': 'Afganistán'
+};
+
+function getNationNameFromUrl(url) {
+    if (!url) return '';
+    const match = url.match(/\/([a-z-]+)\.png$/);
+    if (match && NATION_NAMES[match[1]]) {
+        return NATION_NAMES[match[1]];
+    }
+    // Fallback: use the code itself capitalized
+    if (match) return match[1].toUpperCase();
+    return '';
+}
+
+// ==========================================
+// SEARCHABLE CUSTOM DROPDOWN CLASS
+// ==========================================
+class SearchableDropdown {
+    constructor({ triggerId, optionsId, hiddenInputId, labelId, placeholder, allLabel, getItems, renderItem, onSelect }) {
+        this.trigger = document.getElementById(triggerId);
+        this.optionsList = document.getElementById(optionsId);
+        this.hiddenInput = document.getElementById(hiddenInputId);
+        this.label = document.getElementById(labelId);
+        this.placeholder = placeholder || 'Buscar...';
+        this.allLabel = allLabel || 'Todos';
+        this.getItems = getItems;
+        this.renderItem = renderItem;
+        this.onSelect = onSelect;
+        this.searchInput = null;
+        this.items = [];
+        
+        if (!this.trigger || !this.optionsList) return;
+        this._init();
+    }
+    
+    _init() {
+        // Click to open/close
+        this.trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close other open dropdowns first
+            document.querySelectorAll('.custom-options.open').forEach(el => {
+                if (el !== this.optionsList) el.classList.remove('open');
+            });
+            this.optionsList.classList.toggle('open');
+            if (this.optionsList.classList.contains('open')) {
+                this.populate();
+                setTimeout(() => {
+                    if (this.searchInput) this.searchInput.focus();
+                }, 50);
+            }
+        });
+        
+        // Click on option
+        this.optionsList.addEventListener('click', (e) => {
+            const option = e.target.closest('.custom-option');
+            if (!option) return;
+            const val = option.dataset.value;
+            this.hiddenInput.value = val;
+            if (val === '' || val === 'all') {
+                this.label.textContent = this.allLabel;
+            } else {
+                this.label.innerHTML = option.innerHTML;
+            }
+            this.optionsList.classList.remove('open');
+            if (this.onSelect) this.onSelect(val);
+        });
+        
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!this.trigger.contains(e.target) && !this.optionsList.contains(e.target)) {
+                this.optionsList.classList.remove('open');
+            }
+        });
+    }
+    
+    populate() {
+        this.items = this.getItems();
+        this.optionsList.innerHTML = '';
+        
+        // Search input
+        const searchWrapper = document.createElement('div');
+        searchWrapper.className = 'dropdown-search-wrapper';
+        searchWrapper.innerHTML = `<input type="text" class="dropdown-search-input" placeholder="${this.placeholder}">`;
+        this.searchInput = searchWrapper.querySelector('input');
+        this.searchInput.addEventListener('click', (e) => e.stopPropagation());
+        this.searchInput.addEventListener('input', () => this._filter());
+        this.searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.optionsList.classList.remove('open');
+            }
+        });
+        this.optionsList.appendChild(searchWrapper);
+        
+        // "All" option
+        const allOpt = document.createElement('div');
+        allOpt.className = 'custom-option';
+        allOpt.dataset.value = 'all';
+        allOpt.textContent = this.allLabel;
+        this.optionsList.appendChild(allOpt);
+        
+        // Item options
+        this.items.forEach(item => {
+            const opt = document.createElement('div');
+            opt.className = 'custom-option';
+            opt.dataset.value = item.value;
+            opt.dataset.searchText = (item.searchText || item.label || '').toLowerCase();
+            opt.innerHTML = this.renderItem(item);
+            this.optionsList.appendChild(opt);
+        });
+    }
+    
+    _filter() {
+        const query = this.searchInput.value.toLowerCase().trim();
+        const options = this.optionsList.querySelectorAll('.custom-option');
+        options.forEach(opt => {
+            if (opt.dataset.value === 'all') {
+                opt.style.display = query ? 'none' : '';
+                return;
+            }
+            const text = opt.dataset.searchText || opt.textContent.toLowerCase();
+            opt.style.display = text.includes(query) ? '' : 'none';
+        });
+    }
+    
+    reset(labelText) {
+        if (this.hiddenInput) this.hiddenInput.value = 'all';
+        if (this.label) this.label.textContent = labelText || this.allLabel;
+    }
+}
+
+
+// ==========================================
+// MAIN MYCLUB LOGIC
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof cardsDB === 'undefined' || !cardsDB) {
         console.error("No se pudo cargar la base de datos de cartas.");
@@ -19,16 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allCards = [...cardsDB];
 
-    // Identify Series from ID prefixes if possible
-    // tsu_ (tsubasa), gen_ (genzo), koj_ (kojiro), hol_ (holanda), waka_ (wakashimazu), ura_ (urabe) -> Tsubasa
-    // rai_ (raimon), occ_ (occult), wil_ (wild), inak_ (kids), ota_ (otaku), bra_ (brain), ro_ (royal), shu_ (shuriken), far_ (farm), zeus_, ss_ (servicio), gem_ (geminis), cs_ (claustro), ep_ (epsilon), tri_ (tripleC), mt_ (marytimes), fx_ (fauxshore), gen_ (genesis Wait, Genesis is also gen_), isa_ (bluelock)
-    // Actually, Tsubasa cards usually have "tsu_", "gen_", "koj_", "hol_", "waka_", "ura_".
-    // Inazuma has others. Blue Lock has "isa_".
-    // Let's deduce series properly:
-    // Series assigned in cards.js\n      // Populate Dropdowns dynamically
+    // Populate League Dropdown
     function populateDropdowns() {
         const leagues = [...new Set(allCards.map(c => c.league))].filter(Boolean).sort();
-        
         leagues.forEach(l => {
             const opt = document.createElement('option');
             opt.value = l;
@@ -49,34 +278,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 const teamName = card.teamIcon.split('/').pop().replace('.png', '');
                 const specialTemplates = ['Arsenal', 'Bastard', 'Naranja', 'PXG', 'Real', 'Suecia', 'Ubers'];
                 if (specialTemplates.includes(teamName)) {
-                    return { bg: `assets/Cartas/${teamName}.png`, overlay: null };
+                    return { bg: `assets/Cartas/${teamName}Especial.png`, overlay: null };
                 }
             }
-            return { bg: `assets/Cartas/Naranja.png`, overlay: null };
+            return { bg: 'assets/Cartas/Especial.png', overlay: null };
         }
-        return { bg: 'assets/Cartas/Oro.png', overlay: null };
+        return { bg: 'assets/Cartas/Base.png', overlay: null };
     }
 
     function renderCardHTML(char) {
         const frame = getCardFrame(char);
-        const teamSrc = (char.teamIcon || 'teams/Japon.png').startsWith('teams/') ? `assets/${char.teamIcon}` : char.teamIcon;
+        const bgStyle = `background-image: url('${frame.bg}')`;
+        const overlayHTML = frame.overlay ? `<img src="${frame.overlay}" class="fc-overlay">` : '';
+        const teamSrc = char.teamIcon
+            ? (char.teamIcon.startsWith('teams/') ? `assets/${char.teamIcon}` : char.teamIcon)
+            : '';
         
-        let bgHTML = '';
-        let overlayHTML = '';
-        if (frame.overlay) {
-            bgHTML = `<div class="fc-custom-bg" style="background-image: url('${frame.bg}');"></div>`;
-            overlayHTML = `<div class="fc-frame-overlay" style="background-image: url('${frame.overlay}');"></div>`;
-        }
-        const cardBg = frame.overlay ? '' : `style="background-image: url('${frame.bg}');"`;
-        let isOro = (char.background && char.background.includes('Oro')) ? ' oro-card' : '';
-        
+        const isOro = char.rarity === 'Oro' || (char.background && char.background.includes('Oro'));
+        const oroClass = isOro ? 'oro-card' : '';
+
         return `
-            <div class="fifa-card show myclub-card${isOro}" data-id="${char.id}" ${cardBg}>
-                ${bgHTML}
+            <div class="myclub-card fifa-card ${oroClass}" data-id="${char.id}" style="${bgStyle}; background-size:cover; background-position:center;">
                 ${overlayHTML}
-                <div class="fc-info">
-                    <span class="fc-rating">${char.rating}</span>
-                    <span class="fc-position">${char.position}</span>
+                <div class="fc-header">
+                    <div class="fc-rating">${char.rating}</div>
+                    <div class="fc-pos">${char.position || ''}</div>
                     <img src="${char.nationFlag}" class="fc-flag" alt="Flag">
                     <img src="${teamSrc}" class="fc-team" alt="Team">
                 </div>
@@ -138,16 +364,93 @@ document.addEventListener('DOMContentLoaded', () => {
             cardEl.addEventListener('click', () => {
                 zoomContent.innerHTML = cardEl.outerHTML;
                 const cloned = zoomContent.querySelector('.fifa-card');
-                cloned.style.transform = 'scale(1)'; // Fix scale issue in zoom
+                cloned.style.transform = 'scale(1)';
                 zoomModal.classList.remove('hidden');
             });
         });
     }
 
-    // Event Listeners for Filters
-    filterSearch.addEventListener('input', () => updateGrid(true));
-    filterLeague.addEventListener('change', () => { setupCustomTeamDropdown(); updateGrid(true); });
+    // ==========================================
+    // NATION DROPDOWN (searchable)
+    // ==========================================
+    const nationDropdown = new SearchableDropdown({
+        triggerId: 'custom-nation-trigger',
+        optionsId: 'custom-nation-options',
+        hiddenInputId: 'filter-nation',
+        labelId: 'custom-nation-label',
+        placeholder: 'Buscar país...',
+        allLabel: 'Cualquier País',
+        getItems: () => {
+            const nationSet = new Set();
+            cardsDB.forEach(c => { if(c.nationFlag) nationSet.add(c.nationFlag); });
+            return [...nationSet].sort((a, b) => {
+                const nameA = getNationNameFromUrl(a);
+                const nameB = getNationNameFromUrl(b);
+                return nameA.localeCompare(nameB);
+            }).map(flag => ({
+                value: flag,
+                label: getNationNameFromUrl(flag),
+                searchText: getNationNameFromUrl(flag),
+                flagUrl: flag
+            }));
+        },
+        renderItem: (item) => `<img src="${item.flagUrl}" alt="flag"> <span>${item.label}</span>`,
+        onSelect: () => updateGrid(true)
+    });
+
+    // ==========================================
+    // TEAM DROPDOWN (searchable, filtered by league)
+    // ==========================================
+    let teamDropdown = null;
     
+    function initTeamDropdown() {
+        teamDropdown = new SearchableDropdown({
+            triggerId: 'custom-team-trigger',
+            optionsId: 'custom-team-options',
+            hiddenInputId: 'filter-team',
+            labelId: 'custom-team-label',
+            placeholder: 'Buscar equipo...',
+            allLabel: 'Todos los Equipos',
+            getItems: () => {
+                const filterLeagueVal = filterLeague.value;
+                const teamMap = new Map();
+                cardsDB.forEach(c => {
+                    if (filterLeagueVal !== 'all' && c.league !== filterLeagueVal) return;
+                    let tName = '';
+                    if (c.teamIcon) {
+                        tName = c.teamIcon.split('/').pop().replace('.png', '').replace('.jpg', '').replace('.jpeg', '');
+                    } else {
+                        tName = c.version;
+                    }
+                    if (tName && !teamMap.has(tName)) {
+                        teamMap.set(tName, c.teamIcon ? (c.teamIcon.startsWith('teams/') ? `assets/${c.teamIcon}` : c.teamIcon) : '');
+                    }
+                });
+                return [...teamMap.keys()].sort().map(tName => ({
+                    value: tName,
+                    label: tName,
+                    searchText: tName,
+                    iconSrc: teamMap.get(tName)
+                }));
+            },
+            renderItem: (item) => {
+                if (item.iconSrc) {
+                    return `<img src="${item.iconSrc}" alt="team" style="width:20px;height:auto;vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${item.label}</span>`;
+                }
+                return `<span>${item.label}</span>`;
+            },
+            onSelect: () => updateGrid(true)
+        });
+    }
+    initTeamDropdown();
+
+    // Event Listeners
+    filterSearch.addEventListener('input', () => updateGrid(true));
+    filterLeague.addEventListener('change', () => {
+        // Reset team filter when league changes
+        if (teamDropdown) teamDropdown.reset('Todos los Equipos');
+        updateGrid(true);
+    });
     sortCards.addEventListener('change', () => updateGrid(true));
 
     const btnPrev = document.getElementById('myclub-prev');
@@ -176,186 +479,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     populateDropdowns();
     updateGrid();
-});
-
-
-function setupCustomDropdown() {
-    const trigger = document.getElementById('custom-nation-trigger');
-    const options = document.getElementById('custom-nation-options');
-    const hiddenInput = document.getElementById('filter-nation');
-    const label = document.getElementById('custom-nation-label');
-    if (!trigger || !options) return;
-    
-    const nationSet = new Set();
-    cardsDB.forEach(c => { if(c.nationFlag) nationSet.add(c.nationFlag); });
-    
-    // Map of common flags to names
-    const getNationName = (url) => {
-        if(url.includes('/jp.')) return 'Japón';
-        if(url.includes('/de.')) return 'Alemania';
-        if(url.includes('/fr.')) return 'Francia';
-        if(url.includes('/br.')) return 'Brasil';
-        if(url.includes('/it.')) return 'Italia';
-        if(url.includes('/ar.')) return 'Argentina';
-        if(url.includes('/nl.')) return 'Holanda';
-        if(url.includes('/cm.')) return 'Camerún';
-        if(url.includes('/ci.')) return 'Costa de Marfil';
-        if(url.includes('/es.')) return 'España';
-        if(url.includes('/se.')) return 'Suecia';
-        if(url.includes('/uy.')) return 'Uruguay';
-        if(url.includes('/kr.')) return 'Corea del Sur';
-        if(url.includes('/cn.')) return 'China';
-        if(url.includes('/th.')) return 'Tailandia';
-        if(url.includes('/dk.')) return 'Dinamarca';
-        if(url.includes('/mx.')) return 'México';
-        if(url.includes('/us.')) return 'Estados Unidos';
-        if(url.includes('/za.')) return 'Sudáfrica';
-        if(url.includes('/hr.')) return 'Croacia';
-        if(url.includes('/pt.')) return 'Portugal';
-        if(url.includes('/rs.')) return 'Serbia';
-        if(url.includes('/jm.')) return 'Jamaica';
-        if(url.includes('/ng.')) return 'Nigeria';
-        if(url.includes('/mt.')) return 'Malta';
-        if(url.includes('/co.')) return 'Colombia';
-        if(url.includes('/gr.')) return 'Grecia';
-        if(url.includes('/id.')) return 'Indonesia';
-        if(url.includes('/uz.')) return 'Uzbekistán';
-        if(url.includes('/no.')) return 'Noruega';
-        if(url.includes('/ba.')) return 'Bosnia y Herzegovina';
-        if(url.includes('/ga.')) return 'Gabón';
-        if(url.includes('/gb-eng.')) return 'Inglaterra';
-        if(url.includes('/sa.')) return 'Arabia Saudita';
-        if(url.includes('/ru.')) return 'Rusia';
-        if(url.includes('/uy.')) return 'Uruguay';
-        if(url.includes('/sn.')) return 'Senegal';
-        if(url.includes('/eg.')) return 'Egipto';
-                if(url.includes('/au.')) return 'Australia';
-        if(url.includes('/bf.')) return 'Burkina Faso';
-        if(url.includes('/no.')) return 'Noruega';
-                if(url.includes('/in.')) return 'India';
-        if(url.includes('/gb-sct.')) return 'Escocia';
-        if(url.includes('/be.')) return 'Bélgica';
-        if(url.includes('/vn.')) return 'Vietnam';
-        return 'Nación';
-    };
-
-    [...nationSet].sort().forEach(flag => {
-        const name = getNationName(flag);
-        const opt = document.createElement('div');
-        opt.className = 'custom-option';
-        opt.dataset.value = flag;
-        opt.innerHTML = `<img src="${flag}" alt="flag"> <span>${name}</span>`;
-        options.appendChild(opt);
-    });
-    
-    trigger.addEventListener('click', (e) => {
-        options.classList.toggle('open');
-        e.stopPropagation();
-    });
-    
-    options.addEventListener('click', (e) => {
-        const option = e.target.closest('.custom-option');
-        if (option) {
-            const val = option.dataset.value;
-            hiddenInput.value = val;
-            if (val === '' || val === 'all') {
-                label.textContent = 'Cualquier País';
-            } else {
-                const name = getNationName(val);
-                label.innerHTML = `<img src="${val}" alt="flag" style="width:20px;height:auto;border-radius:2px; vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${name}</span>`;
-            }
-            options.classList.remove('open');
-            updateGrid(true);
-        }
-    });
-    
-    document.addEventListener('click', (e) => {
-        if (!trigger.contains(e.target) && !options.contains(e.target)) {
-            options.classList.remove('open');
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', setupCustomDropdown);
-
-function setupCustomTeamDropdown() {
-    const trigger = document.getElementById('custom-team-trigger');
-    const options = document.getElementById('custom-team-options');
-    const hiddenInput = document.getElementById('filter-team');
-    const label = document.getElementById('custom-team-label');
-    const filterLeagueVal = document.getElementById('filter-league').value;
-    if (!trigger || !options) return;
-    
-    // Clear old options except 'all'
-    options.innerHTML = '<div class="custom-option" data-value="all">Todos los Equipos</div>';
-    
-    // Reset hidden input and label if repopulating
-    hiddenInput.value = 'all';
-    label.textContent = 'Todos los Equipos';
-
-    const teamMap = new Map();
-    cardsDB.forEach(c => { 
-        if(filterLeagueVal !== 'all' && c.league !== filterLeagueVal) return;
-        
-        let tName = '';
-        if(c.teamIcon) {
-            tName = c.teamIcon.split('/').pop().replace('.png', '').replace('.jpg', '').replace('.jpeg', '');
-        } else {
-            tName = c.version;
-        }
-        if (!teamMap.has(tName)) {
-            teamMap.set(tName, c.teamIcon ? (c.teamIcon.startsWith('teams/') ? `assets/${c.teamIcon}` : c.teamIcon) : '');
-        }
-    });
-
-    [...teamMap.keys()].sort().forEach(tName => {
-        const iconSrc = teamMap.get(tName);
-        const opt = document.createElement('div');
-        opt.className = 'custom-option';
-        opt.dataset.value = tName;
-        if (iconSrc) {
-            opt.innerHTML = `<img src="${iconSrc}" alt="team" style="width:20px;height:auto;vertical-align:middle;"> <span style="vertical-align:middle; margin-left:5px;">${tName}</span>`;
-        } else {
-            opt.innerHTML = `<span>${tName}</span>`;
-        }
-        options.appendChild(opt);
-    });
-}
-
-// Global click to close for Team dropdown (using existing setup structure)
-document.addEventListener('DOMContentLoaded', () => {
-    const trigger = document.getElementById('custom-team-trigger');
-    const options = document.getElementById('custom-team-options');
-    const hiddenInput = document.getElementById('filter-team');
-    const label = document.getElementById('custom-team-label');
-    
-    if (trigger && options) {
-        trigger.addEventListener('click', (e) => {
-            options.classList.toggle('open');
-            e.stopPropagation();
-        });
-        
-        options.addEventListener('click', (e) => {
-            const option = e.target.closest('.custom-option');
-            if (option) {
-                const val = option.dataset.value;
-                hiddenInput.value = val;
-                if (val === '' || val === 'all') {
-                    label.textContent = 'Todos los Equipos';
-                } else {
-                    label.innerHTML = option.innerHTML; // Copy the img + text
-                }
-                options.classList.remove('open');
-                if (typeof updateGrid === 'function') updateGrid(true);
-            }
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!trigger.contains(e.target) && !options.contains(e.target)) {
-                options.classList.remove('open');
-            }
-        });
-    }
-
-    setupCustomTeamDropdown();
 });

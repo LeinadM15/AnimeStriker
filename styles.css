@@ -501,6 +501,42 @@ body{font-family:var(--font-b);color:var(--white);min-height:100vh;overflow-x:hi
     margin-right: 10px;
 }
 
+/* Dropdown Search Input */
+.dropdown-search-wrapper {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    background: #111;
+    z-index: 2;
+}
+
+.dropdown-search-input {
+    width: 100%;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(17, 181, 201, 0.3);
+    border-radius: 6px;
+    color: #fff;
+    font-family: var(--font-b);
+    font-size: 0.85rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.dropdown-search-input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 6px rgba(17, 181, 201, 0.3);
+}
+
+.dropdown-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.custom-options::-webkit-scrollbar { width: 4px; }
+.custom-options::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+
 /* Custom Scale for specific PXG characters */
 .fifa-card[data-id="baptiste_pxg"] .fc-char,
 .fifa-card[data-id="hidalgo_pxg"] .fc-char {
